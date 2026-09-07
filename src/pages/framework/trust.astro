@@ -43,9 +43,11 @@ import { frameworkNav } from '../../lib/sections';
       caption="Precedent systems unified under SIGNATIF’s threshold quorum, four-layer scope enforcement, and algorithm agility."
     />
     <p>
-      <a href="https://signatif.org">SIGNATIF</a> is published; Confium provides the
-      threshold quorum operations for root and master-list ceremonies in
-      <code>unidpp-signatif</code>.
+      <a href="https://signatif.org">SIGNATIF</a> is published; the root and
+      master-list ceremonies run in <code>unidpp-signatif</code> as M-of-K
+      threshold operations — Feldman-verifiable shares, group signatures that a
+      standard verifier accepts — with Confium contributing the ceremony
+      interface shapes.
     </p>
   </section>
 
@@ -57,7 +59,12 @@ import { frameworkNav } from '../../lib/sections';
       (14888-3, 10118-3, 18033-3); the US federal profile binds FIPS suites; the EU
       profile binds eIDAS-acceptable suites. The same payload carries multiple signatures
       side by side (for example ECDSA + SM2 + ML-DSA); each verifier checks only what its
-      profile-scoped acceptance policy requires. Envelope encryption wraps payload keys per
+      profile-scoped acceptance policy requires. In the reference stack the sovereign
+      suites compute rather than frame: SM2 (GB/T&nbsp;32918 / GM/T&nbsp;0003.2) and
+      ML-DSA-65 (FIPS&nbsp;204) sign in the issuer and the CLI, a P-256 and an SM2
+      signature can co-sign one pack body, and a build without a suite's computation
+      declines it with a stated deferral — a framed-only slot degrades the verdict, never
+      passes silently. Envelope encryption wraps payload keys per
       recipient under each jurisdiction’s permitted key-encapsulation mechanism, and
       migration phases — composite, then post-quantum — proceed per jurisdiction under the
       agility registry. CNML is the post-quantum ESDC realization.

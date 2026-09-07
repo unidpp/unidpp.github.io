@@ -9,12 +9,16 @@ cd unidpp-py
 
 python scripts/eu_profile_report.py
 # writes conformance/eu-profile/REPORT.md and REPORT.json
-# exit 0: suite ran to completion and both reports were written`;
+# exit 0: suite ran to completion and both reports were written
+
+python scripts/competitor_report.py
+# writes conformance/competitors/REPORT.md and REPORT.json — the
+# freeDPP and open-dpp artifacts through the same runner`;
 ---
 
 <BaseLayout
   title="Conformance"
-  description="Public, reproducible conformance evidence: every example payload printed in EN 18223:2026 run through the UniDPP EU-profile validators — 22 fixtures, 14 pass, 8 fail, 26 error-severity findings recorded as a factual register, with the command to run it yourself."
+  description="Public, reproducible conformance evidence: every example payload printed in EN 18223:2026 run through the UniDPP EU-profile validators — 22 fixtures, 14 pass, 8 fail, 26 error-severity findings recorded as a factual register — and the same pipeline over the published freeDPP and open-dpp artifacts, with the command to run it yourself."
   eyebrow="Evidence — conformance"
   sectioned
 >
@@ -48,6 +52,22 @@ python scripts/eu_profile_report.py
         Validation layers: document-header rules on the payload as printed; EU-profile
         JSON Schemas on the normalized document; EU-profile semantic rules encoding the
         EN's own normative text; neutral-core identifier mapping.
+      </li>
+      <li>
+        Check classes: the runner's registry names four — <code>positive-corpus</code>
+        (wire schemas and commitment chains over the ported fixtures),
+        <code>audit-negative</code> (defect-register cases fail with precise findings),
+        <code>temporal-conformance</code> (every timestamp field against
+        ISO&nbsp;8601-1:2019 as impacted by Amd&nbsp;1:2022 — separator typography,
+        extended format, second precision, calendar ranges, the end-of-day form, zone
+        designators, the decimal sign), and <code>carrier-budget</code> (each fixture's
+        canonical serialized size against the ISO/IEC&nbsp;18004 QR capacity tables,
+        ported from the CLI).
+      </li>
+      <li>
+        The carrier check is an observation, not a finding: carrier budgets bind Tier-A
+        carrier-embedded packs, not served documents, so the size is recorded against
+        the QR capacity tables without affecting the outcome.
       </li>
       <li>
         Outcome semantics: <em>pass</em> means no error-severity finding — the payload is
@@ -157,6 +177,41 @@ python scripts/eu_profile_report.py
       The failures concentrate in the Annex&nbsp;A expanded-JSON examples and the two
       header examples (5.2.4, Annex&nbsp;B&nbsp;ex.&nbsp;1, which share one header shape); the
       clause&nbsp;5.2 data-element fragments and Annex&nbsp;B XML examples 2–8 pass.
+    </p>
+  </section>
+
+  <section class="plate" aria-labelledby="competitors-h">
+    <h2 id="competitors-h">Competitor artifacts through the same pipeline</h2>
+    <p>
+      The same runner, with no semantic changes, was run over every machine-checkable
+      artifact published by the two open-source DPP implementations outside this
+      project — freeDPP and open-dpp: seven artifacts in all. Findings cite the
+      artifact verbatim; passes would be reported as passes.
+    </p>
+    <p class="ledger">
+      <span>7 artifacts run</span>
+      <span class="neg">6 fail</span>
+      <span>1 not applicable</span>
+      <span class="neg">251 error-severity findings</span>
+    </p>
+    <p>
+      <strong>freeDPP</strong> publishes its server source and serves both EN&nbsp;18223
+      serializations from two live test endpoints; the six captured wire payloads all
+      fail, with 251 error-severity findings in the classes this register already
+      records — granularity casing (A1), class-name drift (A3), schema-version
+      placeholders (A6), duplicate element identifiers (N3), value-data-type mismatches
+      (N4), child-key divergence (N5) — plus the temporal finding T7: server-local
+      timestamps with no timezone designator, against the UTC-based requirement of
+      Table&nbsp;1. The findings are traceable to the published server model, whose own
+      comments place the integrity surface after the pending EN&nbsp;18239/18246
+      standards.
+    </p>
+    <p>
+      <strong>open-dpp</strong> publishes its application source; its one
+      machine-checkable passport document is an AAS-based fixture without the
+      EN&nbsp;18223 header. It is recorded as a coverage observation — a different wire
+      format is out of this runner's checkable surface — and no findings are
+      manufactured for it.
     </p>
   </section>
 

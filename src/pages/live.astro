@@ -73,7 +73,7 @@ const runShell = `./stack.sh start     # build if needed, start 8390-8396, wait 
         [
           '<a href="https://github.com/unidpp/unidpp-registry">unidpp-registry</a>',
           '8390',
-          'ISO 19135 item and discovery registry — profiles, transforms, C3 services, C4 protocol bindings, C5 verification mechanisms, units',
+          'ISO 19135 item and discovery registry — profiles, transforms, C3 services, C4 protocol bindings, C5 verification mechanisms, units; serves the profile-manifest JSON Schema (draft 2020-12, enforced at item intake); evaluates clock predicates on applicability queries (subject_facts); cross-register mappings; EXPRESS model deposits validated with expressir (POST /models); the UNTDED trade data-element register, 1 504 elements',
           '<code>GET /healthz</code>',
         ],
         [
@@ -85,13 +85,13 @@ const runShell = `./stack.sh start     # build if needed, start 8390-8396, wait 
         [
           '<a href="https://github.com/unidpp/unidpp-log">unidpp-log</a>',
           '8392',
-          'Transparency-log anchor service — RFC 6962 Merkle sequencing, signed inclusion receipts',
+          'Transparency-log anchor service — RFC 6962 Merkle sequencing, signed inclusion receipts; optional RFC 3161 anchoring of tree heads to an external timestamping authority, degrading explicitly when it is unreachable',
           '<code>GET /healthz</code>',
         ],
         [
           '<a href="https://github.com/unidpp/unidpp-issuer">unidpp-issuer</a>',
           '8393',
-          'Passport lifecycle: create, typed events, Tier-A pack minting, verdicts',
+          'Passport lifecycle: create, typed events, Tier-A pack minting with per-request suite selection (sm2, or ecdsa-p256,sm2 co-signing one pack body), verdicts; /keyring publishes the per-suite anchors',
           '<code>GET /healthz</code>',
         ],
         [
@@ -103,7 +103,7 @@ const runShell = `./stack.sh start     # build if needed, start 8390-8396, wait 
         [
           '<a href="https://github.com/unidpp/unidpp-gateway">unidpp-gateway</a>',
           '8395',
-          'Interop renders: UNTP verifiable-credential triad and EN 18222 REST',
+          'Interop in both directions: the UNTP verifiable-credential triad and the EN 18222 REST render outbound; POST /untp/ingest imports a UNTP credential as a core passport with a deterministic identity',
           '<code>GET /healthz</code>',
         ],
         [

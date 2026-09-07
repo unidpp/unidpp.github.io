@@ -126,10 +126,14 @@ cargo test --workspace`;
           <h3>Tier-A packing against the QR budget</h3>
           <p>
             The log is projected onto the carrier-embedded offline minimum — product
-            identifier, resolver URI, status, safety flag, log head, two framed
-            multi-suite signature slots (ECDSA&nbsp;P-256 + SM2, so an EU and a CN verifier
-            each check under their own crypto policy) — and budgeted against the ISO/IEC
-            18004 byte-capacity tables:
+            identifier, resolver URI, status, safety flag, log head, two
+            multi-suite signature slots (ECDSA&nbsp;P-256 + SM2) — and budgeted
+            against the ISO/IEC 18004 byte-capacity tables. This scenario frames
+            the slots as placeholders at canonical suite lengths, so the verdict
+            degrades with the stated reason <em>signatures-framed-only</em>;
+            computed co-signatures over one body — the sovereign-suite packs the
+            issuer mints under <code>suite=ecdsa-p256,sm2</code> — fill both
+            slots and verify under each suite:
           </p>
           <div class="tablewrap">
             <table class="register">

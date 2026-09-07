@@ -33,8 +33,9 @@ import { implementationNav } from '../../lib/sections';
           <code>model</code> (core passport, manifest, PassportLink edges);
           <code>event</code> (typed events, append-only log, commitment hashing);
           <code>transform</code> (split/combine with mass balance and taint propagation);
-          <code>tier_a</code> (offline packer: minimum fields, multi-suite signature
-          framing, carrier-size budgeting); <code>verdict</code> (graded trust, coverage
+          <code>tier_a</code> (offline packer: minimum fields, multi-suite
+          signature slots — framed placeholders or computed suites — and
+          carrier-size budgeting); <code>verdict</code> (graded trust, coverage
           reports, freshness); <code>resolver</code> (linkset emission and parsing, context
           routing). Property tests: quantity conservation, commitment consistency,
           casing-normalization conformance.
@@ -77,8 +78,11 @@ import { implementationNav } from '../../lib/sections';
       </Card>
       <Card title="unidpp-signatif" tag="trust">
         <p>
-          Trust path-finding on the SIGNATIF model; root and master-list threshold
-          ceremonies on Confium quorum operations.
+          Trust path-finding on the SIGNATIF model; M-of-K root and master-list
+          threshold ceremonies — Feldman-verifiable shares, group signatures that
+          verify as standard Ed25519 — plus signed roll-up attestations over
+          deep-graph traversal sets. Confium contributes the ceremony interface
+          shapes.
         </p>
       </Card>
       <Card title="unidpp-explorer" tag="inspection">
