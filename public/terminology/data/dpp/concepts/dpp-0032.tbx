@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tbx style="dca" type="TBX-Basic" xml:lang="en" xmlns="urn:iso:std:iso:30042:ed-2">
+  <tbxHeader>
+    <fileDesc>
+      <source>https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0032</source>
+    </fileDesc>
+  </tbxHeader>
+  <text>
+    <body>
+      <conceptEntry id="dpp-0032">
+      <languageSection xml:lang="eng">
+          <descrip type="definition">
+            <p>manufacturer, authorized representative, importer, distributor, dealer or fulfilment service provider that places the product on the market</p>
+          </descrip>
+          <note type="note">Harmonization note (UniDPP): EN 18221:2026 defines “economic operator” without the placing-on-the-market qualifier; see concept dpp-0033.</note>
+          <ref>EN 18219:2026 3.1.5</ref>
+          <ref>EN 18220:2026 3.7</ref>
+      </languageSection>
+      </conceptEntry>
+    </body>
+  </text>
+</tbx>

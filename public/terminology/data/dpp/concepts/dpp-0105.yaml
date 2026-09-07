@@ -1,0 +1,41 @@
+---
+data:
+  identifier: dpp-0105
+  domains:
+  - concept_id: section-semantics-and-profiles
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: 6ecb40cd-ff5b-57f7-a713-cae8f376821d
+---
+data:
+  definition:
+  - content: information and services representing an entity from a given viewpoint
+  examples:
+  - content: Examples of information are properties (e.g. maximum temperature), actual
+      parameters (e.g. actual velocity), events (e.g. notification of status change),
+      schematics (electrical), and visualization information (2D and 3D drawings).
+  - content: Examples of services are asset services (for example providing the history
+      of the configuration data or providing the actual velocity) and asset related
+      services (for example providing a simulation).
+  - content: Examples of viewpoints are mechanical, electrical, or commercial characteristics.
+  sources:
+  - origin:
+      ref:
+        source: 'IDTA-01001-3.2:2026 (Specification of the Asset Administration Shell
+          — Part 1: Metamodel)'
+        id: 1.1.11
+    type: authoritative
+  - origin:
+      ref:
+        source: IEC 63278-1:2023
+    type: authoritative
+    modification: Editorial changes.
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: digital representation
+  language_code: eng
+  annotations: []
+termid: dpp-0105
+id: 3ae338f5-2efd-54e3-abbd-98c67318ad2d

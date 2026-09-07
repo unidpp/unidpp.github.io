@@ -1,0 +1,36 @@
+---
+data:
+  identifier: dpp-0010
+  domains:
+  - concept_id: section-identity-and-carriers
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: b62b9443-e0d9-5949-b854-8261904caf15
+---
+data:
+  definition:
+  - content: system for allocating identifiers to objects
+  sources:
+  - origin:
+      ref:
+        source: EN 18219:2026
+        id: 3.1.6
+    type: authoritative
+  - origin:
+      ref:
+        source: ISO/IEC 6523-1
+        id: '3.6'
+    type: authoritative
+    modification: "“registered” removed."
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: identification scheme
+  - type: abbreviation
+    normative_status: preferred
+    designation: ID scheme
+  language_code: eng
+  annotations: []
+termid: dpp-0010
+id: 79bb2da3-4c22-551a-b1a2-ecd5c6e94884

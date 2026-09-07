@@ -1,0 +1,30 @@
+---
+data:
+  identifier: dpp-0048
+  domains:
+  - concept_id: section-actors-and-issuance
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: 24b1d181-fca5-5863-bdfd-bdc2152f4271
+---
+data:
+  definition:
+  - content: company or company function that produces final or non-final fashion
+      products (yarns, fabrics, garments, accessories, footwear, etc.); its industrial
+      process has in input materials and in output components or final fashion goods
+      for the business customers or final customers
+  sources:
+  - origin:
+      ref:
+        source: CWA 18291:2025
+        id: '3.14'
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: producer
+  language_code: eng
+  annotations: []
+termid: dpp-0048
+id: 80a51f9b-2150-583e-b819-0050c799c57f

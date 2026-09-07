@@ -1,0 +1,32 @@
+---
+data:
+  identifier: dpp-0069
+  domains:
+  - concept_id: section-lifecycle-and-events
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: 375d9181-a9da-5d6b-b313-10de53f13ba6
+---
+data:
+  definition:
+  - content: practical system of processes, procedures and information exchanges that
+      implements traceability
+  sources:
+  - origin:
+      ref:
+        source: CWA 18291:2025
+        id: '3.30'
+    type: authoritative
+  - origin:
+      ref:
+        source: UNECE Recommendation No. 46
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: traceability system
+  language_code: eng
+  annotations: []
+termid: dpp-0069
+id: 7577099c-b021-561c-a89a-1b88811f1ca4

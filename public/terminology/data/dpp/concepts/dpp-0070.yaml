@@ -1,0 +1,32 @@
+---
+data:
+  identifier: dpp-0070
+  domains:
+  - concept_id: section-lifecycle-and-events
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: 9fba7c9f-11dc-5b64-8b3b-9b302db7a516
+---
+data:
+  definition:
+  - content: traceable asset is any product or material (individually, in batches,
+      or in trade units) that needs to be tracked along a value chain
+  sources:
+  - origin:
+      ref:
+        source: CWA 18291:2025
+        id: '3.2'
+    type: authoritative
+  - origin:
+      ref:
+        source: UNECE Recommendation No. 46
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: traceable asset
+  language_code: eng
+  annotations: []
+termid: dpp-0070
+id: a603af88-4fec-523f-8183-08b07d9b4b92

@@ -1,0 +1,33 @@
+---
+data:
+  identifier: dpp-0130
+  domains:
+  - concept_id: section-framework-terms
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: 14607b84-ebe3-51c4-a5fa-0486f7981eda
+---
+data:
+  definition:
+  - content: passport issued as the output of a transformation event by an actor accredited
+      for the regulated claims it contains, hash-linking its input passports
+  notes:
+  - content: Only accredited actors may issue derived passports for regulated claims
+      (the notified-actor pattern of EN 18239).
+  - content: Children of a split carry a derived-from reference and quantity carve-outs,
+      with the sum of children not exceeding the parent (remainder semantics).
+  sources:
+  - origin:
+      ref:
+        source: UniDPP PLAN (2026-09)
+        id: Semantic exchange, stamps, and the transformation algebra
+    type: lineage
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: derived passport
+  language_code: eng
+  annotations: []
+termid: dpp-0130
+id: f6220d43-3bbb-555a-b3b9-980319160914

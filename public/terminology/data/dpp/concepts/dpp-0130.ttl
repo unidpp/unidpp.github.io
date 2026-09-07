@@ -1,0 +1,11 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+<https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0130>
+  a skos:Concept ;
+  skos:notation "dpp-0130" ;
+  skos:prefLabel "derived passport"@eng ;
+  skos:definition "passport issued as the output of a transformation event by an actor accredited for the regulated claims it contains, hash-linking its input passports"@eng ;
+  skos:scopeNote "Only accredited actors may issue derived passports for regulated claims (the notified-actor pattern of EN 18239)."@eng ;
+  skos:scopeNote "Children of a split carry a derived-from reference and quantity carve-outs, with the sum of children not exceeding the parent (remainder semantics)."@eng
+ .

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tbx style="dca" type="TBX-Basic" xml:lang="en" xmlns="urn:iso:std:iso:30042:ed-2">
+  <tbxHeader>
+    <fileDesc>
+      <source>https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0055</source>
+    </fileDesc>
+  </tbxHeader>
+  <text>
+    <body>
+      <conceptEntry id="dpp-0055">
+      <languageSection xml:lang="eng">
+          <descrip type="definition">
+            <p>company or company function that performs activities to obtain recovered resources for use in a process or a product, excluding energy recovery</p>
+          </descrip>
+          <note type="note">Activities to obtain resources include activities such as recovery, collection, transport, sorting, cleaning, and re-processing.</note>
+          <note type="note">Recycling does not include reuse.</note>
+          <ref>CWA 18291:2025 3.22</ref>
+          <ref>ISO 59004:2024</ref>
+      </languageSection>
+      </conceptEntry>
+    </body>
+  </text>
+</tbx>

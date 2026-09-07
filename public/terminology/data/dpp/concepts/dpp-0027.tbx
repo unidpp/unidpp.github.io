@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tbx style="dca" type="TBX-Basic" xml:lang="en" xmlns="urn:iso:std:iso:30042:ed-2">
+  <tbxHeader>
+    <fileDesc>
+      <source>https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0027</source>
+    </fileDesc>
+  </tbxHeader>
+  <text>
+    <body>
+      <conceptEntry id="dpp-0027">
+      <languageSection xml:lang="eng">
+          <descrip type="definition">
+            <p>specified width of the narrow in a bar code symbol or the specified width of a single element in a two-dimensional symbol</p>
+          </descrip>
+          <ref>EN 18220:2026 3.19</ref>
+          <ref>ISO/IEC 19762 3.2.1.10</ref>
+      </languageSection>
+      </conceptEntry>
+    </body>
+  </text>
+</tbx>

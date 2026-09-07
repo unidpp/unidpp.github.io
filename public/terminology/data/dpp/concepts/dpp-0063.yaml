@@ -1,0 +1,29 @@
+---
+data:
+  identifier: dpp-0063
+  domains:
+  - concept_id: section-lifecycle-and-events
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: 5c230bd5-03d7-5f02-ba7e-86a78dbd69ef
+---
+data:
+  definition:
+  - content: period during which the digital product passport (3.2) is required by
+      regulation to be available to any operator or natural or legal person with a
+      right to access its data
+  sources:
+  - origin:
+      ref:
+        source: EN 18221:2026
+        id: '3.4'
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: digital product passport lifetime
+  language_code: eng
+  annotations: []
+termid: dpp-0063
+id: 1b02eced-5717-53e5-b633-220984f410b8

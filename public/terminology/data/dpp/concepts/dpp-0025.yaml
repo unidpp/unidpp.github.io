@@ -1,0 +1,32 @@
+---
+data:
+  identifier: dpp-0025
+  domains:
+  - concept_id: section-identity-and-carriers
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: f79086f4-afea-504e-8fa3-4a6f77067594
+---
+data:
+  definition:
+  - content: passive UHF radio-frequency identification (term 3.15)
+  notes:
+  - content: 'Source entry heading: “RAIN RFID (UHF RFID) per ISO/IEC 18000-63”.'
+  sources:
+  - origin:
+      ref:
+        source: EN 18220:2026
+        id: '3.16'
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: RAIN RFID
+  - type: expression
+    normative_status: admitted
+    designation: UHF RFID
+  language_code: eng
+  annotations: []
+termid: dpp-0025
+id: ada54f6d-3dfa-54f4-be0a-af9ac709f618

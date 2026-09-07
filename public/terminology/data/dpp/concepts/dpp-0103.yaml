@@ -1,0 +1,33 @@
+---
+data:
+  identifier: dpp-0103
+  domains:
+  - concept_id: section-semantics-and-profiles
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: '08de0d5e-f7ff-5afa-a9e8-745325383672'
+---
+data:
+  definition:
+  - content: product used as a constituent in an assembled product, system, or plant
+  sources:
+  - origin:
+      ref:
+        source: 'IDTA-01001-3.2:2026 (Specification of the Asset Administration Shell
+          — Part 1: Metamodel)'
+        id: 1.1.9
+    type: authoritative
+  - origin:
+      ref:
+        source: IEC 63278-1:2023; IEC 61666:2010+AMD1:2021 CSV
+        id: '3.6'
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: component
+  language_code: eng
+  annotations: []
+termid: dpp-0103
+id: 0ab3e49a-8da4-5439-bb51-b244343daf68

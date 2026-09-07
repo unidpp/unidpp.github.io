@@ -1,0 +1,34 @@
+---
+data:
+  identifier: dpp-0100
+  domains:
+  - concept_id: section-semantics-and-profiles
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: 067d9d42-0eb7-5665-84e1-abd4868a0498
+---
+data:
+  definition:
+  - content: description of a set of objects that share the same attributes, operations,
+      methods, relationships, and semantics
+  sources:
+  - origin:
+      ref:
+        source: 'IDTA-01001-3.2:2026 (Specification of the Asset Administration Shell
+          — Part 1: Metamodel)'
+        id: 1.1.6
+    type: authoritative
+  - origin:
+      ref:
+        source: IEC TR 62390:2005-01
+        id: 3.1.4
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: class
+  language_code: eng
+  annotations: []
+termid: dpp-0100
+id: ca4dfe26-52c5-5dd5-b2aa-2ed39cc55e28

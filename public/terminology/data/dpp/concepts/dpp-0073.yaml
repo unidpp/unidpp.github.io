@@ -1,0 +1,40 @@
+---
+data:
+  identifier: dpp-0073
+  domains:
+  - concept_id: section-trust-and-verification
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: a2ffc404-71de-50f0-8480-3dee92805baa
+---
+data:
+  definition:
+  - content: property that data has not been altered or destroyed in an unauthorised
+      manner
+  notes:
+  - content: In the context of secure communication, data integrity ensures that data
+      transmitted between parties remains unaltered and intact from the moment it
+      leaves the sender to the moment it reaches the receiver. This means that the
+      data has not been tampered with, modified, or corrupted during transmission
+      – whether accidentally or through malicious actions.
+  sources:
+  - origin:
+      ref:
+        source: EN 18216:2026
+        id: '3.5'
+    type: authoritative
+  - origin:
+      ref:
+        source: ISO 7498-2:1989
+        id: 3.3.21
+    type: authoritative
+    modification: Note to entry added.
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: data integrity
+  language_code: eng
+  annotations: []
+termid: dpp-0073
+id: 8f09035f-2388-5f3d-a1a7-c8853713e974

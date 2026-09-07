@@ -1,0 +1,29 @@
+---
+data:
+  identifier: dpp-0052
+  domains:
+  - concept_id: section-actors-and-issuance
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: 8fa6f998-c229-55f2-a0c6-8ae8bd1c0a7e
+---
+data:
+  definition:
+  - content: company or company function that organizes manufacturing and material
+      supplying to obtain finished garments from fabrics. It is a client of Fabric
+      Producer and partially of Yarn Producer
+  sources:
+  - origin:
+      ref:
+        source: CWA 18291:2025
+        id: '3.18'
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: apparel producer
+  language_code: eng
+  annotations: []
+termid: dpp-0052
+id: 15cd463c-5fc8-51d4-88b9-e004c7c2622e

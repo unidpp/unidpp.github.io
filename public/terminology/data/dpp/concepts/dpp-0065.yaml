@@ -1,0 +1,35 @@
+---
+data:
+  identifier: dpp-0065
+  domains:
+  - concept_id: section-lifecycle-and-events
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: 1f58816a-1d12-53ed-8c91-f8f02d824faf
+---
+data:
+  definition:
+  - content: point in time during the life cycle at which a product or resource is
+      taken out of use and is disposed
+  notes:
+  - content: Disposal could be in the form of incineration, deposit to landfill, or
+      composting.
+  sources:
+  - origin:
+      ref:
+        source: CWA 18291:2025
+        id: '3.27'
+    type: authoritative
+  - origin:
+      ref:
+        source: ISO 59004:2024
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: end-of-life
+  language_code: eng
+  annotations: []
+termid: dpp-0065
+id: 0541ce2f-36c4-5cd5-bd0f-3bf47a0435dd

@@ -1,0 +1,39 @@
+---
+data:
+  identifier: dpp-0031
+  domains:
+  - concept_id: section-identity-and-carriers
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: 3df32656-1906-551b-a510-9d9278d3900a
+---
+data:
+  definition:
+  - content: identity information that unambiguously distinguishes one entity from
+      another one in a given domain
+  notes:
+  - content: There are specific identifiers, e.g. UUID Universal unique identifier,
+      IEC 15418 (GS1).
+  sources:
+  - origin:
+      ref:
+        source: 'IDTA-01001-3.2:2026 (Specification of the Asset Administration Shell
+          — Part 1: Metamodel)'
+        id: 1.1.14
+    type: authoritative
+  - origin:
+      ref:
+        source: Glossary Industrie 4.0
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: identifier
+  - type: abbreviation
+    normative_status: preferred
+    designation: ID
+  language_code: eng
+  annotations: []
+termid: dpp-0031
+id: 3d3f4ccc-be64-5e97-bba4-bcdc7aadf41e

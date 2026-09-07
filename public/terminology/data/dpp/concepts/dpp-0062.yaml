@@ -1,0 +1,27 @@
+---
+data:
+  identifier: dpp-0062
+  domains:
+  - concept_id: section-lifecycle-and-events
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: cf80c139-94b9-5570-9f27-bc1e21f83a87
+---
+data:
+  definition:
+  - content: first use, for its intended purpose, of a product
+  sources:
+  - origin:
+      ref:
+        source: EN 18219:2026
+        id: 3.1.17
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: put into service
+  language_code: eng
+  annotations: []
+termid: dpp-0062
+id: 6d655e65-a893-5469-b459-68b4f2ad6e10

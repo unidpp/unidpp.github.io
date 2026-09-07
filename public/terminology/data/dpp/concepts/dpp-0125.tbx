@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tbx style="dca" type="TBX-Basic" xml:lang="en" xmlns="urn:iso:std:iso:30042:ed-2">
+  <tbxHeader>
+    <fileDesc>
+      <source>https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0125</source>
+    </fileDesc>
+  </tbxHeader>
+  <text>
+    <body>
+      <conceptEntry id="dpp-0125">
+      <languageSection xml:lang="eng">
+          <descrip type="definition">
+            <p>profile that attaches by predicate on digital twin facts — such as age, material content, heritage status or market status — rather than by law-of-place or industry</p>
+          </descrip>
+          <note type="note">Characteristic profiles split into regulatory-triggered profiles (for example CITES species content, cultural-goods import controls, art-market due diligence, conflict-minerals origin) and voluntary value profiles (for example provenance and grading for antiques and collectibles).</note>
+          <note type="note">Predicate triggers include time predicates: an object becoming older than a given age is a clock-fired applicability event handled by the dated-binding machinery.</note>
+          <ref>UniDPP PLAN (2026-09) Composition, projection, and offline operation</ref>
+      </languageSection>
+      </conceptEntry>
+    </body>
+  </text>
+</tbx>

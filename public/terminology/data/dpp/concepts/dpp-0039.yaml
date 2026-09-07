@@ -1,0 +1,28 @@
+---
+data:
+  identifier: dpp-0039
+  domains:
+  - concept_id: section-actors-and-issuance
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: ece47536-948c-5800-9a7b-fe14298ae19b
+---
+data:
+  definition:
+  - content: organization or individual entitled by an authorized accrediting body
+      or authority, that fulfils a role in the DPP lifecycle
+  sources:
+  - origin:
+      ref:
+        source: EN 18239 (prEN 18239:2025)
+        id: '3.8'
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: notified actor
+  language_code: eng
+  annotations: []
+termid: dpp-0039
+id: d2e7990b-e528-53d8-9142-93a21c595fc1

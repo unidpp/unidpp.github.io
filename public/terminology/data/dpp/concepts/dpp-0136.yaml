@@ -1,0 +1,39 @@
+---
+data:
+  identifier: dpp-0136
+  domains:
+  - concept_id: section-framework-terms
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: 832cb58c-5f41-538e-bd86-2b72359c0294
+---
+data:
+  definition:
+  - content: edge on a typed passport relationship whose existence and endpoints are
+      concealed from all observers, so that a child-to-parent reference does not reveal
+      where a thing is — a household or a site
+  notes:
+  - content: Edge visibility classes — public, restricted (role-qualified), blind
+      and escrowed — are declared on every relationship; the installation schema (concept
+      dpp-0142) carries visibility as an edge class with escrow arrangement (concept
+      dpp-0137) and audiences.
+  - content: Blind is the default for consumer installations, because even the object-to-household
+      linkage is personal data requiring a GDPR or PIPL legal basis per profile.
+  - content: 'Rationale: a traversable graph with entitled upstream observers is surveillance
+      infrastructure; post-sale visibility into instance state is owner-push or authority-based,
+      never maker-pull.'
+  sources:
+  - origin:
+      ref:
+        source: UniDPP PLAN (2026-09)
+        id: Visibility, blind edges, and enumeration resistance
+    type: lineage
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: blind edge
+  language_code: eng
+  annotations: []
+termid: dpp-0136
+id: 75809d46-311a-51ff-8e05-a30a932ed725

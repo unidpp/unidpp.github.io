@@ -1,0 +1,37 @@
+---
+data:
+  identifier: dpp-0140
+  domains:
+  - concept_id: section-framework-terms
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: a2aa5bb4-ea72-5ae4-a30e-5b3df36cda44
+---
+data:
+  definition:
+  - content: 'recall scheme in which the recall set is never enumerated centrally:
+      the recall predicate is published, and each custodian evaluates it locally against
+      their own holdings — including dark and defence holdings under national procedure
+      — and acts'
+  notes:
+  - content: The manufacturer receives aggregates or nothing; there is no traversal-push
+      enumeration of the installed base.
+  - content: 'One of the mechanisms by which enumeration resistance (concept dpp-0139)
+      is maintained: recall propagation still notifies custodians transitively, but
+      through local predicate evaluation rather than central construction of the recall
+      set.'
+  sources:
+  - origin:
+      ref:
+        source: UniDPP PLAN (2026-09)
+        id: Visibility, blind edges, and enumeration resistance
+    type: lineage
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: predicate-based recall
+  language_code: eng
+  annotations: []
+termid: dpp-0140
+id: 8314bd9f-da16-56af-83b3-2d24de7f1eb8

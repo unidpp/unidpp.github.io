@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tbx style="dca" type="TBX-Basic" xml:lang="en" xmlns="urn:iso:std:iso:30042:ed-2">
+  <tbxHeader>
+    <fileDesc>
+      <source>https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0060</source>
+    </fileDesc>
+  </tbxHeader>
+  <text>
+    <body>
+      <conceptEntry id="dpp-0060">
+      <languageSection xml:lang="eng">
+          <descrip type="definition">
+            <p>any physical good that is placed on the market (3.1.14) or put into service (3.1.17)</p>
+          </descrip>
+          <ref>EN 18219:2026 3.1.16</ref>
+          <ref>EN 18220:2026 3.14</ref>
+      </languageSection>
+      </conceptEntry>
+    </body>
+  </text>
+</tbx>

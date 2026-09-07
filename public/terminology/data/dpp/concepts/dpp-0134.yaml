@@ -1,0 +1,32 @@
+---
+data:
+  identifier: dpp-0134
+  domains:
+  - concept_id: section-framework-terms
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: d2620665-b3a3-54b2-a712-aca3d2caf6cc
+---
+data:
+  definition:
+  - content: signed ceremony recording the transfer of responsibility for an object
+      between custodians, appended to the event chain by the custodian and the counterparty,
+      which extends and never overwrites the trail across successive owners
+  notes:
+  - content: 'Custody links are social and control edges, orthogonal to structural
+      composition: ownership changes while composition stays fixed.'
+  sources:
+  - origin:
+      ref:
+        source: UniDPP PLAN (2026-09)
+        id: Composition, projection, and offline operation
+    type: lineage
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: custody transfer
+  language_code: eng
+  annotations: []
+termid: dpp-0134
+id: 6c0ddfe4-bdf7-575d-bef9-917c9855b868

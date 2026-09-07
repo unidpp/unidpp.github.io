@@ -1,0 +1,38 @@
+---
+data:
+  identifier: dpp-0145
+  domains:
+  - concept_id: section-framework-terms
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: d1ab21ac-7c3e-5b13-a18e-9ad3b1b63c8f
+---
+data:
+  definition:
+  - content: declared per-data-element attribute of a profile stating which truth
+      source the element requires — attest-sampled, self-committed, or both with a
+      precedence rule
+  notes:
+  - content: The passive twin (concept dpp-0132) supplies attest-sampled truth and
+      the active twin (concept dpp-0133) supplies self-committed truth; both paradigms
+      coexist permanently in the framework.
+  - content: Precedence between a calibrated device measurement and an attestor observation
+      is itself a metrological hierarchy question.
+  - content: 'Freshness and verification requirements must be satisfiable by the subject''s
+      capability class: demanding live freshness from an S0 (silent) product is an
+      unsatisfiable profile.'
+  sources:
+  - origin:
+      ref:
+        source: UniDPP PLAN (2026-09)
+        id: 'Passive twin → active twin: the paradigm axis'
+    type: lineage
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: truth mode
+  language_code: eng
+  annotations: []
+termid: dpp-0145
+id: 7f42b1db-1942-55d5-8d12-7bdfdcf0aebd

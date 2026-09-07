@@ -1,0 +1,27 @@
+---
+data:
+  identifier: dpp-0056
+  domains:
+  - concept_id: section-actors-and-issuance
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: f54c3cdf-e235-5530-bbd1-1966465cd0ba
+---
+data:
+  definition:
+  - content: platform for eBusiness centralized services
+  sources:
+  - origin:
+      ref:
+        source: CWA 18291:2025
+        id: '3.5'
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: eService platform
+  language_code: eng
+  annotations: []
+termid: dpp-0056
+id: 5263ce55-9ad6-50c9-b6aa-e262cb08485c

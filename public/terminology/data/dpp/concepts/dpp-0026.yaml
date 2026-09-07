@@ -1,0 +1,28 @@
+---
+data:
+  identifier: dpp-0026
+  domains:
+  - concept_id: section-identity-and-carriers
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: d605015c-c2b6-5090-bda2-6508a92be23d
+---
+data:
+  definition:
+  - content: code representing data in machine-readable form by a collection of polygonal
+      or circular cells in a regular pattern which are read optically by scanning
+  sources:
+  - origin:
+      ref:
+        source: EN 18220:2026
+        id: '3.17'
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: two-dimensional symbol
+  language_code: eng
+  annotations: []
+termid: dpp-0026
+id: 87bebefc-e16b-531b-80bb-b96979d8cd83

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tbx style="dca" type="TBX-Basic" xml:lang="en" xmlns="urn:iso:std:iso:30042:ed-2">
+  <tbxHeader>
+    <fileDesc>
+      <source>https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0095</source>
+    </fileDesc>
+  </tbxHeader>
+  <text>
+    <body>
+      <conceptEntry id="dpp-0095">
+      <languageSection xml:lang="eng">
+          <descrip type="definition">
+            <p>storing, accessing, transferring, and archiving of data</p>
+          </descrip>
+          <ref>EN 18216:2026 3.2</ref>
+          <ref>ISO 15531-43 3.1.5</ref>
+      </languageSection>
+      </conceptEntry>
+    </body>
+  </text>
+</tbx>

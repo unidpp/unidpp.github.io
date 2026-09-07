@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tbx style="dca" type="TBX-Basic" xml:lang="en" xmlns="urn:iso:std:iso:30042:ed-2">
+  <tbxHeader>
+    <fileDesc>
+      <source>https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0002</source>
+    </fileDesc>
+  </tbxHeader>
+  <text>
+    <body>
+      <conceptEntry id="dpp-0002">
+      <languageSection xml:lang="eng">
+          <descrip type="definition">
+            <p>information on digital product passport whose access is controlled based on the user's access rights</p>
+          </descrip>
+          <note type="note">User in the sense of a person who interacts with a system, product or service.</note>
+          <ref>EN 18239 (prEN 18239:2025) 3.1</ref>
+          <ref>EN 18216:2026 3.8</ref>
+      </languageSection>
+      </conceptEntry>
+    </body>
+  </text>
+</tbx>

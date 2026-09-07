@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tbx style="dca" type="TBX-Basic" xml:lang="en" xmlns="urn:iso:std:iso:30042:ed-2">
+  <tbxHeader>
+    <fileDesc>
+      <source>https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0033</source>
+    </fileDesc>
+  </tbxHeader>
+  <text>
+    <body>
+      <conceptEntry id="dpp-0033">
+      <languageSection xml:lang="eng">
+          <descrip type="definition">
+            <p>manufacturer, authorized representative, importer, distributor, dealer or fulfilment service provider</p>
+          </descrip>
+          <note type="note">Harmonization note (UniDPP): EN 18219:2026 and EN 18220:2026 add the qualifier “that places the product on the market”; see concept dpp-0032.</note>
+          <ref>EN 18221:2026 3.1</ref>
+      </languageSection>
+      </conceptEntry>
+    </body>
+  </text>
+</tbx>

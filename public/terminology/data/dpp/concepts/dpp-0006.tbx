@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tbx style="dca" type="TBX-Basic" xml:lang="en" xmlns="urn:iso:std:iso:30042:ed-2">
+  <tbxHeader>
+    <fileDesc>
+      <source>https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0006</source>
+    </fileDesc>
+  </tbxHeader>
+  <text>
+    <body>
+      <conceptEntry id="dpp-0006">
+      <languageSection xml:lang="eng">
+          <descrip type="definition">
+            <p>string of characters that is required to be unique among all identifiers used for all objects for a specific purpose</p>
+          </descrip>
+          <note type="note">A unique identifier refers to unique product identifier (3.1.25), unique economic operator identifier (3.1.22), and unique facility identifier (3.1.23).</note>
+          <note type="note">Harmonization note (UniDPP): CWA 18291:2025 defines “Unique Identifier” as an identifier which is guaranteed to be unique; see concept dpp-0007.</note>
+          <ref>EN 18219:2026 3.1.24</ref>
+          <ref>EN 18220:2026 3.18</ref>
+          <ref>ISO 29404:2015 3.26</ref>
+      </languageSection>
+      </conceptEntry>
+    </body>
+  </text>
+</tbx>

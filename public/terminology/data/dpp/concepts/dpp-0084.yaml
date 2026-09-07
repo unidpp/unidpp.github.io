@@ -1,0 +1,35 @@
+---
+data:
+  identifier: dpp-0084
+  domains:
+  - concept_id: section-trust-and-verification
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: fbfd5d9b-db4c-5c7f-8fbc-0e8803d17546
+---
+data:
+  definition:
+  - content: protection of system resources against unauthorized access; a process
+      by which use of system resources is regulated according to a security policy
+      and is permitted by only authorized entities (users, programs, processes, or
+      other systems) according to that policy
+  sources:
+  - origin:
+      ref:
+        source: 'IDTA-01001-3.2:2026 (Specification of the Asset Administration Shell
+          — Part 1: Metamodel)'
+        id: 1.1.1
+    type: authoritative
+  - origin:
+      ref:
+        source: IEC TS 62443-1-1
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: access control
+  language_code: eng
+  annotations: []
+termid: dpp-0084
+id: 2c745669-6a6c-51bb-9b9c-67189f46bed3

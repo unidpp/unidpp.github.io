@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tbx style="dca" type="TBX-Basic" xml:lang="en" xmlns="urn:iso:std:iso:30042:ed-2">
+  <tbxHeader>
+    <fileDesc>
+      <source>https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0013</source>
+    </fileDesc>
+  </tbxHeader>
+  <text>
+    <body>
+      <conceptEntry id="dpp-0013">
+      <languageSection xml:lang="eng">
+          <descrip type="definition">
+            <p>process to keep a unique identifier associated with an identified object throughout its life cycle</p>
+          </descrip>
+          <ref>EN 18219:2026 3.1.13</ref>
+          <ref>EN 18220:2026 3.12</ref>
+      </languageSection>
+      </conceptEntry>
+    </body>
+  </text>
+</tbx>

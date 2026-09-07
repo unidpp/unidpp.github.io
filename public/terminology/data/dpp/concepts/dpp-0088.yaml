@@ -1,0 +1,33 @@
+---
+data:
+  identifier: dpp-0088
+  domains:
+  - concept_id: section-semantics-and-profiles
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: 47506495-3116-51e4-ba08-41405c26588b
+---
+data:
+  definition:
+  - content: ability for data shared by systems to be understood at the level of fully
+      defined domain concepts
+  sources:
+  - origin:
+      ref:
+        source: EN 18223:2026
+        id: '3.2'
+    type: authoritative
+  - origin:
+      ref:
+        source: ISO 18308:2011
+        id: '3.45'
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: semantic interoperability
+  language_code: eng
+  annotations: []
+termid: dpp-0088
+id: a7abbe3b-67e6-5661-90c1-0d44fd312cad

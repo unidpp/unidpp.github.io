@@ -1,0 +1,32 @@
+---
+data:
+  identifier: dpp-0068
+  domains:
+  - concept_id: section-lifecycle-and-events
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: d96de650-1e9a-549a-a5ef-3ee9342f1f1a
+---
+data:
+  definition:
+  - content: ability to trace the history, application or location of an object in
+      a value chain
+  sources:
+  - origin:
+      ref:
+        source: CWA 18291:2025
+        id: '3.29'
+    type: authoritative
+  - origin:
+      ref:
+        source: UNECE Recommendation No. 46
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: traceability
+  language_code: eng
+  annotations: []
+termid: dpp-0068
+id: 43a2318b-a2ce-5a03-8aa7-bf0e46ba0b95

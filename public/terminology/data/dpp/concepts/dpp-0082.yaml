@@ -1,0 +1,36 @@
+---
+data:
+  identifier: dpp-0082
+  domains:
+  - concept_id: section-trust-and-verification
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: 955afceb-aa19-5ab0-99bc-63e16787e8a4
+---
+data:
+  definition:
+  - content: high-level statement about a characteristic of a product, or about a
+      process or an organization associated with that product (traceable asset). A
+      sustainability claim is a claim that covers one or multiple sustainability dimensions
+      (economic, environmental, social)
+  notes:
+  - content: In this document “sustainability claims” are referred to as just “claims”.
+  sources:
+  - origin:
+      ref:
+        source: CWA 18291:2025
+        id: '3.1'
+    type: authoritative
+  - origin:
+      ref:
+        source: UNECE Recommendation No. 46
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: claim
+  language_code: eng
+  annotations: []
+termid: dpp-0082
+id: c64748a3-c146-5349-9351-5b38517d5a7e

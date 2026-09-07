@@ -1,0 +1,35 @@
+---
+data:
+  identifier: dpp-0064
+  domains:
+  - concept_id: section-lifecycle-and-events
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: 6580e3e6-7805-58ea-8d08-d91926150e22
+---
+data:
+  definition:
+  - content: point in time during the life cycle at which a product or resource is
+      transferred by the holder to some other holder
+  examples:
+  - content: When an organization (e.g., shop or retailer) in possession of the product
+      considers it to be a waste since it hasn't or can't be sold.
+  sources:
+  - origin:
+      ref:
+        source: CWA 18291:2025
+        id: '3.26'
+    type: authoritative
+  - origin:
+      ref:
+        source: ISO 59004:2024
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: end-of-use
+  language_code: eng
+  annotations: []
+termid: dpp-0064
+id: b921e3c0-ecd1-5dc1-aad6-d563f5ab79ce

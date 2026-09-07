@@ -1,0 +1,27 @@
+---
+data:
+  identifier: dpp-0081
+  domains:
+  - concept_id: section-trust-and-verification
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: 2cdde174-d688-5463-9f39-c850a89e47db
+---
+data:
+  definition:
+  - content: RFID Privacy Impact Assessment Process
+  sources:
+  - origin:
+      ref:
+        source: EN 18220:2026
+        id: '3.13'
+    type: authoritative
+  terms:
+  - type: abbreviation
+    normative_status: preferred
+    designation: PIA
+  language_code: eng
+  annotations: []
+termid: dpp-0081
+id: 64dd4f32-a916-5b96-97f5-6e005ee0e64d

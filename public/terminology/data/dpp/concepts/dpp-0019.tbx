@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tbx style="dca" type="TBX-Basic" xml:lang="en" xmlns="urn:iso:std:iso:30042:ed-2">
+  <tbxHeader>
+    <fileDesc>
+      <source>https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0019</source>
+    </fileDesc>
+  </tbxHeader>
+  <text>
+    <body>
+      <conceptEntry id="dpp-0019">
+      <languageSection xml:lang="eng">
+          <descrip type="definition">
+            <p>identifier returned after uploading the unique identifiers and any other data required to the DPP registry</p>
+          </descrip>
+          <note type="example">Unique identifiers can be unique product identifier, unique facility identifier, unique operator identifier of the economic operator etc.</note>
+          <ref>EN 18222:2026 3.6</ref>
+      </languageSection>
+      </conceptEntry>
+    </body>
+  </text>
+</tbx>

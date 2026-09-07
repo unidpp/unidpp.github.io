@@ -1,0 +1,38 @@
+---
+data:
+  identifier: dpp-0059
+  domains:
+  - concept_id: section-lifecycle-and-events
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: d8489d09-c7d9-576b-abf2-56c77097df00
+---
+data:
+  definition:
+  - content: consecutive and interlinked stages of a product system, from raw material
+      acquisition or generation from natural resources to final disposal
+  sources:
+  - origin:
+      ref:
+        source: EN 18219:2026
+        id: 3.1.10
+    type: authoritative
+  - origin:
+      ref:
+        source: EN 18220:2026
+        id: '3.9'
+    type: authoritative
+  - origin:
+      ref:
+        source: ISO 14040:2006
+        id: '3.1'
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: life cycle
+  language_code: eng
+  annotations: []
+termid: dpp-0059
+id: 06d6d99b-57c6-55d3-bf7f-00ed1947128b

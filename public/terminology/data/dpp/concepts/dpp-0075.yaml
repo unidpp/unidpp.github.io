@@ -1,0 +1,31 @@
+---
+data:
+  identifier: dpp-0075
+  domains:
+  - concept_id: section-trust-and-verification
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: b3f895c3-3baf-526a-8a42-f1ff149a56d1
+---
+data:
+  definition:
+  - content: ability to recover from security compromises or attacks
+  sources:
+  - origin:
+      ref:
+        source: EN 18239 (prEN 18239:2025)
+        id: '3.2'
+    type: authoritative
+  - origin:
+      ref:
+        source: ISO/IEC 29180:2012
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: system resilience
+  language_code: eng
+  annotations: []
+termid: dpp-0075
+id: a1d37faf-5996-568b-a58d-8030237804f6

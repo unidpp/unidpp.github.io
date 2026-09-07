@@ -1,0 +1,31 @@
+---
+data:
+  identifier: dpp-0047
+  domains:
+  - concept_id: section-actors-and-issuance
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: 8f532d51-647c-5fe2-a3d1-925b96de2c6e
+---
+data:
+  definition:
+  - content: individual or entity purchasing goods or services
+  sources:
+  - origin:
+      ref:
+        source: CWA 18291:2025
+        id: '3.13'
+    type: authoritative
+  - origin:
+      ref:
+        source: ISO 24533-2:2022
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: buyer
+  language_code: eng
+  annotations: []
+termid: dpp-0047
+id: e6953f49-fb44-5968-86cb-10fcdb403aea

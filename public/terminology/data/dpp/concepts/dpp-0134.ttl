@@ -1,0 +1,10 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+<https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0134>
+  a skos:Concept ;
+  skos:notation "dpp-0134" ;
+  skos:prefLabel "custody transfer"@eng ;
+  skos:definition "signed ceremony recording the transfer of responsibility for an object between custodians, appended to the event chain by the custodian and the counterparty, which extends and never overwrites the trail across successive owners"@eng ;
+  skos:scopeNote "Custody links are social and control edges, orthogonal to structural composition: ownership changes while composition stays fixed."@eng
+ .

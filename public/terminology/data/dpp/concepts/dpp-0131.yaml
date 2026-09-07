@@ -1,0 +1,35 @@
+---
+data:
+  identifier: dpp-0131
+  domains:
+  - concept_id: section-framework-terms
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: 6d14edc6-c145-5898-9d39-8c501bb17932
+---
+data:
+  definition:
+  - content: carrier-embedded minimum viable passport, comprising the product identifier,
+      the resolver URI, the economic operator identifier, the status, the critical
+      safety or recall flag, the validity and multi-suite compressed signatures, sized
+      to the data carrier and verifiable offline against pre-cached trust anchors
+  notes:
+  - content: The three-tier degradation ladder comprises Tier A (carrier-embedded
+      minimum), Tier B (served full passport) and Tier C (archival).
+  - content: Stale or offline data degrades explicitly through freshness verdicts
+      and never passes silently.
+  sources:
+  - origin:
+      ref:
+        source: UniDPP PLAN (2026-09)
+        id: Composition, projection, and offline operation
+    type: lineage
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: Tier-A payload
+  language_code: eng
+  annotations: []
+termid: dpp-0131
+id: 28f47ea5-b0a3-5012-a913-a9002ff02f01

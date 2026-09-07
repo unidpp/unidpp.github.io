@@ -1,0 +1,37 @@
+---
+data:
+  identifier: dpp-0124
+  domains:
+  - concept_id: section-framework-terms
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: c0590f69-c0c6-5824-acb3-88bf4a5eeb8d
+---
+data:
+  definition:
+  - content: registered, versioned object that binds a set of data points, transforms,
+      cryptographic suites, trust requirements, access policies, presentation requirements
+      and a trigger predicate to the neutral core passport, constraining and transforming
+      — but never redefining — the single definition of each data point
+  notes:
+  - content: 'Composition is three-axial: jurisdiction × sector × characteristic.'
+  - content: Each profile is a projection function, view(twinState, profile, actor),
+      whose projection may transform and not merely select.
+  - content: Profiles constrain and transform; inter-profile disagreement is expected
+      and auditable, while intra-class contradiction is an integrity incident (single
+      definition, many constraints).
+  sources:
+  - origin:
+      ref:
+        source: UniDPP PLAN (2026-09)
+        id: Profiles and jurisdiction (stream 11)
+    type: lineage
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: profile
+  language_code: eng
+  annotations: []
+termid: dpp-0124
+id: 91f09786-7a76-52f8-8b6f-85bd270b7001

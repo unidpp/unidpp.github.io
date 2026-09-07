@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tbx style="dca" type="TBX-Basic" xml:lang="en" xmlns="urn:iso:std:iso:30042:ed-2">
+  <tbxHeader>
+    <fileDesc>
+      <source>https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0124</source>
+    </fileDesc>
+  </tbxHeader>
+  <text>
+    <body>
+      <conceptEntry id="dpp-0124">
+      <languageSection xml:lang="eng">
+          <descrip type="definition">
+            <p>registered, versioned object that binds a set of data points, transforms, cryptographic suites, trust requirements, access policies, presentation requirements and a trigger predicate to the neutral core passport, constraining and transforming — but never redefining — the single definition of each data point</p>
+          </descrip>
+          <note type="note">Composition is three-axial: jurisdiction × sector × characteristic.</note>
+          <note type="note">Each profile is a projection function, view(twinState, profile, actor), whose projection may transform and not merely select.</note>
+          <note type="note">Profiles constrain and transform; inter-profile disagreement is expected and auditable, while intra-class contradiction is an integrity incident (single definition, many constraints).</note>
+          <ref>UniDPP PLAN (2026-09) Profiles and jurisdiction (stream 11)</ref>
+      </languageSection>
+      </conceptEntry>
+    </body>
+  </text>
+</tbx>

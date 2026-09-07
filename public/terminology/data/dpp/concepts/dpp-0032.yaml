@@ -1,0 +1,38 @@
+---
+data:
+  identifier: dpp-0032
+  domains:
+  - concept_id: section-actors-and-issuance
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: c638ae41-bc2a-587e-bb95-0519dc1e985f
+---
+data:
+  definition:
+  - content: manufacturer, authorized representative, importer, distributor, dealer
+      or fulfilment service provider that places the product on the market
+  notes:
+  - content: 'Harmonization note (UniDPP): EN 18221:2026 defines “economic operator”
+      without the placing-on-the-market qualifier; see concept dpp-0033.'
+  sources:
+  - origin:
+      ref:
+        source: EN 18219:2026
+        id: 3.1.5
+    type: authoritative
+  - origin:
+      ref:
+        source: EN 18220:2026
+        id: '3.7'
+    type: authoritative
+    modification: The source prints “places the product onto the market”; the definition
+      is equivalent.
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: economic operator
+  language_code: eng
+  annotations: []
+termid: dpp-0032
+id: 78ce4178-5a39-5700-8e92-10ba40bdde3d

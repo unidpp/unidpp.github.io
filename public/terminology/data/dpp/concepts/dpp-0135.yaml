@@ -1,0 +1,35 @@
+---
+data:
+  identifier: dpp-0135
+  domains:
+  - concept_id: section-framework-terms
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: cd856564-4fa4-57a8-8f70-9481f17efa5e
+---
+data:
+  definition:
+  - content: identifier recorded at the finest available granularity for an object
+      class for which no passport regime yet exists, held as issuance evidence for
+      adoption by a future regime
+  notes:
+  - content: When a future regime issues passports for the object class it adopts
+      the recorded dormant identifiers rather than minting new ones, so that the installed
+      base connects retroactively through its build records.
+  - content: Inputs are recorded even when no passport exists behind them yet; minting
+      fresh identifiers would orphan the installed base.
+  sources:
+  - origin:
+      ref:
+        source: UniDPP PLAN (2026-09)
+        id: The passport relationship algebra; deepening granularity
+    type: lineage
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: dormant identifier
+  language_code: eng
+  annotations: []
+termid: dpp-0135
+id: 9551c013-148e-5800-9b00-5e4760edb4af

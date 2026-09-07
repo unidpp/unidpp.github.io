@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tbx style="dca" type="TBX-Basic" xml:lang="en" xmlns="urn:iso:std:iso:30042:ed-2">
+  <tbxHeader>
+    <fileDesc>
+      <source>https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0003</source>
+    </fileDesc>
+  </tbxHeader>
+  <text>
+    <body>
+      <conceptEntry id="dpp-0003">
+      <languageSection xml:lang="eng">
+          <descrip type="definition">
+            <p>unique string of characters for the identification of a product that also enables a web link to the digital product passport</p>
+          </descrip>
+          <ref>EN 18246 (prEN 18246:2025) 3.3</ref>
+          <ref>EN 18219:2026</ref>
+      </languageSection>
+      </conceptEntry>
+    </body>
+  </text>
+</tbx>

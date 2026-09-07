@@ -1,0 +1,33 @@
+---
+data:
+  identifier: dpp-0107
+  domains:
+  - concept_id: section-semantics-and-profiles
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: eafb94e0-1aef-50db-8d6a-5f71ab81819d
+---
+data:
+  definition:
+  - content: commonly used concept, like numbers (e.g. 109, 25) which do not need
+      lookup in dictionaries
+  sources:
+  - origin:
+      ref:
+        source: 'IDTA-01001-3.2:2026 (Specification of the Asset Administration Shell
+          — Part 1: Metamodel)'
+        id: 1.1.13
+    type: authoritative
+  - origin:
+      ref:
+        source: ECLASS
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: explicit value
+  language_code: eng
+  annotations: []
+termid: dpp-0107
+id: 757d1bc6-e347-53ab-9148-aed2ee486d15

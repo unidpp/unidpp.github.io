@@ -1,0 +1,34 @@
+---
+data:
+  identifier: dpp-0029
+  domains:
+  - concept_id: section-identity-and-carriers
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: 07bf6c51-cb76-5dfc-a6d0-5e1c586bb7af
+---
+data:
+  definition:
+  - content: single unit of a model (3.1.11)
+  sources:
+  - origin:
+      ref:
+        source: EN 18219:2026
+        id: 3.1.9
+    type: authoritative
+  - origin:
+      ref:
+        source: EN 18220:2026
+        id: '3.8'
+    type: authoritative
+    modification: Internal cross-reference decoration differs (“term 3.10”); the definition
+      is equivalent.
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: item
+  language_code: eng
+  annotations: []
+termid: dpp-0029
+id: 4d7b3105-5c32-5c74-8821-02051caccd90

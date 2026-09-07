@@ -1,0 +1,31 @@
+---
+data:
+  identifier: dpp-0054
+  domains:
+  - concept_id: section-actors-and-issuance
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: 7dc93e56-ac3e-5199-b062-086e47bb8b10
+---
+data:
+  definition:
+  - content: actor involved in separate collection of textiles
+  sources:
+  - origin:
+      ref:
+        source: CWA 18291:2025
+        id: '3.20'
+    type: authoritative
+  - origin:
+      ref:
+        source: ISO 5157:2023
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: textile collector
+  language_code: eng
+  annotations: []
+termid: dpp-0054
+id: c02d5831-0f9b-54a9-a148-e55ac054b02e

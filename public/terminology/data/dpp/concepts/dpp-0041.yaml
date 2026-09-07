@@ -1,0 +1,33 @@
+---
+data:
+  identifier: dpp-0041
+  domains:
+  - concept_id: section-actors-and-issuance
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: b8f9a170-fc71-59b6-9e2a-270cc8a22226
+---
+data:
+  definition:
+  - content: organization or person that receives a product
+  notes:
+  - content: 'The customer may be the user or a distributor [SOURCE: ISO 9000].'
+  sources:
+  - origin:
+      ref:
+        source: CWA 18291:2025
+        id: '3.23'
+    type: authoritative
+  - origin:
+      ref:
+        source: ISO 9000
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: customer
+  language_code: eng
+  annotations: []
+termid: dpp-0041
+id: 13a8dd97-aabc-5a69-b489-7868ee10eb28

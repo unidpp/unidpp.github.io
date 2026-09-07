@@ -1,0 +1,28 @@
+---
+data:
+  identifier: dpp-0077
+  domains:
+  - concept_id: section-trust-and-verification
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: 3220a446-999e-5696-a27e-8efbde1eca16
+---
+data:
+  definition:
+  - content: ability to maintain business continuity despite adverse conditions, attacks,
+      or compromises on critical data flow and related information systems
+  sources:
+  - origin:
+      ref:
+        source: EN 18239 (prEN 18239:2025)
+        id: '3.4'
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: cyber resilience
+  language_code: eng
+  annotations: []
+termid: dpp-0077
+id: 6a870c0d-613e-5837-b23b-050176b86a8d

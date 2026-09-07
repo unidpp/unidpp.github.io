@@ -1,0 +1,32 @@
+---
+data:
+  identifier: dpp-0091
+  domains:
+  - concept_id: section-semantics-and-profiles
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: 5f95c2f5-9ad2-5e5a-920a-d25c5985c445
+---
+data:
+  definition:
+  - content: service that allows for interaction with resources via a stateless, client-server
+      architecture, typically using standard HTTP calls like GET, POST, PUT, and DELETE
+      to perform methods (3.3) by an application component on these resources
+  sources:
+  - origin:
+      ref:
+        source: EN 18222:2026
+        id: 3.1.1
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: representational state transfer application programming interface
+  - type: abbreviation
+    normative_status: preferred
+    designation: REST API
+  language_code: eng
+  annotations: []
+termid: dpp-0091
+id: 297e5693-3575-5a80-a764-5bf2bea0e760

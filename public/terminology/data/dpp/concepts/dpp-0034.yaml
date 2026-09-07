@@ -1,0 +1,31 @@
+---
+data:
+  identifier: dpp-0034
+  domains:
+  - concept_id: section-actors-and-issuance
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: 802d5e47-b78c-55f5-ad1c-7982e624d1b0
+---
+data:
+  definition:
+  - content: natural or legal person that is an independent third party authorized
+      by the economic operator (3.1) that places the product on the market or puts
+      it into service and that processes the digital product passport data for that
+      product for the purpose of making such data available to economic operators
+      and other relevant actors with a right to access those data
+  sources:
+  - origin:
+      ref:
+        source: EN 18221:2026
+        id: '3.3'
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: digital product passport service provider
+  language_code: eng
+  annotations: []
+termid: dpp-0034
+id: '0297f0e2-9269-530b-9adf-16797a36dda8'

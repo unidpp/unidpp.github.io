@@ -1,0 +1,28 @@
+---
+data:
+  identifier: dpp-0058
+  domains:
+  - concept_id: section-actors-and-issuance
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: 3c9688b9-616b-5393-91f4-e1e28417f17a
+---
+data:
+  definition:
+  - content: platform dedicated to sustainability data collection, management and
+      reporting
+  sources:
+  - origin:
+      ref:
+        source: CWA 18291:2025
+        id: '3.7'
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: sustainability management platform
+  language_code: eng
+  annotations: []
+termid: dpp-0058
+id: a2de5613-0cd2-5774-a40c-1a15aa9cd58d

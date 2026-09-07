@@ -1,0 +1,47 @@
+---
+data:
+  identifier: dpp-0040
+  domains:
+  - concept_id: section-actors-and-issuance
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: b9a6ea8b-1d41-5bfe-901b-322544f2eb2e
+---
+data:
+  definition:
+  - content: individual member of the general public purchasing or using goods, property
+      or services for private purposes
+  sources:
+  - origin:
+      ref:
+        source: EN 18219:2026
+        id: 3.1.2
+    type: authoritative
+  - origin:
+      ref:
+        source: EN 18220:2026
+        id: '3.4'
+    type: authoritative
+  - origin:
+      ref:
+        source: CWA 18291:2025
+        id: '3.24'
+    type: authoritative
+  - origin:
+      ref:
+        source: EN ISO 14025:2010
+        id: '3.16'
+    type: authoritative
+  - origin:
+      ref:
+        source: ISO 14025:2006
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: consumer
+  language_code: eng
+  annotations: []
+termid: dpp-0040
+id: 8aff4fd0-f5b9-5977-a934-14dc735faa63

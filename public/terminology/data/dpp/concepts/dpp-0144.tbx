@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tbx style="dca" type="TBX-Basic" xml:lang="en" xmlns="urn:iso:std:iso:30042:ed-2">
+  <tbxHeader>
+    <fileDesc>
+      <source>https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0144</source>
+    </fileDesc>
+  </tbxHeader>
+  <text>
+    <body>
+      <conceptEntry id="dpp-0144">
+      <languageSection xml:lang="eng">
+          <descrip type="definition">
+            <p>component recovered from an installation (concept dpp-0142) in the harvestable state of the recoverability spectrum (concept dpp-0143), which continues to carry its own identity, harvested status and the parent history accumulated during installation</p>
+          </descrip>
+          <note type="note">Installation history is value-relevant provenance: a harvested battery sold standalone carries its service interval and removal reason, and the used-parts market runs on this.</note>
+          <note type="note">A harvested part is second-hand-once-removed: no longer sellable as new, with warranty scope and service economics that rode the parent during installation.</note>
+          <ref>UniDPP PLAN (2026-09) The passport relationship algebra (association / derivation / installation / membership)</ref>
+      </languageSection>
+      </conceptEntry>
+    </body>
+  </text>
+</tbx>

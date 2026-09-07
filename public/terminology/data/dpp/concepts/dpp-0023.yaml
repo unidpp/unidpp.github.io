@@ -1,0 +1,30 @@
+---
+data:
+  identifier: dpp-0023
+  domains:
+  - concept_id: section-identity-and-carriers
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: 8ee4ce82-4611-501d-921f-037eaa3af2a1
+---
+data:
+  definition:
+  - content: subset of HF passive radio-frequency identification with low range
+  sources:
+  - origin:
+      ref:
+        source: EN 18220:2026
+        id: '3.11'
+    type: authoritative
+  terms:
+  - type: abbreviation
+    normative_status: preferred
+    designation: NFC
+  - type: expression
+    normative_status: admitted
+    designation: near field communication
+  language_code: eng
+  annotations: []
+termid: dpp-0023
+id: 4dbe86f3-f5fa-5273-806f-8acaadc869ec

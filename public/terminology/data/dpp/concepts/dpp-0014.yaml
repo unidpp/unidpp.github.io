@@ -1,0 +1,28 @@
+---
+data:
+  identifier: dpp-0014
+  domains:
+  - concept_id: section-identity-and-carriers
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: ef7eb617-dd52-5f50-a57e-b5692bb156bd
+---
+data:
+  definition:
+  - content: activity of ensuring that a unique identifier and its denotation remain
+      stable, valid, and retrievable for as long as required
+  sources:
+  - origin:
+      ref:
+        source: EN 18219:2026
+        id: 3.1.15
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: preservation
+  language_code: eng
+  annotations: []
+termid: dpp-0014
+id: 9727c6bd-bcb7-5a69-9272-33f583499a65

@@ -1,0 +1,28 @@
+---
+data:
+  identifier: dpp-0046
+  domains:
+  - concept_id: section-actors-and-issuance
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: 9f8a41f8-764d-5be5-9bdb-a0e899708556
+---
+data:
+  definition:
+  - content: company or company function that performs activities as a sub-contractor
+      (for example cutting/sewing operations but also dyeing)
+  sources:
+  - origin:
+      ref:
+        source: CWA 18291:2025
+        id: '3.12'
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: subcontractor
+  language_code: eng
+  annotations: []
+termid: dpp-0046
+id: 4add2e10-0f2c-5033-9dfb-6c525d0eaa04

@@ -1,0 +1,35 @@
+---
+data:
+  identifier: dpp-0112
+  domains:
+  - concept_id: section-semantics-and-profiles
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: 66b99593-bf10-571f-9d3b-88238121a798
+---
+data:
+  definition:
+  - content: well-defined element associated with a property instance or SubmodelElement,
+      restricting the value statement to a certain period of time or use case
+  notes:
+  - content: Qualifiers can have associated values.
+  sources:
+  - origin:
+      ref:
+        source: 'IDTA-01001-3.2:2026 (Specification of the Asset Administration Shell
+          — Part 1: Metamodel)'
+        id: 1.1.19
+    type: authoritative
+  - origin:
+      ref:
+        source: IEC 62569-1
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: qualifier
+  language_code: eng
+  annotations: []
+termid: dpp-0112
+id: 5a665b87-51a9-5ed1-b14a-ff4a43cb42f1

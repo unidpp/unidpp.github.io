@@ -1,0 +1,35 @@
+---
+data:
+  identifier: dpp-0085
+  domains:
+  - concept_id: section-trust-and-verification
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: c364a2f5-1936-53b5-ae67-561f0aae1e1e
+---
+data:
+  definition:
+  - content: structured data set containing the header, payload, signature and optional
+      data fields
+  notes:
+  - content: The payload type and issuer identity are included in the header.
+  - content: An ESDC is a machine-readable code.
+  - content: An ESDC can contain non-signed data elements.
+  sources:
+  - origin:
+      ref:
+        source: EN 18246 (prEN 18246:2025)
+        id: '3.1'
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: electronically signed data construct
+  - type: abbreviation
+    normative_status: preferred
+    designation: ESDC
+  language_code: eng
+  annotations: []
+termid: dpp-0085
+id: 709cbbcc-f505-509c-85e1-e914d273089b

@@ -1,0 +1,11 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+<https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0025>
+  a skos:Concept ;
+  skos:notation "dpp-0025" ;
+  skos:prefLabel "RAIN RFID"@eng ;
+  skos:altLabel "UHF RFID"@eng ;
+  skos:definition "passive UHF radio-frequency identification (term 3.15)"@eng ;
+  skos:scopeNote "Source entry heading: “RAIN RFID (UHF RFID) per ISO/IEC 18000-63”."@eng
+ .

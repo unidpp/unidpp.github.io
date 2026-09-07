@@ -1,0 +1,36 @@
+---
+data:
+  identifier: dpp-0021
+  domains:
+  - concept_id: section-identity-and-carriers
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: c7ce0e5d-2ffd-55e4-ac6e-f272f0db72e1
+---
+data:
+  definition:
+  - content: additional application, program, or tool that a user will install or
+      access separately from the default setup of most smartphones or similar devices
+      to interact with the digital product passport
+  examples:
+  - content: Proprietary applications, plugins or extensions, dedicated apps, specialized
+      middleware, or customized software readers.
+  notes:
+  - content: Standard functionalities, such as web browsers, camera-based QR readers,
+      and universal communication protocols (e.g. DNS, HTTP, HTTPS), are not considered
+      as additional software.
+  sources:
+  - origin:
+      ref:
+        source: EN 18220:2026
+        id: '3.1'
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: additional software
+  language_code: eng
+  annotations: []
+termid: dpp-0021
+id: 4261f31b-e21c-5afe-87cb-1fa93c3ed233

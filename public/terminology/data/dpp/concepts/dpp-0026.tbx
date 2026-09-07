@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tbx style="dca" type="TBX-Basic" xml:lang="en" xmlns="urn:iso:std:iso:30042:ed-2">
+  <tbxHeader>
+    <fileDesc>
+      <source>https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0026</source>
+    </fileDesc>
+  </tbxHeader>
+  <text>
+    <body>
+      <conceptEntry id="dpp-0026">
+      <languageSection xml:lang="eng">
+          <descrip type="definition">
+            <p>code representing data in machine-readable form by a collection of polygonal or circular cells in a regular pattern which are read optically by scanning</p>
+          </descrip>
+          <ref>EN 18220:2026 3.17</ref>
+      </languageSection>
+      </conceptEntry>
+    </body>
+  </text>
+</tbx>

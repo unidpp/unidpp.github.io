@@ -1,0 +1,32 @@
+---
+data:
+  identifier: dpp-0098
+  domains:
+  - concept_id: section-semantics-and-profiles
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: 76f50d8e-df7b-586b-957f-b30d070a02ae
+---
+data:
+  definition:
+  - content: data element of a property, a relation, or a class in information technology
+  sources:
+  - origin:
+      ref:
+        source: 'IDTA-01001-3.2:2026 (Specification of the Asset Administration Shell
+          — Part 1: Metamodel)'
+        id: 1.1.4
+    type: authoritative
+  - origin:
+      ref:
+        source: IEC 63278-1:2023; ISO/IEC Guide 77-2; ISO/IEC 27460; IEC 61360
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: attribute
+  language_code: eng
+  annotations: []
+termid: dpp-0098
+id: 3410104c-43a0-5a3f-9ed6-1db663f49da7

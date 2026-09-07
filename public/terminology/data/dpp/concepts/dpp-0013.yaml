@@ -1,0 +1,33 @@
+---
+data:
+  identifier: dpp-0013
+  domains:
+  - concept_id: section-identity-and-carriers
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: 39bbdb06-94c0-515b-af47-6c73e822c257
+---
+data:
+  definition:
+  - content: process to keep a unique identifier associated with an identified object
+      throughout its life cycle
+  sources:
+  - origin:
+      ref:
+        source: EN 18219:2026
+        id: 3.1.13
+    type: authoritative
+  - origin:
+      ref:
+        source: EN 18220:2026
+        id: '3.12'
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: persistence
+  language_code: eng
+  annotations: []
+termid: dpp-0013
+id: 01d13538-5a95-5350-b783-ad3647c649d3

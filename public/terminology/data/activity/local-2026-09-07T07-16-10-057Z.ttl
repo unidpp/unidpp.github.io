@@ -1,0 +1,19 @@
+@prefix prov: <http://www.w3.org/ns/prov#>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix gloss: <https://www.glossarist.org/ontologies/>.
+
+<https://www.glossarist.org/dpp/activity/build/local-2026-09-07T07-16-10-057Z> a prov:Activity;
+    prov:generatedAtTime "2026-09-07T07:16:10.057Z"^^xsd:dateTime;
+    prov:used <https://www.glossarist.org/dpp/dpp/>, <https://www.glossarist.org/dpp/tool/concept-browser/0.7.129>;
+    gloss:conceptCount 146.
+<https://www.glossarist.org/dpp/activity/build/local-2026-09-07T07-16-10-057Z/end> a prov:EndingPoint;
+    prov:atTime "2026-09-07T07:16:10.057Z"^^xsd:dateTime.
+<https://www.glossarist.org/dpp/activity/build/local-2026-09-07T07-16-10-057Z/start> a prov:StartingPoint;
+    prov:atTime "2026-09-07T07:15:10.057Z"^^xsd:dateTime.
+<https://www.glossarist.org/dpp/tool/concept-browser/0.7.129> dcterms:identifier "0.7.129";
+    a prov:Entity, prov:SoftwareAgent;
+    prov:version "0.7.129".

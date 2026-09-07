@@ -1,0 +1,1 @@
+function e(e,t){let n=e.names||{};return n[t]||n.eng||e.id}function t(e,t){let n=e.names||{},r=n[t]||n.eng||``,i=e.id;return r?r===i||r===i.replace(/_/g,` `)?r:`${i} — ${r}`:i}export{e as n,t};

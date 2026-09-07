@@ -1,0 +1,27 @@
+---
+data:
+  identifier: dpp-0016
+  domains:
+  - concept_id: section-identity-and-carriers
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: 8d34d3b6-338b-58ac-bd1e-fa2995b95a1c
+---
+data:
+  definition:
+  - content: system or service that performs resolution (3.1.18)
+  sources:
+  - origin:
+      ref:
+        source: EN 18219:2026
+        id: 3.1.19
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: resolver
+  language_code: eng
+  annotations: []
+termid: dpp-0016
+id: cba1053d-6f8a-5a62-8b67-2fc9e8b8ba3a

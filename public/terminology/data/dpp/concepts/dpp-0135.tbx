@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tbx style="dca" type="TBX-Basic" xml:lang="en" xmlns="urn:iso:std:iso:30042:ed-2">
+  <tbxHeader>
+    <fileDesc>
+      <source>https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0135</source>
+    </fileDesc>
+  </tbxHeader>
+  <text>
+    <body>
+      <conceptEntry id="dpp-0135">
+      <languageSection xml:lang="eng">
+          <descrip type="definition">
+            <p>identifier recorded at the finest available granularity for an object class for which no passport regime yet exists, held as issuance evidence for adoption by a future regime</p>
+          </descrip>
+          <note type="note">When a future regime issues passports for the object class it adopts the recorded dormant identifiers rather than minting new ones, so that the installed base connects retroactively through its build records.</note>
+          <note type="note">Inputs are recorded even when no passport exists behind them yet; minting fresh identifiers would orphan the installed base.</note>
+          <ref>UniDPP PLAN (2026-09) The passport relationship algebra; deepening granularity</ref>
+      </languageSection>
+      </conceptEntry>
+    </body>
+  </text>
+</tbx>

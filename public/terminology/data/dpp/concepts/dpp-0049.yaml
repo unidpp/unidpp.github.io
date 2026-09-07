@@ -1,0 +1,29 @@
+---
+data:
+  identifier: dpp-0049
+  domains:
+  - concept_id: section-actors-and-issuance
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: 01c2a778-4905-5b6e-bb21-21edc739a933
+---
+data:
+  definition:
+  - content: company or company function that produces non final products (accessories,
+      fabrics, yarns…); its industrial process has in input materials and in output
+      components for the business customers
+  sources:
+  - origin:
+      ref:
+        source: CWA 18291:2025
+        id: '3.15'
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: supplier
+  language_code: eng
+  annotations: []
+termid: dpp-0049
+id: cbc30abc-ab51-5d4b-85f9-6049fe9d43e0

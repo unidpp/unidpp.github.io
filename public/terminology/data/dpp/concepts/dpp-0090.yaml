@@ -1,0 +1,31 @@
+---
+data:
+  identifier: dpp-0090
+  domains:
+  - concept_id: section-semantics-and-profiles
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: 56accf98-43d3-5aac-abd9-8b6a2ae20615
+---
+data:
+  definition:
+  - content: set of methods (3.3) provided by an application component for use by
+      other application components
+  sources:
+  - origin:
+      ref:
+        source: EN 18222:2026
+        id: '3.1'
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: application programming interface
+  - type: abbreviation
+    normative_status: preferred
+    designation: API
+  language_code: eng
+  annotations: []
+termid: dpp-0090
+id: 102aa112-d856-5b4c-99b6-8c8ca16e9024

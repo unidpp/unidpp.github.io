@@ -1,0 +1,28 @@
+---
+data:
+  identifier: dpp-0074
+  domains:
+  - concept_id: section-trust-and-verification
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: f59c37de-3cc2-5f1d-a28d-f1f5ae67da58
+---
+data:
+  definition:
+  - content: mechanism of transmitting data between systems in a way that ensures
+      its confidentiality, integrity and authenticity
+  sources:
+  - origin:
+      ref:
+        source: EN 18216:2026
+        id: '3.6'
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: secure communication
+  language_code: eng
+  annotations: []
+termid: dpp-0074
+id: 99e8328b-dbc2-5a29-8fe5-a1b8c2716ef0

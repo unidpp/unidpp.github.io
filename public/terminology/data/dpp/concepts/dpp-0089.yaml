@@ -1,0 +1,28 @@
+---
+data:
+  identifier: dpp-0089
+  domains:
+  - concept_id: section-semantics-and-profiles
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: e66e2a38-b691-5b31-baf5-db4a9c5b184d
+---
+data:
+  definition:
+  - content: ability that covers the applications and infrastructures linking systems
+      and services
+  sources:
+  - origin:
+      ref:
+        source: EN 18223:2026
+        id: '3.3'
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: technical interoperability
+  language_code: eng
+  annotations: []
+termid: dpp-0089
+id: 01becedf-317b-52eb-b115-1d47e793497b

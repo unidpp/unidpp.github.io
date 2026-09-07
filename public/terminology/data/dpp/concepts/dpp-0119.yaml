@@ -1,0 +1,35 @@
+---
+data:
+  identifier: dpp-0119
+  domains:
+  - concept_id: section-semantics-and-profiles
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: b25ea38c-41c5-52b7-83e1-8cda21ba41b5
+---
+data:
+  definition:
+  - content: specification of the common features of an object in sufficient detail
+      that such object can be instantiated using it
+  notes:
+  - content: Object can be anything that has a type.
+  sources:
+  - origin:
+      ref:
+        source: 'IDTA-01001-3.2:2026 (Specification of the Asset Administration Shell
+          — Part 1: Metamodel)'
+        id: 1.1.26
+    type: authoritative
+  - origin:
+      ref:
+        source: ISO/IEC 10746-2
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: template
+  language_code: eng
+  annotations: []
+termid: dpp-0119
+id: 8550b34f-aebc-53c1-abfc-740c260ec1e2

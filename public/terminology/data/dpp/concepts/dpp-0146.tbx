@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tbx style="dca" type="TBX-Basic" xml:lang="en" xmlns="urn:iso:std:iso:30042:ed-2">
+  <tbxHeader>
+    <fileDesc>
+      <source>https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0146</source>
+    </fileDesc>
+  </tbxHeader>
+  <text>
+    <body>
+      <conceptEntry id="dpp-0146">
+      <languageSection xml:lang="eng">
+          <descrip type="definition">
+            <p>state of a subject reconstructed from its event-sourced record at a specified past time, anchored by a notarized snapshot so that queries can answer what was legally true at that time</p>
+          </descrip>
+          <note type="note">The two authoritative query modes are the live view (freshness-labelled) and the notarized as-of snapshot (log-anchored); legal purpose selects the mode.</note>
+          <note type="note">Transformation events hash-link their inputs by as-of state hash (concept dpp-0129), and profile-version bindings recorded as lifecycle events make manifest history as-of-reconstructable, answering questions such as whether a product was compliant when sold.</note>
+          <note type="note">Mirrors and caches are always as-of stamped; the projection (concept dpp-0126) is computed from the record, so as-of queries are reproducible.</note>
+          <ref>UniDPP PLAN (2026-09) Composition, projection, and offline operation</ref>
+      </languageSection>
+      </conceptEntry>
+    </body>
+  </text>
+</tbx>

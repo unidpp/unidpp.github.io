@@ -1,0 +1,29 @@
+---
+data:
+  identifier: dpp-0093
+  domains:
+  - concept_id: section-semantics-and-profiles
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: a34c4754-11a9-5cf5-b39d-6b86ab17797c
+---
+data:
+  definition:
+  - content: data provided by a client, that is needed to perform a method (3.3)
+  examples:
+  - content: DPP ID for read DPP
+  sources:
+  - origin:
+      ref:
+        source: EN 18222:2026
+        id: '3.4'
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: parameter
+  language_code: eng
+  annotations: []
+termid: dpp-0093
+id: fe72757c-80d0-5e2f-bf59-aa1a29465ac0

@@ -1,0 +1,29 @@
+---
+data:
+  identifier: dpp-0094
+  domains:
+  - concept_id: section-semantics-and-profiles
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: 804eaa12-c605-5092-b47b-beffeac3e6de
+---
+data:
+  definition:
+  - content: return value after the execution of a method (3.3)
+  examples:
+  - content: the DPP
+  sources:
+  - origin:
+      ref:
+        source: EN 18222:2026
+        id: '3.5'
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: result
+  language_code: eng
+  annotations: []
+termid: dpp-0094
+id: 9783d57a-032e-5ce1-8ad3-f9af11baffc8

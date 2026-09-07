@@ -1,0 +1,39 @@
+---
+data:
+  identifier: dpp-0141
+  domains:
+  - concept_id: section-framework-terms
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: 4d76dc70-ffbb-5b79-8b4a-d567bbe62384
+---
+data:
+  definition:
+  - content: declared component of a profile stating the conditions under which the
+      profile applies, evaluated against the facts of the digital twin rather than
+      against who declares them
+  notes:
+  - content: Characteristic profiles (concept dpp-0125) attach by predicate on twin
+      facts — age, material content, heritage status, market status — rather than
+      by law-of-place or industry.
+  - content: 'Predicate triggers include time predicates: an object becoming older
+      than a given age is a clock-fired applicability event, handled by the dated-binding
+      machinery so that applicability attaches without human declaration.'
+  - content: The expression "characteristic profile trigger" denotes this predicate
+      as used by a characteristic profile and is folded into this concept rather than
+      recorded separately.
+  sources:
+  - origin:
+      ref:
+        source: UniDPP PLAN (2026-09)
+        id: The regional/national profile model (stream 11)
+    type: lineage
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: trigger predicate
+  language_code: eng
+  annotations: []
+termid: dpp-0141
+id: f25ab8bc-3d3e-5d75-96b1-958d58ce37d7

@@ -1,0 +1,36 @@
+---
+data:
+  identifier: dpp-0127
+  domains:
+  - concept_id: section-framework-terms
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: 1096f5a8-8a4e-59d3-a0e4-7b6d3e3cb36b
+---
+data:
+  definition:
+  - content: profile conceived as a calibrated measuring instrument placed on the
+      digital twin, which selects and transforms without altering the observed scene
+  notes:
+  - content: 'The mount — the profile interface on the neutral core — is the standardized
+      element: any registered lens by any maker attaches to it.'
+  - content: A lens publishes its calibration (version and cited rules), its uncertainty
+      and its decision rules; it is subject to pattern approval at registration and
+      to periodic re-verification through conformance runs.
+  - content: Verification path-finds from any render through the lens and its fact
+      chain to an anchor in the verifier's trust bundle.
+  sources:
+  - origin:
+      ref:
+        source: UniDPP PLAN (2026-09)
+        id: The lens model
+    type: lineage
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: lens
+  language_code: eng
+  annotations: []
+termid: dpp-0127
+id: 6a12ae6c-5d4c-5bd7-aacf-dda85780d161

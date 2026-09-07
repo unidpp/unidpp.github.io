@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tbx style="dca" type="TBX-Basic" xml:lang="en" xmlns="urn:iso:std:iso:30042:ed-2">
+  <tbxHeader>
+    <fileDesc>
+      <source>https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0108</source>
+    </fileDesc>
+  </tbxHeader>
+  <text>
+    <body>
+      <conceptEntry id="dpp-0108">
+      <languageSection xml:lang="eng">
+          <descrip type="definition">
+            <p>concrete, clearly identifiable component of a certain type</p>
+          </descrip>
+          <note type="note">An individual entity of a type, for example a device, is obtained by defining specific property values.</note>
+          <note type="note">In an object-oriented view, an instance denotes an object of a class (of a type).</note>
+          <ref>IDTA-01001-3.2:2026 (Specification of the Asset Administration Shell — Part 1: Metamodel) 1.1.15</ref>
+          <ref>IEC 62890:2016, 3.1.16 65/617/CDV</ref>
+      </languageSection>
+      </conceptEntry>
+    </body>
+  </text>
+</tbx>

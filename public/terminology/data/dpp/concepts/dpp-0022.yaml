@@ -1,0 +1,30 @@
+---
+data:
+  identifier: dpp-0022
+  domains:
+  - concept_id: section-identity-and-carriers
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: 52990e5e-9345-5991-a2e8-e640471c46d7
+---
+data:
+  definition:
+  - content: printed data carrier indicating either a reference to a linear or a 2D
+      matrix
+  notes:
+  - content: It excludes RFID data carriers.
+  sources:
+  - origin:
+      ref:
+        source: EN 18220:2026
+        id: '3.2'
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: barcode
+  language_code: eng
+  annotations: []
+termid: dpp-0022
+id: 4073a33a-7cc2-5169-be9a-8ad29ad78e00

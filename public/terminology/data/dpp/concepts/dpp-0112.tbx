@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tbx style="dca" type="TBX-Basic" xml:lang="en" xmlns="urn:iso:std:iso:30042:ed-2">
+  <tbxHeader>
+    <fileDesc>
+      <source>https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0112</source>
+    </fileDesc>
+  </tbxHeader>
+  <text>
+    <body>
+      <conceptEntry id="dpp-0112">
+      <languageSection xml:lang="eng">
+          <descrip type="definition">
+            <p>well-defined element associated with a property instance or SubmodelElement, restricting the value statement to a certain period of time or use case</p>
+          </descrip>
+          <note type="note">Qualifiers can have associated values.</note>
+          <ref>IDTA-01001-3.2:2026 (Specification of the Asset Administration Shell — Part 1: Metamodel) 1.1.19</ref>
+          <ref>IEC 62569-1</ref>
+      </languageSection>
+      </conceptEntry>
+    </body>
+  </text>
+</tbx>

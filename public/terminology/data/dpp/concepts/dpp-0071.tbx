@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tbx style="dca" type="TBX-Basic" xml:lang="en" xmlns="urn:iso:std:iso:30042:ed-2">
+  <tbxHeader>
+    <fileDesc>
+      <source>https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0071</source>
+    </fileDesc>
+  </tbxHeader>
+  <text>
+    <body>
+      <conceptEntry id="dpp-0071">
+      <languageSection xml:lang="eng">
+          <descrip type="definition">
+            <p>product made mainly of textile fibres, yarns and/or fabrics and intended to be used, as such or in conjunction with other textile or non-textile elements</p>
+          </descrip>
+          <note type="note">These articles can contain non-textile parts, such as plastics (e.g. buttons and membrane or coatings) or metals.</note>
+          <note type="note">Source entry heading: “textile product – product”.</note>
+          <ref>CWA 18291:2025 3.4</ref>
+          <ref>ISO 5157:2023</ref>
+      </languageSection>
+      </conceptEntry>
+    </body>
+  </text>
+</tbx>

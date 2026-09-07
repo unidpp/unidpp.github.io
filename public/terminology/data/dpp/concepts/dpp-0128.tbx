@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tbx style="dca" type="TBX-Basic" xml:lang="en" xmlns="urn:iso:std:iso:30042:ed-2">
+  <tbxHeader>
+    <fileDesc>
+      <source>https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0128</source>
+    </fileDesc>
+  </tbxHeader>
+  <text>
+    <body>
+      <conceptEntry id="dpp-0128">
+      <languageSection xml:lang="eng">
+          <descrip type="definition">
+            <p>lens-scoped attestation consisting of an attester signature over the subject, the subject state commitment, the lens identity and version, the mode (live or snapshot), a verdict with coverage report, and log-anchored time</p>
+          </descrip>
+          <note type="note">Stamps accrete append-only and are valid under the stamper's lens regardless of the issuer's.</note>
+          <note type="note">Jurisdiction stamps on a foreign-issued passport correspond to visas; entry and exit stamps correspond to verifier custody events.</note>
+          <note type="note">Stamps may carry quantity context, inherited by downstream transformations.</note>
+          <ref>UniDPP PLAN (2026-09) Semantic exchange, stamps, and the transformation algebra</ref>
+      </languageSection>
+      </conceptEntry>
+    </body>
+  </text>
+</tbx>

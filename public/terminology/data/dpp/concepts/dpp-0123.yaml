@@ -1,0 +1,38 @@
+---
+data:
+  identifier: dpp-0123
+  domains:
+  - concept_id: section-measurement
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: ec0659ba-0170-5fa2-bf17-336403909b61
+---
+data:
+  definition:
+  - content: chain of custody model in which materials or products with a set of specified
+      characteristics are mixed according to defined criteria with materials or products
+      without that set of characteristics
+  notes:
+  - content: The proportion of the input with specified characteristics can only match
+      the initial proportions on average and will typically vary across different
+      outputs.
+  sources:
+  - origin:
+      ref:
+        source: CWA 18291:2025
+        id: '3.28'
+    type: authoritative
+  - origin:
+      ref:
+        source: ISO 22095:2020
+        id: 3.3.4
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: mass balance model
+  language_code: eng
+  annotations: []
+termid: dpp-0123
+id: 60ddc77f-3529-5b35-b004-8afad225ead9

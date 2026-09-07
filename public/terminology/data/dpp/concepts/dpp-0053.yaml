@@ -1,0 +1,29 @@
+---
+data:
+  identifier: dpp-0053
+  domains:
+  - concept_id: section-actors-and-issuance
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: e9000ea9-7496-57fe-b862-2bfe8dc6252a
+---
+data:
+  definition:
+  - content: person or a system that categorizes discarded textile materials by their
+      fibre composition, color, and condition to determine their potential for reuse,
+      repair, or recycling
+  sources:
+  - origin:
+      ref:
+        source: CWA 18291:2025
+        id: '3.19'
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: sorter
+  language_code: eng
+  annotations: []
+termid: dpp-0053
+id: 2ecb9ee2-8574-5cf2-9db3-7c7499c7f3a3

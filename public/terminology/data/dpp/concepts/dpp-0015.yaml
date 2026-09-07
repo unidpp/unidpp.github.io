@@ -1,0 +1,28 @@
+---
+data:
+  identifier: dpp-0015
+  domains:
+  - concept_id: section-identity-and-carriers
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: adcb9589-5e0c-5fa5-8546-10f07c5b0127
+---
+data:
+  definition:
+  - content: process in which an identifier is translated or mapped to another identifier,
+      associated information or metadata about the object it represents
+  sources:
+  - origin:
+      ref:
+        source: EN 18219:2026
+        id: 3.1.18
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: resolution
+  language_code: eng
+  annotations: []
+termid: dpp-0015
+id: dbe2ef28-0ffb-533b-9375-26d7ba2d3bef

@@ -1,0 +1,37 @@
+---
+data:
+  identifier: dpp-0080
+  domains:
+  - concept_id: section-trust-and-verification
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: d8ffb98c-6078-5298-9eda-e29de766d287
+---
+data:
+  definition:
+  - content: entity to which specified requirements apply
+  examples:
+  - content: Product, process, service, system, installation, project, data, design,
+      material, claim, person, body or organization, or any combination thereof.
+  sources:
+  - origin:
+      ref:
+        source: EN 18219:2026
+        id: 3.1.12
+    type: authoritative
+  - origin:
+      ref:
+        source: ISO/IEC 17000:2020
+        id: '4.2'
+    type: authoritative
+    modification: The synonym “object of conformity assessment” has been deleted and
+      Note 1 to entry has been deleted.
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: object
+  language_code: eng
+  annotations: []
+termid: dpp-0080
+id: 915210b1-4993-58a3-9ccc-92dd3f16d8f4

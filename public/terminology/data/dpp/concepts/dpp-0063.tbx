@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tbx style="dca" type="TBX-Basic" xml:lang="en" xmlns="urn:iso:std:iso:30042:ed-2">
+  <tbxHeader>
+    <fileDesc>
+      <source>https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0063</source>
+    </fileDesc>
+  </tbxHeader>
+  <text>
+    <body>
+      <conceptEntry id="dpp-0063">
+      <languageSection xml:lang="eng">
+          <descrip type="definition">
+            <p>period during which the digital product passport (3.2) is required by regulation to be available to any operator or natural or legal person with a right to access its data</p>
+          </descrip>
+          <ref>EN 18221:2026 3.4</ref>
+      </languageSection>
+      </conceptEntry>
+    </body>
+  </text>
+</tbx>

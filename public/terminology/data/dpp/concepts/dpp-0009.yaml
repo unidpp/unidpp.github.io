@@ -1,0 +1,33 @@
+---
+data:
+  identifier: dpp-0009
+  domains:
+  - concept_id: section-identity-and-carriers
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: b61fb9b1-9f76-5219-9a6b-f91f08dad96a
+---
+data:
+  definition:
+  - content: process of recognizing an object in a particular domain as distinct from
+      other objects
+  sources:
+  - origin:
+      ref:
+        source: EN 18216:2026
+        id: '3.3'
+    type: authoritative
+  - origin:
+      ref:
+        source: EN ISO/IEC 24760-1
+        id: 3.2.1
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: identification
+  language_code: eng
+  annotations: []
+termid: dpp-0009
+id: b349e791-3664-5c9c-a682-1bdcd01c6863

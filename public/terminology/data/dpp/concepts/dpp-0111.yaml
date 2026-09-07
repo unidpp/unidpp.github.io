@@ -1,0 +1,47 @@
+---
+data:
+  identifier: dpp-0111
+  domains:
+  - concept_id: section-semantics-and-profiles
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: 296db842-a153-5120-988c-aeaf0b1f455f
+---
+data:
+  definition:
+  - content: defined characteristic suitable for the description and differentiation
+      of products or components
+  notes:
+  - content: The concept of type and instance applies to properties.
+  - content: This definition applies to properties as described in IEC 61360/ ISO
+      13584-42.
+  - content: The property types are defined in dictionaries (like IEC component data
+      dictionary or ECLASS), they do not have a value. The property type is also called
+      data element type in some standards.
+  - content: The property instances have a value and are provided by the manufacturers.
+      A property instance is also called property-value pair in certain standards.
+  - content: Properties include nominal value, actual value, runtime variables, measurement
+      values, etc.
+  - content: A property describes one characteristic of a given object.
+  - content: The specification of a property can include predefined choices of values.
+  sources:
+  - origin:
+      ref:
+        source: 'IDTA-01001-3.2:2026 (Specification of the Asset Administration Shell
+          — Part 1: Metamodel)'
+        id: 1.1.18
+    type: authoritative
+  - origin:
+      ref:
+        source: ISO/IEC Guide 77-2; Glossary Industrie 4.0
+    type: authoritative
+    modification: Note 7 removed.
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: property
+  language_code: eng
+  annotations: []
+termid: dpp-0111
+id: 6f1de95b-74c1-5dd4-b0ca-dc4efc8176e1

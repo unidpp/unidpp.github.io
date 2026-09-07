@@ -1,0 +1,27 @@
+---
+data:
+  identifier: dpp-0045
+  domains:
+  - concept_id: section-actors-and-issuance
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: be12d230-9f17-5f94-afb5-250e67b2437f
+---
+data:
+  definition:
+  - content: company or company function that sells a product
+  sources:
+  - origin:
+      ref:
+        source: CWA 18291:2025
+        id: '3.11'
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: seller
+  language_code: eng
+  annotations: []
+termid: dpp-0045
+id: 0c7e45d6-8d67-52ce-b694-fa46b19407a4

@@ -1,0 +1,36 @@
+---
+data:
+  identifier: dpp-0078
+  domains:
+  - concept_id: section-trust-and-verification
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: e9cac828-58a1-5d97-9aca-962fcdcb015d
+---
+data:
+  definition:
+  - content: point in time to which data must be recovered after a disruption has
+      occurred
+  sources:
+  - origin:
+      ref:
+        source: EN 18239 (prEN 18239:2025)
+        id: '3.5'
+    type: authoritative
+  - origin:
+      ref:
+        source: ISO/IEC 27031
+        id: '3.12'
+    type: authoritative
+  terms:
+  - type: abbreviation
+    normative_status: preferred
+    designation: RPO
+  - type: expression
+    normative_status: admitted
+    designation: recovery point objective
+  language_code: eng
+  annotations: []
+termid: dpp-0078
+id: 3ed17800-7a29-51bd-b63a-60d13b04ccdb

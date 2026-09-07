@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tbx style="dca" type="TBX-Basic" xml:lang="en" xmlns="urn:iso:std:iso:30042:ed-2">
+  <tbxHeader>
+    <fileDesc>
+      <source>https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0008</source>
+    </fileDesc>
+  </tbxHeader>
+  <text>
+    <body>
+      <conceptEntry id="dpp-0008">
+      <languageSection xml:lang="eng">
+          <descrip type="definition">
+            <p>sequence of characters associated with digital, non-digital, or abstract entities, such as books, images, reports, metadata records or events</p>
+          </descrip>
+          <ref>EN 18216:2026 3.1</ref>
+          <ref>ISO 24619:2011 3.2.1</ref>
+      </languageSection>
+      </conceptEntry>
+    </body>
+  </text>
+</tbx>

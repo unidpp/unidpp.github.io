@@ -1,0 +1,1 @@
+{"@context":{"skos":"http://www.w3.org/2004/02/skos/core#","dcterms":"http://purl.org/dc/terms/","@language":{"@container":"@language"}},"@id":"https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0092","@type":"skos:Concept","skos:notation":"dpp-0092","skos:prefLabel":{"eng":"method"},"skos:definition":{"eng":"particular way used to perform a specific action on a resource"}}

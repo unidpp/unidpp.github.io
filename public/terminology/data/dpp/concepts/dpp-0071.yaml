@@ -1,0 +1,39 @@
+---
+data:
+  identifier: dpp-0071
+  domains:
+  - concept_id: section-lifecycle-and-events
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: 47d4f364-37d3-52cd-9739-2a0816889d0d
+---
+data:
+  definition:
+  - content: product made mainly of textile fibres, yarns and/or fabrics and intended
+      to be used, as such or in conjunction with other textile or non-textile elements
+  notes:
+  - content: These articles can contain non-textile parts, such as plastics (e.g.
+      buttons and membrane or coatings) or metals.
+  - content: 'Source entry heading: “textile product – product”.'
+  sources:
+  - origin:
+      ref:
+        source: CWA 18291:2025
+        id: '3.4'
+    type: authoritative
+  - origin:
+      ref:
+        source: ISO 5157:2023
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: textile product
+  - type: expression
+    normative_status: admitted
+    designation: product
+  language_code: eng
+  annotations: []
+termid: dpp-0071
+id: a34559d1-ec90-5676-869a-6826f861545c

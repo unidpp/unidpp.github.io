@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tbx style="dca" type="TBX-Basic" xml:lang="en" xmlns="urn:iso:std:iso:30042:ed-2">
+  <tbxHeader>
+    <fileDesc>
+      <source>https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0012</source>
+    </fileDesc>
+  </tbxHeader>
+  <text>
+    <body>
+      <conceptEntry id="dpp-0012">
+      <languageSection xml:lang="eng">
+          <descrip type="definition">
+            <p>system or mechanism that an organization uses to generate and assign unique identifiers to its objects without the intervention or oversight of an external authority</p>
+          </descrip>
+          <ref>EN 18219:2026 3.1.20</ref>
+      </languageSection>
+      </conceptEntry>
+    </body>
+  </text>
+</tbx>

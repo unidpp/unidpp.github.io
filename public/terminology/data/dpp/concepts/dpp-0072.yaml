@@ -1,0 +1,32 @@
+---
+data:
+  identifier: dpp-0072
+  domains:
+  - concept_id: section-trust-and-verification
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: 5f1b233b-a1e7-5c17-ba91-c19ac4c2bd76
+---
+data:
+  definition:
+  - content: verification that a claimed identity is correct
+  sources:
+  - origin:
+      ref:
+        source: EN 18216:2026
+        id: '3.4'
+    type: authoritative
+  - origin:
+      ref:
+        source: ISO/IEC/IEEE 8802-1AR
+        id: '3.2'
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: authentication
+  language_code: eng
+  annotations: []
+termid: dpp-0072
+id: e5656afd-c881-59e1-89c0-59a562e22313

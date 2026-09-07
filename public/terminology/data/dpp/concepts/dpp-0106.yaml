@@ -1,0 +1,37 @@
+---
+data:
+  identifier: dpp-0106
+  domains:
+  - concept_id: section-semantics-and-profiles
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: df7d14ed-acf1-58f6-b711-1803057fd317
+---
+data:
+  definition:
+  - content: digital representation, sufficient to meet the requirements of a set
+      of use cases
+  notes:
+  - content: In this context, the entity in the definition of digital representation
+      is typically an asset.
+  sources:
+  - origin:
+      ref:
+        source: 'IDTA-01001-3.2:2026 (Specification of the Asset Administration Shell
+          — Part 1: Metamodel)'
+        id: 1.1.12
+    type: authoritative
+  - origin:
+      ref:
+        source: IIC Vocabulary IIC:IIVOC:V2.3:20201025
+    type: authoritative
+    modification: 'Adapted: “an asset, process, or system” was changed to “an asset”.'
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: digital twin
+  language_code: eng
+  annotations: []
+termid: dpp-0106
+id: ca26d40a-4500-54ba-bbf6-91aa0e32ef48

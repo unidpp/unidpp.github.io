@@ -1,0 +1,35 @@
+---
+data:
+  identifier: dpp-0028
+  domains:
+  - concept_id: section-identity-and-carriers
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: 1bef82ae-6e58-5e24-8f27-1c74760b7140
+---
+data:
+  definition:
+  - content: subset of a model (3.1.11) that is grouped by an economic operator based
+      on common characteristics
+  sources:
+  - origin:
+      ref:
+        source: EN 18219:2026
+        id: 3.1.1
+    type: authoritative
+  - origin:
+      ref:
+        source: EN 18220:2026
+        id: '3.3'
+    type: authoritative
+    modification: Internal cross-reference decoration differs (“term 3.10”); the definition
+      is equivalent.
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: batch
+  language_code: eng
+  annotations: []
+termid: dpp-0028
+id: a437729d-f3a1-50bc-8b2b-aa3df962a164

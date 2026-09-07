@@ -1,0 +1,29 @@
+---
+data:
+  identifier: dpp-0018
+  domains:
+  - concept_id: section-identity-and-carriers
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: 454b324b-8d84-5f62-8b0b-264585cda704
+---
+data:
+  definition:
+  - content: unique string of characters for the identification of location or building
+      involved in a product's value chain or used by actors involved in a product's
+      value chain
+  sources:
+  - origin:
+      ref:
+        source: EN 18219:2026
+        id: 3.1.23
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: unique facility identifier
+  language_code: eng
+  annotations: []
+termid: dpp-0018
+id: 064256e0-b511-5779-815f-b0dfcdba0808

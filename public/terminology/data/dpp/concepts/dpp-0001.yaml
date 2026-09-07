@@ -1,0 +1,72 @@
+---
+data:
+  identifier: dpp-0001
+  domains:
+  - concept_id: section-digital-product-passport
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: d2890243-c7b4-5091-bbe0-10dddd11dee4
+---
+data:
+  definition:
+  - content: digital record of product characteristics throughout its life cycle
+  notes:
+  - content: Example characteristics include environmental sustainability, environmental
+      impact, and recyclability.
+  - content: 'Harmonization note (UniDPP): the variant of this definition extended
+      by accessibility via electronic means through a data carrier is recorded under
+      concept dpp-0004.'
+  sources:
+  - origin:
+      ref:
+        source: EN 18223:2026
+        id: '3.4'
+    type: authoritative
+  - origin:
+      ref:
+        source: EN 18239 (prEN 18239:2025)
+        id: '3.9'
+    type: authoritative
+    modification: The source prints “environment sustainability” in the note; the
+      definition is equivalent.
+  - origin:
+      ref:
+        source: EN 18216:2026
+        id: '3.7'
+    type: authoritative
+    modification: The source prints “lifecycle” as one word; the definition is equivalent.
+  - origin:
+      ref:
+        source: EN 18221:2026
+        id: '3.2'
+    type: authoritative
+  - origin:
+      ref:
+        source: EN 18222:2026
+        id: '3.2'
+    type: authoritative
+  - origin:
+      ref:
+        source: EN 18246 (prEN 18246:2025)
+        id: '3.2'
+    type: authoritative
+  - origin:
+      ref:
+        source: ISO/AWI 25534-1 (2026-09-05 draft)
+        id: '3.1'
+    type: authoritative
+    modification: The ISO working draft defines DPP as “a concept or technology which
+      enables sharing of product related information”; this dataset records the definitional
+      conflict for harmonization under the proposed Part 1 (Vocabulary).
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: digital product passport
+  - type: abbreviation
+    normative_status: preferred
+    designation: DPP
+  language_code: eng
+  annotations: []
+termid: dpp-0001
+id: c7e08a8c-53f9-550c-8f90-86c6ca917e6f

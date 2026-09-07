@@ -1,0 +1,31 @@
+---
+data:
+  identifier: dpp-0019
+  domains:
+  - concept_id: section-identity-and-carriers
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: b9fc3276-9910-57a7-914c-f2d4e55ac396
+---
+data:
+  definition:
+  - content: identifier returned after uploading the unique identifiers and any other
+      data required to the DPP registry
+  examples:
+  - content: Unique identifiers can be unique product identifier, unique facility
+      identifier, unique operator identifier of the economic operator etc.
+  sources:
+  - origin:
+      ref:
+        source: EN 18222:2026
+        id: '3.6'
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: unique registration identifier
+  language_code: eng
+  annotations: []
+termid: dpp-0019
+id: 9330bf78-50f2-5873-bcd7-67fa05e0d7a5

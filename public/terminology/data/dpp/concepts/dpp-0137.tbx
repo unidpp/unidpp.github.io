@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tbx style="dca" type="TBX-Basic" xml:lang="en" xmlns="urn:iso:std:iso:30042:ed-2">
+  <tbxHeader>
+    <fileDesc>
+      <source>https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0137</source>
+    </fileDesc>
+  </tbxHeader>
+  <text>
+    <body>
+      <conceptEntry id="dpp-0137">
+      <languageSection xml:lang="eng">
+          <descrip type="definition">
+            <p>edge visibility arrangement in which information concealed by a blind edge (concept dpp-0136) is deposited with a threshold trustee and released only through a disclosure ceremony — court, regulator or consent</p>
+          </descrip>
+          <note type="note">The installation schema records escrow as none or trustee, with declared audiences.</note>
+          <note type="note">An escrow envelope under a threshold trustee may optionally accompany a proof of binding (concept dpp-0138), preserving verifiability while full disclosure remains ceremonial.</note>
+          <ref>UniDPP PLAN (2026-09) Visibility, blind edges, and enumeration resistance</ref>
+      </languageSection>
+      </conceptEntry>
+    </body>
+  </text>
+</tbx>

@@ -1,0 +1,32 @@
+---
+data:
+  identifier: dpp-0116
+  domains:
+  - concept_id: section-semantics-and-profiles
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: 1b67b0eb-a67e-5ad1-8bfb-87fec6ab9f2a
+---
+data:
+  definition:
+  - content: template for the representation of an aspect of an asset
+  sources:
+  - origin:
+      ref:
+        source: 'IDTA-01001-3.2:2026 (Specification of the Asset Administration Shell
+          — Part 1: Metamodel)'
+        id: 1.1.23
+    type: authoritative
+  - origin:
+      ref:
+        source: IEC 63278-1:2023
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: Submodel template
+  language_code: eng
+  annotations: []
+termid: dpp-0116
+id: 508d2e7e-f9b2-5832-817f-e51f70d073a3

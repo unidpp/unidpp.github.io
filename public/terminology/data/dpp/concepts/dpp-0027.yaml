@@ -1,0 +1,33 @@
+---
+data:
+  identifier: dpp-0027
+  domains:
+  - concept_id: section-identity-and-carriers
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: e98f1ddf-8bec-5a7c-b095-78afbb039106
+---
+data:
+  definition:
+  - content: specified width of the narrow in a bar code symbol or the specified width
+      of a single element in a two-dimensional symbol
+  sources:
+  - origin:
+      ref:
+        source: EN 18220:2026
+        id: '3.19'
+    type: authoritative
+  - origin:
+      ref:
+        source: ISO/IEC 19762
+        id: 3.2.1.10
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: X dimension
+  language_code: eng
+  annotations: []
+termid: dpp-0027
+id: d733b915-4f61-5e9f-9e67-4240a121b8ce

@@ -1,0 +1,28 @@
+---
+data:
+  identifier: dpp-0037
+  domains:
+  - concept_id: section-actors-and-issuance
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: 3dbf2620-ffdf-5844-81c8-d1972357b59b
+---
+data:
+  definition:
+  - content: organisation entrusted by a Registration Authority (RA) to manage unique
+      identification schemes
+  sources:
+  - origin:
+      ref:
+        source: EN 18219:2026
+        id: 3.1.8
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: issuing agency
+  language_code: eng
+  annotations: []
+termid: dpp-0037
+id: 347a65a9-3676-52f2-9c6c-a33fb2d5e04a

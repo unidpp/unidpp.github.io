@@ -1,0 +1,33 @@
+---
+data:
+  identifier: dpp-0044
+  domains:
+  - concept_id: section-actors-and-issuance
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: 64e1ad45-43e6-5153-be89-c353c992362f
+---
+data:
+  definition:
+  - content: name and address of the person who makes, or on whose behalf the "export
+      declaration" is made, and who is the owner of the goods or has similar right
+      of disposal over them at the time when the declaration is accepted
+  sources:
+  - origin:
+      ref:
+        source: CWA 18291:2025
+        id: '3.10'
+    type: authoritative
+  - origin:
+      ref:
+        source: ISO/TS 24533:2012
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: exporter
+  language_code: eng
+  annotations: []
+termid: dpp-0044
+id: d062b7bc-6cf5-5eeb-8cf1-0dc3bc3d621e

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tbx style="dca" type="TBX-Basic" xml:lang="en" xmlns="urn:iso:std:iso:30042:ed-2">
+  <tbxHeader>
+    <fileDesc>
+      <source>https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0079</source>
+    </fileDesc>
+  </tbxHeader>
+  <text>
+    <body>
+      <conceptEntry id="dpp-0079">
+      <languageSection xml:lang="eng">
+          <descrip type="definition">
+            <p>period of time within which minimum levels of services and/or products and the supporting systems, applications, or functions must be recovered after a disruption has occurred</p>
+          </descrip>
+          <ref>EN 18239 (prEN 18239:2025) 3.6</ref>
+          <ref>ISO/IEC 27031</ref>
+      </languageSection>
+      </conceptEntry>
+    </body>
+  </text>
+</tbx>

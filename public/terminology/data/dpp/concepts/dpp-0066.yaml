@@ -1,0 +1,33 @@
+---
+data:
+  identifier: dpp-0066
+  domains:
+  - concept_id: section-lifecycle-and-events
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: ffb93c12-0879-5f33-b374-44d43125e6e2
+---
+data:
+  definition:
+  - content: process of gathering and transporting used textile products or waste
+      materials to a sorting facility for further processing such as reuse, repair,
+      remanufacturing, or recycling
+  sources:
+  - origin:
+      ref:
+        source: CWA 18291:2025
+        id: '3.21'
+    type: authoritative
+  - origin:
+      ref:
+        source: ISO 5157:2023
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: collection
+  language_code: eng
+  annotations: []
+termid: dpp-0066
+id: 6dfebbc4-b814-5bc1-9a69-75142334de1a

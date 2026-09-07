@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tbx style="dca" type="TBX-Basic" xml:lang="en" xmlns="urn:iso:std:iso:30042:ed-2">
+  <tbxHeader>
+    <fileDesc>
+      <source>https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0118</source>
+    </fileDesc>
+  </tbxHeader>
+  <text>
+    <body>
+      <conceptEntry id="dpp-0118">
+      <languageSection xml:lang="eng">
+          <descrip type="definition">
+            <p>interacting, interrelated, or interdependent elements forming a complex whole</p>
+          </descrip>
+          <ref>IDTA-01001-3.2:2026 (Specification of the Asset Administration Shell — Part 1: Metamodel) 1.1.25</ref>
+          <ref>IEC 63278-1:2023; IEC TS 62443-1-1:2009 3.2.123</ref>
+      </languageSection>
+      </conceptEntry>
+    </body>
+  </text>
+</tbx>

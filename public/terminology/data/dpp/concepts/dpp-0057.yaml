@@ -1,0 +1,27 @@
+---
+data:
+  identifier: dpp-0057
+  domains:
+  - concept_id: section-actors-and-issuance
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: db1c759c-5c8b-5745-b109-7fa900e8d8f3
+---
+data:
+  definition:
+  - content: platform dedicated to traceability services
+  sources:
+  - origin:
+      ref:
+        source: CWA 18291:2025
+        id: '3.6'
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: traceability platform
+  language_code: eng
+  annotations: []
+termid: dpp-0057
+id: 8958e44a-2f9e-5154-84c4-8b9a937bac9f

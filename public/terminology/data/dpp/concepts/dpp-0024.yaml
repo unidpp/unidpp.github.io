@@ -1,0 +1,31 @@
+---
+data:
+  identifier: dpp-0024
+  domains:
+  - concept_id: section-identity-and-carriers
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: 862ed06a-a1f4-5bed-87d2-d1a0548265c2
+---
+data:
+  definition:
+  - content: identification technology that uses electromagnetic fields to automatically
+      identify and track tags attached to objects
+  sources:
+  - origin:
+      ref:
+        source: EN 18220:2026
+        id: '3.15'
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: radio-frequency identification
+  - type: abbreviation
+    normative_status: preferred
+    designation: RFID
+  language_code: eng
+  annotations: []
+termid: dpp-0024
+id: 3028aabf-c4d2-5a4b-8afc-b3142c733dd2

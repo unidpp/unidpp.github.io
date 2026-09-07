@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tbx style="dca" type="TBX-Basic" xml:lang="en" xmlns="urn:iso:std:iso:30042:ed-2">
+  <tbxHeader>
+    <fileDesc>
+      <source>https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0053</source>
+    </fileDesc>
+  </tbxHeader>
+  <text>
+    <body>
+      <conceptEntry id="dpp-0053">
+      <languageSection xml:lang="eng">
+          <descrip type="definition">
+            <p>person or a system that categorizes discarded textile materials by their fibre composition, color, and condition to determine their potential for reuse, repair, or recycling</p>
+          </descrip>
+          <ref>CWA 18291:2025 3.19</ref>
+      </languageSection>
+      </conceptEntry>
+    </body>
+  </text>
+</tbx>

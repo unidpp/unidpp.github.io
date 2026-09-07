@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tbx style="dca" type="TBX-Basic" xml:lang="en" xmlns="urn:iso:std:iso:30042:ed-2">
+  <tbxHeader>
+    <fileDesc>
+      <source>https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0111</source>
+    </fileDesc>
+  </tbxHeader>
+  <text>
+    <body>
+      <conceptEntry id="dpp-0111">
+      <languageSection xml:lang="eng">
+          <descrip type="definition">
+            <p>defined characteristic suitable for the description and differentiation of products or components</p>
+          </descrip>
+          <note type="note">The concept of type and instance applies to properties.</note>
+          <note type="note">This definition applies to properties as described in IEC 61360/ ISO 13584-42.</note>
+          <note type="note">The property types are defined in dictionaries (like IEC component data dictionary or ECLASS), they do not have a value. The property type is also called data element type in some standards.</note>
+          <note type="note">The property instances have a value and are provided by the manufacturers. A property instance is also called property-value pair in certain standards.</note>
+          <note type="note">Properties include nominal value, actual value, runtime variables, measurement values, etc.</note>
+          <note type="note">A property describes one characteristic of a given object.</note>
+          <note type="note">The specification of a property can include predefined choices of values.</note>
+          <ref>IDTA-01001-3.2:2026 (Specification of the Asset Administration Shell — Part 1: Metamodel) 1.1.18</ref>
+          <ref>ISO/IEC Guide 77-2; Glossary Industrie 4.0</ref>
+      </languageSection>
+      </conceptEntry>
+    </body>
+  </text>
+</tbx>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tbx style="dca" type="TBX-Basic" xml:lang="en" xmlns="urn:iso:std:iso:30042:ed-2">
+  <tbxHeader>
+    <fileDesc>
+      <source>https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0068</source>
+    </fileDesc>
+  </tbxHeader>
+  <text>
+    <body>
+      <conceptEntry id="dpp-0068">
+      <languageSection xml:lang="eng">
+          <descrip type="definition">
+            <p>ability to trace the history, application or location of an object in a value chain</p>
+          </descrip>
+          <ref>CWA 18291:2025 3.29</ref>
+          <ref>UNECE Recommendation No. 46</ref>
+      </languageSection>
+      </conceptEntry>
+    </body>
+  </text>
+</tbx>

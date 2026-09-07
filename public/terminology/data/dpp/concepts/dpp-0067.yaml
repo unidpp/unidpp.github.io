@@ -1,0 +1,33 @@
+---
+data:
+  identifier: dpp-0067
+  domains:
+  - concept_id: section-lifecycle-and-events
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: c8598e23-a3e2-5e05-971f-9260de911e3e
+---
+data:
+  definition:
+  - content: system by which products or resources are used and then recovered and
+      turned into new products or recovered resources, without losing their inherent
+      properties
+  sources:
+  - origin:
+      ref:
+        source: CWA 18291:2025
+        id: '3.25'
+    type: authoritative
+  - origin:
+      ref:
+        source: ISO 59004:2024
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: closed loop system
+  language_code: eng
+  annotations: []
+termid: dpp-0067
+id: ebe468ce-8971-512a-92d4-9ae2c85200d4

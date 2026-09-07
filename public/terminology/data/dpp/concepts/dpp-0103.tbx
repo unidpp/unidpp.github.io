@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tbx style="dca" type="TBX-Basic" xml:lang="en" xmlns="urn:iso:std:iso:30042:ed-2">
+  <tbxHeader>
+    <fileDesc>
+      <source>https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0103</source>
+    </fileDesc>
+  </tbxHeader>
+  <text>
+    <body>
+      <conceptEntry id="dpp-0103">
+      <languageSection xml:lang="eng">
+          <descrip type="definition">
+            <p>product used as a constituent in an assembled product, system, or plant</p>
+          </descrip>
+          <ref>IDTA-01001-3.2:2026 (Specification of the Asset Administration Shell — Part 1: Metamodel) 1.1.9</ref>
+          <ref>IEC 63278-1:2023; IEC 61666:2010+AMD1:2021 CSV 3.6</ref>
+      </languageSection>
+      </conceptEntry>
+    </body>
+  </text>
+</tbx>

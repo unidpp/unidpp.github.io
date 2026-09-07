@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tbx style="dca" type="TBX-Basic" xml:lang="en" xmlns="urn:iso:std:iso:30042:ed-2">
+  <tbxHeader>
+    <fileDesc>
+      <source>https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0041</source>
+    </fileDesc>
+  </tbxHeader>
+  <text>
+    <body>
+      <conceptEntry id="dpp-0041">
+      <languageSection xml:lang="eng">
+          <descrip type="definition">
+            <p>organization or person that receives a product</p>
+          </descrip>
+          <note type="note">The customer may be the user or a distributor [SOURCE: ISO 9000].</note>
+          <ref>CWA 18291:2025 3.23</ref>
+          <ref>ISO 9000</ref>
+      </languageSection>
+      </conceptEntry>
+    </body>
+  </text>
+</tbx>

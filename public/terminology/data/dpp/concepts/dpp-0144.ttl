@@ -1,0 +1,11 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+<https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0144>
+  a skos:Concept ;
+  skos:notation "dpp-0144" ;
+  skos:prefLabel "harvested part"@eng ;
+  skos:definition "component recovered from an installation (concept dpp-0142) in the harvestable state of the recoverability spectrum (concept dpp-0143), which continues to carry its own identity, harvested status and the parent history accumulated during installation"@eng ;
+  skos:scopeNote "Installation history is value-relevant provenance: a harvested battery sold standalone carries its service interval and removal reason, and the used-parts market runs on this."@eng ;
+  skos:scopeNote "A harvested part is second-hand-once-removed: no longer sellable as new, with warranty scope and service economics that rode the parent during installation."@eng
+ .

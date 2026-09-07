@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tbx style="dca" type="TBX-Basic" xml:lang="en" xmlns="urn:iso:std:iso:30042:ed-2">
+  <tbxHeader>
+    <fileDesc>
+      <source>https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0122</source>
+    </fileDesc>
+  </tbxHeader>
+  <text>
+    <body>
+      <conceptEntry id="dpp-0122">
+      <languageSection xml:lang="eng">
+          <descrip type="definition">
+            <p>software entity that may take different values, one at a time</p>
+          </descrip>
+          <ref>IDTA-01001-3.2:2026 (Specification of the Asset Administration Shell — Part 1: Metamodel) 1.1.29</ref>
+          <ref>IEC 61499-1</ref>
+      </languageSection>
+      </conceptEntry>
+    </body>
+  </text>
+</tbx>

@@ -1,0 +1,30 @@
+---
+data:
+  identifier: dpp-0017
+  domains:
+  - concept_id: section-identity-and-carriers
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: d62db52c-5393-55f1-93f3-a3b25f4484a1
+---
+data:
+  definition:
+  - content: unique string of characters for the identification of an actors involved
+      in a product's value chain
+  notes:
+  - content: The source prints “an actors”; the definition is reproduced verbatim.
+  sources:
+  - origin:
+      ref:
+        source: EN 18219:2026
+        id: 3.1.22
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: unique economic operator identifier
+  language_code: eng
+  annotations: []
+termid: dpp-0017
+id: 749c55ef-b216-5b5e-b758-b20a3b741cf2

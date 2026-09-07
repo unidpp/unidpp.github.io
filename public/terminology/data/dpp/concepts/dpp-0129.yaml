@@ -1,0 +1,37 @@
+---
+data:
+  identifier: dpp-0129
+  domains:
+  - concept_id: section-framework-terms
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: 85cdaadd-f7c6-56c4-8a41-7c8e95c6ee09
+---
+data:
+  definition:
+  - content: typed event in the provenance directed acyclic graph that records the
+      split of one passport into many, or the combination or transformation of many
+      passports into one
+  notes:
+  - content: The output issuance event carries input references of passport, quantity
+      and as-of state hash, so the new passport hash-links its sources.
+  - content: Quantities resulting from a transformation are new measured facts with
+      provenance “computed by transformation event”, never copies; mass balance is
+      auditable as input minus output equals loss.
+  - content: 'Inputs transition to consumed or transformed status: historical, still
+      verifiable, still needed for as-of queries.'
+  sources:
+  - origin:
+      ref:
+        source: UniDPP PLAN (2026-09)
+        id: Semantic exchange, stamps, and the transformation algebra
+    type: lineage
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: transformation event
+  language_code: eng
+  annotations: []
+termid: dpp-0129
+id: eea89621-8dbc-5226-a89c-f63899288715

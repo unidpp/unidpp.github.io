@@ -1,0 +1,27 @@
+---
+data:
+  identifier: dpp-0043
+  domains:
+  - concept_id: section-actors-and-issuance
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: 149bd77a-6d45-55a3-a30c-4ea20b1fc818
+---
+data:
+  definition:
+  - content: expert in charge of reviewing a study
+  sources:
+  - origin:
+      ref:
+        source: CWA 18291:2025
+        id: '3.9'
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: reviewer
+  language_code: eng
+  annotations: []
+termid: dpp-0043
+id: c2e132e3-b6c6-5031-8905-ebe980d0ca25

@@ -1,0 +1,42 @@
+---
+data:
+  identifier: dpp-0097
+  domains:
+  - concept_id: section-semantics-and-profiles
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: 9014a63c-c099-59de-b3ec-403b67ebfe07
+---
+data:
+  definition:
+  - content: entity owned by or under the custodial duties of an organization, which
+      has either a perceived or actual value to the organization
+  examples:
+  - content: Examples for physical entities are equipment, raw material, parts components
+      and pieces, supplies, consumables, physical products, and waste.
+  - content: Software is an example of a digital asset.
+  - content: A software license is an example of an intangible asset.
+  notes:
+  - content: An asset can be single entity, a collection of entities, an assembly
+      of entities or a composition of entities.
+  sources:
+  - origin:
+      ref:
+        source: 'IDTA-01001-3.2:2026 (Specification of the Asset Administration Shell
+          — Part 1: Metamodel)'
+        id: 1.1.3
+    type: authoritative
+  - origin:
+      ref:
+        source: IEC 63278-1:2023
+    type: authoritative
+    modification: Editorial changes.
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: asset
+  language_code: eng
+  annotations: []
+termid: dpp-0097
+id: 0deb181a-7c7f-58ee-927d-59e17e811c4e

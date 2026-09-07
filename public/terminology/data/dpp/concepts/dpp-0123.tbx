@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tbx style="dca" type="TBX-Basic" xml:lang="en" xmlns="urn:iso:std:iso:30042:ed-2">
+  <tbxHeader>
+    <fileDesc>
+      <source>https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0123</source>
+    </fileDesc>
+  </tbxHeader>
+  <text>
+    <body>
+      <conceptEntry id="dpp-0123">
+      <languageSection xml:lang="eng">
+          <descrip type="definition">
+            <p>chain of custody model in which materials or products with a set of specified characteristics are mixed according to defined criteria with materials or products without that set of characteristics</p>
+          </descrip>
+          <note type="note">The proportion of the input with specified characteristics can only match the initial proportions on average and will typically vary across different outputs.</note>
+          <ref>CWA 18291:2025 3.28</ref>
+          <ref>ISO 22095:2020 3.3.4</ref>
+      </languageSection>
+      </conceptEntry>
+    </body>
+  </text>
+</tbx>

@@ -1,0 +1,28 @@
+---
+data:
+  identifier: dpp-0020
+  domains:
+  - concept_id: section-identity-and-carriers
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: 4e3e373c-8c65-530c-857d-e7bc2d979580
+---
+data:
+  definition:
+  - content: device or medium used to store data as a relay mechanism in an automatic
+      identification and data capture system
+  sources:
+  - origin:
+      ref:
+        source: EN 18220:2026
+        id: '3.5'
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: data carrier
+  language_code: eng
+  annotations: []
+termid: dpp-0020
+id: 950a28e8-1d6f-5aa8-a879-4792e8b7e31b

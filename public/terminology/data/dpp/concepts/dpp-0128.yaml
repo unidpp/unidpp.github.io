@@ -1,0 +1,35 @@
+---
+data:
+  identifier: dpp-0128
+  domains:
+  - concept_id: section-framework-terms
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: f7ab1d1c-c6f2-5770-9228-8f10a56ef4cb
+---
+data:
+  definition:
+  - content: lens-scoped attestation consisting of an attester signature over the
+      subject, the subject state commitment, the lens identity and version, the mode
+      (live or snapshot), a verdict with coverage report, and log-anchored time
+  notes:
+  - content: Stamps accrete append-only and are valid under the stamper's lens regardless
+      of the issuer's.
+  - content: Jurisdiction stamps on a foreign-issued passport correspond to visas;
+      entry and exit stamps correspond to verifier custody events.
+  - content: Stamps may carry quantity context, inherited by downstream transformations.
+  sources:
+  - origin:
+      ref:
+        source: UniDPP PLAN (2026-09)
+        id: Semantic exchange, stamps, and the transformation algebra
+    type: lineage
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: stamp
+  language_code: eng
+  annotations: []
+termid: dpp-0128
+id: 92b674e4-a873-50fe-8727-a5e04f380c07

@@ -1,0 +1,36 @@
+---
+data:
+  identifier: dpp-0110
+  domains:
+  - concept_id: section-semantics-and-profiles
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: 7b35a292-062a-527b-a202-c05015e4493b
+---
+data:
+  definition:
+  - content: executable realization of a function
+  notes:
+  - content: The term method is synonymous to operation.
+  - content: An operation has a name and a list of parameters [ISO 19119:2005, 4.1.3].
+  sources:
+  - origin:
+      ref:
+        source: 'IDTA-01001-3.2:2026 (Specification of the Asset Administration Shell
+          — Part 1: Metamodel)'
+        id: 1.1.17
+    type: authoritative
+  - origin:
+      ref:
+        source: Glossary Industrie 4.0
+    type: authoritative
+    modification: Editorial changes.
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: operation
+  language_code: eng
+  annotations: []
+termid: dpp-0110
+id: cced8d1f-6fd0-51a5-a0ef-ea10e7a273b2

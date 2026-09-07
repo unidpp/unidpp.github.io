@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tbx style="dca" type="TBX-Basic" xml:lang="en" xmlns="urn:iso:std:iso:30042:ed-2">
+  <tbxHeader>
+    <fileDesc>
+      <source>https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0127</source>
+    </fileDesc>
+  </tbxHeader>
+  <text>
+    <body>
+      <conceptEntry id="dpp-0127">
+      <languageSection xml:lang="eng">
+          <descrip type="definition">
+            <p>profile conceived as a calibrated measuring instrument placed on the digital twin, which selects and transforms without altering the observed scene</p>
+          </descrip>
+          <note type="note">The mount — the profile interface on the neutral core — is the standardized element: any registered lens by any maker attaches to it.</note>
+          <note type="note">A lens publishes its calibration (version and cited rules), its uncertainty and its decision rules; it is subject to pattern approval at registration and to periodic re-verification through conformance runs.</note>
+          <note type="note">Verification path-finds from any render through the lens and its fact chain to an anchor in the verifier's trust bundle.</note>
+          <ref>UniDPP PLAN (2026-09) The lens model</ref>
+      </languageSection>
+      </conceptEntry>
+    </body>
+  </text>
+</tbx>

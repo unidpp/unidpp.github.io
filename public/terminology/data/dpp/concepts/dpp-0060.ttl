@@ -1,0 +1,9 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+<https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0060>
+  a skos:Concept ;
+  skos:notation "dpp-0060" ;
+  skos:prefLabel "product"@eng ;
+  skos:definition "any physical good that is placed on the market (3.1.14) or put into service (3.1.17)"@eng
+ .

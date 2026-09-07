@@ -1,0 +1,28 @@
+---
+data:
+  identifier: dpp-0036
+  domains:
+  - concept_id: section-actors-and-issuance
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: 6ba7ff13-e38f-535d-9e14-289ab04b2578
+---
+data:
+  definition:
+  - content: digital product passport service provider (3.3) that is hosting the back-up
+      copy of the digital product passport (3.2)
+  sources:
+  - origin:
+      ref:
+        source: EN 18221:2026
+        id: 3.3.2
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: back-up digital product passport service provider
+  language_code: eng
+  annotations: []
+termid: dpp-0036
+id: 4a592ffd-7709-507a-ab6f-769060db3a66

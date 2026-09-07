@@ -1,0 +1,29 @@
+---
+data:
+  identifier: dpp-0035
+  domains:
+  - concept_id: section-actors-and-issuance
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: 0e970767-62af-5396-b16f-6c38500d5100
+---
+data:
+  definition:
+  - content: digital product passport service provider (3.3) that is hosting the digital
+      product passport (3.2) on behalf of the economic operator (3.1) if the economic
+      operator chooses not to host the digital product passport themselves
+  sources:
+  - origin:
+      ref:
+        source: EN 18221:2026
+        id: 3.3.1
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: main digital product passport service provider
+  language_code: eng
+  annotations: []
+termid: dpp-0035
+id: 1c7bcd00-a5b0-5344-85ed-e1142c98e36e

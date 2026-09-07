@@ -1,0 +1,36 @@
+---
+data:
+  identifier: dpp-0002
+  domains:
+  - concept_id: section-trust-and-verification
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: adf0ebf9-60a9-5b8e-bcef-f2e83e11c193
+---
+data:
+  definition:
+  - content: information on digital product passport whose access is controlled based
+      on the user's access rights
+  notes:
+  - content: User in the sense of a person who interacts with a system, product or
+      service.
+  sources:
+  - origin:
+      ref:
+        source: EN 18239 (prEN 18239:2025)
+        id: '3.1'
+    type: authoritative
+  - origin:
+      ref:
+        source: EN 18216:2026
+        id: '3.8'
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: controlled DPP data
+  language_code: eng
+  annotations: []
+termid: dpp-0002
+id: 80a92733-2ecb-5515-ae73-fad5fb6ccf91

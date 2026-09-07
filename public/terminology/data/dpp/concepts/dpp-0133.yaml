@@ -1,0 +1,35 @@
+---
+data:
+  identifier: dpp-0133
+  domains:
+  - concept_id: section-framework-terms
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: ceeac015-8d16-58d1-b28d-f35792c49b63
+---
+data:
+  definition:
+  - content: digital twin in which the object self-reports under device keys, making
+      truth near-continuous, freshness bounded and detectable, and shifting the binding
+      question from who saw the object to who attests the sensor
+  notes:
+  - content: Corresponds to capability classes S2 (logged contact) and S3 (connected).
+  - content: 'Measurement validity becomes load-bearing: sensor calibration, uncertainty
+      of self-reported values and registered units; health status is a derived verdict.'
+  - content: Profiles declare, per data element, the required truth mode — attest-sampled,
+      self-committed, or both with precedence.
+  sources:
+  - origin:
+      ref:
+        source: UniDPP PLAN (2026-09)
+        id: 'Passive twin → active twin: the paradigm axis'
+    type: lineage
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: active twin
+  language_code: eng
+  annotations: []
+termid: dpp-0133
+id: 86e41f5c-2e81-56b4-94c8-1fa5ab37ce46

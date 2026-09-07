@@ -1,0 +1,28 @@
+---
+data:
+  identifier: dpp-0011
+  domains:
+  - concept_id: section-identity-and-carriers
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: 8c9d7ff3-a7bc-58d7-bf3d-6f896e819313
+---
+data:
+  definition:
+  - content: specified area of knowledge, application, or activity within which a
+      unique identifier is used
+  sources:
+  - origin:
+      ref:
+        source: EN 18219:2026
+        id: 3.1.4
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: domain
+  language_code: eng
+  annotations: []
+termid: dpp-0011
+id: ec877224-348e-52d3-ba97-7c5788b48b5e

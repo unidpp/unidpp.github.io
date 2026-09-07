@@ -1,0 +1,28 @@
+---
+data:
+  identifier: dpp-0050
+  domains:
+  - concept_id: section-actors-and-issuance
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: 4b393942-2a86-5c3f-982c-76ac7d24aaf8
+---
+data:
+  definition:
+  - content: company or company function that produces yarns from raw material; it
+      has mainly Fabric and Knitwear producers as customers (Apparel Producers sometimes)
+  sources:
+  - origin:
+      ref:
+        source: CWA 18291:2025
+        id: '3.16'
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: yarn producer
+  language_code: eng
+  annotations: []
+termid: dpp-0050
+id: b532311d-d4e4-53f7-8584-e9999af8afea

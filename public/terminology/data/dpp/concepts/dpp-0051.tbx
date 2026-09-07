@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tbx style="dca" type="TBX-Basic" xml:lang="en" xmlns="urn:iso:std:iso:30042:ed-2">
+  <tbxHeader>
+    <fileDesc>
+      <source>https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0051</source>
+    </fileDesc>
+  </tbxHeader>
+  <text>
+    <body>
+      <conceptEntry id="dpp-0051">
+      <languageSection xml:lang="eng">
+          <descrip type="definition">
+            <p>company or company function that sells garments to the Consumer. It is a client of Apparel Producer, Knitwear Producer, and Yarn Producer</p>
+          </descrip>
+          <ref>CWA 18291:2025 3.17</ref>
+      </languageSection>
+      </conceptEntry>
+    </body>
+  </text>
+</tbx>

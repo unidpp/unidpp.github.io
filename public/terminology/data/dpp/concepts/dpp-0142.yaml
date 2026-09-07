@@ -1,0 +1,47 @@
+---
+data:
+  identifier: dpp-0142
+  domains:
+  - concept_id: section-framework-terms
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: 72d0affd-2b90-5131-a807-2f77c5439373
+---
+data:
+  definition:
+  - content: typed structural relationship, and its event class, between a parent
+      passport and an installed child component, recorded with method, slot identity,
+      pairing, alterations, performer and time, which makes an installed component
+      a different legal object from the standalone one
+  notes:
+  - content: 'Schema: install(child, parent, {method, slotId, pairing: none|firmware|key|module,
+      alteration[], performedBy, at}).'
+  - content: 'Bidirectional parent knowledge is mandatory: the parent''s manifest
+      lists children and the child''s event log records its installation interval
+      (parent, slot, method), for recall routing, scoped service access, ownership
+      transfer and end-of-life routing.'
+  - content: 'Lifecycle coupling: warranty re-scope and service economics ride the
+      parent, and the part is no longer sellable as new; custody transfer (concept
+      dpp-0134) remains orthogonal, since ownership changes while composition stays
+      fixed.'
+  - content: 'The recoverability of the binding (concept dpp-0143) determines identity
+      continuity: disassembly that restores a marketable object with identity continuity
+      is installation, while dissolving identity is a transformation event (concept
+      dpp-0129). Part replacement is an uninstall followed by an install, and regulated
+      children keep their own passports through it.'
+  sources:
+  - origin:
+      ref:
+        source: UniDPP PLAN (2026-09)
+        id: The passport relationship algebra (association / derivation / installation
+          / membership)
+    type: lineage
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: installation
+  language_code: eng
+  annotations: []
+termid: dpp-0142
+id: 291fdc83-1a5d-52d3-912b-169279b83bde

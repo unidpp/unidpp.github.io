@@ -1,0 +1,28 @@
+---
+data:
+  identifier: dpp-0051
+  domains:
+  - concept_id: section-actors-and-issuance
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: bae969b2-0331-5590-b128-bb371bb4469f
+---
+data:
+  definition:
+  - content: company or company function that sells garments to the Consumer. It is
+      a client of Apparel Producer, Knitwear Producer, and Yarn Producer
+  sources:
+  - origin:
+      ref:
+        source: CWA 18291:2025
+        id: '3.17'
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: retailer
+  language_code: eng
+  annotations: []
+termid: dpp-0051
+id: e8c2e632-fb7b-5d11-bc1d-39305144ff4d

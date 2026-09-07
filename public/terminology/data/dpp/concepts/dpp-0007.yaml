@@ -1,0 +1,38 @@
+---
+data:
+  identifier: dpp-0007
+  domains:
+  - concept_id: section-identity-and-carriers
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: d00ed9e3-9bdd-5c20-a129-80c84ad525b6
+---
+data:
+  definition:
+  - content: identifier which is guaranteed to be unique among all identifiers used
+      for those objects and for a specific purpose
+  notes:
+  - content: For more information, see ISO/IEC 15459-1.
+  - content: 'Harmonization note (UniDPP): EN 18219:2026 and EN 18220:2026 define
+      “unique identifier” as a string of characters required to be unique; see concept
+      dpp-0006.'
+  sources:
+  - origin:
+      ref:
+        source: CWA 18291:2025
+        id: '3.3'
+    type: authoritative
+  - origin:
+      ref:
+        source: ISO 29404:2015
+        id: '3.26'
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: Unique Identifier
+  language_code: eng
+  annotations: []
+termid: dpp-0007
+id: 5823fce5-4b8b-5259-9026-10b2f2b4a9a5

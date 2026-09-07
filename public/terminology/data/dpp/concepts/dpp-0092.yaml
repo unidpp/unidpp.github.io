@@ -1,0 +1,29 @@
+---
+data:
+  identifier: dpp-0092
+  domains:
+  - concept_id: section-semantics-and-profiles
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: 2334eebc-d649-5cf0-be1a-3410fb31be66
+---
+data:
+  definition:
+  - content: particular way used to perform a specific action on a resource
+  examples:
+  - content: read a DPP
+  sources:
+  - origin:
+      ref:
+        source: EN 18222:2026
+        id: '3.3'
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: method
+  language_code: eng
+  annotations: []
+termid: dpp-0092
+id: f945fab3-0c4d-519e-9c5a-c595e1166a59

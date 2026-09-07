@@ -1,0 +1,34 @@
+---
+data:
+  identifier: dpp-0083
+  domains:
+  - concept_id: section-trust-and-verification
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: 48d10166-1a58-56d5-a260-60a8b784e540
+---
+data:
+  definition:
+  - content: developed stage of technical capability at a given time as regards products,
+      processes and services, based on the relevant consolidated findings of science,
+      technology and experience
+  sources:
+  - origin:
+      ref:
+        source: EN 18219:2026
+        id: 3.1.21
+    type: authoritative
+  - origin:
+      ref:
+        source: ISO/IEC Guide 2:2004
+        id: '1.4'
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: state-of-the-art
+  language_code: eng
+  annotations: []
+termid: dpp-0083
+id: e7c481d9-319a-5822-ba0e-842c10990a3b

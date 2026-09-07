@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tbx style="dca" type="TBX-Basic" xml:lang="en" xmlns="urn:iso:std:iso:30042:ed-2">
+  <tbxHeader>
+    <fileDesc>
+      <source>https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0001</source>
+    </fileDesc>
+  </tbxHeader>
+  <text>
+    <body>
+      <conceptEntry id="dpp-0001">
+      <languageSection xml:lang="eng">
+          <descrip type="definition">
+            <p>digital record of product characteristics throughout its life cycle</p>
+          </descrip>
+          <note type="note">Example characteristics include environmental sustainability, environmental impact, and recyclability.</note>
+          <note type="note">Harmonization note (UniDPP): the variant of this definition extended by accessibility via electronic means through a data carrier is recorded under concept dpp-0004.</note>
+          <ref>EN 18223:2026 3.4</ref>
+          <ref>EN 18239 (prEN 18239:2025) 3.9</ref>
+          <ref>EN 18216:2026 3.7</ref>
+          <ref>EN 18221:2026 3.2</ref>
+          <ref>EN 18222:2026 3.2</ref>
+          <ref>EN 18246 (prEN 18246:2025) 3.2</ref>
+          <ref>ISO/AWI 25534-1 (2026-09-05 draft) 3.1</ref>
+      </languageSection>
+      </conceptEntry>
+    </body>
+  </text>
+</tbx>

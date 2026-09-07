@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tbx style="dca" type="TBX-Basic" xml:lang="en" xmlns="urn:iso:std:iso:30042:ed-2">
+  <tbxHeader>
+    <fileDesc>
+      <source>https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0104</source>
+    </fileDesc>
+  </tbxHeader>
+  <text>
+    <body>
+      <conceptEntry id="dpp-0104">
+      <languageSection xml:lang="eng">
+          <descrip type="definition">
+            <p>unit of knowledge created by a unique combination of characteristics</p>
+          </descrip>
+          <ref>IDTA-01001-3.2:2026 (Specification of the Asset Administration Shell — Part 1: Metamodel) 1.1.10</ref>
+          <ref>IEC 63278-1:2023; IEC 61360-1:2016, 3.1.8; ISO 22274:2013, 3.7</ref>
+      </languageSection>
+      </conceptEntry>
+    </body>
+  </text>
+</tbx>

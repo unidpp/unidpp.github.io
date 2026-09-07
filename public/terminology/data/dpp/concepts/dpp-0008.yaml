@@ -1,0 +1,36 @@
+---
+data:
+  identifier: dpp-0008
+  domains:
+  - concept_id: section-identity-and-carriers
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: f2164b86-d097-56d1-a3f8-6ccf93af9b7b
+---
+data:
+  definition:
+  - content: sequence of characters associated with digital, non-digital, or abstract
+      entities, such as books, images, reports, metadata records or events
+  sources:
+  - origin:
+      ref:
+        source: EN 18216:2026
+        id: '3.1'
+    type: authoritative
+  - origin:
+      ref:
+        source: ISO 24619:2011
+        id: 3.2.1
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: digital identifier
+  - type: expression
+    normative_status: admitted
+    designation: identifier
+  language_code: eng
+  annotations: []
+termid: dpp-0008
+id: 39f9edbb-baad-505b-b6a2-41b1d7bf2400

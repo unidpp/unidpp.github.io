@@ -1,0 +1,37 @@
+---
+data:
+  identifier: dpp-0096
+  domains:
+  - concept_id: section-semantics-and-profiles
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: d45f97a7-92dd-5412-8820-45fef0581766
+---
+data:
+  definition:
+  - content: software functional element specific to the solution of a problem in
+      industrial-process measurement and control
+  notes:
+  - content: An application can be distributed among resources and may communicate
+      with other applications.
+  sources:
+  - origin:
+      ref:
+        source: 'IDTA-01001-3.2:2026 (Specification of the Asset Administration Shell
+          — Part 1: Metamodel)'
+        id: 1.1.2
+    type: authoritative
+  - origin:
+      ref:
+        source: IEC TR 62390:2005-01
+        id: 3.1.2
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: application
+  language_code: eng
+  annotations: []
+termid: dpp-0096
+id: e9e2ffa7-0057-5959-a770-f0a214edae98

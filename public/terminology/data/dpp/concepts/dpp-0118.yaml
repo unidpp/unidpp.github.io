@@ -1,0 +1,34 @@
+---
+data:
+  identifier: dpp-0118
+  domains:
+  - concept_id: section-semantics-and-profiles
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: 00ed85ad-3ed3-50fb-9df2-6e51cc441452
+---
+data:
+  definition:
+  - content: interacting, interrelated, or interdependent elements forming a complex
+      whole
+  sources:
+  - origin:
+      ref:
+        source: 'IDTA-01001-3.2:2026 (Specification of the Asset Administration Shell
+          — Part 1: Metamodel)'
+        id: 1.1.25
+    type: authoritative
+  - origin:
+      ref:
+        source: IEC 63278-1:2023; IEC TS 62443-1-1:2009
+        id: 3.2.123
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: system
+  language_code: eng
+  annotations: []
+termid: dpp-0118
+id: 3caf3c6f-13de-5d3e-b34b-e2cf7de0bee5

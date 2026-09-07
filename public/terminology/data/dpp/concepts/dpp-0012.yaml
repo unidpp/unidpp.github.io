@@ -1,0 +1,32 @@
+---
+data:
+  identifier: dpp-0012
+  domains:
+  - concept_id: section-identity-and-carriers
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: e930c625-79d2-5731-bf4e-cc3fcbc2bdf7
+---
+data:
+  definition:
+  - content: system or mechanism that an organization uses to generate and assign
+      unique identifiers to its objects without the intervention or oversight of an
+      external authority
+  sources:
+  - origin:
+      ref:
+        source: EN 18219:2026
+        id: 3.1.20
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: self-issuing system
+  - type: expression
+    normative_status: admitted
+    designation: decentralized identification scheme
+  language_code: eng
+  annotations: []
+termid: dpp-0012
+id: bb1852e2-324b-51b1-baab-65e34342a152

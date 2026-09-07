@@ -1,0 +1,33 @@
+---
+data:
+  identifier: dpp-0030
+  domains:
+  - concept_id: section-identity-and-carriers
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: 18756655-a75c-53d6-994c-625f252025d6
+---
+data:
+  definition:
+  - content: version of a product of which all units share the same technical characteristics
+      and the same model identifier
+  sources:
+  - origin:
+      ref:
+        source: EN 18219:2026
+        id: 3.1.11
+    type: authoritative
+  - origin:
+      ref:
+        source: EN 18220:2026
+        id: '3.10'
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: model
+  language_code: eng
+  annotations: []
+termid: dpp-0030
+id: f9d6c42c-40dc-5ba6-9e99-ba358e65b844

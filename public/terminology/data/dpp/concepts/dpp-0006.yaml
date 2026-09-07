@@ -1,0 +1,46 @@
+---
+data:
+  identifier: dpp-0006
+  domains:
+  - concept_id: section-identity-and-carriers
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: e702ec83-0a2f-553d-856d-f19abdac2c6a
+---
+data:
+  definition:
+  - content: string of characters that is required to be unique among all identifiers
+      used for all objects for a specific purpose
+  notes:
+  - content: A unique identifier refers to unique product identifier (3.1.25), unique
+      economic operator identifier (3.1.22), and unique facility identifier (3.1.23).
+  - content: 'Harmonization note (UniDPP): CWA 18291:2025 defines “Unique Identifier”
+      as an identifier which is guaranteed to be unique; see concept dpp-0007.'
+  sources:
+  - origin:
+      ref:
+        source: EN 18219:2026
+        id: 3.1.24
+    type: authoritative
+  - origin:
+      ref:
+        source: EN 18220:2026
+        id: '3.18'
+    type: authoritative
+  - origin:
+      ref:
+        source: ISO 29404:2015
+        id: '3.26'
+    type: authoritative
+    modification: 'EN 18219:2026 modification: Note 1 to entry removed and a new Note
+      1 to entry added. EN 18220:2026 modification: “identifier” replaced by “string
+      of characters”, Note 1 to entry removed and a new Note 1 to entry added.'
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: unique identifier
+  language_code: eng
+  annotations: []
+termid: dpp-0006
+id: '0688f702-8408-555f-af6f-03e14ead9887'

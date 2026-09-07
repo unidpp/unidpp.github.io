@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tbx style="dca" type="TBX-Basic" xml:lang="en" xmlns="urn:iso:std:iso:30042:ed-2">
+  <tbxHeader>
+    <fileDesc>
+      <source>https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0044</source>
+    </fileDesc>
+  </tbxHeader>
+  <text>
+    <body>
+      <conceptEntry id="dpp-0044">
+      <languageSection xml:lang="eng">
+          <descrip type="definition">
+            <p>name and address of the person who makes, or on whose behalf the &quot;export declaration&quot; is made, and who is the owner of the goods or has similar right of disposal over them at the time when the declaration is accepted</p>
+          </descrip>
+          <ref>CWA 18291:2025 3.10</ref>
+          <ref>ISO/TS 24533:2012</ref>
+      </languageSection>
+      </conceptEntry>
+    </body>
+  </text>
+</tbx>

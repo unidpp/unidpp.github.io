@@ -1,0 +1,35 @@
+---
+data:
+  identifier: dpp-0126
+  domains:
+  - concept_id: section-framework-terms
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: f12ad3da-0c87-507d-a6b9-e8a486e96e3e
+---
+data:
+  definition:
+  - content: deterministic, registered and legally cited view of the testimonial record
+      of a governed digital twin, computed under a profile from the event-sourced
+      change log
+  notes:
+  - content: The passport is the legal materialized view of the twin; the twin is
+      the source of truth.
+  - content: Notarized snapshots support as-of queries, which answer what was legally
+      true at a given time.
+  - content: Any conforming twin can emit the view; the projection is defined representation-neutrally.
+  sources:
+  - origin:
+      ref:
+        source: UniDPP PLAN (2026-09)
+        id: Composition, projection, and offline operation
+    type: lineage
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: projection
+  language_code: eng
+  annotations: []
+termid: dpp-0126
+id: 275e542c-7d4d-5e01-b1e2-9c8eadcbaef8

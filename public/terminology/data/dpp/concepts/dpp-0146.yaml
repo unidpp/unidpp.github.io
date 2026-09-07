@@ -1,0 +1,38 @@
+---
+data:
+  identifier: dpp-0146
+  domains:
+  - concept_id: section-framework-terms
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: ebd30d94-b46e-55a4-af44-efef30b171b1
+---
+data:
+  definition:
+  - content: state of a subject reconstructed from its event-sourced record at a specified
+      past time, anchored by a notarized snapshot so that queries can answer what
+      was legally true at that time
+  notes:
+  - content: The two authoritative query modes are the live view (freshness-labelled)
+      and the notarized as-of snapshot (log-anchored); legal purpose selects the mode.
+  - content: Transformation events hash-link their inputs by as-of state hash (concept
+      dpp-0129), and profile-version bindings recorded as lifecycle events make manifest
+      history as-of-reconstructable, answering questions such as whether a product
+      was compliant when sold.
+  - content: Mirrors and caches are always as-of stamped; the projection (concept
+      dpp-0126) is computed from the record, so as-of queries are reproducible.
+  sources:
+  - origin:
+      ref:
+        source: UniDPP PLAN (2026-09)
+        id: Composition, projection, and offline operation
+    type: lineage
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: as-of state
+  language_code: eng
+  annotations: []
+termid: dpp-0146
+id: 5b4a5136-5d25-5205-9fcf-ca587a518c02

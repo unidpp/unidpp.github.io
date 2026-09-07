@@ -1,0 +1,34 @@
+---
+data:
+  identifier: dpp-0120
+  domains:
+  - concept_id: section-semantics-and-profiles
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: fdb36c90-ad87-5b4a-93b5-8926f85da367
+---
+data:
+  definition:
+  - content: hardware or software element which specifies the common attributes shared
+      by all instances of the type
+  sources:
+  - origin:
+      ref:
+        source: 'IDTA-01001-3.2:2026 (Specification of the Asset Administration Shell
+          — Part 1: Metamodel)'
+        id: 1.1.27
+    type: authoritative
+  - origin:
+      ref:
+        source: IEC TR 62390:2005-01
+        id: 3.1.25
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: type
+  language_code: eng
+  annotations: []
+termid: dpp-0120
+id: f429ed8c-02f4-5f2c-9055-e07c2cbdbee1

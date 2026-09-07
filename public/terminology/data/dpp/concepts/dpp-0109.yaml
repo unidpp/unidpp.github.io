@@ -1,0 +1,36 @@
+---
+data:
+  identifier: dpp-0109
+  domains:
+  - concept_id: section-semantics-and-profiles
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: d1db9c43-04d2-5310-8a48-942ed8b8d088
+---
+data:
+  definition:
+  - content: specific asset that is uniquely identifiable
+  examples:
+  - content: Examples of instance assets are material, a product, a part, a device,
+      a machine, software, a control system, or a production system.
+  sources:
+  - origin:
+      ref:
+        source: 'IDTA-01001-3.2:2026 (Specification of the Asset Administration Shell
+          — Part 1: Metamodel)'
+        id: 1.1.16
+    type: authoritative
+  - origin:
+      ref:
+        source: IEC 63278-1:2023
+    type: authoritative
+    modification: Editorial changes.
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: instance asset
+  language_code: eng
+  annotations: []
+termid: dpp-0109
+id: c129c999-8862-5b18-943d-adf0db3d7369

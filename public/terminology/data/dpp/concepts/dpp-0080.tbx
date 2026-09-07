@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tbx style="dca" type="TBX-Basic" xml:lang="en" xmlns="urn:iso:std:iso:30042:ed-2">
+  <tbxHeader>
+    <fileDesc>
+      <source>https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0080</source>
+    </fileDesc>
+  </tbxHeader>
+  <text>
+    <body>
+      <conceptEntry id="dpp-0080">
+      <languageSection xml:lang="eng">
+          <descrip type="definition">
+            <p>entity to which specified requirements apply</p>
+          </descrip>
+          <note type="example">Product, process, service, system, installation, project, data, design, material, claim, person, body or organization, or any combination thereof.</note>
+          <ref>EN 18219:2026 3.1.12</ref>
+          <ref>ISO/IEC 17000:2020 4.2</ref>
+      </languageSection>
+      </conceptEntry>
+    </body>
+  </text>
+</tbx>

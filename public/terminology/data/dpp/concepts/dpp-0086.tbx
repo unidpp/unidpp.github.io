@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tbx style="dca" type="TBX-Basic" xml:lang="en" xmlns="urn:iso:std:iso:30042:ed-2">
+  <tbxHeader>
+    <fileDesc>
+      <source>https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0086</source>
+    </fileDesc>
+  </tbxHeader>
+  <text>
+    <body>
+      <conceptEntry id="dpp-0086">
+      <languageSection xml:lang="eng">
+          <descrip type="definition">
+            <p>ability of two or more systems or applications to exchange information and to mutually use the information that has been exchanged</p>
+          </descrip>
+          <note type="note">Harmonization note (UniDPP): EN 18223:2026 defines “interoperability” from ISO 18435-1:2009 with a different formulation; see concept dpp-0087. Both variants are candidates for harmonization in the proposed ISO 25534-1 Part 1 (Vocabulary).</note>
+          <ref>EN 18219:2026 3.1.7</ref>
+          <ref>ISO/IEC 22123-1:2023 3.6.1</ref>
+      </languageSection>
+      </conceptEntry>
+    </body>
+  </text>
+</tbx>

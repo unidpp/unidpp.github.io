@@ -1,0 +1,36 @@
+---
+data:
+  identifier: dpp-0055
+  domains:
+  - concept_id: section-actors-and-issuance
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: a4b1d784-ff70-56a5-b230-aec356525025
+---
+data:
+  definition:
+  - content: company or company function that performs activities to obtain recovered
+      resources for use in a process or a product, excluding energy recovery
+  notes:
+  - content: Activities to obtain resources include activities such as recovery, collection,
+      transport, sorting, cleaning, and re-processing.
+  - content: Recycling does not include reuse.
+  sources:
+  - origin:
+      ref:
+        source: CWA 18291:2025
+        id: '3.22'
+    type: authoritative
+  - origin:
+      ref:
+        source: ISO 59004:2024
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: recycler
+  language_code: eng
+  annotations: []
+termid: dpp-0055
+id: 5b2dbdb2-8985-5dbf-acde-f7249dfbfaf8

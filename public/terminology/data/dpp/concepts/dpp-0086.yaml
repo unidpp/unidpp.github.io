@@ -1,0 +1,38 @@
+---
+data:
+  identifier: dpp-0086
+  domains:
+  - concept_id: section-semantics-and-profiles
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: 46627ac4-4b57-539e-86a6-bc141f3eeef0
+---
+data:
+  definition:
+  - content: ability of two or more systems or applications to exchange information
+      and to mutually use the information that has been exchanged
+  notes:
+  - content: 'Harmonization note (UniDPP): EN 18223:2026 defines “interoperability”
+      from ISO 18435-1:2009 with a different formulation; see concept dpp-0087. Both
+      variants are candidates for harmonization in the proposed ISO 25534-1 Part 1
+      (Vocabulary).'
+  sources:
+  - origin:
+      ref:
+        source: EN 18219:2026
+        id: 3.1.7
+    type: authoritative
+  - origin:
+      ref:
+        source: ISO/IEC 22123-1:2023
+        id: 3.6.1
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: interoperability
+  language_code: eng
+  annotations: []
+termid: dpp-0086
+id: 1d46ee0f-a7ee-519f-bfa6-3d3796ed5256

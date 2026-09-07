@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tbx style="dca" type="TBX-Basic" xml:lang="en" xmlns="urn:iso:std:iso:30042:ed-2">
+  <tbxHeader>
+    <fileDesc>
+      <source>https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0048</source>
+    </fileDesc>
+  </tbxHeader>
+  <text>
+    <body>
+      <conceptEntry id="dpp-0048">
+      <languageSection xml:lang="eng">
+          <descrip type="definition">
+            <p>company or company function that produces final or non-final fashion products (yarns, fabrics, garments, accessories, footwear, etc.); its industrial process has in input materials and in output components or final fashion goods for the business customers or final customers</p>
+          </descrip>
+          <ref>CWA 18291:2025 3.14</ref>
+      </languageSection>
+      </conceptEntry>
+    </body>
+  </text>
+</tbx>

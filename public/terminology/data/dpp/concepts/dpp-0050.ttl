@@ -1,0 +1,9 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+<https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0050>
+  a skos:Concept ;
+  skos:notation "dpp-0050" ;
+  skos:prefLabel "yarn producer"@eng ;
+  skos:definition "company or company function that produces yarns from raw material; it has mainly Fabric and Knitwear producers as customers (Apparel Producers sometimes)"@eng
+ .

@@ -1,0 +1,31 @@
+---
+data:
+  identifier: dpp-0076
+  domains:
+  - concept_id: section-trust-and-verification
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: 6a3e36dd-d8ef-523f-9056-1974b71cf482
+---
+data:
+  definition:
+  - content: property of being accessible and usable on demand by an authorized entity
+  sources:
+  - origin:
+      ref:
+        source: EN 18239 (prEN 18239:2025)
+        id: '3.3'
+    type: authoritative
+  - origin:
+      ref:
+        source: EN ISO/IEC 27000
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: system availability
+  language_code: eng
+  annotations: []
+termid: dpp-0076
+id: 371cf237-2c62-5487-97fb-8071e7561051

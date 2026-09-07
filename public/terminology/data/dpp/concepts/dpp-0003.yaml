@@ -1,0 +1,32 @@
+---
+data:
+  identifier: dpp-0003
+  domains:
+  - concept_id: section-identity-and-carriers
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: a28836ac-4abc-5eb1-a898-e3268b85cc8a
+---
+data:
+  definition:
+  - content: unique string of characters for the identification of a product that
+      also enables a web link to the digital product passport
+  sources:
+  - origin:
+      ref:
+        source: EN 18246 (prEN 18246:2025)
+        id: '3.3'
+    type: authoritative
+  - origin:
+      ref:
+        source: EN 18219:2026
+    type: lineage
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: unique product identifier
+  language_code: eng
+  annotations: []
+termid: dpp-0003
+id: 7dd0138f-eb21-5794-bf20-d363d51dc657

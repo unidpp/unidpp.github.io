@@ -1,0 +1,27 @@
+---
+data:
+  identifier: dpp-0061
+  domains:
+  - concept_id: section-lifecycle-and-events
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: f374076c-91a0-5fc4-a0d6-c3fb0ecc9b87
+---
+data:
+  definition:
+  - content: first making available of a product
+  sources:
+  - origin:
+      ref:
+        source: EN 18219:2026
+        id: 3.1.14
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: placed on the market
+  language_code: eng
+  annotations: []
+termid: dpp-0061
+id: 97f190d7-7007-5353-926d-19d675652829

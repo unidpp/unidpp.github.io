@@ -1,0 +1,32 @@
+---
+data:
+  identifier: dpp-0038
+  domains:
+  - concept_id: section-actors-and-issuance
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: 510f1fb0-3349-57c6-8c2e-e9abc89c5fac
+---
+data:
+  definition:
+  - content: organization or individual that fulfils a role
+  sources:
+  - origin:
+      ref:
+        source: EN 18239 (prEN 18239:2025)
+        id: '3.7'
+    type: authoritative
+  - origin:
+      ref:
+        source: ISO 23234:2021
+        id: '3.4'
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: actor
+  language_code: eng
+  annotations: []
+termid: dpp-0038
+id: de3ff597-58ad-559b-b245-498b4d73de11

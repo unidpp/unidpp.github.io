@@ -1,0 +1,32 @@
+---
+data:
+  identifier: dpp-0117
+  domains:
+  - concept_id: section-semantics-and-profiles
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: a66e6b50-57c0-525f-a2a2-de159c63dfd9
+---
+data:
+  definition:
+  - content: element of a Submodel template
+  sources:
+  - origin:
+      ref:
+        source: 'IDTA-01001-3.2:2026 (Specification of the Asset Administration Shell
+          — Part 1: Metamodel)'
+        id: 1.1.24
+    type: authoritative
+  - origin:
+      ref:
+        source: IEC 63278-1:2023
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: Submodel template element
+  language_code: eng
+  annotations: []
+termid: dpp-0117
+id: 4028c2a4-76a0-57cd-a134-32538f2a22db

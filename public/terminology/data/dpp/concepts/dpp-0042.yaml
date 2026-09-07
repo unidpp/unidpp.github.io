@@ -1,0 +1,27 @@
+---
+data:
+  identifier: dpp-0042
+  domains:
+  - concept_id: section-actors-and-issuance
+    source: urn:unidpp:dpp
+    ref_type: section
+status: valid
+id: 419386ab-1442-5ef9-bf2e-1ddc97d34a31
+---
+data:
+  definition:
+  - content: expert in charge of performing a study
+  sources:
+  - origin:
+      ref:
+        source: CWA 18291:2025
+        id: '3.8'
+    type: authoritative
+  terms:
+  - type: expression
+    normative_status: preferred
+    designation: expert
+  language_code: eng
+  annotations: []
+termid: dpp-0042
+id: 3a064aa0-73ce-51c0-a03d-037d3e45f612

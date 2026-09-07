@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tbx style="dca" type="TBX-Basic" xml:lang="en" xmlns="urn:iso:std:iso:30042:ed-2">
+  <tbxHeader>
+    <fileDesc>
+      <source>https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0132</source>
+    </fileDesc>
+  </tbxHeader>
+  <text>
+    <body>
+      <conceptEntry id="dpp-0132">
+      <languageSection xml:lang="eng">
+          <descrip type="definition">
+            <p>digital twin reconstructed from point-in-time attestations about the object, sampled when the object visits an attestor, in which truth is episodic and staleness between attestations is unbounded and undetectable</p>
+          </descrip>
+          <note type="note">Corresponds to capability classes S0 (silent, testimony-only) and S1 (passive authentication).</note>
+          <note type="note">Trust rides entirely on attestor authority; the twin is testimonial by default and sensorial by exception.</note>
+          <ref>UniDPP PLAN (2026-09) Passive twin → active twin: the paradigm axis</ref>
+      </languageSection>
+      </conceptEntry>
+    </body>
+  </text>
+</tbx>
