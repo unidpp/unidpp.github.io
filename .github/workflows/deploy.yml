@@ -28,6 +28,15 @@ jobs:
       # run never races the Pages config. HTTP 409 = Pages config locked by
       # a concurrent change: tolerated. GH_TOKEN below is the ephemeral,
       # per-run github.token - no secret is stored in this file.
+      #
+      # NOTE (verified in run 34087427084): the default GITHUB_TOKEN is not
+      # authorized to mutate Pages settings (the PUT call fails), while the
+      # deployment itself works fine with pages:write + id-token:write. So
+      # this step is best-effort and must never fail the run. To pin the
+      # build type for real, either set Source to GitHub Actions once under
+      # Settings - Pages, or store a PAT or App token with Pages admin as a
+      # repo secret and point GH_TOKEN at it; token values are never
+      # committed to this file.
       - name: Ensure Pages is workflow-enabled
         env:
           GH_TOKEN: ${{ github.token }}
