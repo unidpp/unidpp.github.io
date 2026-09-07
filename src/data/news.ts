@@ -13,7 +13,7 @@ export const news: NewsItem[] = [
     date: '2026-09-07',
     title: 'Terminology browser live at /terminology/',
     body:
-      'The DPP vocabulary concept browser — 145 verified concepts compiled from the EN series, CWA 18291, and IDTA 01001 — is now served from this site.',
+      'The DPP vocabulary concept browser — 142 verified concepts compiled from the EN series, CWA 18291, and IDTA 01001 — is now served from this site.',
     href: '/terminology/',
   },
   {
