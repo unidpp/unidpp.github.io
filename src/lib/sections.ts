@@ -12,6 +12,7 @@ export const frameworkNav: NavItem[] = [
   { label: 'Capability classes', href: '/framework/#capability' },
   { label: 'Twin axis', href: '/framework/#twin' },
   { label: 'Resilience', href: '/framework/#resilience' },
+  { label: 'Framework structure', href: '/framework/structure/' },
   { label: 'Standards map', href: '/framework/standards/' },
   { label: 'Trust model', href: '/framework/trust/' },
 ];

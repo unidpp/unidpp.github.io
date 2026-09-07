@@ -1,0 +1,141 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Sidebar from '../../../components/Sidebar.astro';
+import { frameworkNav } from '../../../lib/sections';
+import DataTable from '../../../components/DataTable.astro';
+---
+
+<BaseLayout
+  title="Framework structure"
+  description="The definitive anatomy of the UniDPP framework: the fourteen invariants, twelve seams, six layers, service tiers, capability classes, relationship algebra, actor model, registry content classes, and the trust ladder — the named parts of the machine."
+  eyebrow="Framework — structure"
+  sectioned
+>
+  <Sidebar slot="rail" heading="Framework" items={frameworkNav} />
+  <h1>The UniDPP framework structure</h1>
+  <p class="lede">
+    One identity and one append-only record per subject, observed through many
+    sovereign lenses, served over a degradation ladder, and held together by a
+    registered discovery and trust substrate — with issuance, hosting, identity,
+    anchoring, archiving and trust as separable duties. It is a structure, not a
+    server: every function is a registered, contestable service, and the framework
+    specifies the contracts between them.
+  </p>
+
+  <section id="anatomy" aria-labelledby="anatomy-h">
+    <h2 id="anatomy-h">The named anatomy</h2>
+    <DataTable
+      columns={['Part', 'Name', 'Content']}
+      rows={[
+        ['<strong>Doctrine</strong>', 'The 14 invariants (I1–I14)',
+         'one-identity-never-reminted · single-definition-many-constraints · finest-recorded-granularity · append-only event sourcing · typed relationship algebra · state-machine legitimacy · issuance-where-duty-attaches · passport-as-projection · graded trust · profiles-as-jurisdiction×sector×characteristic · no-load-bearing-proprietary-layer · enumeration resistance · degradation ladder · continuity'],
+        ['<strong>Joints</strong>', 'The 12 seams (S1–S12)',
+         'carrier↔resolver · resolver↔hosts · core↔profiles (the mount) · profile↔registry · registry↔registry · log↔transparency-logs · credentials↔trust-lists · transforms↔engines · parent↔child · device↔system · Tier-A↔Tier-B · passport↔adjacent-regimes. Defects live at seams, not components'],
+        ['<strong>Planes</strong>', 'L0–L6',
+         'identity (15459 + lattice) · neutral core passport · profiles (lenses) · semantic registry (FERIN) · trust (SIGNATIF) · resolution · national/regional serving'],
+        ['<strong>Service ladder</strong>', 'Tier A / B / C',
+         'carrier-embedded offline minimum · served full passport · notarized archive. Degradation is explicit, never silent'],
+        ['<strong>Subject capability</strong>', 'S0–S3',
+         'silent · passive-auth · logged-contact · connected. Profiles must be satisfiable by the class'],
+        ['<strong>Graph algebra</strong>', 'R1–R7 + E0–E15',
+         'association · derivation · installation · type-lineage · profile-of · custody · membership; typed events from issuance through decompose'],
+        ['<strong>Actors</strong>', '30 roles, 4 matrices',
+         'issuance · lifecycle · verification (incl. marketplace, CAB) · infrastructure; may-issue / may-append / may-read / may-operate'],
+        ['<strong>Registry content</strong>', 'C1–C8',
+         'semantics · profile shapes · services · protocol bindings · verification mechanisms · transforms/equivalences · predicates · identifier schemes'],
+        ['<strong>Trust</strong>', 'SIGNATIF ladder',
+         'unsigned → self-declared → attested → multi-signed → log-anchored; threshold roots; M-of-K master list; reason-coded retroactivity; three verification readings'],
+      ]}
+    />
+  </section>
+
+  <section id="omitted" aria-labelledby="omitted-h">
+    <h2 id="omitted-h">What simplistic DPP models omit</h2>
+    <p>
+      A common formulation — <em>scan a code, look it up in a discovery service, read
+      the passport</em> — works for a first-sale, online, single-owner,
+      single-market, intact product. The framework describes the same object across
+      its whole life, all its owners, all its markets, and all its failures.
+      Each row is an assumption the naive model makes, the reality that breaks it,
+      and where the framework carries it.
+    </p>
+    <DataTable
+      columns={['Naive assumption', 'Reality that breaks it', 'Framework carrier']}
+      rows={[
+        ['First sale, one owner', 'Resale, gift, inheritance, bankruptcy, used-export', 'E1 custody ceremony; N-owner trail'],
+        ['Owner identifiable', 'Auctions: judged condition, provenance gaps, tainted title', 'E14 stamps; gap markers; title taint as graph event; gates as predicate runners'],
+        ['Product unchanged', 'Repair, firmware, modification — legal class changes with a dongle', 'E4 → derived type + mandatory re-evaluation'],
+        ['Product intact', 'Refurbish, remanufacture, decompose, recycle', 'R2 algebra; end-of-waste = new issuance; mass balance'],
+        ['Recall reaches buyer', 'Second-hand markets, scattered custodians', 'Predicate recall; DAG traversal; no enumeration'],
+        ['Finder is generic public', 'Roles: consumer, repairer, customs, insurer, machine', 'Visibility classes; 30-role model; access as profile content'],
+        ['One jurisdiction', 'EU+JP+CN duty on one object simultaneously', 'Three-axial profiles; dated applicability; sovereign suites co-signed'],
+        ['Always online', 'Border checks, outages, censored networks', 'Tier-A offline + cached anchors + inclusion proofs'],
+        ['Host is eternal', 'Issuer/host death, succession', 'I14 continuity; archive as resolution target'],
+        ['One identifier world', 'GS1 / Handle / Ecode / MA coexistence', 'C8 schemes + registered bridges'],
+        ['Lookup is enough', '"What was true when sold in 2028?"', 'Event sourcing + snapshots + three readings'],
+        ['Silent product = broken', 'Most DPP goods never communicate', 'S0–S3; testimonial-by-default; satisfiability rule'],
+        ['Numbers are numbers', 'Boundary classifications flip with decision rules', 'GUM uncertainty; ILAC-G8 guard-banding; registered units'],
+        ['Issuers behave', 'Misissuance, hacked authorities, laundering', 'Void-ab-initio; threshold roots; graph taint'],
+        ['Finder is human', 'Machines and AI agents', 'Machine-context bindings; acceptance policies'],
+        ['DPP stands alone', 'Customs, e-invoicing, EPCIS, UNTP', 'Seam S12; mapping TR'],
+      ]}
+    />
+  </section>
+
+  <section id="discovery" aria-labelledby="discovery-h">
+    <h2 id="discovery-h">Discovery is a lattice, not a lookup</h2>
+    <p>
+      The simplistic view — <em>a discovery service maps an identifier to a
+      location</em> — assumes the product is on first sale, online, single-hosted,
+      single-jurisdiction, intact, and wants to be found. In the framework,
+      discovery is distributed across six entry points, routing dimensions, and a
+      fallback spine.
+    </p>
+
+    <h3>Entry points</h3>
+    <ul>
+      <li><strong>The carrier</strong> — carries an identity that resolves reproducibly, not a URL</li>
+      <li><strong>Type-level lookup</strong> — find the model's passport without a specific unit</li>
+      <li><strong>Composition traversal</strong> — children discovered through the parent manifest</li>
+      <li><strong>Certificate and facility joins</strong> — recall routing, predicate-entitled</li>
+      <li><strong>The device itself</strong> — S2/S3 subjects serve their own segment</li>
+      <li><strong>Inverted discovery</strong> — predicates: the regulator publishes, custodians evaluate locally</li>
+    </ul>
+
+    <h3>The fallback spine</h3>
+    <ul>
+      <li><strong>Multi-host linksets</strong> with as-of stamps; cached; inclusion proofs substitute for dead origins</li>
+      <li><strong>Succession</strong> — the maker dies in 2035; the registry redirects; the archive becomes the target</li>
+      <li><strong>Post-sale relocation</strong> — resale can re-host; the identifier never changes, the linkset does</li>
+      <li><strong>As-of discovery</strong> — what was discoverable at time T</li>
+      <li><strong>Blind edges</strong> — verify "validly installed in <em>some</em> parent" without learning <em>which</em></li>
+    </ul>
+  </section>
+
+  <section id="national-registries" aria-labelledby="natreg-h">
+    <h2 id="natreg-h">National registries as peers</h2>
+    <p>
+      Countries will build DPP registries — the EU's under a forthcoming
+      implementing act, China's several platforms already running. The word
+      "registry" conflates six functions (identifier allocation, discovery,
+      deposit, semantics, trust, surveillance), and the framework already
+      separates every one. The national registry is not a rival: it is a
+      first-class peer in a federation, and the standard defines the protocol by
+      which peers interoperate.
+    </p>
+    <p>
+      <strong>The ePassport precedent, at full strength:</strong> every state
+      issues its own passports and inspects everyone else's; ICAO Doc 9303
+      supplies the interop and the PKD supplies a passive distribution of public
+      keys — a tiny governance table, not a world database. The DPP analogue:
+      national registries + the ISO interop layer + the SIGNATIF master list.
+      Every delegate carries the artifact that proves the pattern works.
+    </p>
+    <p>
+      <strong>The rule:</strong> global where tiny and governance-shaped (scheme
+      namespaces, trust roots, cross-register mappings); national where
+      data-shaped (identifiers in use, serving, surveillance). The EU registry,
+      in this model, is a peer with jurisdiction=EU — not the root.
+    </p>
+  </section>
+</BaseLayout>
