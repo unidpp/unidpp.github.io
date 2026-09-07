@@ -5,11 +5,13 @@ on:
     branches: [main]
   workflow_dispatch:
 
+# Least-privilege tokens required by the Pages artifact deployment flow.
 permissions:
   contents: read
   pages: write
   id-token: write
 
+# Serialize Pages deployments; a newer push cancels a stale in-flight build.
 concurrency:
   group: pages
   cancel-in-progress: true
@@ -17,27 +19,59 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
+      # Observed failure mode (run 34086921997): while the Pages site was
+      # being switched from branch-source to workflow builds, a queued
+      # deployment was cancelled ("higher priority waiting request for
+      # pages exists"). Pin build_type=workflow before anything else so a
+      # run never races the Pages config. HTTP 409 = Pages config locked by
+      # a concurrent change: tolerated. GH_TOKEN below is the ephemeral,
+      # per-run github.token - no secret is stored in this file.
+      - name: Ensure Pages is workflow-enabled
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set +e
+          gh api -X PUT "repos/${GITHUB_REPOSITORY}/pages" -f build_type=workflow >/dev/null 2>/tmp/pages-put.err
+          rc=$?
+          set -e
+          if [ "$rc" -eq 0 ]; then
+            echo "Pages build_type=workflow confirmed."
+          elif grep -q 'HTTP 409' /tmp/pages-put.err; then
+            echo "Pages config is being changed concurrently (HTTP 409); continuing."
+          else
+            cat /tmp/pages-put.err >&2 2>/dev/null || true
+            echo "::warning::Unable to confirm build_type=workflow (exit $rc); continuing deploy attempt."
+          fi
+
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
+
       - name: Set up Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: 22
           cache: npm
+
       - name: Install dependencies
         run: npm ci
+
       - name: Build
         run: npm run build
+
       - name: Configure Pages
         uses: actions/configure-pages@v5
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: dist
+
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
