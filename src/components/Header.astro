@@ -1,13 +1,12 @@
 ---
 // Sticky header: section nav grouped by reading depth, search,
-// dark-mode toggle, GitHub link. On small screens the nav scrolls
-// horizontally with tier hairlines as separators.
+// dark-mode toggle, GitHub link. Below 1150px the nav collapses into
+// a hamburger drawer (tier-labelled groups); above 1150px it renders
+// inline with tier hairlines — the measured fit width for all 12 links.
 const path = Astro.url.pathname.replace(/index\.html$/, '');
 const isActive = (prefix: string) =>
   prefix === '/' ? path === '/' : path === prefix || path.startsWith(prefix + '/');
 
-// Five tiers ordered by depth — the same newcomer-first ladder the
-// homepage map renders, kept in sync with src/lib/sections and Footer.
 const tiers = [
   {
     label: 'Understand',
@@ -54,7 +53,26 @@ const tiers = [
     <a class="wordmark" href="/" aria-label="UniDPP home">
       <span class="wm-a">uni</span><span class="wm-b">DPP</span>
     </a>
-    <nav class="secnav" aria-label="Site sections by depth">
+
+    <button
+      id="menu-toggle"
+      class="hbtn menu-toggle"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+      aria-controls="site-nav"
+    >
+      <svg class="icon-open" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+      <svg class="icon-close" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+      </svg>
+    </button>
+
+    <nav class="secnav" id="site-nav" aria-label="Site sections by depth">
       {
         tiers.map((tier, ti) => (
           <span class:list={['tier', { first: ti === 0 }]}>
@@ -70,6 +88,7 @@ const tiers = [
         ))
       }
     </nav>
+
     <div class="hdr-actions">
       <button
         id="search-open"
@@ -111,6 +130,38 @@ const tiers = [
     const dark = document.documentElement.classList.toggle('dark');
     localStorage.setItem('unidpp-theme', dark ? 'dark' : 'light');
   });
+
+  const menuBtn = document.getElementById('menu-toggle')!;
+  const nav = document.getElementById('site-nav')!;
+  const html = document.documentElement;
+
+  function closeMenu() {
+    menuBtn.setAttribute('aria-expanded', 'false');
+    menuBtn.setAttribute('aria-label', 'Open navigation menu');
+    nav.classList.remove('open');
+    html.classList.remove('nav-open');
+  }
+
+  menuBtn.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', String(isOpen));
+    menuBtn.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+    html.classList.toggle('nav-open', isOpen);
+  });
+
+  nav.addEventListener('click', (e) => {
+    if ((e.target as HTMLElement).closest('a')) closeMenu();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMenu();
+  });
+
+  document.addEventListener('click', (e) => {
+    if (html.classList.contains('nav-open') && !nav.contains(e.target as Node) && !menuBtn.contains(e.target as Node)) {
+      closeMenu();
+    }
+  });
 </script>
 
 <style>
@@ -138,61 +189,69 @@ const tiers = [
     }
   }
 
-  .secnav {
-    display: flex;
-    gap: 0.05rem;
-    align-items: center;
-    overflow-x: auto;
-    scrollbar-width: none;
-    -webkit-overflow-scrolling: touch;
-    flex: 1;
-    min-width: 0;
-    padding: 0.35rem 0;
+  /* ── Mobile drawer (below 960px) ─────────────────────────── */
+  .menu-toggle {
+    display: grid;
   }
-  .secnav::-webkit-scrollbar {
+  .menu-toggle .icon-close { display: none; }
+  :global(html.nav-open) .menu-toggle .icon-open { display: none; }
+  :global(html.nav-open) .menu-toggle .icon-close { display: block; }
+
+  .secnav {
     display: none;
+    position: fixed;
+    top: var(--header-h);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 49;
+    background: var(--bg);
+    border-top: 1px solid var(--border);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 0.75rem 1.15rem 2rem;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .secnav.open {
+    display: flex;
   }
 
-  /* Tier grouping: hairline pillars separate depth bands. The tier
-     name is a mono micro-eyebrow visible at wider viewports and hidden
-     on narrow ones (where the nav reduces to a horizontal scroller). */
+  /* Drawer tiers: stacked, each a labelled group */
   .tier {
-    display: inline-flex;
-    align-items: center;
-    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding: 0.65rem 0;
   }
   .tier + .tier {
-    border-left: 1px solid var(--border);
-    margin-left: 0.4rem;
-    padding-left: 0.55rem;
+    border-top: 1px solid var(--border);
   }
   .tier-name {
-    display: none;
+    display: block;
     font-family: var(--font-mono);
     font-size: 0.6rem;
     font-weight: 500;
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--text-3);
-    margin-right: 0.15rem;
+    margin: 0 0 0.3rem;
+    padding: 0 0.62rem;
   }
-  @media (min-width: 1080px) {
-    .tier-name {
-      display: inline;
-    }
-  }
-
   .sec {
-    flex: 0 0 auto;
-    font-size: 0.82rem;
+    display: block;
+    font-size: 0.92rem;
     font-weight: 500;
     color: var(--text-2);
     text-decoration: none;
-    padding: 0.35rem 0.62rem;
+    padding: 0.6rem 0.62rem;
     border-radius: var(--radius);
-    white-space: nowrap;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
   }
-  .sec:hover {
+  .sec:hover,
+  .sec:focus-visible {
     color: var(--text);
     background: var(--accent-soft);
   }
@@ -201,6 +260,61 @@ const tiers = [
     background: var(--accent-soft);
     font-weight: 600;
   }
+
+  /* ── Inline nav (≥960px) ──────────────────────────────────── */
+  @media (min-width: 1150px) {
+    .menu-toggle,
+    button.menu-toggle {
+      display: none !important;
+    }
+    .secnav {
+      display: flex;
+      position: static;
+      flex-direction: row;
+      align-items: center;
+      gap: 0.05rem;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+      flex: 1;
+      min-width: 0;
+      padding: 0.35rem 0;
+      background: transparent;
+      border: none;
+    }
+    .secnav::-webkit-scrollbar {
+      display: none;
+    }
+    .tier {
+      display: inline-flex;
+      flex-direction: row;
+      align-items: center;
+      flex: 0 0 auto;
+      padding: 0;
+    }
+    .tier + .tier {
+      border-top: none;
+      border-left: 1px solid var(--border);
+      margin-left: 0.35rem;
+      padding-left: 0.45rem;
+    }
+    .tier-name {
+      display: none;
+      font-size: 0.6rem;
+      margin: 0 0.15rem 0 0;
+      padding: 0;
+    }
+    .sec {
+      display: inline-flex;
+      font-size: 0.8rem;
+      padding: 0.35rem 0.55rem;
+      min-height: auto;
+      white-space: nowrap;
+    }
+  }
+
+  /* Tier names never appear inline: the 1200px container cannot hold
+     12 links plus 5 eyebrow labels; they live in the drawer only. */
 
   .hdr-actions {
     display: flex;
