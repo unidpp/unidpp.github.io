@@ -15,7 +15,6 @@
           <note type="note">The passive twin (concept dpp-0132) supplies attest-sampled truth and the active twin (concept dpp-0133) supplies self-committed truth; both paradigms coexist permanently in the framework.</note>
           <note type="note">Precedence between a calibrated device measurement and an attestor observation is itself a metrological hierarchy question.</note>
           <note type="note">Freshness and verification requirements must be satisfiable by the subject's capability class: demanding live freshness from an S0 (silent) product is an unsatisfiable profile.</note>
-          <ref>UniDPP PLAN (2026-09) Passive twin → active twin: the paradigm axis</ref>
       </languageSection>
       </conceptEntry>
     </body>

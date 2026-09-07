@@ -22,6 +22,7 @@ data:
   - origin:
       ref:
         source: ISO 9000
+    status: identical
     type: authoritative
   terms:
   - type: expression
@@ -30,4 +31,4 @@ data:
   language_code: eng
   annotations: []
 termid: dpp-0041
-id: 13a8dd97-aabc-5a69-b489-7868ee10eb28
+id: 0522c021-9622-5ffe-a64d-2ab21877158d

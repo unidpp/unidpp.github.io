@@ -15,7 +15,6 @@
           <note type="note">Restorable: the child resumes standalone life; harvestable: recovered but altered, continuing with harvested status and parent history (concept dpp-0144); destructive: the child ceases and flows to a material passport through a transformation event (concept dpp-0129); absorbing: identity dissolves into the parent.</note>
           <note type="note">Absorption is regime-temporal rather than permanent: absorbed inputs are recorded at the finest available granularity as dormant identifiers (concept dpp-0135), issuable by adoption when a future regime requires passports for the object class.</note>
           <note type="note">Carried in the EXPRESS core as part of the PassportLink binding {method, recoverability}.</note>
-          <ref>UniDPP PLAN (2026-09) The passport relationship algebra (association / derivation / installation / membership)</ref>
       </languageSection>
       </conceptEntry>
     </body>

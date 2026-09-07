@@ -14,7 +14,6 @@
           </descrip>
           <note type="note">Corresponds to capability classes S0 (silent, testimony-only) and S1 (passive authentication).</note>
           <note type="note">Trust rides entirely on attestor authority; the twin is testimonial by default and sensorial by exception.</note>
-          <ref>UniDPP PLAN (2026-09) Passive twin → active twin: the paradigm axis</ref>
       </languageSection>
       </conceptEntry>
     </body>

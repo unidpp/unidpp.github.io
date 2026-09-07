@@ -13,8 +13,8 @@ data:
   - content: manufacturer, authorized representative, importer, distributor, dealer
       or fulfilment service provider
   notes:
-  - content: 'Harmonization note (UniDPP): EN 18219:2026 and EN 18220:2026 add the
-      qualifier “that places the product on the market”; see concept dpp-0032.'
+  - content: EN 18219:2026 and EN 18220:2026 add the qualifier “that places the product
+      on the market”; see concept dpp-0032.
   sources:
   - origin:
       ref:
@@ -28,4 +28,4 @@ data:
   language_code: eng
   annotations: []
 termid: dpp-0033
-id: 792f193c-9a06-560b-991d-41520f761ab6
+id: e321ccf3-bf18-5687-8d9e-56a56afc7522

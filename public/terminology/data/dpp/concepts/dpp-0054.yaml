@@ -20,6 +20,7 @@ data:
   - origin:
       ref:
         source: ISO 5157:2023
+    status: identical
     type: authoritative
   terms:
   - type: expression
@@ -28,4 +29,4 @@ data:
   language_code: eng
   annotations: []
 termid: dpp-0054
-id: c02d5831-0f9b-54a9-a148-e55ac054b02e
+id: 88a6e69b-18c8-59d6-b3f1-69c5dfd91a8d

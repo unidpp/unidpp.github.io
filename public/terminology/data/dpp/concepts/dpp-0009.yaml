@@ -22,6 +22,7 @@ data:
       ref:
         source: EN ISO/IEC 24760-1
         id: 3.2.1
+    status: identical
     type: authoritative
   terms:
   - type: expression
@@ -30,4 +31,4 @@ data:
   language_code: eng
   annotations: []
 termid: dpp-0009
-id: b349e791-3664-5c9c-a682-1bdcd01c6863
+id: 1bf22109-b257-558a-8494-04473406b67b

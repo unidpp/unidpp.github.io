@@ -23,6 +23,7 @@ data:
       ref:
         source: ISO/IEC Guide 2:2004
         id: '1.4'
+    status: identical
     type: authoritative
   terms:
   - type: expression
@@ -31,4 +32,4 @@ data:
   language_code: eng
   annotations: []
 termid: dpp-0083
-id: e7c481d9-319a-5822-ba0e-842c10990a3b
+id: 7e8f3369-32ce-5655-a318-39b4455c3db4

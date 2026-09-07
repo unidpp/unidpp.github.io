@@ -20,13 +20,6 @@ data:
       market runs on this.'
   - content: 'A harvested part is second-hand-once-removed: no longer sellable as
       new, with warranty scope and service economics that rode the parent during installation.'
-  sources:
-  - origin:
-      ref:
-        source: UniDPP PLAN (2026-09)
-        id: The passport relationship algebra (association / derivation / installation
-          / membership)
-    type: lineage
   terms:
   - type: expression
     normative_status: preferred
@@ -34,4 +27,4 @@ data:
   language_code: eng
   annotations: []
 termid: dpp-0144
-id: d2b81859-acee-5089-93de-6e6bfb0fbc37
+id: 9fa2d801-719e-5863-b83d-91df1e95df15

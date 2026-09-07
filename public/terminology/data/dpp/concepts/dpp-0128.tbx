@@ -15,7 +15,6 @@
           <note type="note">Stamps accrete append-only and are valid under the stamper's lens regardless of the issuer's.</note>
           <note type="note">Jurisdiction stamps on a foreign-issued passport correspond to visas; entry and exit stamps correspond to verifier custody events.</note>
           <note type="note">Stamps may carry quantity context, inherited by downstream transformations.</note>
-          <ref>UniDPP PLAN (2026-09) Semantic exchange, stamps, and the transformation algebra</ref>
       </languageSection>
       </conceptEntry>
     </body>

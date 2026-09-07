@@ -22,6 +22,7 @@ data:
       ref:
         source: EN 18220:2026
         id: '3.14'
+    status: similar
     type: authoritative
     modification: Internal cross-reference decorations omitted; the definition is
       equivalent.
@@ -32,4 +33,4 @@ data:
   language_code: eng
   annotations: []
 termid: dpp-0060
-id: c108f449-a1a2-5af5-9a37-f1835be9ba25
+id: bdaa741c-5e5c-5a2e-aaab-66cef4f611a3

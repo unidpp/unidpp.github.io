@@ -30,13 +30,6 @@ data:
       is installation, while dissolving identity is a transformation event (concept
       dpp-0129). Part replacement is an uninstall followed by an install, and regulated
       children keep their own passports through it.'
-  sources:
-  - origin:
-      ref:
-        source: UniDPP PLAN (2026-09)
-        id: The passport relationship algebra (association / derivation / installation
-          / membership)
-    type: lineage
   terms:
   - type: expression
     normative_status: preferred
@@ -44,4 +37,4 @@ data:
   language_code: eng
   annotations: []
 termid: dpp-0142
-id: 291fdc83-1a5d-52d3-912b-169279b83bde
+id: 7c4583e7-8a10-579d-8152-6ecc873306dd

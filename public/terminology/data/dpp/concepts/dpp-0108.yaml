@@ -26,6 +26,7 @@ data:
   - origin:
       ref:
         source: IEC 62890:2016, 3.1.16 65/617/CDV
+    status: modified
     type: authoritative
     modification: Editorial changes.
   terms:
@@ -35,4 +36,4 @@ data:
   language_code: eng
   annotations: []
 termid: dpp-0108
-id: 3a57eefa-ff4e-5fa3-bbca-b433d0496999
+id: '08a03627-65e0-5ab0-a93f-e7644626e92f'

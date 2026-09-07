@@ -19,12 +19,6 @@ data:
   - content: Jurisdiction stamps on a foreign-issued passport correspond to visas;
       entry and exit stamps correspond to verifier custody events.
   - content: Stamps may carry quantity context, inherited by downstream transformations.
-  sources:
-  - origin:
-      ref:
-        source: UniDPP PLAN (2026-09)
-        id: Semantic exchange, stamps, and the transformation algebra
-    type: lineage
   terms:
   - type: expression
     normative_status: preferred
@@ -32,4 +26,4 @@ data:
   language_code: eng
   annotations: []
 termid: dpp-0128
-id: 92b674e4-a873-50fe-8727-a5e04f380c07
+id: 587508e7-be3e-5d74-8761-6b0f840422d2

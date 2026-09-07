@@ -19,12 +19,6 @@ data:
       minimum), Tier B (served full passport) and Tier C (archival).
   - content: Stale or offline data degrades explicitly through freshness verdicts
       and never passes silently.
-  sources:
-  - origin:
-      ref:
-        source: UniDPP PLAN (2026-09)
-        id: Composition, projection, and offline operation
-    type: lineage
   terms:
   - type: expression
     normative_status: preferred
@@ -32,4 +26,4 @@ data:
   language_code: eng
   annotations: []
 termid: dpp-0131
-id: 28f47ea5-b0a3-5012-a913-a9002ff02f01
+id: f9c9c0c0-7665-5ae7-9429-1d563d78bade

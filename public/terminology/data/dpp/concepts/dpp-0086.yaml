@@ -13,10 +13,9 @@ data:
   - content: ability of two or more systems or applications to exchange information
       and to mutually use the information that has been exchanged
   notes:
-  - content: 'Harmonization note (UniDPP): EN 18223:2026 defines “interoperability”
-      from ISO 18435-1:2009 with a different formulation; see concept dpp-0087. Both
-      variants are candidates for harmonization in the proposed ISO 25534-1 Part 1
-      (Vocabulary).'
+  - content: EN 18223:2026 defines “interoperability” from ISO 18435-1:2009 with a
+      different formulation; see concept dpp-0087. Both variants are candidates for
+      harmonization in the proposed ISO 25534-1 Part 1 (Vocabulary).
   sources:
   - origin:
       ref:
@@ -27,6 +26,7 @@ data:
       ref:
         source: ISO/IEC 22123-1:2023
         id: 3.6.1
+    status: identical
     type: authoritative
   terms:
   - type: expression
@@ -35,4 +35,4 @@ data:
   language_code: eng
   annotations: []
 termid: dpp-0086
-id: 1d46ee0f-a7ee-519f-bfa6-3d3796ed5256
+id: aa2d8fa1-e331-5800-9cbd-d493ab843fb5

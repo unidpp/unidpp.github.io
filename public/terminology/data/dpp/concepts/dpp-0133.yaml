@@ -19,12 +19,6 @@ data:
       of self-reported values and registered units; health status is a derived verdict.'
   - content: Profiles declare, per data element, the required truth mode — attest-sampled,
       self-committed, or both with precedence.
-  sources:
-  - origin:
-      ref:
-        source: UniDPP PLAN (2026-09)
-        id: 'Passive twin → active twin: the paradigm axis'
-    type: lineage
   terms:
   - type: expression
     normative_status: preferred
@@ -32,4 +26,4 @@ data:
   language_code: eng
   annotations: []
 termid: dpp-0133
-id: 86e41f5c-2e81-56b4-94c8-1fa5ab37ce46
+id: b6717ad5-8d8c-5457-8a9b-7405132324bc

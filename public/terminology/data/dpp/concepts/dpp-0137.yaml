@@ -19,12 +19,6 @@ data:
   - content: An escrow envelope under a threshold trustee may optionally accompany
       a proof of binding (concept dpp-0138), preserving verifiability while full disclosure
       remains ceremonial.
-  sources:
-  - origin:
-      ref:
-        source: UniDPP PLAN (2026-09)
-        id: Visibility, blind edges, and enumeration resistance
-    type: lineage
   terms:
   - type: expression
     normative_status: preferred
@@ -32,4 +26,4 @@ data:
   language_code: eng
   annotations: []
 termid: dpp-0137
-id: a5710ff1-2e21-5b62-ba6e-1065a0f0989a
+id: 70376e48-5406-56e7-987d-b44d91f3ef47

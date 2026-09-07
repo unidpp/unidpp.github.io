@@ -27,6 +27,7 @@ data:
       ref:
         source: ISO 14040:2006
         id: '3.1'
+    status: identical
     type: authoritative
   terms:
   - type: expression
@@ -35,4 +36,4 @@ data:
   language_code: eng
   annotations: []
 termid: dpp-0059
-id: 06d6d99b-57c6-55d3-bf7f-00ed1947128b
+id: 711a2e8f-82a8-5d64-9b8b-5b5e8030390e

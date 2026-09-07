@@ -24,6 +24,7 @@ data:
   - origin:
       ref:
         source: Glossary Industrie 4.0
+    status: modified
     type: authoritative
     modification: Editorial changes.
   terms:
@@ -33,4 +34,4 @@ data:
   language_code: eng
   annotations: []
 termid: dpp-0110
-id: cced8d1f-6fd0-51a5-a0ef-ea10e7a273b2
+id: 682c14c7-62ed-5674-83c8-ee36a8ea15e2

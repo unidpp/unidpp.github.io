@@ -21,6 +21,7 @@ data:
   - origin:
       ref:
         source: IEC 61499-1
+    status: identical
     type: authoritative
   terms:
   - type: expression
@@ -29,4 +30,4 @@ data:
   language_code: eng
   annotations: []
 termid: dpp-0122
-id: 509f32b7-70c7-5883-82e5-da65f51e227b
+id: af2afc58-311d-565c-b31e-704f3a39930f

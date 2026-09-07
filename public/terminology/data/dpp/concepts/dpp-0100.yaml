@@ -23,6 +23,7 @@ data:
       ref:
         source: IEC TR 62390:2005-01
         id: 3.1.4
+    status: identical
     type: authoritative
   terms:
   - type: expression
@@ -31,4 +32,4 @@ data:
   language_code: eng
   annotations: []
 termid: dpp-0100
-id: ca4dfe26-52c5-5dd5-b2aa-2ed39cc55e28
+id: 58109fff-6fa1-5bac-9ef8-0f358c7f8b17

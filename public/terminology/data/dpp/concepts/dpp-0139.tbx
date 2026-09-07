@@ -14,7 +14,6 @@
           </descrip>
           <note type="note">Transparency logs anchor commitments (hashes), never facts, so log operators cannot correlate edges; accumulator and blind-membership proofs give valid-standing checks without revealing which or where.</note>
           <note type="note">Stated as design invariant I12, together with blind edges by default where households or sites are revealed (concept dpp-0136), proof of binding distinct from knowledge of parent (concept dpp-0138), and predicate-based recall (concept dpp-0140).</note>
-          <ref>UniDPP PLAN (2026-09) Visibility, blind edges, and enumeration resistance</ref>
       </languageSection>
       </conceptEntry>
     </body>

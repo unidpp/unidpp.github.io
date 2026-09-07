@@ -13,7 +13,6 @@
             <p>signed ceremony recording the transfer of responsibility for an object between custodians, appended to the event chain by the custodian and the counterparty, which extends and never overwrites the trail across successive owners</p>
           </descrip>
           <note type="note">Custody links are social and control edges, orthogonal to structural composition: ownership changes while composition stays fixed.</note>
-          <ref>UniDPP PLAN (2026-09) Composition, projection, and offline operation</ref>
       </languageSection>
       </conceptEntry>
     </body>

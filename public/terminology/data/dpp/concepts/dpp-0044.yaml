@@ -22,6 +22,7 @@ data:
   - origin:
       ref:
         source: ISO/TS 24533:2012
+    status: identical
     type: authoritative
   terms:
   - type: expression
@@ -30,4 +31,4 @@ data:
   language_code: eng
   annotations: []
 termid: dpp-0044
-id: d062b7bc-6cf5-5eeb-8cf1-0dc3bc3d621e
+id: 6de29fba-4199-536d-ab68-f0f4505f70f8

@@ -21,12 +21,6 @@ data:
   - content: 'Predicate triggers include time predicates: an object becoming older
       than a given age is a clock-fired applicability event handled by the dated-binding
       machinery.'
-  sources:
-  - origin:
-      ref:
-        source: UniDPP PLAN (2026-09)
-        id: Composition, projection, and offline operation
-    type: lineage
   terms:
   - type: expression
     normative_status: preferred
@@ -34,4 +28,4 @@ data:
   language_code: eng
   annotations: []
 termid: dpp-0125
-id: da79f4ef-22a4-577d-9d82-05079e6901bf
+id: bee39c98-1c7a-59ae-95ef-ebb9820a805a

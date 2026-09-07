@@ -6,5 +6,5 @@
   skos:notation "dpp-0087" ;
   skos:prefLabel "interoperability"@eng ;
   skos:definition "capability of two or more entities to exchange items in accordance with a set of rules and mechanisms implemented by an interface in each entity, in order to perform their specified tasks"@eng ;
-  skos:scopeNote "Harmonization note (UniDPP): EN 18219:2026 defines “interoperability” from ISO/IEC 22123-1:2023 with a different formulation; see concept dpp-0086."@eng
+  skos:scopeNote "EN 18219:2026 defines “interoperability” from ISO/IEC 22123-1:2023 with a different formulation; see concept dpp-0086."@eng
  .

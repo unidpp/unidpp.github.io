@@ -20,12 +20,6 @@ data:
       to periodic re-verification through conformance runs.
   - content: Verification path-finds from any render through the lens and its fact
       chain to an anchor in the verifier's trust bundle.
-  sources:
-  - origin:
-      ref:
-        source: UniDPP PLAN (2026-09)
-        id: The lens model
-    type: lineage
   terms:
   - type: expression
     normative_status: preferred
@@ -33,4 +27,4 @@ data:
   language_code: eng
   annotations: []
 termid: dpp-0127
-id: 6a12ae6c-5d4c-5bd7-aacf-dda85780d161
+id: 3a1f934b-eaf1-54b9-9b50-233d950ad47b

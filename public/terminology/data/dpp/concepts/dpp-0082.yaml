@@ -25,6 +25,7 @@ data:
   - origin:
       ref:
         source: UNECE Recommendation No. 46
+    status: identical
     type: authoritative
   terms:
   - type: expression
@@ -33,4 +34,4 @@ data:
   language_code: eng
   annotations: []
 termid: dpp-0082
-id: c64748a3-c146-5349-9351-5b38517d5a7e
+id: 9aca24fb-fd71-536e-9dec-5a76620cfe90

@@ -28,6 +28,7 @@ data:
   - origin:
       ref:
         source: IEC 63278-1:2023
+    status: identical
     type: authoritative
   terms:
   - type: expression
@@ -36,4 +37,4 @@ data:
   language_code: eng
   annotations: []
 termid: dpp-0121
-id: 918b161b-ef38-59bf-80b8-8e90463e6a4a
+id: 42f3fe48-a123-5901-9fac-042629c60088

@@ -13,7 +13,7 @@
             <p>identifier which is guaranteed to be unique among all identifiers used for those objects and for a specific purpose</p>
           </descrip>
           <note type="note">For more information, see ISO/IEC 15459-1.</note>
-          <note type="note">Harmonization note (UniDPP): EN 18219:2026 and EN 18220:2026 define “unique identifier” as a string of characters required to be unique; see concept dpp-0006.</note>
+          <note type="note">EN 18219:2026 and EN 18220:2026 define “unique identifier” as a string of characters required to be unique; see concept dpp-0006.</note>
           <ref>CWA 18291:2025 3.3</ref>
           <ref>ISO 29404:2015 3.26</ref>
       </languageSection>

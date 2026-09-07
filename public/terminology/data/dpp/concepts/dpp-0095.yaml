@@ -21,6 +21,7 @@ data:
       ref:
         source: ISO 15531-43
         id: 3.1.5
+    status: identical
     type: authoritative
   terms:
   - type: expression
@@ -29,4 +30,4 @@ data:
   language_code: eng
   annotations: []
 termid: dpp-0095
-id: 91b64f09-f0ef-572c-80e5-efe6a2e28111
+id: 23c71ab4-6b85-55cc-8fc7-65e942816c86

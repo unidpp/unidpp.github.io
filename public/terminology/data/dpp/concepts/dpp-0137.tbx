@@ -14,7 +14,6 @@
           </descrip>
           <note type="note">The installation schema records escrow as none or trustee, with declared audiences.</note>
           <note type="note">An escrow envelope under a threshold trustee may optionally accompany a proof of binding (concept dpp-0138), preserving verifiability while full disclosure remains ceremonial.</note>
-          <ref>UniDPP PLAN (2026-09) Visibility, blind edges, and enumeration resistance</ref>
       </languageSection>
       </conceptEntry>
     </body>

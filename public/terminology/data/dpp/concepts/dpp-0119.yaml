@@ -24,6 +24,7 @@ data:
   - origin:
       ref:
         source: ISO/IEC 10746-2
+    status: identical
     type: authoritative
   terms:
   - type: expression
@@ -32,4 +33,4 @@ data:
   language_code: eng
   annotations: []
 termid: dpp-0119
-id: 8550b34f-aebc-53c1-abfc-740c260ec1e2
+id: f09411b8-8742-5076-882a-e4fd89714aad

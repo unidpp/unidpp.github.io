@@ -22,6 +22,7 @@ data:
   - origin:
       ref:
         source: ECLASS
+    status: identical
     type: authoritative
   terms:
   - type: expression
@@ -30,4 +31,4 @@ data:
   language_code: eng
   annotations: []
 termid: dpp-0107
-id: 757d1bc6-e347-53ab-9148-aed2ee486d15
+id: 0074ffff-5456-5bed-883e-25be31934371

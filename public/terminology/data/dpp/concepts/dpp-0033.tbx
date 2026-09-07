@@ -12,7 +12,7 @@
           <descrip type="definition">
             <p>manufacturer, authorized representative, importer, distributor, dealer or fulfilment service provider</p>
           </descrip>
-          <note type="note">Harmonization note (UniDPP): EN 18219:2026 and EN 18220:2026 add the qualifier “that places the product on the market”; see concept dpp-0032.</note>
+          <note type="note">EN 18219:2026 and EN 18220:2026 add the qualifier “that places the product on the market”; see concept dpp-0032.</note>
           <ref>EN 18221:2026 3.1</ref>
       </languageSection>
       </conceptEntry>

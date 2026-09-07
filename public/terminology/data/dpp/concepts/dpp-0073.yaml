@@ -28,6 +28,7 @@ data:
       ref:
         source: ISO 7498-2:1989
         id: 3.3.21
+    status: modified
     type: authoritative
     modification: Note to entry added.
   terms:
@@ -37,4 +38,4 @@ data:
   language_code: eng
   annotations: []
 termid: dpp-0073
-id: 8f09035f-2388-5f3d-a1a7-c8853713e974
+id: ce18263d-0792-5724-aca7-8182e0792f88

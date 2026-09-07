@@ -27,6 +27,7 @@ data:
       ref:
         source: ISO 22095:2020
         id: 3.3.4
+    status: identical
     type: authoritative
   terms:
   - type: expression
@@ -35,4 +36,4 @@ data:
   language_code: eng
   annotations: []
 termid: dpp-0123
-id: 60ddc77f-3529-5b35-b004-8afad225ead9
+id: 5c1b7eef-f6d9-5fac-ab4d-65fd0a532fc3

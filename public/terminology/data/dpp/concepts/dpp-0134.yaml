@@ -16,12 +16,6 @@ data:
   notes:
   - content: 'Custody links are social and control edges, orthogonal to structural
       composition: ownership changes while composition stays fixed.'
-  sources:
-  - origin:
-      ref:
-        source: UniDPP PLAN (2026-09)
-        id: Composition, projection, and offline operation
-    type: lineage
   terms:
   - type: expression
     normative_status: preferred
@@ -29,4 +23,4 @@ data:
   language_code: eng
   annotations: []
 termid: dpp-0134
-id: 6c0ddfe4-bdf7-575d-bef9-917c9855b868
+id: a94fc8c7-2fd8-5d14-b60e-23568a080748

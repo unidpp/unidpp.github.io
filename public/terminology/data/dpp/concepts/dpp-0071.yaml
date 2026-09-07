@@ -25,6 +25,7 @@ data:
   - origin:
       ref:
         source: ISO 5157:2023
+    status: identical
     type: authoritative
   terms:
   - type: expression
@@ -36,4 +37,4 @@ data:
   language_code: eng
   annotations: []
 termid: dpp-0071
-id: a34559d1-ec90-5676-869a-6826f861545c
+id: d7ad4c9b-2118-5637-b00d-3ec44e17d3dc

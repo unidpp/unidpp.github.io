@@ -29,6 +29,7 @@ data:
   - origin:
       ref:
         source: IEC 63278-1:2023
+    status: modified
     type: authoritative
     modification: Editorial changes.
   terms:
@@ -38,4 +39,4 @@ data:
   language_code: eng
   annotations: []
 termid: dpp-0105
-id: 3ae338f5-2efd-54e3-abbd-98c67318ad2d
+id: 50fe75d3-72e2-5e75-a6fe-801fed2f41ea

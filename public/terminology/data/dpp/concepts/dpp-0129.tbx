@@ -15,7 +15,6 @@
           <note type="note">The output issuance event carries input references of passport, quantity and as-of state hash, so the new passport hash-links its sources.</note>
           <note type="note">Quantities resulting from a transformation are new measured facts with provenance “computed by transformation event”, never copies; mass balance is auditable as input minus output equals loss.</note>
           <note type="note">Inputs transition to consumed or transformed status: historical, still verifiable, still needed for as-of queries.</note>
-          <ref>UniDPP PLAN (2026-09) Semantic exchange, stamps, and the transformation algebra</ref>
       </languageSection>
       </conceptEntry>
     </body>

@@ -14,7 +14,6 @@
           </descrip>
           <note type="note">When a future regime issues passports for the object class it adopts the recorded dormant identifiers rather than minting new ones, so that the installed base connects retroactively through its build records.</note>
           <note type="note">Inputs are recorded even when no passport exists behind them yet; minting fresh identifiers would orphan the installed base.</note>
-          <ref>UniDPP PLAN (2026-09) The passport relationship algebra; deepening granularity</ref>
       </languageSection>
       </conceptEntry>
     </body>

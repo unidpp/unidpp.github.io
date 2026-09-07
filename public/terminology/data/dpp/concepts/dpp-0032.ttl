@@ -6,5 +6,5 @@
   skos:notation "dpp-0032" ;
   skos:prefLabel "economic operator"@eng ;
   skos:definition "manufacturer, authorized representative, importer, distributor, dealer or fulfilment service provider that places the product on the market"@eng ;
-  skos:scopeNote "Harmonization note (UniDPP): EN 18221:2026 defines “economic operator” without the placing-on-the-market qualifier; see concept dpp-0033."@eng
+  skos:scopeNote "EN 18221:2026 defines “economic operator” without the placing-on-the-market qualifier; see concept dpp-0033."@eng
  .

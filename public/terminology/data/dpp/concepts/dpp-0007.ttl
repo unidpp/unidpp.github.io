@@ -7,5 +7,5 @@
   skos:prefLabel "Unique Identifier"@eng ;
   skos:definition "identifier which is guaranteed to be unique among all identifiers used for those objects and for a specific purpose"@eng ;
   skos:scopeNote "For more information, see ISO/IEC 15459-1."@eng ;
-  skos:scopeNote "Harmonization note (UniDPP): EN 18219:2026 and EN 18220:2026 define “unique identifier” as a string of characters required to be unique; see concept dpp-0006."@eng
+  skos:scopeNote "EN 18219:2026 and EN 18220:2026 define “unique identifier” as a string of characters required to be unique; see concept dpp-0006."@eng
  .

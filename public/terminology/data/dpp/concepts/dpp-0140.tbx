@@ -14,7 +14,6 @@
           </descrip>
           <note type="note">The manufacturer receives aggregates or nothing; there is no traversal-push enumeration of the installed base.</note>
           <note type="note">One of the mechanisms by which enumeration resistance (concept dpp-0139) is maintained: recall propagation still notifies custodians transitively, but through local predicate evaluation rather than central construction of the recall set.</note>
-          <ref>UniDPP PLAN (2026-09) Visibility, blind edges, and enumeration resistance</ref>
       </languageSection>
       </conceptEntry>
     </body>

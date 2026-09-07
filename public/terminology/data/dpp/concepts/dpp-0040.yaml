@@ -32,10 +32,12 @@ data:
       ref:
         source: EN ISO 14025:2010
         id: '3.16'
+    status: identical
     type: authoritative
   - origin:
       ref:
         source: ISO 14025:2006
+    status: identical
     type: authoritative
   terms:
   - type: expression
@@ -44,4 +46,4 @@ data:
   language_code: eng
   annotations: []
 termid: dpp-0040
-id: 8aff4fd0-f5b9-5977-a934-14dc735faa63
+id: 89cf665e-9870-5fde-b57c-bf56e5c43dde

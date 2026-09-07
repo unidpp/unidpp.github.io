@@ -14,7 +14,6 @@
           </descrip>
           <note type="note">Proof of binding is distinct from knowledge of parent: verifiable modes establish that the child is validly installed in some parent under a given profile (warranty, compliance) without revealing which parent; full disclosure occurs only by ceremony.</note>
           <note type="note">An optional escrow envelope under a threshold trustee (concept dpp-0137) accompanies the commitment where future disclosure must remain possible.</note>
-          <ref>UniDPP PLAN (2026-09) Visibility, blind edges, and enumeration resistance</ref>
       </languageSection>
       </conceptEntry>
     </body>

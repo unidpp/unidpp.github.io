@@ -19,12 +19,6 @@ data:
   - content: Notarized snapshots support as-of queries, which answer what was legally
       true at a given time.
   - content: Any conforming twin can emit the view; the projection is defined representation-neutrally.
-  sources:
-  - origin:
-      ref:
-        source: UniDPP PLAN (2026-09)
-        id: Composition, projection, and offline operation
-    type: lineage
   terms:
   - type: expression
     normative_status: preferred
@@ -32,4 +26,4 @@ data:
   language_code: eng
   annotations: []
 termid: dpp-0126
-id: 275e542c-7d4d-5e01-b1e2-9c8eadcbaef8
+id: f1f81788-b63d-504d-8850-c4e863924fd4

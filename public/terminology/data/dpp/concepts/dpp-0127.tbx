@@ -15,7 +15,6 @@
           <note type="note">The mount — the profile interface on the neutral core — is the standardized element: any registered lens by any maker attaches to it.</note>
           <note type="note">A lens publishes its calibration (version and cited rules), its uncertainty and its decision rules; it is subject to pattern approval at registration and to periodic re-verification through conformance runs.</note>
           <note type="note">Verification path-finds from any render through the lens and its fact chain to an anchor in the verifier's trust bundle.</note>
-          <ref>UniDPP PLAN (2026-09) The lens model</ref>
       </languageSection>
       </conceptEntry>
     </body>

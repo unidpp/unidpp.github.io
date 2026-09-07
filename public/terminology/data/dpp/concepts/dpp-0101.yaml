@@ -27,6 +27,7 @@ data:
   - origin:
       ref:
         source: Glossary Industrie 4.0
+    status: modified
     type: authoritative
     modification: Removed “Industrie 4.0” from “Industrie 4.0 component” and minor
       changes.
@@ -37,4 +38,4 @@ data:
   language_code: eng
   annotations: []
 termid: dpp-0101
-id: 309cb896-1b73-5326-ae7e-cad13e4c4dd4
+id: '08234263-df21-56f9-ad4f-81c171530bc6'

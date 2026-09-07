@@ -14,7 +14,6 @@
           </descrip>
           <note type="note">Characteristic profiles split into regulatory-triggered profiles (for example CITES species content, cultural-goods import controls, art-market due diligence, conflict-minerals origin) and voluntary value profiles (for example provenance and grading for antiques and collectibles).</note>
           <note type="note">Predicate triggers include time predicates: an object becoming older than a given age is a clock-fired applicability event handled by the dated-binding machinery.</note>
-          <ref>UniDPP PLAN (2026-09) Composition, projection, and offline operation</ref>
       </languageSection>
       </conceptEntry>
     </body>

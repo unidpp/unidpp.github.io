@@ -17,12 +17,6 @@ data:
       (the notified-actor pattern of EN 18239).
   - content: Children of a split carry a derived-from reference and quantity carve-outs,
       with the sum of children not exceeding the parent (remainder semantics).
-  sources:
-  - origin:
-      ref:
-        source: UniDPP PLAN (2026-09)
-        id: Semantic exchange, stamps, and the transformation algebra
-    type: lineage
   terms:
   - type: expression
     normative_status: preferred
@@ -30,4 +24,4 @@ data:
   language_code: eng
   annotations: []
 termid: dpp-0130
-id: f6220d43-3bbb-555a-b3b9-980319160914
+id: b6ab995c-dd68-563c-9127-5b548aa8056e

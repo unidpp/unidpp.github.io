@@ -22,6 +22,7 @@ data:
       ref:
         source: ISO 24619:2011
         id: 3.2.1
+    status: identical
     type: authoritative
   terms:
   - type: expression
@@ -33,4 +34,4 @@ data:
   language_code: eng
   annotations: []
 termid: dpp-0008
-id: 39f9edbb-baad-505b-b6a2-41b1d7bf2400
+id: 13c639d6-64db-5b0c-a364-efe185c2428c

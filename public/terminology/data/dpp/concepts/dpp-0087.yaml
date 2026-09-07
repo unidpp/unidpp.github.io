@@ -14,8 +14,8 @@ data:
       a set of rules and mechanisms implemented by an interface in each entity, in
       order to perform their specified tasks
   notes:
-  - content: 'Harmonization note (UniDPP): EN 18219:2026 defines “interoperability”
-      from ISO/IEC 22123-1:2023 with a different formulation; see concept dpp-0086.'
+  - content: EN 18219:2026 defines “interoperability” from ISO/IEC 22123-1:2023 with
+      a different formulation; see concept dpp-0086.
   sources:
   - origin:
       ref:
@@ -26,6 +26,7 @@ data:
       ref:
         source: ISO 18435-1:2009
         id: '3.12'
+    status: identical
     type: authoritative
   terms:
   - type: expression
@@ -34,4 +35,4 @@ data:
   language_code: eng
   annotations: []
 termid: dpp-0087
-id: db66ea11-8d4f-5116-a4cf-a5ab4b4b9d01
+id: 2423f80d-c622-5633-8799-9a3dfd3a4ab6

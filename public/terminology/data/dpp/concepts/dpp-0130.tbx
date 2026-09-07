@@ -14,7 +14,6 @@
           </descrip>
           <note type="note">Only accredited actors may issue derived passports for regulated claims (the notified-actor pattern of EN 18239).</note>
           <note type="note">Children of a split carry a derived-from reference and quantity carve-outs, with the sum of children not exceeding the parent (remainder semantics).</note>
-          <ref>UniDPP PLAN (2026-09) Semantic exchange, stamps, and the transformation algebra</ref>
       </languageSection>
       </conceptEntry>
     </body>

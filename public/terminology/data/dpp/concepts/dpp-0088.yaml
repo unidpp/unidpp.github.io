@@ -22,6 +22,7 @@ data:
       ref:
         source: ISO 18308:2011
         id: '3.45'
+    status: identical
     type: authoritative
   terms:
   - type: expression
@@ -30,4 +31,4 @@ data:
   language_code: eng
   annotations: []
 termid: dpp-0088
-id: a7abbe3b-67e6-5661-90c1-0d44fd312cad
+id: b0f7e850-61fc-5adc-86fc-b3ef30c63810

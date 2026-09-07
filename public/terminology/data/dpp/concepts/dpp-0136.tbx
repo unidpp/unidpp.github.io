@@ -15,7 +15,6 @@
           <note type="note">Edge visibility classes — public, restricted (role-qualified), blind and escrowed — are declared on every relationship; the installation schema (concept dpp-0142) carries visibility as an edge class with escrow arrangement (concept dpp-0137) and audiences.</note>
           <note type="note">Blind is the default for consumer installations, because even the object-to-household linkage is personal data requiring a GDPR or PIPL legal basis per profile.</note>
           <note type="note">Rationale: a traversable graph with entitled upstream observers is surveillance infrastructure; post-sale visibility into instance state is owner-push or authority-based, never maker-pull.</note>
-          <ref>UniDPP PLAN (2026-09) Visibility, blind edges, and enumeration resistance</ref>
       </languageSection>
       </conceptEntry>
     </body>

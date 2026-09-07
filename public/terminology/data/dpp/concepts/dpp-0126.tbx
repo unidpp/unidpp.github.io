@@ -15,7 +15,6 @@
           <note type="note">The passport is the legal materialized view of the twin; the twin is the source of truth.</note>
           <note type="note">Notarized snapshots support as-of queries, which answer what was legally true at a given time.</note>
           <note type="note">Any conforming twin can emit the view; the projection is defined representation-neutrally.</note>
-          <ref>UniDPP PLAN (2026-09) Composition, projection, and offline operation</ref>
       </languageSection>
       </conceptEntry>
     </body>

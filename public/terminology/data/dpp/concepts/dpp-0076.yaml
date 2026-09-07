@@ -20,6 +20,7 @@ data:
   - origin:
       ref:
         source: EN ISO/IEC 27000
+    status: identical
     type: authoritative
   terms:
   - type: expression
@@ -28,4 +29,4 @@ data:
   language_code: eng
   annotations: []
 termid: dpp-0076
-id: 371cf237-2c62-5487-97fb-8071e7561051
+id: d01a6a17-3009-5864-a42a-60accd158521

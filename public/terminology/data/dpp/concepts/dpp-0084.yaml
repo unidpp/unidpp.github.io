@@ -24,6 +24,7 @@ data:
   - origin:
       ref:
         source: IEC TS 62443-1-1
+    status: identical
     type: authoritative
   terms:
   - type: expression
@@ -32,4 +33,4 @@ data:
   language_code: eng
   annotations: []
 termid: dpp-0084
-id: 2c745669-6a6c-51bb-9b9c-67189f46bed3
+id: d10ff9c5-cbf8-52b8-9297-9626d42bccb8

@@ -22,6 +22,7 @@ data:
   - origin:
       ref:
         source: ISO/IEC 27031
+    status: identical
     type: authoritative
   terms:
   - type: abbreviation
@@ -33,4 +34,4 @@ data:
   language_code: eng
   annotations: []
 termid: dpp-0079
-id: e8d4f4d6-c97e-5465-9fea-9a6845737675
+id: c5d78a08-912e-5fdb-a4bf-19c9c8d3cfd2

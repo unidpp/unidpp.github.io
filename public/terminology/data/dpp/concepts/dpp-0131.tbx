@@ -14,7 +14,6 @@
           </descrip>
           <note type="note">The three-tier degradation ladder comprises Tier A (carrier-embedded minimum), Tier B (served full passport) and Tier C (archival).</note>
           <note type="note">Stale or offline data degrades explicitly through freshness verdicts and never passes silently.</note>
-          <ref>UniDPP PLAN (2026-09) Composition, projection, and offline operation</ref>
       </languageSection>
       </conceptEntry>
     </body>

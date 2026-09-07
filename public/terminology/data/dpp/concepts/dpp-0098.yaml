@@ -21,6 +21,7 @@ data:
   - origin:
       ref:
         source: IEC 63278-1:2023; ISO/IEC Guide 77-2; ISO/IEC 27460; IEC 61360
+    status: identical
     type: authoritative
   terms:
   - type: expression
@@ -29,4 +30,4 @@ data:
   language_code: eng
   annotations: []
 termid: dpp-0098
-id: 3410104c-43a0-5a3f-9ed6-1db663f49da7
+id: 12f20051-2e33-5240-b0e5-478a5809d8a0

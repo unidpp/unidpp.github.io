@@ -25,6 +25,7 @@ data:
   - origin:
       ref:
         source: Glossary Industrie 4.0
+    status: identical
     type: authoritative
   terms:
   - type: expression
@@ -36,4 +37,4 @@ data:
   language_code: eng
   annotations: []
 termid: dpp-0031
-id: 3d3f4ccc-be64-5e97-bba4-bcdc7aadf41e
+id: 2daf2e81-0119-58da-80ae-de0cc98850dd

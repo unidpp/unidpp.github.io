@@ -15,7 +15,6 @@
           <note type="note">The two authoritative query modes are the live view (freshness-labelled) and the notarized as-of snapshot (log-anchored); legal purpose selects the mode.</note>
           <note type="note">Transformation events hash-link their inputs by as-of state hash (concept dpp-0129), and profile-version bindings recorded as lifecycle events make manifest history as-of-reconstructable, answering questions such as whether a product was compliant when sold.</note>
           <note type="note">Mirrors and caches are always as-of stamped; the projection (concept dpp-0126) is computed from the record, so as-of queries are reproducible.</note>
-          <ref>UniDPP PLAN (2026-09) Composition, projection, and offline operation</ref>
       </languageSection>
       </conceptEntry>
     </body>

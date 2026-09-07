@@ -14,9 +14,8 @@ data:
       for those objects and for a specific purpose
   notes:
   - content: For more information, see ISO/IEC 15459-1.
-  - content: 'Harmonization note (UniDPP): EN 18219:2026 and EN 18220:2026 define
-      “unique identifier” as a string of characters required to be unique; see concept
-      dpp-0006.'
+  - content: EN 18219:2026 and EN 18220:2026 define “unique identifier” as a string
+      of characters required to be unique; see concept dpp-0006.
   sources:
   - origin:
       ref:
@@ -27,6 +26,7 @@ data:
       ref:
         source: ISO 29404:2015
         id: '3.26'
+    status: identical
     type: authoritative
   terms:
   - type: expression
@@ -35,4 +35,4 @@ data:
   language_code: eng
   annotations: []
 termid: dpp-0007
-id: 5823fce5-4b8b-5259-9026-10b2f2b4a9a5
+id: 97b50d72-01ba-59e1-b47f-c9dc3acb4051

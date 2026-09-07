@@ -22,6 +22,7 @@ data:
       ref:
         source: ISO/IEC 19762
         id: 3.2.1.10
+    status: identical
     type: authoritative
   terms:
   - type: expression
@@ -30,4 +31,4 @@ data:
   language_code: eng
   annotations: []
 termid: dpp-0027
-id: d733b915-4f61-5e9f-9e67-4240a121b8ce
+id: b6993861-28d5-54e2-b6cb-0df06c44244a

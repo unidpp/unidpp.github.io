@@ -15,7 +15,6 @@
           <note type="note">Composition is three-axial: jurisdiction × sector × characteristic.</note>
           <note type="note">Each profile is a projection function, view(twinState, profile, actor), whose projection may transform and not merely select.</note>
           <note type="note">Profiles constrain and transform; inter-profile disagreement is expected and auditable, while intra-class contradiction is an integrity incident (single definition, many constraints).</note>
-          <ref>UniDPP PLAN (2026-09) Profiles and jurisdiction (stream 11)</ref>
       </languageSection>
       </conceptEntry>
     </body>

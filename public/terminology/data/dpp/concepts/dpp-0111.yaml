@@ -35,6 +35,7 @@ data:
   - origin:
       ref:
         source: ISO/IEC Guide 77-2; Glossary Industrie 4.0
+    status: modified
     type: authoritative
     modification: Note 7 removed.
   terms:
@@ -44,4 +45,4 @@ data:
   language_code: eng
   annotations: []
 termid: dpp-0111
-id: 6f1de95b-74c1-5dd4-b0ca-dc4efc8176e1
+id: 64c9522c-82de-5539-bf19-3e9c46e8f3c4

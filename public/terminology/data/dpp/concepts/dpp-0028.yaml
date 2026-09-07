@@ -22,6 +22,7 @@ data:
       ref:
         source: EN 18220:2026
         id: '3.3'
+    status: similar
     type: authoritative
     modification: Internal cross-reference decoration differs (“term 3.10”); the definition
       is equivalent.
@@ -32,4 +33,4 @@ data:
   language_code: eng
   annotations: []
 termid: dpp-0028
-id: a437729d-f3a1-50bc-8b2b-aa3df962a164
+id: 552e853e-c1cf-5497-a46d-394b4f98a3a6

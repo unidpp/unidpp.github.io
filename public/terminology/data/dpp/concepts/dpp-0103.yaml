@@ -22,6 +22,7 @@ data:
       ref:
         source: IEC 63278-1:2023; IEC 61666:2010+AMD1:2021 CSV
         id: '3.6'
+    status: identical
     type: authoritative
   terms:
   - type: expression
@@ -30,4 +31,4 @@ data:
   language_code: eng
   annotations: []
 termid: dpp-0103
-id: 0ab3e49a-8da4-5439-bb51-b244343daf68
+id: aa3eb285-9962-5bc1-a858-e18144ae7a85

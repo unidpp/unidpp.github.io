@@ -16,7 +16,6 @@
           <note type="note">Bidirectional parent knowledge is mandatory: the parent's manifest lists children and the child's event log records its installation interval (parent, slot, method), for recall routing, scoped service access, ownership transfer and end-of-life routing.</note>
           <note type="note">Lifecycle coupling: warranty re-scope and service economics ride the parent, and the part is no longer sellable as new; custody transfer (concept dpp-0134) remains orthogonal, since ownership changes while composition stays fixed.</note>
           <note type="note">The recoverability of the binding (concept dpp-0143) determines identity continuity: disassembly that restores a marketable object with identity continuity is installation, while dissolving identity is a transformation event (concept dpp-0129). Part replacement is an uninstall followed by an install, and regulated children keep their own passports through it.</note>
-          <ref>UniDPP PLAN (2026-09) The passport relationship algebra (association / derivation / installation / membership)</ref>
       </languageSection>
       </conceptEntry>
     </body>

@@ -24,6 +24,7 @@ data:
       ref:
         source: ISO/IEC 17000:2020
         id: '4.2'
+    status: modified
     type: authoritative
     modification: The synonym “object of conformity assessment” has been deleted and
       Note 1 to entry has been deleted.
@@ -34,4 +35,4 @@ data:
   language_code: eng
   annotations: []
 termid: dpp-0080
-id: 915210b1-4993-58a3-9ccc-92dd3f16d8f4
+id: cc7ece92-eb37-5b41-b4a4-062dc382cd13

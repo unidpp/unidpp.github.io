@@ -23,12 +23,6 @@ data:
   - content: The expression "characteristic profile trigger" denotes this predicate
       as used by a characteristic profile and is folded into this concept rather than
       recorded separately.
-  sources:
-  - origin:
-      ref:
-        source: UniDPP PLAN (2026-09)
-        id: The regional/national profile model (stream 11)
-    type: lineage
   terms:
   - type: expression
     normative_status: preferred
@@ -36,4 +30,4 @@ data:
   language_code: eng
   annotations: []
 termid: dpp-0141
-id: f25ab8bc-3d3e-5d75-96b1-958d58ce37d7
+id: 052e0c23-9113-5af7-972b-58a7d9102ba6

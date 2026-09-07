@@ -13,7 +13,7 @@
             <p>string of characters that is required to be unique among all identifiers used for all objects for a specific purpose</p>
           </descrip>
           <note type="note">A unique identifier refers to unique product identifier (3.1.25), unique economic operator identifier (3.1.22), and unique facility identifier (3.1.23).</note>
-          <note type="note">Harmonization note (UniDPP): CWA 18291:2025 defines “Unique Identifier” as an identifier which is guaranteed to be unique; see concept dpp-0007.</note>
+          <note type="note">CWA 18291:2025 defines “Unique Identifier” as an identifier which is guaranteed to be unique; see concept dpp-0007.</note>
           <ref>EN 18219:2026 3.1.24</ref>
           <ref>EN 18220:2026 3.18</ref>
           <ref>ISO 29404:2015 3.26</ref>

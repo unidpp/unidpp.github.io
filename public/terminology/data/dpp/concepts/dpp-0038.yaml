@@ -21,6 +21,7 @@ data:
       ref:
         source: ISO 23234:2021
         id: '3.4'
+    status: identical
     type: authoritative
   terms:
   - type: expression
@@ -29,4 +30,4 @@ data:
   language_code: eng
   annotations: []
 termid: dpp-0038
-id: de3ff597-58ad-559b-b245-498b4d73de11
+id: 9865aca9-3caa-5787-b61d-959654865b48

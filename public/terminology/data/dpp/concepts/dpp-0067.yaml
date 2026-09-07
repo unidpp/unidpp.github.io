@@ -22,6 +22,7 @@ data:
   - origin:
       ref:
         source: ISO 59004:2024
+    status: identical
     type: authoritative
   terms:
   - type: expression
@@ -30,4 +31,4 @@ data:
   language_code: eng
   annotations: []
 termid: dpp-0067
-id: ebe468ce-8971-512a-92d4-9ae2c85200d4
+id: d3439e2d-0126-53e9-bf00-9c3daf806152

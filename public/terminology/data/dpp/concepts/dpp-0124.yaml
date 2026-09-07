@@ -21,12 +21,6 @@ data:
   - content: Profiles constrain and transform; inter-profile disagreement is expected
       and auditable, while intra-class contradiction is an integrity incident (single
       definition, many constraints).
-  sources:
-  - origin:
-      ref:
-        source: UniDPP PLAN (2026-09)
-        id: Profiles and jurisdiction (stream 11)
-    type: lineage
   terms:
   - type: expression
     normative_status: preferred
@@ -34,4 +28,4 @@ data:
   language_code: eng
   annotations: []
 termid: dpp-0124
-id: 91f09786-7a76-52f8-8b6f-85bd270b7001
+id: 71f5e0a4-ae3b-573b-9703-63c8d231c792

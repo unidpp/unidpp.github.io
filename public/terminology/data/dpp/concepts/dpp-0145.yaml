@@ -22,12 +22,6 @@ data:
   - content: 'Freshness and verification requirements must be satisfiable by the subject''s
       capability class: demanding live freshness from an S0 (silent) product is an
       unsatisfiable profile.'
-  sources:
-  - origin:
-      ref:
-        source: UniDPP PLAN (2026-09)
-        id: 'Passive twin → active twin: the paradigm axis'
-    type: lineage
   terms:
   - type: expression
     normative_status: preferred
@@ -35,4 +29,4 @@ data:
   language_code: eng
   annotations: []
 termid: dpp-0145
-id: 7f42b1db-1942-55d5-8d12-7bdfdcf0aebd
+id: cf829228-b25a-5002-95bd-be84c42355af

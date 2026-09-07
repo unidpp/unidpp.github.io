@@ -19,12 +19,6 @@ data:
       base connects retroactively through its build records.
   - content: Inputs are recorded even when no passport exists behind them yet; minting
       fresh identifiers would orphan the installed base.
-  sources:
-  - origin:
-      ref:
-        source: UniDPP PLAN (2026-09)
-        id: The passport relationship algebra; deepening granularity
-    type: lineage
   terms:
   - type: expression
     normative_status: preferred
@@ -32,4 +26,4 @@ data:
   language_code: eng
   annotations: []
 termid: dpp-0135
-id: 9551c013-148e-5800-9b00-5e4760edb4af
+id: df3db204-9931-51ac-82db-6b695218fbb5

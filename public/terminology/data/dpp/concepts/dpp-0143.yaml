@@ -24,13 +24,6 @@ data:
       the object class.'
   - content: Carried in the EXPRESS core as part of the PassportLink binding {method,
       recoverability}.
-  sources:
-  - origin:
-      ref:
-        source: UniDPP PLAN (2026-09)
-        id: The passport relationship algebra (association / derivation / installation
-          / membership)
-    type: lineage
   terms:
   - type: expression
     normative_status: preferred
@@ -38,4 +31,4 @@ data:
   language_code: eng
   annotations: []
 termid: dpp-0143
-id: a4f60c75-faa0-5a54-8d12-12a82f4325cc
+id: a23d47d2-08b6-5a30-84a3-bc0ba9ea47f6

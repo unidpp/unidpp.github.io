@@ -24,6 +24,7 @@ data:
   - origin:
       ref:
         source: IEC 62569-1
+    status: identical
     type: authoritative
   terms:
   - type: expression
@@ -32,4 +33,4 @@ data:
   language_code: eng
   annotations: []
 termid: dpp-0112
-id: 5a665b87-51a9-5ed1-b14a-ff4a43cb42f1
+id: 26759b9f-a830-5ef1-a4bc-4ff37bc168ef

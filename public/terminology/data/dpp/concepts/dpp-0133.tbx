@@ -15,7 +15,6 @@
           <note type="note">Corresponds to capability classes S2 (logged contact) and S3 (connected).</note>
           <note type="note">Measurement validity becomes load-bearing: sensor calibration, uncertainty of self-reported values and registered units; health status is a derived verdict.</note>
           <note type="note">Profiles declare, per data element, the required truth mode — attest-sampled, self-committed, or both with precedence.</note>
-          <ref>UniDPP PLAN (2026-09) Passive twin → active twin: the paradigm axis</ref>
       </languageSection>
       </conceptEntry>
     </body>

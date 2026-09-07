@@ -15,8 +15,8 @@ data:
   notes:
   - content: A unique identifier refers to unique product identifier (3.1.25), unique
       economic operator identifier (3.1.22), and unique facility identifier (3.1.23).
-  - content: 'Harmonization note (UniDPP): CWA 18291:2025 defines “Unique Identifier”
-      as an identifier which is guaranteed to be unique; see concept dpp-0007.'
+  - content: CWA 18291:2025 defines “Unique Identifier” as an identifier which is
+      guaranteed to be unique; see concept dpp-0007.
   sources:
   - origin:
       ref:
@@ -32,6 +32,7 @@ data:
       ref:
         source: ISO 29404:2015
         id: '3.26'
+    status: modified
     type: authoritative
     modification: 'EN 18219:2026 modification: Note 1 to entry removed and a new Note
       1 to entry added. EN 18220:2026 modification: “identifier” replaced by “string
@@ -43,4 +44,4 @@ data:
   language_code: eng
   annotations: []
 termid: dpp-0006
-id: '0688f702-8408-555f-af6f-03e14ead9887'
+id: 4b39a347-95fb-5309-8f35-9a191a3f67b2

@@ -25,6 +25,7 @@ data:
   - origin:
       ref:
         source: IIC Vocabulary IIC:IIVOC:V2.3:20201025
+    status: modified
     type: authoritative
     modification: 'Adapted: “an asset, process, or system” was changed to “an asset”.'
   terms:
@@ -34,4 +35,4 @@ data:
   language_code: eng
   annotations: []
 termid: dpp-0106
-id: ca26d40a-4500-54ba-bbf6-91aa0e32ef48
+id: 152e088c-988d-5b5c-8308-997934afef92

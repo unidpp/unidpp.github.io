@@ -21,6 +21,7 @@ data:
       ref:
         source: ISO/IEC 6523-1
         id: '3.6'
+    status: modified
     type: authoritative
     modification: "“registered” removed."
   terms:
@@ -33,4 +34,4 @@ data:
   language_code: eng
   annotations: []
 termid: dpp-0010
-id: 79bb2da3-4c22-551a-b1a2-ecd5c6e94884
+id: 16f90656-9bb2-5433-bf61-e496e7269e39
