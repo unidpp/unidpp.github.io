@@ -5,6 +5,5 @@
   a skos:Concept ;
   skos:notation "dpp-0086" ;
   skos:prefLabel "interoperability"@eng ;
-  skos:definition "ability of two or more systems or applications to exchange information and to mutually use the information that has been exchanged"@eng ;
-  skos:scopeNote "EN 18223:2026 defines “interoperability” from ISO 18435-1:2009 with a different formulation; see concept dpp-0087. Both variants are candidates for harmonization in the proposed ISO 25534-1 Part 1 (Vocabulary)."@eng
+  skos:definition "ability of two or more systems or applications to exchange information and to mutually use the information that has been exchanged"@eng
  .

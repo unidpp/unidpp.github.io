@@ -11,33 +11,43 @@ schema_version: '3'
 ---
 data:
   definition:
-  - content: string of characters that is required to be unique among all identifiers
-      used for all objects for a specific purpose
+  - content: identifier which is guaranteed to be unique among all identifiers used
+      for those objects and for a specific purpose
   notes:
   - content: A unique identifier refers to unique product identifier (3.1.25), unique
       economic operator identifier (3.1.22), and unique facility identifier (3.1.23).
-  - content: CWA 18291:2025 defines “Unique Identifier” as an identifier which is
-      guaranteed to be unique; see concept dpp-0007.
+  - content: For more information, see ISO/IEC 15459-1.
   sources:
-  - origin:
-      ref:
-        source: EN 18219:2026
-        id: 3.1.24
-    type: authoritative
-  - origin:
-      ref:
-        source: EN 18220:2026
-        id: '3.18'
-    type: authoritative
   - origin:
       ref:
         source: ISO 29404:2015
         id: '3.26'
+    status: identical
+    type: authoritative
+  - origin:
+      ref:
+        source: CWA 18291:2025
+        id: '3.3'
+    status: identical
+    type: authoritative
+  - origin:
+      ref:
+        source: EN 18219:2026
+        id: 3.1.24
     status: modified
     type: authoritative
-    modification: 'EN 18219:2026 modification: Note 1 to entry removed and a new Note
-      1 to entry added. EN 18220:2026 modification: “identifier” replaced by “string
-      of characters”, Note 1 to entry removed and a new Note 1 to entry added.'
+    modification: EN 18219:2026 replaces “identifier” with “string of characters that
+      is required to be unique among all identifiers used for all objects for a specific
+      purpose”; Note 1 to entry removed and a new Note 1 to entry added.
+  - origin:
+      ref:
+        source: EN 18220:2026
+        id: '3.18'
+    status: modified
+    type: authoritative
+    modification: EN 18220:2026 replaces “identifier” with “string of characters that
+      is required to be unique among all identifiers used for all objects for a specific
+      purpose”; Note 1 to entry removed and a new Note 1 to entry added.
   terms:
   - type: expression
     normative_status: preferred
@@ -45,4 +55,4 @@ data:
   language_code: eng
   annotations: []
 termid: dpp-0006
-id: 4b39a347-95fb-5309-8f35-9a191a3f67b2
+id: 9b7a0280-209e-5e1a-b342-ddf114a807ac

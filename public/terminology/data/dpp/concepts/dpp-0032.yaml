@@ -12,24 +12,30 @@ schema_version: '3'
 data:
   definition:
   - content: manufacturer, authorized representative, importer, distributor, dealer
-      or fulfilment service provider that places the product on the market
-  notes:
-  - content: EN 18221:2026 defines “economic operator” without the placing-on-the-market
-      qualifier; see concept dpp-0033.
+      or fulfilment service provider
   sources:
+  - origin:
+      ref:
+        source: EN 18221:2026
+        id: '3.1'
+    status: identical
+    type: authoritative
   - origin:
       ref:
         source: EN 18219:2026
         id: 3.1.5
+    status: modified
     type: authoritative
+    modification: EN 18219:2026 adds the qualifier “that places the product on the
+      market”.
   - origin:
       ref:
         source: EN 18220:2026
         id: '3.7'
-    status: similar
+    status: modified
     type: authoritative
-    modification: The source prints “places the product onto the market”; the definition
-      is equivalent.
+    modification: EN 18220:2026 adds the qualifier “that places the product onto the
+      market” (equivalent formulation).
   terms:
   - type: expression
     normative_status: preferred
@@ -37,4 +43,4 @@ data:
   language_code: eng
   annotations: []
 termid: dpp-0032
-id: 1dae18b6-ceda-5643-a496-113ee98680d9
+id: b26e88e0-6dc3-5960-81f8-b17b79abe592

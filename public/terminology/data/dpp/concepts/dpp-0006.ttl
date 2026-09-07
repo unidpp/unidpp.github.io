@@ -5,7 +5,7 @@
   a skos:Concept ;
   skos:notation "dpp-0006" ;
   skos:prefLabel "unique identifier"@eng ;
-  skos:definition "string of characters that is required to be unique among all identifiers used for all objects for a specific purpose"@eng ;
+  skos:definition "identifier which is guaranteed to be unique among all identifiers used for those objects and for a specific purpose"@eng ;
   skos:scopeNote "A unique identifier refers to unique product identifier (3.1.25), unique economic operator identifier (3.1.22), and unique facility identifier (3.1.23)."@eng ;
-  skos:scopeNote "CWA 18291:2025 defines “Unique Identifier” as an identifier which is guaranteed to be unique; see concept dpp-0007."@eng
+  skos:scopeNote "For more information, see ISO/IEC 15459-1."@eng
  .

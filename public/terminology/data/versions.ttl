@@ -6,4 +6,4 @@
 <https://www.glossarist.org/dpp/dpp/versions/0.7.129> dcterms:description "Build 2026-09-07";
     dcterms:isVersionOf <https://www.glossarist.org/dpp/dpp/>;
     a prov:Entity;
-    prov:generatedAtTime "2026-09-07T07:49:55.338Z"^^xsd:dateTime.
+    prov:generatedAtTime "2026-09-07T11:24:59.258Z"^^xsd:dateTime.

@@ -10,9 +10,9 @@
       <conceptEntry id="dpp-0032">
       <languageSection xml:lang="eng">
           <descrip type="definition">
-            <p>manufacturer, authorized representative, importer, distributor, dealer or fulfilment service provider that places the product on the market</p>
+            <p>manufacturer, authorized representative, importer, distributor, dealer or fulfilment service provider</p>
           </descrip>
-          <note type="note">EN 18221:2026 defines “economic operator” without the placing-on-the-market qualifier; see concept dpp-0033.</note>
+          <ref>EN 18221:2026 3.1</ref>
           <ref>EN 18219:2026 3.1.5</ref>
           <ref>EN 18220:2026 3.7</ref>
       </languageSection>

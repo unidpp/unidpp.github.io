@@ -12,9 +12,9 @@
           <descrip type="definition">
             <p>ability of two or more systems or applications to exchange information and to mutually use the information that has been exchanged</p>
           </descrip>
-          <note type="note">EN 18223:2026 defines “interoperability” from ISO 18435-1:2009 with a different formulation; see concept dpp-0087. Both variants are candidates for harmonization in the proposed ISO 25534-1 Part 1 (Vocabulary).</note>
-          <ref>EN 18219:2026 3.1.7</ref>
           <ref>ISO/IEC 22123-1:2023 3.6.1</ref>
+          <ref>EN 18219:2026 3.1.7</ref>
+          <ref>EN 18223:2026 3.1</ref>
       </languageSection>
       </conceptEntry>
     </body>
