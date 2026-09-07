@@ -4,14 +4,14 @@ import DataTable from '../components/DataTable.astro';
 import DocTerminal from '../components/DocTerminal.astro';
 
 // The five canonical queries, verbatim against the loopback pilot.
-const q1 = `curl -s http://127.0.0.1:8390/services | jq '.services | length'
+const q1 = `curl -s https://registry.unidpp.org/services | jq '.services | length'
 # -> 8   (the C3 service descriptors the registry knows — who serves what)`;
 
-const q2 = `curl -s 'http://127.0.0.1:8390/applicability?product_type=momiji:e8&at=2027-06-01T00:00:00Z' \\
+const q2 = `curl -s 'https://registry.unidpp.org/applicability?product_type=momiji:e8&at=2027-06-01T00:00:00Z' \\
   | jq '[.applicability[].binding.profile_item]'
 # -> ["urn:unidpp:profile:jp-road-traffic"]
 
-curl -s 'http://127.0.0.1:8390/applicability?product_type=momiji:e8&at=2028-06-01T00:00:00Z' \\
+curl -s 'https://registry.unidpp.org/applicability?product_type=momiji:e8&at=2028-06-01T00:00:00Z' \\
   | jq '[.applicability[].binding.profile_item]'
 # -> ["urn:unidpp:profile:eu-machinery-battery", "urn:unidpp:profile:jp-road-traffic"]`;
 
@@ -52,9 +52,11 @@ const runShell = `./stack.sh start     # build if needed, start 8390-8396, wait 
     way the architecture prescribes — the issuer forwards registrations to the
     registry, the projector reads its lenses from the registry, the gateway
     renders the issuer's passports in foreign protocol shapes, and the archive
-    anchors its notarized snapshots into the transparency log. The public URL
-    <code>registry.unidpp.org</code> activates as soon as its DNS record lands;
-    until then every query below runs against the loopback deployment.
+    anchors its notarized snapshots into the transparency log. The stack
+    publishes at <code>registry.unidpp.org</code> (the item and discovery
+    registry), <code>identity.unidpp.org</code> (the actor registry) and
+    <code>resolve.unidpp.org</code> (the linkset resolver) — every query below
+    runs against the live public endpoints.
   </p>
 
   <section id="stack" class="plate" aria-labelledby="stack-h">
@@ -111,7 +113,7 @@ const runShell = `./stack.sh start     # build if needed, start 8390-8396, wait 
           '<code>GET /healthz</code>',
         ],
       ]}
-      caption="The pilot registry additionally publishes at <code>registry.unidpp.org</code> through a Cloudflare named tunnel once DNS lands. The launcher verifies each port serves the right service before declaring it healthy."
+      caption="The registry is publicly reachable at <code>registry.unidpp.org</code> through a Cloudflare named tunnel. The launcher verifies each port serves the right service before declaring it healthy."
     />
   </section>
 
@@ -126,7 +128,7 @@ const runShell = `./stack.sh start     # build if needed, start 8390-8396, wait 
 
     <DocTerminal
       label="query 01 — discovery"
-      meta="GET /services · registry 8390"
+      meta="GET /services · registry.unidpp.org"
       ariaLabel="Curl command listing the services the registry knows"
       text={q1}
       caption="The discovery layer registers descriptors of services and shapes, never records of things: operator keys are pinned per service, versions carry effective windows."
@@ -134,7 +136,7 @@ const runShell = `./stack.sh start     # build if needed, start 8390-8396, wait 
 
     <DocTerminal
       label="query 02 — as-of applicability"
-      meta="GET /applicability · registry 8390"
+      meta="GET /applicability · registry.unidpp.org"
       ariaLabel="Curl command asking which profiles bind the product type at two instants"
       text={q2}
       caption="Adding a market is a dated binding, not a second passport: the same product type acquires the EU duty between the two instants, and every intermediate state is reconstructable."
@@ -158,7 +160,7 @@ const runShell = `./stack.sh start     # build if needed, start 8390-8396, wait 
 
     <DocTerminal
       label="query 05 — trust keyring"
-      meta="GET /keyring · trust 8391"
+      meta="GET /keyring · trust (loopback)"
       ariaLabel="Curl command fetching the trust anchors a verifier pins"
       text={q5}
       caption="Dev mode uses deterministic seeds so demos are reproducible; production replaces the keyring with an external trust list and environment-held keys."
