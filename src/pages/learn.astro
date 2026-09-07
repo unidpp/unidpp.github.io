@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../components/BaseLayout.astro';
+import Continue from '../components/Continue.astro';
 ---
 
 <BaseLayout
@@ -148,15 +149,12 @@ import BaseLayout from '../components/BaseLayout.astro';
     </dl>
   </section>
 
-  <section aria-labelledby="next-heading">
-    <h2 id="next-heading">Where this leads</h2>
-    <p>
-      A single washing machine needs one passport. A product sold across borders meets
-      several disclosure duties at once, and the question becomes whose passport it carries.
-      That question is the subject of the next level:
-      <a href="/why/">why an international core</a>.
-    </p>
-  </section>
+  <Continue
+    href="/why/"
+    num="02"
+    title="Why an international core"
+    desc="A single washing machine needs one passport. A product sold across borders meets several disclosure duties at once — and the question becomes whose passport it carries."
+  />
 </BaseLayout>
 
 <style>

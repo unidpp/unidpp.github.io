@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../components/BaseLayout.astro';
 import DataTable from '../components/DataTable.astro';
+import Continue from '../components/Continue.astro';
 ---
 
 <BaseLayout
@@ -166,13 +167,12 @@ import DataTable from '../components/DataTable.astro';
     </p>
   </section>
 
-  <section aria-labelledby="next-heading">
-    <h2 id="next-heading">Where this leads</h2>
-    <p>
-      Everything stated here in outline is stated in full, with sources, in the reference
-      level: <a href="/reference/">the reference material</a>.
-    </p>
-  </section>
+  <Continue
+    href="/reference/"
+    num="04"
+    title="The reference material"
+    desc="Everything stated here in outline, stated in full with sources — and the evidence: the demonstration runs and the conformance register."
+  />
 </BaseLayout>
 
 <style>

@@ -144,7 +144,7 @@ const pageTitle = title === 'UniDPP' ? title : `${title} — UniDPP`;
       }
       h2 {
         font-size: clamp(1.3rem, 2.4vw, 1.65rem);
-        margin: 3.4rem 0 0.9rem;
+        margin: 3rem 0 0.9rem;
       }
       h3 {
         font-size: 1.02rem;
@@ -183,12 +183,14 @@ const pageTitle = title === 'UniDPP' ? title : `${title} — UniDPP`;
         font-size: 0.86rem;
       }
 
-      /* Plates: wider sections (diagrams, tables) bounded by hairline rules */
+      /* Plates: wider sections (diagrams, tables) bounded by hairline rules.
+         Plate and prose sections share one vertical rhythm: both boundaries
+         land on 3rem, so the page reads as an even cadence. */
       .plate {
         border-top: 1px solid var(--hairline);
         border-bottom: 1px solid var(--hairline);
         padding: 1.6rem 0 1.9rem;
-        margin: 2.6rem 0;
+        margin: 3rem 0;
         max-width: none;
       }
       .plate > h2 {
@@ -224,6 +226,17 @@ const pageTitle = title === 'UniDPP' ? title : `${title} — UniDPP`;
         color: var(--muted);
         font-size: 0.8rem;
         padding-top: 0.5rem;
+      }
+      /* Register tables: long factual listings (defect registers, fixture
+         results) get a 2.5% navy tint on alternate rows for row tracking;
+         the tint is the existing navy, not a new colour. */
+      table.register tbody tr:nth-child(even) td {
+        background: rgba(20, 51, 92, 0.025);
+      }
+      td code,
+      th code {
+        font-size: 0.82em;
+        overflow-wrap: anywhere;
       }
 
       /* Code */

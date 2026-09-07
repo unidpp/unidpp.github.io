@@ -19,6 +19,11 @@ const here = Astro.url.pathname.replace(/index\.html$/, '').replace(/\/+$/, '') 
 const norm = (path: string) => path.replace(/\/+$/, '') || '/';
 const isHere = (path: string) => here === norm(path);
 const inReference = here.startsWith('/reference');
+const evidence: [string, string][] = [
+  ['/demos/', 'Demos'],
+  ['/conformance/', 'Conformance'],
+];
+const inEvidence = here === '/demos' || here === '/conformance';
 ---
 
 <aside class="rail" aria-label="Sections by depth">
@@ -46,6 +51,20 @@ const inReference = here.startsWith('/reference');
       ))
     }
   </ol>
+  <div class="rail-group">
+    <p class="group-label">Evidence</p>
+    <ul class="grouplist">
+      {
+        evidence.map(([href, label]) => (
+          <li class:list={{ current: isHere(href) }}>
+            <a href={href} aria-current={isHere(href) ? 'page' : undefined}>
+              {label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
   <p class="rail-note">Depth is a sequence: each level assumes the one before it.</p>
 </aside>
 
@@ -75,26 +94,21 @@ const inReference = here.startsWith('/reference');
     </nav>
   )
 }
+{
+  inEvidence && (
+    <nav class="chips sub" aria-label="Evidence">
+      {evidence.map(([href, label]) => (
+        <a class="chip" class:list={{ current: isHere(href) }} href={href}>
+          {label}
+        </a>
+      ))}
+    </nav>
+  )
+}
 
 <style>
   .rail {
     display: none;
-  }
-  @media (min-width: 960px) {
-    .rail {
-      display: flex;
-      flex-direction: column;
-      position: sticky;
-      top: 0;
-      align-self: start;
-      height: 100vh;
-      overflow-y: auto;
-      border-right: 1px solid var(--hairline);
-      padding: 1.9rem 1.15rem 2rem;
-    }
-    .chips {
-      display: none;
-    }
   }
 
   .mark {
@@ -173,6 +187,48 @@ const inReference = here.startsWith('/reference');
     background: #fff;
   }
 
+  .rail-group {
+    margin-top: 1.9rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--hairline);
+  }
+  .group-label {
+    margin: 0 0 0.35rem;
+    font-family: var(--font-mono);
+    font-size: 0.66rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .grouplist {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .grouplist li {
+    margin: 0.1rem 0;
+  }
+  .grouplist a {
+    display: block;
+    padding: 0.42rem 0.6rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.87rem;
+    border-left: 2px solid transparent;
+    border-radius: 0 var(--radius) var(--radius) 0;
+  }
+  .grouplist a:hover {
+    color: var(--ink);
+    background: #fff;
+  }
+  .grouplist li.current a {
+    color: var(--navy);
+    font-weight: 600;
+    border-left-color: var(--navy);
+    background: #fff;
+  }
+
   .rail-note {
     margin-top: 2.2rem;
     font-size: 0.72rem;
@@ -225,5 +281,25 @@ const inReference = here.startsWith('/reference');
   .mark-chip {
     font-weight: 600;
     color: var(--navy);
+  }
+
+  /* Desktop rail. This block must stay LAST: it overrides the base .rail
+     and .chips rules above at equal specificity, so rule order is what
+     makes it win — the minified bundle preserves source order. */
+  @media (min-width: 960px) {
+    .rail {
+      display: flex;
+      flex-direction: column;
+      position: sticky;
+      top: 0;
+      align-self: start;
+      height: 100vh;
+      overflow-y: auto;
+      border-right: 1px solid var(--hairline);
+      padding: 1.9rem 1.15rem 2rem;
+    }
+    .chips {
+      display: none;
+    }
   }
 </style>

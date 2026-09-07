@@ -1,0 +1,91 @@
+---
+// Bottom-of-page next link for the reading spine. One per level page,
+// 01 -> 02 -> 03 -> 04 -> the framework in full.
+interface Props {
+  href: string;
+  num?: string;
+  title: string;
+  desc?: string;
+}
+const { href, num, title, desc } = Astro.props;
+---
+
+<nav class="continue" aria-label="Next in the sequence">
+  <a href={href}>
+    <span class="c-eyebrow">Continue</span>
+    <span class="c-body">
+      {num && <span class="c-num">{num}</span>}
+      <span class="c-title">{title}</span>
+    </span>
+    {desc && <span class="c-desc">{desc}</span>}
+    <span class="c-arrow" aria-hidden="true">&#8594;</span>
+  </a>
+</nav>
+
+<style>
+  .continue {
+    border-top: 1px solid var(--hairline);
+    margin-top: 3.4rem;
+    padding-top: 1.35rem;
+    max-width: var(--prose);
+  }
+  .continue a {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      'eyebrow arrow'
+      'body arrow'
+      'desc arrow';
+    column-gap: 0.9rem;
+    align-items: center;
+    min-height: 44px;
+    padding: 0.35rem 0;
+    color: var(--ink);
+  }
+  .c-eyebrow {
+    display: block;
+    grid-area: eyebrow;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.3rem;
+  }
+  .c-body {
+    grid-area: body;
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+  }
+  .c-num {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--navy);
+  }
+  .c-title {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 1.18rem;
+    letter-spacing: -0.01em;
+  }
+  .c-desc {
+    grid-area: desc;
+    display: block;
+    margin-top: 0.3rem;
+    font-size: 0.88rem;
+    color: var(--muted);
+    max-width: 56ch;
+  }
+  .c-arrow {
+    grid-area: arrow;
+    font-size: 1.05rem;
+    color: var(--navy);
+    transition: transform 0.15s ease;
+  }
+  .continue a:hover .c-arrow,
+  .continue a:focus-visible .c-arrow {
+    transform: translateX(3px);
+  }
+</style>

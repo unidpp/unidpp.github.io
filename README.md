@@ -20,13 +20,25 @@ each assuming the one before it:
 /reference/        04   Reference — the full factual material:
   /reference/framework/        invariants, lens model, axes, twin, resilience
   /reference/standards/        topics map, EU profile, seams, landscape
-  /reference/implementation/   repositories, quickstart
+  /reference/implementation/   repositories, live explorer embed, quickstart
   /reference/compare/          freeDPP / OpenDPP / UniDPP capability table
   /reference/trust/            SIGNATIF model, revocation, stamps
   /reference/papers/           contribution catalogue, NWIPs
   /reference/terminology/      Glossarist vocabulary dataset
   /reference/about/            stewardship, governance, contact
+
+Evidence annexes (not depth levels — exhibits, in the nav rail under
+their own "Evidence" group):
+/demos/                 narrated demo runs with verbatim CLI traces
+                        (document-terminal styling), run instructions
+/conformance/           EU-profile conformance register: EN 18223 example
+                        corpus, findings by class, per-fixture table,
+                        runner command
 ```
+
+Each level page ends with a "Continue" link to the next level
+(01 → 02 → 03 → 04 → framework reference); /demos/ continues to
+/conformance/.
 
 Navigation is a left depth-rail on desktop (>=960px) and a top chip row on
 mobile; every page states its depth level. The former top-level pages
@@ -69,8 +81,14 @@ src/pages/{learn,why,how}.astro   levels 01-03
 src/pages/reference/*.astro level 04 reference pages + index
 src/pages/sitemap.xml.ts    static endpoint emitting /sitemap.xml
 src/components/             BaseLayout (tokens + global styles), Nav (depth
-                            rail / chip row), Footer, Card, CardGrid,
-                            DataTable, HeroSpread, MrzStrip
+                            rail / chip rows + Evidence group), Footer,
+                            Card, CardGrid, DataTable, HeroSpread,
+                            MrzStrip, DocTerminal (document-terminal run
+                            transcript frame), Continue (bottom-of-page
+                            next-level link)
+src/data/                   verbatim demo-trace extracts (JSON, generated
+                            from unidpp-demo-docs; the traces must stay
+                            byte-identical to the binary's output)
 public/                     static assets copied verbatim to dist/: robots.txt, CNAME
 .github/workflows/deploy.yml  GitHub Pages deployment (build dist/, upload, deploy)
 dist/                       build output (gitignored)

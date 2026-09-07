@@ -14,7 +14,8 @@ import CardGrid from '../../components/CardGrid.astro';
     A fully open, multi-language implementation of the framework, developed in the open
     under Apache-2.0 / MIT. Conformance fixtures are derived from the full converted corpus
     of the EN series, the CEN Workshop Agreements, and the IDTA specifications — including
-    the published defect registers as negative test cases.
+    the published defect registers as negative test cases; the
+    <a href="/conformance/">conformance register</a> records the current EU-profile run.
   </p>
 
   <section id="repositories" class="plate" aria-labelledby="repos-h">
@@ -83,6 +84,27 @@ import CardGrid from '../../components/CardGrid.astro';
     </CardGrid>
   </section>
 
+  <section id="explorer" class="plate" aria-labelledby="explorer-h">
+    <h2 id="explorer-h">Live explorer</h2>
+    <p>
+      The <strong>explorer</strong> inspects passports, event logs, manifests, and
+      verdicts, and verifies Tier-A carriers end to end. It runs entirely in your
+      browser — cryptographic checks use the live WebCrypto API; nothing is sent to a
+      server.
+    </p>
+    <div class="explorer-frame">
+      <iframe
+        src="/explorer/"
+        title="UniDPP explorer: live in-browser passport inspection"
+        loading="lazy"
+      ></iframe>
+    </div>
+    <p class="meta">
+      Prefer a full tab, or the embed does not load?
+      <a href="/explorer/">Open the explorer directly</a>.
+    </p>
+  </section>
+
   <section id="quickstart" aria-labelledby="quickstart-h">
     <h2 id="quickstart-h">Quickstart</h2>
     <p>Language SDKs install from their registries:</p>
@@ -104,5 +126,27 @@ cargo test            # property tests: quantity conservation, commitment consis
       module decomposition above is the committed set. Repositories are published under
       the <a href="https://github.com/unidpp">unidpp</a> GitHub organization.
     </div>
+    <p>
+      Two evidence pages accompany this one: the
+      <a href="/demos/">demonstrations</a> — narrated runs of the reference core with
+      verbatim traces — and the <a href="/conformance/">conformance register</a> — the
+      EU-profile suite run over the EN&nbsp;18223 example corpus, with the command to
+      reproduce it.
+    </p>
   </section>
 </BaseLayout>
+
+<style>
+  .explorer-frame {
+    margin: 1.4rem 0 0;
+    max-width: none;
+  }
+  .explorer-frame iframe {
+    width: 100%;
+    height: 620px;
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius);
+    background: #fff;
+    display: block;
+  }
+</style>

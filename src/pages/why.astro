@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../components/BaseLayout.astro';
+import Continue from '../components/Continue.astro';
 ---
 
 <BaseLayout
@@ -114,13 +115,12 @@ import BaseLayout from '../components/BaseLayout.astro';
     </p>
   </section>
 
-  <section aria-labelledby="next-heading">
-    <h2 id="next-heading">Where this leads</h2>
-    <p>
-      How the record, the lenses, and the trust between them are actually built is the
-      subject of the next level: <a href="/how/">how it works</a>.
-    </p>
-  </section>
+  <Continue
+    href="/how/"
+    num="03"
+    title="How it works"
+    desc="Six layers, fourteen invariants, and the trust model that lets one record carry many jurisdictions' verdicts across borders."
+  />
 </BaseLayout>
 
 <style>

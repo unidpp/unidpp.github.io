@@ -1,0 +1,73 @@
+---
+// Document terminal: a run transcript framed as a document listing, not a
+// hacker terminal — IBM Plex Mono on white, hairline frame, a header strip
+// carrying the run label and its seed/exit status. The content is passed as
+// a verbatim string so nothing between source and page can reformat it.
+interface Props {
+  label: string;
+  meta?: string;
+  caption?: string;
+  text: string;
+  ariaLabel?: string;
+}
+const { label, meta, caption, text, ariaLabel = label } = Astro.props;
+---
+
+<figure class="dterm">
+  <div class="dterm-head">
+    <span class="dterm-label">{label}</span>
+    {meta && <span class="dterm-meta">{meta}</span>}
+  </div>
+  <pre tabindex="0" aria-label={ariaLabel}><code>{text}</code></pre>
+  {caption && <figcaption>{caption}</figcaption>}
+</figure>
+
+<style>
+  .dterm {
+    margin: 1.4rem 0 0.4rem;
+    max-width: none;
+  }
+  .dterm-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    flex-wrap: wrap;
+    background: rgba(20, 51, 92, 0.04);
+    border: 1px solid var(--hairline);
+    border-bottom: 0;
+    border-radius: var(--radius) var(--radius) 0 0;
+    padding: 0.45rem 0.9rem;
+  }
+  .dterm-label {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    color: var(--navy);
+    overflow-wrap: anywhere;
+  }
+  .dterm-meta {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    color: var(--muted);
+    overflow-wrap: anywhere;
+  }
+  .dterm pre {
+    margin: 0;
+    max-width: none;
+    border-radius: 0 0 var(--radius) var(--radius);
+    font-size: clamp(0.62rem, 1.7vw, 0.8rem);
+    line-height: 1.55;
+  }
+  .dterm pre:focus-visible {
+    outline: 2px solid var(--navy);
+    outline-offset: -2px;
+  }
+  figcaption {
+    margin-top: 0.6rem;
+    font-size: 0.82rem;
+    color: var(--muted);
+    max-width: 58ch;
+  }
+</style>

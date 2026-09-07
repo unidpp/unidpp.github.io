@@ -56,13 +56,16 @@
   </div>
   <div class="captions">
     <p class="cap cap-eu" id="cap-eu">
-      The EU lens shows the energy class required by the ESPR delegated act.
+      <span class="cap-tag" aria-hidden="true">EU lens</span>
+      Required by the ESPR delegated act — the reading EU market surveillance relies on.
     </p>
     <p class="cap cap-jp" id="cap-jp">
-      The Japan lens shows the Top Runner efficiency rating under METI labelling.
+      <span class="cap-tag" aria-hidden="true">Japan lens</span>
+      The rating under METI labelling, set against the Top Runner benchmark.
     </p>
     <p class="cap cap-cites" id="cap-cites">
-      The CITES lens shows the species listing and the permit number required for trade.
+      <span class="cap-tag" aria-hidden="true">CITES lens</span>
+      What customs needs for cross-border trade: the listing and the permit number.
     </p>
   </div>
 </div>
@@ -102,11 +105,13 @@
     position: absolute;
     top: 0;
     width: min(9.5rem, 46%);
+    min-height: 44px;
     padding: 0.65rem 0.8rem;
     border-radius: var(--radius);
     border: 1px solid rgba(20, 51, 92, 0.35);
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 0.15rem;
     cursor: pointer;
     transition:
@@ -148,6 +153,13 @@
     transform: rotate(4deg);
     background: rgba(20, 51, 92, 0.08);
     z-index: 1;
+  }
+
+  /* The radio inputs are visually hidden, so the global :focus-visible
+     outline never reaches them; the label carries the ring instead. */
+  .in:focus-visible + .lens {
+    outline: 2px solid var(--navy);
+    outline-offset: 2px;
   }
 
   .lens:hover,
@@ -240,6 +252,21 @@
     opacity: 0;
     transition: opacity 0.2s ease;
   }
+  .cap-tag {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.66rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--navy);
+    border: 1px solid var(--hairline);
+    border-radius: 99px;
+    padding: 0.1rem 0.5rem;
+    margin-right: 0.5rem;
+    vertical-align: 0.1em;
+    background: #fff;
+  }
   .spread:has(.in-eu:checked) .cap-eu,
   .spread:has(.in-jp:checked) .cap-jp,
   .spread:has(.in-cites:checked) .cap-cites {
@@ -256,11 +283,12 @@
       padding-top: 6.8rem;
     }
     .lens {
-      width: 38%;
+      width: 32%;
+      min-height: 48px;
       padding: 0.5rem 0.6rem;
     }
     .lens-cites {
-      left: 72%;
+      left: 66%;
     }
     .field {
       grid-template-columns: 6.8rem minmax(0, 1fr);

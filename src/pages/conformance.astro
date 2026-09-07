@@ -1,0 +1,209 @@
+---
+import BaseLayout from '../components/BaseLayout.astro';
+import DocTerminal from '../components/DocTerminal.astro';
+
+const runner = `git clone https://github.com/unidpp/unidpp-py
+cd unidpp-py
+
+python scripts/eu_profile_report.py
+# writes conformance/eu-profile/REPORT.md and REPORT.json
+# exit 0: suite ran to completion and both reports were written`;
+---
+
+<BaseLayout
+  title="Conformance"
+  description="Public, reproducible conformance evidence: every example payload printed in EN 18223:2026 run through the UniDPP EU-profile validators — 22 fixtures, 14 pass, 8 fail, 26 error-severity findings recorded as a factual register, with the command to run it yourself."
+  eyebrow="Evidence — conformance"
+>
+  <h1>Conformance</h1>
+  <p class="lede">
+    Conformance evidence for the EU profile, published as a factual register. The
+    validators were run against every example payload printed in
+    EN&nbsp;18223:2026 — 22 fixtures — and each finding below cites the standard's own
+    normative text. The suite is reproducible: the runner command is at the foot of this
+    page, and it regenerates and verifies every fixture on each run.
+  </p>
+  <p class="ledger">
+    <span>22 fixtures run</span>
+    <span class="ok">14 pass</span>
+    <span class="neg">8 fail</span>
+    <span>26 error-severity findings</span>
+    <span>+ 2 probe checks</span>
+    <span>+ 4 info-severity vacancy references</span>
+  </p>
+
+  <section aria-labelledby="method-h">
+    <h2 id="method-h">Method</h2>
+    <ul>
+      <li>
+        Corpus: clause&nbsp;5.2 compressed JSON examples, Annex&nbsp;A expanded JSON
+        examples 1–6, and Annex&nbsp;B XML examples 1–8, extracted verbatim from the
+        corrected reissue (2&nbsp;June&nbsp;2026).
+      </li>
+      <li>
+        Validation layers: document-header rules on the payload as printed; EU-profile
+        JSON Schemas on the normalized document; EU-profile semantic rules encoding the
+        EN's own normative text; neutral-core identifier mapping.
+      </li>
+      <li>
+        Outcome semantics: <em>pass</em> means no error-severity finding — the payload is
+        consistent with the standard's own normative text and sibling examples.
+        Info-severity findings are registry-vacancy references and do not affect the
+        outcome.
+      </li>
+      <li>
+        A typography-correction pass (curly quotes, dashes inside timestamps) altered
+        <strong>0 of 22</strong> payloads; the correction mechanism stays in force and is
+        re-verified on each run.
+      </li>
+      <li>
+        Handling: the source is a conversion of a purchased single-user license; the
+        fixtures inherit that constraint and are not redistributed. This page records
+        findings and citations only.
+      </li>
+    </ul>
+  </section>
+
+  <section class="plate" aria-labelledby="register-h">
+    <h2 id="register-h">Findings by register class</h2>
+    <p>
+      Findings are cross-referenced to the DPP corpus defect register, which classes each
+      entry by what it is: an inconsistency within one document (A), across documents (B),
+        an under-specification — a vacancy — (C), or a new fact discovered by this run (N).
+    </p>
+    <div class="tablewrap">
+      <table class="register">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Class</th>
+            <th scope="col">Findings</th>
+            <th scope="col">Statement</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>A1</td><td>internal inconsistency</td><td>2</td><td>Granularity printed with an uppercase initial against the normative lowercase enumeration (§4.1.2.2).</td></tr>
+          <tr><td>A2</td><td>internal inconsistency</td><td>2</td><td>Status printed with an uppercase initial against the lowercase enumeration (§4.1.2.1).</td></tr>
+          <tr><td>A3</td><td>internal inconsistency</td><td>9</td><td>The data-element class name is spelled two ways — the table and example spelling against the prose spelling — in one case within a single sentence (§5.2.6 vs §4.1.2.1).</td></tr>
+          <tr><td>A4</td><td>internal inconsistency</td><td>1 <span class="meta">(probe)</span></td><td>A non-ISO&nbsp;8601 dash form in a last-updated timestamp, in the very example that teaches the format; attested for the source PDF and exercised by probe P-A4.</td></tr>
+          <tr><td>A5</td><td>internal inconsistency</td><td>2</td><td>Language tags violating the standard's own structure rule — a bare two-letter code, and an unassigned code where Greek is <code>el</code> (Tables 5–6).</td></tr>
+          <tr><td>A6</td><td>internal inconsistency</td><td>2</td><td>Schema-version placeholders — <code>ENXXX:v1.0</code> and a draft self-reference — where a version grammar is required.</td></tr>
+          <tr><td>B2</td><td>cross-document inconsistency</td><td>1 <span class="meta">(probe)</span></td><td>Attribute-name drift between the EN and its IDTA implementation (<code>lastUpdated</code> vs <code>lastUpdate</code>); exercised by probe P-B2.</td></tr>
+          <tr><td>C1</td><td>under-specification <span class="meta">(info)</span></td><td>2</td><td>Dictionary-reference hosts are placeholders; the semantic repository required by clause 4.3 is unspecified.</td></tr>
+          <tr><td>C4</td><td>under-specification <span class="meta">(info)</span></td><td>2</td><td>Content-specification identifiers are placeholders; identifier space, allocator, and validation undefined.</td></tr>
+          <tr><td>N1</td><td>new, this run</td><td>1</td><td>Annex&nbsp;A Example&nbsp;2 is not well-formed JSON as printed: misnested, unclosed braces and literal ellipsis placeholders inside a normative annex.</td></tr>
+          <tr><td>N2</td><td>new, this run</td><td>2</td><td>Dictionary-reference URIs omit the <code>//</code> authority separator after the scheme (Annex&nbsp;A Example&nbsp;3; the sibling Example&nbsp;1 prints the well-formed form).</td></tr>
+          <tr><td>N3</td><td>new, this run</td><td>1</td><td>The same relative element identifier used by two siblings, violating the uniqueness rule of Table&nbsp;2 (§4.1.2.3).</td></tr>
+          <tr><td>N4</td><td>new, this run</td><td>3</td><td><code>xsd:float</code> values serialized as JSON strings, contradicting Table&nbsp;7's type mapping and the compressed form of the same data (§5.2.5).</td></tr>
+          <tr><td>N5</td><td>new, this run</td><td>1</td><td>One class serialized under two different child keys across sibling examples — <code>value</code> vs <code>elements</code> (Annex&nbsp;A Examples 4 and 1; Table&nbsp;4 models the children differently).</td></tr>
+          <tr><td>N6</td><td>new, this run</td><td>1</td><td>A trailing comma after the final member makes Annex&nbsp;A Example&nbsp;5 invalid JSON.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="meta">
+      Counts cover fixtures and probes. Of the 32 entries: 26 error-severity findings from
+      fixtures, 2 probe checks (A4, B2), and 4 info-severity vacancy references (C1, C4).
+    </p>
+  </section>
+
+  <section class="plate" aria-labelledby="fixtures-h">
+    <h2 id="fixtures-h">Per-fixture results</h2>
+    <div class="tablewrap">
+      <table class="register">
+        <caption>
+          Findings are listed by register id; a repeated id is marked with its count. Two
+          payloads failed at parse (N1, N6) before schema and semantic checks could run.
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">Fixture</th>
+            <th scope="col">Clause</th>
+            <th scope="col">Kind</th>
+            <th scope="col">Outcome</th>
+            <th scope="col">Findings</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="mono">cl5-5.2.4-header</td><td>5.2.4</td><td>JSON, compressed</td><td class="neg">fail</td><td class="mono">A1 A2 A6 C4</td></tr>
+          <tr><td class="mono">cl5-5.2.5-dataelementcollection</td><td>5.2.5</td><td>JSON, compressed</td><td class="ok">pass</td><td>&mdash;</td></tr>
+          <tr><td class="mono">cl5-5.2.6-singlevalued-standalone</td><td>5.2.6</td><td>JSON, compressed</td><td class="ok">pass</td><td>&mdash;</td></tr>
+          <tr><td class="mono">cl5-5.2.6-singlevalued-in-complex</td><td>5.2.6</td><td>JSON, compressed</td><td class="ok">pass</td><td>&mdash;</td></tr>
+          <tr><td class="mono">cl5-5.2.7-multivalued-native</td><td>5.2.7</td><td>JSON, compressed</td><td class="ok">pass</td><td>&mdash;</td></tr>
+          <tr><td class="mono">cl5-5.2.7-multivalued-objects</td><td>5.2.7</td><td>JSON, compressed</td><td class="ok">pass</td><td>&mdash;</td></tr>
+          <tr><td class="mono">cl5-5.2.8-relatedresource</td><td>5.2.8</td><td>JSON, compressed</td><td class="ok">pass</td><td>&mdash;</td></tr>
+          <tr><td class="mono">cl5-5.2.9-multilanguage</td><td>5.2.9</td><td>JSON, compressed</td><td class="ok">pass</td><td>&mdash;</td></tr>
+          <tr><td class="mono">annexA-example1</td><td>Annex A, ex. 1</td><td>JSON, expanded</td><td class="neg">fail</td><td class="mono">A3 ×4 C1</td></tr>
+          <tr><td class="mono">annexA-example2</td><td>Annex A, ex. 2</td><td>JSON, expanded</td><td class="neg">fail</td><td class="mono">N1 &mdash; not parseable</td></tr>
+          <tr><td class="mono">annexA-example3</td><td>Annex A, ex. 3</td><td>JSON, expanded</td><td class="neg">fail</td><td class="mono">A3 ×2 N2 ×2</td></tr>
+          <tr><td class="mono">annexA-example4</td><td>Annex A, ex. 4</td><td>JSON, expanded</td><td class="neg">fail</td><td class="mono">A3 ×4 N4 ×3 N3 N5 C1</td></tr>
+          <tr><td class="mono">annexA-example5</td><td>Annex A, ex. 5</td><td>JSON, expanded</td><td class="neg">fail</td><td class="mono">N6 &mdash; not parseable A5</td></tr>
+          <tr><td class="mono">annexA-example6</td><td>Annex A, ex. 6</td><td>JSON, expanded</td><td class="neg">fail</td><td class="mono">A5</td></tr>
+          <tr><td class="mono">annexB-example1</td><td>Annex B, ex. 1</td><td>XML</td><td class="neg">fail</td><td class="mono">A1 A2 A6 C4</td></tr>
+          <tr><td class="mono">annexB-example2</td><td>Annex B, ex. 2</td><td>XML</td><td class="ok">pass</td><td>&mdash;</td></tr>
+          <tr><td class="mono">annexB-example3</td><td>Annex B, ex. 3</td><td>XML</td><td class="ok">pass</td><td>&mdash;</td></tr>
+          <tr><td class="mono">annexB-example4</td><td>Annex B, ex. 4</td><td>XML</td><td class="ok">pass</td><td>&mdash;</td></tr>
+          <tr><td class="mono">annexB-example5</td><td>Annex B, ex. 5</td><td>XML</td><td class="ok">pass</td><td>&mdash;</td></tr>
+          <tr><td class="mono">annexB-example6</td><td>Annex B, ex. 6</td><td>XML</td><td class="ok">pass</td><td>&mdash;</td></tr>
+          <tr><td class="mono">annexB-example7</td><td>Annex B, ex. 7</td><td>XML</td><td class="ok">pass</td><td>&mdash;</td></tr>
+          <tr><td class="mono">annexB-example8</td><td>Annex B, ex. 8</td><td>XML</td><td class="ok">pass</td><td>&mdash;</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="meta">
+      The failures concentrate in the Annex&nbsp;A expanded-JSON examples and the two
+      header examples (5.2.4, Annex&nbsp;B&nbsp;ex.&nbsp;1, which share one header shape); the
+      clause&nbsp;5.2 data-element fragments and Annex&nbsp;B XML examples 2–8 pass.
+    </p>
+  </section>
+
+  <section aria-labelledby="run-h">
+    <h2 id="run-h">Run it yourself</h2>
+    <p>
+      The runner lives in the <code>unidpp-py</code> repository
+      (<a href="https://github.com/unidpp">github.com/unidpp</a>). It writes the full
+      report — per-fixture findings with verbatim citations and probe transcripts — to
+      <code>REPORT.md</code> and <code>REPORT.json</code>, and regenerates and verifies every fixture
+      against its raw copy on each run. Findings about the standard under test are report
+      content, not harness failures: the standard's own inconsistencies are the evidence
+      this register exists to collect.
+    </p>
+    <DocTerminal
+      label="shell"
+      meta="unidpp-py repository root"
+      ariaLabel="Commands to clone unidpp-py and run the EU-profile conformance suite"
+      text={runner}
+    />
+    <p class="meta">
+      Evidence annex for paper&nbsp;4 (P3 deliverable); the catalogue of planned
+      contributions is in the <a href="/reference/papers/">papers reference</a>, and the
+      demonstration runs are on the <a href="/demos/">demonstrations page</a>.
+    </p>
+  </section>
+</BaseLayout>
+
+<style>
+  .ledger {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.4rem;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--ink);
+    border-top: 1px solid var(--hairline);
+    border-bottom: 1px solid var(--hairline);
+    padding: 0.7rem 0;
+    margin: 0 0 2.2rem;
+    max-width: var(--prose);
+  }
+  .ledger .ok {
+    font-weight: 600;
+  }
+  .ledger .neg {
+    font-weight: 600;
+  }
+  td.mono {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    overflow-wrap: anywhere;
+  }
+</style>
