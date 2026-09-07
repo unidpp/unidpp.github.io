@@ -1,0 +1,510 @@
+== Terms and definitions
+
+For the purposes of this document, the terms and definitions given in
+the UniDPP glossary dataset (concepts dpp-0124 to dpp-0146) and restated
+below apply.
+
+// Terms are listed alphabetically; the concept identifier (termid) of
+// the glossarist dataset is retained as the entry anchor.
+
+[[dpp-0133]]
+=== active twin
+
+digital twin in which the object self-reports under device keys, making
+truth near-continuous, freshness bounded and detectable, and shifting
+the binding question from who saw the object to who attests the sensor
+
+NOTE: Corresponds to capability classes S2 (logged contact) and S3
+(connected).
+
+NOTE: Measurement validity becomes load-bearing: sensor calibration,
+uncertainty of self-reported values and registered units; health status
+is a derived verdict.
+
+NOTE: Profiles declare, per data element, the required truth mode —
+attest-sampled, self-committed, or both with precedence.
+
+[.source]
+<<unidpp-plan>>
+
+[[dpp-0146]]
+=== as-of state
+
+state of a subject reconstructed from its event-sourced record at a
+specified past time, anchored by a notarized snapshot so that queries
+can answer what was legally true at that time
+
+NOTE: The two authoritative query modes are the live view
+(freshness-labelled) and the notarized as-of snapshot (log-anchored);
+legal purpose selects the mode.
+
+NOTE: Transformation events hash-link their inputs by as-of state hash
+(concept dpp-0129), and profile-version bindings recorded as lifecycle
+events make manifest history as-of-reconstructable, answering questions
+such as whether a product was compliant when sold.
+
+NOTE: Mirrors and caches are always as-of stamped; the projection
+(concept dpp-0126) is computed from the record, so as-of queries are
+reproducible.
+
+[.source]
+<<unidpp-plan>>
+
+[[dpp-0136]]
+=== blind edge
+
+edge on a typed passport relationship whose existence and endpoints are
+concealed from all observers, so that a child-to-parent reference does
+not reveal where a thing is — a household or a site
+
+NOTE: Edge visibility classes — public, restricted (role-qualified),
+blind and escrowed — are declared on every relationship; the
+installation schema (concept dpp-0142) carries visibility as an edge
+class with escrow arrangement (concept dpp-0137) and audiences.
+
+NOTE: Blind is the default for consumer installations, because even the
+object-to-household linkage is personal data requiring a GDPR or PIPL
+legal basis per profile.
+
+NOTE: Rationale: a traversable graph with entitled upstream observers is
+surveillance infrastructure; post-sale visibility into instance state is
+owner-push or authority-based, never maker-pull.
+
+[.source]
+<<unidpp-plan>>
+
+[[dpp-0125]]
+=== characteristic profile
+
+profile that attaches by predicate on digital twin facts — such as age,
+material content, heritage status or market status — rather than by
+law-of-place or industry
+
+NOTE: Characteristic profiles split into regulatory-triggered profiles
+(for example CITES species content, cultural-goods import controls,
+art-market due diligence, conflict-minerals origin) and voluntary value
+profiles (for example provenance and grading for antiques and
+collectibles).
+
+NOTE: Predicate triggers include time predicates: an object becoming
+older than a given age is a clock-fired applicability event handled by
+the dated-binding machinery.
+
+[.source]
+<<unidpp-plan>>
+
+[[dpp-0134]]
+=== custody transfer
+
+signed ceremony recording the transfer of responsibility for an object
+between custodians, appended to the event chain by the custodian and
+the counterparty, which extends and never overwrites the trail across
+successive owners
+
+NOTE: Custody links are social and control edges, orthogonal to
+structural composition: ownership changes while composition stays
+fixed.
+
+[.source]
+<<unidpp-plan>>
+
+[[dpp-0130]]
+=== derived passport
+
+passport issued as the output of a transformation event by an actor
+accredited for the regulated claims it contains, hash-linking its input
+passports
+
+NOTE: Only accredited actors may issue derived passports for regulated
+claims (the notified-actor pattern of EN 18239).
+
+NOTE: Children of a split carry a derived-from reference and quantity
+carve-outs, with the sum of children not exceeding the parent (remainder
+semantics).
+
+[.source]
+<<unidpp-plan>>
+
+[[dpp-0135]]
+=== dormant identifier
+
+identifier recorded at the finest available granularity for an object
+class for which no passport regime yet exists, held as issuance
+evidence for adoption by a future regime
+
+NOTE: When a future regime issues passports for the object class it
+adopts the recorded dormant identifiers rather than minting new ones, so
+that the installed base connects retroactively through its build
+records.
+
+NOTE: Inputs are recorded even when no passport exists behind them yet;
+minting fresh identifiers would orphan the installed base.
+
+[.source]
+<<unidpp-plan>>
+
+[[dpp-0139]]
+=== enumeration resistance
+
+system property by which the passport system is verifiable without
+being browsable: resolution is by identity only, traversal requires
+per-edge rights, and no party — including any registry, resolver
+network or log operator — can enumerate the installed base of anything
+
+NOTE: Transparency logs anchor commitments (hashes), never facts, so
+log operators cannot correlate edges; accumulator and blind-membership
+proofs give valid-standing checks without revealing which or where.
+
+NOTE: Stated as design invariant I12, together with blind edges by
+default where households or sites are revealed (concept dpp-0136), proof
+of binding distinct from knowledge of parent (concept dpp-0138), and
+predicate-based recall (concept dpp-0140).
+
+[.source]
+<<unidpp-plan>>
+
+[[dpp-0137]]
+=== escrowed disclosure
+
+edge visibility arrangement in which information concealed by a blind
+edge (concept dpp-0136) is deposited with a threshold trustee and
+released only through a disclosure ceremony — court, regulator or
+consent
+
+NOTE: The installation schema records escrow as none or trustee, with
+declared audiences.
+
+NOTE: An escrow envelope under a threshold trustee may optionally
+accompany a proof of binding (concept dpp-0138), preserving
+verifiability while full disclosure remains ceremonial.
+
+[.source]
+<<unidpp-plan>>
+
+[[dpp-0144]]
+=== harvested part
+
+component recovered from an installation (concept dpp-0142) in the
+harvestable state of the recoverability spectrum (concept dpp-0143),
+which continues to carry its own identity, harvested status and the
+parent history accumulated during installation
+
+NOTE: Installation history is value-relevant provenance: a harvested
+battery sold standalone carries its service interval and removal
+reason, and the used-parts market runs on this.
+
+NOTE: A harvested part is second-hand-once-removed: no longer sellable
+as new, with warranty scope and service economics that rode the parent
+during installation.
+
+[.source]
+<<unidpp-plan>>
+
+[[dpp-0142]]
+=== installation
+
+typed structural relationship, and its event class, between a parent
+passport and an installed child component, recorded with method, slot
+identity, pairing, alterations, performer and time, which makes an
+installed component a different legal object from the standalone one
+
+NOTE: Schema: `install(child, parent, {method, slotId, pairing:
+none\|firmware\|key\|module, alteration[], performedBy, at})`.
+
+NOTE: Bidirectional parent knowledge is mandatory: the parent's
+manifest lists children and the child's event log records its
+installation interval (parent, slot, method), for recall routing,
+scoped service access, ownership transfer and end-of-life routing.
+
+NOTE: Lifecycle coupling: warranty re-scope and service economics ride
+the parent, and the part is no longer sellable as new; custody transfer
+(concept dpp-0134) remains orthogonal, since ownership changes while
+composition stays fixed.
+
+NOTE: The recoverability of the binding (concept dpp-0143) determines
+identity continuity: disassembly that restores a marketable object with
+identity continuity is installation, while dissolving identity is a
+transformation event (concept dpp-0129). Part replacement is an
+uninstall followed by an install, and regulated children keep their own
+passports through it.
+
+[.source]
+<<unidpp-plan>>
+
+[[dpp-0127]]
+=== lens
+
+profile conceived as a calibrated measuring instrument placed on the
+digital twin, which selects and transforms without altering the
+observed scene
+
+NOTE: The mount — the profile interface on the neutral core — is the
+standardized element: any registered lens by any maker attaches to it.
+
+NOTE: A lens publishes its calibration (version and cited rules), its
+uncertainty and its decision rules; it is subject to pattern approval
+at registration and to periodic re-verification through conformance
+runs.
+
+NOTE: Verification path-finds from any render through the lens and its
+fact chain to an anchor in the verifier's trust bundle.
+
+[.source]
+<<unidpp-plan>>
+
+[[dpp-0132]]
+=== passive twin
+
+digital twin reconstructed from point-in-time attestations about the
+object, sampled when the object visits an attestor, in which truth is
+episodic and staleness between attestations is unbounded and
+undetectable
+
+NOTE: Corresponds to capability classes S0 (silent, testimony-only) and
+S1 (passive authentication).
+
+NOTE: Trust rides entirely on attestor authority; the twin is
+testimonial by default and sensorial by exception.
+
+[.source]
+<<unidpp-plan>>
+
+[[dpp-0140]]
+=== predicate-based recall
+
+recall scheme in which the recall set is never enumerated centrally:
+the recall predicate is published, and each custodian evaluates it
+locally against their own holdings — including dark and defence
+holdings under national procedure — and acts
+
+NOTE: The manufacturer receives aggregates or nothing; there is no
+traversal-push enumeration of the installed base.
+
+NOTE: One of the mechanisms by which enumeration resistance (concept
+dpp-0139) is maintained: recall propagation still notifies custodians
+transitively, but through local predicate evaluation rather than central
+construction of the recall set.
+
+[.source]
+<<unidpp-plan>>
+
+[[dpp-0124]]
+=== profile
+
+registered, versioned object that binds a set of data points,
+transforms, cryptographic suites, trust requirements, access policies,
+presentation requirements and a trigger predicate to the neutral core
+passport, constraining and transforming — but never redefining — the
+single definition of each data point
+
+NOTE: Composition is three-axial: jurisdiction × sector ×
+characteristic.
+
+NOTE: Each profile is a projection function,
+`view(twinState, profile, actor)`, whose projection may transform and
+not merely select.
+
+NOTE: Profiles constrain and transform; inter-profile disagreement is
+expected and auditable, while intra-class contradiction is an integrity
+incident (single definition, many constraints).
+
+[.source]
+<<unidpp-plan>>
+
+[[dpp-0126]]
+=== projection
+
+deterministic, registered and legally cited view of the testimonial
+record of a governed digital twin, computed under a profile from the
+event-sourced change log
+
+NOTE: The passport is the legal materialized view of the twin; the twin
+is the source of truth.
+
+NOTE: Notarized snapshots support as-of queries, which answer what was
+legally true at a given time.
+
+NOTE: Any conforming twin can emit the view; the projection is defined
+representation-neutrally.
+
+[.source]
+<<unidpp-plan>>
+
+[[dpp-0138]]
+=== proof of binding
+
+salted cryptographic commitment to the parent, recorded in the child's
+event log, by which a child satisfies the bidirectional parent-knowledge
+requirement without disclosing the identity of the parent
+
+NOTE: Proof of binding is distinct from knowledge of parent: verifiable
+modes establish that the child is validly installed in some parent under
+a given profile (warranty, compliance) without revealing which parent;
+full disclosure occurs only by ceremony.
+
+NOTE: An optional escrow envelope under a threshold trustee (concept
+dpp-0137) accompanies the commitment where future disclosure must remain
+possible.
+
+[.source]
+<<unidpp-plan>>
+
+[[dpp-0143]]
+=== recoverability
+
+declared property of an installation binding (concept dpp-0142) stating
+whether and how the installed child can resume an independent
+existence, taking one of the values restorable, harvestable,
+destructive or absorbing
+
+NOTE: Restorable: the child resumes standalone life; harvestable:
+recovered but altered, continuing with harvested status and parent
+history (concept dpp-0144); destructive: the child ceases and flows to
+a material passport through a transformation event (concept dpp-0129);
+absorbing: identity dissolves into the parent.
+
+NOTE: Absorption is regime-temporal rather than permanent: absorbed
+inputs are recorded at the finest available granularity as dormant
+identifiers (concept dpp-0135), issuable by adoption when a future
+regime requires passports for the object class.
+
+NOTE: Carried in the EXPRESS core as part of the PassportLink binding
+`{method, recoverability}`.
+
+[.source]
+<<unidpp-plan>>
+
+[[dpp-0128]]
+=== stamp
+
+lens-scoped attestation consisting of an attester signature over the
+subject, the subject state commitment, the lens identity and version,
+the mode (live or snapshot), a verdict with coverage report, and
+log-anchored time
+
+NOTE: Stamps accrete append-only and are valid under the stamper's lens
+regardless of the issuer's.
+
+NOTE: Jurisdiction stamps on a foreign-issued passport correspond to
+visas; entry and exit stamps correspond to verifier custody events.
+
+NOTE: Stamps may carry quantity context, inherited by downstream
+transformations.
+
+[.source]
+<<unidpp-plan>>
+
+[[dpp-0131]]
+=== Tier-A payload
+
+carrier-embedded minimum viable passport, comprising the product
+identifier, the resolver URI, the economic operator identifier, the
+status, the critical safety or recall flag, the validity and multi-suite
+compressed signatures, sized to the data carrier and verifiable offline
+against pre-cached trust anchors
+
+NOTE: The three-tier degradation ladder comprises Tier A
+(carrier-embedded minimum), Tier B (served full passport) and Tier C
+(archival).
+
+NOTE: Stale or offline data degrades explicitly through freshness
+verdicts and never passes silently.
+
+[.source]
+<<unidpp-plan>>
+
+[[dpp-0129]]
+=== transformation event
+
+typed event in the provenance directed acyclic graph that records the
+split of one passport into many, or the combination or transformation of
+many passports into one
+
+NOTE: The output issuance event carries input references of passport,
+quantity and as-of state hash, so the new passport hash-links its
+sources.
+
+NOTE: Quantities resulting from a transformation are new measured facts
+with provenance "computed by transformation event", never copies; mass
+balance is auditable as input minus output equals loss.
+
+NOTE: Inputs transition to consumed or transformed status: historical,
+still verifiable, still needed for as-of queries.
+
+[.source]
+<<unidpp-plan>>
+
+[[dpp-0141]]
+=== trigger predicate
+
+declared component of a profile stating the conditions under which the
+profile applies, evaluated against the facts of the digital twin rather
+than against who declares them
+
+NOTE: Characteristic profiles (concept dpp-0125) attach by predicate on
+twin facts — age, material content, heritage status, market status —
+rather than by law-of-place or industry.
+
+NOTE: Predicate triggers include time predicates: an object becoming
+older than a given age is a clock-fired applicability event, handled by
+the dated-binding machinery so that applicability attaches without human
+declaration.
+
+NOTE: The expression "characteristic profile trigger" denotes this
+predicate as used by a characteristic profile and is folded into this
+concept rather than recorded separately.
+
+[.source]
+<<unidpp-plan>>
+
+[[dpp-0145]]
+=== truth mode
+
+declared per-data-element attribute of a profile stating which truth
+source the element requires — attest-sampled, self-committed, or both
+with a precedence rule
+
+NOTE: The passive twin (concept dpp-0132) supplies attest-sampled truth
+and the active twin (concept dpp-0133) supplies self-committed truth;
+both paradigms coexist permanently in the framework.
+
+NOTE: Precedence between a calibrated device measurement and an
+attestor observation is itself a metrological hierarchy question.
+
+NOTE: Freshness and verification requirements must be satisfiable by
+the subject's capability class: demanding live freshness from an S0
+(silent) product is an unsatisfiable profile.
+
+[.source]
+<<unidpp-plan>>
+
+== Symbols and abbreviated terms
+
+For the purposes of this document, the following abbreviated terms
+apply.
+
+.Abbreviated terms used in this document
+[cols="20,80",options="header"]
+|===
+| Abbreviation | Meaning
+
+| DAG | directed acyclic graph
+| EO | economic operator
+| GUM | Guide to the expression of uncertainty in measurement (JCGM 100)
+| I1 … I14 | design invariants of this framework (Clause 5)
+| E1 … E15 | post-sale event classes (Clause 8)
+| R1 … R7 | relationship classes of the passport algebra (Clause 7)
+| S0 … S3 | subject capability classes (Clause 6)
+| S1 … S12 | seams of the layer architecture (Clause 5)
+| Tier A / B / C | payload tiers: carrier-embedded minimum / served / archival (Clause 10)
+| URN | uniform resource name
+|===
+
+[NOTE]
+====
+Throughout this document, requirement statements use "shall" for
+normative requirements, "should" for recommendations and "may" for
+permissions. Requirement clauses are numbered and testable; Annex A
+provides negative conformance fixtures and Clause 12 assigns them to
+conformance classes.
+====

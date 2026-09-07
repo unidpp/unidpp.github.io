@@ -1,8 +1,148 @@
-<footer class="site">
-  <span>UniDPP — an open, multi-body initiative.</span>
-  <a href="/demos/">Demos</a>
-  <a href="/conformance/">Conformance</a>
-  <a href="https://github.com/unidpp">GitHub</a>
-  <a href="/reference/about/">About</a>
-  <a href="mailto:contact@unidpp.org">contact@unidpp.org</a>
+---
+// Initiative footer: what UniDPP is, steward bodies, licence, contact.
+const year = new Date().getFullYear();
+const stewards = [
+  'CalConnect',
+  'ISO/TC 154',
+  'OIML',
+  'ELF',
+  'Enosema',
+  'UnitsML coalition',
+];
+---
+
+<footer class="foot">
+  <div class="foot-grid">
+    <div class="foot-about">
+      <p class="wordmark"><span class="wm-a">uni</span><span class="wm-b">DPP</span></p>
+      <p class="foot-desc">
+        An open, international framework and reference implementation for the
+        Digital Product Passport — one product identity, one append-only record,
+        many jurisdiction, sector, and characteristic lenses.
+      </p>
+      <p class="foot-lic">
+        Software Apache-2.0 / MIT per repository · specification CC-BY-4.0 ·
+        site and dataset MIT.
+      </p>
+    </div>
+    <nav class="foot-col" aria-label="Site sections">
+      <p class="foot-head">Sections</p>
+      <a href="/learn/">Learn</a>
+      <a href="/why/">Why international</a>
+      <a href="/framework/">Framework</a>
+      <a href="/specs/">Specifications</a>
+      <a href="/implementation/">Implementation</a>
+      <a href="/papers/">Papers</a>
+    </nav>
+    <nav class="foot-col" aria-label="Evidence and reference">
+      <p class="foot-head">Reference</p>
+      <a href="/terminology/">Terminology</a>
+      <a href="/compare/">Comparisons</a>
+      <a href="/community/">Community</a>
+      <a href="/about/">About</a>
+      <a href="https://github.com/unidpp">GitHub</a>
+      <a href="mailto:contact@unidpp.org">contact@unidpp.org</a>
+    </nav>
+    <div class="foot-col">
+      <p class="foot-head">Stewarded with</p>
+      <ul class="foot-stewards">
+        {stewards.map((s) => <li>{s}</li>)}
+      </ul>
+    </div>
+  </div>
+  <div class="foot-base">
+    <span>UniDPP — an open, multi-body initiative.</span>
+    <span>© 2026 · unidpp.org</span>
+  </div>
 </footer>
+
+<style>
+  .foot {
+    border-top: 1px solid var(--border);
+    background: var(--bg-inset);
+    margin-top: 2rem;
+  }
+  .foot-grid {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 2.2rem 1.15rem 1.6rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+  @media (min-width: 720px) {
+    .foot-grid {
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      padding: 2.6rem 2rem 1.8rem;
+    }
+  }
+  .foot-about .wordmark {
+    font-size: 1.25rem;
+  }
+  .foot-desc {
+    font-size: 0.86rem;
+    color: var(--text-2);
+    line-height: 1.6;
+    max-width: 36ch;
+    margin: 0.7rem 0 0;
+  }
+  .foot-lic {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--text-3);
+    margin: 0.9rem 0 0;
+    max-width: 44ch;
+    line-height: 1.6;
+  }
+  .foot-col {
+    display: flex;
+    flex-direction: column;
+    gap: 0.32rem;
+  }
+  .foot-head {
+    font-family: var(--font-mono);
+    font-size: 0.66rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-2);
+    margin: 0 0 0.45rem;
+  }
+  .foot-col a {
+    font-size: 0.86rem;
+    color: var(--text-2);
+    text-decoration: none;
+  }
+  .foot-col a:hover {
+    color: var(--accent);
+  }
+  .foot-stewards {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.32rem;
+  }
+  .foot-stewards li {
+    font-size: 0.86rem;
+    color: var(--text-2);
+  }
+  .foot-base {
+    border-top: 1px solid var(--border);
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0.9rem 1.15rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.5rem;
+    font-size: 0.78rem;
+    color: var(--text-3);
+    justify-content: space-between;
+  }
+  @media (min-width: 640px) {
+    .foot-base {
+      padding: 0.9rem 2rem;
+    }
+  }
+</style>

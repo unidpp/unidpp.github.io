@@ -1,0 +1,170 @@
+---
+// Sticky header: section nav, search, dark-mode toggle, GitHub link.
+// On small screens the section nav collapses into a horizontal scroller.
+const path = Astro.url.pathname.replace(/index\.html$/, '');
+const isActive = (prefix: string) =>
+  prefix === '/' ? path === '/' : path === prefix || path.startsWith(prefix + '/');
+
+const nav = [
+  { label: 'Learn', href: '/learn/' },
+  { label: 'Why', href: '/why/' },
+  { label: 'Framework', href: '/framework/' },
+  { label: 'Specs', href: '/specs/' },
+  { label: 'Implementation', href: '/implementation/' },
+  { label: 'Papers', href: '/papers/' },
+  { label: 'Terminology', href: '/terminology/' },
+  { label: 'Compare', href: '/compare/' },
+  { label: 'Community', href: '/community/' },
+  { label: 'About', href: '/about/' },
+];
+---
+
+<header class="hdr">
+  <div class="hdr-inner">
+    <a class="wordmark" href="/" aria-label="UniDPP home">
+      <span class="wm-a">uni</span><span class="wm-b">DPP</span>
+    </a>
+    <nav class="secnav" aria-label="Sections">
+      {
+        nav.map((item) => (
+          <a class:list={['sec', { current: isActive(item.href) }]} href={item.href}>
+            {item.label}
+          </a>
+        ))
+      }
+    </nav>
+    <div class="hdr-actions">
+      <button
+        id="search-open"
+        class="hbtn"
+        aria-label="Search the site"
+        title="Search"
+      >
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="7"></circle>
+          <line x1="21" y1="21" x2="16.5" y2="16.5"></line>
+        </svg>
+      </button>
+      <button id="theme-toggle" class="hbtn" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <svg class="icon-sun" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+        </svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+      <a
+        class="hbtn"
+        href="https://github.com/unidpp"
+        aria-label="UniDPP on GitHub"
+        title="GitHub"
+      >
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
+          <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.26.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.807 1.305 3.492.997.108-.775.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.467-2.38 1.235-3.22-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.3 1.23a11.5 11.5 0 0 1 6 0c2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.233 1.91 1.233 3.22 0 4.61-2.804 5.625-5.476 5.92.43.372.814 1.102.814 2.222 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById('theme-toggle')!;
+  btn.addEventListener('click', () => {
+    const dark = document.documentElement.classList.toggle('dark');
+    localStorage.setItem('unidpp-theme', dark ? 'dark' : 'light');
+  });
+</script>
+
+<style>
+  .hdr {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: color-mix(in srgb, var(--bg) 84%, transparent);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  .hdr-inner {
+    max-width: var(--container);
+    margin: 0 auto;
+    min-height: var(--header-h);
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 0 1.15rem;
+  }
+  @media (min-width: 640px) {
+    .hdr-inner {
+      padding: 0 2rem;
+    }
+  }
+
+  .secnav {
+    display: flex;
+    gap: 0.1rem;
+    align-items: center;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    flex: 1;
+    min-width: 0;
+    padding: 0.35rem 0;
+  }
+  .secnav::-webkit-scrollbar {
+    display: none;
+  }
+  .sec {
+    flex: 0 0 auto;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--text-2);
+    text-decoration: none;
+    padding: 0.35rem 0.62rem;
+    border-radius: var(--radius);
+    white-space: nowrap;
+  }
+  .sec:hover {
+    color: var(--text);
+    background: var(--accent-soft);
+  }
+  .sec.current {
+    color: var(--accent);
+    background: var(--accent-soft);
+    font-weight: 600;
+  }
+
+  .hdr-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.15rem;
+    margin-left: auto;
+  }
+  .hbtn {
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    border: none;
+    background: transparent;
+    color: var(--text-2);
+    border-radius: var(--radius);
+    cursor: pointer;
+    text-decoration: none;
+    font-family: inherit;
+  }
+  .hbtn:hover {
+    color: var(--text);
+    background: var(--accent-soft);
+  }
+  .hbtn .icon-moon {
+    display: none;
+  }
+  :global(html.dark) .hbtn .icon-sun {
+    display: none;
+  }
+  :global(html.dark) .hbtn .icon-moon {
+    display: block;
+  }
+</style>

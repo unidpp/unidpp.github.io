@@ -1,23 +1,28 @@
 // Static endpoint: emits /sitemap.xml listing every canonical page of the
-// site. Redirect stubs (the former top-level pages) are deliberately not
-// listed; their canonical targets are.
+// site. Redirect stubs (the former top-level and /reference/ pages) are
+// deliberately not listed; their canonical targets are.
 const BASE = 'https://www.unidpp.org';
 const pages: { path: string; priority: string }[] = [
   { path: '/', priority: '1.0' },
+  { path: '/about/', priority: '0.6' },
   { path: '/learn/', priority: '0.9' },
   { path: '/why/', priority: '0.8' },
-  { path: '/how/', priority: '0.9' },
-  { path: '/demos/', priority: '0.7' },
-  { path: '/conformance/', priority: '0.7' },
-  { path: '/reference/', priority: '0.7' },
-  { path: '/reference/framework/', priority: '0.8' },
-  { path: '/reference/standards/', priority: '0.7' },
-  { path: '/reference/implementation/', priority: '0.6' },
-  { path: '/reference/compare/', priority: '0.6' },
-  { path: '/reference/trust/', priority: '0.7' },
-  { path: '/reference/papers/', priority: '0.6' },
-  { path: '/reference/terminology/', priority: '0.6' },
-  { path: '/reference/about/', priority: '0.5' },
+  { path: '/framework/', priority: '0.9' },
+  { path: '/framework/standards/', priority: '0.7' },
+  { path: '/framework/trust/', priority: '0.7' },
+  { path: '/specs/', priority: '0.9' },
+  { path: '/specs/part-1-framework/', priority: '0.8' },
+  { path: '/specs/part-2-profiles/', priority: '0.8' },
+  { path: '/specs/part-3-events/', priority: '0.8' },
+  { path: '/specs/part-4-tiers/', priority: '0.8' },
+  { path: '/specs/part-5-conformance/', priority: '0.8' },
+  { path: '/implementation/', priority: '0.7' },
+  { path: '/implementation/demos/', priority: '0.7' },
+  { path: '/implementation/conformance/', priority: '0.7' },
+  { path: '/papers/', priority: '0.6' },
+  { path: '/terminology/', priority: '0.6' },
+  { path: '/compare/', priority: '0.6' },
+  { path: '/community/', priority: '0.5' },
 ];
 export async function GET() {
   const urls = pages

@@ -1,0 +1,306 @@
+[[cl-framework]]
+== Framework
+
+[[cl-framework-concepts]]
+=== Framework concepts
+
+The UniDPP framework models the digital product passport as a
+*projection*, not as a static document. The authoritative record of a
+subject is its event-sourced change log (Clause 8); the passport is the
+legal materialized view of that record under a profile (Clause 6). The
+following counter-principles govern every other clause of this
+document:
+
+a) specify the optics and derive the image format — the framework
+   specifies identity, events, projections and trust, and derives
+   representations;
+
+b) legislate invariants, not implementations — casing conventions,
+   address shapes and serialization corners are versionable registry
+   items, not core requirements;
+
+c) one formalization — the core model is single-sourced; UML, JSON and
+   XML renders are derived views and never authoritative over it;
+
+d) versioned lenses, immutable scenes — profiles are versioned and
+   registered; the testimonial record is append-only and never altered
+   by observation;
+
+e) publish the uncertainty — every lens publishes its measurement
+   uncertainty and its decision rules as mandatory metadata;
+
+f) open mount — the profile interface on the neutral core is open, and
+   the interop guarantee and the anti-lock-in clause are one and the
+   same sentence.
+
+The profile is conceived as a calibrated lens placed on the digital
+twin: the scene (the twin, invariant, append-only) is never altered by
+observation; the lens (the profile, versioned, registered) selects and
+transforms. The lens is not passive glass but a *legal measuring
+instrument*: pattern approval at registration, published calibration,
+uncertainty and decision rules, and periodic re-verification through
+conformance runs.
+
+[[cl-framework-inv]]
+=== Normative design invariants
+
+The framework shall satisfy invariants I1 to I14 stated in 5.3 to 5.7.
+Each invariant is expressed as one or more testable requirements.
+Implementations claiming Core conformance (Clause 12) shall satisfy all
+of them. The informative implementation reference for this clause is
+the reference core workspace `unidpp-core`, crate `unidpp-model`
+(`crates/model/src/lib.rs`) and its modules cited in the sub-clauses
+below.
+
+[[inv-identity]]
+=== Identity and semantics invariants (I1 to I3)
+
+[[inv-I1]]
+*Invariant I1 — one subject, one identity, never re-minted.* The
+framework shall provide exactly one product identity per subject. An
+identity shall never be re-minted: an identifier once recorded shall be
+reused, not replaced, throughout the subject's life, across ownership
+changes, host changes and regime changes. Where no passport regime yet
+exists for an object class, identifiers shall be recorded as dormant
+identifiers (7.3), and a future regime shall adopt the recorded dormant
+identifiers (dormant-to-live adoption) rather than mint new ones.
+
+[[inv-I2]]
+*Invariant I2 — single definition, many constraints.* Every data point
+shall be defined once in the semantic registry (5.9, 6.9). Profiles
+shall constrain and transform data points and shall never redefine
+them. Inter-profile disagreement shall be expected and auditable: two
+profiles deriving different classifications of one canonical fact
+constitute two correct projections, not an error. A genuine
+same-provenance-class contradiction between values of one data point
+shall be treated as an integrity incident and flagged and audited, and
+shall never be silently merged.
+
+[[inv-I3]]
+*Invariant I3 — finest recorded granularity.* Inputs to records shall
+be recorded at the finest identifier granularity available (model,
+batch or item). Dormant identifiers shall be allowed at any time, even
+when no passport exists behind them yet. Absorbing transformations
+shall record their inputs at the finest available granularity as
+(scheme, lot or serial, count).
+
+[[inv-structure]]
+=== Structure and lifecycle invariants (I4 to I7)
+
+[[inv-I4]]
+*Invariant I4 — append-only event sourcing.* The authoritative record
+of a subject shall be its distributed, log-anchored event log. Nothing
+shall ever be edited in place: every post-first-sale change shall be an
+appended, typed event (Clause 8). No single party shall hold the
+authoritative record alone; the transparency-log anchoring shall be the
+tamper-evident, globally consistent spine. Diverging commitments for
+one identity (forks) shall be log-detectable integrity incidents that
+are adjudicated and never silently merged.
+
+[[inv-I5]]
+*Invariant I5 — typed relationship algebra.* Relationships between
+passports shall be typed edges of the relationship algebra R1 to R7
+(7.5), each carrying its own legal and lifecycle semantics. Installation
+edges shall carry the binding structure method, slot identity, pairing,
+alterations, recoverability and visibility (7.6, 7.7).
+
+[[inv-I6]]
+*Invariant I6 — state machine legitimacy.* Passport status shall be one
+of the normative statuses of 8.4, and status changes shall occur only
+through the defined transitions. Applicability of profiles shall be
+dated, including retroactive applicability flags. Growth of the profile
+set shall never change the subject's identity.
+
+[[inv-I7]]
+*Invariant I7 — issuance where legal duty attaches; separable duties.*
+Passports shall be issued wherever a legal duty attaches (type-approval
+regimes issue type passports; batch- and item-level duties issue batch
+and item passports). Issuance, hosting, identity, anchoring, archiving
+and trust shall be separable duties: one party may hold several, none
+is implied by another, and republication of a render by any party shall
+never transfer authority.
+
+[[inv-projection]]
+=== Projection and trust invariants (I8 to I9)
+
+[[inv-I8]]
+*Invariant I8 — deterministic projection.* A passport shall be a
+deterministic, registered and legally cited projection of the
+testimonial record. The twin shall be testimonial by default and
+sensorial by exception, according to the subject capability classes S0
+to S3 (6.5). Transforms shall publish their uncertainty, rounding and
+decision rules (9.6). The canonical record shall store measured values
+in canonical units only; pre-transformed duplicates shall not be
+stored, so that rule changes re-project rather than re-enter data.
+
+[[inv-I9]]
+*Invariant I9 — graded trust.* Trust shall be graded, not mandated:
+every element and event shall carry a trust marker on the ladder of
+11.2, signatures may be multi-suite, verification shall produce
+verdicts with coverage reports under one of the three verification
+readings (11.4), revocation reason shall determine retroactivity
+(11.5), and taint shall propagate through the provenance graph (9.7).
+
+[[inv-sovereignty]]
+=== Sovereignty and neutrality invariants (I10 to I12)
+
+[[inv-I10]]
+*Invariant I10 — three-axial, predicate-triggered profiles.* Profiles
+shall be composed on three axes — jurisdiction, sector and
+characteristic — and shall attach by trigger predicate evaluated
+against twin facts (6.4). Each profile shall bind data points,
+transforms, cryptographic suites, trust requirements, access policies,
+presentation requirements and carrier requirements (6.3).
+
+[[inv-I11]]
+*Invariant I11 — no load-bearing proprietary layer.* The mount (the
+profile interface), identity, semantics and trust shall be open ISO,
+IEC, ITU or UN mechanisms. Any mapping to a proprietary twin
+representation shall be informative at most and shall never be
+load-bearing.
+
+[[inv-I12]]
+*Invariant I12 — enumeration resistance.* The system shall be
+verifiable without being browsable. Resolution shall be by identity
+only; traversal shall require per-edge rights; logs shall anchor
+commitments (hashes), never facts; blind edges shall be the default
+where households or sites would otherwise be revealed; proof of binding
+shall be distinct from knowledge of parent; and recalls shall be
+predicate-based (7.7).
+
+[[inv-operation]]
+=== Operation and resilience invariants (I13 to I14)
+
+[[inv-I13]]
+*Invariant I13 — degradation ladder.* Payloads shall be served in three
+tiers — Tier A (carrier-embedded minimum), Tier B (served) and Tier C
+(archival) — and degradation between tiers shall be explicit through
+freshness verdicts (10.4), never a silent pass. Availability shall be
+decoupled from origin servers through transparency-log inclusion
+proofs, mirrors and archives (10.7).
+
+[[inv-I14]]
+*Invariant I14 — continuity.* The framework shall provide succession
+mechanisms for hosts, trust authorities, schemes, algorithms, profiles
+and regimes, such that identities outlive their issuers and hosts
+(11.7).
+
+[[cl-framework-layers]]
+=== Layer architecture
+
+The framework is organized in the following layers. Each layer is
+neutral with respect to the layers above it; no region is the universal
+envelope.
+
+.Layer architecture of the framework
+[cols="10,22,38,30",options="header"]
+|===
+| Layer | Name | Content | Mechanism (stewardship)
+
+| L0 | Identity (global) | one unique product identifier per subject, granularity model/batch/item, one physical carrier | ISO/IEC 15459 issuance; bridges to GS1, Handle, Ecode, MA and further registered schemes
+| L1 | Neutral core passport | minimal skeleton: product ID, passport ID, status, timestamps, profile manifest, event log, signatures; deliberately free of any jurisdiction's fields | this document
+| L2 | Profiles | registered, versioned objects binding data points, transforms, suites, trust, access, presentation, carriers and trigger predicates | this document; registration per ISO 19135
+| L3 | Semantic registry | every data point defined once, in federated registers with governed item lifecycle | ISO 19135 federated registers (FERIN), seeded by trade-data element dictionaries; CDDAL content technology
+| L4 | Trust | per-profile attestations chaining to the jurisdiction's own trust framework; global cross-recognition via threshold master lists | SIGNATIF (Clause 11)
+| L5 | Resolution | resolver linksets keyed by profile context, role, language and request region; one carrier, many destinations | GS1 Digital Link and IETF RFC 9264 linksets; federated resolvers
+| L6 | Regional serving | in-country DPP service provision where data-residency law requires it | national hosts, regional service providers
+|===
+
+The resolution chain shall proceed: carrier URI → federated resolver →
+linkset (profile context × role × language) → hosting endpoint(s) →
+render plus manifest, with registry and dictionary lookups performed in
+parallel. Mirrors and caches shall carry as-of stamps.
+
+[[cl-framework-roles]]
+=== Role separation and authority model
+
+Issuance, hosting, identity, anchoring, archiving and trust are
+separable duties (I7). The framework shall recognize the following
+roles; one party may hold several, and none is implied by another.
+
+.Role separation
+[cols="25,45,30",options="header"]
+|===
+| Role | Responsibility | Notes
+
+| Issuing authority | signs passport issuance and derivation events: manufacturer (primary), transformer (splits, combines), remanufacturer (new types), registrar (type passports), qualified attestor (commissioning of orphan objects), regulator-direct (exceptional) | issuance is open; recognition is graded by each profile's trust binding — unsigned self-issued passports remain valid for voluntary provenance and insufficient for regulated claims
+| Hosting authority | serves renders: DPP service providers (main and back-up), manufacturer source systems, custodian-held state, device edge, national in-country hosts | republication never transfers authority
+| Registrar | identity, type registrations, profile applicability bindings, carrier replacement events | registry holds identity and resolution, not state
+| Anchor | transparency logs: the tamper-evident spine | M-of-K quorum, no single log
+| Archivist | Tier C persistence | OAIS-style archival, media refresh
+| Trust authority | roots, trust lists, accreditation, revocation | threshold groups; Clause 11
+|===
+
+Verification classes served by the framework include border and market
+surveillance authorities (Tier A offline, acceptance policies),
+commercial verifiers, recyclers and end-of-life operators, consumers,
+machines, auditors and certifiers, insurers and financiers.
+
+[[cl-framework-seams]]
+=== Seam register
+
+Layers join at seams; failures localize at seams. The framework shall
+treat the following seam register as the contract inventory of the
+architecture. Conformance claims shall identify the seams covered.
+
+.Seam register
+[cols="8,25,67",options="header"]
+|===
+| Seam | Join | Contract
+
+| S1 | carrier ↔ resolver | code-format translation; 1D-to-2D migration coexistence; carrier URI integrity
+| S2 | resolver ↔ hosts | mirrors, national intermediary layers, dark identifiers; linkset routing
+| S3 | core ↔ profiles | the mount — where neutrality is enforced (6.1)
+| S4 | profile ↔ registry | data-point reference resolution, version pinning at verification time
+| S5 | registry ↔ registry | register federation, canonicalization of definitions across hosts, cross-register mappings as registered items
+| S6 | event log ↔ transparency logs | commitment anchoring, salt discipline (8.3)
+| S7 | issuer credentials ↔ profile trust lists | delegation DAG, roots, master list (11.6)
+| S8 | transforms ↔ engines | executable-rule packages; determinism; version pinned at verification time (9.6)
+| S9 | parent ↔ child passports | installation edges, blind modes, mixed-profile children (7.6, 7.7)
+| S10 | device ↔ system | edge commit/reveal, contact dumps (10.6)
+| S11 | Tier A ↔ Tier B | embedded minimum versus served; staleness marking (10.1 to 10.4)
+| S12 | passport ↔ adjacent regimes | customs, e-invoicing, supply-chain event and traceability vocabularies, museum provenance ontologies, financial messaging
+|===
+
+[NOTE]
+====
+The defect register of the European DPP corpus (Annex A, <<unidpp-audit>>)
+classifies published defects as, without exception, failures at one or
+more of these seams.
+====
+
+[[cl-framework-source-invariants]]
+=== Source invariants
+
+Invariants I1 to I14 derive from the following source invariants, which
+state the requirement-derivation form of the framework. Where a source
+invariant is elaborated by a later clause, the clause reference is
+given.
+
+.Source invariants
+[cols="8,52,20",options="header"]
+|===
+| # | Source invariant | Elaborated in
+
+| 1 | International interoperability — cross-verification without adopting foreign rules (verify any jurisdiction's view under your own anchors) | 11.4, 11.6
+| 2 | National data sovereignty — each jurisdiction governs its profiles, trust, crypto and, where law requires, in-country serving | 6.8, 11.2
+| 3 | Digital twin as the interactive layer; passport as its legal projection | 6.1
+| 4 | State-topology freedom — edge segments, centralized providers, manufacturer source systems or any combination; the twin is the union of custodian-held event segments joined by identity and commitments | 10.6
+| 5 | Offline-online combination — Tier A carrier minimum, Tier B served, Tier C archival; explicit freshness verdicts | Clause 10
+| 6 | Static and dynamic projections — profiles declare per-element provenance and freshness requirements | 6.6
+| 7 | Point-in-time versus dynamic state — two authoritative query modes: live view (freshness-labelled) and notarized as-of snapshot (log-anchored); legal purpose selects the mode | 8.6
+| 8 | Signed and unsigned — trust is graded: every element/event carries a trust marker; profiles set minimum signing per data class | Clause 11
+| 9 | Profile-set growth is dated binding, not new identity — adding a profile to an existing model is a registry applicability event with an effective window (including retroactive flags); new model identity only on technical type change | 6.7, 7.4
+| 10 | Issuance-granularity rule — manufacturer is an actor, not a level; model is a registered type definition that defines semantics for instance elements; passports are issued wherever a legal duty attaches; instance passports reference the exact type version and configuration vector; model-contains-model defines potential composition, instance references actual child instances | 7.4
+| 11 | Executable-rule placement — a profile may bind an executable regulation package as its transform, decision and conformity rule set, carrying clause-level provenance identifiers; conformance suites run the same packages | 9.6
+|===
+
+[NOTE]
+====
+The travel-document analogy holds for trust, issuance and the offline
+tier: the electronic passport for trust and issuance, the machine-
+readable zone for the offline minimum, and the international driving
+permit for profiles — a national document with convention renditions.
+Unlike travel documents, the scene is a live twin and the profile set
+grows.
+====

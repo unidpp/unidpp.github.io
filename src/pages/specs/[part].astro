@@ -1,0 +1,109 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Sidebar from '../../components/Sidebar.astro';
+import Badge from '../../components/Badge.astro';
+import Continue from '../../components/Continue.astro';
+import { getPart, renderAdoc, parts } from '../../lib/specs';
+import { specsNav } from '../../lib/sections';
+
+export function getStaticPaths() {
+  return parts.map((part) => ({
+    params: { part: part.slug },
+    props: { part },
+  }));
+}
+
+interface Props {
+  part: NonNullable<ReturnType<typeof getPart>>;
+}
+const { part } = Astro.props;
+const rendered = await Promise.all(
+  part.sections.map(async (section) => ({
+    title: section.title,
+    html: await renderAdoc(section.file),
+  }))
+);
+
+const nextBySlug: Record<string, { href: string; num: string; title: string; desc: string }> = {
+  'part-1-framework': {
+    href: '/specs/part-2-profiles/',
+    num: '2',
+    title: 'Part 2 — Profiles',
+    desc: 'The three-axial composition model, the profile manifest, trigger predicates, and capability gating of profile requirements.',
+  },
+  'part-2-profiles': {
+    href: '/specs/part-3-events/',
+    num: '3',
+    title: 'Part 3 — Identity, events and transforms',
+    desc: 'The identifier model and relationship algebra, the typed event taxonomy, and the transformation algebra.',
+  },
+  'part-3-events': {
+    href: '/specs/part-4-tiers/',
+    num: '4',
+    title: 'Part 4 — Tiers and trust',
+    desc: 'Payload tiers and offline operation, freshness verdicts, and the trust and verification model.',
+  },
+  'part-4-tiers': {
+    href: '/specs/part-5-conformance/',
+    num: '5',
+    title: 'Part 5 — Conformance',
+    desc: 'Conformance classes and requirements, with Annex A negative fixtures and the bibliography.',
+  },
+  'part-5-conformance': {
+    href: '/implementation/',
+    num: '→',
+    title: 'The implementation',
+    desc: 'The open reference stack that implements this specification, with the conformance suites applied to the EN 18223 corpus.',
+  },
+};
+const next = nextBySlug[part.slug];
+---
+
+<BaseLayout
+  title={`${part.label} — ${part.title}`}
+  description={`UniDPP specification ${part.label}: ${part.title}. ${part.subtitle} Working draft (stage 20).`}
+  eyebrow="The specification"
+  sectioned
+>
+  <Sidebar slot="rail" heading="Specification" items={specsNav} />
+  <p class="part-eyebrow">
+    UniDPP specification · {part.label} · <Badge stage={part.stage} />
+  </p>
+  <h1>{part.title}</h1>
+  <p class="lede">{part.subtitle}</p>
+
+  <div class="note">
+    Rendered from the AsciiDoc working-draft sources of
+    <a href="https://github.com/unidpp/unidpp-spec">github.com/unidpp/unidpp-spec</a>
+    (CC-BY-4.0, stage 20). The repository is the source of truth; the
+    <a href="/specs/">specification index</a> lists all parts and stages.
+  </div>
+
+  {
+    rendered.map((section) => (
+      <article class="adoc-content">
+        <div class="adoc-section" set:html={section.html} />
+      </article>
+    ))
+  }
+
+  {next && <Continue href={next.href} num={next.num} title={next.title} desc={next.desc} />}
+</BaseLayout>
+
+<style>
+  .part-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 0.4rem;
+  }
+  .adoc-content {
+    max-width: none;
+  }
+</style>

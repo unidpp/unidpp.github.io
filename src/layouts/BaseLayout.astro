@@ -1,0 +1,246 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '@fontsource/ibm-plex-sans/400.css';
+import '@fontsource/ibm-plex-sans/400-italic.css';
+import '@fontsource/ibm-plex-sans/500.css';
+import '@fontsource/ibm-plex-sans/600.css';
+import '@fontsource/ibm-plex-sans/700.css';
+import '@fontsource/ibm-plex-mono/400.css';
+import '@fontsource/ibm-plex-mono/500.css';
+import '../styles/theme.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  eyebrow?: string;
+  /** When true, the page renders its own sidebar via the `rail` slot. */
+  sectioned?: boolean;
+}
+
+const {
+  title,
+  description = 'UniDPP: an open, international framework and reference implementation for the Digital Product Passport, spanning ISO/IEC, CEN, and UN standards.',
+  eyebrow,
+  sectioned = false,
+} = Astro.props;
+const pageTitle = title === 'UniDPP' ? title : `${title} — UniDPP`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <link
+      rel="canonical"
+      href={`https://www.unidpp.org${Astro.url.pathname.replace(/index\.html$/, '')}`}
+    />
+    <meta name="theme-color" content="#14335c" />
+    <script is:inline>
+      // Apply the stored theme before first paint to avoid a flash.
+      const t = localStorage.getItem('unidpp-theme');
+      if (t === 'dark' || (!t && matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <div class="shell">
+      <Header />
+      <main class:list={['page', { 'with-rail': sectioned }]} id="main">
+        {sectioned && <div class="rail"><slot name="rail" /></div>}
+        <div class="body-col">
+          {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+          <slot />
+        </div>
+      </main>
+      <Footer />
+    </div>
+
+    <!-- Site search (pagefind). The index is built post-astro by
+         `npm run build`; the module is imported lazily on first open. -->
+    <dialog id="site-search" class="search" aria-label="Search the site">
+      <div class="search-box">
+        <div class="search-head">
+          <input
+            id="search-input"
+            type="search"
+            placeholder="Search unidpp.org"
+            autocomplete="off"
+            aria-label="Search unidpp.org"
+          />
+          <button id="search-close" class="search-close" aria-label="Close search">Esc</button>
+        </div>
+        <div id="search-results" class="search-results" aria-live="polite"></div>
+      </div>
+    </dialog>
+
+    <script>
+      const dialog = document.getElementById('site-search') as HTMLDialogElement;
+      const input = document.getElementById('search-input') as HTMLInputElement;
+      const results = document.getElementById('search-results')!;
+      let pagefind: any = null;
+
+      async function ensureIndex(): Promise<any> {
+        if (pagefind) return pagefind;
+        try {
+          // Opaque path so the bundler never tries to resolve the index at
+          // build time — pagefind materializes it in dist/ after the build.
+          const url = '/pagefind/pagefind.js';
+          pagefind = await import(/* @vite-ignore */ url);
+          await pagefind.options({});
+        } catch {
+          pagefind = null;
+        }
+        return pagefind;
+      }
+
+      async function run() {
+        const q = input.value.trim();
+        if (!q) {
+          results.innerHTML = '';
+          return;
+        }
+        const pf = await ensureIndex();
+        if (!pf) {
+          results.innerHTML =
+            '<p class="search-empty">Search index is not available — build the site first (npm run build), then serve dist/.</p>';
+          return;
+        }
+        const search = await pf.search(q);
+        const top = search.results.slice(0, 8);
+        if (top.length === 0) {
+          results.innerHTML = '<p class="search-empty">No results.</p>';
+          return;
+        }
+        const items = await Promise.all(top.map((r: any) => r.data()));
+        results.innerHTML = items
+          .map(
+            (d: any) => `<a class="search-hit" href="${d.url}">
+              <span class="search-hit-title">${d.meta.title || d.url}</span>
+              <span class="search-hit-excerpt">${d.excerpt}</span>
+            </a>`
+          )
+          .join('');
+      }
+
+      let timer: ReturnType<typeof setTimeout> | undefined;
+      input.addEventListener('input', () => {
+        clearTimeout(timer);
+        timer = setTimeout(run, 180);
+      });
+
+      document.getElementById('search-open')?.addEventListener('click', async () => {
+        dialog.showModal();
+        input.focus();
+        await ensureIndex();
+      });
+      document.getElementById('search-close')?.addEventListener('click', () => dialog.close());
+      dialog.addEventListener('click', (e) => {
+        if (e.target === dialog) dialog.close();
+      });
+    </script>
+  </body>
+</html>
+
+<style>
+  .body-col {
+    min-width: 0;
+  }
+
+  /* Search dialog */
+  .search {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: var(--bg);
+    color: var(--text);
+    padding: 0;
+    width: min(40rem, calc(100vw - 2rem));
+    margin-top: 12vh;
+  }
+  .search::backdrop {
+    background: rgba(15, 20, 32, 0.5);
+  }
+  .search-box {
+    display: flex;
+    flex-direction: column;
+  }
+  .search-head {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .search-head input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    color: var(--text);
+    font: 500 1rem var(--font-sans);
+    outline: none;
+    min-width: 0;
+  }
+  .search-head input::placeholder {
+    color: var(--text-3);
+  }
+  .search-close {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-2);
+    background: var(--accent-soft);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 0.3rem 0.6rem;
+    cursor: pointer;
+  }
+  .search-results {
+    max-height: 55vh;
+    overflow-y: auto;
+    padding: 0.4rem;
+  }
+  .search-empty {
+    color: var(--text-2);
+    font-size: 0.88rem;
+    padding: 0.9rem;
+    margin: 0;
+  }
+  .search-hit {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    padding: 0.6rem 0.7rem;
+    border-radius: var(--radius);
+    text-decoration: none;
+  }
+  .search-hit:hover {
+    background: var(--accent-soft);
+  }
+  .search-hit-title {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text);
+  }
+  .search-hit-excerpt {
+    font-size: 0.8rem;
+    color: var(--text-2);
+    line-height: 1.5;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+  .search-hit-excerpt :global(mark) {
+    background: var(--accent-soft);
+    color: var(--accent);
+    padding: 0 0.1em;
+    border-radius: 2px;
+  }
+</style>

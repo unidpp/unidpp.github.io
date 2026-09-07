@@ -1,6 +1,6 @@
 ---
 // Document terminal: a run transcript framed as a document listing, not a
-// hacker terminal — IBM Plex Mono on white, hairline frame, a header strip
+// hacker terminal — IBM Plex Mono on paper, hairline frame, a header strip
 // carrying the run label and its seed/exit status. The content is passed as
 // a verbatim string so nothing between source and page can reformat it.
 interface Props {
@@ -33,8 +33,8 @@ const { label, meta, caption, text, ariaLabel = label } = Astro.props;
     align-items: baseline;
     gap: 1rem;
     flex-wrap: wrap;
-    background: rgba(20, 51, 92, 0.04);
-    border: 1px solid var(--hairline);
+    background: var(--accent-tint);
+    border: 1px solid var(--border);
     border-bottom: 0;
     border-radius: var(--radius) var(--radius) 0 0;
     padding: 0.45rem 0.9rem;
@@ -44,13 +44,13 @@ const { label, meta, caption, text, ariaLabel = label } = Astro.props;
     font-size: 0.72rem;
     font-weight: 500;
     letter-spacing: 0.05em;
-    color: var(--navy);
+    color: var(--accent);
     overflow-wrap: anywhere;
   }
   .dterm-meta {
     font-family: var(--font-mono);
     font-size: 0.68rem;
-    color: var(--muted);
+    color: var(--text-2);
     overflow-wrap: anywhere;
   }
   .dterm pre {
@@ -59,15 +59,16 @@ const { label, meta, caption, text, ariaLabel = label } = Astro.props;
     border-radius: 0 0 var(--radius) var(--radius);
     font-size: clamp(0.62rem, 1.7vw, 0.8rem);
     line-height: 1.55;
+    background: var(--bg-raised);
   }
   .dterm pre:focus-visible {
-    outline: 2px solid var(--navy);
+    outline: 2px solid var(--accent);
     outline-offset: -2px;
   }
   figcaption {
     margin-top: 0.6rem;
     font-size: 0.82rem;
-    color: var(--muted);
+    color: var(--text-2);
     max-width: 58ch;
   }
 </style>

@@ -1,0 +1,293 @@
+[[cl-profiles]]
+== Profile mechanism
+
+[[cl-profile-concept]]
+=== Profile concept and the mount
+
+A profile is a registered, versioned object that binds data points,
+transforms, cryptographic suites, trust requirements, access policies,
+presentation requirements and a trigger predicate to the neutral core
+passport, constraining and transforming — but never redefining — the
+single definition of each data point (I2, I10).
+
+Each profile is a projection function of the form
+`view(twinState, profile, actor)`, and the projection may transform and
+not merely select. The profile interface on the neutral core — the
+*mount* (seam S3) — shall be open: any registered lens by any maker
+shall attach to it, and no proprietary mount shall be load-bearing
+(I11). Profiles, their version supersessions and their trust bindings
+(which issuers may attest under them) shall be signed,
+registry-deposited, log-anchored objects; verification shall path-find
+from any render through the lens and its fact chain to an anchor in the
+verifier's own trust bundle, with scope checked at every link, and the
+lens registry itself shall be multi-suite co-signed so that every
+jurisdiction verifies lens authenticity under its own crypto policy.
+
+A profile shall publish, as mandatory metadata: its version and cited
+rules (calibration), its measurement uncertainty (the MTF of the lens)
+and its decision rules, and shall be subject to periodic
+re-verification through conformance runs (Clause 12).
+
+[[cl-profile-axes]]
+=== The three axes
+
+Profile composition shall be three-axial:
+
+a) *jurisdiction* — the regulator whose law applies (for example EU,
+   JP, CN, a federal procurement regime, a sub-national state);
+
+b) *sector* — the industry overlay (for example electronics, textiles,
+   batteries, construction, tyres, measuring instruments);
+
+c) *characteristic* — predicate-attached (for example conflict
+   minerals, heritage status, CITES species content, end-of-waste,
+   recycled content, historic-vehicle age).
+
+A profile shall sit on at least one axis; a profile with no axis, no
+data points and no suites is not a profile and shall be rejected (6.3).
+Jurisdiction profiles bind the cryptographic suites, trust lists and —
+where law requires — in-country serving posture of their jurisdiction;
+sector and characteristic profiles compose with them by stacking
+filters (6.3). Characteristic profiles split into regulatory-triggered
+profiles and voluntary value profiles, and shall attach by trigger
+predicate on twin facts rather than by law-of-place or industry.
+
+[[cl-profile-manifest]]
+=== Profile manifest
+
+The profile manifest shall contain at least the following fields.
+
+.Profile manifest fields
+[cols="25,45,30",options="header"]
+|===
+| Field | Content | Validity rule
+
+| id | profile identifier, a location-free URN | 7.2
+| axes | the non-empty axis assignment (jurisdiction, sector, characteristic) | at least one axis
+| owner / regulator | the governing body responsible for the profile | registry-governed
+| legal basis | citation of the legal instrument or voluntary scheme | dated; used by as-of queries
+| trigger | trigger predicate (6.4) | evaluable against twin facts
+| min_capability | minimum subject capability class S0 to S3 (6.5) | consistency with freshness (6.5, 6.6)
+| freshness | freshness requirement: none, static, or fresh-within window | 6.6
+| effective | effective interval, including retroactive applicability flags | well-formed interval
+| data_points | list of data-point references (register, item, version) into the semantic registry | non-empty; 5.9
+| transforms | registered transforms bound by the profile | 9.6
+| validation rules | executable rule packages bound by the profile | 9.6
+| crypto_suites | permitted cryptographic suites | non-empty; 11.2
+| trust requirements | trust-list bindings and minimum trust markers per data class | Clause 11
+| access policies | role-based read and write policies | per-role model
+| languages | languages and localization bindings | presentation
+| presentation requirements | presentation channel bindings | presentation
+| carrier requirements | carrier classes and budgets | Clause 10
+| confidential | whether the profile is a non-public register item | 6.8
+| resolution | serving resolution scope: none, national, restricted, public | 6.8
+| edge_visibility | default edge-visibility class for relationships under this profile | 7.7
+| traversal | traversal rights: none, authority-only, role-scoped, public | 7.7
+|===
+
+A profile manifest that violates any of the following structural rules
+shall be rejected at registration and shall fail validation at
+verification time:
+
+* the profile sits on no axis;
+* the profile binds no data points;
+* the profile binds no cryptographic suites;
+* the profile demands bounded freshness (fresh-within) while setting a
+  minimum capability of S0 (silent) — an *unsatisfiable profile*
+  (6.5);
+* the effective interval is malformed.
+
+Applicability shall be evaluated as the conjunction of the effective
+interval and the trigger predicate at the evaluation time: a profile
+applies to a subject if and only if the subject's twin state satisfies
+the trigger predicate and the evaluation instant falls within the
+effective window.
+
+[NOTE]
+====
+Informative implementation reference: `crates/model/src/profile.rs`
+(`ProfileManifest`, `ProfileAxes`, `DataPointRef`, applicability and
+validation rules).
+====
+
+[[cl-profile-triggers]]
+=== Trigger predicates
+
+Trigger predicates shall be evaluated against the facts of the digital
+twin, not against who declares them. The predicate language shall
+comprise at least the following constructor set, closed under
+composition:
+
+a) the universal predicate `any` (always true);
+
+b) conjunction `all(p1, …, pn)` and disjunction `any-of(p1, …, pn)`
+   and negation `not(p)`;
+
+c) fact comparisons `fact-eq`, `fact-ne`, `fact-gt`, `fact-ge`,
+   `fact-lt`, `fact-le` over typed twin fact values (string, number,
+   boolean, list), where a comparison against an absent fact is false;
+
+d) `fact-contains(path, needle)` — substring test for string facts,
+   membership test for list facts;
+
+e) `age-at-least(years)` — a *time predicate*: the subject's age at
+   evaluation time, computed from its recorded date of birth using the
+   Julian year of 31 557 600 s;
+
+f) `market-status-is(status)` — market-status predicate for
+   regulatory-triggered characteristic profiles (for example CITES,
+   cultural-goods, anti-money-laundering triggers).
+
+Twin facts used by predicates shall be the testimonial facts of the
+twin state (facts, and the date of birth of the subject); they shall
+not include actor identity. Time predicates are clock-fired
+applicability events: an object becoming older than a given age shall
+attach the profile through the dated-binding machinery (6.7) without
+human declaration.
+
+[NOTE]
+====
+Informative implementation reference: `crates/model/src/facts.rs`
+(`TwinFacts`, `FactValue`, `TriggerPredicate`).
+====
+
+[[cl-profile-capability]]
+=== Capability classes, truth modes and the twin axis
+
+Subjects shall be classified into four capability classes, and profiles
+shall declare the minimum class required to satisfy them.
+
+.Subject capability classes
+[cols="10,30,60",options="header"]
+|===
+| Class | Name | Capability
+
+| S0 | silent | testimony-only: no connectivity, no keys, no self-reporting; the twin is reconstructed from testimonies about the thing
+| S1 | passive-auth | passive authentication: identity chip, physical unclonable function, or an IEC 61406 identity link; identity attestation without logs
+| S2 | logged-contact | dumps on physical read, no communications (for example a battery management system read at a service point)
+| S3 | connected | full edge segments: the device commits and serves its own event segment
+|===
+
+The following requirements apply.
+
+a) Profiles' freshness and verification requirements shall be
+   satisfiable by the declared minimum capability class; a profile
+   demanding bounded freshness from an S0 (silent) subject is an
+   unsatisfiable profile and shall be rejected (6.3).
+
+b) The twin shall be testimonial by default and sensorial by exception
+   (I8): device segments are one testimony class (self-testimony), not
+   the foundation of the model. A silent S0 product shall be fully
+   servable — type certification, economic-operator passport, custody
+   testimonies, recycling events, Tier-A minimum — with zero device
+   participation ever; any core assumption of device state is a design
+   error.
+
+c) For whole categories the most authoritative facts may live at a
+   certification body; custodianship is profile-defined, and
+   economic-operator-held and certification-body-held state are both
+   legal configurations.
+
+d) Profiles shall declare, per data element, the required *truth mode*:
+   attest-sampled, self-committed, or both with precedence. The passive
+   twin supplies attest-sampled truth (truth episodic, staleness
+   unbounded and undetectable); the active twin supplies self-committed
+   truth (truth near-continuous, freshness bounded and detectable, the
+   binding question shifted from who saw the object to who attests the
+   sensor). Both paradigms shall coexist permanently in the framework.
+
+e) For active-twin elements, measurement validity shall be
+   load-bearing: sensor calibration shall be recorded in the device
+   registration, uncertainty shall be carried on self-reported values
+   per the GUM, units shall be registered (9.5), and health statuses
+   that are computed by a model shall be treated as derived verdicts
+   whose model is a transform governed under 9.6.
+
+f) The threat model shall be declared per class: silent products face
+   carrier-to-object binding attacks (code swap or clone), identifier
+   squatting and testimony fraud, with no device attack surface;
+   instrumented products additionally face firmware, key-custody and
+   channel-compromise threats.
+
+[[cl-profile-freshness]]
+=== Freshness requirements
+
+A profile shall declare one freshness requirement:
+
+* `none` — no freshness semantics (archival facts);
+* `static` — type-declared static data with document-lookup semantics,
+  which never goes stale;
+* `fresh-within:{seconds}` — bounded staleness for live views, where
+  the window shall be a positive number of seconds.
+
+Freshness shall be evaluated against the projection's as-of stamp
+(10.4). Staleness shall be reported explicitly as a freshness verdict
+and shall never silently pass (I13).
+
+[[cl-profile-lifecycle]]
+=== Profile lifecycle and dated bindings
+
+a) Adding a profile to an existing model shall be a registry
+   applicability event with an effective window (including retroactive
+   flags), and shall never create a new model identity; a new identity
+   arises only on technical type change (7.4).
+
+b) Manifest history shall be as-of-reconstructable: profile-version
+   bindings recorded as lifecycle events shall answer the question
+   "was this compliant when sold in a given year?" (8.6).
+
+c) Profile versions shall supersede through the registry's item
+   lifecycle (proposal → public review → valid, superseded, retired)
+   per ISO 19135; profile growth shall be dated binding, not new
+   identity.
+
+d) Disagreement between profiles shall be resolved to canonical facts
+   plus rules, never to one "true" classification: the canonical layer
+   separates facts by provenance class (declared at type; measured at
+   instance per method with uncertainty; computed by transform), and
+   profiles declare which classes they accept and their precedence
+   rules (instance-measured overriding type-declared, else
+   type-declared).
+
+[[cl-profile-confidential]]
+=== Confidential profiles, dark identities and traversal controls
+
+Profiles may be `confidential: true` (non-public register items) and
+shall carry the following serving and traversal posture:
+
+* `resolution`: `none | national | restricted | public` — the serving
+  scope; `none` denotes a dark identity that never enters the global
+  resolver and is served nationally only;
+
+* `edgeVisibility`: the default visibility class (7.7) for
+  relationships formed under the profile;
+
+* `traversal`: `none | authority-only | role-scoped | public` — the
+  traversal rights over edges under the profile.
+
+These fields shall be export-control-aware: defence and sovereignty
+tiers (national security carve-outs, dual-use controls) shall be
+expressible without degrading the framework's verification guarantees —
+dark holdings shall evaluate recall predicates locally under national
+procedure (7.7).
+
+[[cl-profile-registration]]
+=== Profile registration
+
+Profiles shall be registered in federated registers governed per
+ISO 19135, with the register roles (register owner, register manager,
+submitting organization, control body) and item lifecycle of that
+standard. Profiles shall constrain and add, never redefine (I2); where
+regions regulate differently (for example differing restricted-substance
+lists), they shall register distinct items harmonized to a common
+concept. Each jurisdiction's regulator defines its profiles through the
+registry, the profile manifest template and a trust onboarding
+ceremony (11.6); the framework standardizes the mechanism, not the
+regulatory content.
+
+Data-point references shall be triples (register, item, version),
+resolvable per the registry's resolution protocol (seam S4), version
+pinned at verification time. Whole semantic models shall be exchanged
+as registered, checksummed artifacts; cross-register mappings shall
+themselves be registered items; dictionary entries shall be immutable
+per version and mirrorable with log-anchored inclusion proofs.

@@ -1,0 +1,236 @@
+[[cl-trust]]
+== Trust and verification
+
+[[cl-trust-markers]]
+=== Graded trust markers
+
+Trust shall be graded, not mandated (I9). Every element and event shall
+carry one trust marker on the following ladder, in grade order:
+
+.Trust marker ladder
+[cols="18,10,52,20",options="header"]
+|===
+| Marker | Grade | Meaning | Evidence
+
+| unsigned | 0 | no signing evidence | no signatures present
+| self-declared | 1 | signed by the claimant | at least one signature, one suite
+| attested | 2 | third-party attested | third-party attestation plus at least one signature
+| multi-signed | 3 | co-signed | at least two signatures in at least two distinct suites
+| log-anchored | 4 | anchored | the artifact is anchored in a transparency log
+|===
+
+A marker shall meet a required minimum if and only if its grade is
+greater than or equal to the minimum's grade. The marker of an artifact
+shall be derivable from signing evidence: log anchoring dominates;
+otherwise two or more signatures in two or more distinct suites yield
+multi-signed; a third-party attestation with at least one signature
+yields attested; a lone signature yields self-declared; absence yields
+unsigned. Profiles shall set minimum signing per data class (for
+example safety-critical attested; claims may be unsigned); unsigned
+self-issued passports shall remain valid for voluntary provenance and
+insufficient for regulated claims.
+
+[NOTE]
+====
+Informative implementation reference: `crates/model/src/trust.rs`
+(`TrustMarker`, `meets`, `of`).
+====
+
+[[cl-trust-suites]]
+=== Cryptographic suites and co-signatures
+
+a) The framework shall support multi-suite co-signatures: the same
+   payload may carry multiple signatures side by side (for example an
+   ECDSA P-256 signature, an SM2 signature and an ML-DSA signature), so
+   that every jurisdiction verifies under its own crypto policy.
+
+b) The core suite registry shall comprise at least: `ecdsa-p256`,
+   `sm2`, `ml-dsa-44`, `ml-dsa-65`, `ml-dsa-87`, with canonical
+   signature lengths 64, 64, 2 420, 3 309 and 4 627 bytes respectively
+   and one-byte wire codes for carrier framing.
+
+c) Jurisdictional cryptographic suites are part of the profile, not of
+   the platform: each profile binds the suites acceptable under its
+   jurisdiction (including, where applicable, suites standardized in
+   ISO/IEC 14888-3, ISO/IEC 10118-3 and ISO/IEC 18033-3, and federal
+   suites where so mandated), and migration phases (composite to
+   post-quantum) are governed by the agility registry (11.6).
+
+d) Signature framing shall reserve the full canonical length of each
+   slot (10.3 c); a slot may be framed only (placeholder) with the
+   signature value filled by the signing layer — such framing is
+   explicit and degrades the verdict (10.5).
+
+e) Verifiers shall check only what their profile-scoped acceptance
+   policy requires; envelope encryption may wrap payload keys per
+   recipient under each jurisdiction's permitted key-encapsulation
+   mechanism.
+
+f) Attestation representations carried alongside the framework (for
+   example the W3C Verifiable Credentials Data Model) shall be
+   admissible as attestation evidence when bound to the trust
+   machinery of this clause.
+
+[[cl-trust-stamps]]
+=== Stamps
+
+A stamp is a lens-scoped attestation (3, dpp-0128). A stamp shall
+comprise at least: the attester; the subject; the subject state
+commitment; the lens identity and version; the mode (live or
+snapshot); a verdict summary with coverage report; the log-anchored
+time; and an optional quantity context inherited by downstream
+transformations (9.3 e).
+
+The following rules apply.
+
+a) Stamps shall accrete append-only; a stamp shall be valid under the
+   stamper's lens regardless of the issuer's.
+
+b) Jurisdiction stamps on a foreign-issued passport correspond to
+   visas; entry and exit stamps correspond to verifier custody events
+   (E1 and E14).
+
+c) Condition grading and appraisal verdicts are stamps: value is a
+   verdict, not a fact — auction-house lens and insurance lens are
+   different lenses over the same scene.
+
+d) Stamp verdicts shall state which verification reading they answer
+   (11.4).
+
+[NOTE]
+====
+Informative implementation reference: `crates/event/src/payload.rs`
+(`Stamp`, `StampMode`).
+====
+
+[[cl-trust-readings]]
+=== Verification readings and verdicts
+
+Verification shall produce graded verdicts, never booleans, and shall
+state which of three readings it answers (source invariant 8; the law
+needs all three):
+
+a) *evidentiary reading* — what could a diligent verifier know at time
+   T, given the then-current trust state: the as-of prefix of the log
+   is the evidence, with event totals and counts of corrections,
+   recalls, security flags and stamps, and the coverage report. This
+   reading protects good-faith actors; their stamps are the proof of
+   diligence.
+
+b) *current-state reading* — fraud voids ab initio: the replayed
+   status, safety flag and custodian, together with the taint set and
+   an explicit voids-ab-initio indicator, prevent laundering fraudulent
+   goods.
+
+c) *cryptographic reading* — signature and chain validity alone: chain
+   verification, log head, anchor status (absent, matched, mismatched),
+   per-slot signature status and the derived trust marker.
+
+A verdict shall carry: the reading answered; the freshness verdict
+(10.4); the three readings; the trust marker; and the outcome (pass,
+degraded or fail, with causes per 10.5). *Coverage reports* shall be
+first-class: the profile's required data points compared with those
+present in the render, with the missing list and the coverage ratio;
+incomplete coverage shall degrade the verdict explicitly, and consumer
+facing grades may be derived from coverage ratios.
+
+[NOTE]
+====
+Informative implementation references: `crates/verdict/src/readings.rs`
+(`CryptographicReading`, `EvidentiaryReading`, `CurrentStateReading`),
+`crates/verdict/src/coverage.rs` (`CoverageReport`) and
+`crates/verdict/src/verdict.rs` (`Verdict`, `Outcome`, `Degradation`,
+`Failure`).
+====
+
+[[cl-trust-revocation]]
+=== Revocation, retroactivity and distrust
+
+Revocation is not one operation: the reason determines retroactivity
+(9.7 b). The following requirements apply.
+
+a) *Prospective reasons* (key compromise after a time, cessation,
+   supersession, affiliation change): as-of-T verifications before the
+   event remain valid; time-stamping protects them.
+
+b) *Retroactive reasons* (misissuance, fraudulent issuance, authority
+   compromised during a window): validity is void ab initio or from
+   window start; time-stamping does not protect them. Distrust
+   declarations shall carry an explicit window [start, end];
+   certificates inside the window are voided, outside it re-validated;
+   transparency logs make every anchored artifact's exposure
+   discoverable.
+
+c) *Authority over authority.* A superior or quorate body (threshold
+   vote under master-list governance, 11.6) may declare an authority
+   fraudulent or compromised; cascading distrust follows the window.
+
+d) *Three distrust tracks* shall be distinguished: cryptographic
+   revocation (compromise: propagation to transitively bound
+   artifacts, emergency revocation), legal withdrawal (accreditation
+   removed: trust-list update, profile bindings updated, grace windows
+   for in-flight verification) and diplomatic breakdown
+   (cross-recognition suspended: verification still succeeds under
+   other anchors; affected profiles' acceptance policies quarantine).
+
+e) *Graph taint* shall propagate per 9.7 c; issuer misconduct leads to
+   status-invalidation cascades with adjudication, and adjudicated
+   outcomes are logged events.
+
+[[cl-trust-signatif]]
+=== Trust infrastructure (SIGNATIF)
+
+The trust registry of the framework shall be SIGNATIF-shaped — a
+federated threshold system, not a single global PKI — and conforming
+implementations of the trust layer shall conform to <<signatif>>. The
+normative elements are:
+
+a) jurisdictional trust authorities organized as threshold groups, not
+   single keys;
+
+b) jurisdictional trust lists and a globally multi-witnessed master
+   list maintained by an M-of-K quorum of independent transparency
+   logs;
+
+c) transparency logs anchoring both trust events and passport events
+   (seam S6), making every anchored artifact's exposure discoverable;
+
+d) a delegation DAG binding issuer credentials to profile trust lists
+   (seam S7), with scoped delegation, emergency revocation and
+   revocation propagation to transitively bound artifacts;
+
+e) an algorithm-agility registry governing suite lifecycles and
+   migration schedules (11.2 c);
+
+f) dispute resolution and authority-over-authority procedures
+   (11.5 c);
+
+g) verification semantics that are coverage-report-based, not boolean
+   (11.4).
+
+The semantic registry (6.9) and the trust registry are siblings under
+the same ISO 19135 registration discipline.
+
+[[cl-trust-succession]]
+=== Succession and continuity
+
+Identities shall outlive their issuers and hosts (I14).
+
+a) *Host succession.* Hosting is replicable by design: resolver
+   redirects to fallback hosts or archives; Tier C plus log anchoring
+   guarantee recoverable state; the registry marks the host defunct;
+   the custodian executes a hosting-handover ceremony; data are
+   escrowed per profile requirements. Back-up provider arrangements are
+   a special case of this mechanism, not the mechanism itself.
+
+b) *Scheme-operator succession.* Succession obligations (IANA-style)
+   shall be recorded at registration; dormant-identifier continuity
+   applies.
+
+c) *Algorithm and profile succession.* Post-quantum migration follows
+   the agility registry; profile supersessions follow the registry item
+   lifecycle; serializations are renders of the core and migrate as
+   formats; media migrate through Tier C archival refresh.
+
+d) *Regime succession.* Cross-recognition suspensions and
+   reconnections are ceremonies recorded as trust events (11.5 d).

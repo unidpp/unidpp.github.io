@@ -1,0 +1,163 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Sidebar from '../../components/Sidebar.astro';
+import Badge from '../../components/Badge.astro';
+import Continue from '../../components/Continue.astro';
+import { parts } from '../../lib/specs';
+import { specsNav } from '../../lib/sections';
+---
+
+<BaseLayout
+  title="Specifications"
+  description="The UniDPP specification: five parts — framework, profiles, identity/events/transforms, tiers and trust, conformance — rendered from the AsciiDoc sources of the unidpp-spec repository, working-draft stage."
+  eyebrow="The specification"
+  sectioned
+>
+  <Sidebar slot="rail" heading="Specification" items={specsNav} />
+  <h1>Specification</h1>
+  <p class="lede">
+    The UniDPP framework in normative form. The specification is authored in AsciiDoc for
+    Metanorma in the
+    <a href="https://github.com/unidpp/unidpp-spec">unidpp-spec</a> repository (CC-BY-4.0)
+    and organized into five parts; the pages here render the current working-draft sources
+    directly, so the site and the sources cannot drift silently.
+  </p>
+
+  <section aria-labelledby="parts-h">
+    <h2 id="parts-h">Parts</h2>
+    <ol class="parts">
+      {
+        parts.map((part) => (
+          <li>
+            <a href={`/specs/${part.slug}/`}>
+              <span class="part-label">{part.label}</span>
+              <span class="part-body">
+                <span class="part-title">
+                  <strong>{part.title}</strong>
+                  <Badge stage={part.stage} />
+                </span>
+                <span class="part-sub">{part.subtitle}</span>
+                <span class="part-meta">
+                  {part.sections.map((s) => s.title).join(' · ')}
+                </span>
+              </span>
+            </a>
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+
+  <section class="plate" aria-labelledby="stage-h">
+    <h2 id="stage-h">Document stages</h2>
+    <p>
+      The parts follow the ISO stage vocabulary. Current status of every part:
+    </p>
+    <ul>
+      <li><Badge stage="wd" /> Working draft (stage 20) — under development in the open.</li>
+      <li><Badge stage="cd" /> Committee draft — not yet reached.</li>
+      <li><Badge stage="fdis" /> Final draft international standard — not yet reached.</li>
+    </ul>
+  </section>
+
+  <section class="plate" aria-labelledby="artifacts-h">
+    <h2 id="artifacts-h">Sources and build artifacts</h2>
+    <p>
+      The authoritative sources, the Metanorma project, and the generated artifacts live in
+      the specification repository:
+    </p>
+    <ul>
+      <li>
+        <a href="https://github.com/unidpp/unidpp-spec">github.com/unidpp/unidpp-spec</a>
+        — <code>document.adoc</code> with the clause sources under
+        <code>sections/</code>; build with Metanorma for the presentation formats.
+      </li>
+      <li>
+        <code>src/spec/*.adoc</code> in the
+        <a href="https://github.com/unidpp/unidpp.github.io">site repository</a> is the
+        committed snapshot these pages render; it is refreshed from the spec repository,
+        which remains the source of truth.
+      </li>
+      <li>
+        The JSON Schema and EXPRESS sources from which the SDK types and conformance suites
+        are generated are described on the
+        <a href="/implementation/">implementation page</a>.
+      </li>
+    </ul>
+  </section>
+
+  <Continue
+    href="/specs/part-1-framework/"
+    num="1"
+    title="Part 1 — Framework"
+    desc="Scope, normative references, terms and definitions, and the framework core: the fourteen design invariants."
+  />
+</BaseLayout>
+
+<style>
+  .parts {
+    list-style: none;
+    margin: 1.4rem 0 0;
+    padding: 0;
+    display: grid;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    max-width: none;
+  }
+  .parts a {
+    display: grid;
+    grid-template-columns: 6.4rem minmax(0, 1fr);
+    gap: 1rem;
+    padding: 1.05rem 1.2rem;
+    background: var(--bg-raised);
+    text-decoration: none;
+    color: var(--text);
+  }
+  .parts a:hover {
+    background: var(--accent-tint);
+  }
+  .parts a:hover .part-title strong {
+    color: var(--accent);
+  }
+  .part-label {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--accent);
+    padding-top: 0.15rem;
+  }
+  .part-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    min-width: 0;
+  }
+  .part-title {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+  }
+  .part-title strong {
+    font-weight: 600;
+    font-size: 1rem;
+  }
+  .part-sub {
+    color: var(--text-2);
+    font-size: 0.88rem;
+  }
+  .part-meta {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--text-3);
+    letter-spacing: 0.02em;
+  }
+  @media (max-width: 560px) {
+    .parts a {
+      grid-template-columns: 1fr;
+      gap: 0.3rem;
+    }
+  }
+</style>

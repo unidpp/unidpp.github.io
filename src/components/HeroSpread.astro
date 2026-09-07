@@ -2,6 +2,7 @@
 // The signature hero: one twin record card with three translucent profile
 // lenses mounted above it. Lenses are radio controls, so hover, tap, and
 // keyboard all work without scripts; captions are exchanged with :has().
+// Restyled for the initiative design system: Plex, token colours, dark mode.
 ---
 
 <div class="spread">
@@ -108,7 +109,7 @@
     min-height: 44px;
     padding: 0.65rem 0.8rem;
     border-radius: var(--radius);
-    border: 1px solid rgba(20, 51, 92, 0.35);
+    border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -122,14 +123,14 @@
   .lens-name {
     font-family: var(--font-mono);
     font-size: 0.95rem;
-    font-weight: 600;
-    color: var(--navy);
+    font-weight: 500;
+    color: var(--accent);
   }
   .lens-sub {
     font-family: var(--font-mono);
     font-size: 0.64rem;
     letter-spacing: 0.04em;
-    color: var(--navy);
+    color: var(--accent);
     opacity: 0.78;
   }
 
@@ -137,28 +138,26 @@
     left: 2%;
     top: 1.15rem;
     transform: rotate(-3deg);
-    background: rgba(20, 51, 92, 0.16);
+    background: color-mix(in srgb, var(--accent) 14%, transparent);
     z-index: 3;
   }
   .lens-jp {
     left: 40%;
     top: 0.25rem;
     transform: rotate(1.5deg);
-    background: rgba(20, 51, 92, 0.3);
+    background: color-mix(in srgb, var(--accent) 26%, transparent);
     z-index: 2;
   }
   .lens-cites {
     left: 74%;
     top: 1.5rem;
     transform: rotate(4deg);
-    background: rgba(20, 51, 92, 0.08);
+    background: color-mix(in srgb, var(--accent) 7%, transparent);
     z-index: 1;
   }
 
-  /* The radio inputs are visually hidden, so the global :focus-visible
-     outline never reaches them; the label carries the ring instead. */
   .in:focus-visible + .lens {
-    outline: 2px solid var(--navy);
+    outline: 2px solid var(--accent);
     outline-offset: 2px;
   }
 
@@ -170,29 +169,29 @@
   .lens-eu:hover,
   .in-eu:focus-visible + .lens-eu,
   .in-eu:checked + .lens-eu {
-    background: rgba(20, 51, 92, 0.24);
-    border-color: var(--navy);
+    background: color-mix(in srgb, var(--accent) 22%, transparent);
+    border-color: var(--accent);
     z-index: 5;
   }
   .lens-jp:hover,
   .in-jp:focus-visible + .lens-jp,
   .in-jp:checked + .lens-jp {
-    background: rgba(20, 51, 92, 0.4);
-    border-color: var(--navy);
+    background: color-mix(in srgb, var(--accent) 36%, transparent);
+    border-color: var(--accent);
     z-index: 5;
   }
   .lens-cites:hover,
   .in-cites:focus-visible + .lens-cites,
   .in-cites:checked + .lens-cites {
-    background: rgba(20, 51, 92, 0.16);
-    border-color: var(--navy);
+    background: color-mix(in srgb, var(--accent) 14%, transparent);
+    border-color: var(--accent);
     z-index: 5;
   }
 
   /* The twin record card */
   .record {
-    background: #fff;
-    border: 1px solid var(--hairline);
+    background: var(--bg-raised);
+    border: 1px solid var(--border);
     border-radius: var(--radius);
     padding: 1.1rem 1.25rem 0.85rem;
     max-width: 26rem;
@@ -202,7 +201,7 @@
     font-size: 0.64rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--muted);
+    color: var(--text-2);
     margin: 0 0 0.75rem;
   }
   .fields {
@@ -215,7 +214,7 @@
     grid-template-columns: 8.5rem minmax(0, 1fr);
     gap: 0.8rem;
     align-items: baseline;
-    border-bottom: 1px solid var(--hairline);
+    border-bottom: 1px solid var(--border);
     padding: 0.42rem 0;
   }
   .field:last-child {
@@ -224,7 +223,7 @@
   }
   .field dt {
     font-size: 0.78rem;
-    color: var(--muted);
+    color: var(--text-2);
   }
   .field dd {
     margin: 0;
@@ -247,7 +246,7 @@
     grid-area: 1 / 1;
     margin: 0;
     font-size: 0.95rem;
-    color: var(--ink);
+    color: var(--text);
     max-width: 56ch;
     opacity: 0;
     transition: opacity 0.2s ease;
@@ -259,13 +258,13 @@
     font-weight: 500;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--navy);
-    border: 1px solid var(--hairline);
+    color: var(--accent);
+    border: 1px solid var(--border);
     border-radius: 99px;
     padding: 0.1rem 0.5rem;
     margin-right: 0.5rem;
     vertical-align: 0.1em;
-    background: #fff;
+    background: var(--bg);
   }
   .spread:has(.in-eu:checked) .cap-eu,
   .spread:has(.in-jp:checked) .cap-jp,

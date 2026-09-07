@@ -1,13 +1,120 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta http-equiv="refresh" content="0; url=/reference/papers/" />
-    <link rel="canonical" href="https://www.unidpp.org/reference/papers/" />
-    <title>Papers — UniDPP</title>
-  </head>
-  <body>
-    <p>This page has moved. Continue to <a href="/reference/papers/">the papers catalogue</a>.</p>
-  </body>
-</html>
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Card from '../components/Card.astro';
+import CardGrid from '../components/CardGrid.astro';
+---
+
+<BaseLayout
+  title="Papers"
+  description="The six UniDPP contribution papers to ISO/IEC JTC 5 and partner bodies: the framework position paper, registry requirements, lifecycle and events, the implementation report, the trust annex input, and the terminology announcement — with PDFs."
+  eyebrow="Contributions"
+>
+  <h1>Papers and contributions</h1>
+  <p class="lede">
+    Six planned contributions to ISO/IEC JTC&nbsp;5 and partner bodies, submitted through the
+    secretariat and liaison channels as N-documents. ISO values implementation experience;
+    the implementation report publishes conformance and drift findings alongside the
+    position work.
+  </p>
+
+  <section id="catalogue" class="plate" aria-labelledby="catalogue-h">
+    <h2 id="catalogue-h">Catalogue</h2>
+    <CardGrid>
+      <Card title="An international framework for the Digital Product Passport" tag="Position paper">
+        <p>
+          CalConnect + TC 154 + OIML + ELF co-branded. The fourteen invariants, the lens
+          model, and the profile mechanism. Submitted as a liaison contribution under
+          agenda item 11/13.
+        </p>
+        <p class="paper-links">
+          <a href="/papers/an-international-framework-for-the-dpp.pdf">PDF</a>
+        </p>
+      </Card>
+      <Card title="Semantic registry requirements" tag="Technical contribution">
+        <p>
+          TC 154 + Enosema + UN/CEFACT. Fills the EN 18223 §4.3 vacancy; FERIN / ISO 19135
+          governance; UNTDED seed. Workstream B / C input.
+        </p>
+        <p class="paper-links">
+          <a href="/papers/semantic-registry-requirements.pdf">PDF</a>
+        </p>
+      </Card>
+      <Card title="DPP lifecycle, events and validity" tag="Technical contribution">
+        <p>
+          CalConnect. The fifteen-event post-sale taxonomy and the EN support matrix; ISO
+          8601 and ISO 34000 citations. Workstream B input.
+        </p>
+        <p class="paper-links">
+          <a href="/papers/dpp-lifecycle-events-validity.pdf">PDF</a>
+        </p>
+      </Card>
+      <Card title="UniDPP: a reference implementation of the international framework" tag="Implementation report">
+        <p>
+          UniDPP / CalConnect. Architecture, EU-profile conformance results, drift findings
+          against the EN texts, and a benchmark against freeDPP and OpenDPP.
+        </p>
+        <p class="paper-links">
+          <a href="/papers/unidpp-reference-implementation.pdf">PDF</a>
+        </p>
+      </Card>
+      <Card title="Cross-recognition trust for DPP" tag="Trust annex input">
+        <p>
+          CalConnect + TC 154, OIML co-sign. The SIGNATIF DPP annex as workstream D input;
+          CNML as the ESDC realization.
+        </p>
+        <p class="paper-links">
+          <a href="/papers/cross-recognition-trust-for-dpp.pdf">PDF</a>
+        </p>
+      </Card>
+      <Card title="The DPP vocabulary dataset" tag="Terminology announcement">
+        <p>
+          CalConnect. The Glossarist browser URL with Form 4 attached (NWIP-1). The
+          vocabulary draft is generated from the dataset.
+        </p>
+        <p class="paper-links">
+          <a href="/papers/dpp-terminology-dataset.pdf">PDF</a>
+        </p>
+      </Card>
+    </CardGrid>
+    <p class="meta">
+      Sources and revision history:
+      <a href="https://github.com/unidpp">the unidpp repositories</a>; the PDFs above are
+      the current revision, served from this site.
+    </p>
+  </section>
+
+  <section id="nwips" aria-labelledby="nwips-h">
+    <h2 id="nwips-h">New work item proposals</h2>
+    <p>
+      Two proposals carry the work into ISO/IEC JTC 5, with Forms 4 drafted from the plan
+      and the audit evidence:
+    </p>
+    <ul>
+      <li>
+        <strong>NWIP-1</strong> — ISO 25534-1 Part 1 (Vocabulary): 80–120 entries with a
+        harmonization annex across EN, UNTP, ISO 59040, and 25534-1.
+      </li>
+      <li>
+        <strong>NWIP-2</strong> — semantic definitions and data element registry: FERIN
+        federated registers per ISO 19135, identifiers per ISO/IEC 15459, UNTDED seed,
+        OpenCDD technology.
+      </li>
+    </ul>
+    <p>
+      The evidence the papers rest on is public: the
+      <a href="/implementation/conformance/">EU-profile conformance register</a> (paper 4's
+      results annex) and the <a href="/implementation/demos/">demonstration runs</a>.
+    </p>
+  </section>
+</BaseLayout>
+
+<style>
+  .paper-links {
+    margin: 0.7rem 0 0 !important;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+  }
+  .paper-links a {
+    color: var(--accent);
+  }
+</style>

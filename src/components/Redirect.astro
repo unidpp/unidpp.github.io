@@ -1,0 +1,24 @@
+---
+// Full-document redirect stub for pages that moved. Emits a complete
+// HTML page with a meta refresh + canonical to the new location.
+interface Props {
+  title: string;
+  target: string;
+}
+const { title, target } = Astro.props;
+const url = `https://www.unidpp.org${target}`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta http-equiv="refresh" content={`0; url=${target}`} />
+    <link rel="canonical" href={url} />
+    <title>{title} — UniDPP</title>
+  </head>
+  <body>
+    <p>This page has moved. Continue to <a href={target}>{target}</a>.</p>
+  </body>
+</html>

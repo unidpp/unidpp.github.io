@@ -1,0 +1,810 @@
+/* ═══════════════════════════════════════════════════════════════════
+   UniDPP design system — tokens, base, and shared components.
+
+   Typography: IBM Plex Sans (400/500/600/700) is the identity face —
+   body AND display; IBM Plex Mono (400/500) carries identifiers, MRZ,
+   code, and registers. No decorative serif anywhere.
+
+   Palette: paper / ink / navy with semantic green (valid) and
+   red (verdicts). Dark mode via `html.dark` (toggle in Header).
+   ═══════════════════════════════════════════════════════════════════ */
+
+:root {
+  --bg: #fafaf7;
+  --bg-raised: #ffffff;
+  --bg-inset: #f1f2ee;
+  --border: #e3e7ec;
+  --border-strong: #cdd4dc;
+  --text: #1a2332;
+  --text-2: #5b6675;
+  --text-3: #8a93a3;
+  --text-inv: #fafaf7;
+  --accent: #14335c;
+  --accent-hover: #0e2746;
+  --accent-soft: rgba(20, 51, 92, 0.07);
+  --accent-tint: rgba(20, 51, 92, 0.04);
+  --green: #1e6b4f;
+  --green-soft: rgba(30, 107, 79, 0.08);
+  --red: #b4442c;
+  --red-soft: rgba(180, 68, 44, 0.08);
+
+  --font-sans: 'IBM Plex Sans', -apple-system, 'Segoe UI', Helvetica, Arial,
+    sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  --radius: 6px;
+  --radius-lg: 10px;
+  --prose: 72ch;
+  --container: 1200px;
+  --rail: 15rem;
+  --header-h: 3.75rem;
+}
+
+html.dark {
+  --bg: #0f1420;
+  --bg-raised: #161d2c;
+  --bg-inset: #0c111b;
+  --border: #262e3f;
+  --border-strong: #38425a;
+  --text: #e8ecf1;
+  --text-2: #9da8b8;
+  --text-3: #6b7484;
+  --accent: #7ea7d4;
+  --accent-hover: #a3c2e4;
+  --accent-soft: rgba(126, 167, 212, 0.14);
+  --accent-tint: rgba(126, 167, 212, 0.06);
+  --green: #5fbf98;
+  --green-soft: rgba(95, 191, 152, 0.12);
+  --red: #e08a70;
+  --red-soft: rgba(224, 138, 112, 0.12);
+}
+
+/* ── Base ───────────────────────────────────────────────────────── */
+
+* {
+  box-sizing: border-box;
+}
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-h) + 1rem);
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 400 1rem/1.65 var(--font-sans);
+  font-synthesis-weight: none;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+a {
+  color: var(--accent);
+  text-underline-offset: 3px;
+}
+a:hover {
+  color: var(--accent-hover);
+}
+html.dark a:hover {
+  color: var(--accent-hover);
+}
+
+.skip {
+  position: fixed;
+  left: -100vw;
+  top: 0;
+  z-index: 100;
+  background: var(--text);
+  color: var(--bg-raised);
+  padding: 0.5rem 0.9rem;
+  font-size: 0.85rem;
+  text-decoration: none;
+  border-radius: 0 0 var(--radius) 0;
+}
+.skip:focus-visible {
+  left: 0;
+}
+
+/* ── Typography ─────────────────────────────────────────────────── */
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-sans);
+  line-height: 1.18;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+  margin: 0;
+}
+h1 {
+  font-size: clamp(1.95rem, 4.2vw, 2.7rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  margin: 0.4rem 0 1.1rem;
+}
+h2 {
+  font-size: clamp(1.3rem, 2.4vw, 1.6rem);
+  font-weight: 600;
+  margin: 3rem 0 0.9rem;
+}
+h3 {
+  font-size: 1.04rem;
+  font-weight: 600;
+  margin: 1.9rem 0 0.5rem;
+}
+p,
+ul,
+ol,
+dl,
+pre {
+  max-width: var(--prose);
+}
+p {
+  margin: 0.9rem 0;
+}
+.lede {
+  font-size: 1.13rem;
+  line-height: 1.6;
+  color: var(--text-2);
+  max-width: 64ch;
+  margin: 0 0 2.25rem;
+}
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 0.4rem;
+}
+.meta {
+  color: var(--text-2);
+  font-size: 0.86rem;
+}
+
+/* Wordmark: the two-part uni/DPP lockup — Plex Sans, tight tracking. */
+.wordmark {
+  font-family: var(--font-sans);
+  font-size: 1.18rem;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 400;
+  white-space: nowrap;
+}
+.wordmark .wm-b {
+  font-weight: 700;
+  color: var(--accent);
+}
+.wordmark:hover {
+  color: var(--text);
+}
+
+/* ── Layout shell ───────────────────────────────────────────────── */
+
+.shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+main.page {
+  flex: 1;
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 2.25rem 1.15rem 4.5rem;
+}
+@media (min-width: 640px) {
+  main.page {
+    padding: 3rem 2rem 5.5rem;
+  }
+}
+
+/* Content pages carry a section sidebar (≥960px). */
+.with-rail {
+  display: grid;
+  gap: 0;
+}
+.with-rail > .rail {
+  display: none;
+}
+@media (min-width: 960px) {
+  .with-rail {
+    grid-template-columns: var(--rail) minmax(0, 1fr);
+    gap: 2.5rem;
+  }
+  .with-rail > .rail {
+    display: block;
+  }
+}
+
+/* Plates: wide sections bounded by hairline rules. */
+.plate {
+  border-top: 1px solid var(--border);
+  padding: 1.6rem 0 1.9rem;
+  margin: 3rem 0;
+  max-width: none;
+}
+.plate > h2 {
+  margin-top: 0.2rem;
+}
+
+/* ── Tables ─────────────────────────────────────────────────────── */
+
+.tablewrap {
+  overflow-x: auto;
+  max-width: none;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.875rem;
+  margin: 1.1rem 0;
+}
+th,
+td {
+  border: 1px solid var(--border);
+  padding: 0.55rem 0.7rem;
+  text-align: left;
+  vertical-align: top;
+}
+th {
+  font-weight: 600;
+  color: var(--accent);
+  border-top: 2px solid var(--accent);
+  background: var(--accent-tint);
+}
+caption {
+  caption-side: bottom;
+  text-align: left;
+  color: var(--text-2);
+  font-size: 0.8rem;
+  padding-top: 0.5rem;
+}
+table.register tbody tr:nth-child(even) td {
+  background: var(--accent-tint);
+}
+td code,
+th code {
+  font-size: 0.82em;
+  overflow-wrap: anywhere;
+}
+
+/* ── Code ───────────────────────────────────────────────────────── */
+
+code {
+  font-family: var(--font-mono);
+  font-size: 0.86em;
+  background: var(--accent-soft);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+}
+pre {
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem 1.15rem;
+  overflow: auto;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  max-width: var(--prose);
+}
+pre code {
+  background: none;
+  padding: 0;
+  font-size: inherit;
+}
+
+/* ── Cards ──────────────────────────────────────────────────────── */
+
+.cols {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15.5rem, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin: 1.6rem 0;
+  max-width: none;
+}
+.card {
+  background: var(--bg-raised);
+  padding: 1.1rem 1.2rem;
+}
+.card h3 {
+  margin: 0 0 0.55rem;
+  font-size: 0.97rem;
+}
+.card p {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--text-2);
+}
+.card .tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid var(--border);
+  border-radius: 99px;
+  padding: 0.14rem 0.6rem;
+  margin: 0 0 0.7rem;
+  background: var(--bg);
+}
+
+/* ── Badges (spec stage pills) ──────────────────────────────────── */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.16rem 0.6rem;
+  border-radius: 99px;
+  border: 1px solid var(--border);
+  background: var(--bg-raised);
+  color: var(--text-2);
+  white-space: nowrap;
+}
+.badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--text-3);
+}
+.badge.wd {
+  color: var(--accent);
+  border-color: color-mix(in srgb, var(--accent) 35%, transparent);
+  background: var(--accent-soft);
+}
+.badge.wd::before {
+  background: var(--accent);
+}
+.badge.cd {
+  color: var(--green);
+  border-color: color-mix(in srgb, var(--green) 35%, transparent);
+  background: var(--green-soft);
+}
+.badge.cd::before {
+  background: var(--green);
+}
+.badge.fdis {
+  color: var(--red);
+  border-color: color-mix(in srgb, var(--red) 35%, transparent);
+  background: var(--red-soft);
+}
+.badge.fdis::before {
+  background: var(--red);
+}
+
+/* ── Notes and embeds ───────────────────────────────────────────── */
+
+.note {
+  border-left: 2px solid var(--accent);
+  background: var(--bg-raised);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 0.65rem 1rem;
+  color: var(--text-2);
+  font-size: 0.9rem;
+  margin: 1.6rem 0;
+  max-width: var(--prose);
+}
+.embed {
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius);
+  background: var(--bg-raised);
+  padding: 2.5rem 1.25rem;
+  text-align: center;
+  color: var(--text-2);
+  margin: 1.6rem 0;
+}
+.embed .embed-title {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 0.95rem;
+  margin: 0 0 0.4rem;
+}
+.embed p {
+  margin: 0 auto;
+  font-size: 0.86rem;
+  max-width: 34rem;
+}
+
+/* ── Semantic colour utilities ──────────────────────────────────── */
+
+.ok {
+  color: var(--green);
+}
+.neg {
+  color: var(--red);
+}
+
+/* ── Visually hidden ────────────────────────────────────────────── */
+
+.vh {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ── Buttons ────────────────────────────────────────────────────── */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 1.4rem;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 600;
+  border-radius: var(--radius);
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: background-color 0.15s ease, border-color 0.15s ease,
+    color 0.15s ease;
+}
+.btn-primary {
+  background: var(--accent);
+  color: #ffffff;
+}
+html.dark .btn-primary {
+  color: #0f1420;
+}
+.btn-primary:hover {
+  background: var(--accent-hover);
+  color: #ffffff;
+}
+html.dark .btn-primary:hover {
+  color: #0f1420;
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--text-2);
+  border-color: var(--border-strong);
+}
+.btn-ghost:hover {
+  color: var(--text);
+  border-color: var(--text-2);
+  background: var(--accent-soft);
+}
+
+/* ── Stats strip ────────────────────────────────────────────────── */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin: 1.6rem 0 0;
+  max-width: none;
+}
+.stat {
+  background: var(--bg-raised);
+  padding: 1.1rem 1.2rem;
+}
+.stat-num {
+  font-size: 1.55rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.1;
+  color: var(--text);
+  display: block;
+}
+.stat-lbl {
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-2);
+  margin-top: 0.4rem;
+  display: block;
+}
+
+/* ── Motion ─────────────────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ── AsciiDoc-rendered specification content ────────────────────── */
+/* The /specs/ pages embed Asciidoctor HTML via set:html, so these
+   rules live in the global sheet. Scoped under .adoc-content. */
+
+.adoc-content {
+  line-height: 1.65;
+  color: var(--text);
+}
+.adoc-content .paragraph,
+.adoc-content .dlist,
+.adoc-content .hdlist,
+.adoc-content .ulist,
+.adoc-content .olist,
+.adoc-content .colist,
+.adoc-content .listingblock,
+.adoc-content .literalblock,
+.adoc-content .tableblock,
+.adoc-content .admonitionblock,
+.adoc-content .exampleblock,
+.adoc-content .imageblock {
+  margin: 0.75rem 0;
+}
+.adoc-content .adoc-section + .adoc-section {
+  border-top: 1px solid var(--border);
+  margin-top: 2.6rem;
+  padding-top: 1.2rem;
+}
+
+/* Headings: the section title (h2 from `== Clause`) starts each part
+   section; sub-clauses descend. */
+.adoc-content h2 {
+  font-size: clamp(1.3rem, 2.4vw, 1.6rem);
+  margin: 2.4rem 0 0.9rem;
+}
+.adoc-content h2:first-child {
+  margin-top: 0;
+}
+.adoc-content h3 {
+  font-size: 1.08rem;
+  margin: 1.9rem 0 0.5rem;
+}
+.adoc-content h4 {
+  font-size: 0.98rem;
+  font-weight: 600;
+  margin: 1.4rem 0 0.4rem;
+}
+.adoc-content h5 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 1.2rem 0 0.4rem;
+}
+
+.adoc-content .paragraph p {
+  margin: 0.75rem 0;
+  max-width: var(--prose);
+}
+.adoc-content strong {
+  font-weight: 600;
+}
+
+/* Lists */
+.adoc-content .ulist ul,
+.adoc-content .olist ol {
+  padding-left: 1.5rem;
+  margin: 0.5rem 0;
+  max-width: var(--prose);
+}
+.adoc-content .ulist li,
+.adoc-content .olist li {
+  margin: 0.35rem 0;
+}
+.adoc-content .ulist li p,
+.adoc-content .olist li p {
+  margin: 0.2rem 0;
+}
+
+/* Inline code (global `code` rules already apply); blocks below */
+.adoc-content pre {
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem 1.15rem;
+  overflow-x: auto;
+  margin: 1rem 0;
+  font-family: var(--font-mono);
+  font-size: 0.83rem;
+  line-height: 1.55;
+  color: var(--text);
+  max-width: none;
+}
+.adoc-content pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: inherit;
+}
+.adoc-content .listingblock .title,
+.adoc-content .literalblock .title,
+.adoc-content .tableblock .title {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-2);
+  margin-bottom: 0.4rem;
+}
+
+/* Tables (Asciidoctor tableblock) */
+.adoc-content table.tableblock {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.86rem;
+}
+.adoc-content table.tableblock colgroup col {
+  width: auto !important;
+}
+.adoc-content table.tableblock th.tableblock,
+.adoc-content table.tableblock td.tableblock {
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--border);
+  vertical-align: top;
+}
+.adoc-content table.tableblock thead th.tableblock {
+  background: var(--accent-tint);
+  font-weight: 600;
+  text-align: left;
+  color: var(--accent);
+  border-top: 2px solid var(--accent);
+}
+
+/* Definition lists */
+.adoc-content .dlist {
+  margin: 0.75rem 0;
+}
+.adoc-content .dlist dt {
+  font-weight: 600;
+  margin-top: 0.75rem;
+}
+.adoc-content .dlist dd {
+  margin-left: 1.5rem;
+  margin-top: 0.25rem;
+  color: var(--text-2);
+}
+.adoc-content .hdlist {
+  margin: 0.75rem 0;
+}
+.adoc-content .hdlist table {
+  border: none;
+  border-collapse: collapse;
+  width: 100%;
+  margin: 0;
+}
+.adoc-content .hdlist table tr {
+  border-bottom: 1px solid var(--border);
+}
+.adoc-content .hdlist table tr:last-child {
+  border-bottom: none;
+}
+.adoc-content .hdlist td.hdlist1 {
+  font-weight: 600;
+  font-family: var(--font-mono);
+  font-size: 0.84em;
+  padding: 0.4rem 0.8rem 0.4rem 0;
+  border: none;
+  white-space: nowrap;
+  vertical-align: top;
+  width: 1%;
+  color: var(--accent);
+}
+.adoc-content .hdlist td.hdlist2 {
+  padding: 0.4rem 0;
+  border: none;
+  color: var(--text-2);
+}
+
+/* Admonition blocks (NOTE, WARNING, etc.) */
+.adoc-content .admonitionblock {
+  margin: 1.25rem 0;
+}
+.adoc-content .admonitionblock > table {
+  width: 100%;
+  border: none;
+  border-collapse: collapse;
+  margin: 0;
+}
+.adoc-content .admonitionblock td.icon {
+  width: 40px;
+  padding: 0.75rem 0.5rem 0.75rem 0.75rem;
+  vertical-align: top;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+}
+.adoc-content .admonitionblock td.icon .fa {
+  display: none;
+}
+.adoc-content .admonitionblock td.content {
+  padding: 0.75rem 1rem;
+  border: none;
+  background: var(--accent-tint);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  border-left: 3px solid var(--accent);
+}
+.adoc-content .admonitionblock .title {
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+  font-size: 0.9rem;
+}
+.adoc-content .admonitionblock p {
+  margin: 0.35rem 0;
+  font-size: 0.92rem;
+  color: var(--text-2);
+}
+
+/* Example blocks */
+.adoc-content .exampleblock {
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+}
+.adoc-content .exampleblock .title {
+  font-weight: 600;
+  font-size: 0.82rem;
+  color: var(--text-2);
+  margin-bottom: 0.5rem;
+}
+
+/* Sections and anchors */
+.adoc-content .sect1 {
+  margin-bottom: 2rem;
+}
+.adoc-content .sect2 {
+  margin-bottom: 1rem;
+}
+.adoc-content .sect3 {
+  margin-bottom: 0.5rem;
+}
+.adoc-content .sectionbody {
+  margin: 0;
+}
+.adoc-content #preamble {
+  margin-bottom: 2rem;
+}
+.adoc-content .preamble {
+  margin: 0;
+}
+.adoc-content [id] {
+  scroll-margin-top: calc(var(--header-h) + 1rem);
+}
+.adoc-content hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2rem 0;
+}
+.adoc-content .anchor {
+  display: none;
+}

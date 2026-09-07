@@ -1,0 +1,209 @@
+[[cl-tiers]]
+== Payload tiers and offline operation
+
+[[cl-tiers-ladder]]
+=== The degradation ladder
+
+The framework shall serve payloads in three tiers (I13):
+
+* *Tier A* — the carrier-embedded minimum viable passport (10.2),
+  sized to the data carrier and verifiable offline against pre-cached
+  trust anchors;
+
+* *Tier B* — the served full passport, resolvable per profile,
+  including device-served endpoints (10.6);
+
+* *Tier C* — the archival record (persistence beyond operator
+  lifetime, archival refresh).
+
+The framework shall fix exactly which subset of fields is Tier A
+(10.2); every field of the Tier-A subset shall be mandatory — there
+shall be no optional-field shrinking, because shrinking would silently
+degrade the offline minimum. Stale or offline data shall degrade
+explicitly through freshness verdicts (10.4) and shall never silently
+pass. The degradation ladder is the framework's interface to deployed
+reality: a silent S0 product shall be fully servable on the ladder with
+zero device participation (6.5 b).
+
+[[cl-tiers-tiera]]
+=== Tier-A payload
+
+The Tier-A payload shall comprise exactly the following fields, all
+mandatory:
+
+.Tier-A payload fields
+[cols="28,50,22",options="header"]
+|===
+| Field | Content | Source rule
+
+| product identifier | scheme-agnostic product identifier in canonical display form (7.1) | identity
+| resolver URI | the URI for Tier-B resolution | resolution
+| passport identifier | the passport URN (7.2) | identity
+| economic-operator identifier | the EO identifier | issuer
+| status | the current status (8.4) | replayed from the log
+| safety | the critical safety / recall flag: none, recall-active, security-flagged | replayed from the log (recall precedence)
+| validity | the validity interval of the passport | issuance
+| as-of stamp | when this projection was computed | the last event time of the log
+| log head | the log head commitment (offline chain anchoring) | the log head
+| signatures | multi-suite compressed signature framing (11.2) | signing layer
+|===
+
+The Tier-A view shall be constructible from the event log by replay:
+status and safety flag replayed from the log, as-of stamp set to the
+last event time, log head set to the log's head commitment.
+
+[NOTE]
+====
+Informative implementation reference: `crates/tier_a/src/payload.rs`
+(`TierAPayload`, `from_log`).
+====
+
+[[cl-tiers-budget]]
+=== Carrier budgets
+
+Tier-A payloads shall be budgeted against the capacity of the physical
+carrier.
+
+a) *QR capacity model.* For QR carriers, the byte-mode data capacity
+   per symbol version 1 to 40 and error-correction level L, M, Q or H
+   per ISO/IEC 18004 shall be used as the budget table (for example
+   version 40 holds 2 953 bytes at L and 1 273 bytes at H; version 1
+   holds 17 bytes at L).
+
+b) *Deterministic encoding.* The Tier-A payload shall be encoded as a
+   deterministic tagged byte sequence (fixed field tags for the fields
+   of 10.2), with signature slots framed by suite code and key
+   identifier.
+
+c) *Conservative projection.* Budgeting shall use the *projected
+   length*: signature placeholders counted at each suite's canonical
+   signature length — 64 bytes for ECDSA P-256 and SM2; 2 420 bytes for
+   ML-DSA-44; 3 309 bytes for ML-DSA-65; 4 627 bytes for ML-DSA-87 — so
+   that a frame-only payload is budgeted as if fully signed.
+
+d) *Version selection.* The smallest carrier version that holds the
+   projected payload at the configured error-correction level shall be
+   selected; if none within the configured maximum version holds it,
+   the packing shall fail as over-budget.
+
+e) *Over-budget handling.* An over-budget payload shall be rejected
+   with an explicit error; the remedies are to shrink the resolver URI
+   or to drop signature suites. Silent truncation shall not occur.
+
+f) *Default configuration.* The default error-correction level is M
+   with maximum version 40; configurations may be stricter.
+
+g) *Other carriers.* Data Matrix carriers (ISO/IEC 16022), RFID air
+   interfaces (ISO/IEC 18000-3 and ISO/IEC 18000-63) and near-field
+   communication (ISO/IEC 18092) shall be budgeted against their
+   respective capacity models under the same projection and rejection
+   rules.
+
+[NOTE]
+====
+Informative implementation references:
+`crates/tier_a/src/qr.rs` (`byte_capacity`, `min_version_for`,
+`EcLevel`) and `crates/tier_a/src/packer.rs` (`TierAPacker`,
+`PackedTierA`).
+====
+
+[[cl-tiers-freshness]]
+=== Freshness verdicts
+
+Freshness shall be evaluated relative to the projection's as-of stamp
+and the profile's freshness requirement (6.6). The freshness verdict
+shall take exactly one of the following values:
+
+* `fresh` — an as-of stamp is present and, for fresh-within
+  requirements, its age at verification time is within the window;
+
+* `stale` — an as-of stamp is present but older than the window
+  (degrade explicitly);
+
+* `indeterminate` — no as-of information at all (offline with no
+  anchor).
+
+Static and none requirements shall never evaluate stale: an as-of
+stamp, however old, evaluates fresh; absence evaluates indeterminate.
+Freshness verdicts shall be displayed as verdicts (staleness is a
+meaningful, displayable property), never silently dropped.
+
+[[cl-tiers-verdicts]]
+=== Verdict outcomes on the ladder
+
+Tier-A verification shall conclude in exactly one of three outcomes:
+
+* *pass*;
+
+* *degraded*, with an explicit cause: stale data (with the as-of
+  stamp), no freshness evidence, offline with no anchor, signatures
+  framed only, or coverage incomplete (with the missing data points);
+
+* *fail*, with an explicit cause: broken chain or anchor mismatch.
+
+Integrity failures shall outrank degradations: a broken chain or an
+anchor mismatch fails the verdict regardless of freshness or coverage
+state. Framed-only signature slots (signatures present as placeholders)
+shall degrade the verdict explicitly rather than pass it.
+
+[[cl-tiers-edge]]
+=== Edge segments
+
+The device is a tier of the passport system, not a client (source
+invariant 4 of 5.11). Some lifecycle events originate on-device
+(battery cycles, usage, firmware) and the device may be offline by
+circumstance or unwilling by policy (privacy, trade secrets). The
+*commit-now, reveal-later, never-contradict* rules shall hold:
+
+a) the device shall publish commitments — a hash of its local
+   append-only event log prefix, signed by a device-bound key holding
+   device credentials — plus whatever events it chooses to reveal;
+
+b) future reveals shall be inclusion-consistent with past commitments
+   (the transparency-log pattern applied to device logs: the device can
+   withhold but cannot retroactively lie);
+
+c) the server-side passport is the set of operator-attested events; the
+   device segment is the set of device-measured events; the union is
+   joined by identity and commitment hashes;
+
+d) freshness verdicts shall degrade when commitments go stale relative
+   to the profile's fresh-within window;
+
+e) the device may serve its own segment (near-field, Bluetooth, local
+   resolver): a device-served endpoint is a legitimate Tier-B endpoint;
+
+f) contact dumps (capability class S2) are first-class reveals: the
+   logged-contact device dumps on physical read.
+
+The twin is the union of custodian-held event segments joined by
+identity and commitments; the framework fixes segment ownership and
+consistency rules, not topology (state-topology freedom).
+
+[[cl-tiers-outage]]
+=== Outage doctrine
+
+Resilience is layered; for each failure mode the framework shall
+provide the following minimum behaviours.
+
+.Outage doctrine
+[cols="30,70",options="header"]
+|===
+| Failure mode | Behaviour
+
+| client offline | Tier A with cached anchors, as-of marked
+| origin server down | mirrors and caches; log inclusion proofs; Tier C archive serving
+| resolver outage | federated alternates, national mirrors, cached linksets; the carrier retains identity and resolution is reproducible
+| host defunct | registry marking, resolver redirection, hosting-handover ceremony, escrow (11.7)
+| registry outage | per-version items immutable and mirrorable; entries log-anchored
+| log outage | M-of-K quorum across independent logs (11.6)
+| trust authority outage or compromise | threshold roots, rotation with continuity, revocation-reason taxonomy with windows, emergency threshold votes (11.5, 11.6)
+| authority removal | affected profiles quarantined; verification under other anchors and in evidentiary mode
+| scheme-operator failure | IANA-style succession obligations recorded at registration; dormant-identifier continuity (11.7)
+| jurisdictional disconnection | cached anchors and logs sustain verification; evidentiary mode; reconnection ceremonies
+| long-term migration | post-quantum schedules via the agility registry; format migration because serializations are renders of the core; media migration via Tier C archival refresh
+|===
+
+Availability shall be decoupled from origin servers: transparency-log
+inclusion proofs allow a verifier to conclude without the issuing
+service being reachable (I13).

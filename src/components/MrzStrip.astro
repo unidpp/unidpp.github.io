@@ -21,21 +21,27 @@
     max-width: none;
   }
   .mrz {
-    background: var(--navy);
+    background: var(--accent);
     border-radius: var(--radius);
     padding: 0.95rem 1.1rem;
     display: inline-block;
     max-width: 100%;
     overflow: hidden;
   }
+  html.dark .mrz {
+    background: #1c2b42;
+  }
   .line {
     margin: 0;
     font-family: var(--font-mono);
     font-size: clamp(0.68rem, 2.1vw, 0.9rem);
     line-height: 1.75;
-    color: var(--paper);
+    color: var(--bg);
     white-space: nowrap;
     overflow: hidden;
+  }
+  html.dark .line {
+    color: var(--accent);
   }
   .l1 {
     width: 43ch;
@@ -64,7 +70,7 @@
   .mrz-note {
     margin: 0.6rem 0 0;
     font-size: 0.78rem;
-    color: var(--muted);
+    color: var(--text-2);
     max-width: 56ch;
   }
   @media (prefers-reduced-motion: reduce) {

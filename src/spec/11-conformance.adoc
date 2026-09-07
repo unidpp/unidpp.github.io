@@ -1,0 +1,203 @@
+[[cl-conformance]]
+== Conformance
+
+[[cl-conf-general]]
+=== Conformance approach
+
+A claim of conformance to this document shall identify exactly one
+conformance class from 12.2 to 12.6 and shall state the seams covered
+(5.10). Requirements are identified by clause; a claim of conformance
+shall satisfy all requirements of the claimed class.
+
+Conformance shall be demonstrated by testing, comprising:
+
+a) *positive suites* — the property-test register of 12.7 and the
+   worked scenarios (composite product with mixed-profile children;
+   batch split with remainder; combine with mass balance and taint;
+   blind installation; dormant-to-live adoption; offline Tier-A
+   verification with stale and fresh windows);
+
+b) *negative fixtures* — the negative test cases of Annex A, which a
+   conforming implementation shall reject or flag as specified;
+
+c) *casing and normalization tests* — round-trip of every table-driven
+   token through arbitrary casing and separator spellings (7.1 e).
+
+[[cl-conf-core]]
+=== Core conformance class
+
+An implementation claiming *Core* conformance shall:
+
+a) satisfy design invariants I1 to I14 (5.3 to 5.7);
+
+b) implement the identifier model, canonicalization and normalization
+   rules (7.1), and the passport and profile identifier rules (7.2);
+
+c) implement the identifier lifecycle including dormancy and adoption
+   (7.3) and the identity lattice (7.4);
+
+d) implement the relationship algebra R1 to R7 with interval semantics
+   and the installation schema including recoverability and the
+   identity-continuity rule (7.5, 7.6);
+
+e) implement the event model (8.1), the event class taxonomy of
+   Table 1 plus the auxiliary classes (8.2), the append-only log with
+   chaining, salt discipline and anchoring (8.3), the status state
+   machine of Table 2 (8.4), and as-of queries (8.6);
+
+f) implement the transformation algebra with remainder semantics,
+   input references, mass balance and taint propagation (9.1 to 9.4,
+   9.7), and the unit registry rules (9.5);
+
+g) implement the profile manifest with its structural validation
+   rules, the trigger-predicate language, capability gating and
+   freshness requirements (6.3 to 6.6);
+
+h) implement the trust marker ladder (11.1) and multi-suite signature
+   framing with conservative carrier budgeting (11.2, 10.3), the
+   three verification readings with coverage reports and verdict
+   outcomes (11.4), and the retroactivity rules (11.5);
+
+i) reject every negative fixture of Annex A as specified.
+
+[[cl-conf-profile-author]]
+=== Profile author conformance class
+
+An implementation or party claiming *Profile author* conformance
+shall:
+
+a) author profiles as registered, versioned objects carrying the
+   manifest fields of 6.3, registered per ISO 19135 (6.9);
+
+b) sit every profile on at least one axis, bind at least one data
+   point and at least one cryptographic suite (6.3);
+
+c) declare trigger predicates drawn from the constructor set of 6.4,
+   evaluated against twin facts, including time predicates;
+
+d) declare a minimum capability class consistent with the freshness
+   requirement, and no profile demanding bounded freshness of an S0
+   subject shall be registered (6.5);
+
+e) declare freshness requirements per 6.6, dated applicability windows
+   including retroactive flags (6.7), and — where applicable — the
+   confidential profile posture of 6.8;
+
+f) bind only registered transforms (9.6) that publish rounding,
+   uncertainty and decision rules, and cite their legal basis;
+
+g) never redefine a registered data point (I2; 6.9).
+
+[[cl-conf-host]]
+=== Host conformance class
+
+An implementation claiming *Host* conformance shall:
+
+a) serve renders without acquiring authority: republication shall
+   never transfer authority (5.9, I7);
+
+b) serve the three payload tiers (10.1) with the exact Tier-A subset
+   of 10.2, mandatory in full, and conservative carrier budgeting per
+   10.3 (no silent truncation; over-budget rejection);
+
+c) stamp mirrors and caches with as-of times (8.6 f, 10.4) and support
+   resolution via linksets keyed by profile context, role and language
+   (5.8, L5; <<gs1dl>>, <<rfc9264>>);
+
+d) accept append-only extension of the event record and never rewrite
+   history (8.3, 8.5);
+
+e) honour edge-visibility classes, escrow arrangements and traversal
+   rights on every served edge (7.7);
+
+f) support hosting succession: registry marking, redirection,
+   hosting-handover ceremony and escrow (11.7 a);
+
+g) where operating a resolver, keep resolution by identity only (no
+   enumeration surface) and support federated alternates (10.7).
+
+[[cl-conf-verifier]]
+=== Verifier conformance class
+
+An implementation claiming *Verifier* conformance shall:
+
+a) verify chain integrity and anchoring, and detect truncation and
+   forks (8.3 d);
+
+b) produce graded verdicts — never booleans — carrying the reading
+   answered, freshness verdict, the three readings, trust marker, and
+   outcome with explicit degradation and failure causes (10.5, 11.4);
+
+c) evaluate coverage against the profile's bound data points and
+   report missing items (11.4);
+
+d) state which verification reading each verdict answers, and apply
+   retroactivity per the revocation-reason taxonomy and windows
+   (11.5);
+
+e) apply profile-scoped acceptance policies to multi-suite
+   co-signatures (11.2 e);
+
+f) honour enumeration resistance: verify by identity, require per-edge
+   traversal rights, evaluate recall predicates locally, and accept
+   proof-of-binding in place of knowledge-of-parent (7.7);
+
+g) reject the negative fixtures of Annex A as specified (12.1 b).
+
+[[cl-conf-device]]
+=== Device conformance class
+
+An implementation claiming *Device* conformance (capability classes S2
+and S3) shall:
+
+a) maintain a local append-only event segment and publish commitments
+   to its log prefix signed by a device-bound key (10.6 a);
+
+b) never contradict past commitments: reveals shall be
+   inclusion-consistent with prior commitments (10.6 b);
+
+c) support contact dumps for S2 operation (10.6 f) and device-served
+   Tier-B endpoints where claimed (10.6 e);
+
+d) carry sensor calibration in the device registration, uncertainty on
+   self-reported values per the GUM, and registered units (6.5 e,
+   9.5);
+
+e) treat usage telemetry as personal data, applying the applicable
+   data-protection legal basis (6.5, 7.7 b).
+
+[[cl-conf-testing]]
+=== Conformance test material
+
+The following property-test register is the minimum positive test set
+for Core conformance:
+
+a) identifier casing and separator round-trip (7.1 e);
+
+b) chain tamper detection and truncation-versus-anchor detection
+   (8.3 a, 8.3 d);
+
+c) salted chain verification with owner-side salt store, and
+   corruption detection (8.3 c);
+
+d) blind-install non-leakage: serialized blind installations contain
+   neither the parent identity nor the salt, and verify under
+   disclosure ceremony (7.7 c, 7.7 d);
+
+e) quantity conservation: over-carve, over-consumption and negative
+   balance rejection; exact remainders (9.2, 9.3);
+
+f) profile applicability by interval and predicate, and
+   unsatisfiable-profile rejection (6.3, 6.4);
+
+g) status transition legality at event construction (8.1, 8.4);
+
+h) Tier-A budgeting against the ISO/IEC 18004 capacity tables with
+   conservative projection (10.3);
+
+i) freshness triad (fresh, stale, indeterminate) and static-never-
+   stale (10.4);
+
+j) as-of prefix and state-hash queries (8.6 c).
+
+Negative test material is specified in Annex A.

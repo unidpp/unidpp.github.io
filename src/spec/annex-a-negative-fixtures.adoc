@@ -1,0 +1,48 @@
+[[annex-negative]]
+[appendix,obligation=informative]
+== Negative conformance fixtures
+
+[[annex-negative-intro]]
+=== Purpose
+
+This annex lists the negative test cases N1 to N6 of the European DPP
+corpus defect register (<<unidpp-audit>>, Section F: conformance-run
+findings against <<en18223>> Annex A, machine-verified 2026-09-07).
+They are reproduced here as conformance test material: every fixture
+is an instance of a class of defect that conforming implementations
+(Clauses 12.2 and 12.5) shall reject or flag. The fixtures also serve
+as evidence for the framework's counter-principles (5.2): tool-checked
+content and registry-validated semantics over manually maintained
+prose examples.
+
+[[annex-negative-fixtures]]
+=== Fixtures
+
+[[tbl-negative-fixtures]]
+.Table A.1 — Negative test cases
+[cols="8,26,66",options="header"]
+|===
+| # | Location | Defect and required behaviour
+
+| N1 | EN 18223 Annex A, Example 2 | Not well-formed JSON: misnested and unclosed braces; literal ellipsis placeholders in a normative annex. A conforming parser shall reject the document as not well-formed.
+| N2 | EN 18223 Annex A, Example 3 | A data-point reference `https:/dictionary1/...` omits the authority separator. A conforming resolver shall reject the reference as malformed and shall not silently repair it.
+| N3 | EN 18223 Annex A, Example 4 | A duplicate element identifier violates the document's own uniqueness requirement. A conforming validator shall reject the duplicate.
+| N4 | EN 18223 Annex A, Example 4 | Floating-point values serialized as strings contradict the document's own numeric type and compressed numeric form. A conforming validator shall reject the type violation.
+| N5 | EN 18223 Annex A, Example 4 versus Example 1 | The same class serialized with different member keys in adjacent normative examples. A conforming validator shall treat the two spellings as the same class normalized per 7.1 e, or reject the non-canonical form; drift between normative examples is itself a defect class.
+| N6 | EN 18223 Annex A, Example 5 | A trailing comma renders the JSON invalid in a normative annex. A conforming parser shall reject the document as not well-formed.
+|===
+
+[[annex-negative-mapping]]
+=== Defect classes
+
+Each fixture instantiates one of the framework's seam failures
+(5.10): N1 and N6 are serialization defects (core renders); N2 is a
+seam S4 failure (profile to registry resolution); N3 is an
+identity-uniqueness failure; N4 and N5 are normalization failures that
+the framework's casing and separator normalization (7.1 e) and its
+single canonical body rule (8.1) preclude at construction. The
+underlying corpus-level lesson is documented in <<unidpp-audit>>: all
+six normative annex examples of <<en18223>> fail machine validation,
+while the profile adaptations (casing normalization, field-name
+mapping) that reconcile the EU profile family with the neutral core
+are exactly the profile mechanism of Clause 6 at work.

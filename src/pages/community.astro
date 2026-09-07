@@ -1,0 +1,123 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import DataTable from '../components/DataTable.astro';
+---
+
+<BaseLayout
+  title="Community"
+  description="How to participate in UniDPP: contributing to the open repositories, intellectual-property rights and the standards track, governance, and the steward organizations."
+  eyebrow="Adopt and participate"
+>
+  <h1>Community</h1>
+  <p class="lede">
+    UniDPP is developed in the open, and participation is designed to be simple: file
+    findings, open pull requests, or carry the work through your standards member body.
+    No contributor agreement stands between you and the code.
+  </p>
+
+  <section aria-labelledby="contributing-h">
+    <h2 id="contributing-h">Contributing</h2>
+    <p>
+      Everything lives in the open at
+      <a href="https://github.com/unidpp">github.com/unidpp</a> — the Rust core, the four
+      language SDKs, the resolver, trust, and explorer repositories, the specification
+      sources, the terminology dataset, and this website. The working rhythm:
+    </p>
+    <ul>
+      <li>
+        <strong>Issues before code.</strong> File what you found — a defect in the EN
+        corpus, a spec ambiguity, a build break — with the citation or command that
+        reproduces it.
+      </li>
+      <li>
+        <strong>Pull requests against the source.</strong> This site renders the
+        specification snapshot (<code>src/spec/</code>) and the papers; corrections to
+        factual pages, the comparison table, and the sitemap are all ordinary pull
+        requests.
+      </li>
+      <li>
+        <strong>Evidence over assertion.</strong> The project's register is factual:
+        findings cite the standard's own normative text, and demo traces are generated,
+        not transcribed. Contributions in the same register land fastest.
+      </li>
+      <li>
+        <strong>Licences stay permissive.</strong> Apache-2.0 or MIT per repository,
+        CC-BY-4.0 for the specification. Contributions are accepted under the terms of the
+        repository they land in; there is no CLA and no copyright assignment.
+      </li>
+    </ul>
+  </section>
+
+  <section id="ipr" class="plate" aria-labelledby="ipr-h">
+    <h2 id="ipr-h">IPR and the standards track</h2>
+    <p>
+      The standards work is carried in ISO/IEC JTC&nbsp;5 and partner bodies — ISO/TC 154,
+      OIML, UN/CEFACT, and CEN where the European profile requires it — and contributed
+      through national member bodies and liaison channels. The project does not create a
+      rival standards track: papers are submitted as N-documents through the secretariat,
+      and new work items (NWIP-1, NWIP-2) follow the ISO process with Forms 4 drafted
+      from the plan and the audit evidence. Essential-claims licensing follows the rules
+      of the body in which each work item runs; the open repositories predate any work
+      item and remain Apache-2.0 / MIT.
+    </p>
+    <p>
+      If your organization is a member of a steward body, the practical entry point is
+      your national member body's mirror committee; the catalogue of planned
+      contributions is on the <a href="/papers/">papers page</a>.
+    </p>
+  </section>
+
+  <section id="governance" class="plate" aria-labelledby="governance-h">
+    <h2 id="governance-h">Governance</h2>
+    <p>
+      No single organization owns the framework: each steward body is responsible for the
+      layer it already operates as an international standards activity.
+    </p>
+    <DataTable
+      columns={['Body', 'Responsibility']}
+      rows={[
+        ['<strong>CalConnect</strong>', 'Project home; terminology; time, events, and the state machine; offline freshness; SIGNATIF with TC 154; the UnitsML quantity chain.'],
+        ['<strong>ISO/TC 154</strong>', 'Identity; trade-documented seams; registry governance with UN/CEFACT; issuance rules; the NWIP vehicle.'],
+        ['<strong>OIML</strong>', 'Measurement validity and decision rules; CNML/ESDC; issuance-role governance; the first vertical pilot; the twin ladder.'],
+        ['<strong>ELF</strong>', 'The EXPRESS core; seam contracts (S3/S8); the mapping technical report; the AP242 identity-lattice lineage; OpenCDD dictionary technology.'],
+        ['<strong>Enosema</strong>', 'FERIN registry operations; ISO 19135:2025 expressibility guarantees.'],
+        ['<strong>UnitsML coalition</strong>', 'The quantity chain: ISO 80000 → UnitsDB/UnitsML → OpenCDD.'],
+      ]}
+    />
+    <p>
+      Guardrails the project holds to are stated on the
+      <a href="/about/">about page</a>: the EN series' own neutrality language enforced
+      rather than amended, no rival central registry, one canonical units chain, one
+      registry, one trust framework.
+    </p>
+  </section>
+
+  <section id="adopt" class="plate" aria-labelledby="adopt-h">
+    <h2 id="adopt-h">Adopting</h2>
+    <ul>
+      <li>
+        <strong>Try the stack</strong> — the quickstart and the eight repositories are on
+        the <a href="/implementation/">implementation page</a>; the explorer runs in your
+        browser with live WebCrypto.
+      </li>
+      <li>
+        <strong>Run the evidence</strong> — the
+        <a href="/implementation/demos/">demonstrations</a> and the
+        <a href="/implementation/conformance/">conformance register</a> are reproducible
+        from a clean clone.
+      </li>
+      <li>
+        <strong>Read the specification</strong> — all five parts, working-draft stage, on
+        the <a href="/specs/">specification pages</a>.
+      </li>
+    </ul>
+  </section>
+
+  <section id="contact" aria-labelledby="contact-h">
+    <h2 id="contact-h">Contact</h2>
+    <ul>
+      <li>GitHub: <a href="https://github.com/unidpp">github.com/unidpp</a></li>
+      <li>Email: <a href="mailto:contact@unidpp.org">contact@unidpp.org</a></li>
+    </ul>
+  </section>
+</BaseLayout>

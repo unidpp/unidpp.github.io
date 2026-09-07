@@ -1,0 +1,13 @@
+---
+// Spec stage pill: WD (working draft), CD (committee draft), FDIS.
+interface Props {
+  stage: 'wd' | 'cd' | 'fdis' | string;
+  label?: string;
+}
+const { stage, label } = Astro.props;
+const known = ['wd', 'cd', 'fdis'];
+const kind = known.includes(stage) ? stage : '';
+const text = label ?? stage.toUpperCase();
+---
+
+<span class:list={['badge', kind]}>{text}</span>

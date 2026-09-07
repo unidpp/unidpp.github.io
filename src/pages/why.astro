@@ -1,5 +1,5 @@
 ---
-import BaseLayout from '../components/BaseLayout.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 import Continue from '../components/Continue.astro';
 ---
 
@@ -83,7 +83,7 @@ import Continue from '../components/Continue.astro';
     </dl>
     <p>
       For a factual, source-referenced comparison of the open implementation efforts, see
-      the <a href="/reference/compare/">capability table</a>.
+      the <a href="/compare/">capability table</a>.
     </p>
   </section>
 
@@ -116,7 +116,7 @@ import Continue from '../components/Continue.astro';
   </section>
 
   <Continue
-    href="/how/"
+    href="/framework/"
     num="03"
     title="How it works"
     desc="Six layers, fourteen invariants, and the trust model that lets one record carry many jurisdictions' verdicts across borders."
@@ -128,15 +128,15 @@ import Continue from '../components/Continue.astro';
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
     gap: 1px;
-    background: var(--hairline);
-    border: 1px solid var(--hairline);
+    background: var(--border);
+    border: 1px solid var(--border);
     border-radius: var(--radius);
     overflow: hidden;
     margin: 1.4rem 0;
     max-width: none;
   }
   .land {
-    background: var(--paper);
+    background: var(--bg-raised);
     padding: 1rem 1.15rem;
   }
   .land dt {
@@ -147,6 +147,6 @@ import Continue from '../components/Continue.astro';
   .land dd {
     margin: 0;
     font-size: 0.86rem;
-    color: var(--muted);
+    color: var(--text-2);
   }
 </style>

@@ -1,0 +1,103 @@
+---
+// Section sidebar for content pages (framework / specs / implementation).
+// Items are either in-page anchors (href: '#id') or sub-pages. On small
+// screens the rail is hidden and each page provides its own navigation.
+interface Item {
+  label: string;
+  href: string;
+}
+interface Props {
+  heading: string;
+  items: Item[];
+}
+const { heading, items } = Astro.props;
+const here = Astro.url.pathname.replace(/index\.html$/, '').replace(/\/+$/, '') || '/';
+const anchor = (href: string) => href.startsWith('#');
+const isCurrent = (href: string) => !anchor(href) && here === (href.replace(/\/+$/, '') || '/');
+const inSection = (href: string) => !anchor(href) && here.startsWith(href.replace(/\/+$/, '') + '/');
+---
+
+<aside class="sbar" aria-label={heading}>
+  <p class="sbar-head">{heading}</p>
+  <ul>
+    {
+      items.map((item) => (
+        <li class:list={{ current: isCurrent(item.href) }}>
+          {anchor(item.href) ? (
+            <a href={item.href}>{item.label}</a>
+          ) : (
+            <a
+              href={item.href}
+              aria-current={isCurrent(item.href) ? 'page' : undefined}
+              class:list={{ sub: inSection(item.href) && !isCurrent(item.href) }}
+            >
+              {item.label}
+            </a>
+          )}
+        </li>
+      ))
+    }
+  </ul>
+  <p class="sbar-note">Corrections by pull request are welcome.</p>
+</aside>
+
+<style>
+  .sbar {
+    position: sticky;
+    top: calc(var(--header-h) + 1.5rem);
+    align-self: start;
+    max-height: calc(100vh - var(--header-h) - 3rem);
+    overflow-y: auto;
+    font-size: 0.87rem;
+  }
+  .sbar-head {
+    font-family: var(--font-mono);
+    font-size: 0.66rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-2);
+    margin: 0 0 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    margin: 0.05rem 0;
+  }
+  a {
+    display: block;
+    padding: 0.36rem 0.65rem;
+    border-left: 2px solid transparent;
+    border-radius: 0 var(--radius) var(--radius) 0;
+    color: var(--text-2);
+    text-decoration: none;
+    line-height: 1.35;
+  }
+  a:hover {
+    color: var(--text);
+    background: var(--accent-soft);
+  }
+  li.current > a {
+    color: var(--accent);
+    font-weight: 600;
+    border-left-color: var(--accent);
+    background: var(--accent-soft);
+  }
+  a.sub {
+    color: var(--accent);
+  }
+  .sbar-note {
+    margin-top: 1.4rem;
+    font-size: 0.72rem;
+    color: var(--text-3);
+    line-height: 1.5;
+    max-width: 13rem;
+    padding-top: 0.8rem;
+    border-top: 1px solid var(--border);
+  }
+</style>

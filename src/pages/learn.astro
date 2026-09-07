@@ -1,5 +1,5 @@
 ---
-import BaseLayout from '../components/BaseLayout.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 import Continue from '../components/Continue.astro';
 ---
 
@@ -170,65 +170,65 @@ import Continue from '../components/Continue.astro';
   .figure figcaption {
     margin-top: 0.7rem;
     font-size: 0.82rem;
-    color: var(--muted);
+    color: var(--text-2);
     max-width: 56ch;
   }
   .box {
-    fill: #fff;
-    stroke: var(--hairline);
+    fill: var(--bg-raised);
+    stroke: var(--border);
     stroke-width: 1.5;
   }
   .outline {
     fill: none;
-    stroke: var(--hairline);
+    stroke: var(--border);
     stroke-width: 1.5;
   }
   .line-fill {
-    fill: var(--hairline);
+    fill: var(--border);
     stroke: none;
   }
   .bold {
-    fill: var(--navy);
+    fill: var(--accent);
     stroke: none;
   }
   .arrow {
-    stroke: var(--muted);
+    stroke: var(--text-2);
     stroke-width: 1.5;
   }
   .arrow-head {
-    fill: var(--muted);
+    fill: var(--text-2);
   }
   .rule {
-    stroke: var(--hairline);
+    stroke: var(--border);
     stroke-width: 2;
   }
   .ok-dot {
     fill: var(--green);
   }
   .lbl {
-    font-family: var(--font-body);
+    font-family: var(--font-sans);
     font-size: 13px;
-    fill: var(--ink);
+    fill: var(--text);
   }
   .sub {
-    font-family: var(--font-body);
+    font-family: var(--font-sans);
     font-size: 11px;
-    fill: var(--muted);
+    fill: var(--text-2);
   }
 
   .readers {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
     gap: 1px;
-    background: var(--hairline);
-    border: 1px solid var(--hairline);
+    background: var(--border);
+    border: 1px solid var(--border);
     border-radius: var(--radius);
     overflow: hidden;
     margin: 1.4rem 0 0;
     max-width: none;
   }
   .reader {
-    background: var(--paper);
+    background: var(--bg-raised);
     padding: 1rem 1.15rem;
   }
   .reader dt {
@@ -239,6 +239,6 @@ import Continue from '../components/Continue.astro';
   .reader dd {
     margin: 0;
     font-size: 0.86rem;
-    color: var(--muted);
+    color: var(--text-2);
   }
 </style>

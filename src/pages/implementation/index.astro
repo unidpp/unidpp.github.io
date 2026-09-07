@@ -1,0 +1,185 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Sidebar from '../../components/Sidebar.astro';
+import Card from '../../components/Card.astro';
+import CardGrid from '../../components/CardGrid.astro';
+import { implementationNav } from '../../lib/sections';
+---
+
+<BaseLayout
+  title="Implementation"
+  description="The UniDPP open reference implementation: unidpp-core (Rust), unidpp-ts, unidpp-rb, unidpp-py, resolver, signatif, and explorer — with conformance fixtures derived from the full converted corpus."
+  eyebrow="The reference stack"
+  sectioned
+>
+  <Sidebar slot="rail" heading="Implementation" items={implementationNav} />
+  <h1>Implementation</h1>
+  <p class="lede">
+    A fully open, multi-language implementation of the framework, developed in the open
+    under Apache-2.0 / MIT. Conformance fixtures are derived from the full converted corpus
+    of the EN series, the CEN Workshop Agreements, and the IDTA specifications — including
+    the published defect registers as negative test cases; the
+    <a href="/implementation/conformance/">conformance register</a> records the current
+    EU-profile run.
+  </p>
+
+  <section id="repositories" class="plate" aria-labelledby="repos-h">
+    <h2 id="repos-h">Repositories</h2>
+    <CardGrid>
+      <Card title="unidpp-core" tag="Rust">
+        <p>
+          The canonical model and algorithms. Modules: <code>identity</code>
+          (scheme-agnostic IDs; ISO/IEC 15459 parsing and bridging);
+          <code>model</code> (core passport, manifest, PassportLink edges);
+          <code>event</code> (typed events, append-only log, commitment hashing);
+          <code>transform</code> (split/combine with mass balance and taint propagation);
+          <code>tier_a</code> (offline packer: minimum fields, multi-suite signature
+          framing, carrier-size budgeting); <code>verdict</code> (graded trust, coverage
+          reports, freshness); <code>resolver</code> (linkset emission and parsing, context
+          routing). Property tests: quantity conservation, commitment consistency,
+          casing-normalization conformance.
+        </p>
+      </Card>
+      <Card title="unidpp-ts" tag="npm @unidpp/*">
+        <p>
+          Types generated from the unidpp-spec JSON Schema; client for the resolver,
+          registry, and passport APIs; validators; runs in browsers, including an in-browser
+          Tier-A verification demonstration.
+        </p>
+      </Card>
+      <Card title="unidpp-rb" tag="gem unidpp">
+        <p>
+          Registry client (FERIN / ISO 19135 items, statuses, supersession); glossarist
+          bridge between terminology and registry anchors; expressir/CDDAL hooks for schema
+          validation; CNML/ESDC handling via lutaml-model.
+        </p>
+      </Card>
+      <Card title="unidpp-py" tag="PyPI unidpp">
+        <p>
+          Verification-pipeline harness driving unidpp-core via FFI/CLI; conformance
+          runners over the positive corpus and the audit-derived negative cases; adapters
+          for UNTP, EPCIS, and GS1 Digital Link; paper and tooling glue.
+        </p>
+      </Card>
+      <Card title="unidpp-spec" tag="specification">
+        <p>
+          The JSON Schema and EXPRESS sources from which SDK types, validators, and
+          conformance suites are generated. The specification is the single source; SDKs
+          are renders. The clause sources are rendered on the
+          <a href="/specs/">specification pages</a>.
+        </p>
+      </Card>
+      <Card title="unidpp-resolver" tag="resolution">
+        <p>
+          Federated resolution with linkset routing by profile context, role, language, and
+          request region; dark identities that never enter the global resolver.
+        </p>
+      </Card>
+      <Card title="unidpp-signatif" tag="trust">
+        <p>
+          Trust path-finding on the SIGNATIF model; root and master-list threshold
+          ceremonies on Confium quorum operations.
+        </p>
+      </Card>
+      <Card title="unidpp-explorer" tag="inspection">
+        <p>
+          Inspection of passports, event logs, manifests, and verdicts; entry point for
+          conformance reporting on the fixture corpus.
+        </p>
+      </Card>
+    </CardGrid>
+  </section>
+
+  <section id="explorer" class="plate" aria-labelledby="explorer-h">
+    <h2 id="explorer-h">Live explorer</h2>
+    <p>
+      The <strong>explorer</strong> inspects passports, event logs, manifests, and
+      verdicts, and verifies Tier-A carriers end to end. It runs entirely in your
+      browser — cryptographic checks use the live WebCrypto API; nothing is sent to a
+      server.
+    </p>
+    <div class="explorer-frame">
+      <iframe
+        src="/explorer/"
+        title="UniDPP explorer: live in-browser passport inspection"
+        loading="lazy"
+      ></iframe>
+    </div>
+    <p class="meta">
+      Prefer a full tab, or the embed does not load?
+      <a href="/explorer/">Open the explorer directly</a>.
+    </p>
+  </section>
+
+  <section id="quickstart" class="plate" aria-labelledby="quickstart-h">
+    <h2 id="quickstart-h">Quickstart</h2>
+    <p>Language SDKs install from their registries:</p>
+    <pre><code># Rust (core algorithms)
+cargo add unidpp-core
+# TypeScript (client, validators — generated types included)
+npm install @unidpp/client @unidpp/validators
+# Ruby (registry client, glossarist bridge)
+gem install unidpp
+# Python (verification pipeline, conformance runners)
+pip install unidpp</code></pre>
+    <p>To build the core from source:</p>
+    <pre><code>git clone https://github.com/unidpp/unidpp-core
+cd unidpp-core
+cargo build --release
+cargo test            # property tests: quantity conservation, commitment consistency</code></pre>
+    <div class="note">
+      Initial releases are staged as each repository reaches its first tagged version; the
+      module decomposition above is the committed set. Repositories are published under
+      the <a href="https://github.com/unidpp">unidpp</a> GitHub organization.
+    </div>
+  </section>
+
+  <section id="evidence" class="plate" aria-labelledby="evidence-h">
+    <h2 id="evidence-h">Evidence</h2>
+    <p>
+      Two pages accompany this one:
+    </p>
+    <div class="cols">
+      <a class="card linkcard" href="/implementation/demos/">
+        <h3>Demonstrations</h3>
+        <p>
+          Three narrated runs of the reference core — battery-loop, car, laptop — with
+          verbatim, byte-identical traces and the commands to reproduce them.
+        </p>
+      </a>
+      <a class="card linkcard" href="/implementation/conformance/">
+        <h3>Conformance register</h3>
+        <p>
+          The EU-profile suite run over the EN 18223 example corpus — findings as a
+          factual register, with the runner command.
+        </p>
+      </a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .explorer-frame {
+    margin: 1.4rem 0 0;
+    max-width: none;
+  }
+  .explorer-frame iframe {
+    width: 100%;
+    height: 620px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--bg-raised);
+    display: block;
+  }
+  .linkcard {
+    text-decoration: none;
+    display: block;
+    color: inherit;
+  }
+  .linkcard:hover {
+    background: var(--accent-tint);
+  }
+  .linkcard:hover h3 {
+    color: var(--accent);
+  }
+</style>

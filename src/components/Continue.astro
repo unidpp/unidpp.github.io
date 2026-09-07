@@ -1,6 +1,6 @@
 ---
 // Bottom-of-page next link for the reading spine. One per level page,
-// 01 -> 02 -> 03 -> 04 -> the framework in full.
+// 01 -> 02 -> 03 -> the framework in full.
 interface Props {
   href: string;
   num?: string;
@@ -24,7 +24,7 @@ const { href, num, title, desc } = Astro.props;
 
 <style>
   .continue {
-    border-top: 1px solid var(--hairline);
+    border-top: 1px solid var(--border);
     margin-top: 3.4rem;
     padding-top: 1.35rem;
     max-width: var(--prose);
@@ -40,7 +40,7 @@ const { href, num, title, desc } = Astro.props;
     align-items: center;
     min-height: 44px;
     padding: 0.35rem 0;
-    color: var(--ink);
+    color: var(--text);
   }
   .c-eyebrow {
     display: block;
@@ -50,7 +50,7 @@ const { href, num, title, desc } = Astro.props;
     font-weight: 500;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--muted);
+    color: var(--text-2);
     margin-bottom: 0.3rem;
   }
   .c-body {
@@ -62,12 +62,12 @@ const { href, num, title, desc } = Astro.props;
   .c-num {
     font-family: var(--font-mono);
     font-size: 0.8rem;
-    color: var(--navy);
+    color: var(--accent);
   }
   .c-title {
-    font-family: var(--font-display);
-    font-weight: 500;
-    font-size: 1.18rem;
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 1.15rem;
     letter-spacing: -0.01em;
   }
   .c-desc {
@@ -75,13 +75,13 @@ const { href, num, title, desc } = Astro.props;
     display: block;
     margin-top: 0.3rem;
     font-size: 0.88rem;
-    color: var(--muted);
+    color: var(--text-2);
     max-width: 56ch;
   }
   .c-arrow {
     grid-area: arrow;
     font-size: 1.05rem;
-    color: var(--navy);
+    color: var(--accent);
     transition: transform 0.15s ease;
   }
   .continue a:hover .c-arrow,

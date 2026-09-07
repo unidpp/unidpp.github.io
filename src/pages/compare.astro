@@ -1,13 +1,70 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta http-equiv="refresh" content="0; url=/reference/compare/" />
-    <link rel="canonical" href="https://www.unidpp.org/reference/compare/" />
-    <title>Comparisons — UniDPP</title>
-  </head>
-  <body>
-    <p>This page has moved. Continue to <a href="/reference/compare/">the comparisons reference</a>.</p>
-  </body>
-</html>
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Card from '../components/Card.astro';
+import CardGrid from '../components/CardGrid.astro';
+import DataTable from '../components/DataTable.astro';
+---
+
+<BaseLayout
+  title="Comparisons"
+  description="A factual capability comparison of freeDPP, OpenDPP, and UniDPP, sourced from the public repositories of each project."
+  eyebrow="Reference — comparisons"
+>
+  <h1>Comparisons</h1>
+  <p class="lede">
+    A factual comparison of the three open Digital Product Passport implementation
+    efforts, stated without evaluation language beyond what the repositories themselves
+    document.
+  </p>
+
+  <section id="projects" class="plate" aria-labelledby="projects-h">
+    <h2 id="projects-h">The projects</h2>
+    <CardGrid>
+      <Card title="freeDPP">
+        <p>
+          An ASP.NET server, SQL database, and admin UI implementing the EN 18216–18246
+          series; the project README lists the eight ENs as the entire requirement set.
+          GPL-3 for the server, which its README marks “not yet for production”.
+          Single-jurisdiction by design: the ESPR/EU frame is the system.
+        </p>
+      </Card>
+      <Card title="OpenDPP">
+        <p>
+          A commercial B2B platform (Opendpp UAB) with an Apache-2.0 package boundary
+          around a private backend — the mirror repository is generated and pull requests
+          are closed automatically. Publishes conformance badges for IDTA AAS v3.0/3.1,
+          UNTP DPP v0.7.0, GS1 Digital Link, and W3C VC, and generated
+          TypeScript/Java/Python SDKs version-locked to its OpenAPI description.
+        </p>
+      </Card>
+      <Card title="UniDPP">
+        <p>
+          This framework and its reference implementation: a neutral core with
+          jurisdiction, sector, and characteristic profiles, a FERIN semantic registry,
+          SIGNATIF trust, event sourcing with a transformation algebra, and an offline
+          Tier A — developed fully in the open.
+        </p>
+      </Card>
+    </CardGrid>
+  </section>
+
+  <section id="capability-table" class="plate" aria-labelledby="table-h">
+    <h2 id="table-h">Capability table</h2>
+    <DataTable
+      columns={['Capability', 'freeDPP', 'OpenDPP', 'UniDPP']}
+      caption="All rows sourced from the public repositories of each project, checked 2026-09-07. Corrections by pull request are welcome."
+      rows={[
+        ['EN 18216–18246 support', 'Yes (as the whole system)', 'Yes', 'Yes — as one jurisdiction profile'],
+        ['Multi-jurisdiction profiles', '—', '—', 'Core mechanism'],
+        ['Neutral semantic registry', '—', '—', 'ISO 19135 / FERIN; UNTDED seed'],
+        ['Trust', 'Transport security', 'W3C Verifiable Credentials', 'SIGNATIF: multi-suite signatures, transparency logs, threshold roots'],
+        ['Event sourcing and transformation algebra', '—', '—', 'Core'],
+        ['Offline minimum (Tier A)', '—', '—', 'Core'],
+        ['AI-agent projection', '—', 'Yes — from a private backend', 'From the open specification'],
+        ['Terminology dataset (multilingual)', '—', '—', 'Glossarist edition of the DPP vocabulary'],
+        ['Conformance suites', 'Not published', 'CONFORMANCE.md badges', 'Full suites, open, including negative cases'],
+        ['Licensing', 'GPL-3 (server)', 'Apache-2 boundary, closed core', 'Fully open (Apache-2 / MIT per repository)'],
+      ]}
+    />
+  </section>
+</BaseLayout>

@@ -1,10 +1,11 @@
 ---
-import BaseLayout from '../components/BaseLayout.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 import HeroSpread from '../components/HeroSpread.astro';
 import MrzStrip from '../components/MrzStrip.astro';
+import { news } from '../data/news';
 ---
 
-<BaseLayout title="UniDPP" eyebrow="Overview">
+<BaseLayout title="UniDPP">
   <h1>An international framework for the Digital Product Passport</h1>
   <p class="lede">
     UniDPP treats every regulatory regime — the European Union's EN&nbsp;18216–18246 series
@@ -13,14 +14,82 @@ import MrzStrip from '../components/MrzStrip.astro';
     crosses borders without requiring anyone to adopt anyone else's rules.
   </p>
 
+  <div class="hero-actions">
+    <a class="btn btn-primary" href="/learn/">Start with the basics</a>
+    <a class="btn btn-ghost" href="/specs/">Read the specification</a>
+  </div>
+
   <HeroSpread />
   <MrzStrip />
+
+  <section class="stats-block" aria-label="The initiative at a glance">
+    <div class="stats">
+      <div class="stat">
+        <span class="stat-num">5</span>
+        <span class="stat-lbl">specification parts (WD)</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">14</span>
+        <span class="stat-lbl">design invariants</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">8</span>
+        <span class="stat-lbl">open repositories</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">146</span>
+        <span class="stat-lbl">verified concepts</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">6</span>
+        <span class="stat-lbl">contribution papers</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">6</span>
+        <span class="stat-lbl">steward bodies</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="plate" aria-labelledby="initiative-h">
+    <h2 id="initiative-h">The initiative</h2>
+    <p>
+      UniDPP is an open, multi-body initiative — not a product and not a single
+      organization's platform. The framework is specified in five parts, implemented as a
+      fully open reference stack, and carried into international standardization through
+      ISO/IEC JTC&nbsp;5 and partner bodies via liaison channels; the project does not
+      create a rival standards track. Stewardship is shared across the bodies that already
+      operate each layer — CalConnect, ISO/TC&nbsp;154, OIML, ELF, Enosema, and the UnitsML
+      coalition.
+    </p>
+    <p>
+      Everything is published under permissive licences — Apache-2.0 / MIT per software
+      repository, CC-BY-4.0 for the specification — with
+      <a href="/implementation/conformance/">conformance suites you can run yourself</a>
+      and <a href="/implementation/demos/">demonstrations whose traces are generated, not
+      transcribed</a>.
+    </p>
+    <div class="cols initiative-cols">
+      <a class="card linkcard" href="/about/">
+        <h3>About the initiative</h3>
+        <p>Mission, multi-body stewardship, governance, licensing, and how to participate.</p>
+      </a>
+      <a class="card linkcard" href="/community/">
+        <h3>Participate</h3>
+        <p>Contribute code, file findings, or carry the work through your member body.</p>
+      </a>
+      <a class="card linkcard" href="https://github.com/unidpp">
+        <h3>GitHub organization</h3>
+        <p>Eight repositories: the core, four SDKs, resolver, trust, and explorer.</p>
+      </a>
+    </div>
+  </section>
 
   <section class="plate" aria-labelledby="path-heading">
     <h2 id="path-heading">Read by depth</h2>
     <p>
-      The site is arranged as one sequence, from plain language to the full reference
-      material. Each level assumes the one before it.
+      The explanatory material is arranged as one sequence, from plain language to the full
+      reference. Each level assumes the one before it.
     </p>
     <ol class="path">
       <li>
@@ -42,7 +111,7 @@ import MrzStrip from '../components/MrzStrip.astro';
         </a>
       </li>
       <li>
-        <a href="/how/">
+        <a href="/framework/">
           <span class="pnum">03</span>
           <span class="plbl">
             <strong>How it works</strong>
@@ -51,45 +120,74 @@ import MrzStrip from '../components/MrzStrip.astro';
         </a>
       </li>
       <li>
-        <a href="/reference/">
+        <a href="/specs/">
           <span class="pnum">04</span>
           <span class="plbl">
-            <strong>Reference</strong>
-            <span>
-              The framework in full, the standards map, the implementation, comparisons,
-              trust, papers, terminology, and stewardship.
-            </span>
+            <strong>The specification</strong>
+            <span>The framework in normative form: five parts, working draft.</span>
           </span>
         </a>
       </li>
     </ol>
   </section>
 
-  <section aria-labelledby="work-heading">
-    <h2 id="work-heading">The work</h2>
-    <p>
-      The framework and its reference implementation are developed in the open at
-      <a href="https://github.com/unidpp">github.com/unidpp</a>, under Apache-2.0 / MIT
-      licences, with <a href="/conformance/">published conformance suites</a> you can run
-      yourself. The reference core also <a href="/demos/">runs as a demonstration</a>:
-      three narrated product lifecycles with verbatim, byte-identical traces. Standards
-      contributions are carried to ISO/IEC JTC 5 and partner bodies through liaison
-      channels; the project does not create a rival standards track. Stewardship is
-      shared across the bodies that already operate each layer — see
-      <a href="/reference/about/">about</a>.
+  <section class="plate" aria-labelledby="news-h">
+    <h2 id="news-h">Latest</h2>
+    <ol class="newslist">
+      {
+        news.map((item) => (
+          <li>
+            <a href={item.href}>
+              <span class="news-date">{item.date}</span>
+              <span class="news-body">
+                <strong>{item.title}</strong>
+                <span>{item.body}</span>
+              </span>
+            </a>
+          </li>
+        ))
+      }
+    </ol>
+    <p class="meta">
+      Older items are preserved in the
+      <a href="https://github.com/unidpp/unidpp.github.io/commits/main">site history</a>.
     </p>
   </section>
 </BaseLayout>
 
 <style>
+  .hero-actions {
+    display: flex;
+    gap: 0.7rem;
+    flex-wrap: wrap;
+    margin: 0 0 2.6rem;
+  }
+  .stats-block {
+    margin-top: 3rem;
+  }
+  .initiative-cols {
+    margin-top: 1.4rem;
+  }
+  .linkcard {
+    text-decoration: none;
+    display: block;
+    color: inherit;
+  }
+  .linkcard:hover {
+    background: var(--accent-tint);
+  }
+  .linkcard:hover h3 {
+    color: var(--accent);
+  }
+
   .path {
     list-style: none;
     margin: 1.4rem 0 0;
     padding: 0;
     display: grid;
     gap: 1px;
-    background: var(--hairline);
-    border: 1px solid var(--hairline);
+    background: var(--border);
+    border: 1px solid var(--border);
     border-radius: var(--radius);
     overflow: hidden;
     max-width: none;
@@ -100,20 +198,17 @@ import MrzStrip from '../components/MrzStrip.astro';
     gap: 0.9rem;
     align-items: baseline;
     padding: 1rem 1.2rem;
-    background: var(--paper);
+    background: var(--bg-raised);
     text-decoration: none;
-    color: var(--ink);
+    color: var(--text);
   }
   .path a:hover {
-    background: #fff;
-  }
-  .path li + li a {
-    border-top: 0;
+    background: var(--accent-tint);
   }
   .pnum {
     font-family: var(--font-mono);
     font-size: 0.85rem;
-    color: var(--navy);
+    color: var(--accent);
   }
   .plbl {
     display: flex;
@@ -124,7 +219,54 @@ import MrzStrip from '../components/MrzStrip.astro';
     font-weight: 600;
   }
   .plbl span {
-    color: var(--muted);
+    color: var(--text-2);
     font-size: 0.88rem;
+  }
+
+  .newslist {
+    list-style: none;
+    margin: 1.4rem 0 0;
+    padding: 0;
+    max-width: none;
+  }
+  .newslist li + li {
+    border-top: 1px solid var(--border);
+  }
+  .newslist a {
+    display: grid;
+    grid-template-columns: 6.2rem minmax(0, 1fr);
+    gap: 1rem;
+    padding: 0.85rem 0.2rem;
+    text-decoration: none;
+    color: inherit;
+  }
+  .newslist a:hover strong {
+    color: var(--accent);
+  }
+  .news-date {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--text-2);
+    padding-top: 0.15rem;
+  }
+  .news-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+  .news-body strong {
+    font-weight: 600;
+    font-size: 0.97rem;
+  }
+  .news-body > span {
+    color: var(--text-2);
+    font-size: 0.88rem;
+    max-width: 68ch;
+  }
+  @media (max-width: 560px) {
+    .newslist a {
+      grid-template-columns: 1fr;
+      gap: 0.2rem;
+    }
   }
 </style>
