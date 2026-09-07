@@ -7,6 +7,7 @@ data:
     ref_type: section
 status: valid
 id: c364a2f5-1936-53b5-ae67-561f0aae1e1e
+schema_version: '3'
 ---
 data:
   definition:
@@ -27,9 +28,9 @@ data:
     normative_status: preferred
     designation: electronically signed data construct
   - type: abbreviation
-    normative_status: preferred
+    normative_status: admitted
     designation: ESDC
   language_code: eng
   annotations: []
 termid: dpp-0085
-id: 709cbbcc-f505-509c-85e1-e914d273089b
+id: 2c459787-28ad-51c7-ab4e-2039732f732e

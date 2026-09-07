@@ -7,6 +7,7 @@ data:
     ref_type: section
 status: valid
 id: 56accf98-43d3-5aac-abd9-8b6a2ae20615
+schema_version: '3'
 ---
 data:
   definition:
@@ -23,9 +24,9 @@ data:
     normative_status: preferred
     designation: application programming interface
   - type: abbreviation
-    normative_status: preferred
+    normative_status: admitted
     designation: API
   language_code: eng
   annotations: []
 termid: dpp-0090
-id: 102aa112-d856-5b4c-99b6-8c8ca16e9024
+id: d34f2165-a866-5bb4-b8ff-cb488165292f

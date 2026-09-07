@@ -5,6 +5,6 @@
   a skos:Concept ;
   skos:notation "dpp-0010" ;
   skos:prefLabel "identification scheme"@eng ;
-  skos:prefLabel "ID scheme"@eng ;
+  skos:altLabel "ID scheme"@eng ;
   skos:definition "system for allocating identifiers to objects"@eng
  .

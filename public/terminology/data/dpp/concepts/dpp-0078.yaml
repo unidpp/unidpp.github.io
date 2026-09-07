@@ -7,6 +7,7 @@ data:
     ref_type: section
 status: valid
 id: e9cac828-58a1-5d97-9aca-962fcdcb015d
+schema_version: '3'
 ---
 data:
   definition:
@@ -26,12 +27,12 @@ data:
     type: authoritative
   terms:
   - type: abbreviation
-    normative_status: preferred
+    normative_status: admitted
     designation: RPO
   - type: expression
-    normative_status: admitted
+    normative_status: preferred
     designation: recovery point objective
   language_code: eng
   annotations: []
 termid: dpp-0078
-id: 5040d042-f28b-5c57-9dc4-7fb0bb443f58
+id: 788f1b2c-a9b2-5a31-a4d4-b16621ff36eb

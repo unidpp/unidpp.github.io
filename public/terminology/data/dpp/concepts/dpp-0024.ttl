@@ -5,6 +5,6 @@
   a skos:Concept ;
   skos:notation "dpp-0024" ;
   skos:prefLabel "radio-frequency identification"@eng ;
-  skos:prefLabel "RFID"@eng ;
+  skos:altLabel "RFID"@eng ;
   skos:definition "identification technology that uses electromagnetic fields to automatically identify and track tags attached to objects"@eng
  .

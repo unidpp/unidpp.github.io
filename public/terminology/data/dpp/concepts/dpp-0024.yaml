@@ -7,6 +7,7 @@ data:
     ref_type: section
 status: valid
 id: 862ed06a-a1f4-5bed-87d2-d1a0548265c2
+schema_version: '3'
 ---
 data:
   definition:
@@ -23,9 +24,9 @@ data:
     normative_status: preferred
     designation: radio-frequency identification
   - type: abbreviation
-    normative_status: preferred
+    normative_status: admitted
     designation: RFID
   language_code: eng
   annotations: []
 termid: dpp-0024
-id: 3028aabf-c4d2-5a4b-8afc-b3142c733dd2
+id: 3ab1d9fd-e456-59f0-b05e-4a2ffc679a24

@@ -5,6 +5,6 @@
   a skos:Concept ;
   skos:notation "dpp-0005" ;
   skos:prefLabel "digital product passport id"@eng ;
-  skos:prefLabel "DPP ID"@eng ;
+  skos:altLabel "DPP ID"@eng ;
   skos:definition "unique identifier of an instance of the digital product passport"@eng
  .

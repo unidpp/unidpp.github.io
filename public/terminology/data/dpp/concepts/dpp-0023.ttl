@@ -4,7 +4,7 @@
 <https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0023>
   a skos:Concept ;
   skos:notation "dpp-0023" ;
-  skos:prefLabel "NFC"@eng ;
-  skos:altLabel "near field communication"@eng ;
+  skos:altLabel "NFC"@eng ;
+  skos:prefLabel "near field communication"@eng ;
   skos:definition "subset of HF passive radio-frequency identification with low range"@eng
  .

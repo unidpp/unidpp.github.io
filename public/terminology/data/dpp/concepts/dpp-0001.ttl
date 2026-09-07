@@ -5,7 +5,7 @@
   a skos:Concept ;
   skos:notation "dpp-0001" ;
   skos:prefLabel "digital product passport"@eng ;
-  skos:prefLabel "DPP"@eng ;
+  skos:altLabel "DPP"@eng ;
   skos:definition "a concept or technology which enables sharing of product related information that is essential for product sustainability and circularity, including those specified in regulations, across all relevant economic actors"@eng ;
   skos:scopeNote "Example characteristics include environmental sustainability, environmental impact, and recyclability."@eng ;
   skos:scopeNote "Definitional conflict: the EN 182xx series (18216, 18221, 18222, 18223, 18239, 18246) define DPP as a \"digital record of product characteristics throughout its life cycle\" — differing in noun (concept/technology vs record) and in stated scope (across relevant economic actors vs throughout the life cycle)."@eng ;

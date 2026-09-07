@@ -7,6 +7,7 @@ data:
     ref_type: section
 status: valid
 id: 86ce9af9-4c2d-548f-8fcf-9d5223bf4a52
+schema_version: '3'
 ---
 data:
   definition:
@@ -31,9 +32,9 @@ data:
     normative_status: preferred
     designation: Asset Administration Shell
   - type: abbreviation
-    normative_status: preferred
+    normative_status: admitted
     designation: AAS
   language_code: eng
   annotations: []
 termid: dpp-0099
-id: 7c8691b2-3e1e-5d2e-9b1d-f4eecbc2ba89
+id: 63be3772-a9c8-5c6d-b140-2368661418dc

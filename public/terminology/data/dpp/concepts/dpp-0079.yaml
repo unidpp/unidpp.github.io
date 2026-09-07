@@ -7,6 +7,7 @@ data:
     ref_type: section
 status: valid
 id: 398642e2-b6e5-5f28-8f65-95dd7c5a633c
+schema_version: '3'
 ---
 data:
   definition:
@@ -26,12 +27,12 @@ data:
     type: authoritative
   terms:
   - type: abbreviation
-    normative_status: preferred
+    normative_status: admitted
     designation: RTO
   - type: expression
-    normative_status: admitted
+    normative_status: preferred
     designation: Recovery Time Objective
   language_code: eng
   annotations: []
 termid: dpp-0079
-id: c5d78a08-912e-5fdb-a4bf-19c9c8d3cfd2
+id: 845ec05e-c938-5289-8075-e113406f889e

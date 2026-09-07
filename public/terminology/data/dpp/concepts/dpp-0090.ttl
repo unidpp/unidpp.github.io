@@ -5,6 +5,6 @@
   a skos:Concept ;
   skos:notation "dpp-0090" ;
   skos:prefLabel "application programming interface"@eng ;
-  skos:prefLabel "API"@eng ;
+  skos:altLabel "API"@eng ;
   skos:definition "set of methods (3.3) provided by an application component for use by other application components"@eng
  .

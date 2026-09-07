@@ -4,7 +4,7 @@
 <https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0078>
   a skos:Concept ;
   skos:notation "dpp-0078" ;
-  skos:prefLabel "RPO"@eng ;
-  skos:altLabel "recovery point objective"@eng ;
+  skos:altLabel "RPO"@eng ;
+  skos:prefLabel "recovery point objective"@eng ;
   skos:definition "point in time to which data must be recovered after a disruption has occurred"@eng
  .

@@ -7,6 +7,7 @@ data:
     ref_type: section
 status: valid
 id: b62b9443-e0d9-5949-b854-8261904caf15
+schema_version: '3'
 ---
 data:
   definition:
@@ -29,9 +30,9 @@ data:
     normative_status: preferred
     designation: identification scheme
   - type: abbreviation
-    normative_status: preferred
+    normative_status: admitted
     designation: ID scheme
   language_code: eng
   annotations: []
 termid: dpp-0010
-id: 16f90656-9bb2-5433-bf61-e496e7269e39
+id: e765f08d-b1da-5f8f-8a47-86793f01d918

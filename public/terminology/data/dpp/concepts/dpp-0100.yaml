@@ -7,6 +7,7 @@ data:
     ref_type: section
 status: valid
 id: 067d9d42-0eb7-5665-84e1-abd4868a0498
+schema_version: '3'
 ---
 data:
   definition:

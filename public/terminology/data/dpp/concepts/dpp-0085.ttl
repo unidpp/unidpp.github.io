@@ -5,7 +5,7 @@
   a skos:Concept ;
   skos:notation "dpp-0085" ;
   skos:prefLabel "electronically signed data construct"@eng ;
-  skos:prefLabel "ESDC"@eng ;
+  skos:altLabel "ESDC"@eng ;
   skos:definition "structured data set containing the header, payload, signature and optional data fields"@eng ;
   skos:scopeNote "The payload type and issuer identity are included in the header."@eng ;
   skos:scopeNote "An ESDC is a machine-readable code."@eng ;

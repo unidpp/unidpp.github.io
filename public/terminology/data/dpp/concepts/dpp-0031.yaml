@@ -7,6 +7,7 @@ data:
     ref_type: section
 status: valid
 id: 3df32656-1906-551b-a510-9d9278d3900a
+schema_version: '3'
 ---
 data:
   definition:
@@ -32,9 +33,9 @@ data:
     normative_status: preferred
     designation: identifier
   - type: abbreviation
-    normative_status: preferred
+    normative_status: admitted
     designation: ID
   language_code: eng
   annotations: []
 termid: dpp-0031
-id: 2daf2e81-0119-58da-80ae-de0cc98850dd
+id: d886af09-6277-5444-b426-e8dec0223f3d

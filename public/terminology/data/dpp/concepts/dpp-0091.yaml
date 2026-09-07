@@ -7,6 +7,7 @@ data:
     ref_type: section
 status: valid
 id: 5f95c2f5-9ad2-5e5a-920a-d25c5985c445
+schema_version: '3'
 ---
 data:
   definition:
@@ -24,9 +25,9 @@ data:
     normative_status: preferred
     designation: representational state transfer application programming interface
   - type: abbreviation
-    normative_status: preferred
+    normative_status: admitted
     designation: REST API
   language_code: eng
   annotations: []
 termid: dpp-0091
-id: 297e5693-3575-5a80-a764-5bf2bea0e760
+id: 9248013d-a29f-5ec0-bc05-498e82ecc2a9

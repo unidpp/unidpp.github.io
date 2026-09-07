@@ -7,6 +7,7 @@ data:
     ref_type: section
 status: valid
 id: 8ee4ce82-4611-501d-921f-037eaa3af2a1
+schema_version: '3'
 ---
 data:
   definition:
@@ -19,12 +20,12 @@ data:
     type: authoritative
   terms:
   - type: abbreviation
-    normative_status: preferred
+    normative_status: admitted
     designation: NFC
   - type: expression
-    normative_status: admitted
+    normative_status: preferred
     designation: near field communication
   language_code: eng
   annotations: []
 termid: dpp-0023
-id: 4dbe86f3-f5fa-5273-806f-8acaadc869ec
+id: 384f565d-2617-50dd-8e14-920f6f0579e3

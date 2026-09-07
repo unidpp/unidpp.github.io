@@ -7,6 +7,7 @@ data:
     ref_type: section
 status: valid
 id: ceeac015-8d16-58d1-b28d-f35792c49b63
+schema_version: '3'
 ---
 data:
   definition:

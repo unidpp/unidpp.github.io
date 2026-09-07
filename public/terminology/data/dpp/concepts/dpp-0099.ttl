@@ -5,7 +5,7 @@
   a skos:Concept ;
   skos:notation "dpp-0099" ;
   skos:prefLabel "Asset Administration Shell"@eng ;
-  skos:prefLabel "AAS"@eng ;
+  skos:altLabel "AAS"@eng ;
   skos:definition "standardized digital representation of an asset"@eng ;
   skos:scopeNote "Asset Administration Shell and Administration Shell are used synonymously."@eng
  .

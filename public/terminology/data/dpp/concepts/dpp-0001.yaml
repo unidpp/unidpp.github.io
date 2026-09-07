@@ -7,6 +7,7 @@ data:
     ref_type: section
 status: valid
 id: d2890243-c7b4-5091-bbe0-10dddd11dee4
+schema_version: '3'
 ---
 data:
   definition:
@@ -99,9 +100,9 @@ data:
     normative_status: preferred
     designation: digital product passport
   - type: abbreviation
-    normative_status: preferred
+    normative_status: admitted
     designation: DPP
   language_code: eng
   annotations: []
 termid: dpp-0001
-id: f7bd6f56-19fe-581d-90d5-eeca44c07a95
+id: 6895d49b-eb11-50f6-90a5-92afb61661c2

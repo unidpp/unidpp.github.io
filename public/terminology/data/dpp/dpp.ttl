@@ -22,19 +22,19 @@ _:bbe3d9f5d7 dcterms:title "Turtle distribution";
     a skos:ConceptScheme, dcat:Dataset;
     skos:hasTopConcept <https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0001>, <https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0002>, <https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0003>, <https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0005>, <https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0006>, <https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0007>, <https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0008>, <https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0009>, <https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0010>, <https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0011>, <https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0012>, <https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0013>, <https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0014>, <https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0015>, <https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0016>, <https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0017>, <https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0018>, <https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0019>, <https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0020>, <https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0021>, <https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0022>, <https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0023>, <https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0024>, <https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0025>, <https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0026>, <https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0027>, <https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0028>, <https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0029>, <https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0030>, <https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0031>, <https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0032>, <https://www.glossarist.org/dpp/dataset/dpp/concept/dpp-0033>;
     dcat:distribution _:bb0b1adbcd, _:bbe3d9f5d7.
-<https://www.glossarist.org/dpp/dpp/section/actors-and-issuance> dcterms:title "actors-and-issuance";
+<https://www.glossarist.org/dpp/dpp/section/section-actors-and-issuance> dcterms:title "section-actors-and-issuance";
     a skos:Collection.
-<https://www.glossarist.org/dpp/dpp/section/digital-product-passport> dcterms:title "digital-product-passport";
+<https://www.glossarist.org/dpp/dpp/section/section-digital-product-passport> dcterms:title "section-digital-product-passport";
     a skos:Collection.
-<https://www.glossarist.org/dpp/dpp/section/framework-terms> dcterms:title "framework-terms";
+<https://www.glossarist.org/dpp/dpp/section/section-framework-terms> dcterms:title "section-framework-terms";
     a skos:Collection.
-<https://www.glossarist.org/dpp/dpp/section/identity-and-carriers> dcterms:title "identity-and-carriers";
+<https://www.glossarist.org/dpp/dpp/section/section-identity-and-carriers> dcterms:title "section-identity-and-carriers";
     a skos:Collection.
-<https://www.glossarist.org/dpp/dpp/section/lifecycle-and-events> dcterms:title "lifecycle-and-events";
+<https://www.glossarist.org/dpp/dpp/section/section-lifecycle-and-events> dcterms:title "section-lifecycle-and-events";
     a skos:Collection.
-<https://www.glossarist.org/dpp/dpp/section/measurement> dcterms:title "measurement";
+<https://www.glossarist.org/dpp/dpp/section/section-measurement> dcterms:title "section-measurement";
     a skos:Collection.
-<https://www.glossarist.org/dpp/dpp/section/semantics-and-profiles> dcterms:title "semantics-and-profiles";
+<https://www.glossarist.org/dpp/dpp/section/section-semantics-and-profiles> dcterms:title "section-semantics-and-profiles";
     a skos:Collection.
-<https://www.glossarist.org/dpp/dpp/section/trust-and-verification> dcterms:title "trust-and-verification";
+<https://www.glossarist.org/dpp/dpp/section/section-trust-and-verification> dcterms:title "section-trust-and-verification";
     a skos:Collection.
