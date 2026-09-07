@@ -2,69 +2,146 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Card from '../components/Card.astro';
 import CardGrid from '../components/CardGrid.astro';
-import DataTable from '../components/DataTable.astro';
 ---
 
 <BaseLayout
-  title="Comparisons"
-  description="A factual capability comparison of freeDPP, OpenDPP, and UniDPP, sourced from the public repositories of each project."
-  eyebrow="Reference — comparisons"
+  title="What UniDPP does"
+  description="The capabilities that define the UniDPP international framework: multi-jurisdiction profiles, offline verification, event-sourced lifecycle, graded trust, and open semantics."
+  eyebrow="Reference — capabilities"
 >
-  <h1>Comparisons</h1>
+  <h1>What UniDPP is built to do</h1>
   <p class="lede">
-    A factual comparison of the three open Digital Product Passport implementation
-    efforts, stated without evaluation language beyond what the repositories themselves
-    document.
+    UniDPP is an international framework and open reference implementation. The
+    capabilities below are the ones the architecture is designed around — each
+    is implemented in the open repositories and exercised by the end-to-end demo.
   </p>
 
-  <section id="projects" class="plate" aria-labelledby="projects-h">
-    <h2 id="projects-h">The projects</h2>
+  <section id="capabilities" class="plate" aria-labelledby="cap-h">
+    <h2 id="cap-h">Capability map</h2>
     <CardGrid>
-      <Card title="freeDPP">
+      <Card title="One identity, many legal views">
         <p>
-          An ASP.NET server, SQL database, and admin UI implementing the EN 18216–18246
-          series; the project README lists the eight ENs as the entire requirement set.
-          GPL-3 for the server, which its README marks “not yet for production”.
-          Single-jurisdiction by design: the ESPR/EU frame is the system.
+          A product carries one identity and one append-only record. Jurisdiction,
+          sector, and characteristic <em>profiles</em> are registered lenses on that
+          record — each independently versioned, signed, and verified under its own
+          trust anchors. Adding a market is a dated binding, not a second passport.
         </p>
       </Card>
-      <Card title="OpenDPP">
+      <Card title="Offline minimum (Tier A)">
         <p>
-          A commercial B2B platform (Opendpp UAB) with an Apache-2.0 package boundary
-          around a private backend — the mirror repository is generated and pull requests
-          are closed automatically. Publishes conformance badges for IDTA AAS v3.0/3.1,
-          UNTP DPP v0.7.0, GS1 Digital Link, and W3C VC, and generated
-          TypeScript/Java/Python SDKs version-locked to its OpenAPI description.
+          A fixed carrier subset — identity, status, critical flags, multi-suite
+          signatures — verifies with cached anchors when origins are unreachable.
+          Verdicts name three readings and state coverage explicitly; staleness
+          never silently passes.
         </p>
       </Card>
-      <Card title="UniDPP">
+      <Card title="Event-sourced lifecycle">
         <p>
-          This framework and its reference implementation: a neutral core with
-          jurisdiction, sector, and characteristic profiles, a FERIN semantic registry,
-          SIGNATIF trust, event sourcing with a transformation algebra, and an offline
-          Tier A — developed fully in the open.
+          Custody, repair, software update, modification, recall, and end-of-life
+          are typed events. Illegal status transitions are rejected. History is
+          never rewritten; as-of queries reconstruct legal state at any time T.
+        </p>
+      </Card>
+      <Card title="Transformation algebra">
+        <p>
+          Split, combine, and derive passports with mass-balance accounting and
+          taint propagation through the provenance graph. End-of-waste is a new
+          issuance. Recycled-content claims recompute from the graph.
+        </p>
+      </Card>
+      <Card title="Graded trust (SIGNATIF)">
+        <p>
+          Multi-suite co-signatures (including sovereign suites), threshold roots,
+          transparency-log anchoring, and revocation whose <em>reason</em> decides
+          retroactivity. Verifiers fetch live trust lists and resolve under their
+          own acceptance policy.
+        </p>
+      </Card>
+      <Card title="Semantic registry (FERIN / 19135)">
+        <p>
+          Data elements, profiles, protocol bindings, crypto suites, and units are
+          governed register items — discoverable, version-pinned, supersedable.
+          The EN 18223 §4.3 vacancy is filled by a federated discovery layer, not a
+          single dictionary host.
+        </p>
+      </Card>
+      <Card title="Edge and silent objects">
+        <p>
+          Capability classes S0–S3: silent products are fully servable with zero
+          device participation; instrumented products commit log prefixes and
+          reveal later. Freshness is a displayable verdict, profile-gated.
+        </p>
+      </Card>
+      <Card title="Open stack, open evidence">
+        <p>
+          Libraries, services, conformance fixtures (including negative cases),
+          terminology dataset, and the E8 end-to-end demo are public. The EU EN
+          series is one jurisdiction profile of the same core — not the envelope.
         </p>
       </Card>
     </CardGrid>
   </section>
 
-  <section id="capability-table" class="plate" aria-labelledby="table-h">
-    <h2 id="table-h">Capability table</h2>
-    <DataTable
-      columns={['Capability', 'freeDPP', 'OpenDPP', 'UniDPP']}
-      caption="All rows sourced from the public repositories of each project, checked 2026-09-07. Corrections by pull request are welcome."
-      rows={[
-        ['EN 18216–18246 support', 'Yes (as the whole system)', 'Yes', 'Yes — as one jurisdiction profile'],
-        ['Multi-jurisdiction profiles', '—', '—', 'Core mechanism'],
-        ['Neutral semantic registry', '—', '—', 'ISO 19135 / FERIN; UNTDED seed'],
-        ['Trust', 'Transport security', 'W3C Verifiable Credentials', 'SIGNATIF: multi-suite signatures, transparency logs, threshold roots'],
-        ['Event sourcing and transformation algebra', '—', '—', 'Core'],
-        ['Offline minimum (Tier A)', '—', '—', 'Core'],
-        ['AI-agent projection', '—', 'Yes — from a private backend', 'From the open specification'],
-        ['Terminology dataset (multilingual)', '—', '—', 'Glossarist edition of the DPP vocabulary'],
-        ['Conformance suites', 'Not published', 'CONFORMANCE.md badges', 'Full suites, open, including negative cases'],
-        ['Licensing', 'GPL-3 (server)', 'Apache-2 boundary, closed core', 'Fully open (Apache-2 / MIT per repository)'],
-      ]}
-    />
+  <section id="alongside" class="plate" aria-labelledby="along-h">
+    <h2 id="along-h">Alongside regional implementations</h2>
+    <p>
+      Regional and sector projects implement the rules of a particular regime.
+      UniDPP implements the <em>mechanism</em> by which many regimes share one
+      product identity. The relationship is complementary:
+    </p>
+    <ul class="plain">
+      <li>
+        <strong>EN 18216–18246 / freeDPP.</strong> The published European series
+        and its open server are the natural content of an <em>EU profile</em> on
+        the UniDPP core. A UniDPP deployment can serve EN 18222-shaped requests as
+        one render among others.
+      </li>
+      <li>
+        <strong>OpenDPP and AAS-oriented platforms.</strong> Where a deployment
+        already uses Asset Administration Shell tooling, UniDPP keeps AAS as an
+        informative mapping — the core model stays representation-neutral.
+      </li>
+      <li>
+        <strong>National carrier and cert layers</strong> (for example GB/T 33993,
+        CQC digital certificates). These become protocol bindings and certificate
+        subregister joins in the discovery registry, not competing roots.
+      </li>
+    </ul>
+  </section>
+
+  <section id="try" class="plate" aria-labelledby="try-h">
+    <h2 id="try-h">See it run</h2>
+    <p>
+      The public end-to-end walks one product — a Japanese e-bike with EU and CN
+      parts — through assembly, EU placement, offline border verification,
+      firmware derestriction, repair, auction, recall, and end-of-life.
+    </p>
+    <p class="cta-row">
+      <a class="btn btn-primary" href="/implementation/demos/">Demos</a>
+      <a class="btn btn-ghost" href="https://github.com/unidpp/unidpp-e2e">unidpp-e2e on GitHub</a>
+      <a class="btn btn-ghost" href="/framework/">Framework</a>
+    </p>
   </section>
 </BaseLayout>
+
+<style>
+  .plain {
+    margin: 1rem 0 0;
+    padding-left: 1.15rem;
+    max-width: var(--prose);
+  }
+  .plain li {
+    margin: 0.65rem 0;
+    color: var(--text-2);
+  }
+  .plain strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+  .cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin-top: 1.25rem;
+  }
+</style>

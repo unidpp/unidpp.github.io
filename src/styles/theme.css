@@ -1,9 +1,10 @@
 /* ═══════════════════════════════════════════════════════════════════
    UniDPP design system — tokens, base, and shared components.
 
-   Typography: IBM Plex Sans (400/500/600/700) is the identity face —
-   body AND display; IBM Plex Mono (400/500) carries identifiers, MRZ,
-   code, and registers. No decorative serif anywhere.
+   Typography: Source Sans 3 (400/500/600/700) is the identity face —
+   body AND display (Adobe OFL; technical-document register, outside the
+   current AI-default cluster). Source Code Pro (400/500/600) carries
+   identifiers, MRZ, code, and registers. No decorative display serif.
 
    Palette: paper / ink / navy with semantic green (valid) and
    red (verdicts). Dark mode via `html.dark` (toggle in Header).
@@ -28,9 +29,10 @@
   --red: #b4442c;
   --red-soft: rgba(180, 68, 44, 0.08);
 
-  --font-sans: 'IBM Plex Sans', -apple-system, 'Segoe UI', Helvetica, Arial,
-    sans-serif;
-  --font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  --font-sans: 'Source Sans 3', 'Source Sans Pro', -apple-system, 'Segoe UI',
+    Helvetica, Arial, sans-serif;
+  --font-mono: 'Source Code Pro', ui-monospace, 'SF Mono', Menlo, Consolas,
+    monospace;
 
   --radius: 6px;
   --radius-lg: 10px;
@@ -184,7 +186,7 @@ p {
   font-size: 0.86rem;
 }
 
-/* Wordmark: the two-part uni/DPP lockup — Plex Sans, tight tracking. */
+/* Wordmark: the two-part uni/DPP lockup — Source Sans 3, tight tracking. */
 .wordmark {
   font-family: var(--font-sans);
   font-size: 1.18rem;
