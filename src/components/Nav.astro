@@ -1,0 +1,229 @@
+---
+const spine = [
+  { num: '01', label: 'Understand', href: '/learn/' },
+  { num: '02', label: 'Why international', href: '/why/' },
+  { num: '03', label: 'How it works', href: '/how/' },
+  { num: '04', label: 'Reference', href: '/reference/' },
+];
+const reference: [string, string][] = [
+  ['/reference/framework/', 'Framework'],
+  ['/reference/standards/', 'Standards'],
+  ['/reference/implementation/', 'Implementation'],
+  ['/reference/compare/', 'Comparisons'],
+  ['/reference/trust/', 'Trust'],
+  ['/reference/papers/', 'Papers'],
+  ['/reference/terminology/', 'Terminology'],
+  ['/reference/about/', 'About'],
+];
+const here = Astro.url.pathname.replace(/index\.html$/, '').replace(/\/+$/, '') || '/';
+const norm = (path: string) => path.replace(/\/+$/, '') || '/';
+const isHere = (path: string) => here === norm(path);
+const inReference = here.startsWith('/reference');
+---
+
+<aside class="rail" aria-label="Sections by depth">
+  <a class="mark" href="/">UniDPP</a>
+  <ol class="spine">
+    {
+      spine.map((item) => (
+        <li class:list={{ current: isHere(item.href) }}>
+          <a href={item.href} aria-current={isHere(item.href) ? 'page' : undefined}>
+            <span class="num">{item.num}</span>
+            <span class="lbl">{item.label}</span>
+          </a>
+          {item.num === '04' && inReference && (
+            <ul class="subnav">
+              {reference.map(([href, label]) => (
+                <li class:list={{ current: isHere(href) }}>
+                  <a href={href} aria-current={isHere(href) ? 'page' : undefined}>
+                    {label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )}
+        </li>
+      ))
+    }
+  </ol>
+  <p class="rail-note">Depth is a sequence: each level assumes the one before it.</p>
+</aside>
+
+<nav class="chips" aria-label="Sections by depth">
+  <a class="chip mark-chip" href="/">UniDPP</a>
+  {
+    spine.map((item) => (
+      <a
+        class="chip"
+        class:list={{ current: isHere(item.href) || (item.num === '04' && inReference) }}
+        href={item.href}
+      >
+        <span class="num">{item.num}</span>
+        {item.label}
+      </a>
+    ))
+  }
+</nav>
+{
+  inReference && (
+    <nav class="chips sub" aria-label="Reference sections">
+      {reference.map(([href, label]) => (
+        <a class="chip" class:list={{ current: isHere(href) }} href={href}>
+          {label}
+        </a>
+      ))}
+    </nav>
+  )
+}
+
+<style>
+  .rail {
+    display: none;
+  }
+  @media (min-width: 960px) {
+    .rail {
+      display: flex;
+      flex-direction: column;
+      position: sticky;
+      top: 0;
+      align-self: start;
+      height: 100vh;
+      overflow-y: auto;
+      border-right: 1px solid var(--hairline);
+      padding: 1.9rem 1.15rem 2rem;
+    }
+    .chips {
+      display: none;
+    }
+  }
+
+  .mark {
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    color: var(--navy);
+    text-decoration: none;
+  }
+  .mark:hover {
+    color: var(--ink);
+  }
+
+  .spine {
+    list-style: none;
+    margin: 1.7rem 0 0;
+    padding: 0;
+  }
+  .spine li {
+    margin: 0.1rem 0;
+  }
+  .spine a {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    padding: 0.42rem 0.6rem;
+    border-left: 2px solid transparent;
+    border-radius: 0 var(--radius) var(--radius) 0;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+  .spine a:hover {
+    color: var(--ink);
+    background: #fff;
+  }
+  .spine .num {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--muted);
+  }
+  .spine .lbl {
+    line-height: 1.3;
+  }
+  .spine li.current > a {
+    color: var(--navy);
+    font-weight: 600;
+    border-left-color: var(--navy);
+    background: #fff;
+  }
+  .spine li.current .num {
+    color: var(--navy);
+  }
+
+  .subnav {
+    list-style: none;
+    margin: 0.15rem 0 0.4rem;
+    padding: 0;
+  }
+  .subnav a {
+    display: block;
+    padding: 0.3rem 0.6rem 0.3rem 1.7rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.83rem;
+    border-radius: 0 var(--radius) var(--radius) 0;
+  }
+  .subnav a:hover {
+    color: var(--ink);
+    background: #fff;
+  }
+  .subnav li.current a {
+    color: var(--navy);
+    font-weight: 600;
+    background: #fff;
+  }
+
+  .rail-note {
+    margin-top: 2.2rem;
+    font-size: 0.72rem;
+    color: var(--muted);
+    line-height: 1.5;
+    max-width: 13rem;
+  }
+
+  .chips {
+    display: flex;
+    gap: 0.45rem;
+    align-items: center;
+    overflow-x: auto;
+    padding: 0.7rem 1rem 0.75rem;
+    border-bottom: 1px solid var(--hairline);
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+  }
+  .chips.sub {
+    padding-top: 0.55rem;
+  }
+  .chip {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.4rem;
+    font-size: 0.78rem;
+    color: var(--muted);
+    text-decoration: none;
+    border: 1px solid var(--hairline);
+    border-radius: 99px;
+    padding: 0.28rem 0.7rem;
+    background: #fff;
+    white-space: nowrap;
+  }
+  .chip:hover {
+    color: var(--ink);
+    border-color: var(--muted);
+  }
+  .chip .num {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    color: var(--navy);
+  }
+  .chip.current {
+    border-color: var(--navy);
+    color: var(--ink);
+    font-weight: 600;
+  }
+  .mark-chip {
+    font-weight: 600;
+    color: var(--navy);
+  }
+</style>

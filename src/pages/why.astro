@@ -1,0 +1,152 @@
+---
+import BaseLayout from '../components/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Why international"
+  description="Why a Digital Product Passport needs an international core: one laptop sold in five jurisdictions, the current landscape stated honestly, and what neutrality means here."
+  eyebrow="02 · Why international"
+>
+  <h1>Why an international core</h1>
+  <p class="lede">
+    Products cross borders; their passports must not stop at them. One product, one
+    identity, one record — with each jurisdiction's rules mounted on it as a profile.
+  </p>
+
+  <section aria-labelledby="laptop-heading">
+    <h2 id="laptop-heading">A laptop, five jurisdictions</h2>
+    <p>
+      Consider a laptop assembled in one country from parts made in several more, then sold
+      in the European Union, Japan, China, the Republic of Korea, and the United States.
+      Each market imposes its own disclosure duties: the European Union requires an ESPR
+      product passport; Japan requires energy-efficiency and chemical-disclosure evidence
+      under METI schemes; China requires CCC marking and registration on the national
+      identity-resolution platform; Korea requires KC conformity; United States federal
+      procurement asks for its own evidence.
+    </p>
+    <p>
+      Five duty sets, one physical object. If each duty creates its own passport, the
+      product carries five records that can disagree with one another — and the recycler,
+      the repairer, and the border officer each meet a different document for the same
+      laptop. Divergence is not hypothetical: restricted-substance lists, energy classes,
+      and recycling declarations already differ by jurisdiction, and a divergence recorded
+      twice can become a contradiction.
+    </p>
+    <p>
+      UniDPP keeps one record — one identity, one append-only event log — and expresses
+      each duty as a <strong>profile</strong>: a lens over the same record, owned by its
+      regulator, versioned in a registry, carrying its own data points, transforms, and
+      trust requirements. Divergent rules stay divergent and visible; the record beneath
+      them stays single.
+    </p>
+  </section>
+
+  <section class="plate" aria-labelledby="landscape-heading">
+    <h2 id="landscape-heading">The landscape, stated honestly</h2>
+    <dl class="landscape">
+      <div class="land">
+        <dt>European standards</dt>
+        <dd>
+          The EN&nbsp;18216–18246 series, with the ESPR delegated acts, is one regional
+          system — the first to be mandated, and explicit in its own text about being
+          technology-, ontology-, and domain-neutral. It is treated here as exactly one
+          jurisdiction profile among others, on equal footing.
+        </dd>
+      </div>
+      <div class="land">
+        <dt>National platforms</dt>
+        <dd>
+          China operates an industrial-identity resolution platform with its own marking
+          and cryptographic suites; other states run national code services and
+          certificate-body portals. Each serves its jurisdiction well; none is positioned
+          as the international layer.
+        </dd>
+      </div>
+      <div class="land">
+        <dt>Sector systems</dt>
+        <dd>
+          Battery passports, trade-portability mappings (UNTP), and asset-shell ecosystems
+          exist for their sectors. They are integrated as mappings or overlays, never as
+          the load-bearing layer.
+        </dd>
+      </div>
+      <div class="land">
+        <dt>UniDPP</dt>
+        <dd>
+          A neutral international core under multi-body stewardship: identity, event
+          record, semantic registry, and cross-recognition trust — with every profile,
+          including the European one, mounted on the same interface. Neutral,
+          non-opinionated, and fully open.
+        </dd>
+      </div>
+    </dl>
+    <p>
+      For a factual, source-referenced comparison of the open implementation efforts, see
+      the <a href="/reference/compare/">capability table</a>.
+    </p>
+  </section>
+
+  <section aria-labelledby="neutrality-heading">
+    <h2 id="neutrality-heading">Neutrality, stated precisely</h2>
+    <ul>
+      <li>
+        <strong>Neutral:</strong> the core adopts no jurisdiction's rules. The interface
+        that profiles mount on — the lens mount — is what is standardized, because
+        proprietary mounts are the lock-in vector.
+      </li>
+      <li>
+        <strong>Non-opinionated:</strong> the core ranks no cryptographic suite, registry,
+        or trust framework. The CN profile binds SM suites, the US federal profile binds
+        FIPS suites, the EU profile binds eIDAS-acceptable suites; the core carries them
+        side by side.
+      </li>
+      <li>
+        <strong>Fully open:</strong> Apache-2.0 / MIT per repository, published conformance
+        suites including negative cases, no closed core, no boundary package around a
+        private backend.
+      </li>
+    </ul>
+    <p>
+      What neutrality is not: it is not a claim that jurisdictions agree, and not a promise
+      to soften their rules. Divergences are recorded as data — distinct data elements
+      harmonized to a common concept — so that a downstream reader can see both rulings and
+      the reason for each.
+    </p>
+  </section>
+
+  <section aria-labelledby="next-heading">
+    <h2 id="next-heading">Where this leads</h2>
+    <p>
+      How the record, the lenses, and the trust between them are actually built is the
+      subject of the next level: <a href="/how/">how it works</a>.
+    </p>
+  </section>
+</BaseLayout>
+
+<style>
+  .landscape {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 1px;
+    background: var(--hairline);
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin: 1.4rem 0;
+    max-width: none;
+  }
+  .land {
+    background: var(--paper);
+    padding: 1rem 1.15rem;
+  }
+  .land dt {
+    font-weight: 600;
+    font-size: 0.92rem;
+    margin: 0 0 0.35rem;
+  }
+  .land dd {
+    margin: 0;
+    font-size: 0.86rem;
+    color: var(--muted);
+  }
+</style>

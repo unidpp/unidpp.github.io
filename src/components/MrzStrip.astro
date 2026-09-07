@@ -1,0 +1,76 @@
+---
+// The machine-readable zone: navy bar, IBM Plex Mono, two lines of
+// chevron-formatted pseudo-MRZ encoding the framework thesis. Types on
+// with steps(); appears instantly under prefers-reduced-motion.
+---
+
+<div class="mrzwrap">
+  <div class="mrz" aria-hidden="true">
+    <p class="line l1">UNI&lt;DPP&lt;CORE&lt;&lt;IDENTITY&lt;NEVER&lt;REMINTED&lt;&lt;&lt;&lt;&lt;&lt;</p>
+    <p class="line l2">LENSES&lt;EU&lt;JP&lt;CN&lt;CITES&lt;TRUST&lt;SIGNATIF&lt;&lt;&lt;</p>
+  </div>
+  <p class="mrz-note">
+    A machine-readable zone, in the manner of a passport: identity never re-minted;
+    lenses mounted as profiles.
+  </p>
+</div>
+
+<style>
+  .mrzwrap {
+    margin: 2.6rem 0 0;
+    max-width: none;
+  }
+  .mrz {
+    background: var(--navy);
+    border-radius: var(--radius);
+    padding: 0.95rem 1.1rem;
+    display: inline-block;
+    max-width: 100%;
+    overflow: hidden;
+  }
+  .line {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: clamp(0.68rem, 2.1vw, 0.9rem);
+    line-height: 1.75;
+    color: var(--paper);
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .l1 {
+    width: 43ch;
+    animation: mrz-type-43 1.5s steps(43, end) 0.25s both;
+  }
+  .l2 {
+    width: 39ch;
+    animation: mrz-type-39 1.4s steps(39, end) 1.85s both;
+  }
+  @keyframes mrz-type-43 {
+    from {
+      width: 0;
+    }
+    to {
+      width: 43ch;
+    }
+  }
+  @keyframes mrz-type-39 {
+    from {
+      width: 0;
+    }
+    to {
+      width: 39ch;
+    }
+  }
+  .mrz-note {
+    margin: 0.6rem 0 0;
+    font-size: 0.78rem;
+    color: var(--muted);
+    max-width: 56ch;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .l1,
+    .l2 {
+      animation: none;
+    }
+  }
+</style>

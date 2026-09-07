@@ -1,0 +1,270 @@
+---
+// The signature hero: one twin record card with three translucent profile
+// lenses mounted above it. Lenses are radio controls, so hover, tap, and
+// keyboard all work without scripts; captions are exchanged with :has().
+---
+
+<div class="spread">
+  <div class="stage">
+    <fieldset class="lenses">
+      <legend class="vh">Choose a profile lens</legend>
+      <input type="radio" name="lens" id="lens-cites" class="in in-cites" />
+      <label for="lens-cites" class="lens lens-cites">
+        <span class="lens-name">CITES</span>
+        <span class="lens-sub">species · permits</span>
+      </label>
+      <input type="radio" name="lens" id="lens-jp" class="in in-jp" />
+      <label for="lens-jp" class="lens lens-jp">
+        <span class="lens-name" lang="ja">日本</span>
+        <span class="lens-sub">Top Runner</span>
+      </label>
+      <input type="radio" name="lens" id="lens-eu" class="in in-eu" checked />
+      <label for="lens-eu" class="lens lens-eu">
+        <span class="lens-name">EU</span>
+        <span class="lens-sub">energy class</span>
+      </label>
+    </fieldset>
+    <div
+      class="record"
+      role="img"
+      aria-label="Illustrative passport record card: identifier, status active, last update, three lenses mounted."
+    >
+      <p class="record-head">Digital product passport — twin record</p>
+      <dl class="fields">
+        <div class="field">
+          <dt>Identifier</dt>
+          <dd class="mono">016.2026.0907.7741</dd>
+        </div>
+        <div class="field">
+          <dt>Passport</dt>
+          <dd class="mono">UNIDPP-7741-CORE</dd>
+        </div>
+        <div class="field">
+          <dt>Status</dt>
+          <dd class="mono ok"><span class="dot">&#9679;</span> ACTIVE</dd>
+        </div>
+        <div class="field">
+          <dt>Last update</dt>
+          <dd class="mono">2026-09-07T04:12Z</dd>
+        </div>
+        <div class="field">
+          <dt>Lenses mounted</dt>
+          <dd class="mono">EU · <span lang="ja">日本</span> · CITES</dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+  <div class="captions">
+    <p class="cap cap-eu" id="cap-eu">
+      The EU lens shows the energy class required by the ESPR delegated act.
+    </p>
+    <p class="cap cap-jp" id="cap-jp">
+      The Japan lens shows the Top Runner efficiency rating under METI labelling.
+    </p>
+    <p class="cap cap-cites" id="cap-cites">
+      The CITES lens shows the species listing and the permit number required for trade.
+    </p>
+  </div>
+</div>
+
+<style>
+  .spread {
+    margin: 0.4rem 0 0;
+    max-width: none;
+  }
+  .stage {
+    position: relative;
+    padding-top: 6.4rem;
+  }
+
+  /* Lenses: translucent navy tints, fanned above the record */
+  .lenses {
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 7.2rem;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    min-width: 0;
+  }
+  .in {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  .lens {
+    position: absolute;
+    top: 0;
+    width: min(9.5rem, 46%);
+    padding: 0.65rem 0.8rem;
+    border-radius: var(--radius);
+    border: 1px solid rgba(20, 51, 92, 0.35);
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    cursor: pointer;
+    transition:
+      transform 0.18s ease,
+      background-color 0.18s ease,
+      border-color 0.18s ease;
+  }
+  .lens-name {
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--navy);
+  }
+  .lens-sub {
+    font-family: var(--font-mono);
+    font-size: 0.64rem;
+    letter-spacing: 0.04em;
+    color: var(--navy);
+    opacity: 0.78;
+  }
+
+  .lens-eu {
+    left: 2%;
+    top: 1.15rem;
+    transform: rotate(-3deg);
+    background: rgba(20, 51, 92, 0.16);
+    z-index: 3;
+  }
+  .lens-jp {
+    left: 40%;
+    top: 0.25rem;
+    transform: rotate(1.5deg);
+    background: rgba(20, 51, 92, 0.3);
+    z-index: 2;
+  }
+  .lens-cites {
+    left: 74%;
+    top: 1.5rem;
+    transform: rotate(4deg);
+    background: rgba(20, 51, 92, 0.08);
+    z-index: 1;
+  }
+
+  .lens:hover,
+  .in:focus-visible + .lens,
+  .in:checked + .lens {
+    transform: translateY(-0.6rem);
+  }
+  .lens-eu:hover,
+  .in-eu:focus-visible + .lens-eu,
+  .in-eu:checked + .lens-eu {
+    background: rgba(20, 51, 92, 0.24);
+    border-color: var(--navy);
+    z-index: 5;
+  }
+  .lens-jp:hover,
+  .in-jp:focus-visible + .lens-jp,
+  .in-jp:checked + .lens-jp {
+    background: rgba(20, 51, 92, 0.4);
+    border-color: var(--navy);
+    z-index: 5;
+  }
+  .lens-cites:hover,
+  .in-cites:focus-visible + .lens-cites,
+  .in-cites:checked + .lens-cites {
+    background: rgba(20, 51, 92, 0.16);
+    border-color: var(--navy);
+    z-index: 5;
+  }
+
+  /* The twin record card */
+  .record {
+    background: #fff;
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius);
+    padding: 1.1rem 1.25rem 0.85rem;
+    max-width: 26rem;
+  }
+  .record-head {
+    font-family: var(--font-mono);
+    font-size: 0.64rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 0.75rem;
+  }
+  .fields {
+    display: grid;
+    gap: 0;
+    margin: 0;
+  }
+  .field {
+    display: grid;
+    grid-template-columns: 8.5rem minmax(0, 1fr);
+    gap: 0.8rem;
+    align-items: baseline;
+    border-bottom: 1px solid var(--hairline);
+    padding: 0.42rem 0;
+  }
+  .field:last-child {
+    border-bottom: 0;
+    padding-bottom: 0.25rem;
+  }
+  .field dt {
+    font-size: 0.78rem;
+    color: var(--muted);
+  }
+  .field dd {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    overflow-wrap: anywhere;
+  }
+  .dot {
+    font-size: 0.55em;
+    vertical-align: 0.2em;
+  }
+
+  /* Captions: stacked in one grid cell, exchanged by state */
+  .captions {
+    display: grid;
+    margin-top: 1.3rem;
+    min-height: 2.4rem;
+  }
+  .cap {
+    grid-area: 1 / 1;
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--ink);
+    max-width: 56ch;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+  .spread:has(.in-eu:checked) .cap-eu,
+  .spread:has(.in-jp:checked) .cap-jp,
+  .spread:has(.in-cites:checked) .cap-cites {
+    opacity: 1;
+  }
+  .spread:has(.lens-eu:hover) .cap-eu,
+  .spread:has(.lens-jp:hover) .cap-jp,
+  .spread:has(.lens-cites:hover) .cap-cites {
+    opacity: 1;
+  }
+
+  @media (max-width: 480px) {
+    .stage {
+      padding-top: 6.8rem;
+    }
+    .lens {
+      width: 38%;
+      padding: 0.5rem 0.6rem;
+    }
+    .lens-cites {
+      left: 72%;
+    }
+    .field {
+      grid-template-columns: 6.8rem minmax(0, 1fr);
+      gap: 0.5rem;
+    }
+  }
+</style>

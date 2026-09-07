@@ -1,0 +1,246 @@
+---
+import BaseLayout from '../components/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Understand"
+  description="What a Digital Product Passport is, in plain language: the washing-machine story, one diagram, and who reads a passport."
+  eyebrow="01 · Understand"
+>
+  <h1>What is a Digital Product Passport?</h1>
+  <p class="lede">
+    A digital product passport is a record that travels with a thing — a washing machine, a
+    battery, a spare part — and answers four questions: what is it, who made it, how do I
+    repair it, and how do I recycle it.
+  </p>
+
+  <section aria-labelledby="story-heading">
+    <h2 id="story-heading">A washing machine</h2>
+    <p>
+      Take a washing machine sold in 2026. On its frame, next to the rating plate, is a
+      two-dimensional code. A consumer scans it with any phone camera. The code resolves to
+      the machine's passport record, and the phone shows: the model and batch; who
+      manufactured it and where; the energy class, with the test basis behind it; the list
+      of spare parts, with disassembly instructions; and the take-back route — the nearest
+      collection point, and which components to detach first.
+    </p>
+    <p>
+      The same code serves other readers. A repairer sees the service history the
+      manufacturer is required to publish. A customs officer sees the origin and conformity
+      declarations their jurisdiction asks for. A recycler sees the material content, down
+      to the parts that must be removed before shredding. One code, several readings: each
+      reader sees the parts of the record that their role and their law give them.
+    </p>
+    <p>
+      The record itself lives on servers, not on the machine. What lives on the machine is
+      the carrier — the code — and a minimum of data that stays readable even with no
+      network: what the product is, who operates the passport, and whether a recall is
+      outstanding.
+    </p>
+  </section>
+
+  <section class="plate" aria-labelledby="diagram-heading">
+    <h2 id="diagram-heading">One diagram</h2>
+    <p>
+      A passport is data plus a way to reach it: a carrier on the product, a resolver that
+      maps the code to the record, and the record with its readers around it.
+    </p>
+    <figure class="figure">
+      <svg
+        viewBox="0 0 780 340"
+        role="img"
+        aria-labelledby="learn-diagram-title learn-diagram-desc"
+      >
+        <title id="learn-diagram-title">
+          From product to carrier to record, with four readers around the record
+        </title>
+        <desc id="learn-diagram-desc">
+          A washing machine carries a two-dimensional code. The code resolves to a passport
+          record. Four readers connect to the record: a consumer, a repairer, a customs
+          officer, and a recycler, each reading the parts their role entitles them to.
+        </desc>
+
+        <!-- Product: washing machine -->
+        <rect x="20" y="80" width="100" height="170" rx="8" class="box" />
+        <rect x="35" y="95" width="70" height="10" rx="3" class="line-fill" />
+        <circle cx="70" cy="185" r="30" class="outline" />
+        <circle cx="70" cy="185" r="20" class="line-fill" />
+        <rect x="35" y="140" width="16" height="24" rx="3" class="outline" />
+        <rect x="89" y="140" width="16" height="24" rx="3" class="outline" />
+        <text x="70" y="275" text-anchor="middle" class="lbl">Product</text>
+
+        <!-- Arrow product -> carrier -->
+        <line x1="128" y1="165" x2="168" y2="165" class="arrow" />
+        <polygon points="168,160 178,165 168,170" class="arrow-head" />
+
+        <!-- Carrier: the code -->
+        <rect x="182" y="125" width="80" height="80" class="box" />
+        <rect x="192" y="135" width="20" height="20" class="bold" />
+        <rect x="232" y="135" width="20" height="20" class="bold" />
+        <rect x="192" y="175" width="20" height="20" class="bold" />
+        <rect x="224" y="167" width="8" height="8" class="bold" />
+        <rect x="236" y="179" width="8" height="8" class="bold" />
+        <rect x="206" y="181" width="8" height="8" class="bold" />
+        <text x="222" y="275" text-anchor="middle" class="lbl">Carrier</text>
+
+        <!-- Arrow carrier -> record -->
+        <line x1="270" y1="165" x2="310" y2="165" class="arrow" />
+        <polygon points="310,160 320,165 310,170" class="arrow-head" />
+
+        <!-- Record: passport document -->
+        <rect x="322" y="80" width="190" height="170" rx="6" class="box" />
+        <rect x="340" y="98" width="120" height="12" rx="3" class="line-fill" />
+        <line x1="340" y1="132" x2="494" y2="132" class="rule" />
+        <line x1="340" y1="152" x2="480" y2="152" class="rule" />
+        <line x1="340" y1="172" x2="494" y2="172" class="rule" />
+        <line x1="340" y1="192" x2="460" y2="192" class="rule" />
+        <circle cx="344" cy="222" r="4" class="ok-dot" />
+        <line x1="356" y1="222" x2="440" y2="222" class="rule" />
+        <text x="417" y="275" text-anchor="middle" class="lbl">Passport record</text>
+
+        <!-- Readers -->
+        <line x1="512" y1="70" x2="575" y2="70" class="rule" />
+        <rect x="575" y="59" width="12" height="12" rx="2" class="bold" />
+        <text x="595" y="66" class="lbl">Consumer</text>
+        <text x="595" y="82" class="sub">repair and recycling information</text>
+
+        <line x1="512" y1="145" x2="575" y2="145" class="rule" />
+        <rect x="575" y="134" width="12" height="12" rx="2" class="bold" />
+        <text x="595" y="141" class="lbl">Repairer</text>
+        <text x="595" y="157" class="sub">service history, spare parts</text>
+
+        <line x1="512" y1="220" x2="575" y2="220" class="rule" />
+        <rect x="575" y="209" width="12" height="12" rx="2" class="bold" />
+        <text x="595" y="216" class="lbl">Customs officer</text>
+        <text x="595" y="232" class="sub">origin and conformity evidence</text>
+
+        <line x1="512" y1="295" x2="575" y2="295" class="rule" />
+        <rect x="575" y="284" width="12" height="12" rx="2" class="bold" />
+        <text x="595" y="291" class="lbl">Recycler</text>
+        <text x="595" y="307" class="sub">material content, take-back</text>
+      </svg>
+      <figcaption>
+        Product, carrier, record, readers. The code on the product resolves to the record;
+        each reader receives the view their role entitles them to.
+      </figcaption>
+    </figure>
+  </section>
+
+  <section class="plate" aria-labelledby="readers-heading">
+    <h2 id="readers-heading">Who reads one</h2>
+    <dl class="readers">
+      <div class="reader">
+        <dt>Consumer</dt>
+        <dd>What the product is, how long it should last, how to repair it, where it goes at end of life.</dd>
+      </div>
+      <div class="reader">
+        <dt>Repairer</dt>
+        <dd>Spare-part lists, disassembly instructions, and the published service history.</dd>
+      </div>
+      <div class="reader">
+        <dt>Customs officer</dt>
+        <dd>Origin and conformity evidence, in the form the jurisdiction of entry requires.</dd>
+      </div>
+      <div class="reader">
+        <dt>Recycler</dt>
+        <dd>Material content, hazardous components, and take-back obligations.</dd>
+      </div>
+    </dl>
+  </section>
+
+  <section aria-labelledby="next-heading">
+    <h2 id="next-heading">Where this leads</h2>
+    <p>
+      A single washing machine needs one passport. A product sold across borders meets
+      several disclosure duties at once, and the question becomes whose passport it carries.
+      That question is the subject of the next level:
+      <a href="/why/">why an international core</a>.
+    </p>
+  </section>
+</BaseLayout>
+
+<style>
+  .figure {
+    margin: 1.4rem 0 0.4rem;
+    max-width: none;
+  }
+  .figure svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .figure figcaption {
+    margin-top: 0.7rem;
+    font-size: 0.82rem;
+    color: var(--muted);
+    max-width: 56ch;
+  }
+  .box {
+    fill: #fff;
+    stroke: var(--hairline);
+    stroke-width: 1.5;
+  }
+  .outline {
+    fill: none;
+    stroke: var(--hairline);
+    stroke-width: 1.5;
+  }
+  .line-fill {
+    fill: var(--hairline);
+    stroke: none;
+  }
+  .bold {
+    fill: var(--navy);
+    stroke: none;
+  }
+  .arrow {
+    stroke: var(--muted);
+    stroke-width: 1.5;
+  }
+  .arrow-head {
+    fill: var(--muted);
+  }
+  .rule {
+    stroke: var(--hairline);
+    stroke-width: 2;
+  }
+  .ok-dot {
+    fill: var(--green);
+  }
+  .lbl {
+    font-family: var(--font-body);
+    font-size: 13px;
+    fill: var(--ink);
+  }
+  .sub {
+    font-family: var(--font-body);
+    font-size: 11px;
+    fill: var(--muted);
+  }
+
+  .readers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+    gap: 1px;
+    background: var(--hairline);
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin: 1.4rem 0 0;
+    max-width: none;
+  }
+  .reader {
+    background: var(--paper);
+    padding: 1rem 1.15rem;
+  }
+  .reader dt {
+    font-weight: 600;
+    font-size: 0.92rem;
+    margin: 0 0 0.35rem;
+  }
+  .reader dd {
+    margin: 0;
+    font-size: 0.86rem;
+    color: var(--muted);
+  }
+</style>

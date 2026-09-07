@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>UniDPP — The International Digital Product Passport Framework</title>
+<meta name="description" content="UniDPP: an open, international framework and reference implementation for the Digital Product Passport, spanning ISO/IEC, CEN, and UN standards.">
+<style>
+:root{--ink:#141a22;--mut:#5a6673;--line:#d8dee6;--bg:#fff;--soft:#f4f7fa;--accent:#0f4c81}
+*{box-sizing:border-box}body{margin:0;font:16px/1.65 -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+header{border-bottom:1px solid var(--line);padding:20px 6vw;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+header .mark{font-weight:700;font-size:20px;letter-spacing:.5px;color:var(--accent)}
+header nav{margin-left:auto;display:flex;gap:22px;font-size:14.5px}
+header a{color:var(--mut);text-decoration:none}header a:hover{color:var(--ink)}
+main{max-width:960px;margin:0 auto;padding:0 6vw 70px}
+h1{font-size:34px;line-height:1.25;margin:56px 0 12px;max-width:820px}
+.lede{font-size:18.5px;color:var(--mut);max-width:760px}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin:38px 0}
+.card{border:1px solid var(--line);border-radius:10px;padding:18px 20px;background:var(--soft)}
+.card h3{margin:0 0 8px;font-size:15.5px;color:var(--accent)}
+.card p{margin:0;font-size:14.5px;color:var(--mut)}
+section h2{font-size:22px;margin:48px 0 10px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--soft);font-weight:600}
+code{background:var(--soft);padding:1px 5px;border-radius:4px;font-size:13px}
+footer{border-top:1px solid var(--line);padding:22px 6vw;color:var(--mut);font-size:13.5px;display:flex;gap:18px;flex-wrap:wrap}
+footer span{margin-right:auto}
+a.cta{display:inline-block;margin-top:18px;border:1px solid var(--accent);color:var(--accent);padding:9px 18px;border-radius:8px;text-decoration:none;font-size:15px}
+a.cta:hover{background:var(--accent);color:#fff}
+</style>
+</head>
+<body>
+<header>
+  <span class="mark">UniDPP</span>
+  <nav>
+    <a href="#framework">Framework</a><a href="#standards">Standards</a><a href="#implementation">Implementation</a><a href="#compare">Comparisons</a><a href="#terminology">Terminology</a><a href="#papers">Papers</a>
+  </nav>
+</header>
+<main>
+<h1>An international framework and open reference implementation for the Digital Product Passport</h1>
+<p class="lede">UniDPP treats every regulatory regime — the European Union's EN&nbsp;18216–18246 series among them — as one profile on a neutral international core: one product identity, one event-sourced record, many jurisdiction, sector, and characteristic lenses, with trust that crosses borders without requiring anyone to adopt anyone else's rules.</p>
+<a class="cta" href="https://github.com/unidpp">github.com/unidpp</a>
+
+<section id="framework"><h2>The framework</h2>
+<p>Fourteen invariants define the framework: single-minted identity with registry-governed semantics; append-only event sourcing as the authoritative record; a typed relationship algebra covering association, derivation, installation, type lineage, custody, and membership; passports as deterministic, legally-cited projections of the testimonial record; graded trust with multi-suite signatures (SM2, FIPS, and post-quantum side by side); jurisdiction × sector × characteristic profiles with predicate triggers; enumeration resistance — the system is verifiable without being browsable; and a three-tier availability ladder with an offline minimum carried on the product itself.</p>
+<div class="cols">
+<div class="card"><h3>Identity</h3><p>ISO/IEC 15459 issuance with bridges to GS1, Handle, Ecode, and MA schemes; identities are never re-minted.</p></div>
+<div class="card"><h3>Semantics</h3><p>ISO 19135 / FERIN federated registers; the UNTDED dataset as the trade-data seed; CDDAL dictionary technology.</p></div>
+<div class="card"><h3>Trust</h3><p>SIGNATIF cross-recognition: threshold roots, jurisdictional trust lists, a multi-witnessed master list, transparency anchoring.</p></div>
+<div class="card"><h3>Time and events</h3><p>ISO 8601 and ISO 34000 foundations; a fifteen-class post-sale event model; notarized as-of queries.</p></div>
+<div class="card"><h3>Units and measurement</h3><p>ISO 80000 with UnitsDB/UnitsML; measurement uncertainty and conformity decision rules on every measured value.</p></div>
+<div class="card"><h3>Formal model</h3><p>An EXPRESS core with derived JSON and XML renders; STEP/AP242 lineage for the type–version–configuration lattice.</p></div>
+</div></section>
+
+<section id="standards"><h2>Standards</h2>
+<table><tr><th>Layer</th><th>Standards</th></tr>
+<tr><td>Identity and carriers</td><td>ISO/IEC 15459; ISO/IEC 18004, 16022, 18000, 18092; GS1 Digital Link (RFC 9264); IEC 61406; GB/T 33993</td></tr>
+<tr><td>Semantics and registry</td><td>ISO 19135:2025 (FERIN); UNTDED; IEC 61360/62656 (CDDAL)</td></tr>
+<tr><td>Trust</td><td>SIGNATIF; W3C Verifiable Credentials; ISO 22376; ISO/IEC 20248; CNML</td></tr>
+<tr><td>Time</td><td>ISO 8601-1/-2 incl. Amd1; ISO 34000</td></tr>
+<tr><td>Quantities</td><td>ISO 80000; UnitsML/UnitsDB</td></tr>
+<tr><td>Rules</td><td>Prellel executable-regulation packages</td></tr>
+<tr><td>EU profile (adapter)</td><td>EN 18216–18246; ESPR delegated acts</td></tr>
+<tr><td>Mappings (informative)</td><td>UNTP; AAS (one mapping, with a drift monitor); EPCIS; ISO 59040</td></tr></table></section>
+
+<section id="implementation"><h2>Implementation</h2>
+<p>A fully open, multi-language implementation: <code>unidpp-core</code> (Rust — canonical model and algorithms: event log, transformation algebra with mass balance and taint, Tier-A packer, verdicts), <code>unidpp-ts</code>, <code>unidpp-rb</code>, <code>unidpp-py</code> (SDKs, registry clients, conformance runners), <code>unidpp-resolver</code> (federated resolution with dark identities), <code>unidpp-signatif</code> (trust path-finding and threshold ceremonies on Confium), and <code>unidpp-explorer</code>. Conformance fixtures are derived from the full converted corpus of the EN series, the CEN Workshop Agreements, and the IDTA specifications, including published defect registers as negative test cases.</p></section>
+
+<section id="compare"><h2>Comparisons</h2>
+<table><tr><th>Capability</th><th>freeDPP</th><th>OpenDPP</th><th>UniDPP</th></tr>
+<tr><td>EN 18216–18246 support</td><td>Yes (as the whole system)</td><td>Yes</td><td>Yes — as one jurisdiction profile</td></tr>
+<tr><td>Multi-jurisdiction profiles</td><td>—</td><td>—</td><td>Core mechanism</td></tr>
+<tr><td>Neutral semantic registry</td><td>—</td><td>—</td><td>ISO 19135 / FERIN; UNTDED seed</td></tr>
+<tr><td>Trust</td><td>Transport security</td><td>W3C VC</td><td>SIGNATIF: multi-suite signatures, transparency logs, threshold roots</td></tr>
+<tr><td>Event sourcing and transformation algebra</td><td>—</td><td>—</td><td>Core</td></tr>
+<tr><td>Offline minimum (Tier A)</td><td>—</td><td>—</td><td>Core</td></tr>
+<tr><td>AI-agent projection</td><td>—</td><td>From a private backend</td><td>From the open specification</td></tr>
+<tr><td>Multilingual terminology dataset</td><td>—</td><td>—</td><td>Glossarist edition of the DPP vocabulary</td></tr>
+<tr><td>Licensing</td><td>GPL-3 (server)</td><td>Apache-2 boundary, closed core</td><td>Fully open (Apache-2 / MIT)</td></tr></table></section>
+
+<section id="terminology"><h2>Terminology</h2>
+<p>A multilingual Glossarist concept-browser edition of the Digital Product Passport vocabulary, compiled from the published European Standards, CEN Workshop Agreements, and ISO working drafts — including the recorded definitional conflict between ISO/AWI 25534-1 and EN 18223:2026, presented for harmonization under the proposed ISO 25534-1 Part 1 (Vocabulary).</p></section>
+
+<section id="papers"><h2>Papers and contributions</h2>
+<p>Position and technical contributions to ISO/IEC JTC 5: the framework position paper; semantic-registry requirements (filling EN 18223 §4.3); the lifecycle and event model; the trust annex input; the terminology dataset announcement; and the UniDPP implementation report with published conformance and drift findings.</p></section>
+</main>
+<footer><span>UniDPP — an open, multi-body initiative.</span><a href="https://github.com/unidpp">GitHub</a><a href="mailto:contact@unidpp.org">contact@unidpp.org</a></footer>
+</body>
+</html>

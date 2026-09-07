@@ -1,0 +1,119 @@
+---
+import BaseLayout from '../../components/BaseLayout.astro';
+import DataTable from '../../components/DataTable.astro';
+---
+
+<BaseLayout
+  title="Standards"
+  description="Standards topics map: every layer of the UniDPP framework with its mechanisms and steward body, the layer seams, and the profile landscape."
+  eyebrow="04 · Reference — standards"
+>
+  <h1>Standards</h1>
+  <p class="lede">
+    Every layer the framework offers is ISO/IEC/UN-neutral and already exists as a
+    standard, a dataset, or a running system. The table below maps each layer to its
+    mechanisms and its steward; nothing in the framework depends on a proprietary
+    mechanism.
+  </p>
+
+  <section id="topics-map" class="plate" aria-labelledby="topics-h">
+    <h2 id="topics-h">Topics map</h2>
+    <DataTable
+      columns={['Layer', 'Mechanisms', 'Steward']}
+      rows={[
+        ['Identity', 'ISO/IEC 15459 issuance; bridges to GS1, Handle (工业互联网标识解析), Ecode, and MA schemes', 'ISO/IEC JTC 1/SC 31 lineage; TC 154 registry bindings'],
+        ['Carrier', 'ISO/IEC 18004, 16022, 18000-3/-63, 18092; GS1 Digital Link + RFC 9264 linksets; IEC 61406 identity links', 'SC 31; GS1; IEC'],
+        ['Core model', 'EXPRESS (ISO 10303-11) with derived JSON and XML renders; expressir validation', 'ELF'],
+        ['Registry', 'ISO 19135:2025 / FERIN federated registers; UNTDED seed dataset; CDDAL dictionary technology (OpenCDD)', 'Enosema; TC 154 / UN/CEFACT; ELF'],
+        ['Rules, transforms, twin', 'Prellel executable-regulation packages; Primmel SMART twin runtime and twin-cert; Confium threshold PKI', 'OIML SMART programme (programme-agnostic ladder)'],
+        ['Trust', 'SIGNATIF: trust DAG, threshold roots, transparency logs, algorithm agility, co-signatures; CNML as post-quantum ESDC realization', 'CalConnect + TC 154; OIML'],
+        ['Cryptographic suites', 'SM2/SM3/SM4/SM9 (ISO/IEC 14888-3, 10118-3, 18033-3), FIPS suites, ML-DSA — profile-bound, co-signed', 'Per jurisdiction; registry-governed'],
+        ['Time and events', 'ISO 8601-1/-2 incl. Amd1; ISO 34000 vocabulary; temporal profile; event model', 'CalConnect'],
+        ['Units and quantities', 'ISO 80000 → UnitsDB/UnitsML; isq-smart; OpenCDD unit mirror', 'CalConnect (UnitsML); isq-smart; ELF'],
+        ['API', 'EN 18222 as the EU-profile API; freeDPP as an open implementation reference', 'CEN-CLC/JTC 24 profile; community'],
+        ['Twin sources', 'Pimmel SMART (reference implementation); UNTP mapping; AAS one informative mapping only', 'UniDPP; UNECE; IDTA'],
+      ]}
+    />
+  </section>
+
+  <section id="eu-profile" aria-labelledby="eu-h">
+    <h2 id="eu-h">The EU profile</h2>
+    <p>
+      The European series — EN 18216 through EN 18246 — and the ESPR delegated acts are
+      treated as exactly one jurisdiction profile, on equal footing with every other: EN
+      18219 identifiers, EN 18220 carriers, EN 18221 persistence, EN 18222 APIs, EN 18223
+      content, EN 18239 roles, EN 18246 verification. The series’ own neutrality language
+      (“technology, ontology and domain agnostic”, EN 18223 §0.3; “without vendor
+      lock-in”, EN 18216 scope) is implemented rather than amended. Known vacancies — the
+      semantic repository at EN 18223 §4.3 and the event/time model behind §4.2’s mandated
+      change logging — are addressed by the
+      <a href="/reference/papers/">registry and lifecycle contributions</a>.
+    </p>
+  </section>
+
+  <section id="seams" class="plate" aria-labelledby="seams-h">
+    <h2 id="seams-h">Seams</h2>
+    <p>
+      Layers join at twelve seams. They are tracked as first-class engineering surfaces
+      because seam failures are where the system cracks: every defect recorded in the audit
+      of the EN series is a seam failure.
+    </p>
+    <DataTable
+      columns={['Seam', 'Joint']}
+      rows={[
+        ['S1', 'Carrier ↔ resolver — code-format translation; 1D-to-2D migration.'],
+        ['S2', 'Resolver ↔ hosts — mirrors, national intermediary layers, dark identities.'],
+        ['<strong>S3</strong>', '<strong>Core ↔ profiles — the mount, where neutrality is enforced.</strong>'],
+        ['S4', 'Profile ↔ registry — <code>dictionaryReference</code> protocol, version pinning.'],
+        ['S5', 'Registry ↔ registry — FERIN federation, CDDAL canonicalization.'],
+        ['S6', 'Event log ↔ transparency logs — commitment anchoring, salt discipline.'],
+        ['S7', 'Issuer credentials ↔ profile trust lists — delegation DAG, roots, master list.'],
+        ['S8', 'Transforms ↔ engines — Prellel packages; determinism; version pinned at verification time.'],
+        ['S9', 'Parent ↔ child passports — installation edges, blind modes, mixed-profile children.'],
+        ['S10', 'Device ↔ system — edge commit/reveal; contact dumps.'],
+        ['S11', 'Tier A ↔ Tier B — embedded minimum vs served; staleness marking.'],
+        ['S12', 'Passport ↔ adjacent regimes — customs/WCO, e-invoicing, EPCIS/UNTP, CIDOC-CRM, ISO 20022.'],
+      ]}
+    />
+  </section>
+
+  <section id="profile-landscape" aria-labelledby="landscape-h">
+    <h2 id="landscape-h">Profile landscape</h2>
+    <p>
+      Profiles are authored by regulators through national standards bodies and
+      registration authorities, and are onboarded through the FERIN template and a
+      SIGNATIF trust-onboarding ceremony.
+    </p>
+    <ul>
+      <li>
+        <strong>Jurisdiction profiles:</strong> EU ESPR delegated acts (textiles 2026;
+        steel 30/07/2027; registry implementing act 30/06/2027); CN CCC/GB with SM
+        cryptographic suites; JP METI/PSE/Top Runner; KR KC; US state and
+        federal-procurement law; UK UKCA.
+      </li>
+      <li>
+        <strong>Sector overlays:</strong> electronics, textiles, batteries, construction,
+        tyres, packaging; measuring instruments as the OIML pilot vertical.
+      </li>
+      <li>
+        <strong>Characteristic profiles:</strong> CITES species content; cultural goods
+        (EU 2019/880); art-market AML; conflict minerals; CRMA; end-of-waste; recycled
+        content; historic vehicles; voluntary provenance and grading for antiques and
+        collectibles.
+      </li>
+      <li>
+        <strong>Carrier and presentation profiles:</strong> GB/T 33993; WeChat
+        mini-program channel.
+      </li>
+    </ul>
+  </section>
+
+  <section id="mappings" aria-labelledby="mappings-h">
+    <h2 id="mappings-h">Mappings (informative)</h2>
+    <p>
+      UNTP; EPCIS; ISO 59040; and AAS — one informative mapping, with a drift monitor, in
+      line with the doctrine that AAS is not load-bearing. Informative mappings are
+      published for interoperability and are never a dependency of any invariant.
+    </p>
+  </section>
+</BaseLayout>
