@@ -10,16 +10,16 @@ outputs (I4, I5). The framework shall provide navigation in both
 directions:
 
 a) *trace-up* — the ancestors of a passport: everything it derives
-   from (composition of chains);
+ from (composition of chains);
 
 b) *trace-down* — the descendants: where a passport's remainder or
-   outputs went;
+ outputs went;
 
 c) *recall set* — a root plus all its descendants, as the routing set
-   applied after a local predicate match (7.7 e);
+ applied after a local predicate match (7.7 e);
 
 d) *taints-of* — the union of taints of a passport and all its
-   ancestors (9.7).
+ ancestors (9.7).
 
 Roll-up views over deep graphs (aggregate carbon, recycled content)
 shall be computed from references, and may be served as signed
@@ -43,20 +43,20 @@ recorded in the parent's log by its custodian. Children shall be new
 passports carrying a derived-from reference and quantity carve-outs.
 
 a) *Remainder semantics.* The sum of child carve-outs shall not exceed
-   the parent's available quantity: `Σ children ≤ parent`. An over-carve
-   shall be rejected.
+ the parent's available quantity: `Σ children ≤ parent`. An over-carve
+ shall be rejected.
 
 b) *Dimension consistency.* Every carve-out shall be of the same
-   dimension as the parent quantity (9.5); negative carve-outs shall be
-   rejected.
+ dimension as the parent quantity (9.5); negative carve-outs shall be
+ rejected.
 
 c) *Remainder.* The remainder — the parent's quantity minus the sum of
-   carve-outs, expressed exactly in the parent's own unit — stays with
-   the parent.
+ carve-outs, expressed exactly in the parent's own unit — stays with
+ the parent.
 
 d) *Consumption.* When the remainder is exactly zero, the parent
-   transitions to `consumed` or `transformed` (8.4): historical, still
-   verifiable, still needed for as-of queries.
+ transitions to `consumed` or `transformed` (8.4): historical, still
+ verifiable, still needed for as-of queries.
 
 [[cl-transform-combine]]
 === Combine and transformation (N → 1)
@@ -68,55 +68,55 @@ state hash of that passport at reference time), so that the new
 passport hash-links its sources (a merge topology over the DAG).
 
 a) Output quantities shall be *new measured facts* with provenance
-   "computed by transformation event E" — never copies of input
-   quantities.
+ "computed by transformation event E" — never copies of input
+ quantities.
 
 b) *Mass balance.* `in − out = loss`, where loss shall be
-   non-negative and auditable as process loss; a negative balance
-   (output exceeding input) shall be rejected.
+ non-negative and auditable as process loss; a negative balance
+ (output exceeding input) shall be rejected.
 
 c) *Availability checks.* Each input reference shall be checked against
-   the as-of available quantity of that input; over-consumption of any
-   input shall be rejected, as shall dimension mismatch between output
-   and inputs.
+ the as-of available quantity of that input; over-consumption of any
+ input shall be rejected, as shall dimension mismatch between output
+ and inputs.
 
 d) Inputs transition to `consumed` or `transformed` (8.4 b).
 
 e) *Stamp-context inheritance.* Stamp quantity contexts ("verified
-   500 g of A at T", 11.3) attached to the inputs shall be inherited by
-   the output.
+ 500 g of A at T", 11.3) attached to the inputs shall be inherited by
+ the output.
 
 f) *Taint inheritance.* The output's taint set shall be the union of
-   the inputs' taint sets (9.7); mass-balance accounting shall carry
-   taint explicitly.
+ the inputs' taint sets (9.7); mass-balance accounting shall carry
+ taint explicitly.
 
 g) *Accreditation.* Only actors accredited for the regulated claims
-   involved may issue derived passports for regulated claims (the
-   notified-actor pattern of <<en18239>> as an informative EU-profile
-   reference); unaccredited issuance of regulated claims shall be a
-   conformance failure.
+ involved may issue derived passports for regulated claims (the
+ notified-actor pattern of <<en18239>> as an informative EU-profile
+ reference); unaccredited issuance of regulated claims shall be a
+ conformance failure.
 
 [[cl-transform-eow]]
 === End-of-waste and decompose
 
 a) *End-of-waste* is the legal state transition where a material
-   re-qualifies for a passport: the event shall carry an evidence
-   reference (the applicable end-of-waste criteria and decision) and
-   the output carve-outs, and shall transition the subject's status to
-   `end-of-waste` or re-enter it as `issued` (secondary raw material)
-   per the applicable regime.
+ re-qualifies for a passport: the event shall carry an evidence
+ reference (the applicable end-of-waste criteria and decision) and
+ the output carve-outs, and shall transition the subject's status to
+ `end-of-waste` or re-enter it as `issued` (secondary raw material)
+ per the applicable regime.
 
 b) *Decompose* (E13) is the inverse transformation at end-of-life,
-   1 → N, producing material passports; it shall be appended by a
-   recycler accredited for the claims, and records whether the actor is
-   accredited.
+ 1 → N, producing material passports; it shall be appended by a
+ recycler accredited for the claims, and records whether the actor is
+ accredited.
 
 c) The material state machine closes the loop: natural resource →
-   extracted lot (batch passport plus extraction profile) →
-   transformation chain → product → waste status → *end-of-waste event
-   = new passport issuance* → secondary raw material → re-entry. Mass
-   balance and taint propagate through the whole loop (cradle-to-
-   cradle, not cradle-to-grave).
+ extracted lot (batch passport plus extraction profile) →
+ transformation chain → product → waste status → *end-of-waste event
+ = new passport issuance* → secondary raw material → re-entry. Mass
+ balance and taint propagate through the whole loop (cradle-to-
+ cradle, not cradle-to-grave).
 
 [[cl-transform-units]]
 === Units and quantities
@@ -126,29 +126,29 @@ registered units shall not participate in transformations (the
 quantity chain: ISO 80000 → units registry).
 
 a) *Unit registry.* Units shall be defined in a registry seeded from
-   ISO 80000 and bound to a units registry namespace (UnitsML /
-   UnitsDB), each definition carrying the dimension and an exact
-   rational factor to the dimension's canonical unit. The framework's
-   seed registry shall provide at least: mass (kg, g, mg, t, lb),
-   energy (J, kJ, MJ, Wh, kWh), volume (m3, l, ml), count (count), and
-   dimensionless (ratio, percent), with their exact factors.
+ ISO 80000 and bound to a units registry namespace (UnitsML /
+ UnitsDB), each definition carrying the dimension and an exact
+ rational factor to the dimension's canonical unit. The framework's
+ seed registry shall provide at least: mass (kg, g, mg, t, lb),
+ energy (J, kJ, MJ, Wh, kWh), volume (m3, l, ml), count (count), and
+ dimensionless (ratio, percent), with their exact factors.
 
 b) *No conflicting redefinition.* A second registration of an existing
-   unit token with different dimension or factors shall be rejected;
-   identical re-registration shall be idempotent.
+ unit token with different dimension or factors shall be rejected;
+ identical re-registration shall be idempotent.
 
 c) *Canonical amounts.* Quantity arithmetic (sum, difference,
-   comparison, conversion) shall be performed in exact arithmetic on
-   canonical amounts (amount × factor), and remainders and losses
-   shall be expressed exactly in the requested unit.
+ comparison, conversion) shall be performed in exact arithmetic on
+ canonical amounts (amount × factor), and remainders and losses
+ shall be expressed exactly in the requested unit.
 
 d) *Dimension discipline.* Additions, subtractions and comparisons
-   shall be dimension-checked; dimension mismatch shall be rejected
-   (9.2 b, 9.3 c).
+ shall be dimension-checked; dimension mismatch shall be rejected
+ (9.2 b, 9.3 c).
 
 e) *Deterministic conversion.* Conversions shall be deterministic and
-   exact (for example kWh → MJ); profiles shall bind conversion factors
-   from the registry, never invent them.
+ exact (for example kWh → MJ); profiles shall bind conversion factors
+ from the registry, never invent them.
 
 [NOTE]
 ====
@@ -164,50 +164,50 @@ effective dates and legal citation (5.9). The transform taxonomy shall
 comprise at least:
 
 a) *unit conversion* — deterministic, factors per ISO 80000 and the
-   units registry;
+ units registry;
 
 b) *derivation* — deterministic arithmetic over same-twin elements;
 
 c) *aggregation* — cross-child roll-ups, methodology-bound: the
-   transform cites the method standard (for example a carbon-footprint
-   method) and never invents one;
+ transform cites the method standard (for example a carbon-footprint
+ method) and never invents one;
 
 d) *classification / binning* — threshold tables and code-list
-   mappings (for example energy-class scales versus star ratings versus
-   national labels);
+ mappings (for example energy-class scales versus star ratings versus
+ national labels);
 
 e) *localization mapping* — registered code-list correspondences (waste
-   codes, tariff nomenclatures).
+ codes, tariff nomenclatures).
 
 The following design rules shall hold.
 
 f) *Determinism* — an inspector shall be able to recompute the
-   classification from the canonical facts and the cited rules.
+ classification from the canonical facts and the cited rules.
 
 g) *Explicit rounding* — rounding and significant-digit rules shall be
-   published by the transform.
+ published by the transform.
 
 h) *Measurement-uncertainty propagation* per the GUM, and *conformity
-   decision rules* (guard-banding per the shared-risk versus guarded
-   rules of the applicable regime) for boundary measurements, shall be
-   published by the transform: a measurement near a class boundary may
-   be classified differently under different decision rules, and the
-   rule is law.
+ decision rules* (guard-banding per the shared-risk versus guarded
+ rules of the applicable regime) for boundary measurements, shall be
+ published by the transform: a measurement near a class boundary may
+ be classified differently under different decision rules, and the
+ rule is law.
 
 i) *Canonical storage* — the twin stores canonical measured values in
-   canonical units only, never pre-transformed duplicates, so rule
-   changes re-project rather than re-enter data.
+ canonical units only, never pre-transformed duplicates, so rule
+ changes re-project rather than re-enter data.
 
 j) *Executable form* — the normative transform-expression language for
-   regulations-as-executable-models shall carry clause-level
-   provenance identifiers (URNs), so that every derived value traces to
-   the exact legal paragraph it implements. Embedded ad-hoc scripts in
-   specifications are not conforming transform objects; transforms are
-   governed registry objects with a conformance suite (Clause 12).
+ regulations-as-executable-models shall carry clause-level
+ provenance identifiers (URNs), so that every derived value traces to
+ the exact legal paragraph it implements. Embedded ad-hoc scripts in
+ specifications are not conforming transform objects; transforms are
+ governed registry objects with a conformance suite (Clause 12).
 
 k) *Trust split* — attest inputs (measurement events); transforms
-   verify deterministically for free; attest outputs only where the
-   law certifies the classification itself.
+ verify deterministically for free; attest outputs only where the
+ law certifies the classification itself.
 
 [[cl-transform-taint]]
 === Taint propagation
@@ -216,30 +216,30 @@ Marking a passport fraudulent or otherwise tainted is a *graph event*,
 not only a trust-list event (I9).
 
 a) *Taint kinds.* The framework shall provide at least: `revoked`,
-   `compromised`, `misissued`, `fraud`, `non-conformant`,
-   `contaminated`, `legal-hold`, plus registered extensions
-   (`other:<token>`).
+ `compromised`, `misissued`, `fraud`, `non-conformant`,
+ `contaminated`, `legal-hold`, plus registered extensions
+ (`other:<token>`).
 
 b) *Retroactivity.* The revocation reason determines retroactivity:
-   prospective reasons (key compromise after a time, cessation,
-   supersession) leave prior as-of verifications valid; retroactive
-   reasons (`misissued`, `fraudulent issuance`, authority compromised
-   during a window) void validity ab initio — time-stamping does not
-   protect them. Distrust declarations shall carry an explicit window
-   [start, end]; passports inside the window are voided, outside it
-   re-validated.
+ prospective reasons (key compromise after a time, cessation,
+ supersession) leave prior as-of verifications valid; retroactive
+ reasons (`misissued`, `fraudulent issuance`, authority compromised
+ during a window) void validity ab initio — time-stamping does not
+ protect them. Distrust declarations shall carry an explicit window
+ [start, end]; passports inside the window are voided, outside it
+ re-validated.
 
 c) *Propagation.* Taint shall propagate downstream through the
-   provenance DAG (the same machinery as recalls, different cause):
-   tainting derived passports, recomputing affected claims (a
-   recycled-content claim built on stolen material collapses),
-   notifying custodians, possibly suspending products. The taint set
-   effective on a passport is the union of its own taints and its
-   ancestors' taints.
+ provenance DAG (the same machinery as recalls, different cause):
+ tainting derived passports, recomputing affected claims (a
+ recycled-content claim built on stolen material collapses),
+ notifying custodians, possibly suspending products. The taint set
+ effective on a passport is the union of its own taints and its
+ ancestors' taints.
 
 d) *Adjudication.* Issuer misconduct leads to a status-invalidation
-   cascade with adjudication; adjudicated outcomes are themselves
-   logged events.
+ cascade with adjudication; adjudicated outcomes are themselves
+ logged events.
 
 [NOTE]
 ====

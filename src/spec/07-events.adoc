@@ -9,13 +9,13 @@ issuance shall be an appended, typed event (I4). Every event shall
 carry:
 
 * `seq` — its sequence number, starting at zero, strictly monotonic
-  with no gaps;
+ with no gaps;
 * `occurredAt` — the occurrence time, a UTC timestamp per ISO 8601-1
-  (local time is a presentation concern);
+ (local time is a presentation concern);
 * `actorRole` and `actorId` — the appending role and actor identity;
 * `eventType` — the event class (8.2);
 * `payload` — the class-specific payload, structurally matching the
-  event class;
+ event class;
 * `trust` — the event's trust marker (11.2).
 
 An event whose payload variant does not match its declared event class
@@ -69,15 +69,15 @@ In addition to the sixteen lifecycle classes, the framework shall
 provide the following auxiliary classes:
 
 a) *transformation classes* — `split` (Clause 9), `combine` (Clause 9),
-   `end-of-waste` (Clause 9);
+ `end-of-waste` (Clause 9);
 
 b) *structural classes* — `install` and `uninstall` (7.6), with
-   uninstall outcomes harvested, destroyed or reused;
+ uninstall outcomes harvested, destroyed or reused;
 
 c) *edge-visibility classes* — `edge.visibility.change` (a visibility
-   transition on an existing edge) and `escrow.disclosure` (a
-   disclosure ceremony executed on an escrowed or blind edge: court,
-   regulator or consent), appended by the edge owner or trustee.
+ transition on an existing edge) and `escrow.disclosure` (a
+ disclosure ceremony executed on an escrowed or blind edge: court,
+ regulator or consent), appended by the edge owner or trustee.
 
 Event classes shall be identified by canonical tokens that are
 case-insensitive and separator-insensitive at parse time and normalize
@@ -97,41 +97,41 @@ append-only, hash-chained sequence of sealed events (I4). The following
 requirements apply.
 
 a) *Chaining.* Each sealed event shall commit to the entire prefix: its
-   commitment is `H(salt? ‖ prev ‖ canonicalBody)` over the previous
-   sealed event's commitment (absent for the first event) and the
-   event's canonical body, using SHA-256. Any in-place mutation of any
-   historical event shall break chain verification.
+ commitment is `H(salt? ‖ prev ‖ canonicalBody)` over the previous
+ sealed event's commitment (absent for the first event) and the
+ event's canonical body, using SHA-256. Any in-place mutation of any
+ historical event shall break chain verification.
 
 b) *Sequence discipline.* Appends shall be strictly sequential with no
-   gaps; an out-of-order or repeated sequence number shall be rejected.
+ gaps; an out-of-order or repeated sequence number shall be rejected.
 
 c) *Salt discipline.* Where an event commitment is salted, the log
-   shall record only an opaque salt reference (an index into the
-   owner-side salt store), and no serialization of the log shall
-   contain any salt. Salts shall be consumed at append time and dropped
-   from working memory. A salted commitment shall at minimum be
-   demonstrably distinct from the unsalted form of the same body.
+ shall record only an opaque salt reference (an index into the
+ owner-side salt store), and no serialization of the log shall
+ contain any salt. Salts shall be consumed at append time and dropped
+ from working memory. A salted commitment shall at minimum be
+ demonstrably distinct from the unsalted form of the same body.
 
 d) *Anchoring.* Prefix truncation alone is not detectable from the
-   chain; the log head shall therefore be verifiable against an
-   externally witnessed transparency-log anchor. A log head that does
-   not match the anchor is an anchor mismatch, and a prefix-consistent
-   log that fails anchoring shall be treated as truncated or forked.
-   Forks (diverging commitments for one identity) are integrity
-   incidents and shall be adjudicated, never silently merged.
+ chain; the log head shall therefore be verifiable against an
+ externally witnessed transparency-log anchor. A log head that does
+ not match the anchor is an anchor mismatch, and a prefix-consistent
+ log that fails anchoring shall be treated as truncated or forked.
+ Forks (diverging commitments for one identity) are integrity
+ incidents and shall be adjudicated, never silently merged.
 
 e) *Replay.* Current state shall be derived by replay: the current
-   status, the safety flag, the current custodian and the correction
-   and stamp counts shall be computable from the event sequence alone.
-   The safety flag shall combine recall and security evidence with
-   recall taking precedence: none, recall-active, security-flagged.
+ status, the safety flag, the current custodian and the correction
+ and stamp counts shall be computable from the event sequence alone.
+ The safety flag shall combine recall and security evidence with
+ recall taking precedence: none, recall-active, security-flagged.
 
 f) *Distributed authority.* No single party shall hold the
-   authoritative record alone: each event is authored by its custodian
-   at the time, registry holds identity and resolution, the current
-   custodian holds the live twin segment, archives hold persistence,
-   and consumer-held segments stay private (5.9). Anchoring is the
-   globally consistent spine (seam S6).
+ authoritative record alone: each event is authored by its custodian
+ at the time, registry holds identity and resolution, the current
+ custodian holds the live twin segment, archives hold persistence,
+ and consumer-held segments stay private (5.9). Anchoring is the
+ globally consistent spine (seam S6).
 
 [NOTE]
 ====
@@ -167,25 +167,25 @@ rejected at event construction.
 The following rules apply.
 
 a) Suspension, invalidation and de-conformance proceed from `issued`;
-   reinstatement proceeds from `suspended`; re-evaluation pass proceeds
-   from `non-conformant`.
+ reinstatement proceeds from `suspended`; re-evaluation pass proceeds
+ from `non-conformant`.
 
 b) Transformation consumes inputs: the issuance and transformation
-   machinery of Clause 9 transitions inputs to `consumed` or
-   `transformed` — historical, still verifiable, still needed for
-   as-of queries.
+ machinery of Clause 9 transitions inputs to `consumed` or
+ `transformed` — historical, still verifiable, still needed for
+ as-of queries.
 
 c) End-of-waste re-entry transitions `end-of-waste` to `issued`
-   (9.4).
+ (9.4).
 
 d) Every terminal path ends in `archived` (Tier C, 10.1); `archived`
-   has no outgoing transitions; `invalidated`, `consumed` and
-   `transformed` cannot return to `issued`.
+ has no outgoing transitions; `invalidated`, `consumed` and
+ `transformed` cannot return to `issued`.
 
 e) Status example values published by other systems (for example the
-   active/inactive/archived/invalid sets of the EU profile family)
-   shall be mapped onto this state machine by profile adaptation, not
-   by replacing it.
+ active/inactive/archived/invalid sets of the EU profile family)
+ shall be mapped onto this state machine by profile adaptation, not
+ by replacing it.
 
 [NOTE]
 ====
@@ -197,25 +197,25 @@ Informative implementation reference: `crates/event/src/status.rs`
 === Corrections, re-evaluation and recalls
 
 a) *Corrections never rewrite.* A correction shall append a new
-   corrected fact with a reason, preserving the prior value in the log
-   (event-sourcing); corrections shall never mutate historical events.
+ corrected fact with a reason, preserving the prior value in the log
+ (event-sourcing); corrections shall never mutate historical events.
 
 b) *Re-evaluation triggers.* Modifications (E4) and feature unlocks
-   (E5) shall trigger profile re-evaluation (re-running the profile's
-   bound rule packages, 9.6); status may go to `non-conformant pending
-   re-evaluation`, with regulator notification per profile.
+ (E5) shall trigger profile re-evaluation (re-running the profile's
+ bound rule packages, 9.6); status may go to `non-conformant pending
+ re-evaluation`, with regulator notification per profile.
 
 c) *Recalls traverse downstream.* Recall propagation shall traverse
-   the provenance DAG downstream and notify custodians (9.1), using
-   predicate-based recall (7.7 e): the campaign event carries the
-   predicate; the recall set is never enumerated centrally.
+ the provenance DAG downstream and notify custodians (9.1), using
+ predicate-based recall (7.7 e): the campaign event carries the
+ predicate; the recall set is never enumerated centrally.
 
 d) *Carrier replacement* (physical code re-issue) is a registry event
-   on unchanged identity (7.3 f).
+ on unchanged identity (7.3 f).
 
 e) *Post-sale extension.* Resellers, refurbishers and recyclers extend
-   the event chain and never overwrite it; custody transfer is a signed
-   ceremony (E1) so the trail survives multiple owners.
+ the event chain and never overwrite it; custody transfer is a signed
+ ceremony (E1) so the trail survives multiple owners.
 
 [[cl-event-asof]]
 === As-of queries and the two query modes
@@ -226,28 +226,28 @@ purpose selects the mode (source invariant 7 of 5.11).
 a) *Live view* — the current state, freshness-labelled (10.4).
 
 b) *Notarized as-of snapshot* — the state reconstructed from the
-   event-sourced record at a specified past time, log-anchored.
+ event-sourced record at a specified past time, log-anchored.
 
 The following requirements apply.
 
 c) The *as-of prefix* of a log at time T shall be the sequence of
-   events that had occurred by T; the *state hash at T* shall be the
-   head commitment of that prefix (empty before the first event).
+ events that had occurred by T; the *state hash at T* shall be the
+ head commitment of that prefix (empty before the first event).
 
 d) Transformation events shall hash-link their inputs by as-of state
-   hash (9.3), so that derived passports reference exactly the input
-   states they consumed.
+ hash (9.3), so that derived passports reference exactly the input
+ states they consumed.
 
 e) Profile-version bindings recorded as lifecycle events shall make
-   manifest history as-of-reconstructable, answering "was this
-   compliant when sold in a given year?".
+ manifest history as-of-reconstructable, answering "was this
+ compliant when sold in a given year?".
 
 f) Mirrors and caches shall always carry as-of stamps; because the
-   projection is computed from the record, as-of queries shall be
-   reproducible.
+ projection is computed from the record, as-of queries shall be
+ reproducible.
 
 g) Notarized snapshots shall be anchored by log-anchored time-stamping
-   (11.3, 11.6).
+ (11.3, 11.6).
 
 [NOTE]
 ====

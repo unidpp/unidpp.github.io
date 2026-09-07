@@ -12,26 +12,26 @@ following counter-principles govern every other clause of this
 document:
 
 a) specify the optics and derive the image format — the framework
-   specifies identity, events, projections and trust, and derives
-   representations;
+ specifies identity, events, projections and trust, and derives
+ representations;
 
 b) legislate invariants, not implementations — casing conventions,
-   address shapes and serialization corners are versionable registry
-   items, not core requirements;
+ address shapes and serialization corners are versionable registry
+ items, not core requirements;
 
 c) one formalization — the core model is single-sourced; UML, JSON and
-   XML renders are derived views and never authoritative over it;
+ XML renders are derived views and never authoritative over it;
 
 d) versioned lenses, immutable scenes — profiles are versioned and
-   registered; the testimonial record is append-only and never altered
-   by observation;
+ registered; the testimonial record is append-only and never altered
+ by observation;
 
 e) publish the uncertainty — every lens publishes its measurement
-   uncertainty and its decision rules as mandatory metadata;
+ uncertainty and its decision rules as mandatory metadata;
 
 f) open mount — the profile interface on the neutral core is open, and
-   the interop guarantee and the anti-lock-in clause are one and the
-   same sentence.
+ the interop guarantee and the anti-lock-in clause are one and the
+ same sentence.
 
 The profile is conceived as a calibrated lens placed on the digital
 twin: the scene (the twin, invariant, append-only) is never altered by

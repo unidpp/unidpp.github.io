@@ -34,14 +34,14 @@ re-verification through conformance runs (Clause 12).
 Profile composition shall be three-axial:
 
 a) *jurisdiction* — the regulator whose law applies (for example EU,
-   JP, CN, a federal procurement regime, a sub-national state);
+ JP, CN, a federal procurement regime, a sub-national state);
 
 b) *sector* — the industry overlay (for example electronics, textiles,
-   batteries, construction, tyres, measuring instruments);
+ batteries, construction, tyres, measuring instruments);
 
 c) *characteristic* — predicate-attached (for example conflict
-   minerals, heritage status, CITES species content, end-of-waste,
-   recycled content, historic-vehicle age).
+ minerals, heritage status, CITES species content, end-of-waste,
+ recycled content, historic-vehicle age).
 
 A profile shall sit on at least one axis; a profile with no axis, no
 data points and no suites is not a profile and shall be rejected (6.3).
@@ -93,8 +93,8 @@ verification time:
 * the profile binds no data points;
 * the profile binds no cryptographic suites;
 * the profile demands bounded freshness (fresh-within) while setting a
-  minimum capability of S0 (silent) — an *unsatisfiable profile*
-  (6.5);
+ minimum capability of S0 (silent) — an *unsatisfiable profile*
+ (6.5);
 * the effective interval is malformed.
 
 Applicability shall be evaluated as the conjunction of the effective
@@ -121,22 +121,22 @@ composition:
 a) the universal predicate `any` (always true);
 
 b) conjunction `all(p1, …, pn)` and disjunction `any-of(p1, …, pn)`
-   and negation `not(p)`;
+ and negation `not(p)`;
 
 c) fact comparisons `fact-eq`, `fact-ne`, `fact-gt`, `fact-ge`,
-   `fact-lt`, `fact-le` over typed twin fact values (string, number,
-   boolean, list), where a comparison against an absent fact is false;
+ `fact-lt`, `fact-le` over typed twin fact values (string, number,
+ boolean, list), where a comparison against an absent fact is false;
 
 d) `fact-contains(path, needle)` — substring test for string facts,
-   membership test for list facts;
+ membership test for list facts;
 
 e) `age-at-least(years)` — a *time predicate*: the subject's age at
-   evaluation time, computed from its recorded date of birth using the
-   Julian year of 31 557 600 s;
+ evaluation time, computed from its recorded date of birth using the
+ Julian year of 31 557 600 s;
 
 f) `market-status-is(status)` — market-status predicate for
-   regulatory-triggered characteristic profiles (for example CITES,
-   cultural-goods, anti-money-laundering triggers).
+ regulatory-triggered characteristic profiles (for example CITES,
+ cultural-goods, anti-money-laundering triggers).
 
 Twin facts used by predicates shall be the testimonial facts of the
 twin state (facts, and the date of birth of the subject); they shall
@@ -171,43 +171,43 @@ shall declare the minimum class required to satisfy them.
 The following requirements apply.
 
 a) Profiles' freshness and verification requirements shall be
-   satisfiable by the declared minimum capability class; a profile
-   demanding bounded freshness from an S0 (silent) subject is an
-   unsatisfiable profile and shall be rejected (6.3).
+ satisfiable by the declared minimum capability class; a profile
+ demanding bounded freshness from an S0 (silent) subject is an
+ unsatisfiable profile and shall be rejected (6.3).
 
 b) The twin shall be testimonial by default and sensorial by exception
-   (I8): device segments are one testimony class (self-testimony), not
-   the foundation of the model. A silent S0 product shall be fully
-   servable — type certification, economic-operator passport, custody
-   testimonies, recycling events, Tier-A minimum — with zero device
-   participation ever; any core assumption of device state is a design
-   error.
+ (I8): device segments are one testimony class (self-testimony), not
+ the foundation of the model. A silent S0 product shall be fully
+ servable — type certification, economic-operator passport, custody
+ testimonies, recycling events, Tier-A minimum — with zero device
+ participation ever; any core assumption of device state is a design
+ error.
 
 c) For whole categories the most authoritative facts may live at a
-   certification body; custodianship is profile-defined, and
-   economic-operator-held and certification-body-held state are both
-   legal configurations.
+ certification body; custodianship is profile-defined, and
+ economic-operator-held and certification-body-held state are both
+ legal configurations.
 
 d) Profiles shall declare, per data element, the required *truth mode*:
-   attest-sampled, self-committed, or both with precedence. The passive
-   twin supplies attest-sampled truth (truth episodic, staleness
-   unbounded and undetectable); the active twin supplies self-committed
-   truth (truth near-continuous, freshness bounded and detectable, the
-   binding question shifted from who saw the object to who attests the
-   sensor). Both paradigms shall coexist permanently in the framework.
+ attest-sampled, self-committed, or both with precedence. The passive
+ twin supplies attest-sampled truth (truth episodic, staleness
+ unbounded and undetectable); the active twin supplies self-committed
+ truth (truth near-continuous, freshness bounded and detectable, the
+ binding question shifted from who saw the object to who attests the
+ sensor). Both paradigms shall coexist permanently in the framework.
 
 e) For active-twin elements, measurement validity shall be
-   load-bearing: sensor calibration shall be recorded in the device
-   registration, uncertainty shall be carried on self-reported values
-   per the GUM, units shall be registered (9.5), and health statuses
-   that are computed by a model shall be treated as derived verdicts
-   whose model is a transform governed under 9.6.
+ load-bearing: sensor calibration shall be recorded in the device
+ registration, uncertainty shall be carried on self-reported values
+ per the GUM, units shall be registered (9.5), and health statuses
+ that are computed by a model shall be treated as derived verdicts
+ whose model is a transform governed under 9.6.
 
 f) The threat model shall be declared per class: silent products face
-   carrier-to-object binding attacks (code swap or clone), identifier
-   squatting and testimony fraud, with no device attack surface;
-   instrumented products additionally face firmware, key-custody and
-   channel-compromise threats.
+ carrier-to-object binding attacks (code swap or clone), identifier
+ squatting and testimony fraud, with no device attack surface;
+ instrumented products additionally face firmware, key-custody and
+ channel-compromise threats.
 
 [[cl-profile-freshness]]
 === Freshness requirements
@@ -216,9 +216,9 @@ A profile shall declare one freshness requirement:
 
 * `none` — no freshness semantics (archival facts);
 * `static` — type-declared static data with document-lookup semantics,
-  which never goes stale;
+ which never goes stale;
 * `fresh-within:{seconds}` — bounded staleness for live views, where
-  the window shall be a positive number of seconds.
+ the window shall be a positive number of seconds.
 
 Freshness shall be evaluated against the projection's as-of stamp
 (10.4). Staleness shall be reported explicitly as a freshness verdict
@@ -228,26 +228,26 @@ and shall never silently pass (I13).
 === Profile lifecycle and dated bindings
 
 a) Adding a profile to an existing model shall be a registry
-   applicability event with an effective window (including retroactive
-   flags), and shall never create a new model identity; a new identity
-   arises only on technical type change (7.4).
+ applicability event with an effective window (including retroactive
+ flags), and shall never create a new model identity; a new identity
+ arises only on technical type change (7.4).
 
 b) Manifest history shall be as-of-reconstructable: profile-version
-   bindings recorded as lifecycle events shall answer the question
-   "was this compliant when sold in a given year?" (8.6).
+ bindings recorded as lifecycle events shall answer the question
+ "was this compliant when sold in a given year?" (8.6).
 
 c) Profile versions shall supersede through the registry's item
-   lifecycle (proposal → public review → valid, superseded, retired)
-   per ISO 19135; profile growth shall be dated binding, not new
-   identity.
+ lifecycle (proposal → public review → valid, superseded, retired)
+ per ISO 19135; profile growth shall be dated binding, not new
+ identity.
 
 d) Disagreement between profiles shall be resolved to canonical facts
-   plus rules, never to one "true" classification: the canonical layer
-   separates facts by provenance class (declared at type; measured at
-   instance per method with uncertainty; computed by transform), and
-   profiles declare which classes they accept and their precedence
-   rules (instance-measured overriding type-declared, else
-   type-declared).
+ plus rules, never to one "true" classification: the canonical layer
+ separates facts by provenance class (declared at type; measured at
+ instance per method with uncertainty; computed by transform), and
+ profiles declare which classes they accept and their precedence
+ rules (instance-measured overriding type-declared, else
+ type-declared).
 
 [[cl-profile-confidential]]
 === Confidential profiles, dark identities and traversal controls
@@ -256,14 +256,14 @@ Profiles may be `confidential: true` (non-public register items) and
 shall carry the following serving and traversal posture:
 
 * `resolution`: `none | national | restricted | public` — the serving
-  scope; `none` denotes a dark identity that never enters the global
-  resolver and is served nationally only;
+ scope; `none` denotes a dark identity that never enters the global
+ resolver and is served nationally only;
 
 * `edgeVisibility`: the default visibility class (7.7) for
-  relationships formed under the profile;
+ relationships formed under the profile;
 
 * `traversal`: `none | authority-only | role-scoped | public` — the
-  traversal rights over edges under the profile.
+ traversal rights over edges under the profile.
 
 These fields shall be export-control-aware: defence and sovereignty
 tiers (national security carve-outs, dual-use controls) shall be

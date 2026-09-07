@@ -12,65 +12,65 @@ each data point.
 This document is applicable to:
 
 a) authors of profiles (jurisdiction regulators, sector bodies,
-   characteristic-profile owners) and operators of the semantic registry
-   in which profiles are registered;
+ characteristic-profile owners) and operators of the semantic registry
+ in which profiles are registered;
 
 b) implementers of passport cores, hosts and resolvers, including
-   DPP service providers, national in-country hosts, manufacturer
-   source systems and archive providers;
+ DPP service providers, national in-country hosts, manufacturer
+ source systems and archive providers;
 
 c) implementers of verifiers, including border and market-surveillance
-   authorities, commercial verifiers, machines and auditors;
+ authorities, commercial verifiers, machines and auditors;
 
 d) implementers of device edge segments (capability classes S2 and S3)
-   that commit, reveal or serve portions of the event record.
+ that commit, reveal or serve portions of the event record.
 
 This document specifies:
 
 e) the design invariants of the framework (I1 to I14) and the seam
-   register (S1 to S12) at which layers join;
+ register (S1 to S12) at which layers join;
 
 f) the three-axial profile composition model, the profile manifest, the
-   trigger-predicate language and the capability gating of profile
-   requirements;
+ trigger-predicate language and the capability gating of profile
+ requirements;
 
 g) the identifier model, identifier granularity, identifier dormancy
-   and the seven-class relationship algebra including the installation
-   schema, recoverability spectrum and edge-visibility classes;
+ and the seven-class relationship algebra including the installation
+ schema, recoverability spectrum and edge-visibility classes;
 
 h) the typed event taxonomy, the append-only hash-chained event log,
-   the status state machine and as-of query semantics;
+ the status state machine and as-of query semantics;
 
 i) the transformation algebra (split, combine, end-of-waste) with mass
-   balance, taint propagation and unit binding;
+ balance, taint propagation and unit binding;
 
 j) the three payload tiers (Tier A carrier-embedded, Tier B served,
-   Tier C archival), carrier budgets, freshness verdicts and the
-   degradation ladder;
+ Tier C archival), carrier budgets, freshness verdicts and the
+ degradation ladder;
 
 k) the graded trust model (trust markers, cryptographic suites,
-   stamps, the three verification readings, coverage reports and
-   retroactivity of revocation), in conformance with SIGNATIF;
+ stamps, the three verification readings, coverage reports and
+ retroactivity of revocation), in conformance with SIGNATIF;
 
 l) the conformance classes (Core, Profile author, Host, Verifier,
-   Device) and their requirements.
+ Device) and their requirements.
 
 The following are outside the scope of this document:
 
 m) the legal instruments, delegated acts and regulatory content that
-   profiles bind — the framework standardizes the mechanism, and each
-   regulator defines its profiles through the registry;
+ profiles bind — the framework standardizes the mechanism, and each
+ regulator defines its profiles through the registry;
 
 n) the content of individual data points, which is fixed by registered
-   data-element definitions;
+ data-element definitions;
 
 o) any single jurisdiction's serialization, addressing or transport
-   requirements, which are profile bindings and not core requirements;
+ requirements, which are profile bindings and not core requirements;
 
 p) mappings to specific twin representations other than as informative
-   annexes or registered transforms; in particular, any mapping to the
-   Asset Administration Shell is informative at most and is never
-   load-bearing.
+ annexes or registered transforms; in particular, any mapping to the
+ Asset Administration Shell is informative at most and is never
+ load-bearing.
 
 Solutions presented in this document are realization-neutral: they
 specify the optics (identity, events, projections, trust) and derive

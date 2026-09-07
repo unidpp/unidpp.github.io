@@ -8,37 +8,37 @@ references, the latest edition of the referenced document (including any
 amendments) applies.
 
 * [[[iso15459,ISO/IEC 15459]]] (all parts), _Information technology —
-  Automatic identification and data capture techniques — Unique
-  identification_
+ Automatic identification and data capture techniques — Unique
+ identification_
 * [[[iso19135,ISO 19135:2025]]], _Geographic information — Procedures
-  for item registration_
+ for item registration_
 * [[[iso8601-1,ISO 8601-1:2019]]], _Date and time — Representations for
-  information interchange — Part 1: Basic rules_
+ information interchange — Part 1: Basic rules_
 * [[[iso8601-2,ISO 8601-2:2019]]], _Date and time — Representations for
-  information interchange — Part 2: Extensions_
+ information interchange — Part 2: Extensions_
 * [[[iso34000,ISO 34000]]], _Sustainable cities and communities —
-  Vocabulary_ (vocabulary basis for event and state terms)
+ Vocabulary_ (vocabulary basis for event and state terms)
 * [[[iso80000,ISO 80000]]] (all parts), _Quantities and units_
 * [[[isoiec18004,ISO/IEC 18004]]], _Information technology — Automatic
-  identification and data capture techniques — QR Code bar code
-  symbology specification_
+ identification and data capture techniques — QR Code bar code
+ symbology specification_
 * [[[isoiec16022,ISO/IEC 16022]]], _Information technology — Automatic
-  identification and data capture techniques — Data Matrix bar code
-  symbology specification_
+ identification and data capture techniques — Data Matrix bar code
+ symbology specification_
 * [[[isoiec18000-3,ISO/IEC 18000-3]]], _Information technology — Radio
-  frequency identification for item management — Part 3: Parameters for
-  air interface communications at 13,56 MHz_
+ frequency identification for item management — Part 3: Parameters for
+ air interface communications at 13,56 MHz_
 * [[[isoiec18000-63,ISO/IEC 18000-63]]], _Information technology — Radio
-  frequency identification for item management — Part 63: Parameters for
-  air interface communications at 860 MHz to 960 MHz Type C_
+ frequency identification for item management — Part 63: Parameters for
+ air interface communications at 860 MHz to 960 MHz Type C_
 * [[[isoiec18092,ISO/IEC 18092]]], _Information technology —
-  Telecommunications and information exchange between systems — Near
-  Field Communication — Interface and protocol (NFCIP-1)_
+ Telecommunications and information exchange between systems — Near
+ Field Communication — Interface and protocol (NFCIP-1)_
 * [[[iec61406,IEC 61406-1]]], _Identification markers — Part 1:
-  Machine readable identification markers_
+ Machine readable identification markers_
 * [[[gs1dl,GS1 Digital Link]]], _GS1 Digital Link Standard: URI syntax_
 * [[[rfc9264,IETF RFC 9264]]], _Finding Relationships between Linked
-  URIs (Linkset)_
+ URIs (Linkset)_
 * [[[w3cvc,W3C VC]]], _W3C Verifiable Credentials Data Model_
 * [[[signatif,SIGNATIF]]], _SIGNATIF — threshold trust and transparency
-  framework_ (published at signatif.org)
+ framework_ (published at signatif.org)

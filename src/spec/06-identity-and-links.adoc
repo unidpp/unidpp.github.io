@@ -9,30 +9,30 @@ an identifier scheme, a key, and optional lot and serial extensions,
 with a derived granularity of model, batch or item.
 
 a) The framework shall accept the following identifier scheme families,
-   and shall be extensible to further registered schemes: GTIN, SGTIN,
-   GSRN, GLN (GS1 keys), CPID (ISO/IEC 15459), SSN, UPU, VIN, Handle,
-   DOI, URI, and issuer-local schemes (`local:<tag>`).
+ and shall be extensible to further registered schemes: GTIN, SGTIN,
+ GSRN, GLN (GS1 keys), CPID (ISO/IEC 15459), SSN, UPU, VIN, Handle,
+ DOI, URI, and issuer-local schemes (`local:<tag>`).
 
 b) Wire forms accepted shall include: scheme-prefixed tokens
-   (`gtin:4006381333931`), ISO/IEC 15459 / GS1 element strings
-   (`01+4006381333931+10+LOT42+21+SN7`, application identifiers 01 key,
-   10 lot/batch, 21 serial; 11, 17 and 240 accepted and ignored for
-   identity purposes), bare 4-to-14-digit GTINs, and HTTP(S) URIs.
+ (`gtin:4006381333931`), ISO/IEC 15459 / GS1 element strings
+ (`01+4006381333931+10+LOT42+21+SN7`, application identifiers 01 key,
+ 10 lot/batch, 21 serial; 11, 17 and 240 accepted and ignored for
+ identity purposes), bare 4-to-14-digit GTINs, and HTTP(S) URIs.
 
 c) The canonical display form shall be the element string for GS1
-   schemes (`01+K[+10+L][+21+S]`) and the lowercase scheme-prefixed
-   token otherwise.
+ schemes (`01+K[+10+L][+21+S]`) and the lowercase scheme-prefixed
+ token otherwise.
 
 d) Identifier granularity shall be derived: model-granularity by
-   default for GTIN, GLN, Handle, DOI, URI and local schemes; item
-   granularity by default otherwise.
+ default for GTIN, GLN, Handle, DOI, URI and local schemes; item
+ granularity by default otherwise.
 
 e) The framework shall not legislate casing. Identifier tokens, scheme
-   names and every table-driven value of the core shall be accepted in
-   any casing and separator spelling and shall canonicalize to the
-   normalization table's lowercase form; two spellings that normalize
-   equal shall compare equal. Casing drift between systems is thereby a
-   non-defect.
+ names and every table-driven value of the core shall be accepted in
+ any casing and separator spelling and shall canonicalize to the
+ normalization table's lowercase form; two spellings that normalize
+ equal shall compare equal. Casing drift between systems is thereby a
+ non-defect.
 
 [NOTE]
 ====
@@ -66,37 +66,37 @@ Identifier lifecycle shall comprise at least the states *dormant* and
 *live*, with the following rules (I1, I3).
 
 a) An identifier may be recorded as dormant for an object class for
-   which no passport regime yet exists; dormant identifiers are
-   issuance evidence, and shall be recorded at the finest available
-   granularity as (scheme, lot or serial, count) even when no passport
-   exists behind them yet.
+ which no passport regime yet exists; dormant identifiers are
+ issuance evidence, and shall be recorded at the finest available
+ granularity as (scheme, lot or serial, count) even when no passport
+ exists behind them yet.
 
 b) When a future regime issues passports for the object class, it shall
-   adopt the recorded dormant identifiers rather than mint new ones;
-   minting fresh identifiers would orphan the installed base. Adoption
-   is the only dormant-to-live transition; identifiers are never
-   re-minted.
+ adopt the recorded dormant identifiers rather than mint new ones;
+ minting fresh identifiers would orphan the installed base. Adoption
+ is the only dormant-to-live transition; identifiers are never
+ re-minted.
 
 c) Absorption shall be treated as regime-temporal, not permanent: an
-   absorbed component (for example a cell inside a certified pack) is
-   modeled as a transformation input (9.3) recorded as a dormant
-   identifier, issuable by adoption when the future regime lands.
+ absorbed component (for example a cell inside a certified pack) is
+ modeled as a transformation input (9.3) recorded as a dormant
+ identifier, issuable by adoption when the future regime lands.
 
 d) Retrospective issuance shall be provided by one or both of:
-   *issue-by-records* (the manufacturer mines build data and issues
-   lot passports for historical production) and *issue-on-first-touch*
-   (the dormant identity activates at the next service, repair,
-   replacement or resale event, at which a carrier may be
-   retro-marked). Retroactive legal timing shall be carried by the
-   dated-binding machinery (6.7).
+ *issue-by-records* (the manufacturer mines build data and issues
+ lot passports for historical production) and *issue-on-first-touch*
+ (the dormant identity activates at the next service, repair,
+ replacement or resale event, at which a carrier may be
+ retro-marked). Retroactive legal timing shall be carried by the
+ dated-binding machinery (6.7).
 
 e) Unmarked components (for example cells in a pack) shall mostly be
-   issued at lot level (pack → cell-lot passport plus count) unless a
-   marking rule mandates instance level.
+ issued at lot level (pack → cell-lot passport plus count) unless a
+ marking rule mandates instance level.
 
 f) Replacement of a physical carrier (re-issuing a QR code on an
-   unchanged identity) shall be a registry event on the unchanged
-   identity and shall not alter the identifier.
+ unchanged identity) shall be a registry event on the unchanged
+ identity and shall not alter the identifier.
 
 [[cl-id-lattice]]
 === The identity lattice and issuance granularity
@@ -107,42 +107,42 @@ instance, according to the following rules (source invariants 9 and 10
 of 5.11).
 
 a) A *type passport* (model level) holds type-approved facts:
-   certifications, type tests, declared values — the type twin. The
-   type definition defines semantics for instance elements, fixing
-   single-definition reuse.
+ certifications, type tests, declared values — the type twin. The
+ type definition defines semantics for instance elements, fixing
+ single-definition reuse.
 
 b) An *instance passport* shall reference its type *and the exact type
-   version* (hardware revisions visible, eliminating the silent
-   revision problem), and shall override with instance-measured facts
-   per precedence rules (6.7 d).
+ version* (hardware revisions visible, eliminating the silent
+ revision problem), and shall override with instance-measured facts
+ per precedence rules (6.7 d).
 
 c) A configure-to-order product is model plus configuration vector:
-   each option is itself a registered component model with its own
-   passport, composing through the same child-reference mechanism as
-   any composite (7.5, 7.6).
+ each option is itself a registered component model with its own
+ passport, composing through the same child-reference mechanism as
+ any composite (7.5, 7.6).
 
 d) Product line and family are registry navigation metadata, not
-   passport levels.
+ passport levels.
 
 e) One-offs and prototypes shall be instance passports with nullable
-   type reference.
+ type reference.
 
 f) Regulated modifications shall spawn derived types via events, with
-   mandatory profile re-evaluation (8.5).
+ mandatory profile re-evaluation (8.5).
 
 g) Passports shall be issued wherever a legal duty attaches: type
-   approval regimes issue type passports; most passport law issues
-   batch or item passports. Model-contains-model defines potential
-   composition; instance references actual child instances.
+ approval regimes issue type passports; most passport law issues
+ batch or item passports. Model-contains-model defines potential
+ composition; instance references actual child instances.
 
 h) A composite product is a federation of passports, not one
-   mega-passport: one passport per placed-on-market product identity,
-   linked by typed child references in the parent's manifest, by
-   containment and transformation events, and by a neutral bill-of-
-   materials reference structure. Children join by identity reference,
-   never by data copying; roll-up views are computed from references
-   (9.1). A child needs its own carrier if and only if it is
-   independently placed on a market or regulated.
+ mega-passport: one passport per placed-on-market product identity,
+ linked by typed child references in the parent's manifest, by
+ containment and transformation events, and by a neutral bill-of-
+ materials reference structure. Children join by identity reference,
+ never by data copying; roll-up views are computed from references
+ (9.1). A child needs its own carrier if and only if it is
+ independently placed on a market or regulated.
 
 [[cl-id-algebra]]
 === The relationship algebra (R1 to R7)
@@ -186,59 +186,59 @@ performedBy, at})`
 with the components specified below.
 
 a) *method* — the attachment method: fastened, soldered, glued,
-   welded, potted, torque-to-yield, coated, keyed, or a registered
-   extension (`other:<token>`).
+ welded, potted, torque-to-yield, coated, keyed, or a registered
+ extension (`other:<token>`).
 
 b) *slotId* — the parent-scoped slot identity (for example "battery
-   slot 1 of car X"), where applicable.
+ slot 1 of car X"), where applicable.
 
 c) *pairing* — the re-identification mode: `none | firmware | key |
-   module` (battery-management-to-VIN pairing, anti-theft module
-   pairing, key re-issue).
+ module` (battery-management-to-VIN pairing, anti-theft module
+ pairing, key re-issue).
 
 d) *alteration[]* — the permanent alterations performed on the child:
-   soldered, glued, welded, potted, torque-to-yield, conformal coating,
-   or a registered extension. Installation may make the prior state
-   unrecoverable.
+ soldered, glued, welded, potted, torque-to-yield, conformal coating,
+ or a registered extension. Installation may make the prior state
+ unrecoverable.
 
 e) *recoverability* — the declared recoverability of the binding:
-   `restorable` (the child resumes standalone life), `harvestable`
-   (recovered but altered — continues with harvested status and parent
-   history), `destructive` (the child ceases; flows to a material
-   passport via R2) or `absorbing` (identity dissolves into the
-   parent). The *identity-continuity rule* shall hold: disassembly that
-   restores a marketable object with identity continuity is R3
-   (installation); identity dissolution is R2 (transformation). The
-   identity flow consequences shall be: restorable → continues
-   standalone; harvestable → continues harvested; destructive → to
-   material passport; absorbing → dissolved.
+ `restorable` (the child resumes standalone life), `harvestable`
+ (recovered but altered — continues with harvested status and parent
+ history), `destructive` (the child ceases; flows to a material
+ passport via R2) or `absorbing` (identity dissolves into the
+ parent). The *identity-continuity rule* shall hold: disassembly that
+ restores a marketable object with identity continuity is R3
+ (installation); identity dissolution is R2 (transformation). The
+ identity flow consequences shall be: restorable → continues
+ standalone; harvestable → continues harvested; destructive → to
+ material passport; absorbing → dissolved.
 
 f) *visibility* — the edge-visibility class with escrow arrangement and
-   audiences (7.7).
+ audiences (7.7).
 
 g) *Bidirectional parent knowledge shall be mandatory*: the parent's
-   manifest lists children, and the child's event log records its
-   installation interval (parent, slot, method) — for recall routing,
-   scoped service access (the parent's repairer gets scoped rights over
-   child data), ownership transfer (conveying child context) and
-   end-of-life routing. Installation history is value-relevant
-   provenance: a harvested battery sold standalone carries its service
-   interval and removal reason.
+ manifest lists children, and the child's event log records its
+ installation interval (parent, slot, method) — for recall routing,
+ scoped service access (the parent's repairer gets scoped rights over
+ child data), ownership transfer (conveying child context) and
+ end-of-life routing. Installation history is value-relevant
+ provenance: a harvested battery sold standalone carries its service
+ interval and removal reason.
 
 h) *Lifecycle coupling* shall be recorded: warranty re-scope and
-   service economics ride the parent; the part is no longer sellable as
-   new.
+ service economics ride the parent; the part is no longer sellable as
+ new.
 
 i) *Part replacement* shall be an uninstall followed by an install
-   (two events, with harvest or destroy outcome on the removed child),
-   with the bill-of-materials instance updated; regulated children keep
-   their own passports through it, and absorbed ones have none under
-   the current regime (issuable later by adoption, 7.3).
+ (two events, with harvest or destroy outcome on the removed child),
+ with the bill-of-materials instance updated; regulated children keep
+ their own passports through it, and absorbed ones have none under
+ the current regime (issuable later by adoption, 7.3).
 
 j) *Cross-jurisdiction installation* shall be recorded under the
-   installer's credentials with both profiles surviving: a composite
-   may carry mixed-profile children naturally, by composition by
-   reference.
+ installer's credentials with both profiles surviving: a composite
+ may carry mixed-profile children naturally, by composition by
+ reference.
 
 An installation edge without a binding structure shall be rejected; an
 association edge carrying a binding shall be rejected.
@@ -260,53 +260,53 @@ surveillance infrastructure. The following rules shall therefore hold
 (I12).
 
 a) *Manufacturer posture.* The manufacturer is a definition-holder, not
-   a state-observer. Post-sale visibility into instance state shall be
-   owner-push (the owner self-discloses a serial for benefits) or
-   authority-based (a regulator compels traversal) — never maker-pull.
-   The system's default channels are owner-push; maker-pull shall not
-   be a framework feature.
+ a state-observer. Post-sale visibility into instance state shall be
+ owner-push (the owner self-discloses a serial for benefits) or
+ authority-based (a regulator compels traversal) — never maker-pull.
+ The system's default channels are owner-push; maker-pull shall not
+ be a framework feature.
 
 b) *Edge visibility classes.* Every relationship shall declare one of
-   `public | restricted (role-qualified) | blind | escrowed`, with an
-   optional escrow trustee and declared audiences. An escrowed edge
-   without a trustee shall be rejected; a public edge shall not carry
-   audiences. Blind shall be the default for consumer installations,
-   because the object-to-household linkage is personal data requiring a
-   legal basis per profile.
+ `public | restricted (role-qualified) | blind | escrowed`, with an
+ optional escrow trustee and declared audiences. An escrowed edge
+ without a trustee shall be rejected; a public edge shall not carry
+ audiences. Blind shall be the default for consumer installations,
+ because the object-to-household linkage is personal data requiring a
+ legal basis per profile.
 
 c) *Proof of binding is not knowledge of parent.* The child shall
-   satisfy the parent-knowledge requirement cryptographically: a salted
-   commitment to the parent, `H(salt ‖ parent)`, recorded in the child's
-   log, with an optional escrow envelope under a threshold trustee.
-   Verifiable modes shall establish "validly installed in *some* parent
-   under profile P" (warranty, compliance) without revealing which;
-   full disclosure shall occur only by ceremony: court, regulator or
-   consent.
+ satisfy the parent-knowledge requirement cryptographically: a salted
+ commitment to the parent, `H(salt ‖ parent)`, recorded in the child's
+ log, with an optional escrow envelope under a threshold trustee.
+ Verifiable modes shall establish "validly installed in *some* parent
+ under profile P" (warranty, compliance) without revealing which;
+ full disclosure shall occur only by ceremony: court, regulator or
+ consent.
 
 d) *Salt discipline.* Salts shall live only in the owner-side salt
-   store or in an escrow envelope — never in the log and never in any
-   serialization of it. Salted commitments shall be re-computable only
-   under a disclosure ceremony.
+ store or in an escrow envelope — never in the log and never in any
+ serialization of it. Salted commitments shall be re-computable only
+ under a disclosure ceremony.
 
 e) *Predicate-based recall.* The recall set shall never be enumerated
-   centrally: the predicate shall be published and each custodian shall
-   evaluate it locally against their own holdings (including dark and
-   defence holdings under national procedure) and act; the manufacturer
-   receives aggregates or nothing. Recall propagation notifies
-   custodians transitively, but through local predicate evaluation
-   rather than central construction of the recall set.
+ centrally: the predicate shall be published and each custodian shall
+ evaluate it locally against their own holdings (including dark and
+ defence holdings under national procedure) and act; the manufacturer
+ receives aggregates or nothing. Recall propagation notifies
+ custodians transitively, but through local predicate evaluation
+ rather than central construction of the recall set.
 
 f) *Enumeration resistance as a system property.* Resolution shall be
-   by identity (pull); traversal shall require per-edge rights; logs
-   shall anchor commitments (hashes), never facts, so log operators
-   cannot correlate edges; accumulator and blind-membership proofs
-   shall give valid-standing checks without revealing which or where.
-   No party — including any registry, resolver network or log operator
-   — shall be able to enumerate the installed base of anything.
+ by identity (pull); traversal shall require per-edge rights; logs
+ shall anchor commitments (hashes), never facts, so log operators
+ cannot correlate edges; accumulator and blind-membership proofs
+ shall give valid-standing checks without revealing which or where.
+ No party — including any registry, resolver network or log operator
+ — shall be able to enumerate the installed base of anything.
 
 g) *Dark identities.* Identities that never enter the global resolver
-   shall be servable nationally only; confidential profiles (6.8) shall
-   carry `resolution`, `edgeVisibility` and `traversal` fields.
+ shall be servable nationally only; confidential profiles (6.8) shall
+ carry `resolution`, `edgeVisibility` and `traversal` fields.
 
 [NOTE]
 ====

@@ -7,14 +7,14 @@
 The framework shall serve payloads in three tiers (I13):
 
 * *Tier A* — the carrier-embedded minimum viable passport (10.2),
-  sized to the data carrier and verifiable offline against pre-cached
-  trust anchors;
+ sized to the data carrier and verifiable offline against pre-cached
+ trust anchors;
 
 * *Tier B* — the served full passport, resolvable per profile,
-  including device-served endpoints (10.6);
+ including device-served endpoints (10.6);
 
 * *Tier C* — the archival record (persistence beyond operator
-  lifetime, archival refresh).
+ lifetime, archival refresh).
 
 The framework shall fix exactly which subset of fields is Tier A
 (10.2); every field of the Tier-A subset shall be mandatory — there
@@ -65,39 +65,39 @@ Tier-A payloads shall be budgeted against the capacity of the physical
 carrier.
 
 a) *QR capacity model.* For QR carriers, the byte-mode data capacity
-   per symbol version 1 to 40 and error-correction level L, M, Q or H
-   per ISO/IEC 18004 shall be used as the budget table (for example
-   version 40 holds 2 953 bytes at L and 1 273 bytes at H; version 1
-   holds 17 bytes at L).
+ per symbol version 1 to 40 and error-correction level L, M, Q or H
+ per ISO/IEC 18004 shall be used as the budget table (for example
+ version 40 holds 2 953 bytes at L and 1 273 bytes at H; version 1
+ holds 17 bytes at L).
 
 b) *Deterministic encoding.* The Tier-A payload shall be encoded as a
-   deterministic tagged byte sequence (fixed field tags for the fields
-   of 10.2), with signature slots framed by suite code and key
-   identifier.
+ deterministic tagged byte sequence (fixed field tags for the fields
+ of 10.2), with signature slots framed by suite code and key
+ identifier.
 
 c) *Conservative projection.* Budgeting shall use the *projected
-   length*: signature placeholders counted at each suite's canonical
-   signature length — 64 bytes for ECDSA P-256 and SM2; 2 420 bytes for
-   ML-DSA-44; 3 309 bytes for ML-DSA-65; 4 627 bytes for ML-DSA-87 — so
-   that a frame-only payload is budgeted as if fully signed.
+ length*: signature placeholders counted at each suite's canonical
+ signature length — 64 bytes for ECDSA P-256 and SM2; 2 420 bytes for
+ ML-DSA-44; 3 309 bytes for ML-DSA-65; 4 627 bytes for ML-DSA-87 — so
+ that a frame-only payload is budgeted as if fully signed.
 
 d) *Version selection.* The smallest carrier version that holds the
-   projected payload at the configured error-correction level shall be
-   selected; if none within the configured maximum version holds it,
-   the packing shall fail as over-budget.
+ projected payload at the configured error-correction level shall be
+ selected; if none within the configured maximum version holds it,
+ the packing shall fail as over-budget.
 
 e) *Over-budget handling.* An over-budget payload shall be rejected
-   with an explicit error; the remedies are to shrink the resolver URI
-   or to drop signature suites. Silent truncation shall not occur.
+ with an explicit error; the remedies are to shrink the resolver URI
+ or to drop signature suites. Silent truncation shall not occur.
 
 f) *Default configuration.* The default error-correction level is M
-   with maximum version 40; configurations may be stricter.
+ with maximum version 40; configurations may be stricter.
 
 g) *Other carriers.* Data Matrix carriers (ISO/IEC 16022), RFID air
-   interfaces (ISO/IEC 18000-3 and ISO/IEC 18000-63) and near-field
-   communication (ISO/IEC 18092) shall be budgeted against their
-   respective capacity models under the same projection and rejection
-   rules.
+ interfaces (ISO/IEC 18000-3 and ISO/IEC 18000-63) and near-field
+ communication (ISO/IEC 18092) shall be budgeted against their
+ respective capacity models under the same projection and rejection
+ rules.
 
 [NOTE]
 ====
@@ -115,13 +115,13 @@ and the profile's freshness requirement (6.6). The freshness verdict
 shall take exactly one of the following values:
 
 * `fresh` — an as-of stamp is present and, for fresh-within
-  requirements, its age at verification time is within the window;
+ requirements, its age at verification time is within the window;
 
 * `stale` — an as-of stamp is present but older than the window
-  (degrade explicitly);
+ (degrade explicitly);
 
 * `indeterminate` — no as-of information at all (offline with no
-  anchor).
+ anchor).
 
 Static and none requirements shall never evaluate stale: an as-of
 stamp, however old, evaluates fresh; absence evaluates indeterminate.
@@ -136,8 +136,8 @@ Tier-A verification shall conclude in exactly one of three outcomes:
 * *pass*;
 
 * *degraded*, with an explicit cause: stale data (with the as-of
-  stamp), no freshness evidence, offline with no anchor, signatures
-  framed only, or coverage incomplete (with the missing data points);
+ stamp), no freshness evidence, offline with no anchor, signatures
+ framed only, or coverage incomplete (with the missing data points);
 
 * *fail*, with an explicit cause: broken chain or anchor mismatch.
 
@@ -156,25 +156,25 @@ circumstance or unwilling by policy (privacy, trade secrets). The
 *commit-now, reveal-later, never-contradict* rules shall hold:
 
 a) the device shall publish commitments — a hash of its local
-   append-only event log prefix, signed by a device-bound key holding
-   device credentials — plus whatever events it chooses to reveal;
+ append-only event log prefix, signed by a device-bound key holding
+ device credentials — plus whatever events it chooses to reveal;
 
 b) future reveals shall be inclusion-consistent with past commitments
-   (the transparency-log pattern applied to device logs: the device can
-   withhold but cannot retroactively lie);
+ (the transparency-log pattern applied to device logs: the device can
+ withhold but cannot retroactively lie);
 
 c) the server-side passport is the set of operator-attested events; the
-   device segment is the set of device-measured events; the union is
-   joined by identity and commitment hashes;
+ device segment is the set of device-measured events; the union is
+ joined by identity and commitment hashes;
 
 d) freshness verdicts shall degrade when commitments go stale relative
-   to the profile's fresh-within window;
+ to the profile's fresh-within window;
 
 e) the device may serve its own segment (near-field, Bluetooth, local
-   resolver): a device-served endpoint is a legitimate Tier-B endpoint;
+ resolver): a device-served endpoint is a legitimate Tier-B endpoint;
 
 f) contact dumps (capability class S2) are first-class reveals: the
-   logged-contact device dumps on physical read.
+ logged-contact device dumps on physical read.
 
 The twin is the union of custodian-held event segments joined by
 identity and commitments; the framework fixes segment ownership and
