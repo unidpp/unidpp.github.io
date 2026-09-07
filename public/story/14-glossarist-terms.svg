@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'IBM Plex Sans',-apple-system,'Segoe UI',Roboto,sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5A6572"/>
+    </marker>
+  </defs>
+  <rect width="960" height="540" fill="#FAFAF7"/>
+  <text x="48" y="34" font-size="11" letter-spacing="2.5" fill="#14335C" font-weight="600">GLOSSARIST · UNIDPP TERMINOLOGY DATASET</text>
+  <text x="48" y="58" font-size="20" font-weight="600" fill="#1A2332">Every concept in this story has one definition</text>
+  <text x="48" y="76" font-size="12" fill="#5A6572">146 concepts (141 harvested from EN/CWA/IDTA corpus + framework terms) — the raw material of the terminology NWIP</text>
+
+  <!-- story terms -->
+  <rect x="48" y="100" width="560" height="330" rx="8" fill="#FFFFFF" stroke="#E3E7EC"/>
+  <text x="64" y="126" font-size="12.5" font-weight="600" fill="#14335C">Terms the story itself coins or sharpens</text>
+  <g font-size="11">
+    <rect x="64" y="142" width="160" height="30" rx="6" fill="#F4F6F9"/><text x="76" y="161" fill="#1A2332">profile / lens <tspan fill="#8C6D1F">B3</tspan></text>
+    <rect x="232" y="142" width="160" height="30" rx="6" fill="#F4F6F9"/><text x="244" y="161" fill="#1A2332">jurisdiction stamp <tspan fill="#8C6D1F">B8</tspan></text>
+    <rect x="400" y="142" width="160" height="30" rx="6" fill="#F4F6F9"/><text x="412" y="161" fill="#1A2332">custody transfer <tspan fill="#8C6D1F">B8</tspan></text>
+    <rect x="64" y="180" width="160" height="30" rx="6" fill="#F4F6F9"/><text x="76" y="199" fill="#1A2332">dormant identifier <tspan fill="#8C6D1F">B1/B9</tspan></text>
+    <rect x="232" y="180" width="160" height="30" rx="6" fill="#F4F6F9"/><text x="244" y="199" fill="#1A2332">derived type <tspan fill="#8C6D1F">B6</tspan></text>
+    <rect x="400" y="180" width="160" height="30" rx="6" fill="#F4F6F9"/><text x="412" y="199" fill="#1A2332">Tier-A payload <tspan fill="#8C6D1F">B4</tspan></text>
+    <rect x="64" y="218" width="160" height="30" rx="6" fill="#F4F6F9"/><text x="76" y="237" fill="#1A2332">edge segment <tspan fill="#8C6D1F">B5</tspan></text>
+    <rect x="232" y="218" width="160" height="30" rx="6" fill="#F4F6F9"/><text x="244" y="237" fill="#1A2332">truth mode <tspan fill="#8C6D1F">B5</tspan></text>
+    <rect x="400" y="218" width="160" height="30" rx="6" fill="#F4F6F9"/><text x="412" y="237" fill="#1A2332">proof of binding <tspan fill="#8C6D1F">B8</tspan></text>
+    <rect x="64" y="256" width="160" height="30" rx="6" fill="#F4F6F9"/><text x="76" y="275" fill="#1A2332">blind edge <tspan fill="#8C6D1F">B8</tspan></text>
+    <rect x="232" y="256" width="160" height="30" rx="6" fill="#F4F6F9"/><text x="244" y="275" fill="#1A2332">mass balance <tspan fill="#8C6D1F">B10</tspan></text>
+    <rect x="400" y="256" width="160" height="30" rx="6" fill="#F4F6F9"/><text x="412" y="275" fill="#1A2332">end of waste <tspan fill="#8C6D1F">B10</tspan></text>
+    <rect x="64" y="294" width="160" height="30" rx="6" fill="#F4F6F9"/><text x="76" y="313" fill="#1A2332">installation (R3) <tspan fill="#8C6D1F">B2</tspan></text>
+    <rect x="232" y="294" width="160" height="30" rx="6" fill="#F4F6F9"/><text x="244" y="313" fill="#1A2332">harvested part <tspan fill="#8C6D1F">B7</tspan></text>
+    <rect x="400" y="294" width="160" height="30" rx="6" fill="#F4F6F9"/><text x="412" y="313" fill="#1A2332">as-of query <tspan fill="#8C6D1F">B3</tspan></text>
+    <rect x="64" y="332" width="160" height="30" rx="6" fill="#F4F6F9"/><text x="76" y="351" fill="#1A2332">condition stamp <tspan fill="#8C6D1F">B8/V5</tspan></text>
+    <rect x="232" y="332" width="160" height="30" rx="6" fill="#F4F6F9"/><text x="244" y="351" fill="#1A2332">provenance gap <tspan fill="#8C6D1F">B8/V3</tspan></text>
+    <rect x="400" y="332" width="160" height="30" rx="6" fill="#F4F6F9"/><text x="412" y="351" fill="#1A2332">dark identity <tspan fill="#8C6D1F">B9</tspan></text>
+  </g>
+  <text x="64" y="390" font-size="10.5" fill="#5A6572">each entry: definition · sources ([.source] citations) · alt terms · notes — glossarist</text>
+  <text x="64" y="406" font-size="10.5" fill="#5A6572">concept model, deployable to glossarist.org/dpp</text>
+
+  <!-- flow -->
+  <rect x="640" y="100" width="272" height="330" rx="8" fill="#FFFFFF" stroke="#E3E7EC"/>
+  <text x="656" y="126" font-size="12.5" font-weight="600" fill="#14335C">Where the words go</text>
+  <rect x="656" y="142" width="240" height="52" rx="6" fill="#F4F6F9"/>
+  <text x="668" y="162" font-size="11" fill="#1A2332" font-weight="600">NWIP-1: 25534-1 Part 1 Vocabulary</text>
+  <text x="668" y="178" font-size="10" fill="#5A6572">80–120 entries + harmonization annex</text>
+  <rect x="656" y="202" width="240" height="52" rx="6" fill="#F4F6F9"/>
+  <text x="668" y="222" font-size="11" fill="#1A2332" font-weight="600">the spec suite</text>
+  <text x="668" y="238" font-size="10" fill="#5A6572">terms and definitions clause feeds from here</text>
+  <rect x="656" y="262" width="240" height="52" rx="6" fill="#F4F6F9"/>
+  <text x="668" y="282" font-size="11" fill="#1A2332" font-weight="600">the website /terminology/</text>
+  <text x="668" y="298" font-size="10" fill="#5A6572">live concept browser embed</text>
+  <rect x="656" y="322" width="240" height="52" rx="6" fill="#F4F6F9"/>
+  <text x="668" y="342" font-size="11" fill="#1A2332" font-weight="600">the definitional conflict exhibit</text>
+  <text x="668" y="358" font-size="10" fill="#5A6572">EN 18223 vs AWI 25534-1 "DPP" — the</text>
+  <text x="668" y="371" font-size="10" fill="#5A6572">NWIP headline, term by term</text>
+
+  <!-- why -->
+  <rect x="48" y="452" width="864" height="60" rx="8" fill="#FFFFFF" stroke="#E3E7EC"/>
+  <text x="64" y="476" font-size="12" font-weight="600" fill="#14335C">Why it matters</text>
+  <text x="64" y="496" font-size="10.5" fill="#5A6572">If we define the words, every implementation — freeDPP, open-dpp, national platforms — must cite our definitions to interoperate.</text>
+</svg>

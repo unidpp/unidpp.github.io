@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'IBM Plex Sans',-apple-system,'Segoe UI',Roboto,sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5A6572"/>
+    </marker>
+    <marker id="arrr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#B4442C"/>
+    </marker>
+  </defs>
+  <rect width="960" height="540" fill="#FAFAF7"/>
+  <text x="48" y="34" font-size="11" letter-spacing="2.5" fill="#14335C" font-weight="600">UNIDPP-CORE · TRANSFORM CRATE</text>
+  <text x="48" y="58" font-size="20" font-weight="600" fill="#1A2332">The transformation algebra — splits, combines, taint</text>
+  <text x="48" y="76" font-size="12" fill="#5A6572">Passports as nodes in a provenance DAG · quantities are new measured facts, never copies</text>
+
+  <!-- B7 lineage: pack swap -->
+  <rect x="48" y="100" width="440" height="150" rx="8" fill="#FFFFFF" stroke="#E3E7EC"/>
+  <text x="64" y="124" font-size="12.5" font-weight="600" fill="#14335C">B7 — pack swap lineage</text>
+  <rect x="64" y="138" width="180" height="58" rx="6" fill="#F4F6F9"/>
+  <text x="76" y="158" font-size="11" font-family="'IBM Plex Mono',ui-monospace,Menlo,monospace" fill="#14335C">weilian:P-9904 (orig)</text>
+  <text x="76" y="176" font-size="10.5" fill="#5A6572">interval in bike: closed</text>
+  <text x="76" y="190" font-size="10.5" fill="#5A6572">"40 cycles, casing dent"</text>
+  <rect x="290" y="138" width="180" height="58" rx="6" fill="#F4F6F9"/>
+  <text x="302" y="158" font-size="11" font-family="'IBM Plex Mono',ui-monospace,Menlo,monospace" fill="#14335C">eu-pack 2029 (new)</text>
+  <text x="302" y="176" font-size="10.5" fill="#5A6572">cross-jurisdiction install</text>
+  <text x="302" y="190" font-size="10.5" fill="#5A6572">both profiles survive</text>
+  <line x1="244" y1="167" x2="288" y2="167" stroke="#5A6572" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="266" y="156" font-size="10" fill="#5A6572" text-anchor="middle">E2</text>
+  <line x1="154" y1="196" x2="154" y2="228" stroke="#5A6572" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="166" y="218" font-size="10.5" fill="#5A6572">→ refurbisher → powerwall (second life)</text>
+  <circle cx="470" cy="114" r="12" fill="#14335C"/><text x="470" y="118" font-size="11" fill="#FFFFFF" text-anchor="middle" font-weight="600">7</text>
+
+  <!-- B9 taint -->
+  <rect x="512" y="100" width="400" height="150" rx="8" fill="#FBEFEC" stroke="#B4442C" stroke-width="1.5"/>
+  <text x="528" y="124" font-size="12.5" font-weight="600" fill="#B4442C">B9 — recall taint traverses down</text>
+  <text x="528" y="146" font-size="10.5" fill="#1A2332">predicate: "packs containing lot H-2231" — evaluated locally by every custodian</text>
+  <g font-size="11">
+    <rect x="528" y="160" width="110" height="34" rx="17" fill="#FBEFEC" stroke="#B4442C"/><text x="583" y="181" fill="#B4442C" text-anchor="middle">lot H-2231</text>
+    <rect x="668" y="160" width="110" height="34" rx="17" fill="#FBEFEC" stroke="#B4442C"/><text x="723" y="181" fill="#B4442C" text-anchor="middle">pack P-9904</text>
+    <rect x="808" y="160" width="86" height="34" rx="17" fill="#F4F6F9" stroke="#E3E7EC"/><text x="851" y="181" fill="#1E6B4F" text-anchor="middle">powerwall</text>
+    <line x1="638" y1="177" x2="666" y2="177" stroke="#B4442C" stroke-width="1.5" marker-end="url(#arrr)"/>
+    <line x1="778" y1="177" x2="806" y2="177" stroke="#B4442C" stroke-width="1.5" marker-end="url(#arrr)"/>
+  </g>
+  <text x="528" y="218" font-size="10.5" fill="#5A6572">current Vienna bike unaffected — traced via B7 · nobody enumerated anything:</text>
+  <text x="528" y="234" font-size="10.5" fill="#5A6572">manufacturer receives aggregates; dark holdings evaluate under national procedure</text>
+  <circle cx="894" cy="114" r="12" fill="#14335C"/><text x="894" y="118" font-size="11" fill="#FFFFFF" text-anchor="middle" font-weight="600">9</text>
+
+  <!-- B10 decompose + mass balance -->
+  <rect x="48" y="272" width="560" height="168" rx="8" fill="#FFFFFF" stroke="#E3E7EC"/>
+  <text x="64" y="296" font-size="12.5" font-weight="600" fill="#14335C">B10 — decompose (1 → N) and the material loop</text>
+  <rect x="80" y="312" width="130" height="44" rx="6" fill="#F4F6F9"/>
+  <text x="145" y="330" font-size="11" fill="#1A2332" text-anchor="middle">E8 J-000842</text>
+  <text x="145" y="346" font-size="10" fill="#5A6572" text-anchor="middle">decommissioned</text>
+  <rect x="290" y="308" width="130" height="28" rx="6" fill="#F4F6F9"/><text x="355" y="326" font-size="10.5" fill="#1A2332" text-anchor="middle">steel scrap (frame)</text>
+  <rect x="290" y="344" width="130" height="28" rx="6" fill="#F4F6F9"/><text x="355" y="362" font-size="10.5" fill="#1A2332" text-anchor="middle">Al + Cu lots</text>
+  <rect x="290" y="380" width="130" height="28" rx="6" fill="#F4F6F9"/><text x="355" y="398" font-size="10.5" fill="#1A2332" text-anchor="middle">black mass</text>
+  <line x1="210" y1="334" x2="288" y2="322" stroke="#5A6572" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="210" y1="334" x2="288" y2="358" stroke="#5A6572" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="210" y1="334" x2="288" y2="394" stroke="#5A6572" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="448" y="308" width="144" height="100" rx="6" fill="#FFFFFF" stroke="#8C6D1F"/>
+  <text x="520" y="330" font-size="11" font-weight="600" fill="#8C6D1F" text-anchor="middle">MASS BALANCE</text>
+  <text x="520" y="350" font-size="11" font-family="'IBM Plex Mono',ui-monospace,Menlo,monospace" fill="#8C6D1F" text-anchor="middle">Σin − Σout = loss</text>
+  <text x="520" y="370" font-size="10" fill="#5A6572" text-anchor="middle">auditable arithmetic</text>
+  <text x="520" y="386" font-size="10" fill="#5A6572" text-anchor="middle">fraud upstream collapses</text>
+  <text x="520" y="400" font-size="10" fill="#5A6572" text-anchor="middle">downstream claims (taint)</text>
+  <line x1="420" y1="358" x2="446" y2="358" stroke="#8C6D1F" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="64" y="424" font-size="10.5" fill="#5A6572">end-of-waste event = <tspan font-weight="600" fill="#14335C">new passport issuance</tspan> — the moment scrap legally re-qualifies · SRM profile rides the same mechanism</text>
+  <circle cx="588" cy="286" r="12" fill="#14335C"/><text x="588" y="290" font-size="11" fill="#FFFFFF" text-anchor="middle" font-weight="600">10</text>
+
+  <!-- dormant -> live -->
+  <rect x="632" y="272" width="280" height="168" rx="8" fill="#FFFFFF" stroke="#E3E7EC"/>
+  <text x="648" y="296" font-size="12.5" font-weight="600" fill="#8C6D1F">The ratchet — dormant → live</text>
+  <text x="648" y="318" font-size="10.5" fill="#5A6572">The build event recorded cell ids that had</text>
+  <text x="648" y="333" font-size="10.5" fill="#5A6572">no passports — cheap then, evidence now.</text>
+  <text x="648" y="356" font-size="11" fill="#8C6D1F" font-weight="600">when the cell regime lands:</text>
+  <text x="648" y="376" font-size="10.5" fill="#1A2332">· adopts recorded identifiers (never mints)</text>
+  <text x="648" y="392" font-size="10.5" fill="#1A2332">· installed base connects retroactively</text>
+  <text x="648" y="408" font-size="10.5" fill="#1A2332">· lot-level unless marking mandates items</text>
+  <text x="648" y="428" font-size="10.5" fill="#5A6572">Finer, never coarser — one direction only.</text>
+
+  <text x="48" y="478" font-size="11" fill="#5A6572">Rule: disassembly restores a marketable object with identity continuity → R3 installation · identity dissolves → R2 transformation.</text>
+  <text x="48" y="500" font-size="11" fill="#5A6572">Custody models per profile per claim (ISO 22095: identity preserved / segregated / mass balance) — already cited by AWI 25534-1.</text>
+</svg>

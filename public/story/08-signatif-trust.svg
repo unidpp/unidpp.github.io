@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'IBM Plex Sans',-apple-system,'Segoe UI',Roboto,sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5A6572"/>
+    </marker>
+  </defs>
+  <rect width="960" height="540" fill="#FAFAF7"/>
+  <text x="48" y="34" font-size="11" letter-spacing="2.5" fill="#14335C" font-weight="600">UNIDPP-SIGNATIF</text>
+  <text x="48" y="58" font-size="20" font-weight="600" fill="#1A2332">Trust without a hegemon</text>
+  <text x="48" y="76" font-size="12" fill="#5A6572">Each jurisdiction keeps its anchors; a threshold-quorum master list cross-recognizes; the reason decides retroactivity</text>
+
+  <!-- verification path -->
+  <rect x="48" y="100" width="520" height="240" rx="8" fill="#FFFFFF" stroke="#E3E7EC"/>
+  <text x="64" y="126" font-size="12.5" font-weight="600" fill="#14335C">The path a signature climbs (B4/B6)</text>
+  <g>
+    <rect x="64" y="144" width="160" height="56" rx="8" fill="#F4F6F9" stroke="#E3E7EC"/>
+    <text x="144" y="166" font-size="11" font-weight="600" fill="#1A2332" text-anchor="middle">Tier-A pack</text>
+    <text x="144" y="182" font-size="10" fill="#5A6572" text-anchor="middle">3 signatures, one payload</text>
+    <rect x="272" y="144" width="140" height="56" rx="8" fill="#F4F6F9" stroke="#E3E7EC"/>
+    <text x="342" y="166" font-size="11" font-weight="600" fill="#1A2332" text-anchor="middle">Issuer credentials</text>
+    <text x="342" y="182" font-size="10" fill="#5A6572" text-anchor="middle">delegation DAG, scoped</text>
+    <rect x="460" y="144" width="92" height="56" rx="8" fill="#F4F6F9" stroke="#E3E7EC"/>
+    <text x="506" y="166" font-size="11" font-weight="600" fill="#1A2332" text-anchor="middle">Scope check</text>
+    <text x="506" y="182" font-size="10" fill="#5A6572" text-anchor="middle">every link</text>
+    <line x1="224" y1="172" x2="270" y2="172" stroke="#5A6572" stroke-width="1.5" marker-end="url(#arr)"/>
+    <line x1="412" y1="172" x2="458" y2="172" stroke="#5A6572" stroke-width="1.5" marker-end="url(#arr)"/>
+  </g>
+  <g>
+    <rect x="64" y="230" width="150" height="56" rx="8" fill="#FFFFFF" stroke="#14335C"/>
+    <text x="139" y="252" font-size="11" font-weight="600" fill="#14335C" text-anchor="middle">JP trust list</text>
+    <text x="139" y="268" font-size="10" fill="#5A6572" text-anchor="middle">threshold root — no single key</text>
+    <rect x="234" y="230" width="150" height="56" rx="8" fill="#FFFFFF" stroke="#14335C"/>
+    <text x="309" y="252" font-size="11" font-weight="600" fill="#14335C" text-anchor="middle">EU trust list</text>
+    <text x="309" y="268" font-size="10" fill="#5A6572" text-anchor="middle">eIDAS-anchored acceptance</text>
+    <rect x="404" y="230" width="148" height="56" rx="8" fill="#FFFFFF" stroke="#1E6B4F"/>
+    <text x="478" y="252" font-size="11" font-weight="600" fill="#1E6B4F" text-anchor="middle">Master list — M-of-K</text>
+    <text x="478" y="268" font-size="10" fill="#5A6572" text-anchor="middle">independent transparency logs</text>
+  </g>
+  <text x="64" y="316" font-size="10.5" fill="#5A6572">the JP terminal verifies the foreign view against <tspan font-weight="600" fill="#14335C">its own anchors</tspan> — cross-recognition without adoption</text>
+  <circle cx="552" cy="114" r="12" fill="#14335C"/><text x="552" y="118" font-size="11" fill="#FFFFFF" text-anchor="middle" font-weight="600">4</text>
+
+  <!-- trust markers -->
+  <rect x="592" y="100" width="320" height="150" rx="8" fill="#FFFFFF" stroke="#E3E7EC"/>
+  <text x="608" y="126" font-size="12.5" font-weight="600" fill="#14335C">Trust markers — graded, on everything</text>
+  <g font-size="10.5">
+    <rect x="608" y="140" width="80" height="24" rx="12" fill="#F4F6F9" stroke="#E3E7EC"/><text x="648" y="156" fill="#5A6572" text-anchor="middle">unsigned</text>
+    <rect x="696" y="140" width="80" height="24" rx="12" fill="#F4F6F9" stroke="#E3E7EC"/><text x="736" y="156" fill="#5A6572" text-anchor="middle">self-decl.</text>
+    <rect x="784" y="140" width="104" height="24" rx="12" fill="#EDF3EF" stroke="#1E6B4F"/><text x="836" y="156" fill="#1E6B4F" text-anchor="middle">attested</text>
+    <rect x="608" y="174" width="120" height="24" rx="12" fill="#EDF3EF" stroke="#1E6B4F"/><text x="668" y="190" fill="#1E6B4F" text-anchor="middle">multi-signed</text>
+    <rect x="736" y="174" width="120" height="24" rx="12" fill="#EDF3EF" stroke="#1E6B4F"/><text x="796" y="190" fill="#1E6B4F" text-anchor="middle">log-anchored</text>
+  </g>
+  <text x="608" y="216" font-size="10.5" fill="#5A6572">profiles set minimum signing per data class:</text>
+  <text x="608" y="232" font-size="10.5" fill="#5A6572">safety-critical attested · claims may be unsigned</text>
+
+  <!-- revocation retroactivity -->
+  <rect x="592" y="270" width="320" height="132" rx="8" fill="#FFFFFF" stroke="#E3E7EC"/>
+  <text x="608" y="296" font-size="12.5" font-weight="600" fill="#14335C">The reason decides retroactivity</text>
+  <rect x="608" y="310" width="288" height="38" rx="6" fill="#F0F5F1" stroke="#1E6B4F"/>
+  <text x="620" y="326" font-size="10.5" fill="#1E6B4F" font-weight="600">prospective (key compromise after T)</text>
+  <text x="620" y="341" font-size="10" fill="#5A6572">as-of-T verifications before the event stay valid</text>
+  <rect x="608" y="354" width="288" height="38" rx="6" fill="#FBEFEC" stroke="#B4442C"/>
+  <text x="620" y="370" font-size="10.5" fill="#B4442C" font-weight="600">retroactive (misissuance, fraud, authority hacked)</text>
+  <text x="620" y="385" font-size="10" fill="#5A6572">void ab initio — distrust carries an explicit window [start,end]</text>
+
+  <!-- lineage + why -->
+  <rect x="48" y="360" width="520" height="152" rx="8" fill="#FFFFFF" stroke="#E3E7EC"/>
+  <text x="64" y="384" font-size="12.5" font-weight="600" fill="#14335C">Lineage — nothing invented</text>
+  <text x="64" y="406" font-size="10.5" fill="#5A6572">WebPKI + CT (transparency) · ePassport CSCA/PKD (governmental master lists) ·</text>
+  <text x="64" y="422" font-size="10.5" fill="#5A6572">code-signing (key protection + timestamping) · eIDAS (TSP accreditation)</text>
+  <text x="64" y="444" font-size="10.5" fill="#5A6572">unified under SIGNATIF's threshold quorum, four-layer scope enforcement,</text>
+  <text x="64" y="460" font-size="10.5" fill="#5A6572">and algorithm-agility registry (SM2/SM3/SM4 · FIPS suites · ML-DSA migrations).</text>
+  <text x="64" y="486" font-size="10.5" fill="#1A2332" font-weight="600">The EN series assumed eIDAS and stopped. Cross-border verification never existed.</text>
+</svg>

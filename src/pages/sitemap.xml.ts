@@ -20,6 +20,7 @@ const pages: { path: string; priority: string }[] = [
   { path: '/implementation/demos/', priority: '0.7' },
   { path: '/implementation/conformance/', priority: '0.7' },
   { path: '/papers/', priority: '0.6' },
+  { path: '/story/', priority: '0.8' },
   { path: '/terminology/', priority: '0.6' },
   { path: '/compare/', priority: '0.6' },
   { path: '/community/', priority: '0.5' },

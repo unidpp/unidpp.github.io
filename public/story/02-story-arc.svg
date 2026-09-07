@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'IBM Plex Sans',-apple-system,'Segoe UI',Roboto,sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5A6572"/>
+    </marker>
+  </defs>
+  <rect width="960" height="540" fill="#FAFAF7"/>
+  <text x="48" y="34" font-size="11" letter-spacing="2.5" fill="#14335C" font-weight="600">UNIDPP · THE STORY ARC</text>
+  <text x="48" y="58" font-size="20" font-weight="600" fill="#1A2332">Ten beats of one e-bike — every product earns its place</text>
+  <text x="48" y="76" font-size="12" fill="#5A6572">Momiji E8 J-000842 · 2027–2033 · badges reference the beats in STORY.md</text>
+
+  <!-- row 1 -->
+  <g>
+    <rect x="48" y="98" width="160" height="118" rx="8" fill="#FFFFFF" stroke="#E3E7EC"/>
+    <circle cx="66" cy="116" r="12" fill="#14335C"/><text x="66" y="120" font-size="11" fill="#FFFFFF" text-anchor="middle" font-weight="600">1</text>
+    <text x="86" y="120" font-size="12" font-weight="600" fill="#1A2332">Assembly</text>
+    <text x="62" y="144" font-size="10.5" fill="#5A6572">issuance where duty</text>
+    <text x="62" y="158" font-size="10.5" fill="#5A6572">attaches · dormant</text>
+    <text x="62" y="172" font-size="10.5" fill="#5A6572">cell identifiers</text>
+    <text x="62" y="198" font-size="9.5" font-family="'IBM Plex Mono',ui-monospace,Menlo,monospace" fill="#14335C">issuer · core-model</text>
+
+    <rect x="232" y="98" width="160" height="118" rx="8" fill="#FFFFFF" stroke="#E3E7EC"/>
+    <circle cx="250" cy="116" r="12" fill="#14335C"/><text x="250" y="120" font-size="11" fill="#FFFFFF" text-anchor="middle" font-weight="600">2</text>
+    <text x="270" y="120" font-size="12" font-weight="600" fill="#1A2332">Parts' duties</text>
+    <text x="246" y="144" font-size="10.5" fill="#5A6572">R3 install edges ·</text>
+    <text x="246" y="158" font-size="10.5" fill="#5A6572">cert subregister ·</text>
+    <text x="246" y="172" font-size="10.5" fill="#5A6572">mixed-profile children</text>
+    <text x="246" y="198" font-size="9.5" font-family="'IBM Plex Mono',ui-monospace,Menlo,monospace" fill="#14335C">core-model · registry</text>
+
+    <rect x="416" y="98" width="160" height="118" rx="8" fill="#FFFFFF" stroke="#E3E7EC"/>
+    <circle cx="434" cy="116" r="12" fill="#14335C"/><text x="434" y="120" font-size="11" fill="#FFFFFF" text-anchor="middle" font-weight="600">3</text>
+    <text x="454" y="120" font-size="12" font-weight="600" fill="#1A2332">EU placement</text>
+    <text x="430" y="144" font-size="10.5" fill="#5A6572">dated binding, same</text>
+    <text x="430" y="158" font-size="10.5" fill="#5A6572">identity · pack gains</text>
+    <text x="430" y="172" font-size="10.5" fill="#5A6572">battery-passport duty</text>
+    <text x="430" y="198" font-size="9.5" font-family="'IBM Plex Mono',ui-monospace,Menlo,monospace" fill="#14335C">registry</text>
+
+    <rect x="600" y="98" width="160" height="118" rx="8" fill="#FFFFFF" stroke="#14335C" stroke-width="1.5"/>
+    <circle cx="618" cy="116" r="12" fill="#14335C"/><text x="618" y="120" font-size="11" fill="#FFFFFF" text-anchor="middle" font-weight="600">4</text>
+    <text x="638" y="120" font-size="12" font-weight="600" fill="#1A2332">Border moment</text>
+    <text x="614" y="144" font-size="10.5" fill="#5A6572">offline Tier-A · CN/EU</text>
+    <text x="614" y="158" font-size="10.5" fill="#5A6572">origins down → mirror</text>
+    <text x="614" y="172" font-size="10.5" fill="#5A6572">+ inclusion proof</text>
+    <text x="614" y="198" font-size="9.5" font-family="'IBM Plex Mono',ui-monospace,Menlo,monospace" fill="#14335C">tier_a · verdict · cli</text>
+
+    <rect x="784" y="98" width="128" height="118" rx="8" fill="#FFFFFF" stroke="#E3E7EC"/>
+    <circle cx="802" cy="116" r="12" fill="#14335C"/><text x="802" y="120" font-size="11" fill="#FFFFFF" text-anchor="middle" font-weight="600">5</text>
+    <text x="822" y="120" font-size="12" font-weight="600" fill="#1A2332">Service life</text>
+    <text x="798" y="144" font-size="10.5" fill="#5A6572">S2/S3 edge state ·</text>
+    <text x="798" y="158" font-size="10.5" fill="#5A6572">commit-reveal ·</text>
+    <text x="798" y="172" font-size="10.5" fill="#5A6572">registered units</text>
+    <text x="798" y="198" font-size="9.5" font-family="'IBM Plex Mono',ui-monospace,Menlo,monospace" fill="#14335C">core-event</text>
+
+    <line x1="208" y1="157" x2="230" y2="157" stroke="#5A6572" stroke-width="1.5" marker-end="url(#arr)"/>
+    <line x1="392" y1="157" x2="414" y2="157" stroke="#5A6572" stroke-width="1.5" marker-end="url(#arr)"/>
+    <line x1="576" y1="157" x2="598" y2="157" stroke="#5A6572" stroke-width="1.5" marker-end="url(#arr)"/>
+    <line x1="760" y1="157" x2="782" y2="157" stroke="#5A6572" stroke-width="1.5" marker-end="url(#arr)"/>
+  </g>
+
+  <!-- row 2 -->
+  <g>
+    <rect x="48" y="252" width="160" height="118" rx="8" fill="#FFFFFF" stroke="#B4442C" stroke-width="1.5"/>
+    <circle cx="66" cy="270" r="12" fill="#14335C"/><text x="66" y="274" font-size="11" fill="#FFFFFF" text-anchor="middle" font-weight="600">6</text>
+    <text x="86" y="274" font-size="12" font-weight="600" fill="#1A2332">Derestriction</text>
+    <text x="62" y="298" font-size="10.5" fill="#5A6572">E4 modify → derived</text>
+    <text x="62" y="312" font-size="10.5" fill="#5A6572">type → profile re-</text>
+    <text x="62" y="326" font-size="10.5" fill="#5A6572">evaluation (legal class!)</text>
+    <text x="62" y="352" font-size="9.5" font-family="'IBM Plex Mono',ui-monospace,Menlo,monospace" fill="#14335C">core-event · signatif</text>
+
+    <rect x="232" y="252" width="160" height="118" rx="8" fill="#FFFFFF" stroke="#E3E7EC"/>
+    <circle cx="250" cy="270" r="12" fill="#14335C"/><text x="250" y="274" font-size="11" fill="#FFFFFF" text-anchor="middle" font-weight="600">7</text>
+    <text x="270" y="274" font-size="12" font-weight="600" fill="#1A2332">Repair</text>
+    <text x="246" y="298" font-size="10.5" fill="#5A6572">E2 regulated child</text>
+    <text x="246" y="312" font-size="10.5" fill="#5A6572">swap · harvested-pack</text>
+    <text x="246" y="326" font-size="10.5" fill="#5A6572">provenance = value</text>
+    <text x="246" y="352" font-size="9.5" font-family="'IBM Plex Mono',ui-monospace,Menlo,monospace" fill="#14335C">core-transform</text>
+
+    <rect x="416" y="252" width="160" height="118" rx="8" fill="#FFFFFF" stroke="#E3E7EC"/>
+    <circle cx="434" cy="270" r="12" fill="#14335C"/><text x="434" y="274" font-size="11" fill="#FFFFFF" text-anchor="middle" font-weight="600">8</text>
+    <text x="454" y="274" font-size="12" font-weight="600" fill="#1A2332">Resale &amp; auction</text>
+    <text x="430" y="298" font-size="10.5" fill="#5A6572">custody ceremony ·</text>
+    <text x="430" y="312" font-size="10.5" fill="#5A6572">theft predicate ·</text>
+    <text x="430" y="326" font-size="10.5" fill="#5A6572">condition stamps · blind</text>
+    <text x="430" y="352" font-size="9.5" font-family="'IBM Plex Mono',ui-monospace,Menlo,monospace" fill="#14335C">signatif · explorer</text>
+
+    <rect x="600" y="252" width="160" height="118" rx="8" fill="#FFFFFF" stroke="#E3E7EC"/>
+    <circle cx="618" cy="270" r="12" fill="#14335C"/><text x="618" y="274" font-size="11" fill="#FFFFFF" text-anchor="middle" font-weight="600">9</text>
+    <text x="638" y="274" font-size="12" font-weight="600" fill="#1A2332">Recall in graph</text>
+    <text x="614" y="298" font-size="10.5" fill="#5A6572">predicate-based · no</text>
+    <text x="614" y="312" font-size="10.5" fill="#5A6572">enumeration · reaches</text>
+    <text x="614" y="326" font-size="10.5" fill="#5A6572">second-hand markets</text>
+    <text x="614" y="352" font-size="9.5" font-family="'IBM Plex Mono',ui-monospace,Menlo,monospace" fill="#14335C">transform · resolver</text>
+
+    <rect x="784" y="252" width="128" height="118" rx="8" fill="#FFFFFF" stroke="#E3E7EC"/>
+    <circle cx="802" cy="270" r="12" fill="#14335C"/><text x="802" y="274" font-size="11" fill="#FFFFFF" text-anchor="middle" font-weight="600">10</text>
+    <text x="810" y="274" font-size="12" font-weight="600" fill="#1A2332">End of life</text>
+    <text x="798" y="298" font-size="10.5" fill="#5A6572">decompose · mass</text>
+    <text x="798" y="312" font-size="10.5" fill="#5A6572">balance · end-of-waste</text>
+    <text x="798" y="326" font-size="10.5" fill="#5A6572">= new issuance</text>
+    <text x="798" y="352" font-size="9.5" font-family="'IBM Plex Mono',ui-monospace,Menlo,monospace" fill="#14335C">core-transform</text>
+
+    <line x1="208" y1="311" x2="230" y2="311" stroke="#5A6572" stroke-width="1.5" marker-end="url(#arr)"/>
+    <line x1="392" y1="311" x2="414" y2="311" stroke="#5A6572" stroke-width="1.5" marker-end="url(#arr)"/>
+    <line x1="576" y1="311" x2="598" y2="311" stroke="#5A6572" stroke-width="1.5" marker-end="url(#arr)"/>
+    <line x1="760" y1="311" x2="782" y2="311" stroke="#5A6572" stroke-width="1.5" marker-end="url(#arr)"/>
+    <path d="M 848 216 L 848 236 L 128 236 L 128 250" fill="none" stroke="#5A6572" stroke-width="1.2" stroke-dasharray="4 3" marker-end="url(#arr)"/>
+  </g>
+
+  <!-- counterpoint lane -->
+  <rect x="48" y="400" width="864" height="106" rx="8" fill="#FFFFFF" stroke="#E3E7EC"/>
+  <text x="64" y="426" font-size="11" letter-spacing="1.5" fill="#8C6D1F" font-weight="600">COUNTERPOINT · THE 1962 SUPER CUB — SAME CORE, ZERO REGULATION, VOLUNTARY ADOPTION</text>
+  <g font-size="10.5" fill="#1A2332">
+    <rect x="64" y="440" width="152" height="48" rx="6" fill="#F4F6F9"/><text x="76" y="460" font-weight="600">V1 Commissioning</text><text x="76" y="476" fill="#5A6572">auction house, no EO</text>
+    <rect x="232" y="440" width="152" height="48" rx="6" fill="#F4F6F9"/><text x="244" y="460" font-weight="600">V2 Clock predicate</text><text x="244" y="476" fill="#5A6572">age threshold binds</text>
+    <rect x="400" y="440" width="152" height="48" rx="6" fill="#F4F6F9"/><text x="412" y="460" font-weight="600">V3 Attribution</text><text x="412" y="476" fill="#5A6572">competing facts, kept</text>
+    <rect x="568" y="440" width="152" height="48" rx="6" fill="#F4F6F9"/><text x="580" y="460" font-weight="600">V4 Theft taint</text><text x="580" y="476" fill="#5A6572">1987→2024, graph event</text>
+    <rect x="736" y="440" width="152" height="48" rx="6" fill="#F4F6F9"/><text x="748" y="460" font-weight="600">V5 Value = verdict</text><text x="748" y="476" fill="#5A6572">stamps, not facts</text>
+  </g>
+  <text x="48" y="530" font-size="10.5" fill="#5A6572">Highlighted cards: B4 (the offline border moment) and B6 (software changes legal identity) are the two demo beats.</text>
+</svg>

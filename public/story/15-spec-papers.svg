@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'IBM Plex Sans',-apple-system,'Segoe UI',Roboto,sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5A6572"/>
+    </marker>
+  </defs>
+  <rect width="960" height="540" fill="#FAFAF7"/>
+  <text x="48" y="34" font-size="11" letter-spacing="2.5" fill="#14335C" font-weight="600">UNIDPP-SPEC + UNIDPP-PAPERS</text>
+  <text x="48" y="58" font-size="20" font-weight="600" fill="#1A2332">The rulebook cites the story — the papers argue it</text>
+  <text x="48" y="76" font-size="12" fill="#5A6572">Metanorma AsciiDoc · 12 clauses · 328 shalls · every beat has a normative home</text>
+
+  <!-- spec parts spine -->
+  <rect x="48" y="100" width="560" height="330" rx="8" fill="#FFFFFF" stroke="#E3E7EC"/>
+  <text x="64" y="126" font-size="12.5" font-weight="600" fill="#14335C">The five parts — each beat lands in one</text>
+  <g>
+    <rect x="64" y="142" width="528" height="50" rx="6" fill="#F4F6F9" stroke="#E3E7EC"/>
+    <text x="76" y="162" font-size="11.5" font-weight="600" fill="#14335C">Part 1 — Framework</text>
+    <text x="76" y="178" font-size="10.5" fill="#5A6572">invariants I1–I14 · seams S1–S12 · <tspan fill="#14335C" font-weight="600">B1 B2 B4</tspan></text>
+    <rect x="64" y="200" width="528" height="50" rx="6" fill="#F4F6F9" stroke="#E3E7EC"/>
+    <text x="76" y="220" font-size="11.5" font-weight="600" fill="#14335C">Part 2 — Profile mechanism (the mount)</text>
+    <text x="76" y="236" font-size="10.5" fill="#5A6572">lens model · three-axial composition · dated bindings · <tspan fill="#14335C" font-weight="600">B3 V2</tspan></text>
+    <rect x="64" y="258" width="528" height="50" rx="6" fill="#F4F6F9" stroke="#E3E7EC"/>
+    <text x="76" y="278" font-size="11.5" font-weight="600" fill="#14335C">Part 3 — Events &amp; lifecycle</text>
+    <text x="76" y="294" font-size="10.5" fill="#5A6572">E1–E15 · state machine · derived types · stamps · <tspan fill="#14335C" font-weight="600">B5 B6 B7 B8 V3 V4</tspan></text>
+    <rect x="64" y="316" width="528" height="50" rx="6" fill="#F4F6F9" stroke="#E3E7EC"/>
+    <text x="76" y="336" font-size="11.5" font-weight="600" fill="#14335C">Part 4 — Tiers &amp; offline</text>
+    <text x="76" y="352" font-size="10.5" fill="#5A6572">carrier minimum · degradation ladder · freshness verdicts · <tspan fill="#14335C" font-weight="600">B4</tspan></text>
+    <rect x="64" y="374" width="528" height="44" rx="6" fill="#F4F6F9" stroke="#E3E7EC"/>
+    <text x="76" y="394" font-size="11.5" font-weight="600" fill="#14335C">Part 5 — Conformance classes + Annex A</text>
+    <text x="76" y="409" font-size="10.5" fill="#5A6572">the optical bench · <tspan fill="#14335C" font-weight="600">all beats, tested</tspan></text>
+  </g>
+
+  <!-- papers -->
+  <rect x="640" y="100" width="272" height="330" rx="8" fill="#FFFFFF" stroke="#E3E7EC"/>
+  <text x="656" y="126" font-size="12.5" font-weight="600" fill="#14335C">The six papers</text>
+  <g font-size="10.5" fill="#1A2332">
+    <text x="656" y="152" font-weight="600">P1 Why international</text><text x="656" y="167" fill="#5A6572">the border problem · B3 B4</text>
+    <text x="656" y="190" font-weight="600">P2 Registry &amp; semantics</text><text x="656" y="205" fill="#5A6572">§4.3 vacancy · B2 B3 B9 B10</text>
+    <text x="656" y="228" font-weight="600">P3 Conformance report</text><text x="656" y="243" fill="#5A6572">N1–N6 evidence · all</text>
+    <text x="656" y="266" font-weight="600">P4 Implementation evidence</text><text x="656" y="281" fill="#5A6572">Tier-A bytes · B4 B7</text>
+    <text x="656" y="304" font-weight="600">P5 Universality</text><text x="656" y="319" fill="#5A6572">antique/Cub counterpoint · V1–V5</text>
+    <text x="656" y="342" font-weight="600">P6 Terminology</text><text x="656" y="357" fill="#5A6572">146 concepts · all</text>
+    <text x="656" y="382" font-weight="600" fill="#8C6D1F">P7 (candidate) — the explainer</text><text x="656" y="397" fill="#5A6572">2-page delegate brief: one sentence,</text><text x="656" y="410" fill="#5A6572">ePassport architecture, five beats</text>
+  </g>
+
+  <!-- why -->
+  <rect x="48" y="452" width="864" height="60" rx="8" fill="#FFFFFF" stroke="#E3E7EC"/>
+  <text x="64" y="476" font-size="12" font-weight="600" fill="#14335C">Why it matters</text>
+  <text x="64" y="496" font-size="10.5" fill="#5A6572">328 testable shalls instead of prose-authoritative fiat: "if UML, text and JSON disagree, prose is authoritative" (EN 18223 4.1.1) is the sentence we retire.</text>
+</svg>

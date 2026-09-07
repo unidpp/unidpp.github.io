@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'IBM Plex Sans',-apple-system,'Segoe UI',Roboto,sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5A6572"/>
+    </marker>
+  </defs>
+  <rect width="960" height="540" fill="#FAFAF7"/>
+  <text x="48" y="34" font-size="11" letter-spacing="2.5" fill="#14335C" font-weight="600">UNIDPP-CORE · EVENT CRATE</text>
+  <text x="48" y="58" font-size="20" font-weight="600" fill="#1A2332">The log is the product — append-only, ever</text>
+  <text x="48" y="76" font-size="12" fill="#5A6572">Left: the custodian-held segment · right: the device edge segment · they join by identity + commitment hash</text>
+
+  <!-- custodian log -->
+  <rect x="48" y="96" width="560" height="404" rx="8" fill="#FFFFFF" stroke="#E3E7EC"/>
+  <text x="64" y="122" font-size="12.5" font-weight="600" fill="#14335C">Event log · momiji:e8/J-000842</text>
+  <text x="64" y="138" font-size="10.5" fill="#5A6572">each event signed by its appender · nothing is ever edited in place</text>
+
+  <g font-size="11">
+    <rect x="64" y="150" width="528" height="34" rx="6" fill="#F4F6F9"/>
+    <text x="76" y="165" font-family="'IBM Plex Mono',ui-monospace,Menlo,monospace" fill="#14335C" font-weight="600">issue.type+instance</text>
+    <text x="300" y="165" fill="#5A6572">Momiji · Kyoto · JP placement</text>
+    <circle cx="574" cy="167" r="11" fill="#14335C"/><text x="574" y="171" font-size="10" fill="#FFFFFF" text-anchor="middle" font-weight="600">1</text>
+    <text x="76" y="178" fill="#5A6572">2027-04 · build record lists parts at finest granularity</text>
+
+    <rect x="64" y="192" width="528" height="34" rx="6" fill="#F4F6F9"/>
+    <text x="76" y="207" font-family="'IBM Plex Mono',ui-monospace,Menlo,monospace" fill="#14335C" font-weight="600">profile.bind EU-set</text>
+    <text x="300" y="207" fill="#5A6572">importer · dated applicability window</text>
+    <circle cx="574" cy="209" r="11" fill="#14335C"/><text x="574" y="213" font-size="10" fill="#FFFFFF" text-anchor="middle" font-weight="600">3</text>
+    <text x="76" y="220" fill="#5A6572">2028-02 · same identity, no re-minting · pack duty attaches</text>
+
+    <rect x="64" y="234" width="528" height="34" rx="6" fill="#F4F6F9"/>
+    <text x="76" y="249" font-family="'IBM Plex Mono',ui-monospace,Menlo,monospace" fill="#14335C" font-weight="600">custody.transfer ×2</text>
+    <text x="300" y="249" fill="#5A6572">owner → auction house → Vienna buyer</text>
+    <circle cx="574" cy="251" r="11" fill="#14335C"/><text x="574" y="255" font-size="10" fill="#FFFFFF" text-anchor="middle" font-weight="600">8</text>
+    <text x="76" y="262" fill="#5A6572">signed ceremony, counterparty countersigns · blind edge to maker</text>
+
+    <rect x="64" y="276" width="528" height="34" rx="6" fill="#FFF7F0" stroke="#E8D5C8"/>
+    <text x="76" y="291" font-family="'IBM Plex Mono',ui-monospace,Menlo,monospace" fill="#B4442C" font-weight="600">software.update</text>
+    <text x="300" y="291" fill="#5A6572">OTA 2029-03 · firmware vector v→2.4</text>
+    <circle cx="574" cy="293" r="11" fill="#14335C"/><text x="574" y="297" font-size="10" fill="#FFFFFF" text-anchor="middle" font-weight="600">6</text>
+    <text x="76" y="304" fill="#5A6572">declared characteristics change, no physical change</text>
+
+    <rect x="64" y="318" width="528" height="44" rx="6" fill="#FBEFEC" stroke="#B4442C" stroke-width="1.5"/>
+    <text x="76" y="335" font-family="'IBM Plex Mono',ui-monospace,Menlo,monospace" fill="#B4442C" font-weight="600">product.modify (derestrict)</text>
+    <text x="340" y="335" fill="#B4442C">⇒ derived type E8/Moped</text>
+    <circle cx="574" cy="331" r="11" fill="#14335C"/><text x="574" y="335" font-size="10" fill="#FFFFFF" text-anchor="middle" font-weight="600">6</text>
+    <text x="76" y="352" fill="#5A6572">cutoff 25→45 km/h · profile re-evaluation · regulator notice · trust marker: unattested</text>
+
+    <rect x="64" y="370" width="528" height="34" rx="6" fill="#F4F6F9"/>
+    <text x="76" y="385" font-family="'IBM Plex Mono',ui-monospace,Menlo,monospace" fill="#14335C" font-weight="600">part.replace pack</text>
+    <text x="300" y="385" fill="#5A6572">uninstall EU-old + install EU-new · DE dealer</text>
+    <circle cx="574" cy="387" r="11" fill="#14335C"/><text x="574" y="391" font-size="10" fill="#FFFFFF" text-anchor="middle" font-weight="600">7</text>
+    <text x="76" y="398" fill="#5A6572">old pack interval closes carrying its history</text>
+
+    <rect x="64" y="412" width="528" height="34" rx="6" fill="#F4F6F9"/>
+    <text x="76" y="427" font-family="'IBM Plex Mono',ui-monospace,Menlo,monospace" fill="#14335C" font-weight="600">inspection.stamp</text>
+    <text x="300" y="427" fill="#5A6572">auction-house lens · grade B · 4,100 km</text>
+    <circle cx="574" cy="429" r="11" fill="#14335C"/><text x="574" y="433" font-size="10" fill="#FFFFFF" text-anchor="middle" font-weight="600">8</text>
+    <text x="76" y="440" fill="#5A6572">lens-scoped attestation · provenance gap marker for undisclosed records</text>
+
+    <rect x="64" y="454" width="528" height="34" rx="6" fill="#F4F6F9"/>
+    <text x="76" y="469" font-family="'IBM Plex Mono',ui-monospace,Menlo,monospace" fill="#14335C" font-weight="600">recall.evaluate H-2231</text>
+    <text x="300" y="469" fill="#5A6572">predicate matched original pack (elsewhere)</text>
+    <circle cx="574" cy="471" r="11" fill="#14335C"/><text x="574" y="475" font-size="10" fill="#FFFFFF" text-anchor="middle" font-weight="600">9</text>
+    <text x="76" y="482" fill="#5A6572">2030-05 · this bike unaffected — current pack traced via B7</text>
+  </g>
+
+  <!-- device segment -->
+  <rect x="648" y="96" width="264" height="240" rx="8" fill="#FFFFFF" stroke="#E3E7EC"/>
+  <text x="664" y="122" font-size="12.5" font-weight="600" fill="#14335C">Edge segment · BMS (S2)</text>
+  <text x="664" y="140" font-size="10.5" fill="#5A6572">device-bound key · local append-only</text>
+  <rect x="664" y="152" width="232" height="40" rx="6" fill="#F4F6F9"/>
+  <text x="676" y="168" font-size="10.5" font-family="'IBM Plex Mono',ui-monospace,Menlo,monospace" fill="#14335C">cycles: 4,102 · SoH: 87%</text>
+  <text x="676" y="184" font-size="10" fill="#5A6572">SoH = derived verdict (registered model)</text>
+  <rect x="664" y="200" width="232" height="40" rx="6" fill="#F4F6F9"/>
+  <text x="676" y="216" font-size="10.5" font-family="'IBM Plex Mono',ui-monospace,Menlo,monospace" fill="#14335C">commit = H(log_prefix)ᵏᵈᵉᵛ</text>
+  <text x="676" y="232" font-size="10" fill="#5A6572">reveal must be inclusion-consistent</text>
+  <rect x="664" y="248" width="232" height="40" rx="6" fill="#F4F6F9"/>
+  <text x="676" y="264" font-size="10.5" fill="#1A2332">dump at dealer visit</text>
+  <text x="676" y="280" font-size="10" fill="#5A6572">can withhold, cannot retroactively lie</text>
+  <text x="664" y="312" font-size="10" fill="#5A6572">freshness verdict degrades when</text>
+  <text x="664" y="326" font-size="10" fill="#5A6572">commitment goes stale — never silently passes</text>
+
+  <!-- join -->
+  <line x1="608" y1="260" x2="646" y2="260" stroke="#5A6572" stroke-width="1.5" marker-start="url(#arr)" marker-end="url(#arr)"/>
+  <text x="627" y="248" font-size="10" fill="#5A6572" text-anchor="middle">S10</text>
+
+  <rect x="648" y="356" width="264" height="144" rx="8" fill="#FFFFFF" stroke="#E3E7EC"/>
+  <text x="664" y="380" font-size="12" font-weight="600" fill="#14335C">Why it matters</text>
+  <text x="664" y="402" font-size="10.5" fill="#5A6572">· corrections append (E10), never rewrite</text>
+  <text x="664" y="422" font-size="10.5" fill="#5A6572">· as-of queries: "legal state at T?"</text>
+  <text x="664" y="442" font-size="10.5" fill="#5A6572">· forks = log-detectable incidents,</text>
+  <text x="664" y="458" font-size="10.5" fill="#5A6572">  adjudicated, never silently merged</text>
+  <text x="664" y="478" font-size="10.5" fill="#5A6572">· the EN series logs id+timestamp only:</text>
+  <text x="664" y="494" font-size="10.5" fill="#5A6572">  no event kinds, no semantics — this is ours</text>
+</svg>

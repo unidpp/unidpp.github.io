@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'IBM Plex Sans',-apple-system,'Segoe UI',Roboto,sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5A6572"/>
+    </marker>
+  </defs>
+  <rect width="960" height="540" fill="#FAFAF7"/>
+  <text x="48" y="34" font-size="11" letter-spacing="2.5" fill="#1E6B4F" font-weight="600">UNIDPP-REGISTRY · FERIN / ISO 19135</text>
+  <text x="48" y="58" font-size="20" font-weight="600" fill="#1A2332">Where "which rules applied when" becomes a query</text>
+  <text x="48" y="76" font-size="12" fill="#5A6572">Governed items with lifecycles · applicability as dated bindings · the EN 18223 §4.3 vacancy, filled</text>
+
+  <!-- item lifecycle -->
+  <rect x="48" y="100" width="500" height="130" rx="8" fill="#FFFFFF" stroke="#E3E7EC"/>
+  <text x="64" y="126" font-size="12.5" font-weight="600" fill="#1E6B4F">Item lifecycle (per item, per version)</text>
+  <g font-size="11">
+    <rect x="64" y="142" width="96" height="30" rx="15" fill="#F4F6F9" stroke="#E3E7EC"/><text x="112" y="161" fill="#5A6572" text-anchor="middle">proposal</text>
+    <rect x="180" y="142" width="96" height="30" rx="15" fill="#EDF3EF" stroke="#1E6B4F"/><text x="228" y="161" fill="#1E6B4F" text-anchor="middle" font-weight="600">valid</text>
+    <rect x="296" y="142" width="110" height="30" rx="15" fill="#F4F6F9" stroke="#E3E7EC"/><text x="351" y="161" fill="#5A6572" text-anchor="middle">superseded</text>
+    <rect x="426" y="142" width="96" height="30" rx="15" fill="#F4F6F9" stroke="#E3E7EC"/><text x="474" y="161" fill="#5A6572" text-anchor="middle">retired</text>
+    <line x1="160" y1="157" x2="178" y2="157" stroke="#5A6572" stroke-width="1.5" marker-end="url(#arr)"/>
+    <line x1="276" y1="157" x2="294" y2="157" stroke="#5A6572" stroke-width="1.5" marker-end="url(#arr)"/>
+    <line x1="406" y1="157" x2="424" y2="157" stroke="#5A6572" stroke-width="1.5" marker-end="url(#arr)"/>
+  </g>
+  <text x="64" y="196" font-size="10.5" fill="#5A6572">public review between proposal and valid · supersession carries reason + successor link + derived window end</text>
+  <text x="64" y="214" font-size="10.5" fill="#5A6572">governance roles from 19135: register owner · manager · submitting organization · control body</text>
+
+  <!-- applicability bindings -->
+  <rect x="48" y="254" width="500" height="170" rx="8" fill="#FFFFFF" stroke="#E3E7EC"/>
+  <text x="64" y="280" font-size="12.5" font-weight="600" fill="#1E6B4F">Applicability — dated bindings on one identity (B3)</text>
+  <text x="64" y="304" font-size="11" font-family="'IBM Plex Mono',ui-monospace,Menlo,monospace" fill="#14335C">momiji:e8/J-000842</text>
+  <line x1="64" y1="356" x2="520" y2="356" stroke="#5A6572" stroke-width="1.5"/>
+  <!-- timeline ticks -->
+  <g font-size="9.5" fill="#5A6572">
+    <line x1="100" y1="350" x2="100" y2="362" stroke="#5A6572"/><text x="100" y="376" text-anchor="middle">2027-04</text>
+    <line x1="220" y1="350" x2="220" y2="362" stroke="#5A6572"/><text x="220" y="376" text-anchor="middle">2028-02</text>
+    <line x1="340" y1="350" x2="340" y2="362" stroke="#5A6572"/><text x="340" y="376" text-anchor="middle">2029-09</text>
+    <line x1="460" y1="350" x2="460" y2="362" stroke="#5A6572"/><text x="460" y="376" text-anchor="middle">2030-05</text>
+  </g>
+  <rect x="100" y="316" width="420" height="16" rx="4" fill="#EDF3EF" stroke="#1E6B4F"/><text x="112" y="328" font-size="10" fill="#1E6B4F">JP road-traffic lens (from placement)</text>
+  <rect x="220" y="336" width="300" height="16" rx="4" fill="#E3E7EC"/><text x="232" y="348" font-size="10" fill="#1A2332">EU machinery + RoHS + battery (import)</text>
+  <text x="64" y="400" font-size="10.5" fill="#5A6572">profile-set growth is a registry event — never a new identity · retroactive flags carried explicitly ·</text>
+  <text x="64" y="416" font-size="10.5" fill="#5A6572">as-of query: "which lens set applied when it was sold in 2028-03?" → one HTTP call, answer reconstructable</text>
+
+  <!-- subregisters -->
+  <rect x="580" y="100" width="332" height="324" rx="8" fill="#FFFFFF" stroke="#E3E7EC"/>
+  <text x="596" y="126" font-size="12.5" font-weight="600" fill="#1E6B4F">Subregisters (class-scoped)</text>
+  <g font-size="10.5">
+    <rect x="596" y="140" width="150" height="30" rx="6" fill="#F4F6F9"/><text x="608" y="159" fill="#1A2332">/profiles — the lenses</text>
+    <rect x="754" y="140" width="142" height="30" rx="6" fill="#F4F6F9"/><text x="766" y="159" fill="#1A2332">/data-elements</text>
+    <rect x="596" y="178" width="150" height="30" rx="6" fill="#F4F6F9"/><text x="608" y="197" fill="#1A2332">/crypto-suites</text>
+    <rect x="754" y="178" width="142" height="30" rx="6" fill="#F4F6F9"/><text x="766" y="197" fill="#1A2332">/trust-anchors</text>
+    <rect x="596" y="216" width="150" height="30" rx="6" fill="#F4F6F9"/><text x="608" y="235" fill="#1A2332">/transforms</text>
+    <rect x="754" y="216" width="142" height="30" rx="6" fill="#F4F6F9"/><text x="766" y="235" fill="#1A2332">/units</text>
+    <rect x="596" y="254" width="300" height="30" rx="6" fill="#F4F6F9"/><text x="608" y="273" fill="#1A2332">/equivalences — GB 4943.1 ≈ IEC 62368-1 (attested, B2)</text>
+    <rect x="596" y="292" width="300" height="30" rx="6" fill="#F4F6F9"/><text x="608" y="311" fill="#1A2332">/recall-predicates — "packs containing lot H-2231" (B9)</text>
+  </g>
+  <text x="596" y="348" font-size="10.5" fill="#5A6572">UNTDED seed data elements · federated sibling registers</text>
+  <text x="596" y="364" font-size="10.5" fill="#5A6572">(national RAs as subregisters) · dictionaryReference</text>
+  <text x="596" y="380" font-size="10.5" fill="#5A6572">resolution protocol: URI → definition + version + status</text>
+  <text x="596" y="396" font-size="10.5" fill="#5A6572">+ trust chain, content-negotiated (CDDAL / JSON-LD)</text>
+  <circle cx="896" cy="114" r="12" fill="#14335C"/><text x="896" y="118" font-size="11" fill="#FFFFFF" text-anchor="middle" font-weight="600">3</text>
+
+  <!-- why -->
+  <rect x="48" y="448" width="864" height="64" rx="8" fill="#FFFFFF" stroke="#E3E7EC"/>
+  <text x="64" y="472" font-size="12" font-weight="600" fill="#14335C">Why it matters</text>
+  <text x="64" y="492" font-size="10.5" fill="#5A6572">EN 18223 §4.3 left the semantic repository as placeholder URLs — the load-bearing wall missing from the published series. Registrations are immutable per version:</text>
+  <text x="64" y="506" font-size="10.5" fill="#5A6572">mirrorable, cacheable, log-anchored · conflicting regional rules (RoHS lists) become distinct items harmonized to one concept — no contradiction, ever.</text>
+</svg>

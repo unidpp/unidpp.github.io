@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'IBM Plex Sans',-apple-system,'Segoe UI',Roboto,sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5A6572"/>
+    </marker>
+  </defs>
+  <rect width="960" height="540" fill="#FAFAF7"/>
+  <text x="48" y="34" font-size="11" letter-spacing="2.5" fill="#14335C" font-weight="600">UNIDPP-CORE · TIER-A CRATE</text>
+  <text x="48" y="58" font-size="20" font-weight="600" fill="#1A2332">The carrier minimum — the MRZ of products</text>
+  <text x="48" y="76" font-size="12" fill="#5A6572">A fixed, testable subset of the passport lives on the carrier · verifiable with cached anchors, no network</text>
+
+  <!-- the physical sticker -->
+  <rect x="48" y="100" width="400" height="220" rx="10" fill="#FFFFFF" stroke="#14335C" stroke-width="1.5"/>
+  <text x="64" y="126" font-size="12" font-weight="600" fill="#14335C">Frame sticker / NFC · J-000842</text>
+  <!-- QR mock -->
+  <g transform="translate(72,140)">
+    <rect width="96" height="96" fill="#1A2332"/>
+    <rect x="8" y="8" width="22" height="22" fill="#FAFAF7"/>
+    <rect x="12" y="12" width="14" height="14" fill="#1A2332"/>
+    <rect x="66" y="8" width="22" height="22" fill="#FAFAF7"/>
+    <rect x="70" y="12" width="14" height="14" fill="#1A2332"/>
+    <rect x="8" y="66" width="22" height="22" fill="#FAFAF7"/>
+    <rect x="12" y="70" width="14" height="14" fill="#1A2332"/>
+    <rect x="42" y="42" width="10" height="10" fill="#FAFAF7"/>
+    <rect x="58" y="34" width="8" height="8" fill="#FAFAF7"/>
+    <rect x="34" y="58" width="8" height="8" fill="#FAFAF7"/>
+    <rect x="60" y="60" width="12" height="12" fill="#FAFAF7"/>
+    <rect x="80" y="48" width="8" height="8" fill="#FAFAF7"/>
+    <rect x="44" y="76" width="8" height="8" fill="#FAFAF7"/>
+  </g>
+  <text x="184" y="152" font-size="10.5" font-family="'IBM Plex Mono',ui-monospace,Menlo,monospace" fill="#14335C">ISO/IEC 18004 · 15459 key</text>
+  <text x="184" y="168" font-size="10.5" fill="#5A6572">one QR resolves identity — never data</text>
+  <!-- MRZ strip -->
+  <rect x="64" y="250" width="368" height="26" rx="4" fill="#F4F6F9" stroke="#E3E7EC"/>
+  <text x="76" y="267" font-size="11.5" font-family="'IBM Plex Mono',ui-monospace,Menlo,monospace" fill="#1A2332">P&lt;UNIDPP&lt;E8&lt;J-000842&lt;STATUS=ACTIVE&lt;FLAG=NONE&lt;</text>
+  <text x="64" y="300" font-size="10.5" fill="#5A6572">product ID · resolver URI · EO ID · status · critical safety/recall flag · validity</text>
+  <!-- sig chips -->
+  <rect x="64" y="270" width="90" height="0" fill="none"/>
+  <g font-size="10" fill="#1A2332">
+    <rect x="64" y="286" width="86" height="22" rx="11" fill="#FFFFFF" stroke="#14335C"/><text x="107" y="301" text-anchor="middle">sig: JP suite</text>
+    <rect x="158" y="286" width="96" height="22" rx="11" fill="#FFFFFF" stroke="#14335C"/><text x="206" y="301" text-anchor="middle">sig: EU ECDSA</text>
+    <rect x="262" y="286" width="92" height="22" rx="11" fill="#FFFFFF" stroke="#14335C"/><text x="308" y="301" text-anchor="middle">sig: ML-DSA</text>
+    <text x="364" y="301" fill="#5A6572">compressed, multi-suite</text>
+  </g>
+  <circle cx="428" cy="114" r="12" fill="#14335C"/><text x="428" y="118" font-size="11" fill="#FFFFFF" text-anchor="middle" font-weight="600">4</text>
+
+  <!-- byte budget -->
+  <rect x="48" y="344" width="400" height="60" rx="8" fill="#FFFFFF" stroke="#E3E7EC"/>
+  <text x="64" y="368" font-size="12" font-weight="600" fill="#14335C">Sized to the carrier</text>
+  <text x="64" y="388" font-size="10.5" fill="#5A6572">battery fixture 405 B → QR v15-M, margin +7 · ML-DSA-65 rejected 3570 &gt; 2331 B budget</text>
+
+  <!-- degradation ladder -->
+  <rect x="484" y="100" width="428" height="304" rx="8" fill="#FFFFFF" stroke="#E3E7EC"/>
+  <text x="500" y="126" font-size="12.5" font-weight="600" fill="#14335C">The degradation ladder — explicit, never silent</text>
+  <g>
+    <rect x="500" y="142" width="396" height="70" rx="6" fill="#F0F5F1" stroke="#1E6B4F"/>
+    <text x="516" y="166" font-size="12" font-weight="600" fill="#1E6B4F">TIER A — offline minimum</text>
+    <text x="516" y="184" font-size="10.5" fill="#1A2332">carrier bytes + cached anchors → verdict, as-of stamped</text>
+    <text x="516" y="200" font-size="10.5" fill="#1A2332">the customs terminal lives here (B4)</text>
+    <rect x="500" y="224" width="396" height="70" rx="6" fill="#F4F6F9" stroke="#E3E7EC"/>
+    <text x="516" y="248" font-size="12" font-weight="600" fill="#14335C">TIER B — served, per profile</text>
+    <text x="516" y="266" font-size="10.5" fill="#1A2332">full render via resolver: EU view, JP view, consumer view</text>
+    <text x="516" y="282" font-size="10.5" fill="#1A2332">mirrors and caches carry as-of stamps · inclusion proofs substitute origins</text>
+    <rect x="500" y="306" width="396" height="70" rx="6" fill="#F4F6F9" stroke="#E3E7EC"/>
+    <text x="516" y="330" font-size="12" font-weight="600" fill="#14335C">TIER C — archival</text>
+    <text x="516" y="348" font-size="10.5" fill="#1A2332">notarized as-of snapshots · OAIS-style persistence (B10)</text>
+    <text x="516" y="364" font-size="10.5" fill="#1A2332">identities outlive issuers — Momiji may not exist in 2040</text>
+    <line x1="698" y1="212" x2="698" y2="222" stroke="#5A6572" stroke-width="1.5" marker-end="url(#arr)"/>
+    <line x1="698" y1="294" x2="698" y2="304" stroke="#5A6572" stroke-width="1.5" marker-end="url(#arr)"/>
+  </g>
+  <text x="500" y="394" font-size="10.5" fill="#B4442C" font-weight="600">stale/offline data degrades explicitly — it never silently passes</text>
+
+  <!-- footer -->
+  <rect x="48" y="428" width="864" height="84" rx="8" fill="#FFFFFF" stroke="#E3E7EC"/>
+  <text x="64" y="452" font-size="12" font-weight="600" fill="#14335C">Why it matters</text>
+  <text x="64" y="474" font-size="10.5" fill="#5A6572">· EN 18220 fixes carriers; EN 18223 fixes compression — but neither fixes WHICH subset is offline-verifiable. We do.</text>
+  <text x="64" y="492" font-size="10.5" fill="#5A6572">· every deployed reality today (CN platforms, EN practice) is online lookup: the ladder degrades cleanly to that minimum.</text>
+  <text x="64" y="510" font-size="10.5" fill="#5A6572">· a silent S0 product (no device ever) is fully servable at Tier A — zero device participation is a supported mode, not an edge case.</text>
+</svg>

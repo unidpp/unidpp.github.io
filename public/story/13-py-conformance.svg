@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'IBM Plex Sans',-apple-system,'Segoe UI',Roboto,sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5A6572"/>
+    </marker>
+  </defs>
+  <rect width="960" height="540" fill="#FAFAF7"/>
+  <text x="48" y="34" font-size="11" letter-spacing="2.5" fill="#14335C" font-weight="600">UNIDPP-PY · CONFORMANCE FRAMEWORK + ADAPTERS</text>
+  <text x="48" y="58" font-size="20" font-weight="600" fill="#1A2332">We run the tests — that is the referee's chair</text>
+  <text x="48" y="76" font-size="12" fill="#5A6572">Public, reproducible evidence: EN 18223's own Annex A examples already fail machine validation (N1–N6)</text>
+
+  <!-- runner -->
+  <rect x="48" y="100" width="560" height="240" rx="8" fill="#FFFFFF" stroke="#E3E7EC"/>
+  <text x="64" y="126" font-size="12.5" font-weight="600" fill="#14335C">The runner</text>
+  <g>
+    <rect x="64" y="142" width="160" height="44" rx="6" fill="#F4F6F9" stroke="#E3E7EC"/>
+    <text x="144" y="162" font-size="10.5" fill="#1A2332" text-anchor="middle">fixtures in</text>
+    <text x="144" y="177" font-size="9.5" fill="#5A6572" text-anchor="middle">EN Annex A · CWAs · competitors</text>
+    <rect x="256" y="142" width="160" height="44" rx="6" fill="#FFFFFF" stroke="#14335C"/>
+    <text x="336" y="162" font-size="10.5" fill="#14335C" text-anchor="middle" font-weight="600">conformance checks</text>
+    <text x="336" y="177" font-size="9.5" fill="#5A6572" text-anchor="middle">schema · semantics · trust · carriers</text>
+    <rect x="448" y="142" width="144" height="44" rx="6" fill="#F4F6F9" stroke="#E3E7EC"/>
+    <text x="520" y="162" font-size="10.5" fill="#1A2332" text-anchor="middle">verdicts out</text>
+    <text x="520" y="177" font-size="9.5" fill="#5A6572" text-anchor="middle">pass/fail + finding IDs</text>
+    <line x1="224" y1="164" x2="254" y2="164" stroke="#5A6572" stroke-width="1.5" marker-end="url(#arr)"/>
+    <line x1="416" y1="164" x2="446" y2="164" stroke="#5A6572" stroke-width="1.5" marker-end="url(#arr)"/>
+  </g>
+  <text x="64" y="214" font-size="10.5" fill="#5A6572">findings against the EN's own published examples:</text>
+  <g font-size="10.5">
+    <text x="80" y="236" fill="#B4442C" font-weight="600">N1</text><text x="120" y="236" fill="#5A6572">malformed JSON in a normative example</text>
+    <text x="80" y="256" fill="#B4442C" font-weight="600">N2</text><text x="120" y="256" fill="#5A6572">dictionaryReference missing the required // scheme</text>
+    <text x="80" y="276" fill="#B4442C" font-weight="600">N3</text><text x="120" y="276" fill="#5A6572">duplicate idShort within one passport</text>
+    <text x="80" y="296" fill="#B4442C" font-weight="600">N4</text><text x="120" y="296" fill="#5A6572">trailing comma (strict parse fails)</text>
+    <text x="80" y="316" fill="#B4442C" font-weight="600">N5/N6</text><text x="120" y="316" fill="#5A6572">class-shape violations the prose text itself mandates</text>
+  </g>
+  <text x="64" y="332" font-size="10.5" fill="#5A6572">14/22 fixtures pass · 8 fail · every command published — rerun it yourself, no trust required</text>
+
+  <!-- adapters -->
+  <rect x="640" y="100" width="272" height="240" rx="8" fill="#FFFFFF" stroke="#E3E7EC"/>
+  <text x="656" y="126" font-size="12.5" font-weight="600" fill="#14335C">Adapters — the interop gateways</text>
+  <rect x="656" y="142" width="240" height="52" rx="6" fill="#F4F6F9"/>
+  <text x="668" y="162" font-size="11" fill="#1A2332" font-weight="600">UNTP ↔ UniDPP</text>
+  <text x="668" y="178" font-size="10" fill="#5A6572">verifiable-credential triads in, projections out</text>
+  <rect x="656" y="202" width="240" height="52" rx="6" fill="#F4F6F9"/>
+  <text x="668" y="222" font-size="11" fill="#1A2332" font-weight="600">EPCIS ↔ events</text>
+  <text x="668" y="238" font-size="10" fill="#5A6572">aggregation/transformation CTEs map to R-edges</text>
+  <rect x="656" y="262" width="240" height="52" rx="6" fill="#F4F6F9"/>
+  <text x="668" y="282" font-size="11" fill="#1A2332" font-weight="600">freeDPP / EN 18222 compat</text>
+  <text x="668" y="298" font-size="10" fill="#5A6572">their request shape = one render of ours (play 2)</text>
+
+  <!-- referee strategy -->
+  <rect x="48" y="364" width="864" height="148" rx="8" fill="#FFFFFF" stroke="#E3E7EC"/>
+  <text x="64" y="390" font-size="12.5" font-weight="600" fill="#14335C">The displacement play this enables</text>
+  <text x="64" y="414" font-size="10.5" fill="#5A6572">· competitor templates and published examples go through the same runner — factual, reproducible, neutral-register findings only</text>
+  <text x="64" y="434" font-size="10.5" fill="#5A6572">· submitted to the EU registry implementing-act consultation (30/06/2027) as the candidate conformance layer — whoever runs the tests defines the floor</text>
+  <text x="64" y="454" font-size="10.5" fill="#5A6572">· guardrail: never FUD, never personality — we enforce the ENs' own stated goals; the evidence self-serves by being true</text>
+  <text x="64" y="480" font-size="10.5" fill="#5A6572">· negative fixtures are assets: every documented defect in the published series is a requirement the successor framework must survive</text>
+</svg>

@@ -30,3 +30,21 @@ export const implementationNav: NavItem[] = [
   { label: 'Demonstrations', href: '/implementation/demos/' },
   { label: 'Conformance register', href: '/implementation/conformance/' },
 ];
+
+export const storyNav: NavItem[] = [
+  { label: 'The example', href: '/story/#example' },
+  { label: 'The story arc', href: '/story/#arc' },
+  { label: 'B1 · Assembly', href: '/story/#b1' },
+  { label: 'B2 · Parts’ duties', href: '/story/#b2' },
+  { label: 'B3 · EU placement', href: '/story/#b3' },
+  { label: 'B4 · Border moment', href: '/story/#b4' },
+  { label: 'B5 · Life in service', href: '/story/#b5' },
+  { label: 'B6 · Derestriction', href: '/story/#b6' },
+  { label: 'B7 · Repair', href: '/story/#b7' },
+  { label: 'B8 · Auction', href: '/story/#b8' },
+  { label: 'B9 · Recall', href: '/story/#b9' },
+  { label: 'B10 · End of life', href: '/story/#b10' },
+  { label: 'Counterpoint · 1962 Super Cub', href: '/story/#counterpoint' },
+  { label: 'Where the beats live', href: '/story/#map' },
+  { label: 'Run it yourself', href: '/story/#run' },
+];

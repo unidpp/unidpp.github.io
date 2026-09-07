@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'IBM Plex Sans',-apple-system,'Segoe UI',Roboto,sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5A6572"/>
+    </marker>
+    <marker id="arra" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#8C6D1F"/>
+    </marker>
+  </defs>
+  <rect width="960" height="540" fill="#FAFAF7"/>
+  <text x="48" y="34" font-size="11" letter-spacing="2.5" fill="#8C6D1F" font-weight="600">COUNTERPOINT · THE 1962 SUPER CUB</text>
+  <text x="48" y="58" font-size="20" font-weight="600" fill="#1A2332">No manufacturer. No regulation. Adopted anyway.</text>
+  <text x="48" y="76" font-size="12" fill="#5A6572">The proof that the core is a universal object-provenance layer, not an EU-compliance wrapper</text>
+
+  <!-- motorcycle glyph -->
+  <g transform="translate(80,120)" stroke="#1A2332" stroke-width="3" fill="none">
+    <circle cx="30" cy="60" r="26"/>
+    <circle cx="140" cy="60" r="26"/>
+    <path d="M 30 60 L 60 38 L 96 38 L 118 60 M 60 38 L 74 60 L 44 60 M 96 38 L 96 24 L 108 20"/>
+    <circle cx="30" cy="60" r="8"/><circle cx="140" cy="60" r="8"/>
+  </g>
+  <text x="64" y="228" font-size="11" font-family="'IBM Plex Mono',ui-monospace,Menlo,monospace" fill="#14335C">cub:1962/S-00317</text>
+  <text x="64" y="246" font-size="10.5" fill="#5A6572">one owner 1962–1987 · stolen ·</text>
+  <text x="64" y="262" font-size="10.5" fill="#5A6572">recovered 2024 · auction sale</text>
+
+  <!-- timeline with clock predicate -->
+  <rect x="48" y="290" width="864" height="120" rx="8" fill="#FFFFFF" stroke="#E3E7EC"/>
+  <text x="64" y="314" font-size="12.5" font-weight="600" fill="#8C6D1F">The clock predicate — V2</text>
+  <line x1="64" y1="360" x2="896" y2="360" stroke="#5A6572" stroke-width="1.5"/>
+  <g font-size="10" fill="#5A6572">
+    <line x1="100" y1="354" x2="100" y2="366" stroke="#5A6572"/><text x="100" y="382" text-anchor="middle">1962</text>
+    <line x1="300" y1="354" x2="300" y2="366" stroke="#5A6572"/><text x="300" y="382" text-anchor="middle">1987 stolen</text>
+    <line x1="500" y1="354" x2="500" y2="366" stroke="#8C6D1F" stroke-width="2"/><text x="500" y="382" text-anchor="middle" fill="#8C6D1F" font-weight="600">2002: 40 yrs</text>
+    <line x1="700" y1="354" x2="700" y2="366" stroke="#5A6572"/><text x="700" y="382" text-anchor="middle">2024 recovered</text>
+    <line x1="860" y1="354" x2="860" y2="366" stroke="#5A6572"/><text x="860" y="382" text-anchor="middle">2026 auction</text>
+  </g>
+  <rect x="500" y="332" width="200" height="20" rx="10" fill="#FFFFFF" stroke="#8C6D1F"/>
+  <text x="600" y="346" font-size="10" fill="#8C6D1F" text-anchor="middle">historic-vehicle profile binds — by time, unbidden</text>
+  <text x="64" y="402" font-size="10.5" fill="#5A6572">no human declares it: the dated-binding machinery fires on construction date + threshold · tax class, inspection regime change automatically</text>
+
+  <!-- five beats -->
+  <rect x="48" y="430" width="864" height="82" rx="8" fill="#FFFFFF" stroke="#E3E7EC"/>
+  <g font-size="10.5">
+    <rect x="64" y="446" width="152" height="52" rx="6" fill="#F4F6F9"/>
+    <text x="76" y="464" font-weight="600" fill="#1A2332">V1 Commissioning</text>
+    <text x="76" y="480" fill="#5A6572">auction house as</text>
+    <text x="76" y="493" fill="#5A6572">qualified attestor</text>
+    <rect x="232" y="446" width="152" height="52" rx="6" fill="#F4F6F9"/>
+    <text x="244" y="464" font-weight="600" fill="#1A2332">V2 Clock predicate</text>
+    <text x="244" y="480" fill="#5A6572">age threshold fires</text>
+    <text x="244" y="493" fill="#5A6572">unbidden (above)</text>
+    <rect x="400" y="446" width="152" height="52" rx="6" fill="#F4F6F9"/>
+    <text x="412" y="464" font-weight="600" fill="#1A2332">V3 Attribution</text>
+    <text x="412" y="480" fill="#5A6572">competing facts kept</text>
+    <text x="412" y="493" fill="#5A6572">with provenance</text>
+    <rect x="568" y="446" width="152" height="52" rx="6" fill="#FBEFEC" stroke="#B4442C"/>
+    <text x="580" y="464" font-weight="600" fill="#B4442C">V4 Theft taint</text>
+    <text x="580" y="480" fill="#5A6572">title flag on the graph,</text>
+    <text x="580" y="493" fill="#5A6572">history never rewritten</text>
+    <rect x="736" y="446" width="152" height="52" rx="6" fill="#F4F6F9"/>
+    <text x="748" y="464" font-weight="600" fill="#1A2332">V5 Value = verdict</text>
+    <text x="748" y="480" fill="#5A6572">condition/appraisal</text>
+    <text x="748" y="493" fill="#5A6572">stamps, lens-scoped</text>
+  </g>
+
+  <!-- right rail -->
+  <rect x="280" y="100" width="632" height="170" rx="8" fill="#FFFFFF" stroke="#E3E7EC"/>
+  <text x="296" y="126" font-size="12.5" font-weight="600" fill="#14335C">Why this closes the argument</text>
+  <text x="296" y="150" font-size="10.5" fill="#5A6572">· the e-bike proves the regulated ceiling (duties, borders, recalls, recycling) — this object proves the</text>
+  <text x="296" y="166" font-size="10.5" fill="#5A6572">  floor: no living EO, no connectivity (S0 forever), no legal compulsion at all</text>
+  <text x="296" y="190" font-size="10.5" fill="#5A6572">· it adopted the framework because <tspan font-weight="600" fill="#14335C">provenance is its product</tspan> — the event log is the asset;</text>
+  <text x="296" y="206" font-size="10.5" fill="#5A6572">  attribution disputes, restorations, appraisals all map to machinery the regulated case already built</text>
+  <text x="296" y="230" font-size="10.5" fill="#5A6572">· same primitives throughout: commissioning, stamps, taint, predicates, blind modes — one system, two worlds</text>
+  <text x="296" y="254" font-size="10.5" fill="#5A6572">· the auction-house answer to "is this just ESPR plumbing?" — no: try selling a 1962 motorcycle without paper.</text>
+</svg>

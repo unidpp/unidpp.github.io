@@ -1,0 +1,706 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Sidebar from '../components/Sidebar.astro';
+import DataTable from '../components/DataTable.astro';
+import DocTerminal from '../components/DocTerminal.astro';
+import Continue from '../components/Continue.astro';
+import { storyNav } from '../lib/sections';
+
+// One figure = one diagram file in public/story/ (960×540 throughout).
+interface Figure {
+  src: string;
+  alt: string;
+  caption: string;
+}
+interface Beat {
+  id: string;
+  num: string;
+  title: string;
+  kicker: string;
+  body: string;
+  carried: string;
+  figures: Figure[];
+}
+
+const beats: Beat[] = [
+  {
+    id: 'b1',
+    num: 'B1',
+    title: 'Assembly in Kyoto',
+    kicker: 'Issuance where duty attaches · Kyoto, 2027-04',
+    body: `Momiji Mobility assembles instance J-000842: a Rhine Drives (DE) drive unit, a
+      Weilian (Shenzhen) battery pack built from forty Haichuan cells, a CCC-certified
+      charger, and a JP controller. Issuance happens where the legal duty attaches
+      (invariant I7): a JP type passport — type tests, declared values, bill-of-materials
+      template — plus an instance passport referencing the type <em>and its exact type
+      version</em>, with the configuration vector. The build record lists every part at
+      the finest recorded granularity; the cells are recorded as <strong>dormant
+      identifiers</strong>, because no cell-passport regime exists yet — the absorption is
+      regime-temporal, not permanent. An EN 18223-style issuance would produce one flat
+      document; this records a typed composition graph whose leaves are already shaped
+      for the granularity ratchet.`,
+    carried: `Carried by <code>unidpp-issuer</code> (<code>POST /passports</code>) and the core
+      model · <a href="/specs/part-1-framework/">spec Part 1</a> (I1–I3, I7) ·
+      <a href="/framework/#architecture">framework</a>`,
+    figures: [
+      {
+        src: '10-issuer-lifecycle.svg',
+        alt: 'Diagram: the unidpp-issuer axum service exposes four endpoints; each lifecycle moment is one HTTP call and the event log grows only by signed appends.',
+        caption: `B1 — the issuer service. Type and instance passports are minted in one call;
+          the log grows only by signed appends.`,
+      },
+      {
+        src: '03-core-model.svg',
+        alt: 'Diagram: the core model as a typed composition graph — the instance passport references its type and version, with parts as child nodes.',
+        caption: `The composition graph at issuance: the E8 references its type and exact
+          version; the cells sit at the leaves as dormant identifiers.`,
+      },
+    ],
+  },
+  {
+    id: 'b2',
+    num: 'B2',
+    title: 'Parts carry their own duties',
+    kicker: 'Mixed-profile children · installation semantics · certificate joins',
+    body: `The drive unit arrived with an EU declaration of conformity, the charger with a
+      CCC certificate, the pack with CN consumer-layer presence. Installation edges (R3)
+      carry real binding semantics — controller-to-pack CAN <strong>pairing</strong>,
+      torque-mount <strong>alteration</strong>, and a recoverability spectrum from
+      <em>restorable</em> (the swappable battery) to <em>destructive</em> (the welded
+      rack). Certificates join in the subregister (passport ↔ certificate ↔ facility),
+      and GB↔IEC equivalence is a <strong>registered transform with an attester</strong>,
+      not an assumption. Parent and child know each other bidirectionally, with
+      visibility classes on every edge (B8). A recall can route pack-to-bike, and a
+      foreign verifier can read a CCC certificate without adopting CN rules; the EN
+      series has no composition semantics at all.`,
+    carried: `Carried by the core model (<code>PassportLink</code>), the registry subregisters,
+      <code>unidpp-py</code> adapters · <a href="/framework/#architecture">framework</a> ·
+      <a href="/specs/part-2-profiles/">spec Part 2</a> (mount S3)`,
+    figures: [
+      {
+        src: '03-core-model.svg',
+        alt: 'Diagram: the core model — installation edges with method, slot, pairing, alteration, recoverability and visibility carried explicitly.',
+        caption: `Installation edges carry method, recoverability and visibility explicitly —
+          not just "contains".`,
+      },
+      {
+        src: '11-registry-ferin.svg',
+        alt: 'Diagram: the FERIN registry with subregisters for profiles, certificates, applicability events and recall predicates.',
+        caption: `Certificate joins live in registry subregisters; GB↔IEC equivalence is a
+          registered transform with an attester.`,
+      },
+    ],
+  },
+  {
+    id: 'b3',
+    num: 'B3',
+    title: 'Placement in the EU',
+    kicker: 'Profile growth by dated binding · Düsseldorf, 2028-02',
+    body: `A Düsseldorf importer places the E8 line on the EU market. Machinery and EPAC
+      profiles apply, RoHS applies — and under the EU Battery Regulation the pack now
+      needs its own <strong>EU battery passport</strong>, with the importer stepping into
+      the battery-producer role. In the registry this is an applicability event with an
+      effective window that binds the EU lens set onto the <em>same identity</em>: no
+      re-minting (I1), no parallel-universe passport; the JP lenses stay mounted, and
+      manifest history remains reconstructable as of any date — "was it compliant when
+      sold in 2028?" is a query, not an archaeology project. Where an EU-envelope
+      implementation must re-issue and a regime-poor world must duplicate, jurisdiction
+      growth here is a single registry event.`,
+    carried: `Carried by the registry (applicability bindings) and the core-model manifest ·
+      <a href="/framework/#axes">framework · profile axes</a> · paper 1`,
+    figures: [
+      {
+        src: '11-registry-ferin.svg',
+        alt: 'Diagram: an applicability event with an effective window binds the EU lens set onto the same product identity in the registry.',
+        caption: `An applicability event with an effective window binds the EU lens set onto
+          the same identity — no re-minting, no second passport.`,
+      },
+    ],
+  },
+  {
+    id: 'b4',
+    num: 'B4',
+    title: 'The border moment',
+    kicker: 'Offline, degraded origins · customs terminal',
+    body: `A customs terminal, an ordinary offline window: the Shenzhen host is unreachable
+      and the EU registry is mid-outage. The officer scans the frame QR. The <strong>Tier-A
+      carrier minimum</strong> — identity, status, critical flags, validity, and
+      multi-suite compressed signatures (the JP suite, an EU eIDAS-acceptable ECDSA
+      signature, and a PQ ML-DSA co-signature) — verifies against cached anchors; the
+      resolver's cached linkset points at the national mirror; a transparency-log
+      <strong>inclusion proof</strong> from the mirror's log copy substitutes for the
+      unreachable origins. The verdict is <span class="ok">PASS</span>, as-of stamped,
+      with a coverage report that states exactly what was not reachable, and three
+      readings named: cryptographic, evidentiary, current-state. An EN-only
+      implementation returns either a red error page or a silently trusting green page;
+      here degradation is explicit (I9, I13) — the coverage report is the product.`,
+    carried: `Carried by <code>unidpp-core</code> (tier-a and verdict crates), the CLI
+      (<code>unidpp verify</code>), resolver federation ·
+      <a href="/specs/part-4-tiers/">spec Part 4</a> · paper 4`,
+    figures: [
+      {
+        src: '06-core-tier-a.svg',
+        alt: 'Diagram: the Tier-A carrier minimum as the MRZ of products — a fixed framed subset with multi-suite signatures, offline-verifiable with cached anchors.',
+        caption: `The carrier minimum — the MRZ analog: identity, status, flags, validity,
+          compressed multi-suite signatures.`,
+      },
+      {
+        src: '07-core-verdict.svg',
+        alt: 'Diagram: the customs terminal verdict as a report — PASS as-of stamped, coverage stated, three readings named.',
+        caption: `What the customs terminal prints: PASS, as-of stamped, with the coverage
+          report naming what was not reachable.`,
+      },
+    ],
+  },
+  {
+    id: 'b5',
+    num: 'B5',
+    title: 'Life in service',
+    kicker: 'Edge state, capability classes · S0/S2/S3 on one bike',
+    body: `The base trim's battery-management system logs cycles and dumps the log at each
+      dealer visit (S2); the premium trim's Connect module reports continuously (S3);
+      frame and rack stay silent (S0) — one product line, all capability classes. S2
+      devices <strong>commit now, reveal later</strong>: the device signs its log-prefix
+      hash under a device-bound key and reveals what it chooses, and any future reveal
+      must be inclusion-consistent. S3 adds <code>fresh_within</code>, making staleness a
+      displayable verdict rather than an undetectable condition. State of health is a
+      derived verdict whose model is a registered transform — the BMS vendor's or a
+      standardized one — with GUM uncertainty and UnitsML-registered units; charging
+      telemetry is personal data, so those edges are blind, with a GDPR/PIPL basis per
+      profile. The service-center era delivered episodic truth with unbounded,
+      undetectable staleness; here <em>who measured what, with which unit, under whose
+      model</em> is auditable.`,
+    carried: `Carried by <code>unidpp-core</code> (event crate, edge commitments), the units
+      binding, the edge SDK · <a href="/framework/#capability">framework · capability
+      classes</a> · <a href="/specs/part-3-events/">spec Part 3</a> · paper 3`,
+    figures: [
+      {
+        src: '04-core-event.svg',
+        alt: 'Diagram: the event model — typed lifecycle events E1 to E14 over an append-only log, with device commitments at the edge.',
+        caption: `Typed events over an append-only log; device commitments are one testimony
+          class among several.`,
+      },
+    ],
+  },
+  {
+    id: 'b6',
+    num: 'B6',
+    title: 'Firmware update and the derestriction incident',
+    kicker: 'Identity-changing modification · 2029-03',
+    body: `Momiji ships an OTA range-algorithm update — a declared-characteristics change
+      with no physical change (E5 <code>software.update</code>; the firmware version
+      vector moves in the instance facts). Then a second owner installs a derestriction
+      dongle: assistance cutoff 25 → 45 km/h. Under EN 15194 the machine now legally
+      <em>is</em> an unregistered moped: the modification spawns a <strong>derived
+      type</strong> (E4b) and every mounted profile re-evaluates — the JP lens reads
+      non-conformant, the EU lens requires a type-approval regime, the insurance lens
+      reads coverage void — with regulator notification per profile. If the modification
+      is unattested, its trust marker says so: graded, never binary. A document model
+      would silently edit a field; it has no concept that software changes a legal class.
+      This is the beat demonstrated first: the state machine, the type lineage, and the
+      trust layer all react, visibly and auditably.`,
+    carried: `Carried by <code>unidpp-core</code> (event crate, E4/E5) and
+      <code>unidpp-signatif</code> (trust markers) ·
+      <a href="/specs/part-3-events/">spec Part 3</a> §E4/E5`,
+    figures: [
+      {
+        src: '04-core-event.svg',
+        alt: 'Diagram: E4 product.modify and E5 software.update as typed events; the state machine and type lineage react to the modification.',
+        caption: `E4 <code>product.modify</code> and E5 <code>software.update</code> are typed
+          events; the state machine and type lineage react.`,
+      },
+      {
+        src: '08-signatif-trust.svg',
+        alt: 'Diagram: SIGNATIF trust — trust markers, multi-suite signatures, stamps, and revocation readings.',
+        caption: `An unattested modification carries a trust marker that says so — graded,
+          never binary.`,
+      },
+    ],
+  },
+  {
+    id: 'b7',
+    num: 'B7',
+    title: 'Repair',
+    kicker: 'Regulated child swap, cross-jurisdiction install · 2029-09',
+    body: `Water damage: the dealer replaces the pack with a 2029 EU-made one; the old pack
+      goes to a refurbisher. E2 is uninstall plus install — two events. The old pack's
+      installation interval <strong>closes carrying its history</strong> ("40 cycles of
+      H-2231 cells, removed for casing dent"): harvested-part provenance is value, not
+      noise. The new pack is a cross-jurisdiction install — an EU pack into a JP-profile
+      bike by a DE dealer, both profiles surviving — and the independent repairer acts
+      under EN 18239-style roles, the right-to-repair echo. The used-parts market runs on
+      exactly this provenance today, on paper service books; a document pipeline loses it
+      silently.`,
+    carried: `Carried by <code>unidpp-core</code> (transform crate) and the issuer events ·
+      paper 2`,
+    figures: [
+      {
+        src: '05-core-transform.svg',
+        alt: 'Diagram: the transformation algebra — combine, split, derive and decompose with mass balance and taint propagation.',
+        caption: `Uninstall and install as two events; intervals close carrying history, and
+          the transformation algebra holds the accounting.`,
+      },
+    ],
+  },
+  {
+    id: 'b8',
+    num: 'B8',
+    title: 'Resale and auction',
+    kicker: 'Custody as ceremony · theft predicate · blind edges · 2031',
+    body: `The owner consigns the E8 to an auction house; a buyer in Vienna wins. Custody
+      transfer (E1) is a <strong>signed ceremony</strong> — the counterparty
+      countersigns. The house checks the theft predicate against the flag subregister
+      (E12) and issues a condition stamp: lens-scoped, dated, signed — the auction lens
+      is not the insurance lens. A new custody edge runs to the buyer, and the buyer's
+      household is invisible to Momiji: owner-push only; proof-of-binding is not
+      knowledge-of-parent. Undisclosed dealer records surface as provenance gap markers,
+      not as holes. Five owners later the audit trail survives without a central watcher
+      — and the system was never surveillance infrastructure (I12, enumeration
+      resistance).`,
+    carried: `Carried by <code>unidpp-core</code> (event crate, E1/E12/E14),
+      <code>unidpp-signatif</code> (stamps), the explorer ·
+      <a href="/specs/part-3-events/">spec Part 3</a> §stamps`,
+    figures: [
+      {
+        src: '08-signatif-trust.svg',
+        alt: 'Diagram: condition and appraisal stamps under different lenses, dated and signed.',
+        caption: `Condition stamps are lens-scoped, dated, signed — the auction lens is not
+          the insurance lens.`,
+      },
+    ],
+  },
+  {
+    id: 'b9',
+    num: 'B9',
+    title: 'A recall crosses the graph',
+    kicker: 'Predicate-based · dormant → live · 2030-05',
+    body: `Haichuan lot H-2231 is recalled after a thermal event. The recall publishes as a
+      <strong>predicate</strong> — "packs containing lot H-2231" — and each custodian
+      evaluates it locally against their own holdings. The Vienna bike's current pack is
+      unaffected (traced through the B7 swap); the original pack — refurbisher, then a
+      powerwall — is reached through its own log. Nobody enumerated the installed base;
+      the manufacturer receives aggregates. Had the cell-passport regime landed in the
+      meantime, the dormant cell identifiers are adopted: the granularity ratchet moves
+      one way, finer, never coarser. An EN-world recall is a PDF and hope, blind to
+      second-hand markets; this one is computational, privacy-preserving, and reaches the
+      graph rather than a list.`,
+    carried: `Carried by <code>unidpp-core</code> (taint/traversal), the resolver (dark
+      identities), the registry (recall predicates) · paper 2 §taint`,
+    figures: [
+      {
+        src: '09-resolver-federation.svg',
+        alt: 'Diagram: resolver federation — RFC 9264 linksets, national mirrors, cached linksets and dark identities.',
+        caption: `Dark identities and mirrors: the recall predicate reaches custodians
+          without enumerating the installed base.`,
+      },
+    ],
+  },
+  {
+    id: 'b10',
+    num: 'B10',
+    title: 'End of life',
+    kicker: 'The material loop closes · 2033',
+    body: `The E8 decommissions: frame to steel scrap, pack to recycling. E13 decompose is
+      the inverse transformation, one-to-many, into material passports with <strong>mass
+      balance</strong> — in minus out equals loss, auditable. The end-of-waste event is
+      itself a new passport issuance: the moment scrap legally re-qualifies.
+      Recycled-content claims compute from the graph; had lot H-2231's certification been
+      fraudulent, derived claims would collapse via graph taint. Tier-C notarized
+      snapshots cover the statute window, and identities outlive their issuers — Momiji
+      may not exist in 2040 (I14). Circularity becomes auditable arithmetic instead of
+      brochure percentages.`,
+    carried: `Carried by <code>unidpp-core</code> (transform crate), archival, the registry ·
+      paper 2`,
+    figures: [
+      {
+        src: '05-core-transform.svg',
+        alt: 'Diagram: E13 decompose, one-to-many, into material passports with mass balance; end-of-waste as a new issuance.',
+        caption: `E13 <code>decompose</code>, 1→N, with mass balance; end-of-waste is a new
+          issuance.`,
+      },
+    ],
+  },
+];
+
+const runShell = `git clone https://github.com/unidpp/unidpp-e2e
+cd unidpp-e2e
+make demo                     # the full E8 thread, B1–B10
+
+# one beat at a time — same fixtures, same seeds
+unidpp demo bike build        # B1–B2  assembly, part duties
+unidpp demo border            # B4     offline border moment
+unidpp demo service           # B5     edge state, freshness
+unidpp demo derestrict        # B6     identity-changing modification
+unidpp demo repair            # B7     regulated child swap
+unidpp demo auction           # B8     custody, theft predicate, stamps
+unidpp demo recall            # B9     predicate recall across the graph
+unidpp demo recycle           # B10    decompose, end of waste
+unidpp demo cub               # V1–V5  the counterpoint thread`;
+---
+
+<BaseLayout
+  title="The E8 story"
+  description="One e-bike — the Momiji Mobility E8, built in Kyoto from German and Chinese parts — walks the complete regulated lifecycle: assembly, part duties, EU placement, offline border verification, service, derestriction, repair, auction, recall, and end-of-life. A 1962 Super Cub is the counterpoint."
+  eyebrow="Reference — the exemplar thread"
+  sectioned
+>
+  <Sidebar slot="rail" heading="The E8 story" items={storyNav} />
+  <h1>One e-bike, ten beats</h1>
+  <p class="lede">
+    The canonical UniDPP narrative threads every product through one primary example —
+    the Momiji Mobility E8, a Kyoto-built e-bike with a German drive unit and a
+    Shenzhen battery pack — and one counterpoint: a 1962 motorcycle that adopts the
+    system with no manufacturer, no regulation, and no connectivity behind it. Each
+    beat names what happens, what the framework does, how it differs from a
+    document-rewrite passport, and which repository carries it.
+  </p>
+
+  <section id="example" class="plate" aria-labelledby="example-h">
+    <h2 id="example-h">Why an e-bike</h2>
+    <p>
+      The e-bike uniquely stresses six mechanisms at once. The battery forces a
+      mixed-profile child — the EU Battery Regulation attaches passport duty to LMT
+      batteries while the bike answers to machinery/EPAC rules and, in Japan, road-traffic
+      law. Software <em>is</em> the legal class: an EPAC is defined by its assistance
+      cutoff (250&nbsp;W, 25&nbsp;km/h, EN&nbsp;15194), so a firmware patch or a dongle
+      changes the vehicle's legal identity. E-bikes are the most-stolen consumer good
+      class in EU cities, which gives the resale beat a real predicate. Edge state is
+      native and stratified — silent frame, logged BMS, connected module on one product
+      line. The JP&nbsp;→&nbsp;EU&nbsp;→&nbsp;resale&nbsp;→&nbsp;export flow is trade
+      reality, not staging. And the lithium pack carries a UN&nbsp;3171 transport profile,
+      exercising the characteristic axis: predicate-triggered, neither jurisdiction nor
+      sector.
+    </p>
+    <DataTable
+      columns={['Entity', 'Identity', 'Notes']}
+      rows={[
+        ['<strong>E8 instance</strong>', '<code>momiji:e8/J-000842</code>', 'JP placement 2027-04; EU placement 2028-02'],
+        ['<strong>E8 type + version</strong>', '<code>momiji:e8/type/2027.1</code>', 'a 2028.1 hardware revision exists (type-version visibility)'],
+        ['<strong>Drive unit (EU)</strong>', '<code>rhine:du/M-771…</code>', 'Rhine Drives DE; type-level passport + EU DoC; installed R3'],
+        ['<strong>Battery pack (CN)</strong>', '<code>weilian:wp/P-9904…</code>', 'Weilian, Shenzhen; 40 cells of Haichuan lot <code>haichuan:cell/H-2231</code> — dormant identifiers'],
+        ['<strong>Charger (CN)</strong>', 'cert <code>CQC-2026-1142…</code>', 'GB 4943.1-2022 ≈ IEC 62368-1 (registered equivalence)'],
+        ['<strong>Controller / BMS (JP)</strong>', 'device key, class S2', 'firmware vector in instance facts'],
+        ['<strong>Connect module (optional)</strong>', 'device key, class S3', '<code>fresh_within</code> bounded'],
+        ['<strong>Owners</strong>', '1st Düsseldorf · 2nd Vienna (auction)', 'custody edges, blind by default'],
+        ['<strong>The 1962 Super Cub</strong>', '<code>cub:1962/S-00317</code>', 'the counterpoint thread'],
+      ]}
+    />
+    <p>
+      The unreachable-origins problem is concrete in this cast: the pack's data lives at
+      Weilian's Shenzhen host; Momiji's JP host speaks EN 18222-style REST while the CN
+      consumer layer speaks the GB/T 33993 QR platform and the automotive world speaks
+      AAS. The settlement is never "everyone adopts one protocol" — it is one identity
+      (L0), resolver linksets that route per context, foreign protocols as renders via
+      gateway adapters, equivalence claims as registered transforms, and trust settled
+      under SIGNATIF cross-recognition. Everybody keeps their protocol; nobody's
+      protocol is the envelope.
+    </p>
+    <figure class="fig">
+      <img
+        src="/story/01-overview-system.svg"
+        alt="Diagram: the E8 across five planes — carrier, resolver, neutral core passport, event log, and the registry and trust rails."
+        width="960"
+        height="540"
+        loading="lazy"
+        decoding="async"
+      />
+      <figcaption>
+        The system in one picture: one e-bike across five planes and two rails — carrier,
+        resolver, neutral core, event log, with the FERIN registry and SIGNATIF trust
+        rails alongside.
+      </figcaption>
+    </figure>
+  </section>
+
+  <section id="arc" class="plate" aria-labelledby="arc-h">
+    <h2 id="arc-h">The story arc</h2>
+    <p>
+      Ten beats, 2027–2033: assembly, part duties, EU placement, the border moment,
+      service, derestriction, repair, auction, recall, end of life. Every repository
+      product earns its place in this sequence — no product exists that the story does
+      not exercise.
+    </p>
+    <figure class="fig">
+      <img
+        src="/story/02-story-arc.svg"
+        alt="Diagram: the ten beats of the E8 story as a grid of cards, each naming its mechanism and the repositories that carry it."
+        width="960"
+        height="540"
+        loading="lazy"
+        decoding="async"
+      />
+      <figcaption>
+        The story arc: ten beats of one e-bike, B1–B10, each card naming its mechanism
+        and its repositories.
+      </figcaption>
+    </figure>
+  </section>
+
+  {
+    beats.map((beat) => (
+      <section id={beat.id} class="plate beat" aria-labelledby={`${beat.id}-h`}>
+        <h2 id={`${beat.id}-h`}>
+          <span class="beat-num">{beat.num}</span>
+          {beat.title}
+        </h2>
+        <p class="kicker">{beat.kicker}</p>
+        <p class="narr" set:html={beat.body} />
+        <div class:list={['figs', { pair: beat.figures.length > 1 }]}>
+          {beat.figures.map((f) => (
+            <figure class="fig">
+              <img
+                src={`/story/${f.src}`}
+                alt={f.alt}
+                width="960"
+                height="540"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption set:html={f.caption} />
+            </figure>
+          ))}
+        </div>
+        <p class="meta carried" set:html={beat.carried} />
+      </section>
+    ))
+  }
+
+  <section id="counterpoint" class="plate" aria-labelledby="counterpoint-h">
+    <h2 id="counterpoint-h">Counterpoint — the 1962 Super Cub</h2>
+    <p>
+      The e-bike proves the regulated ceiling. The vintage motorcycle proves the floor
+      and the universality: an object with no living manufacturer, no regulation, and no
+      connectivity that adopts the system <em>voluntarily, because provenance is its
+      product</em>. Five beats:
+    </p>
+    <DataTable
+      columns={['Beat', 'What happens']}
+      rows={[
+        ['<strong>V1</strong> — Commissioning', 'No living issuer: the auction house acts as qualified attestor and commissions identity <code>cub:1962/S-00317</code> (EPCIS commissioning semantics; nullable type reference).'],
+        ['<strong>V2</strong> — The clock predicate', 'The historic-vehicle class binds when the object crosses the age threshold — a time-fired applicability event no human declares; the dated-binding machinery does it alone.'],
+        ['<strong>V3</strong> — Attribution and restoration', 'Competing scholarly facts ("original paint" vs "respray, 1980s, documented") coexist with precedence rules, never merges; conservation events append exactly like repairs.'],
+        ['<strong>V4</strong> — The theft flag', 'Stolen 1987, recovered 2024: a title taint as a graph event, attached by authority; history is never rewritten.'],
+        ['<strong>V5</strong> — Value is a verdict', 'Condition and appraisal stamps under different lenses (auction vs insurance), dated and signed — the native form for anything whose worth is judged, not measured.'],
+      ]}
+    />
+    <figure class="fig">
+      <img
+        src="/story/16-vintage-thread.svg"
+        alt="Diagram: the 1962 Super Cub counterpoint thread — commissioning by qualified attestor, the clock predicate, the 1987 theft and 2024 recovery, and appraisal stamps."
+        width="960"
+        height="540"
+        loading="lazy"
+        decoding="async"
+      />
+      <figcaption>
+        V1–V5 on one thread: commissioning, the clock predicate, title taint, appraisal
+        stamps. The proof that the core is a universal object-provenance layer, not an
+        EU-compliance wrapper.
+      </figcaption>
+    </figure>
+  </section>
+
+  <section id="map" class="plate" aria-labelledby="map-h">
+    <h2 id="map-h">Where each beat lives</h2>
+    <p>
+      The thread doubles as a deployment map: every beat has repositories that carry it,
+      a page on this site that explains it, and a normative or argumentative home.
+    </p>
+    <DataTable
+      columns={['Beat', 'Repositories', 'Site page', 'Spec or paper']}
+      rows={[
+        ['<strong>B1</strong>', 'issuer, core-model', '<a href="/framework/#architecture">Framework</a>, <a href="/specs/part-1-framework/">spec pt. 1</a>', 'spec P1 (I1–I3, I7)'],
+        ['<strong>B2</strong>', 'core-model, registry, py', '<a href="/framework/#architecture">Framework</a>', 'spec P2 (mount S3)'],
+        ['<strong>B3</strong>', 'registry', '<a href="/framework/#axes">Framework · profile axes</a>', 'paper 1'],
+        ['<strong>B4</strong>', 'core tier-a/verdict, CLI, resolver', '<a href="/implementation/demos/">Demos</a>', 'paper 4, spec P4'],
+        ['<strong>B5</strong>', 'core-event, units, edge SDK', '<a href="/framework/#capability">Framework · capability classes</a>', 'spec P3, paper 3'],
+        ['<strong>B6</strong>', 'core-event, signatif', '<a href="/implementation/demos/">Demos</a>', 'spec P3 §E4/E5'],
+        ['<strong>B7</strong>', 'core-transform, issuer', '<a href="/implementation/demos/">Demos</a>', 'paper 2'],
+        ['<strong>B8</strong>', 'core-event, signatif, explorer', '<a href="/implementation/demos/">Demos</a>', 'spec P3 §stamps'],
+        ['<strong>B9</strong>', 'core-transform, resolver, registry', '<a href="/implementation/demos/">Demos</a>', 'paper 2 §taint'],
+        ['<strong>B10</strong>', 'core-transform, archival', '<a href="/framework/#architecture">Framework</a>', 'paper 2'],
+        ['<strong>V1–V5</strong>', 'core-model/event, signatif', '<a href="/story/#counterpoint">this page</a>', 'paper 5'],
+        ['<strong>all beats</strong>', 'py conformance', '<a href="/implementation/conformance/">Conformance</a>', 'paper 3'],
+        ['<strong>all beats</strong>', 'glossarist', '<a href="/terminology/">Terminology</a>', 'paper 6'],
+        ['<strong>all beats</strong>', 'spec + papers', '<a href="/specs/">Spec</a>, <a href="/papers/">Papers</a>', '—'],
+      ]}
+    />
+    <p>
+      Three products run under the whole thread rather than under any single beat:
+    </p>
+    <div class="figs trio">
+      <figure class="fig">
+        <img
+          src="/story/13-py-conformance.svg"
+          alt="Diagram: the unidpp-py conformance runner — fixtures in, conformance checks, verdicts and finding IDs out."
+          width="960"
+          height="540"
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption>
+          <strong>unidpp-py — the referee's chair.</strong> Public, reproducible
+          evidence: EN 18223's own Annex A examples already fail machine validation
+          (findings N1–N6).
+          <a href="/implementation/conformance/">Conformance register</a>.
+        </figcaption>
+      </figure>
+      <figure class="fig">
+        <img
+          src="/story/14-glossarist-terms.svg"
+          alt="Diagram: the glossarist terminology dataset — 146 concepts with one definition each, including terms the story coins or sharpens."
+          width="960"
+          height="540"
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption>
+          <strong>glossarist — the terminology dataset.</strong> Every concept this page
+          uses — dormant identifier, blind edge, derived type, applicability event — has
+          one definition. <a href="/terminology/">Terminology</a>.
+        </figcaption>
+      </figure>
+      <figure class="fig">
+        <img
+          src="/story/15-spec-papers.svg"
+          alt="Diagram: the five specification parts and the paper series, keyed to the beats."
+          width="960"
+          height="540"
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption>
+          <strong>unidpp-spec + unidpp-papers.</strong> The rulebook cites the story —
+          five parts, every beat has a normative home; the papers argue the mechanism.
+          <a href="/specs/">Spec</a> · <a href="/papers/">Papers</a>.
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="run" class="plate" aria-labelledby="run-h">
+    <h2 id="run-h">Run it yourself</h2>
+    <p>
+      The end-to-end repository replays this thread over committed fixtures:
+      <a href="https://github.com/unidpp/unidpp-e2e">github.com/unidpp/unidpp-e2e</a>.
+      <code>make demo</code> walks the E8 from B1 to B10; each beat also runs on its
+      own, and the counterpoint thread is one command.
+    </p>
+    <DocTerminal
+      label="shell"
+      meta="from a fresh clone"
+      ariaLabel="Commands to clone unidpp-e2e and run the E8 story demonstrations"
+      text={runShell}
+      caption="
+        The same fixtures, seeds, and expected verdicts live in the repository, so a
+        printed trace is reproducible from a clean checkout.
+      "
+    />
+    <figure class="fig">
+      <img
+        src="/story/12-cli-verify.svg"
+        alt="Diagram: the unidpp CLI — eight verbs covering the whole story; the customs officer, dealer, auction house and recycler all use the same binary."
+        width="960"
+        height="540"
+        loading="lazy"
+        decoding="async"
+      />
+      <figcaption>
+        One binary, eight verbs: the customs officer (B4), the dealer (B5), the auction
+        house (B8), and the recycler (B10) all run <code>unidpp</code> — offline mode
+        included.
+      </figcaption>
+    </figure>
+    <p class="cta-row">
+      <a class="btn btn-primary" href="https://github.com/unidpp/unidpp-e2e">unidpp-e2e on GitHub</a>
+      <a class="btn btn-ghost" href="/implementation/demos/">Demonstrations</a>
+      <a class="btn btn-ghost" href="/framework/">Framework</a>
+    </p>
+  </section>
+
+  <Continue
+    href="/implementation/demos/"
+    title="Demonstrations"
+    desc="The reference core running: the battery-loop trace, as-of readings, and two-lens verdicts — generated, not transcribed."
+  />
+</BaseLayout>
+
+<style>
+  .beat .beat-num {
+    font-family: var(--font-mono);
+    font-size: 0.78em;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    margin-right: 0.6rem;
+  }
+  .kicker {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    color: var(--text-2);
+    margin: -0.3rem 0 0.4rem;
+  }
+  .narr {
+    font-size: 0.98rem;
+    line-height: 1.65;
+  }
+  .figs {
+    display: grid;
+    gap: 1.2rem;
+    margin: 1.5rem 0 0.4rem;
+    max-width: none;
+  }
+  @media (min-width: 960px) {
+    .figs.pair {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .figs.trio {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+  .fig {
+    margin: 0;
+    min-width: 0;
+  }
+  .fig img {
+    width: 100%;
+    height: auto;
+    display: block;
+    background: #fafaf7;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+  }
+  .fig figcaption {
+    margin-top: 0.6rem;
+    font-size: 0.82rem;
+    color: var(--text-2);
+    max-width: none;
+    line-height: 1.5;
+  }
+  .carried {
+    border-top: 1px dashed var(--border);
+    padding-top: 0.7rem;
+    margin-top: 1.4rem;
+  }
+  .carried :global(code) {
+    font-family: var(--font-mono);
+    font-size: 0.82em;
+    background: var(--accent-soft);
+    border-radius: 3px;
+    padding: 0.08em 0.35em;
+  }
+  .narr :global(code) {
+    font-family: var(--font-mono);
+    font-size: 0.86em;
+    background: var(--accent-soft);
+    border-radius: 3px;
+    padding: 0.08em 0.35em;
+  }
+  .cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin-top: 1.25rem;
+  }
+</style>

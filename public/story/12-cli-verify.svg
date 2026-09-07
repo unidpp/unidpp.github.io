@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'IBM Plex Sans',-apple-system,'Segoe UI',Roboto,sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5A6572"/>
+    </marker>
+  </defs>
+  <rect width="960" height="540" fill="#FAFAF7"/>
+  <text x="48" y="34" font-size="11" letter-spacing="2.5" fill="#14335C" font-weight="600">UNIDPP CLI · CARGO INSTALL UNIDPP</text>
+  <text x="48" y="58" font-size="20" font-weight="600" fill="#1A2332">What the verifier's terminal actually runs</text>
+  <text x="48" y="76" font-size="12" fill="#5A6572">Eight verbs cover the whole story — the customs officer, the dealer, the auction house, the recycler all use the same binary</text>
+
+  <!-- device -->
+  <rect x="48" y="100" width="260" height="380" rx="14" fill="#FFFFFF" stroke="#14335C" stroke-width="1.5"/>
+  <rect x="64" y="128" width="228" height="240" rx="6" fill="#1A2332"/>
+  <text x="76" y="150" font-size="10.5" fill="#8A93A0" font-family="'IBM Plex Mono',ui-monospace,Menlo,monospace">offline mode</text>
+  <g font-family="'IBM Plex Mono',ui-monospace,Menlo,monospace" font-size="10" fill="#D5DAE0">
+    <text x="76" y="172">$ unidpp verify --nfc</text>
+    <text x="76" y="196" fill="#5FC98E">PASS</text>
+    <text x="76" y="214">as-of 2028-02-14T09:41Z</text>
+    <text x="76" y="238">sigs 3/3 · coverage stated</text>
+    <text x="76" y="256">origins: mirror + proof</text>
+    <text x="76" y="280">$ unidpp resolve J-000842</text>
+    <text x="76" y="304">linkset: 4 contexts</text>
+    <text x="76" y="328">$ unidpp recall --evaluate</text>
+    <text x="76" y="352" fill="#8A93A0">predicate: H-2231 …</text>
+  </g>
+  <text x="64" y="394" font-size="10.5" fill="#5A6572">reads raw or file QR payloads · Tier-A</text>
+  <text x="64" y="410" font-size="10.5" fill="#5A6572">unpack → signature check → freshness →</text>
+  <text x="64" y="426" font-size="10.5" fill="#5A6572">verdict, prints three readings + coverage</text>
+  <text x="64" y="452" font-size="10.5" fill="#14335C" font-weight="600">works with cached anchors, zero network</text>
+
+  <!-- verb map -->
+  <rect x="340" y="100" width="572" height="380" rx="8" fill="#FFFFFF" stroke="#E3E7EC"/>
+  <text x="356" y="126" font-size="12.5" font-weight="600" fill="#14335C">The verbs ↔ the beats</text>
+  <g font-size="11">
+    <text x="356" y="156" font-family="'IBM Plex Mono',ui-monospace,Menlo,monospace" fill="#14335C" font-weight="600">unidpp create</text><text x="490" y="156" fill="#5A6572">B1 type+instance issuance (issuer-backed)</text>
+    <text x="356" y="182" font-family="'IBM Plex Mono',ui-monospace,Menlo,monospace" fill="#14335C" font-weight="600">unidpp event</text><text x="490" y="182" fill="#5A6572">B3/B5–B9 append typed lifecycle events</text>
+    <text x="356" y="208" font-family="'IBM Plex Mono',ui-monospace,Menlo,monospace" fill="#14335C" font-weight="600">unidpp pack</text><text x="490" y="208" fill="#5A6572">B4 mint the offline Tier-A carrier pack</text>
+    <text x="356" y="234" font-family="'IBM Plex Mono',ui-monospace,Menlo,monospace" fill="#14335C" font-weight="600">unidpp verify</text><text x="490" y="234" fill="#5A6572">B4 the border moment: verdict + coverage</text>
+    <text x="356" y="260" font-family="'IBM Plex Mono',ui-monospace,Menlo,monospace" fill="#14335C" font-weight="600">unidpp resolve</text><text x="490" y="260" fill="#5A6572">linkset contexts, mirrors, as-of stamps</text>
+    <text x="356" y="286" font-family="'IBM Plex Mono',ui-monospace,Menlo,monospace" fill="#14335C" font-weight="600">unidpp recall</text><text x="490" y="286" fill="#5A6572">B9 evaluate the predicate against local holdings</text>
+    <text x="356" y="312" font-family="'IBM Plex Mono',ui-monospace,Menlo,monospace" fill="#14335C" font-weight="600">unidpp taint</text><text x="490" y="312" fill="#5A6572">B9/B10 graph taint + affected claims</text>
+    <text x="356" y="338" font-family="'IBM Plex Mono',ui-monospace,Menlo,monospace" fill="#14335C" font-weight="600">unidpp demo</text><text x="490" y="338" fill="#5A6572">bike build→border→derestrict→repair→auction→recall→recycle · cub</text>
+  </g>
+  <line x1="356" y1="360" x2="896" y2="360" stroke="#E3E7EC"/>
+  <text x="356" y="388" font-size="12" font-weight="600" fill="#14335C">Why it matters</text>
+  <text x="356" y="410" font-size="10.5" fill="#5A6572">· "cargo install unidpp" is the deployment story: no platform, no AGPL, no vendor —</text>
+  <text x="356" y="426" font-size="10.5" fill="#5A6572">  the simplicity counterpunch to open-dpp's platform pitch (smallest core, highest ceiling)</text>
+  <text x="356" y="448" font-size="10.5" fill="#5A6572">· one binary serves every verifier class: customs, market surveillance, dealer, auction</text>
+  <text x="356" y="464" font-size="10.5" fill="#5A6572">  house, recycler, consumer app, machine agent</text>
+  <circle cx="896" cy="114" r="12" fill="#14335C"/><text x="896" y="118" font-size="11" fill="#FFFFFF" text-anchor="middle" font-weight="600">4</text>
+</svg>

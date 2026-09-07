@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'IBM Plex Sans',-apple-system,'Segoe UI',Roboto,sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5A6572"/>
+    </marker>
+  </defs>
+  <rect width="960" height="540" fill="#FAFAF7"/>
+  <text x="48" y="34" font-size="11" letter-spacing="2.5" fill="#14335C" font-weight="600">UNIDPP-RESOLVER</text>
+  <text x="48" y="58" font-size="20" font-weight="600" fill="#1A2332">One QR, many destinations — and it survives outages</text>
+  <text x="48" y="76" font-size="12" fill="#5A6572">RFC 9264 linksets keyed by context · protocol differences settle as renders, not as adoptions</text>
+
+  <!-- resolution fan -->
+  <rect x="48" y="100" width="160" height="56" rx="8" fill="#FFFFFF" stroke="#14335C" stroke-width="1.5"/>
+  <text x="128" y="124" font-size="11.5" font-weight="600" fill="#14335C" text-anchor="middle">Carrier URI</text>
+  <text x="128" y="140" font-size="10" fill="#5A6572" text-anchor="middle">https://r.unidpp.org/momiji-e8/J-000842</text>
+
+  <rect x="272" y="100" width="160" height="56" rx="8" fill="#FFFFFF" stroke="#E3E7EC"/>
+  <text x="352" y="124" font-size="11.5" font-weight="600" fill="#1A2332" text-anchor="middle">Federated resolver</text>
+  <text x="352" y="140" font-size="10" fill="#5A6572" text-anchor="middle">linkset: context × role × language</text>
+  <line x1="208" y1="128" x2="270" y2="128" stroke="#5A6572" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <g>
+    <rect x="496" y="92" width="200" height="40" rx="6" fill="#F4F6F9" stroke="#E3E7EC"/>
+    <text x="508" y="108" font-size="10.5" fill="#1A2332">JP consumer context → <tspan fill="#8C6D1F">GB/T 33993-style render</tspan></text>
+    <text x="508" y="123" font-size="9.5" fill="#5A6572">national service layer, WeChat-first presentation profile</text>
+    <rect x="496" y="140" width="200" height="40" rx="6" fill="#F4F6F9" stroke="#E3E7EC"/>
+    <text x="508" y="156" font-size="10.5" fill="#1A2332">EU customs context → <tspan fill="#8C6D1F">EN 18222 REST render</tspan></text>
+    <text x="508" y="171" font-size="9.5" fill="#5A6572">v1/dpps/{id} shape — a render, not the model</text>
+    <rect x="496" y="188" width="200" height="40" rx="6" fill="#F4F6F9" stroke="#E3E7EC"/>
+    <text x="508" y="204" font-size="10.5" fill="#1A2332">Machine context → <tspan fill="#8C6D1F">UNTP / JSON-LD render</tspan></text>
+    <text x="508" y="219" font-size="9.5" fill="#5A6572">single-window, procurement, AI agents</text>
+    <line x1="432" y1="112" x2="494" y2="112" stroke="#5A6572" stroke-width="1.2" marker-end="url(#arr)"/>
+    <line x1="432" y1="128" x2="494" y2="158" stroke="#5A6572" stroke-width="1.2" marker-end="url(#arr)"/>
+    <line x1="432" y1="144" x2="494" y2="202" stroke="#5A6572" stroke-width="1.2" marker-end="url(#arr)"/>
+  </g>
+  <text x="496" y="252" font-size="10.5" fill="#5A6572">everybody keeps their protocol — nobody's protocol is the envelope.</text>
+
+  <!-- failure modes -->
+  <rect x="48" y="180" width="384" height="220" rx="8" fill="#FFFFFF" stroke="#E3E7EC"/>
+  <text x="64" y="206" font-size="12.5" font-weight="600" fill="#14335C">When origins go dark (B4, B9)</text>
+  <text x="64" y="230" font-size="10.5" fill="#1A2332" font-weight="600">Shenzhen host unreachable</text>
+  <text x="64" y="246" font-size="10.5" fill="#5A6572">→ national intermediary mirror serves the linkset</text>
+  <text x="64" y="262" font-size="10.5" fill="#5A6572">→ log inclusion proof from the mirror's log copy</text>
+  <text x="64" y="286" font-size="10.5" fill="#1A2332" font-weight="600">EU registry outage (40 min)</text>
+  <text x="64" y="302" font-size="10.5" fill="#5A6572">→ cached linksets carry as-of stamps</text>
+  <text x="64" y="318" font-size="10.5" fill="#5A6572">→ carrier retains identity; resolution is reproducible</text>
+  <text x="64" y="342" font-size="10.5" fill="#1A2332" font-weight="600">Resolver itself down</text>
+  <text x="64" y="358" font-size="10.5" fill="#5A6572">→ federated alternates · national nodes · self-host</text>
+  <text x="64" y="374" font-size="10.5" fill="#5A6572">→ registered operators carry continuity obligations</text>
+
+  <!-- dark identities -->
+  <rect x="48" y="420" width="440" height="92" rx="8" fill="#FFFFFF" stroke="#E3E7EC"/>
+  <text x="64" y="444" font-size="12.5" font-weight="600" fill="#14335C">Dark identities (defense tier)</text>
+  <text x="64" y="466" font-size="10.5" fill="#5A6572">some identities never enter the global resolver at all —</text>
+  <text x="64" y="482" font-size="10.5" fill="#5A6572">national-only serving (private-handle precedent); profiles may be</text>
+  <text x="64" y="498" font-size="10.5" fill="#5A6572">confidential register items · verifiable without being browsable</text>
+
+  <!-- why -->
+  <rect x="728" y="92" width="184" height="420" rx="8" fill="#FFFFFF" stroke="#E3E7EC"/>
+  <text x="744" y="118" font-size="12.5" font-weight="600" fill="#14335C">Why it matters</text>
+  <text x="744" y="144" font-size="10.5" fill="#5A6572">· GS1 Digital Link</text>
+  <text x="754" y="160" font-size="10.5" fill="#5A6572">interop without</text>
+  <text x="754" y="176" font-size="10.5" fill="#5A6572">GS1 lock-in</text>
+  <text x="744" y="204" font-size="10.5" fill="#5A6572">· China runs several</text>
+  <text x="754" y="220" font-size="10.5" fill="#5A6572">coexisting schemes</text>
+  <text x="754" y="236" font-size="10.5" fill="#5A6572">(GS1, Handle, Ecode,</text>
+  <text x="754" y="252" font-size="10.5" fill="#5A6572">MA) — bridges are</text>
+  <text x="754" y="268" font-size="10.5" fill="#5A6572">registry content</text>
+  <text x="744" y="296" font-size="10.5" fill="#5A6572">· availability decouples</text>
+  <text x="754" y="312" font-size="10.5" fill="#5A6572">from origin servers:</text>
+  <text x="754" y="328" font-size="10.5" fill="#5A6572">JP customs never</text>
+  <text x="754" y="344" font-size="10.5" fill="#5A6572">needs the EU service</text>
+  <text x="754" y="360" font-size="10.5" fill="#5A6572">to be up</text>
+  <text x="744" y="388" font-size="10.5" fill="#5A6572">· resolution is</text>
+  <text x="754" y="404" font-size="10.5" fill="#5A6572">by-identity (pull);</text>
+  <text x="754" y="420" font-size="10.5" fill="#5A6572">traversal requires</text>
+  <text x="754" y="436" font-size="10.5" fill="#5A6572">per-edge rights —</text>
+  <text x="754" y="452" font-size="10.5" fill="#5A6572">enumeration</text>
+  <text x="754" y="468" font-size="10.5" fill="#5A6572">resistance is a</text>
+  <text x="754" y="484" font-size="10.5" fill="#5A6572">system property</text>
+</svg>

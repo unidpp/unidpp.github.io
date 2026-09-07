@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'IBM Plex Sans',-apple-system,'Segoe UI',Roboto,sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5A6572"/>
+    </marker>
+  </defs>
+  <rect width="960" height="540" fill="#FAFAF7"/>
+  <text x="48" y="34" font-size="11" letter-spacing="2.5" fill="#14335C" font-weight="600">UNIDPP-CORE · MODEL CRATE</text>
+  <text x="48" y="58" font-size="20" font-weight="600" fill="#1A2332">The composition graph — one bike, many duties</text>
+  <text x="48" y="76" font-size="12" fill="#5A6572">Typed edges with legal semantics · dormant identifiers at the leaves · identity lattice below</text>
+
+  <!-- parent -->
+  <rect x="300" y="100" width="360" height="92" rx="8" fill="#FFFFFF" stroke="#14335C" stroke-width="1.5"/>
+  <text x="316" y="124" font-size="13" font-weight="600" fill="#14335C">Instance passport · J-000842</text>
+  <text x="316" y="142" font-size="11" font-family="'IBM Plex Mono',ui-monospace,Menlo,monospace" fill="#14335C">momiji:e8/J-000842 · status active</text>
+  <text x="316" y="160" font-size="10.5" fill="#5A6572">type: E8/2027.1 (exact version) · config: [rack, Connect]</text>
+  <text x="316" y="176" font-size="10.5" fill="#5A6572">manifest: JP-road-traffic · EU-mach · EU-battery · UN3171</text>
+  <circle cx="640" cy="114" r="12" fill="#14335C"/><text x="640" y="118" font-size="11" fill="#FFFFFF" text-anchor="middle" font-weight="600">1</text>
+
+  <!-- type passport side -->
+  <rect x="60" y="104" width="180" height="84" rx="8" fill="#FFFFFF" stroke="#E3E7EC"/>
+  <text x="76" y="128" font-size="12" font-weight="600" fill="#1A2332">Type passport</text>
+  <text x="76" y="146" font-size="10.5" fill="#5A6572">type tests · declared</text>
+  <text x="76" y="160" font-size="10.5" fill="#5A6572">values · BoM template</text>
+  <text x="76" y="174" font-size="10.5" fill="#5A6572">2028.1 rev visible</text>
+  <line x1="240" y1="146" x2="298" y2="146" stroke="#5A6572" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="252" y="136" font-size="10" fill="#5A6572">R4</text>
+
+  <!-- children -->
+  <g>
+    <rect x="60" y="260" width="250" height="108" rx="8" fill="#FFFFFF" stroke="#E3E7EC"/>
+    <text x="76" y="284" font-size="12" font-weight="600" fill="#1A2332">Drive unit · EU</text>
+    <text x="76" y="302" font-size="10.5" font-family="'IBM Plex Mono',ui-monospace,Menlo,monospace" fill="#14335C">rhine:du/M-771…</text>
+    <text x="76" y="320" font-size="10.5" fill="#5A6572">type passport + EU DoC</text>
+    <text x="76" y="336" font-size="10.5" fill="#5A6572">install: bolted · recoverable</text>
+    <text x="76" y="352" font-size="10.5" fill="#5A6572">alteration: torque-mount</text>
+    <circle cx="290" cy="274" r="12" fill="#14335C"/><text x="290" y="278" font-size="11" fill="#FFFFFF" text-anchor="middle" font-weight="600">2</text>
+
+    <rect x="356" y="260" width="250" height="108" rx="8" fill="#FFFFFF" stroke="#E3E7EC"/>
+    <text x="372" y="284" font-size="12" font-weight="600" fill="#1A2332">Battery pack · CN</text>
+    <text x="372" y="302" font-size="10.5" font-family="'IBM Plex Mono',ui-monospace,Menlo,monospace" fill="#14335C">weilian:wp/P-9904…</text>
+    <text x="372" y="320" font-size="10.5" fill="#5A6572">install: CAN pairing · restorable</text>
+    <text x="372" y="336" font-size="10.5" fill="#5A6572">own EU battery passport (B3)</text>
+    <text x="372" y="352" font-size="10.5" fill="#8C6D1F" font-weight="600">→ 40 cells, dormant lot ids</text>
+    <circle cx="586" cy="274" r="12" fill="#14335C"/><text x="586" y="278" font-size="11" fill="#FFFFFF" text-anchor="middle" font-weight="600">2</text>
+
+    <rect x="652" y="260" width="250" height="108" rx="8" fill="#FFFFFF" stroke="#E3E7EC"/>
+    <text x="668" y="284" font-size="12" font-weight="600" fill="#1A2332">Charger · CN</text>
+    <text x="668" y="302" font-size="10.5" font-family="'IBM Plex Mono',ui-monospace,Menlo,monospace" fill="#14335C">CQC-2026-1142…</text>
+    <text x="668" y="320" font-size="10.5" fill="#5A6572">cert ↔ product ↔ facility join</text>
+    <text x="668" y="336" font-size="10.5" fill="#5A6572">GB 4943.1 ≈ IEC 62368-1</text>
+    <text x="668" y="352" font-size="10.5" fill="#5A6572">equivalence = registered transform</text>
+    <circle cx="882" cy="274" r="12" fill="#14335C"/><text x="882" y="278" font-size="11" fill="#FFFFFF" text-anchor="middle" font-weight="600">2</text>
+  </g>
+
+  <line x1="420" y1="192" x2="220" y2="258" stroke="#5A6572" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="480" y1="192" x2="480" y2="258" stroke="#5A6572" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="540" y1="192" x2="740" y2="258" stroke="#5A6572" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="392" y="228" font-size="10.5" fill="#5A6572">R3 install {method, slotId, pairing, alteration[], recoverability}</text>
+
+  <!-- dormant leaves -->
+  <rect x="356" y="396" width="250" height="44" rx="8" fill="#F4F6F9" stroke="#E3E7EC" stroke-dasharray="5 3"/>
+  <text x="372" y="416" font-size="10.5" font-family="'IBM Plex Mono',ui-monospace,Menlo,monospace" fill="#8C6D1F">haichuan:cell/H-2231 × 40</text>
+  <text x="372" y="432" font-size="10.5" fill="#8C6D1F">dormant identifiers — adoption-ready (B9)</text>
+  <line x1="481" y1="368" x2="481" y2="394" stroke="#8C6D1F" stroke-width="1.2" stroke-dasharray="4 3" marker-end="url(#arr)"/>
+
+  <!-- identity lattice -->
+  <rect x="48" y="464" width="864" height="52" rx="8" fill="#FFFFFF" stroke="#E3E7EC"/>
+  <text x="64" y="486" font-size="11" font-weight="600" fill="#14335C">IDENTITY LATTICE</text>
+  <g font-size="10.5" fill="#1A2332">
+    <text x="200" y="486">manufacturer</text><text x="290" y="486" fill="#5A6572">→</text>
+    <text x="312" y="486">model</text><text x="370" y="486" fill="#5A6572">→</text>
+    <text x="392" y="486">type-version</text><text x="492" y="486" fill="#5A6572">→</text>
+    <text x="514" y="486">configuration</text><text x="626" y="486" fill="#5A6572">→</text>
+    <text x="648" y="486">instance</text>
+    <text x="200" y="503" fill="#5A6572">actor, not a level</text>
+    <text x="312" y="503" fill="#5A6572">registry nav only</text>
+    <text x="392" y="503" fill="#5A6572">hardware revs visible</text>
+    <text x="514" y="503" fill="#5A6572">options compose like children</text>
+    <text x="648" y="503" fill="#5A6572">where passports issue</text>
+  </g>
+</svg>

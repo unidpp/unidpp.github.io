@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'IBM Plex Sans',-apple-system,'Segoe UI',Roboto,sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5A6572"/>
+    </marker>
+  </defs>
+  <rect width="960" height="540" fill="#FAFAF7"/>
+  <text x="48" y="34" font-size="11" letter-spacing="2.5" fill="#14335C" font-weight="600">UNIDPP-CORE · VERDICT CRATE</text>
+  <text x="48" y="58" font-size="20" font-weight="600" fill="#1A2332">The verdict is a report, not a boolean</text>
+  <text x="48" y="76" font-size="12" fill="#5A6572">B4, the border moment: what the customs terminal actually prints — coverage stated, readings named</text>
+
+  <!-- terminal panel -->
+  <rect x="48" y="100" width="560" height="380" rx="10" fill="#1A2332"/>
+  <circle cx="70" cy="120" r="5" fill="#B4442C"/><circle cx="86" cy="120" r="5" fill="#8C6D1F"/><circle cx="102" cy="120" r="5" fill="#1E6B4F"/>
+  <text x="120" y="124" font-size="11" fill="#8A93A0" font-family="'IBM Plex Mono',ui-monospace,Menlo,monospace">customs-terminal — offline mode</text>
+  <g font-family="'IBM Plex Mono',ui-monospace,Menlo,monospace" font-size="11.5" fill="#D5DAE0">
+    <text x="72" y="156">$ unidpp verify --qr frame.png --offline</text>
+    <text x="72" y="184" fill="#8A93A0">carrier: P&lt;UNIDPP&lt;E8&lt;J-000842&lt;STATUS=ACTIVE&lt;FLAG=NONE&lt;</text>
+    <text x="72" y="212">verdict:  <tspan fill="#5FC98E" font-weight="600">PASS</tspan> (Tier-A, as-of 2028-02-14T09:41Z)</text>
+    <text x="72" y="240" fill="#8A93A0">coverage:</text>
+    <text x="72" y="260">  signature  JP suite .......... <tspan fill="#5FC98E">OK</tspan></text>
+    <text x="72" y="280">  signature  EU ECDSA ......... <tspan fill="#5FC98E">OK</tspan> (cached anchor, mirror 2028-02-13)</text>
+    <text x="72" y="300">  signature  PQ ML-DSA ........ <tspan fill="#5FC98E">OK</tspan></text>
+    <text x="72" y="320">  origin     Shenzhen host .... <tspan fill="#E0B25C">UNREACHABLE</tspan> → inclusion proof, national log copy</text>
+    <text x="72" y="340">  origin     EU registry ...... <tspan fill="#E0B25C">OUTAGE 40 min</tspan> → cached linkset, as-of marked</text>
+    <text x="72" y="360">  profile    EU battery view .. <tspan fill="#5FC98E">SATISFIED</tspan> (Tier-A subset)</text>
+    <text x="72" y="388" fill="#8A93A0">readings:</text>
+    <text x="72" y="408">  cryptographic  <tspan fill="#5FC98E">VALID</tspan>   evidentiary  <tspan fill="#5FC98E">VALID as-of T</tspan>   current-state  <tspan fill="#E0B25C">UNKNOWN offline</tspan></text>
+    <text x="72" y="440" fill="#8A93A0"># honesty is the feature: the report says exactly what was not checked.</text>
+  </g>
+  <circle cx="584" cy="114" r="12" fill="#FAFAF7"/><text x="584" y="118" font-size="11" fill="#14335C" text-anchor="middle" font-weight="600">4</text>
+
+  <!-- three readings -->
+  <rect x="640" y="100" width="272" height="196" rx="8" fill="#FFFFFF" stroke="#E3E7EC"/>
+  <text x="656" y="126" font-size="12.5" font-weight="600" fill="#14335C">Three readings — law needs all three</text>
+  <text x="656" y="150" font-size="11" font-weight="600" fill="#1A2332">evidentiary</text>
+  <text x="656" y="166" font-size="10" fill="#5A6572">what could a diligent verifier know at T?</text>
+  <text x="656" y="180" font-size="10" fill="#5A6572">protects good-faith actors; their stamps are</text>
+  <text x="656" y="194" font-size="10" fill="#5A6572">the proof of diligence</text>
+  <text x="656" y="218" font-size="11" font-weight="600" fill="#1A2332">current-state</text>
+  <text x="656" y="234" font-size="10" fill="#5A6572">fraud voids ab initio — prevents laundering</text>
+  <text x="656" y="248" font-size="10" fill="#5A6572">fraudulent goods (revocation reason decides)</text>
+  <text x="656" y="272" font-size="11" font-weight="600" fill="#1A2332">cryptographic</text>
+  <text x="656" y="288" font-size="10" fill="#5A6572">signature/chain validity alone</text>
+
+  <!-- why -->
+  <rect x="640" y="316" width="272" height="164" rx="8" fill="#FFFFFF" stroke="#E3E7EC"/>
+  <text x="656" y="340" font-size="12.5" font-weight="600" fill="#14335C">Why it matters</text>
+  <text x="656" y="362" font-size="10.5" fill="#5A6572">· EN-only world: red error page, or a</text>
+  <text x="656" y="377" font-size="10.5" fill="#5A6572">  silently-trusting green page</text>
+  <text x="656" y="399" font-size="10.5" fill="#5A6572">· verdicts state WHICH question they</text>
+  <text x="656" y="414" font-size="10.5" fill="#5A6572">  answer — no conflating readings</text>
+  <text x="656" y="436" font-size="10.5" fill="#5A6572">· coverage reports drive consumer</text>
+  <text x="656" y="451" font-size="10.5" fill="#5A6572">  grades and acceptance policies alike</text>
+  <text x="656" y="473" font-size="10.5" fill="#5A6572">· profile-scoped: JP terminal checks the</text>
+  <text x="656" y="488" font-size="10.5" fill="#5A6572">  JP suite only, by policy</text>
+
+  <text x="48" y="508" font-size="10.5" fill="#5A6572">Graded trust, not mandated trust: unsigned self-issued passports remain valid for voluntary provenance — insufficient for regulated claims.</text>
+</svg>
