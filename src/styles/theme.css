@@ -59,7 +59,23 @@ html.dark {
   --red-soft: rgba(224, 138, 112, 0.12);
 }
 
-/* ── Base ───────────────────────────────────────────────────────── */
+::selection {
+  background: color-mix(in srgb, var(--accent) 26%, transparent);
+  color: var(--text);
+}
+html.dark ::selection {
+  background: color-mix(in srgb, var(--accent) 38%, transparent);
+  color: var(--bg);
+}
+
+/* ── Text utilities ────────────────────────────────────────── */
+
+.mono {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Baseline ──────────────────────────────────────────────── */
 
 * {
   box-sizing: border-box;

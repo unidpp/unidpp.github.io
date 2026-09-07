@@ -1,67 +1,97 @@
 ---
-// The signature hero: one twin record card with three translucent profile
-// lenses mounted above it. Lenses are radio controls, so hover, tap, and
-// keyboard all work without scripts; captions are exchanged with :has().
-// Restyled for the initiative design system: Plex, token colours, dark mode.
+// The signature hero: a single twin record card with three translucent
+// profile lenses fanned above it. Lenses are radio controls (scriptless),
+// hover, tap, and keyboard all work; captions and the "reading" data row
+// on the record are exchanged with :has().
+//
+// Coordinate system: the lens field and the record card share the same
+// box. The stage is capped at 30rem so percentage-positioned lenses
+// cannot drift off the card at any viewport width (the prior version
+// computed lens positions against the full main container while the
+// record sat at 26rem left-aligned — JP and CITES floated off the
+// right edge at every width above ~600px).
+//
+// Lenses fan left/center/right: EU left-anchored, CITES right-anchored,
+// JP mid-position. The selected lens descends onto the card and its
+// data point populates the record's "Reading through" row, demonstrating
+// the framework thesis: one record, many readings.
 ---
 
 <div class="spread">
   <div class="stage">
     <fieldset class="lenses">
-      <legend class="vh">Choose a profile lens</legend>
+      <legend class="vh">Choose a profile lens to read the record through</legend>
+
       <input type="radio" name="lens" id="lens-cites" class="in in-cites" />
       <label for="lens-cites" class="lens lens-cites">
         <span class="lens-name">CITES</span>
         <span class="lens-sub">species · permits</span>
       </label>
+
       <input type="radio" name="lens" id="lens-jp" class="in in-jp" />
       <label for="lens-jp" class="lens lens-jp">
         <span class="lens-name" lang="ja">日本</span>
         <span class="lens-sub">Top Runner</span>
       </label>
+
       <input type="radio" name="lens" id="lens-eu" class="in in-eu" checked />
       <label for="lens-eu" class="lens lens-eu">
         <span class="lens-name">EU</span>
         <span class="lens-sub">energy class</span>
       </label>
     </fieldset>
-    <div
-      class="record"
-      role="img"
-      aria-label="Illustrative passport record card: identifier, status active, last update, three lenses mounted."
-    >
+
+    <div class="record">
       <p class="record-head">Digital product passport — twin record</p>
       <dl class="fields">
         <div class="field">
           <dt>Identifier</dt>
-          <dd class="mono">016.2026.0907.7741</dd>
+          <dd>016.2026.0907.7741</dd>
         </div>
         <div class="field">
           <dt>Passport</dt>
-          <dd class="mono">UNIDPP-7741-CORE</dd>
+          <dd>UNIDPP-7741-CORE</dd>
         </div>
         <div class="field">
           <dt>Status</dt>
-          <dd class="mono ok"><span class="dot">&#9679;</span> ACTIVE</dd>
+          <dd class="ok"><span class="dot" aria-hidden="true">&#9679;</span> ACTIVE</dd>
         </div>
         <div class="field">
           <dt>Last update</dt>
-          <dd class="mono">2026-09-07T04:12Z</dd>
+          <dd>2026-09-07T04:12Z</dd>
         </div>
-        <div class="field">
-          <dt>Lenses mounted</dt>
-          <dd class="mono">EU · <span lang="ja">日本</span> · CITES</dd>
+        <div class="field field-reading">
+          <dt>Reading through</dt>
+          <dd class="reading-cell">
+            <span class="rd rd-eu">
+              <span class="rd-tag">EU lens</span>
+              <span class="rd-val">Energy class <strong>A</strong> — ESPR delegated act</span>
+            </span>
+            <span class="rd rd-jp">
+              <span class="rd-tag" lang="ja">日本</span>
+              <span class="rd-val">Top Runner <strong>&#9733;&#9733;&#9733;&#9734;</strong> — METI labelling</span>
+            </span>
+            <span class="rd rd-cites">
+              <span class="rd-tag">CITES lens</span>
+              <span class="rd-val">Appendix II · permit <strong>24US7741</strong></span>
+            </span>
+          </dd>
         </div>
       </dl>
+      <p class="record-foot">
+        <span class="mono">Lenses mounted</span>
+        <span class="lm-list mono">EU <span class="lm-dot">&middot;</span> <span lang="ja">日本</span> <span class="lm-dot">&middot;</span> CITES</span>
+      </p>
     </div>
   </div>
+
   <div class="captions">
     <p class="cap cap-eu" id="cap-eu">
       <span class="cap-tag" aria-hidden="true">EU lens</span>
       Required by the ESPR delegated act — the reading EU market surveillance relies on.
     </p>
     <p class="cap cap-jp" id="cap-jp">
-      <span class="cap-tag" aria-hidden="true">Japan lens</span>
+      <span class="cap-tag" aria-hidden="true" lang="ja">日本</span>
       The rating under METI labelling, set against the Top Runner benchmark.
     </p>
     <p class="cap cap-cites" id="cap-cites">
@@ -73,19 +103,22 @@
 
 <style>
   .spread {
-    margin: 0.4rem 0 0;
+    margin: 0;
     max-width: none;
   }
+  /* The shared coordinate box. Capped at 30rem — matching the record
+     card so %-positioned lenses can never escape the card. */
   .stage {
     position: relative;
-    padding-top: 6.4rem;
+    max-width: 30rem;
+    padding-top: 6.2rem;
   }
 
-  /* Lenses: translucent navy tints, fanned above the record */
+  /* ── Lens field ───────────────────────────────────────────── */
   .lenses {
     position: absolute;
     inset: 0 0 auto 0;
-    height: 7.2rem;
+    height: 6.2rem;
     margin: 0;
     padding: 0;
     border: 0;
@@ -105,54 +138,61 @@
   .lens {
     position: absolute;
     top: 0;
-    width: min(9.5rem, 46%);
-    min-height: 44px;
-    padding: 0.65rem 0.8rem;
+    width: 31.5%;
+    min-height: 48px;
+    padding: 0.55rem 0.7rem 0.5rem;
     border-radius: var(--radius);
     border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 0.15rem;
+    gap: 0.1rem;
     cursor: pointer;
+    background: var(--bg-raised);
+    transform: rotate(var(--tilt, 0deg));
     transition:
       transform 0.18s ease,
       background-color 0.18s ease,
-      border-color 0.18s ease;
+      border-color 0.18s ease,
+      box-shadow 0.18s ease;
+    box-shadow: 0 1px 0 color-mix(in srgb, var(--accent) 12%, transparent);
   }
   .lens-name {
     font-family: var(--font-mono);
-    font-size: 0.95rem;
+    font-size: 0.92rem;
     font-weight: 500;
     color: var(--accent);
+    letter-spacing: 0.02em;
   }
   .lens-sub {
     font-family: var(--font-mono);
-    font-size: 0.64rem;
+    font-size: 0.6rem;
     letter-spacing: 0.04em;
     color: var(--accent);
-    opacity: 0.78;
+    opacity: 0.72;
   }
 
+  /* Three lenses anchored EU left / JP mid / CITES right so the fan
+     always closes within the stage at every width. */
   .lens-eu {
-    left: 2%;
-    top: 1.15rem;
-    transform: rotate(-3deg);
-    background: color-mix(in srgb, var(--accent) 14%, transparent);
+    left: 0;
+    top: 1.05rem;
+    --tilt: -3deg;
+    background: color-mix(in srgb, var(--accent) 14%, var(--bg-raised));
     z-index: 3;
   }
   .lens-jp {
-    left: 40%;
-    top: 0.25rem;
-    transform: rotate(1.5deg);
-    background: color-mix(in srgb, var(--accent) 26%, transparent);
+    left: 34.25%;
+    top: 0.15rem;
+    --tilt: 1.5deg;
+    background: color-mix(in srgb, var(--accent) 24%, var(--bg-raised));
     z-index: 2;
   }
   .lens-cites {
-    left: 74%;
-    top: 1.5rem;
-    transform: rotate(4deg);
-    background: color-mix(in srgb, var(--accent) 7%, transparent);
+    right: 0;
+    top: 1.3rem;
+    --tilt: 3.5deg;
+    background: color-mix(in srgb, var(--accent) 7%, var(--bg-raised));
     z-index: 1;
   }
 
@@ -161,48 +201,45 @@
     outline-offset: 2px;
   }
 
+  /* Hover = lift the lens (picking it up to look through). Compose
+     with the per-lens rotation via the --tilt custom property. */
   .lens:hover,
-  .in:focus-visible + .lens,
+  .in:focus-visible + .lens {
+    transform: translateY(-0.35rem) rotate(var(--tilt));
+    background: color-mix(in srgb, var(--accent) 22%, var(--bg-raised));
+    border-color: var(--accent);
+    z-index: 5;
+  }
+  /* Checked = mount the lens: descend toward the record, deepen the
+     tint, render a passport "stamp" ring. */
   .in:checked + .lens {
-    transform: translateY(-0.6rem);
-  }
-  .lens-eu:hover,
-  .in-eu:focus-visible + .lens-eu,
-  .in-eu:checked + .lens-eu {
-    background: color-mix(in srgb, var(--accent) 22%, transparent);
+    transform: translateY(0.3rem) rotate(var(--tilt));
+    background: color-mix(in srgb, var(--accent) 28%, var(--bg-raised));
     border-color: var(--accent);
-    z-index: 5;
-  }
-  .lens-jp:hover,
-  .in-jp:focus-visible + .lens-jp,
-  .in-jp:checked + .lens-jp {
-    background: color-mix(in srgb, var(--accent) 36%, transparent);
-    border-color: var(--accent);
-    z-index: 5;
-  }
-  .lens-cites:hover,
-  .in-cites:focus-visible + .lens-cites,
-  .in-cites:checked + .lens-cites {
-    background: color-mix(in srgb, var(--accent) 14%, transparent);
-    border-color: var(--accent);
-    z-index: 5;
+    box-shadow:
+      0 1px 0 color-mix(in srgb, var(--accent) 18%, transparent),
+      inset 0 0 0 1px color-mix(in srgb, var(--accent) 18%, transparent);
+    z-index: 4;
   }
 
-  /* The twin record card */
+  /* ── Twin record card ─────────────────────────────────────── */
   .record {
     background: var(--bg-raised);
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    padding: 1.1rem 1.25rem 0.85rem;
-    max-width: 26rem;
+    padding: 1.05rem 1.25rem 0.9rem;
   }
   .record-head {
     font-family: var(--font-mono);
     font-size: 0.64rem;
+    font-weight: 500;
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--text-2);
-    margin: 0 0 0.75rem;
+    margin: 0 0 0.7rem;
+    padding-bottom: 0.5rem;
+    /* Passport-document double rule: a register/identity-tier flourish. */
+    border-bottom: 3px double var(--border-strong);
   }
   .fields {
     display: grid;
@@ -211,7 +248,7 @@
   }
   .field {
     display: grid;
-    grid-template-columns: 8.5rem minmax(0, 1fr);
+    grid-template-columns: 7.6rem minmax(0, 1fr);
     gap: 0.8rem;
     align-items: baseline;
     border-bottom: 1px solid var(--border);
@@ -219,11 +256,14 @@
   }
   .field:last-child {
     border-bottom: 0;
-    padding-bottom: 0.25rem;
   }
   .field dt {
-    font-size: 0.78rem;
-    color: var(--text-2);
+    font-family: var(--font-mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-3);
+    padding-top: 0.1rem;
   }
   .field dd {
     margin: 0;
@@ -236,20 +276,97 @@
     vertical-align: 0.2em;
   }
 
-  /* Captions: stacked in one grid cell, exchanged by state */
+  /* The dynamic "Reading through" cell: three readings stacked in
+     one grid cell, the active lens opaque, the others dim. */
+  .field-reading .reading-cell {
+    display: grid;
+  }
+  .rd {
+    grid-area: 1 / 1;
+    display: flex;
+    align-items: baseline;
+    gap: 0.55rem;
+    flex-wrap: wrap;
+    opacity: 0;
+    transition: opacity 0.18s ease;
+  }
+  .rd-tag {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid var(--border);
+    border-radius: 99px;
+    padding: 0.1rem 0.5rem;
+    background: var(--bg);
+    white-space: nowrap;
+  }
+  .rd-val {
+    font-family: var(--font-sans);
+    font-size: 0.83rem;
+    color: var(--text);
+    line-height: 1.4;
+  }
+  .rd-val strong {
+    font-weight: 600;
+    color: var(--accent);
+  }
+  /* Exactly one reading visible at any time. Hover beats check: when
+     any lens is hovered, all readings hide and the hovered lens
+     owns the row; otherwise the currently-checked lens owns it.
+     The :not(:has(.lens:hover)) gate forces a single source. */
+  .spread:has(.lens:hover) .rd {
+    opacity: 0;
+  }
+  .spread:has(.lens-eu:hover) .rd.rd-eu,
+  .spread:has(.lens-jp:hover) .rd.rd-jp,
+  .spread:has(.lens-cites:hover) .rd.rd-cites {
+    opacity: 1;
+  }
+  .spread:not(:has(.lens:hover)):has(.in-eu:checked) .rd.rd-eu,
+  .spread:not(:has(.lens:hover)):has(.in-jp:checked) .rd.rd-jp,
+  .spread:not(:has(.lens:hover)):has(.in-cites:checked) .rd.rd-cites {
+    opacity: 1;
+  }
+
+  .record-foot {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.45rem 0.8rem;
+    margin: 0.8rem 0 0;
+    padding-top: 0.7rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.78rem;
+    color: var(--text-2);
+  }
+  .lm-list {
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    color: var(--text);
+  }
+  .lm-dot {
+    color: var(--text-3);
+    margin: 0 0.15rem;
+  }
+
+  /* ── Captions ─────────────────────────────────────────────── */
   .captions {
     display: grid;
-    margin-top: 1.3rem;
+    margin-top: 1.15rem;
     min-height: 2.4rem;
   }
   .cap {
     grid-area: 1 / 1;
     margin: 0;
-    font-size: 0.95rem;
+    font-size: 0.93rem;
+    line-height: 1.55;
     color: var(--text);
     max-width: 56ch;
     opacity: 0;
-    transition: opacity 0.2s ease;
+    transition: opacity 0.18s ease;
   }
   .cap-tag {
     display: inline-block;
@@ -266,32 +383,29 @@
     vertical-align: 0.1em;
     background: var(--bg);
   }
-  .spread:has(.in-eu:checked) .cap-eu,
-  .spread:has(.in-jp:checked) .cap-jp,
-  .spread:has(.in-cites:checked) .cap-cites {
+  /* Exactly one caption visible at any time. Same hover-beats-check
+     pattern as the reading cell above. */
+  .spread:has(.lens:hover) .cap {
+    opacity: 0;
+  }
+  .spread:has(.lens-eu:hover) .cap.cap-eu,
+  .spread:has(.lens-jp:hover) .cap.cap-jp,
+  .spread:has(.lens-cites:hover) .cap.cap-cites {
     opacity: 1;
   }
-  .spread:has(.lens-eu:hover) .cap-eu,
-  .spread:has(.lens-jp:hover) .cap-jp,
-  .spread:has(.lens-cites:hover) .cap-cites {
+  .spread:not(:has(.lens:hover)):has(.in-eu:checked) .cap.cap-eu,
+  .spread:not(:has(.lens:hover)):has(.in-jp:checked) .cap.cap-jp,
+  .spread:not(:has(.lens:hover)):has(.in-cites:checked) .cap.cap-cites {
     opacity: 1;
   }
 
-  @media (max-width: 480px) {
-    .stage {
-      padding-top: 6.8rem;
-    }
-    .lens {
-      width: 32%;
-      min-height: 48px;
-      padding: 0.5rem 0.6rem;
-    }
-    .lens-cites {
-      left: 66%;
-    }
+  @media (max-width: 420px) {
     .field {
-      grid-template-columns: 6.8rem minmax(0, 1fr);
+      grid-template-columns: 5.8rem minmax(0, 1fr);
       gap: 0.5rem;
+    }
+    .lens-sub {
+      font-size: 0.55rem;
     }
   }
 </style>

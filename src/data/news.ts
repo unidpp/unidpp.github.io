@@ -1,6 +1,8 @@
-// Site news entries — the "latest" block on the home page. Newest first.
+// Site news entries — the "latest" block on the home page. Newest
+// first. Only real, dated milestones; there is no filler line under
+// the list.
 export interface NewsItem {
-  date: string; // ISO
+  date: string; // ISO, or ISO month for items dated by month
   title: string;
   body: string;
   href: string;
@@ -9,37 +11,23 @@ export interface NewsItem {
 export const news: NewsItem[] = [
   {
     date: '2026-09-07',
-    title: 'Specification working draft published on the site',
+    title: 'Terminology browser live at /terminology/',
     body:
-      'The five-part framework specification — 13 sections converted from the AsciiDoc sources — is now readable at unidpp.org/specs, with per-part status badges.',
-    href: '/specs/',
+      'The DPP vocabulary concept browser — 145 verified concepts compiled from the EN series, CWA 18291, and IDTA 01001 — is now served from this site.',
+    href: '/terminology/',
   },
   {
     date: '2026-09-07',
-    title: 'EU-profile conformance report: 22 fixtures, 26 error findings',
+    title: 'CalConnect whitepaper and PWI vocabulary draft filed for ISO/IEC JTC 5',
     body:
-      'Every example payload printed in EN 18223:2026 was run through the validators — 14 pass, 8 fail — with each finding cited to the standard’s own normative text.',
-    href: '/implementation/conformance/',
-  },
-  {
-    date: '2026-09-07',
-    title: 'Demonstration runs live: battery-loop, car, laptop',
-    body:
-      'The reference core’s demo binary replays three product lifecycles with byte-identical, generated traces — Tier-A packing against the QR budget included.',
-    href: '/implementation/demos/',
-  },
-  {
-    date: '2026-09-01',
-    title: 'Six contribution papers drafted for ISO/IEC JTC 5 and partner bodies',
-    body:
-      'Position paper, registry requirements, lifecycle and events, implementation report, trust annex input, and the terminology announcement — PDFs available.',
+      'The whitepaper on an international framework for the Digital Product Passport and the accompanying PWI vocabulary draft are filed as inputs to JTC 5.',
     href: '/papers/',
   },
   {
-    date: '2026-08-24',
-    title: 'Terminology dataset reaches 146 verified concepts',
+    date: '2026-09',
+    title: 'Verifier CLI and ISO 19135 registry service published',
     body:
-      'The multilingual Glossarist edition of the DPP vocabulary — 141 harvested definitions from the EN series, CWAs, and IDTA — now covers 146 concepts.',
-    href: '/terminology/',
+      'The passport verifier CLI and the registry service implementing the ISO 19135 register item lifecycle are published under github.com/unidpp.',
+    href: 'https://github.com/unidpp',
   },
 ];

@@ -1,21 +1,49 @@
 ---
-// Sticky header: section nav, search, dark-mode toggle, GitHub link.
-// On small screens the section nav collapses into a horizontal scroller.
+// Sticky header: section nav grouped by reading depth, search,
+// dark-mode toggle, GitHub link. On small screens the nav scrolls
+// horizontally with tier hairlines as separators.
 const path = Astro.url.pathname.replace(/index\.html$/, '');
 const isActive = (prefix: string) =>
   prefix === '/' ? path === '/' : path === prefix || path.startsWith(prefix + '/');
 
-const nav = [
-  { label: 'Learn', href: '/learn/' },
-  { label: 'Why', href: '/why/' },
-  { label: 'Framework', href: '/framework/' },
-  { label: 'Specs', href: '/specs/' },
-  { label: 'Implementation', href: '/implementation/' },
-  { label: 'Papers', href: '/papers/' },
-  { label: 'Terminology', href: '/terminology/' },
-  { label: 'Compare', href: '/compare/' },
-  { label: 'Community', href: '/community/' },
-  { label: 'About', href: '/about/' },
+// Five tiers ordered by depth — the same newcomer-first ladder the
+// homepage map renders, kept in sync with src/lib/sections and Footer.
+const tiers = [
+  {
+    label: 'Understand',
+    items: [
+      { label: 'Learn', href: '/learn/' },
+      { label: 'Why', href: '/why/' },
+    ],
+  },
+  {
+    label: 'Framework',
+    items: [
+      { label: 'How it works', href: '/framework/' },
+      { label: 'Specification', href: '/specs/' },
+    ],
+  },
+  {
+    label: 'Build',
+    items: [
+      { label: 'Implementation', href: '/implementation/' },
+      { label: 'Compare', href: '/compare/' },
+    ],
+  },
+  {
+    label: 'Reference',
+    items: [
+      { label: 'Terminology', href: '/terminology/' },
+      { label: 'Papers', href: '/papers/' },
+    ],
+  },
+  {
+    label: 'Participate',
+    items: [
+      { label: 'Community', href: '/community/' },
+      { label: 'About', href: '/about/' },
+    ],
+  },
 ];
 ---
 
@@ -24,12 +52,19 @@ const nav = [
     <a class="wordmark" href="/" aria-label="UniDPP home">
       <span class="wm-a">uni</span><span class="wm-b">DPP</span>
     </a>
-    <nav class="secnav" aria-label="Sections">
+    <nav class="secnav" aria-label="Site sections by depth">
       {
-        nav.map((item) => (
-          <a class:list={['sec', { current: isActive(item.href) }]} href={item.href}>
-            {item.label}
-          </a>
+        tiers.map((tier, ti) => (
+          <span class:list={['tier', { first: ti === 0 }]}>
+            <span class="tier-name" aria-hidden="true">{tier.label}</span>
+            {
+              tier.items.map((item) => (
+                <a class:list={['sec', { current: isActive(item.href) }]} href={item.href}>
+                  {item.label}
+                </a>
+              ))
+            }
+          </span>
         ))
       }
     </nav>
@@ -92,7 +127,7 @@ const nav = [
     min-height: var(--header-h);
     display: flex;
     align-items: center;
-    gap: 1.25rem;
+    gap: 1rem;
     padding: 0 1.15rem;
   }
   @media (min-width: 640px) {
@@ -103,7 +138,7 @@ const nav = [
 
   .secnav {
     display: flex;
-    gap: 0.1rem;
+    gap: 0.05rem;
     align-items: center;
     overflow-x: auto;
     scrollbar-width: none;
@@ -115,6 +150,36 @@ const nav = [
   .secnav::-webkit-scrollbar {
     display: none;
   }
+
+  /* Tier grouping: hairline pillars separate depth bands. The tier
+     name is a mono micro-eyebrow visible at wider viewports and hidden
+     on narrow ones (where the nav reduces to a horizontal scroller). */
+  .tier {
+    display: inline-flex;
+    align-items: center;
+    flex: 0 0 auto;
+  }
+  .tier + .tier {
+    border-left: 1px solid var(--border);
+    margin-left: 0.4rem;
+    padding-left: 0.55rem;
+  }
+  .tier-name {
+    display: none;
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-3);
+    margin-right: 0.15rem;
+  }
+  @media (min-width: 1080px) {
+    .tier-name {
+      display: inline;
+    }
+  }
+
   .sec {
     flex: 0 0 auto;
     font-size: 0.82rem;

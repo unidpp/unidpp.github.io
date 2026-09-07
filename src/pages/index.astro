@@ -6,23 +6,38 @@ import { news } from '../data/news';
 ---
 
 <BaseLayout title="UniDPP">
-  <h1>An international framework for the Digital Product Passport</h1>
-  <p class="lede">
-    UniDPP treats every regulatory regime — the European Union's EN&nbsp;18216–18246 series
-    among them — as one profile on a neutral international core: one product identity, one
-    append-only record, many jurisdiction, sector, and characteristic lenses, with trust that
-    crosses borders without requiring anyone to adopt anyone else's rules.
-  </p>
-
-  <div class="hero-actions">
-    <a class="btn btn-primary" href="/learn/">Start with the basics</a>
-    <a class="btn btn-ghost" href="/specs/">Read the specification</a>
+  <div class="hero">
+    <div class="hero-copy">
+      <p class="hero-eyebrow mono">An international framework</p>
+      <h1>One product passport, every jurisdiction's reading on top</h1>
+      <p class="lede">
+        UniDPP treats every regulatory regime — the European Union's EN&nbsp;18216–18246 series
+        among them — as one profile on a neutral international core: one product identity, one
+        append-only record, many jurisdiction, sector, and characteristic lenses, with trust that
+        crosses borders without requiring anyone to adopt anyone else's rules.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="/learn/">Start with the basics</a>
+        <a class="btn btn-ghost" href="/specs/">Read the specification</a>
+      </div>
+      <p class="hero-note meta">
+        For an executive summary, the proposal draft sits at <code>/papers/</code>; the open work
+        is on <a href="https://github.com/unidpp">github.com/unidpp</a>.
+      </p>
+    </div>
+    <div class="hero-motif">
+      <HeroSpread />
+    </div>
   </div>
 
-  <HeroSpread />
   <MrzStrip />
 
-  <section class="stats-block" aria-label="The initiative at a glance">
+  <section class="plate" aria-labelledby="initiative-h">
+    <h2 id="initiative-h">The initiative at a glance</h2>
+    <p>
+      Six numbers a new reader needs, and nothing else — the count of work in progress; the count
+      of stewards. One number is replaced as it stabilizes.
+    </p>
     <div class="stats">
       <div class="stat">
         <span class="stat-num">5</span>
@@ -37,7 +52,7 @@ import { news } from '../data/news';
         <span class="stat-lbl">open repositories</span>
       </div>
       <div class="stat">
-        <span class="stat-num">146</span>
+        <span class="stat-num">145</span>
         <span class="stat-lbl">verified concepts</span>
       </div>
       <div class="stat">
@@ -49,27 +64,7 @@ import { news } from '../data/news';
         <span class="stat-lbl">steward bodies</span>
       </div>
     </div>
-  </section>
-
-  <section class="plate" aria-labelledby="initiative-h">
-    <h2 id="initiative-h">The initiative</h2>
-    <p>
-      UniDPP is an open, multi-body initiative — not a product and not a single
-      organization's platform. The framework is specified in five parts, implemented as a
-      fully open reference stack, and carried into international standardization through
-      ISO/IEC JTC&nbsp;5 and partner bodies via liaison channels; the project does not
-      create a rival standards track. Stewardship is shared across the bodies that already
-      operate each layer — CalConnect, ISO/TC&nbsp;154, OIML, ELF, Enosema, and the UnitsML
-      coalition.
-    </p>
-    <p>
-      Everything is published under permissive licences — Apache-2.0 / MIT per software
-      repository, CC-BY-4.0 for the specification — with
-      <a href="/implementation/conformance/">conformance suites you can run yourself</a>
-      and <a href="/implementation/demos/">demonstrations whose traces are generated, not
-      transcribed</a>.
-    </p>
-    <div class="cols initiative-cols">
+    <div class="cols initiative-cols" style="margin-top:1.6rem">
       <a class="card linkcard" href="/about/">
         <h3>About the initiative</h3>
         <p>Mission, multi-body stewardship, governance, licensing, and how to participate.</p>
@@ -85,48 +80,96 @@ import { news } from '../data/news';
     </div>
   </section>
 
-  <section class="plate" aria-labelledby="path-heading">
-    <h2 id="path-heading">Read by depth</h2>
-    <p>
-      The explanatory material is arranged as one sequence, from plain language to the full
-      reference. Each level assumes the one before it.
+  <section class="plate" aria-labelledby="map-h">
+    <h2 id="map-h">Read by depth</h2>
+    <p class="lede">
+      Five tiers, from plain language to participation. Each tier assumes the one before it. The
+      newcomer path is the first tier; everything past it deepens.
     </p>
-    <ol class="path">
-      <li>
-        <a href="/learn/">
-          <span class="pnum">01</span>
-          <span class="plbl">
-            <strong>Understand</strong>
-            <span>What a Digital Product Passport is, told with a washing machine.</span>
-          </span>
-        </a>
+    <ol class="tiers">
+      <li class="tier tier-01">
+        <div class="tier-head">
+          <span class="tier-num">01</span>
+          <span class="tier-name">Understand</span>
+        </div>
+        <div class="tier-items">
+          <a class="tier-link" href="/learn/">
+            <h3>What a passport is</h3>
+            <p>The washing-machine story, one diagram, and who reads a passport.</p>
+          </a>
+          <a class="tier-link" href="/why/">
+            <h3>Why an international core</h3>
+            <p>One laptop, five jurisdictions — one record instead of five.</p>
+          </a>
+        </div>
       </li>
-      <li>
-        <a href="/why/">
-          <span class="pnum">02</span>
-          <span class="plbl">
-            <strong>Why international</strong>
-            <span>One laptop, five jurisdictions, one record instead of five.</span>
-          </span>
-        </a>
+
+      <li class="tier tier-02">
+        <div class="tier-head">
+          <span class="tier-num">02</span>
+          <span class="tier-name">The framework</span>
+        </div>
+        <div class="tier-items">
+          <a class="tier-link" href="/framework/">
+            <h3>How it works</h3>
+            <p>Six layers, fourteen invariants, the lens model, trust.</p>
+          </a>
+          <a class="tier-link" href="/specs/">
+            <h3>The specification</h3>
+            <p>The framework in normative form: five parts, working draft.</p>
+          </a>
+        </div>
       </li>
-      <li>
-        <a href="/framework/">
-          <span class="pnum">03</span>
-          <span class="plbl">
-            <strong>How it works</strong>
-            <span>The six layers, the fourteen invariants, capability classes, trust.</span>
-          </span>
-        </a>
+
+      <li class="tier tier-03">
+        <div class="tier-head">
+          <span class="tier-num">03</span>
+          <span class="tier-name">Build</span>
+        </div>
+        <div class="tier-items">
+          <a class="tier-link" href="/implementation/">
+            <h3>Implementation</h3>
+            <p>The open reference stack, demos, conformance register.</p>
+          </a>
+          <a class="tier-link" href="/compare/">
+            <h3>Compared</h3>
+            <p>freeDPP, OpenDPP, and UniDPP — capability table, sourced.</p>
+          </a>
+        </div>
       </li>
-      <li>
-        <a href="/specs/">
-          <span class="pnum">04</span>
-          <span class="plbl">
-            <strong>The specification</strong>
-            <span>The framework in normative form: five parts, working draft.</span>
-          </span>
-        </a>
+
+      <li class="tier tier-04">
+        <div class="tier-head">
+          <span class="tier-num">04</span>
+          <span class="tier-name">Reference</span>
+        </div>
+        <div class="tier-items">
+          <a class="tier-link" href="/terminology/">
+            <h3>Terminology</h3>
+            <p>The DPP vocabulary — 145 verified concepts, searchable.</p>
+          </a>
+          <a class="tier-link" href="/papers/">
+            <h3>Contribution papers</h3>
+            <p>Six papers for JTC 5 and partner bodies, with PDFs.</p>
+          </a>
+        </div>
+      </li>
+
+      <li class="tier tier-05">
+        <div class="tier-head">
+          <span class="tier-num">05</span>
+          <span class="tier-name">Participate</span>
+        </div>
+        <div class="tier-items">
+          <a class="tier-link" href="/community/">
+            <h3>Community</h3>
+            <p>Contributing, IPR, adopting, governance.</p>
+          </a>
+          <a class="tier-link" href="/about/">
+            <h3>About</h3>
+            <p>Mission, multi-body stewardship, licensing, contact.</p>
+          </a>
+        </div>
       </li>
     </ol>
   </section>
@@ -138,7 +181,7 @@ import { news } from '../data/news';
         news.map((item) => (
           <li>
             <a href={item.href}>
-              <span class="news-date">{item.date}</span>
+              <span class="news-date mono">{item.date}</span>
               <span class="news-body">
                 <strong>{item.title}</strong>
                 <span>{item.body}</span>
@@ -148,81 +191,152 @@ import { news } from '../data/news';
         ))
       }
     </ol>
-    <p class="meta">
-      Older items are preserved in the
-      <a href="https://github.com/unidpp/unidpp.github.io/commits/main">site history</a>.
-    </p>
   </section>
 </BaseLayout>
 
 <style>
+  /* ── Hero: two-column at ≥900px, single below ──────────────── */
+  .hero {
+    display: grid;
+    gap: 1.4rem;
+    align-items: start;
+  }
+  @media (min-width: 900px) {
+    .hero {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 28rem);
+      gap: 2.4rem 3.2rem;
+      padding-top: 0.8rem;
+    }
+    .hero-copy h1 {
+      margin-top: 0.2rem;
+    }
+  }
+  .hero-eyebrow {
+    display: inline-block;
+    margin: 0 0 0.55rem;
+    font-size: 0.66rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+    background: var(--accent-tint);
+    border-radius: 99px;
+    padding: 0.22rem 0.7rem;
+  }
   .hero-actions {
     display: flex;
     gap: 0.7rem;
     flex-wrap: wrap;
-    margin: 0 0 2.6rem;
+    margin: 0 0 1.2rem;
   }
-  .stats-block {
-    margin-top: 3rem;
+  .hero-note {
+    font-size: 0.84rem;
+    line-height: 1.55;
+    color: var(--text-2);
+    max-width: 56ch;
   }
-  .initiative-cols {
-    margin-top: 1.4rem;
+  .hero-motif {
+    min-width: 0; /* allow flex/grid to shrink */
   }
-  .linkcard {
-    text-decoration: none;
-    display: block;
+
+  .initiative-cols .linkcard {
     color: inherit;
+    text-decoration: none;
   }
-  .linkcard:hover {
+  .initiative-cols .linkcard:hover {
     background: var(--accent-tint);
   }
-  .linkcard:hover h3 {
+  .initiative-cols .linkcard:hover h3 {
     color: var(--accent);
   }
 
-  .path {
+  /* ── Reading map: five tiered bands ───────────────────────── */
+  .tiers {
     list-style: none;
-    margin: 1.4rem 0 0;
+    margin: 1.6rem 0 0;
     padding: 0;
+    max-width: none;
     display: grid;
-    gap: 1px;
-    background: var(--border);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    overflow: hidden;
+    gap: 0;
+  }
+  .tier {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+    padding: 1.4rem 0 1.6rem;
+    border-top: 1px solid var(--border);
     max-width: none;
   }
-  .path a {
+  .tier:last-child {
+    border-bottom: 1px solid var(--border);
+  }
+  @media (min-width: 820px) {
+    .tier {
+      grid-template-columns: 12rem minmax(0, 1fr);
+      gap: 2.4rem;
+      align-items: start;
+    }
+  }
+  .tier-head {
+    position: relative;
+    padding-top: 0.2rem;
+  }
+  .tier-num {
+    font-family: var(--font-mono);
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--accent);
+    line-height: 1;
+    display: block;
+  }
+  .tier-name {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-2);
+    margin-top: 0.5rem;
+    display: block;
+  }
+  .tier-items {
     display: grid;
-    grid-template-columns: 3.2rem minmax(0, 1fr);
-    gap: 0.9rem;
-    align-items: baseline;
-    padding: 1rem 1.2rem;
+    gap: 0.8rem;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  }
+  .tier-link {
+    display: block;
+    padding: 0.85rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
     background: var(--bg-raised);
     text-decoration: none;
-    color: var(--text);
+    color: inherit;
+    transition: background-color 0.15s ease, border-color 0.15s ease;
+    min-height: 4.5rem;
   }
-  .path a:hover {
+  .tier-link:hover {
+    border-color: color-mix(in srgb, var(--accent) 40%, transparent);
     background: var(--accent-tint);
   }
-  .pnum {
-    font-family: var(--font-mono);
-    font-size: 0.85rem;
+  .tier-link:hover h3 {
     color: var(--accent);
   }
-  .plbl {
-    display: flex;
-    flex-direction: column;
-    gap: 0.15rem;
-  }
-  .plbl strong {
+  .tier-link h3 {
+    margin: 0 0 0.25rem;
+    font-size: 1rem;
     font-weight: 600;
   }
-  .plbl span {
+  .tier-link p {
+    margin: 0;
     color: var(--text-2);
-    font-size: 0.88rem;
+    font-size: 0.86rem;
+    line-height: 1.5;
   }
 
+  /* ── News ─────────────────────────────────────────────────── */
   .newslist {
     list-style: none;
     margin: 1.4rem 0 0;
@@ -244,7 +358,6 @@ import { news } from '../data/news';
     color: var(--accent);
   }
   .news-date {
-    font-family: var(--font-mono);
     font-size: 0.78rem;
     color: var(--text-2);
     padding-top: 0.15rem;
@@ -261,6 +374,7 @@ import { news } from '../data/news';
   .news-body > span {
     color: var(--text-2);
     font-size: 0.88rem;
+    line-height: 1.55;
     max-width: 68ch;
   }
   @media (max-width: 560px) {
