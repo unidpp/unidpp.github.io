@@ -15,6 +15,20 @@ curl -s 'https://registry.unidpp.org/applicability?product_type=momiji:e8&at=202
   | jq '[.applicability[].binding.profile_item]'
 # -> ["urn:unidpp:profile:eu-machinery-battery", "urn:unidpp:profile:jp-road-traffic"]`;
 
+const qClock = `curl -s -G 'https://registry.unidpp.org/applicability' \
+  --data-urlencode 'product_type=type:super-cub:1962' \
+  --data-urlencode 'at=2002-05-03T00:00:00Z' \
+  --data-urlencode 'subject_facts={"manufactured_at":"1962-05-04T00:00:00Z"}' \
+  | jq '.applicability | length'
+# -> 0   (one day short of forty years: the clock has not fired)
+
+curl -s -G 'https://registry.unidpp.org/applicability' \
+  --data-urlencode 'product_type=type:super-cub:1962' \
+  --data-urlencode 'at=2002-05-04T00:00:00Z' \
+  --data-urlencode 'subject_facts={"manufactured_at":"1962-05-04T00:00:00Z"}' \
+  | jq '[.applicability[].binding.profile_item]'
+# -> ["urn:unidpp:profile:historic-vehicle"]   (the threshold day)`;
+
 const q3 = `curl -s -G 'http://127.0.0.1:8394/view' \\
   --data-urlencode 'passport=urn:unidpp:passport:pilot-e8-j000842' \\
   --data-urlencode 'profile=urn:unidpp:profile:pilot-jp-lens' \\
@@ -117,6 +131,28 @@ const runShell = `./stack.sh start     # build if needed, start 8390-8396, wait 
     />
   </section>
 
+
+  <section id="jp-node" class="plate" aria-labelledby="jp-node-h">
+    <h2 id="jp-node-h">The JP national peer node</h2>
+    <p>
+      <code>registry-jp.unidpp.org</code> runs the same registry binary with its
+      own journal and its own register, seeded with the JP jurisdiction's own
+      data — the road-traffic profile and its binding. National registries are
+      peers, not children: the global registry keeps what is governance-shaped
+      (scheme namespaces, cross-register mappings); jurisdiction-shaped data
+      lives with the jurisdiction — the ePassport precedent, at DPP scale.
+    </p>
+    <DocTerminal
+      label="the JP node answers with its own journal's record"
+      meta="GET /applicability · registry-jp.unidpp.org"
+      ariaLabel="Curl command against the JP national peer node"
+      text={`curl -s 'https://registry-jp.unidpp.org/applicability?product_type=momiji:e8&at=2028-06-01T00:00:00Z' \
+  | jq '[.applicability[].binding.profile_item]'
+# -> ["urn:unidpp:profile:jp-road-traffic"]`}
+      caption="One process per jurisdiction, one journal per process: the federation is a protocol between equals, not a hierarchy."
+    />
+  </section>
+
   <section id="queries" class="plate" aria-labelledby="queries-h">
     <h2 id="queries-h">The five canonical queries</h2>
     <p>
@@ -140,6 +176,14 @@ const runShell = `./stack.sh start     # build if needed, start 8390-8396, wait 
       ariaLabel="Curl command asking which profiles bind the product type at two instants"
       text={q2}
       caption="Adding a market is a dated binding, not a second passport: the same product type acquires the EU duty between the two instants, and every intermediate state is reconstructable."
+    />
+
+    <DocTerminal
+      label="query 02b — the clock predicate"
+      meta="GET /applicability · subject_facts · registry.unidpp.org"
+      ariaLabel="Curl command showing a clock-fired binding crossing its threshold"
+      text={qClock}
+      caption="Some duties arrive with age, not with paperwork: a vehicle manufactured 1962-05-04 carries the historic-vehicle duty from exactly 2002-05-04 (P40Y). The registry evaluates the trigger against the subject's own facts — the day before, nothing binds; the day of, the profile attaches."
     />
 
     <DocTerminal
