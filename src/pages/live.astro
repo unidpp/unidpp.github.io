@@ -132,6 +132,27 @@ const runShell = `./stack.sh start     # build if needed, start 8390-8396, wait 
   </section>
 
 
+  <section id="console" class="plate" aria-labelledby="console-h">
+    <h2 id="console-h">The admin console</h2>
+    <p>
+      <a href="https://console.unidpp.org"><code>console.unidpp.org</code></a> is the
+      operator's pane over the deployment: a dashboard of per-service health, the
+      <a href="https://github.com/unidpp/unidpp-config">operator manifest</a> as an
+      editable and validated configuration (secrets stay environment references —
+      never values), the registry's items, the issuer's passports with inline pack
+      verification, and the branding preview. The console is a surface, not a second
+      brain: every capability is a call to a service's own API.
+    </p>
+    <p>
+      A deployment is data. The same binary, configured by a different manifest, is a
+      different organization's service — the whitelabel and sovereign tenants
+      (<code>tenants/acme</code>: EU residency, ECDSA-P-256; <code>tenants/acme-cn</code>:
+      CN residency, SM2-only packs, no egress) differ from this reference deployment
+      by manifest alone, and the sovereign profile refuses external calls unless the
+      reason is on record.
+    </p>
+  </section>
+
   <section id="jp-node" class="plate" aria-labelledby="jp-node-h">
     <h2 id="jp-node-h">The JP national peer node</h2>
     <p>
