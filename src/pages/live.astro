@@ -151,6 +151,19 @@ const runShell = `./stack.sh start     # build if needed, start 8390-8396, wait 
       by manifest alone, and the sovereign profile refuses external calls unless the
       reason is on record.
     </p>
+    <p>
+      Durability is a drilled routine, not a promise: a nightly backup
+      schedule, retention reporting, and a restore rehearsal —
+      <code>unidpp-ops drill</code> restores into an isolated drill tenant and
+      proves every member byte-identical and the restored manifest valid.
+      <code>unidpp-ops rehearse-upgrade</code> rebuilds the binaries, restarts
+      the stack, and proves the journals append-only (byte-prefix compatible).
+      A sovereign customer takes the whole deployment away as one verified
+      artifact: <code>unidpp-ops bundle</code> — manifest, journals, and
+      exactly the declared services' binaries, secrets as environment
+      references. The operator's manual:
+      <a href="https://docs.unidpp.org/operations/deploy/">docs.unidpp.org</a>.
+    </p>
   </section>
 
   <section id="jp-node" class="plate" aria-labelledby="jp-node-h">
