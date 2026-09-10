@@ -62,8 +62,8 @@ const runShell = `./stack.sh start     # build if needed, start 8390-8396, wait 
   <h1>The live pilot</h1>
   <p class="lede">
     The reference implementation runs as one stack on loopback ports 8390–8396:
-    seven services, each an independent repository, wired together exactly the
-    way the architecture prescribes — the issuer forwards registrations to the
+    seven services, each an independent repository, connected exactly as the
+    architecture prescribes — the issuer forwards registrations to the
     registry, the projector reads its lenses from the registry, the gateway
     renders the issuer's passports in foreign protocol shapes, and the archive
     anchors its notarized snapshots into the transparency log. The stack
@@ -140,8 +140,8 @@ const runShell = `./stack.sh start     # build if needed, start 8390-8396, wait 
       <a href="https://github.com/unidpp/unidpp-config">operator manifest</a> as an
       editable and validated configuration (secrets stay environment references —
       never values), the registry's items, the issuer's passports with inline pack
-      verification, and the branding preview. The console is a surface, not a second
-      brain: every capability is a call to a service's own API.
+      verification, and the branding preview. The console is a surface and holds no
+      domain logic of its own: every capability is a call to a service's API.
     </p>
     <p>
       A deployment is data. The same binary, configured by a different manifest, is a
@@ -152,8 +152,8 @@ const runShell = `./stack.sh start     # build if needed, start 8390-8396, wait 
       reason is on record.
     </p>
     <p>
-      Durability is a drilled routine, not a promise: a nightly backup
-      schedule, retention reporting, and a restore rehearsal —
+      Durability is maintained as a rehearsed routine rather than as a promise:
+      a nightly backup schedule, retention reporting and a restore rehearsal —
       <code>unidpp-ops drill</code> restores into an isolated drill tenant and
       proves every member byte-identical and the restored manifest valid.
       <code>unidpp-ops rehearse-upgrade</code> rebuilds the binaries, restarts
@@ -170,11 +170,12 @@ const runShell = `./stack.sh start     # build if needed, start 8390-8396, wait 
     <h2 id="jp-node-h">The JP national peer node</h2>
     <p>
       <code>registry-jp.unidpp.org</code> runs the same registry binary with its
-      own journal and its own register, seeded with the JP jurisdiction's own
-      data — the road-traffic profile and its binding. National registries are
-      peers, not children: the global registry keeps what is governance-shaped
-      (scheme namespaces, cross-register mappings); jurisdiction-shaped data
-      lives with the jurisdiction — the ePassport precedent, at DPP scale.
+      own journal and its own register, seeded with the data of the Japanese
+      jurisdiction, namely the road-traffic profile and its binding. National
+      registries are peers rather than subordinates: the global registry keeps
+      the elements that belong to governance (scheme namespaces and
+      cross-register mappings), and jurisdictional data resides with the
+      jurisdiction — the ePassport precedent at the scale of product passports.
     </p>
     <DocTerminal
       label="the JP node answers with its own journal's record"
@@ -248,10 +249,10 @@ const runShell = `./stack.sh start     # build if needed, start 8390-8396, wait 
   <section id="as-of" class="plate" aria-labelledby="asof-h">
     <h2 id="asof-h">One query, two answers: jurisdiction by date</h2>
     <p>
-      The pilot's headline query binds the EU and JP jurisdiction profiles to
-      one product type with different effective dates. The registry answers
-      the question a customs officer actually asks — <em>what applied to this
-      type on that date?</em> — from dated bindings alone:
+      The pilot's principal query binds the EU and JP jurisdiction profiles to
+      one product type with different effective dates. The registry answers,
+      from the dated bindings alone, the question that a customs officer asks
+      in practice: <em>what applied to this type on that date?</em>
     </p>
     <DataTable
       columns={['Instant', 'Profiles in force for <code>momiji:e8</code>', 'What changed']}
@@ -296,7 +297,7 @@ const runShell = `./stack.sh start     # build if needed, start 8390-8396, wait 
   </section>
 
   <section id="run" class="plate" aria-labelledby="run-h">
-    <h2 id="run-h">Run it yourself</h2>
+    <h2 id="run-h">Running the pilot</h2>
     <p>
       The pilot launcher lives in the
       <a href="https://github.com/unidpp">github.com/unidpp</a> workspace; the

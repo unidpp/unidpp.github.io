@@ -28,17 +28,20 @@ const beats: Beat[] = [
     num: 'B1',
     title: 'Assembly in Kyoto',
     kicker: 'Issuance where duty attaches · Kyoto, 2027-04',
-    body: `Momiji Mobility assembles instance J-000842: a Rhine Drives (DE) drive unit, a
-      Weilian (Shenzhen) battery pack built from forty Haichuan cells, a CCC-certified
-      charger, and a JP controller. Issuance happens where the legal duty attaches
-      (invariant I7): a JP type passport — type tests, declared values, bill-of-materials
-      template — plus an instance passport referencing the type <em>and its exact type
-      version</em>, with the configuration vector. The build record lists every part at
-      the finest recorded granularity; the cells are recorded as <strong>dormant
-      identifiers</strong>, because no cell-passport regime exists yet — the absorption is
-      regime-temporal, not permanent. An EN 18223-style issuance would produce one flat
-      document; this records a typed composition graph whose leaves are already shaped
-      for the granularity ratchet.`,
+    body: `Momiji Mobility assembles instance J-000842 from a drive unit supplied by Rhine
+      Drives (Germany), a battery pack manufactured by Weilian (Shenzhen) containing
+      forty cells of Haichuan lot H-2231, a charger with CCC certification, and a
+      controller of Japanese origin. Issuance takes place where the legal duty attaches
+      (invariant I7): the system issues a type passport for Japan, carrying the type
+      tests, the declared values and the bill-of-materials template, followed by an
+      instance passport that references the type <em>and its exact type version</em>
+      together with the configuration vector. The build record lists every part at the
+      finest recorded granularity. The cells are recorded as <strong>dormant
+      identifiers</strong> because no cell-passport regime exists at this date; the
+      absorption is regime-temporal and can be superseded when a finer regime is
+      established. An issuance in the style of EN 18223 produces one flat document,
+      whereas this issuance records a typed composition graph whose leaves are prepared
+      for subsequent refinement of granularity.`,
     carried: `Carried by <code>unidpp-issuer</code> (<code>POST /passports</code>) and the core
       model · <a href="/specs/part-1-framework/">spec Part 1</a> (I1–I3, I7) ·
       <a href="/framework/#architecture">framework</a>`,
@@ -53,26 +56,29 @@ const beats: Beat[] = [
         src: '03-core-model.svg',
         alt: 'Diagram: the core model as a typed composition graph — the instance passport references its type and version, with parts as child nodes.',
         caption: `The composition graph at issuance: the E8 references its type and exact
-          version; the cells sit at the leaves as dormant identifiers.`,
+          version; the cells are recorded at the leaves as dormant identifiers.`,
       },
     ],
   },
   {
     id: 'b2',
     num: 'B2',
-    title: 'Parts carry their own duties',
+    title: 'Installed components retain their own regimes',
     kicker: 'Mixed-profile children · installation semantics · certificate joins',
-    body: `The drive unit arrived with an EU declaration of conformity, the charger with a
-      CCC certificate, the pack with CN consumer-layer presence. Installation edges (R3)
-      carry real binding semantics — controller-to-pack CAN <strong>pairing</strong>,
-      torque-mount <strong>alteration</strong>, and a recoverability spectrum from
-      <em>restorable</em> (the swappable battery) to <em>destructive</em> (the welded
-      rack). Certificates join in the subregister (passport ↔ certificate ↔ facility),
-      and GB↔IEC equivalence is a <strong>registered transform with an attester</strong>,
-      not an assumption. Parent and child know each other bidirectionally, with
-      visibility classes on every edge (B8). A recall can route pack-to-bike, and a
-      foreign verifier can read a CCC certificate without adopting CN rules; the EN
-      series has no composition semantics at all.`,
+    body: `Each installed component arrives under its own regime: the drive unit with an EU
+      declaration of conformity, the charger with a CCC certificate, and the pack with
+      its presence in the Chinese consumer layer. Installation edges (R3) carry explicit
+      binding semantics, including the controller-to-pack CAN <strong>pairing</strong>,
+      the torque-mount <strong>alteration</strong>, and a recoverability classification
+      that ranges from <em>restorable</em> (the exchangeable battery) to
+      <em>destructive</em> (the welded rack). Certificates are joined in the subregister
+      (passport, certificate, facility), and the equivalence of GB and IEC requirements
+      is a <strong>registered transform with a named attester</strong> rather than an
+      assumption. Parent and child reference each other bidirectionally, and every edge
+      carries a visibility class (B8). A recall can therefore route from the pack to the
+      vehicle, and a foreign verifier can read a CCC certificate without adopting the
+      Chinese rules that stand behind it. The EN series specifies no composition
+      semantics of this kind.`,
     carried: `Carried by the core model (<code>PassportLink</code>), the registry subregisters,
       <code>unidpp-py</code> adapters · <a href="/framework/#architecture">framework</a> ·
       <a href="/specs/part-2-profiles/">spec Part 2</a> (mount S3)`,
@@ -80,14 +86,14 @@ const beats: Beat[] = [
       {
         src: '03-core-model.svg',
         alt: 'Diagram: the core model — installation edges with method, slot, pairing, alteration, recoverability and visibility carried explicitly.',
-        caption: `Installation edges carry method, recoverability and visibility explicitly —
-          not merely "contains".`,
+        caption: `Installation edges carry method, recoverability and visibility explicitly,
+          rather than a bare containment relation.`,
       },
       {
         src: '11-registry-ferin.svg',
         alt: 'Diagram: the FERIN registry with subregisters for profiles, certificates, applicability events and recall predicates.',
         caption: `Certificate joins live in registry subregisters; GB↔IEC equivalence is a
-          registered transform with an attester.`,
+          registered transform with a named attester.`,
       },
     ],
   },
@@ -96,16 +102,18 @@ const beats: Beat[] = [
     num: 'B3',
     title: 'Placement in the EU',
     kicker: 'Profile growth by dated binding · Düsseldorf, 2028-02',
-    body: `A Düsseldorf importer places the E8 line on the EU market. Machinery and EPAC
-      profiles apply, RoHS applies — and under the EU Battery Regulation the pack now
-      needs its own <strong>EU battery passport</strong>, with the importer stepping into
-      the battery-producer role. In the registry this is an applicability event with an
-      effective window that binds the EU lens set onto the <em>same identity</em>: no
-      re-minting (I1), no parallel-universe passport; the JP lenses stay mounted, and
-      manifest history remains reconstructable as of any date — "was it compliant when
-      sold in 2028?" is a query, not an archaeology project. Where an EU-envelope
-      implementation must re-issue and a regime-poor world must duplicate, jurisdiction
-      growth here is a single registry event.`,
+    body: `An importer in Düsseldorf places the E8 product line on the EU market. The
+      machinery and EPAC profiles apply, as does the RoHS profile; under the EU Battery
+      Regulation the pack now requires its own <strong>EU battery passport</strong>, and
+      the importer assumes the battery-producer role. In the register this is an
+      applicability event with an effective window that binds the EU lens set onto the
+      <em>same identity</em>: the identity is not re-minted (I1), no second, parallel
+      passport is created, and the lenses for Japan remain mounted. The manifest history
+      remains reconstructable as of any date, so the question "was this product
+      compliant when it was sold in 2028" is answered by a query against the register.
+      Where an implementation that treats the EU format as the envelope must re-issue
+      the document, and where a regime without a registry must duplicate it, the
+      extension of jurisdiction is here a single register event.`,
     carried: `Carried by the registry (applicability bindings) and the core-model manifest ·
       <a href="/framework/#axes">framework · profile axes</a> · paper 1`,
     figures: [
@@ -122,18 +130,21 @@ const beats: Beat[] = [
     num: 'B4',
     title: 'The border moment',
     kicker: 'Offline, degraded origins · customs terminal',
-    body: `A customs terminal, an ordinary offline window: the Shenzhen host is unreachable
-      and the EU registry is mid-outage. The officer scans the frame QR. The <strong>Tier-A
-      carrier minimum</strong> — identity, status, critical flags, validity, and
-      multi-suite compressed signatures (the JP suite, an EU eIDAS-acceptable ECDSA
-      signature, and a PQ ML-DSA co-signature) — verifies against cached anchors; the
-      resolver's cached linkset points at the national mirror; a transparency-log
-      <strong>inclusion proof</strong> from the mirror's log copy substitutes for the
-      unreachable origins. The verdict is <span class="ok">PASS</span>, as-of stamped,
-      with a coverage report that states exactly what was not reachable, and three
-      readings named: cryptographic, evidentiary, current-state. An EN-only
-      implementation returns either a red error page or a silently trusting green page;
-      here degradation is explicit (I9, I13) — the coverage report is the product.`,
+    body: `The border moment takes place at a customs terminal during an ordinary offline
+      window: the host in Shenzhen is unreachable and the EU register is recovering from
+      an outage. The officer scans the QR code on the frame. The <strong>Tier-A carrier
+      minimum</strong> — identity, status, critical flags, validity and compressed
+      multi-suite signatures (the Japanese suite, an ECDSA signature acceptable under
+      eIDAS, and a post-quantum ML-DSA co-signature) — verifies against cached anchors;
+      the resolver's cached linkset directs the request to the national mirror; and a
+      transparency-log <strong>inclusion proof</strong> obtained from the mirror's copy
+      of the log substitutes for the unreachable origins. The verdict is
+      <span class="ok">PASS</span>, stamped with an as-of date, accompanied by a
+      coverage report that states exactly which sources were not reachable, and naming
+      the three readings: cryptographic, evidentiary and current-state. An
+      implementation confined to a single document either returns an error page or
+      presents a page that trusts silently; in this system degradation is explicit
+      (I9, I13), and the coverage report constitutes the primary output.`,
     carried: `Carried by <code>unidpp-core</code> (tier-a and verdict crates), the CLI
       (<code>unidpp verify</code>), resolver federation ·
       <a href="/specs/part-4-tiers/">spec Part 4</a> · paper 4`,
@@ -141,8 +152,8 @@ const beats: Beat[] = [
       {
         src: '06-core-tier-a.svg',
         alt: 'Diagram: the Tier-A carrier minimum as the MRZ of products — a fixed framed subset with multi-suite signatures, offline-verifiable with cached anchors.',
-        caption: `The carrier minimum — the MRZ analog: identity, status, flags, validity,
-          compressed multi-suite signatures.`,
+        caption: `The carrier minimum, analogous to the machine-readable zone of an ePassport:
+          identity, status, flags, validity and compressed multi-suite signatures.`,
       },
       {
         src: '07-core-verdict.svg',
@@ -157,19 +168,22 @@ const beats: Beat[] = [
     num: 'B5',
     title: 'Life in service',
     kicker: 'Edge state, capability classes · S0/S2/S3 on one bike',
-    body: `The base trim's battery-management system logs cycles and dumps the log at each
-      dealer visit (S2); the premium trim's Connect module reports continuously (S3);
-      frame and rack stay silent (S0) — one product line, all capability classes. S2
-      devices <strong>commit now, reveal later</strong>: the device signs its log-prefix
-      hash under a device-bound key and reveals what it chooses, and any future reveal
-      must be inclusion-consistent. S3 adds <code>fresh_within</code>, making staleness a
-      displayable verdict rather than an undetectable condition. State of health is a
-      derived verdict whose model is a registered transform — the BMS vendor's or a
-      standardized one — with GUM uncertainty and UnitsML-registered units; charging
-      telemetry is personal data, so those edges are blind, with a GDPR/PIPL basis per
-      profile. The service-center era delivered episodic truth with unbounded,
-      undetectable staleness; here <em>who measured what, with which unit, under whose
-      model</em> is auditable.`,
+    body: `The battery-management system of the base trim records cycles and delivers its
+      log at each dealer visit (S2); the Connect module of the premium trim reports
+      continuously (S3); the frame and the rack remain silent (S0). One product line
+      therefore spans all capability classes. Devices of class S2 <strong>commit now and
+      reveal later</strong>: the device signs the hash of its log prefix under a
+      device-bound key, reveals what it chooses to reveal, and any future reveal is
+      required to be inclusion-consistent with the earlier commitments. Class S3 adds
+      the <code>fresh_within</code> contract, which makes staleness a reported verdict
+      rather than an undetectable condition. State of health is a derived verdict whose
+      model is a registered transform — that of the BMS vendor or a standardized model —
+      carrying GUM uncertainty and units registered in UnitsML. Charging telemetry is
+      personal data; the corresponding edges are blind by default and carry a legal
+      basis under the GDPR or the PIPL as declared by each profile. Under the
+      service-centre model of record-keeping, observations were episodic and staleness
+      was unbounded and undetectable; in this system the questions <em>who measured
+      what, with which unit, under whose model</em> are answerable in an audit.`,
     carried: `Carried by <code>unidpp-core</code> (event crate, edge commitments), the units
       binding, the edge SDK · <a href="/framework/#capability">framework · capability
       classes</a> · <a href="/specs/part-3-events/">spec Part 3</a> · paper 3`,
@@ -187,18 +201,20 @@ const beats: Beat[] = [
     num: 'B6',
     title: 'Firmware update and the derestriction incident',
     kicker: 'Identity-changing modification · 2029-03',
-    body: `Momiji ships an OTA range-algorithm update — a declared-characteristics change
-      with no physical change (E5 <code>software.update</code>; the firmware version
-      vector moves in the instance facts). Then a second owner installs a derestriction
-      dongle: assistance cutoff 25 → 45 km/h. Under EN 15194 the machine now legally
-      <em>is</em> an unregistered moped: the modification spawns a <strong>derived
-      type</strong> (E4b) and every mounted profile re-evaluates — the JP lens reads
-      non-conformant, the EU lens requires a type-approval regime, the insurance lens
-      reads coverage void — with regulator notification per profile. If the modification
-      is unattested, its trust marker says so: graded, never binary. A document model
-      would silently edit a field; it has no concept that software changes a legal class.
-      This is the beat demonstrated first: the state machine, the type lineage, and the
-      trust layer all react, visibly and auditably.`,
+    body: `Momiji distributes an over-the-air update to the range algorithm, a change to
+      declared characteristics without a physical change (E5 <code>software.update</code>;
+      the firmware version vector moves in the instance facts). A subsequent owner then
+      installs a derestriction device, raising the assistance cutoff from 25 km/h to
+      45 km/h. Under EN 15194 the vehicle thereby belongs to the legal class of an
+      unregistered moped: the modification gives rise to a <strong>derived type</strong>
+      (E4b) and every mounted profile is re-evaluated — the Japanese lens reads
+      non-conformant, the EU lens requires entry into a type-approval regime, and the
+      insurance lens reads the coverage as void — with notification of the regulator as
+      required by each profile. Where the modification carries no attestation, its trust
+      marker states this; trust is graded, never binary. A document model would edit a
+      field silently, because it has no concept that software can change a legal class.
+      This beat is demonstrated first in the repository: the state machine, the type
+      lineage and the trust layer react visibly and auditably.`,
     carried: `Carried by <code>unidpp-core</code> (event crate, E4/E5) and
       <code>unidpp-signatif</code> (trust markers) ·
       <a href="/specs/part-3-events/">spec Part 3</a> §E4/E5`,
@@ -222,15 +238,18 @@ const beats: Beat[] = [
     num: 'B7',
     title: 'Repair',
     kicker: 'Regulated child swap, cross-jurisdiction install · 2029-09',
-    body: `Water damage: the dealer replaces the pack with a 2029 EU-made one; the old pack
-      goes to a refurbisher. E2 is uninstall plus install — two events. The old pack's
-      installation interval <strong>closes carrying its history</strong> ("40 cycles of
-      H-2231 cells, removed for casing dent"): harvested-part provenance is value, not
-      noise. The new pack is a cross-jurisdiction install — an EU pack into a JP-profile
-      bike by a DE dealer, both profiles surviving — and the independent repairer acts
-      under EN 18239-style roles, the right-to-repair echo. The used-parts market runs on
-      exactly this provenance today, on paper service books; a document pipeline loses it
-      silently.`,
+    body: `Following water damage, the dealer replaces the pack with one manufactured in the
+      EU in 2029; the original pack passes to a refurbisher. E2 consists of an uninstall
+      followed by an install, recorded as two events. The installation interval of the
+      original pack <strong>closes while carrying its history</strong> ("40 cycles of
+      H-2231 cells, removed for a casing dent"): the provenance of a harvested part
+      constitutes commercial value in the secondary market. The installation of the new
+      pack is a cross-jurisdiction installation — an EU pack installed by a German dealer
+      into a vehicle whose Japanese profile remains mounted, with both profiles
+      surviving — and the independent repairer acts under roles in the style of
+      EN 18239, corresponding to the right to repair. The market for used parts operates
+      on precisely this provenance today, recorded in paper service books; a document
+      pipeline loses it silently.`,
     carried: `Carried by <code>unidpp-core</code> (transform crate) and the issuer events ·
       paper 2`,
     figures: [
@@ -247,16 +266,17 @@ const beats: Beat[] = [
     num: 'B8',
     title: 'Resale and auction',
     kicker: 'Custody as ceremony · theft predicate · blind edges · 2031',
-    body: `The owner consigns the E8 to an auction house; a buyer in Vienna wins. Custody
-      transfer (E1) is a <strong>signed ceremony</strong> — the counterparty
-      countersigns. The house checks the theft predicate against the flag subregister
-      (E12) and issues a condition stamp: lens-scoped, dated, signed — the auction lens
-      is not the insurance lens. A new custody edge runs to the buyer, and the buyer's
-      household is invisible to Momiji: owner-push only; proof-of-binding is not
-      knowledge-of-parent. Undisclosed dealer records surface as provenance gap markers,
-      not as holes. Five owners later the audit trail survives without a central watcher
-      — and the system was never surveillance infrastructure (I12, enumeration
-      resistance).`,
+    body: `The owner consigns the E8 to an auction house, and a buyer in Vienna acquires it.
+      Custody transfer (E1) is a <strong>signed ceremony</strong> in which the
+      counterparty countersigns. The auction house checks the theft predicate against
+      the flag subregister (E12) and issues a condition stamp that is scoped to a lens,
+      dated and signed; the auction lens and the insurance lens are distinct. A new
+      custody edge leads to the buyer, and the buyer's household remains invisible to
+      Momiji: participation is owner-push only, and proof of binding does not imply
+      knowledge of the parent. Records that a dealer has not disclosed appear as
+      provenance-gap markers rather than as gaps in silence. After five owners the audit
+      trail survives without a central observer, and the system at no point served as
+      surveillance infrastructure (I12, enumeration resistance).`,
     carried: `Carried by <code>unidpp-core</code> (event crate, E1/E12/E14),
       <code>unidpp-signatif</code> (stamps), the explorer ·
       <a href="/specs/part-3-events/">spec Part 3</a> §stamps`,
@@ -274,16 +294,18 @@ const beats: Beat[] = [
     num: 'B9',
     title: 'A recall crosses the graph',
     kicker: 'Predicate-based · dormant → live · 2030-05',
-    body: `Haichuan lot H-2231 is recalled after a thermal event. The recall publishes as a
-      <strong>predicate</strong> — "packs containing lot H-2231" — and each custodian
-      evaluates it locally against their own holdings. The Vienna bike's current pack is
-      unaffected (traced through the B7 swap); the original pack — refurbisher, then a
-      powerwall — is reached through its own log. Nobody enumerated the installed base;
-      the manufacturer receives aggregates. Had the cell-passport regime landed in the
-      meantime, the dormant cell identifiers are adopted: the granularity ratchet moves
-      one way, finer, never coarser. An EN-world recall is a PDF and hope, blind to
-      second-hand markets; this one is computational, privacy-preserving, and reaches the
-      graph rather than a list.`,
+    body: `Haichuan recalls lot H-2231 following a thermal event. The recall is published as
+      a <strong>predicate</strong> — "packs containing lot H-2231" — and each custodian
+      evaluates the predicate locally against its own holdings. The current pack of the
+      Vienna vehicle is unaffected, as the trace through the B7 exchange shows; the
+      original pack — at the refurbisher, and subsequently installed in a stationary
+      storage system — is reached through its own log. No party enumerated the installed
+      base, and the manufacturer receives aggregates. Had a cell-passport regime been
+      established in the interim, the dormant cell identifiers are adopted at that
+      point: recorded granularity moves in one direction, from coarser to finer, never
+      the reverse. A recall conducted through document distribution alone does not reach
+      second-hand markets; this recall is computational, preserves privacy, and reaches
+      the relationship graph rather than a distribution list.`,
     carried: `Carried by <code>unidpp-core</code> (taint/traversal), the resolver (dark
       identities), the registry (recall predicates) · paper 2 §taint`,
     figures: [
@@ -300,15 +322,17 @@ const beats: Beat[] = [
     num: 'B10',
     title: 'End of life',
     kicker: 'The material loop closes · 2033',
-    body: `The E8 decommissions: frame to steel scrap, pack to recycling. E13 decompose is
-      the inverse transformation, one-to-many, into material passports with <strong>mass
-      balance</strong> — in minus out equals loss, auditable. The end-of-waste event is
-      itself a new passport issuance: the moment scrap legally re-qualifies.
-      Recycled-content claims compute from the graph; had lot H-2231's certification been
-      fraudulent, derived claims would collapse via graph taint. Tier-C notarized
-      snapshots cover the statute window, and identities outlive their issuers — Momiji
-      may not exist in 2040 (I14). Circularity becomes auditable arithmetic instead of
-      brochure percentages.`,
+    body: `The E8 reaches the end of its service life: the frame passes to steel scrap and
+      the pack to recycling. E13, decompose, is the inverse transformation, one-to-many,
+      into material passports with <strong>mass balance</strong>, in which inputs minus
+      outputs equal the auditable loss. The end-of-waste event is itself a new passport
+      issuance: the moment at which the scrap legally re-qualifies as a secondary raw
+      material. Claims of recycled content are computed from the graph; had the
+      certification of lot H-2231 been fraudulent, the derived claims would collapse
+      through taint propagation in the graph. Notarized Tier-C snapshots cover the
+      statutory retention window, and identities outlive their issuers — Momiji need not
+      exist in 2040 (I14). Circularity thereby becomes auditable arithmetic in place of
+      unverifiable assertion.`,
     carried: `Carried by <code>unidpp-core</code> (transform crate), archival, the registry ·
       paper 2`,
     figures: [
@@ -349,27 +373,30 @@ unidpp demo cub               # V1–V5  the counterpoint thread`;
   <p class="lede">
     The canonical UniDPP narrative threads every product through one primary example —
     the Momiji Mobility E8, a Kyoto-built e-bike with a German drive unit and a
-    Shenzhen battery pack — and one counterpoint: a 1962 motorcycle that adopts the
-    system with no manufacturer, no regulation, and no connectivity behind it. Each
-    beat names what happens, what the framework does, how it differs from a
-    document-rewrite passport, and which repository carries it.
+    Shenzhen battery pack — and one counterpoint, a 1962 motorcycle that adopts the
+    system with no manufacturer, no applicable regulation and no connectivity behind
+    it. Each beat states what happens, what the framework does, how it differs from a
+    passport implemented as a rewritable document, and which repository carries it.
   </p>
 
   <section id="example" class="plate" aria-labelledby="example-h">
     <h2 id="example-h">Why an e-bike</h2>
     <p>
-      The e-bike uniquely stresses six mechanisms at once. The battery forces a
-      mixed-profile child — the EU Battery Regulation attaches passport duty to LMT
-      batteries while the bike answers to machinery/EPAC rules and, in Japan, road-traffic
-      law. Software <em>is</em> the legal class: an EPAC is defined by its assistance
-      cutoff (250&nbsp;W, 25&nbsp;km/h, EN&nbsp;15194), so a firmware patch or a dongle
-      changes the vehicle's legal identity. E-bikes are the most-stolen consumer good
-      class in EU cities, which gives the resale beat a real predicate. Edge state is
-      native and stratified — silent frame, logged BMS, connected module on one product
-      line. The JP&nbsp;→&nbsp;EU&nbsp;→&nbsp;resale&nbsp;→&nbsp;export flow is trade
-      reality, not staging. And the lithium pack carries a UN&nbsp;3171 transport profile,
-      exercising the characteristic axis: predicate-triggered, neither jurisdiction nor
-      sector.
+      The e-bike exercises six mechanisms simultaneously, to a degree that no other
+      single product class reaches. The battery is a component under a mixed-profile
+      regime: the EU Battery Regulation attaches passport duty to LMT batteries, while
+      the vehicle itself answers to machinery and EPAC rules and, in Japan, to
+      road-traffic law. Software determines the legal class: an EPAC is defined by its
+      assistance cutoff (250&nbsp;W, 25&nbsp;km/h, EN&nbsp;15194), so a firmware update
+      or an aftermarket device changes the legal identity of the vehicle. E-bikes form
+      the most frequently stolen class of consumer goods in EU cities, which gives the
+      resale beat an operational predicate. Edge state is native to the product and
+      stratified across one product line: a silent frame, a logging battery-management
+      system and a connected module. The sequence of Japanese placement, EU placement,
+      resale and export reflects trade reality rather than staging. The lithium pack
+      finally carries a UN&nbsp;3171 transport profile, which exercises the
+      characteristic axis: a predicate-triggered profile that is neither a jurisdiction
+      nor a sector.
     </p>
     <DataTable
       columns={['Entity', 'Identity', 'Notes']}
@@ -386,14 +413,15 @@ unidpp demo cub               # V1–V5  the counterpoint thread`;
       ]}
     />
     <p>
-      The unreachable-origins problem is concrete in this cast: the pack's data lives at
-      Weilian's Shenzhen host; Momiji's JP host speaks EN 18222-style REST while the CN
-      consumer layer speaks the GB/T 33993 QR platform and the automotive world speaks
-      AAS. The settlement is never "everyone adopts one protocol" — it is one identity
-      (L0), resolver linksets that route per context, foreign protocols as renders via
-      gateway adapters, equivalence claims as registered transforms, and trust settled
-      under SIGNATIF cross-recognition. Everybody keeps their protocol; nobody's
-      protocol is the envelope.
+      The problem of unreachable origins is concrete in this cast: the pack's data
+      resides at the host of Weilian in Shenzhen; the Japanese host of Momiji serves an
+      EN 18222-style REST interface, the Chinese consumer layer serves the GB/T 33993 QR
+      platform, and the automotive community uses AAS. The settlement is not that every
+      participant adopts a single protocol. It is one identity (L0); resolver linksets
+      that route per context; foreign protocols served as renders through gateway
+      adapters; equivalence claims expressed as registered transforms; and trust
+      established under SIGNATIF cross-recognition. Each participant retains its
+      protocol, and no participant's protocol constitutes the envelope.
     </p>
     <figure class="fig">
       <img
@@ -468,10 +496,11 @@ unidpp demo cub               # V1–V5  the counterpoint thread`;
   <section id="counterpoint" class="plate" aria-labelledby="counterpoint-h">
     <h2 id="counterpoint-h">Counterpoint — the 1962 Super Cub</h2>
     <p>
-      The e-bike proves the regulated ceiling. The vintage motorcycle proves the floor
-      and the universality: an object with no living manufacturer, no regulation, and no
-      connectivity that adopts the system <em>voluntarily, because provenance is its
-      product</em>. Five beats:
+      The e-bike exercises the regulated case at its most demanding. The vintage
+      motorcycle exercises the opposite boundary and thereby the universality of the
+      core: an object with no living manufacturer, no applicable regulation and no
+      connectivity, which adopts the system <em>voluntarily, because provenance
+      constitutes its commercial value</em>. The counterpoint comprises five beats:
     </p>
     <DataTable
       columns={['Beat', 'What happens']}
@@ -493,9 +522,9 @@ unidpp demo cub               # V1–V5  the counterpoint thread`;
         decoding="async"
       />
       <figcaption>
-        V1–V5 on one thread: commissioning, the clock predicate, title taint, appraisal
-        stamps. The proof that the core is a universal object-provenance layer, not an
-        EU-compliance wrapper.
+        V1–V5 on one thread: commissioning, the clock predicate, title taint and
+        appraisal stamps — the demonstration that the core is a general
+        object-provenance layer and not an EU-compliance wrapper.
       </figcaption>
     </figure>
   </section>
@@ -541,9 +570,9 @@ unidpp demo cub               # V1–V5  the counterpoint thread`;
           decoding="async"
         />
         <figcaption>
-          <strong>unidpp-py — the referee's chair.</strong> Public, reproducible
-          evidence: EN 18223's own Annex A examples already fail machine validation
-          (findings N1–N6).
+          <strong>unidpp-py — the conformance runner.</strong> The runner provides
+          public, reproducible evidence: the examples of Annex A of EN 18223 already
+          fail machine validation (findings N1–N6).
           <a href="/implementation/conformance/">Conformance register</a>.
         </figcaption>
       </figure>
@@ -572,16 +601,17 @@ unidpp demo cub               # V1–V5  the counterpoint thread`;
           decoding="async"
         />
         <figcaption>
-          <strong>unidpp-spec + unidpp-papers.</strong> The rulebook cites the story —
-          five parts, every beat has a normative home; the papers argue the mechanism.
-          <a href="/specs/">Spec</a> · <a href="/papers/">Papers</a>.
+          <strong>unidpp-spec + unidpp-papers.</strong> The specification family
+          comprises parts in which every beat has a normative home; the paper series
+          presents the supporting arguments.
+          <a href="/specs/">Specification</a> · <a href="/papers/">Papers</a>.
         </figcaption>
       </figure>
     </div>
   </section>
 
   <section id="run" class="plate" aria-labelledby="run-h">
-    <h2 id="run-h">Run it yourself</h2>
+    <h2 id="run-h">Running the story</h2>
     <p>
       The end-to-end repository replays this thread over committed fixtures:
       <a href="https://github.com/unidpp/unidpp-e2e">github.com/unidpp/unidpp-e2e</a>.
@@ -608,9 +638,9 @@ unidpp demo cub               # V1–V5  the counterpoint thread`;
         decoding="async"
       />
       <figcaption>
-        One binary, eight verbs: the customs officer (B4), the dealer (B5), the auction
-        house (B8), and the recycler (B10) all run <code>unidpp</code> — offline mode
-        included.
+        A single command-line binary serves all roles: the customs officer (B4), the
+        dealer (B5), the auction house (B8) and the recycler (B10) all run
+        <code>unidpp</code>, including in offline mode.
       </figcaption>
     </figure>
     <p class="cta-row">

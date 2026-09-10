@@ -180,8 +180,8 @@ e) *Graph taint* shall propagate per 9.7 c; issuer misconduct leads to
 [[cl-trust-signatif]]
 === Trust infrastructure (SIGNATIF)
 
-The trust registry of the framework shall be SIGNATIF-shaped — a
-federated threshold system, not a single global PKI — and conforming
+The trust registry of the framework shall follow the SIGNATIF model — a
+federated threshold system rather than a single global PKI — and conforming
 implementations of the trust layer shall conform to <<signatif>>. The
 normative elements are:
 

@@ -6,7 +6,7 @@
   </defs>
   <rect width="960" height="540" fill="#FAFAF7"/>
   <text x="48" y="34" font-size="11" letter-spacing="2.5" fill="#14335C" font-weight="600">UNIDPP-SPEC + UNIDPP-PAPERS</text>
-  <text x="48" y="58" font-size="20" font-weight="600" fill="#1A2332">The rulebook cites the story — the papers argue it</text>
+  <text x="48" y="58" font-size="20" font-weight="600" fill="#1A2332">The specification cites the story; the papers argue the mechanism</text>
   <text x="48" y="76" font-size="12" fill="#5A6572">Metanorma AsciiDoc · 12 clauses · 328 shalls · every beat has a normative home</text>
 
   <!-- spec parts spine -->

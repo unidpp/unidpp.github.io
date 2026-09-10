@@ -24,13 +24,13 @@ import { frameworkNav } from '../../lib/sections';
     <h2 id="architecture-h">Architecture</h2>
     <p>
       One product, sold worldwide, is subject to many legal regimes simultaneously. A
-      single physical passport therefore carries many jurisdiction, sector, and
-      characteristic profiles at once — each independently governed, trusted, versioned,
-      and served — without any region being the universal envelope. Precedents: the
-      ePassport (ICAO) with per-state inspection and a CSCA master list; ISO 20022
-      validation-rule profiles; DCAT-AP and its national profiles; UNTDED's historic
-      regional subsets; ISO 10303 application modules; GS1 Digital Link resolver linksets;
-      ETSI/eIDAS Trusted Lists.
+      single physical passport therefore carries many jurisdiction, sector and
+      characteristic profiles at once, each independently governed, trusted, versioned
+      and served, without any region constituting the universal envelope. The precedents
+      are the ePassport (ICAO) with per-state inspection and a CSCA master list; ISO 20022
+      validation-rule profiles; DCAT-AP and its national profiles; the historic regional
+      subsets of UNTDED; ISO 10303 application modules; GS1 Digital Link resolver
+      linksets; and the ETSI/eIDAS Trusted Lists.
     </p>
     <DataTable
       columns={['Layer', 'Content']}
@@ -44,9 +44,9 @@ import { frameworkNav } from '../../lib/sections';
       ]}
     />
     <p>
-      Read the cutaway from the bottom: identity is the foundation everything stands on;
-      resolution is the surface everyone meets. Each layer is governed and versioned
-      independently.
+      The cutaway is read from the bottom: identity is the foundation on which the
+      layers stand, and resolution is the surface that every reader meets. Each layer is
+      governed and versioned independently.
     </p>
     <figure class="figure">
       <svg
@@ -171,7 +171,7 @@ import { frameworkNav } from '../../lib/sections';
       ]}
     />
     <p>
-      The load-bearing refinement: a profile is not passive glass but a
+      The decisive refinement is that a profile is not passive glass but a
       <strong>legal measuring instrument</strong> — pattern approval at registration,
       published calibration (version and cited rules), uncertainty and decision rules (GUM;
       ILAC-G8/JCGM-106 guard-banding for boundary measurements), and periodic
@@ -232,7 +232,7 @@ import { frameworkNav } from '../../lib/sections';
       ]}
     />
     <p>
-      Consequences: the twin is testimonial by default and sensorial by exception — for
+      Three consequences follow: the twin is testimonial by default and sensorial by exception — for
       silent objects the twin is a ledger of testimonies <em>about</em> the thing, with
       device segments one testimony class; certification bodies can be state custodians (a
       versioned certificate is the type twin); and the threat model shifts by class, from
@@ -256,7 +256,7 @@ import { frameworkNav } from '../../lib/sections';
       twin maps to S0–S1; the active twin to S2–S3.
     </p>
     <p>
-      What the active twin makes load-bearing: measurement validity (sensor calibration in
+      The active twin makes the following elements load-bearing: measurement validity (sensor calibration in
       device registration, GUM uncertainty on self-reported values, registered units);
       derived verdicts — state of health is computed by a model, and whose model is a
       governed transform; privacy, because usage telemetry is personal data; the S3
@@ -265,7 +265,7 @@ import { frameworkNav } from '../../lib/sections';
       point-in-time attestation or monitoring is authoritative.
     </p>
     <p>
-      Coexistence rule: both paradigms live in the framework permanently — the connected
+      The coexistence rule is that both paradigms remain in the framework permanently — the connected
       vehicle and the silent power bank ship under one standard. Profiles declare, per data
       element, the required truth mode: attest-sampled, self-committed, or
       both-with-precedence, where precedence between a calibrated device measurement and an
@@ -284,7 +284,7 @@ import { frameworkNav } from '../../lib/sections';
     <p>
       Three payload tiers fix the carrier/server split — “half in code, half on server” is
       the normative design, not a workaround. <strong>Tier A</strong> is the
-      carrier-embedded minimum viable passport: product ID, resolver URI, operator ID,
+      carrier-embedded minimum passport: product ID, resolver URI, operator ID,
       status, critical safety/recall flag, validity, and multi-suite compressed signatures,
       sized to EN 18220 carriers via compressed serialization, offline-verifiable with
       pre-cached trust anchors. <strong>Tier B</strong> is the served full passport.
@@ -312,7 +312,7 @@ import { frameworkNav } from '../../lib/sections';
   <section id="trust" class="plate" aria-labelledby="trust-h">
     <h2 id="trust-h">Trust, in one section</h2>
     <p>
-      <strong>Verify under your own anchors.</strong> Each profile's attestations chain to
+      <strong>Verification under the verifier's own anchors.</strong> Each profile's attestations chain to
       its own jurisdiction's trust framework. A verifier in one jurisdiction can verify a
       passport from another through SIGNATIF cross-recognition — jurisdictional trust lists
       feeding a globally multi-witnessed master list, with transparency logs anchoring both

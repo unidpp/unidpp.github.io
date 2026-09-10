@@ -87,8 +87,8 @@ import DataTable from '../../components/DataTable.astro';
     <p>
       The simplistic view — <em>a discovery service maps an identifier to a
       location</em> — assumes the product is on first sale, online, single-hosted,
-      single-jurisdiction, intact, and wants to be found. In the framework,
-      discovery is distributed across six entry points, routing dimensions, and a
+      single-jurisdiction, intact and intended to be found. In the framework,
+      discovery is distributed across six entry points, routing dimensions and a
       fallback spine.
     </p>
 
@@ -105,7 +105,7 @@ import DataTable from '../../components/DataTable.astro';
     <h3>The fallback spine</h3>
     <ul>
       <li><strong>Multi-host linksets</strong> with as-of stamps; cached; inclusion proofs substitute for dead origins</li>
-      <li><strong>Succession</strong> — the maker dies in 2035; the registry redirects; the archive becomes the target</li>
+      <li><strong>Succession</strong> — the manufacturer ceases to exist in 2035; the registry redirects, and the archive becomes the target</li>
       <li><strong>Post-sale relocation</strong> — resale can re-host; the identifier never changes, the linkset does</li>
       <li><strong>As-of discovery</strong> — what was discoverable at time T</li>
       <li><strong>Blind edges</strong> — verify "validly installed in <em>some</em> parent" without learning <em>which</em></li>
@@ -127,15 +127,18 @@ import DataTable from '../../components/DataTable.astro';
       <strong>The ePassport precedent, at full strength:</strong> every state
       issues its own passports and inspects everyone else's; ICAO Doc 9303
       supplies the interop and the PKD supplies a passive distribution of public
-      keys — a tiny governance table, not a world database. The DPP analogue:
-      national registries + the ISO interop layer + the SIGNATIF master list.
-      Every delegate carries the artifact that proves the pattern works.
+      keys — a small governance table rather than a world database. The analogue
+      for the digital product passport is the combination of national registries,
+      the ISO interop layer and the SIGNATIF master list. The demonstration
+      artifacts are carried into the standards process as evidence that the
+      pattern works.
     </p>
     <p>
-      <strong>The rule:</strong> global where tiny and governance-shaped (scheme
-      namespaces, trust roots, cross-register mappings); national where
-      data-shaped (identifiers in use, serving, surveillance). The EU registry,
-      in this model, is a peer with jurisdiction=EU — not the root.
+      <strong>The allocation rule is as follows:</strong> elements that are small
+      and belong to governance (scheme namespaces, trust roots, cross-register
+      mappings) are global; elements that are data (identifiers in use, serving,
+      surveillance) are national. In this model the EU registry is a peer with
+      jurisdiction EU, not the root.
     </p>
   </section>
 </BaseLayout>

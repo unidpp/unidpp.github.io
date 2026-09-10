@@ -10,41 +10,43 @@ import Continue from '../components/Continue.astro';
 >
   <h1>What is a Digital Product Passport?</h1>
   <p class="lede">
-    A digital product passport is a record that travels with a thing — a washing machine, a
-    battery, a spare part — and answers four questions: what is it, who made it, how do I
-    repair it, and how do I recycle it.
+    A digital product passport is a record that travels with a product — a washing
+    machine, a battery, a spare part — and answers four questions: what the product is,
+    who made it, how it is repaired and how it is recycled.
   </p>
 
   <section aria-labelledby="story-heading">
     <h2 id="story-heading">A washing machine</h2>
     <p>
-      Take a washing machine sold in 2026. On its frame, next to the rating plate, is a
-      two-dimensional code. A consumer scans it with any phone camera. The code resolves to
-      the machine's passport record, and the phone shows: the model and batch; who
-      manufactured it and where; the energy class, with the test basis behind it; the list
-      of spare parts, with disassembly instructions; and the take-back route — the nearest
-      collection point, and which components to detach first.
+      Consider a washing machine sold in 2026. On its frame, next to the rating plate,
+      is a two-dimensional code. A consumer scans the code with an ordinary telephone
+      camera. The code resolves to the machine's passport record, and the telephone
+      shows the model and batch; the manufacturer and the place of manufacture; the
+      energy class with its test basis; the list of spare parts with disassembly
+      instructions; and the take-back route, comprising the nearest collection point
+      and the components to be detached first.
     </p>
     <p>
-      The same code serves other readers. A repairer sees the service history the
-      manufacturer is required to publish. A customs officer sees the origin and conformity
-      declarations their jurisdiction asks for. A recycler sees the material content, down
-      to the parts that must be removed before shredding. One code, several readings: each
-      reader sees the parts of the record that their role and their law give them.
+      The same code serves other readers. A repairer sees the service history that the
+      manufacturer is required to publish. A customs officer sees the origin and
+      conformity declarations required by the jurisdiction of entry. A recycler sees the
+      material content, including the parts that are to be removed before shredding.
+      One code therefore yields several readings: each reader sees those parts of the
+      record that the reader's role and law entitle it to.
     </p>
     <p>
-      The record itself lives on servers, not on the machine. What lives on the machine is
-      the carrier — the code — and a minimum of data that stays readable even with no
-      network: what the product is, who operates the passport, and whether a recall is
-      outstanding.
+      The record itself resides on servers, not on the machine. What resides on the
+      machine is the carrier — the code — together with a minimum of data that remains
+      readable in the absence of a network connection: what the product is, who operates
+      the passport and whether a recall is outstanding.
     </p>
   </section>
 
   <section class="plate" aria-labelledby="diagram-heading">
     <h2 id="diagram-heading">One diagram</h2>
     <p>
-      A passport is data plus a way to reach it: a carrier on the product, a resolver that
-      maps the code to the record, and the record with its readers around it.
+      A passport consists of data and a means of reaching it: a carrier on the product,
+      a resolver that maps the code to the record, and the record with its readers.
     </p>
     <figure class="figure">
       <svg
@@ -121,8 +123,8 @@ import Continue from '../components/Continue.astro';
         <text x="595" y="307" class="sub">material content, take-back</text>
       </svg>
       <figcaption>
-        Product, carrier, record, readers. The code on the product resolves to the record;
-        each reader receives the view their role entitles them to.
+        Product, carrier, record and readers. The code on the product resolves to the
+        record; each reader receives the view that its role entitles it to.
       </figcaption>
     </figure>
   </section>
@@ -132,7 +134,7 @@ import Continue from '../components/Continue.astro';
     <dl class="readers">
       <div class="reader">
         <dt>Consumer</dt>
-        <dd>What the product is, how long it should last, how to repair it, where it goes at end of life.</dd>
+        <dd>What the product is, its expected service life, its repair arrangements and its end-of-life route.</dd>
       </div>
       <div class="reader">
         <dt>Repairer</dt>
@@ -153,7 +155,7 @@ import Continue from '../components/Continue.astro';
     href="/why/"
     num="02"
     title="Why an international core"
-    desc="A single washing machine needs one passport. A product sold across borders meets several disclosure duties at once — and the question becomes whose passport it carries."
+    desc="A single washing machine needs one passport. A product sold across borders meets several disclosure duties at once — and the question becomes which passport it carries."
   />
 </BaseLayout>
 

@@ -6,7 +6,7 @@
   </defs>
   <rect width="960" height="540" fill="#FAFAF7"/>
   <text x="48" y="34" font-size="11" letter-spacing="2.5" fill="#14335C" font-weight="600">UNIDPP-PY · CONFORMANCE FRAMEWORK + ADAPTERS</text>
-  <text x="48" y="58" font-size="20" font-weight="600" fill="#1A2332">We run the tests — that is the referee's chair</text>
+  <text x="48" y="58" font-size="20" font-weight="600" fill="#1A2332">We run the tests — that is the conformance runner</text>
   <text x="48" y="76" font-size="12" fill="#5A6572">Public, reproducible evidence: EN 18223's own Annex A examples already fail machine validation (N1–N6)</text>
 
   <!-- runner -->
@@ -48,7 +48,7 @@
   <text x="668" y="282" font-size="11" fill="#1A2332" font-weight="600">freeDPP / EN 18222 compat</text>
   <text x="668" y="298" font-size="10" fill="#5A6572">their request shape = one render of ours (play 2)</text>
 
-  <!-- referee strategy -->
+  <!-- conformance strategy -->
   <rect x="48" y="364" width="864" height="148" rx="8" fill="#FFFFFF" stroke="#E3E7EC"/>
   <text x="64" y="390" font-size="12.5" font-weight="600" fill="#14335C">The displacement play this enables</text>
   <text x="64" y="414" font-size="10.5" fill="#5A6572">· competitor templates and published examples go through the same runner — factual, reproducible, neutral-register findings only</text>
