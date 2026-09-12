@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Models of the UniDPP framework</title><style>
+body{font:15px/1.55 Georgia,serif;margin:0;color:#1c1c1c;background:#faf9f7}
+header{border-bottom:2px solid #234;border-spacing:0;padding:1rem 2rem;
+ background:#fff;display:flex;justify-content:space-between;align-items:baseline}
+header a{color:#234;text-decoration:none;font-family:Menlo,monospace;font-size:.85rem}
+main{max-width:70rem;margin:2rem auto;padding:0 2rem}
+h1{font-size:1.6rem}h2{font-size:1.15rem;margin-top:2.4rem;color:#234;
+ border-bottom:1px solid #ccc;padding-bottom:.3rem}
+table{border-collapse:collapse;width:100%;background:#fff;font-size:.85rem;
+ font-family:Menlo,monospace}
+th,td{border:1px solid #ddd;padding:.35rem .55rem;text-align:left;vertical-align:top}
+th{background:#f0efe9;font-weight:600}
+img{max-width:100%;border:1px solid #ddd;background:#fff}
+.note{color:#666;font-size:.8rem}
+.dom{background:#fdf3d7}
+a{color:#045}
+</style></head>
+<body><header><span>Models of the UniDPP framework</span><span><b>Models</b> · <a href="concepts.html">Concepts</a> · <a href="https://unidpp.org">unidpp.org</a></span></header>
+<main><h2>Structural models</h2>
+<p>Each model states its classes, attributes, enumerations and definitions, in LutaML, one file per concern. The diagrams are rendered from the same sources.</p>
+<h3>Identity and the identity lattice</h3>
+<p class='note'>models/identity.lutaml — 10 classes, 2 enumerations; view IdentityLattice</p>
+<img src='images/IdentityLattice.png' alt='Identity and the identity lattice diagram'>
+<details><summary>Classes</summary><ul><li><code>Thing</code></li><li><code>Identifier</code></li><li><code>Carrier</code></li><li><code>TypeDefinition</code></li><li><code>TypeVersion</code></li><li><code>ConfigurationVector</code></li><li><code>Instance</code></li><li><code>DeviceCredential</code></li><li><code>SlotKey</code></li><li><code>Certificate</code></li></ul></details>
+<h3>Record and twin</h3>
+<p class='note'>models/record.lutaml — 6 classes, 1 enumerations; view RecordAndSemantics</p>
+<img src='images/RecordAndSemantics.png' alt='Record and twin diagram'>
+<details><summary>Classes</summary><ul><li><code>Event</code></li><li><code>EventSegment</code></li><li><code>Twin</code></li><li><code>Commitment</code></li><li><code>Receipt</code></li><li><code>Snapshot</code></li></ul></details>
+<h3>Projection and the projection calculus</h3>
+<p class='note'>models/projection.lutaml — 6 classes, 7 enumerations; view ProjectionCalculus</p>
+<img src='images/ProjectionCalculus.png' alt='Projection and the projection calculus diagram'>
+<details><summary>Classes</summary><ul><li><code>Passport</code></li><li><code>Profile</code></li><li><code>Segment</code></li><li><code>PolicyObject</code></li><li><code>ProjectionDescriptor</code></li><li><code>FrozenView</code></li></ul></details>
+<h3>Trust and the party model</h3>
+<p class='note'>models/trust.lutaml — 15 classes, 2 enumerations</p>
+<details><summary>Classes</summary><ul><li><code>Party</code></li><li><code>GovernmentRegulator</code></li><li><code>IntergovernmentalBody</code></li><li><code>AccreditationBody</code></li><li><code>CertificationBody</code></li><li><code>IndustryPolicyBody</code></li><li><code>VoluntaryScheme</code></li><li><code>EconomicOperator</code></li><li><code>InfrastructureOperator</code></li><li><code>ConsumerMachine</code></li><li><code>TrustList</code></li><li><code>MasterList</code></li><li><code>SignatureSlot</code></li><li><code>Revocation</code></li><li><code>Quorum</code></li></ul></details>
+<h3>Semantics and the registry</h3>
+<p class='note'>models/semantics.lutaml — 5 classes, 2 enumerations</p>
+<details><summary>Classes</summary><ul><li><code>Register</code></li><li><code>RegisterItem</code></li><li><code>DataElement</code></li><li><code>MappingItem</code></li><li><code>Unit</code></li></ul></details>
+<h3>The scheme calculus</h3>
+<p class='note'>models/scheme.lutaml — 5 classes, 5 enumerations; view SchemeCalculus</p>
+<img src='images/SchemeCalculus.png' alt='The scheme calculus diagram'>
+<details><summary>Classes</summary><ul><li><code>Scheme</code></li><li><code>InteropDeclaration</code></li><li><code>LayerVector</code></li><li><code>TranslationHub</code></li><li><code>VerificationRoute</code></li></ul></details>
+<h3>The product algebra</h3>
+<p class='note'>models/algebra.lutaml — 11 classes, 3 enumerations</p>
+<details><summary>Classes</summary><ul><li><code>PassportLink</code></li><li><code>Association</code></li><li><code>Derivation</code></li><li><code>Installation</code></li><li><code>TypeLineage</code></li><li><code>Custody</code></li><li><code>Membership</code></li><li><code>TransformationEvent</code></li><li><code>QuantityCarveOut</code></li><li><code>MassBalance</code></li><li><code>Productness</code></li></ul></details></main></body></html>

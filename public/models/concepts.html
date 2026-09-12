@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Concepts of the DPP vocabulary (ISO 93333)</title><style>
+body{font:15px/1.55 Georgia,serif;margin:0;color:#1c1c1c;background:#faf9f7}
+header{border-bottom:2px solid #234;border-spacing:0;padding:1rem 2rem;
+ background:#fff;display:flex;justify-content:space-between;align-items:baseline}
+header a{color:#234;text-decoration:none;font-family:Menlo,monospace;font-size:.85rem}
+main{max-width:70rem;margin:2rem auto;padding:0 2rem}
+h1{font-size:1.6rem}h2{font-size:1.15rem;margin-top:2.4rem;color:#234;
+ border-bottom:1px solid #ccc;padding-bottom:.3rem}
+table{border-collapse:collapse;width:100%;background:#fff;font-size:.85rem;
+ font-family:Menlo,monospace}
+th,td{border:1px solid #ddd;padding:.35rem .55rem;text-align:left;vertical-align:top}
+th{background:#f0efe9;font-weight:600}
+img{max-width:100%;border:1px solid #ddd;background:#fff}
+.note{color:#666;font-size:.8rem}
+.dom{background:#fdf3d7}
+a{color:#045}
+</style></head>
+<body><header><span>Concepts of the DPP vocabulary (ISO 93333)</span><span><a href="index.html">Models</a> · <b>Concepts</b> · <a href="https://unidpp.org">unidpp.org</a></span></header>
+<main><p class='note'>Domain-scoped entries (marked) carry criteria of application owned by a community; they are recorded for navigational completeness and are not harmonized across communities.</p><h2>The digital product passport</h2>
+<table><tr><th>id</th><th>term</th><th>definition</th><th>relations</th></tr>
+<tr><td>1</td><td><b>digital product passport</b></td><td>concept or technology which enables sharing of product related information that is essential for product sustainability and circularity, including those specified in regulations, across all relevant economic actors</td><td>broader → projection; has_part → profile; associative → digital twin</td></tr>
+<tr><td>2</td><td><b>digital product passport id</b></td><td>unique identifier of an instance of the digital product passport</td><td>part_of → digital product passport</td></tr>
+</table>
+<h2>Framework: provenance and the identity lattice</h2>
+<table><tr><th>id</th><th>term</th><th>definition</th><th>relations</th></tr>
+<tr><td>3</td><td><b>provenance class</b></td><td>declared category of a fact according to how it entered the record: declared at type level, measured at instance level under a stated method and uncertainty, or computed by a stated transform</td><td>—</td></tr>
+<tr><td>4</td><td><b>precedence rule</b></td><td>rule declared by a profile stating which provenance class prevails when facts about the same subject disagree</td><td>—</td></tr>
+<tr><td>5</td><td><b>roll-up attestation</b></td><td>signed attestation giving an aggregate over a committed traversal set of child passports, verifiable without fetching every member of the set</td><td>associative → traversal set</td></tr>
+<tr><td>6</td><td><b>traversal set</b></td><td>committed, hash-identified set of passport versions over which a roll-up attestation or a graph traversal is computed</td><td>—</td></tr>
+<tr><td>7</td><td><b>edge segment</b></td><td>part of the event-sourced record of a subject that originates on the subject&#x27;s own device and is published through device commitments</td><td>—</td></tr>
+<tr><td>8</td><td><b>device commitment</b></td><td>signature by a device-bound key over the hash of a prefix of the device&#x27;s local append-only event log, published so that later disclosures are inclusion-consistent with past commitments</td><td>associative → edge segment</td></tr>
+<tr><td>9</td><td><b>configuration vector</b></td><td>exact combination of registered component options that, together with a model, constitutes a configured product instance</td><td>—</td></tr>
+<tr><td>10</td><td><b>type version</b></td><td>versioned state of a type passport capturing hardware revisions and type-declared facts, referenced exactly by the instance passports derived from it</td><td>—</td></tr>
+<tr><td>11</td><td><b>derived type</b></td><td>new type resulting from a regulated modification of an existing type, recorded as a derivation event in the identity lattice</td><td>—</td></tr>
+<tr><td>12</td><td><b>dormant identifier</b></td><td>identifier recorded at the finest available granularity for an object class for which no passport regime yet exists, held as issuance evidence for adoption by a future regime</td><td>narrower → unique identifier</td></tr>
+<tr><td>13</td><td><b>dormant-to-live adoption</b></td><td>act of a future passport regime of issuing passports by adopting the identifiers already recorded as dormant for the object class, rather than minting new ones</td><td>associative → dormant identifier</td></tr>
+</table>
+<h2>Framework: stamps and the transformation algebra</h2>
+<table><tr><th>id</th><th>term</th><th>definition</th><th>relations</th></tr>
+<tr><td>14</td><td><b>stamp</b></td><td>lens-scoped attestation consisting of an attester signature over the subject, the subject state commitment, the lens identity and version, the mode (live or snapshot), a verdict with coverage report, and log-anchored time</td><td>narrower_part → lens-scoped attestation</td></tr>
+<tr><td>15</td><td><b>lens-scoped attestation</b></td><td>attestation whose validity is defined by, and only by, the profile under which it was issued</td><td>has_part → stamp; broader → jurisdiction stamp</td></tr>
+<tr><td>16</td><td><b>derived passport</b></td><td>passport issued as the output of a transformation event by an actor accredited for the regulated claims it contains, hash-linking its input passports</td><td>broader → digital product passport; associative → transformation event</td></tr>
+<tr><td>17</td><td><b>transformation event</b></td><td>typed event in the provenance directed acyclic graph that records the split of one passport into many, or the combination or transformation of many passports into one</td><td>has_part → inputReference; has_part → quantity carve-out</td></tr>
+<tr><td>18</td><td><b>inputReference</b></td><td>record in the issuance event of a derived passport naming an input passport, the quantity consumed and the as-of state hash under which it was taken</td><td>narrower_part → transformation event</td></tr>
+<tr><td>19</td><td><b>quantity carve-out</b></td><td>recorded allocation of input quantity to an output of a split transformation, such that the sum of the child quantities does not exceed the parent</td><td>narrower_part → transformation event</td></tr>
+<tr><td>20</td><td><b>mass balance accounting</b></td><td>bookkeeping over transformation events in which inputs and outputs of a specified characteristic are reconciled per period, with losses and taint carried explicitly</td><td>broader → mass balance model</td></tr>
+<tr><td>21</td><td><b>consumed passport</b></td><td>input passport that has reached the consumed or transformed state in a transformation event, retaining historical verifiability for as-of queries</td><td>associative → transformation event</td></tr>
+<tr><td>22</td><td><b>blind provenance</b></td><td>attestation of input provenance issued by a notified or accredited body that withholds the raw input identities behind its own attestation, used where commercial confidentiality demands it</td><td>associative → blind edge</td></tr>
+<tr><td>23</td><td><b>jurisdiction stamp</b></td><td>stamp issued under a jurisdiction profile on a passport issued under another jurisdiction, recording that the stamping jurisdiction&#x27;s requirements were assessed</td><td>narrower_part → lens-scoped attestation</td></tr>
+</table>
+<h2>Framework: characteristic profiles</h2>
+<table><tr><th>id</th><th>term</th><th>definition</th><th>relations</th></tr>
+<tr><td>24</td><td><b>characteristic profile</b></td><td>profile that attaches by predicate on digital twin facts, such as age, material content, heritage status or market status, rather than by law-of-place or industry</td><td>narrower → profile; has_part → trigger predicate</td></tr>
+<tr><td>25</td><td><b>trigger predicate</b></td><td>declared component of a profile stating the conditions under which the profile applies, evaluated against the facts of the digital twin rather than against who declares them</td><td>narrower_part → characteristic profile</td></tr>
+<tr><td>26</td><td><b>commissioning</b></td><td>issuance act by which a qualified attestor or registrar establishes the identity of an object that predates or lies outside a manufacturer-issued regime, recording the first sighting in the event log</td><td>associative → qualified attestor</td></tr>
+<tr><td>27</td><td><b>qualified attestor</b></td><td>actor accredited under a profile&#x27;s trust list to commission identities or to attest attributes of orphan objects, such as an auction house, authentication board or registrar</td><td>—</td></tr>
+<tr><td>28</td><td><b>attribution</b></td><td>expert statement assigning an object to a creator, workshop or period, recorded as a competing fact with provenance rather than merged with other attributions</td><td>associative → qualified attestor</td></tr>
+<tr><td>29</td><td><b>provenance gap</b></td><td>explicitly recorded interval in a subject&#x27;s custody or provenance chain for which no evidence exists</td><td>associative → attribution</td></tr>
+<tr><td>30</td><td><b>condition report</b></td><td>dated, signed, profile-scoped assessment of the physical condition of an object</td><td>associative → provenance gap</td></tr>
+<tr><td>31</td><td><b>restitution flag</b></td><td>authority-attached marker on a passport recording a claim over title, such as looting, dispossession or colonial taking, propagated as a graph event without rewriting history</td><td>associative → provenance gap</td></tr>
+</table>
+<h2>Framework: capability classes and twins</h2>
+<table><tr><th>id</th><th>term</th><th>definition</th><th>relations</th></tr>
+<tr><td>32</td><td><b>capability class</b></td><td>classification of a subject by its ability to participate in its own record: silent, passive-auth, logged-contact or connected</td><td>—</td></tr>
+<tr><td>33</td><td><b>silent subject</b></td><td>subject with no connectivity, keys or self-reporting, whose record is reconstructed entirely from testimonies about it</td><td>narrower_part → capability class</td></tr>
+<tr><td>34</td><td><b>passive-auth subject</b></td><td>subject carrying an authentication element, such as an NFC chip, physically unclonable function or identity link, that attests identity without recording events</td><td>narrower_part → capability class</td></tr>
+<tr><td>35</td><td><b>logged-contact subject</b></td><td>subject that records events locally and discloses them on physical contact, without communications capability</td><td>narrower_part → capability class</td></tr>
+<tr><td>36</td><td><b>connected subject</b></td><td>subject that self-reports under device keys and participates with full edge segments</td><td>narrower_part → capability class</td></tr>
+<tr><td>37</td><td><b>passive twin</b></td><td>digital twin reconstructed from point-in-time attestations about the object, sampled when the object visits an attestor, in which truth is episodic and staleness between attestations is unbounded and undetectable</td><td>narrower_part → digital twin</td></tr>
+<tr><td>38</td><td><b>active twin</b></td><td>digital twin in which the object self-reports under device keys, making truth near-continuous, freshness bounded and detectable, and shifting the binding question from who saw the object to who attests the sensor</td><td>narrower_part → digital twin</td></tr>
+<tr><td>39</td><td><b>truth mode</b></td><td>declared per-data-element attribute of a profile stating which truth source the element requires, namely attest-sampled, self-committed, or both with a precedence rule</td><td>associative → active twin</td></tr>
+<tr><td>40</td><td><b>service-center model</b></td><td>arrangement in which a subject&#x27;s state is sampled and attested only when the subject visits an attestor, yielding episodic truth and unbounded, undetectable staleness between attestations</td><td>associative → passive twin</td></tr>
+<tr><td>41</td><td><b>self-testimony</b></td><td>testimony class consisting of events asserted by the subject&#x27;s own device under device-bound keys</td><td>associative → active twin</td></tr>
+<tr><td>42</td><td><b>continuous conformity monitoring</b></td><td>conformity mode in which requirements are re-judged against the live state of the twin, rather than only at point-in-time inspection</td><td>associative → state of health</td></tr>
+<tr><td>43</td><td><b>state of health</b></td><td>derived verdict on the condition of a subject, computed by a stated model from measured variables</td><td>associative → sensor attestation</td></tr>
+<tr><td>44</td><td><b>sensor attestation</b></td><td>attestation binding a measured value to a registered sensor identity, its calibration and its measurement uncertainty</td><td>associative → state of health</td></tr>
+</table>
+<h2>Framework: the relationship algebra</h2>
+<table><tr><th>id</th><th>term</th><th>definition</th><th>relations</th></tr>
+<tr><td>45</td><td><b>association</b></td><td>typed, navigational passport relationship, such as compatibility, supply or same-maker, carrying no lifecycle impact</td><td>associative → installation; associative → membership</td></tr>
+<tr><td>46</td><td><b>installation</b></td><td>typed structural relationship, and its event class, between a parent passport and an installed child component, recorded with method, slot identity, pairing, alterations, performer and time, which makes an installed component a different legal object from the standalone one</td><td>associative → association; associative → membership</td></tr>
+<tr><td>47</td><td><b>membership</b></td><td>temporal relationship between a passport and a group node, such as a shipment, consignment, kit, fleet or recall set</td><td>associative → installation; associative → group node</td></tr>
+<tr><td>48</td><td><b>group node</b></td><td>queryable grouping of passports that receives a passport of its own only when the group is itself placed on the market</td><td>has_part → membership</td></tr>
+<tr><td>49</td><td><b>binding strength</b></td><td>declared permanence of an installation binding, ranging from reversible fastening to destructive integration</td><td>part_of → installation</td></tr>
+<tr><td>50</td><td><b>slot identity</b></td><td>parent-scoped identifier of an installation position by which an installed child is re-identified within its parent</td><td>part_of → installation</td></tr>
+<tr><td>51</td><td><b>pairing</b></td><td>recorded binding of a child to its parent context, by firmware, key or module, that is re-established when a component is replaced</td><td>part_of → installation</td></tr>
+<tr><td>52</td><td><b>absorbed component</b></td><td>input whose identity dissolves into its parent and is therefore modelled as a transformation input rather than a live child, recorded at the finest available granularity as dormant identifiers</td><td>narrower_part → component</td></tr>
+<tr><td>53</td><td><b>recoverability</b></td><td>declared property of an installation binding (concept dpp-0142) stating whether and how the installed child can resume an independent existence, taking one of the values restorable, harvestable, destructive or absorbing</td><td>part_of → installation</td></tr>
+<tr><td>54</td><td><b>harvested part</b></td><td>component recovered from an installation (concept dpp-0142) in the harvestable state of the recoverability spectrum (concept dpp-0143), which continues to carry its own identity, harvested status and the parent history accumulated during installation</td><td>associative → installation</td></tr>
+<tr><td>55</td><td><b>custody transfer</b></td><td>signed ceremony recording the transfer of responsibility for an object between custodians, appended to the event chain by the custodian and the counterparty, which extends and never overwrites the trail across successive owners</td><td>associative → custodian</td></tr>
+<tr><td>56</td><td><b>custodian</b></td><td>actor that currently holds the live event segment of a subject&#x27;s record and is authorized to append custody-relevant events to it</td><td>broader → actor</td></tr>
+</table>
+<h2>Framework: visibility</h2>
+<table><tr><th>id</th><th>term</th><th>definition</th><th>relations</th></tr>
+<tr><td>57</td><td><b>blind edge</b></td><td>edge on a typed passport relationship whose existence and endpoints are concealed from all observers, so that a child-to-parent reference does not reveal where a thing is, such as a household or a site</td><td>associative → installation</td></tr>
+<tr><td>58</td><td><b>escrowed disclosure</b></td><td>edge visibility arrangement in which information concealed by a blind edge (concept dpp-0136) is deposited with a threshold trustee and released only through a disclosure ceremony, namely court, regulator or consent</td><td>associative → blind edge</td></tr>
+<tr><td>59</td><td><b>proof of binding</b></td><td>salted cryptographic commitment to the parent, recorded in the child&#x27;s event log, by which a child satisfies the bidirectional parent-knowledge requirement without disclosing the identity of the parent</td><td>associative → blind edge</td></tr>
+<tr><td>60</td><td><b>enumeration resistance</b></td><td>system property by which the passport system is verifiable without being browsable: resolution is by identity only, traversal requires per-edge rights, and no party, including any registry, resolver network or log operator, can enumerate the installed base of anything</td><td>associative → blind edge</td></tr>
+<tr><td>61</td><td><b>predicate-based recall</b></td><td>recall scheme in which the recall set is never enumerated centrally: the recall predicate is published, and each custodian evaluates it locally against their own holdings, including dark and defence holdings under national procedure, and acts</td><td>associative → traversal set</td></tr>
+<tr><td>62</td><td><b>owner-push disclosure</b></td><td>disclosure of instance state initiated by the owner, such as a warranty registration, as the default manufacturer-visibility channel</td><td>associative → blind edge</td></tr>
+<tr><td>63</td><td><b>dark identity</b></td><td>identity that is resolvable only within a restricted resolution domain, such as a national domain, and never enters the global resolver</td><td>narrower_part → unique identifier</td></tr>
+<tr><td>64</td><td><b>confidential profile</b></td><td>registered profile whose register item is non-public and which carries restricted resolution, edge-visibility and traversal fields, used for defence and sovereignty configurations</td><td>narrower_part → profile</td></tr>
+</table>
+<h2>Framework: federation</h2>
+<table><tr><th>id</th><th>term</th><th>definition</th><th>relations</th></tr>
+<tr><td>65</td><td><b>trust marker</b></td><td>graded indicator attached to every element or event stating its trust provenance: unsigned, self-declared, third-party attested, multi-signed or log-anchored</td><td>associative → trust list</td></tr>
+<tr><td>66</td><td><b>master list</b></td><td>globally multi-witnessed list of trust lists, co-signed by a quorum of independent logs, by which verifiers cross-recognize jurisdictional trust authorities</td><td>broader → trust list</td></tr>
+<tr><td>67</td><td><b>revocation window</b></td><td>explicit start and end interval carried by a distrust declaration, within which affected credentials are void and outside which they are re-validated</td><td>associative → trust marker</td></tr>
+<tr><td>68</td><td><b>three verification readings</b></td><td>three legally distinct readings of a verification result, namely evidentiary, current-state and cryptographic, each of which a verdict states explicitly</td><td>associative → verification</td></tr>
+<tr><td>69</td><td><b>freshness verdict</b></td><td>explicit, displayable assessment of how current a served state is relative to its declared freshness bound, degrading visibly when data is stale or offline</td><td>associative → verification</td></tr>
+<tr><td>70</td><td><b>coverage report</b></td><td>statement accompanying a verdict enumerating which elements, trust anchors and registry items the verification covered</td><td>associative → verification</td></tr>
+<tr><td>71</td><td><b>discovery registry</b></td><td>federated registry of record for passport services and semantics, in which profile shapes, protocol bindings, verification mechanisms and service endpoints are versioned, signed, log-anchored items discoverable by any conforming client</td><td>has_part → service descriptor; has_part → listing gate; associative → onboarding ceremony</td></tr>
+<tr><td>72</td><td><b>service descriptor</b></td><td>signed registry item describing a service by operator identity and credential, service class, endpoints, protocol binding, jurisdiction, residency class, status and succession pointer</td><td>narrower_part → discovery registry; has_part → protocol binding; has_part → verification mechanism bundle</td></tr>
+<tr><td>73</td><td><b>protocol binding</b></td><td>registered specification of a wire grammar, media types, version and conformance suite by which an interaction with a service or a device is conducted</td><td>narrower_part → service descriptor</td></tr>
+<tr><td>74</td><td><b>verification mechanism bundle</b></td><td>assembled set of registered items naming the cryptographic suite, trust framework, trust-list endpoints, revocation mechanism and acceptance-policy template under which a client verifies</td><td>narrower_part → service descriptor</td></tr>
+<tr><td>75</td><td><b>listing gate</b></td><td>registered predicate evaluated by a marketplace over passport status and standing without holding passport data, admitting or refusing listings</td><td>narrower_part → discovery registry</td></tr>
+<tr><td>76</td><td><b>operator credential</b></td><td>scoped, threshold-issued credential by which an operator signs registry items and service attestations</td><td>associative → service descriptor</td></tr>
+<tr><td>77</td><td><b>onboarding ceremony</b></td><td>threshold admission ceremony by which an operator joins the service federation, or a trust authority joins the master list, accepting continuity and succession obligations</td><td>associative → discovery registry</td></tr>
+<tr><td>78</td><td><b>read federation</b></td><td>federation tier in which any party consumes the registry and trust bundles without an admission ceremony</td><td>associative → discovery registry</td></tr>
+<tr><td>79</td><td><b>service federation</b></td><td>federation tier in which operators register services under signed descriptors and accept continuity and succession obligations</td><td>associative → discovery registry</td></tr>
+<tr><td>80</td><td><b>trust federation</b></td><td>federation tier in which trust authorities join the master list by threshold admission and jurisdictional profiles cross-recognize one another</td><td>associative → discovery registry</td></tr>
+<tr><td>81</td><td><b>seed bundle</b></td><td>bootstrap set of registry endpoints and trust anchors with which a conforming client first initializes, resolving the circular dependence between registry discovery and trust</td><td>associative → onboarding ceremony</td></tr>
+<tr><td>82</td><td><b>registry pinning</b></td><td>binding of a passport manifest or a verdict to exact registry items by item, version and hash, so that later registry changes never alter what a past issuance must satisfy</td><td>associative → seed bundle</td></tr>
+</table>
+<h2>Identity and carriers</h2>
+<table><tr><th>id</th><th>term</th><th>definition</th><th>relations</th></tr>
+<tr><td>83</td><td><b>unique product identifier</b></td><td>unique string of characters for the identification of a product that also enables a web link to the digital product passport</td><td>broader → unique identifier</td></tr>
+<tr><td>84</td><td><b>unique identifier</b></td><td>identifier which is guaranteed to be unique among all identifiers used for those objects and for a specific purpose</td><td>—</td></tr>
+<tr><td>85</td><td><b>digital identifier</b></td><td>sequence of characters associated with digital, non-digital, or abstract entities, such as books, images, reports, metadata records or events</td><td>—</td></tr>
+<tr><td>86</td><td><b>identification</b></td><td>process of recognizing an object in a particular domain as distinct from other objects</td><td>associative → identification scheme</td></tr>
+<tr><td>87</td><td><b>identification scheme</b></td><td>system for allocating identifiers to objects</td><td>associative → domain</td></tr>
+<tr><td>88</td><td><b>domain</b></td><td>specified area of knowledge, application, or activity within which a unique identifier is used</td><td>—</td></tr>
+<tr><td>89</td><td><b>self-issuing system</b></td><td>system or mechanism that an organization uses to generate and assign unique identifiers to its objects without the intervention or oversight of an external authority</td><td>associative → issuing agency</td></tr>
+<tr><td>90</td><td><b>persistence</b></td><td>process to keep a unique identifier associated with an identified object throughout its life cycle</td><td>associative → unique identifier</td></tr>
+<tr><td>91</td><td><b>preservation</b></td><td>activity of ensuring that a unique identifier and its denotation remain stable, valid, and retrievable for as long as required</td><td>—</td></tr>
+<tr><td>92</td><td><b>resolution</b></td><td>process in which an identifier is translated or mapped to another identifier, associated information or metadata about the object it represents</td><td>—</td></tr>
+<tr><td>93</td><td><b>resolver</b></td><td>system or service that performs resolution ({{resolution}})</td><td>—</td></tr>
+<tr><td>94</td><td><b>unique economic operator identifier</b></td><td>unique string of characters for the identification of an actors involved in a product&#x27;s value chain</td><td>—</td></tr>
+<tr><td>95</td><td><b>unique facility identifier</b></td><td>unique string of characters for the identification of location or building involved in a product&#x27;s value chain or used by actors involved in a product&#x27;s value chain</td><td>—</td></tr>
+<tr><td>96</td><td><b>unique registration identifier</b></td><td>identifier returned after uploading the unique identifiers and any other data required to the DPP registry [example] -- Unique identifiers can be unique product identifier, unique facility identifier, unique operator identifier of the economic operator etc. --</td><td>—</td></tr>
+<tr><td>97</td><td><b>data carrier</b></td><td>device or medium used to store data as a relay mechanism in an automatic identification and data capture system</td><td>—</td></tr>
+<tr><td>98</td><td><b>additional software</b></td><td>additional application, program, or tool that a user will install or access separately from the default setup of most smartphones or similar devices to interact with the digital product passport [example] -- Proprietary applications, plugins or extensions, dedicated apps, specialized middleware, or customized software readers. --</td><td>—</td></tr>
+<tr><td>99</td><td><b>barcode</b></td><td>printed data carrier indicating either a reference to a linear or a 2D matrix</td><td>—</td></tr>
+<tr><td>100</td><td><b>near field communication</b></td><td>subset of HF passive radio-frequency identification with low range</td><td>—</td></tr>
+<tr><td>101</td><td><b>radio-frequency identification</b></td><td>identification technology that uses electromagnetic fields to automatically identify and track tags attached to objects</td><td>—</td></tr>
+<tr><td>102</td><td><b>RAIN RFID</b></td><td>passive UHF radio-frequency identification ({{radio-frequency identification}})</td><td>—</td></tr>
+<tr><td>103</td><td><b>two-dimensional symbol</b></td><td>code representing data in machine-readable form by a collection of polygonal or circular cells in a regular pattern which are read optically by scanning</td><td>—</td></tr>
+<tr><td>104</td><td><b>X dimension</b></td><td>specified width of the narrow in a bar code symbol or the specified width of a single element in a two-dimensional symbol</td><td>—</td></tr>
+<tr><td>105</td><td><b>batch</b></td><td>subset of a model ({{model}}) that is grouped by an economic operator based on common characteristics</td><td>—</td></tr>
+<tr><td>106</td><td><b>item</b></td><td>single unit of a model ({{model}})</td><td>—</td></tr>
+<tr><td>107</td><td><b>model</b></td><td>version of a product of which all units share the same technical characteristics and the same model identifier</td><td>—</td></tr>
+<tr><td>108</td><td><b>identifier</b></td><td>identity information that unambiguously distinguishes one entity from another one in a given domain</td><td>—</td></tr>
+</table>
+<h2>Actors</h2>
+<table><tr><th>id</th><th>term</th><th>definition</th><th>relations</th></tr>
+<tr><td>109</td><td><b>economic operator</b></td><td>manufacturer, authorized representative, importer, distributor, dealer or fulfilment service provider</td><td>broader → actor</td></tr>
+<tr><td>110</td><td><b>digital product passport service provider</b></td><td>natural or legal person that is an independent third party authorized by the economic operator ({{economic operator}}) that places the product on the market or puts it into service and that processes the digital product passport data for that product for the purpose of making such data available to economic operators and other relevant actors with a right to access those data</td><td>broader → actor</td></tr>
+<tr><td>111</td><td><b>main digital product passport service provider</b></td><td>digital product passport service provider ({{digital product passport service provider}}) that is hosting the digital product passport ({{digital product passport}}) on behalf of the economic operator ({{economic operator}}) if the economic operator chooses not to host the digital product passport themselves</td><td>narrower_part → digital product passport service provider</td></tr>
+<tr><td>112</td><td><b>back-up digital product passport service provider</b></td><td>digital product passport service provider ({{digital product passport service provider}}) that is hosting the back-up copy of the digital product passport ({{digital product passport}})</td><td>narrower_part → digital product passport service provider</td></tr>
+<tr><td>113</td><td><b>issuing agency</b></td><td>organisation entrusted by a Registration Authority (RA) to manage unique identification schemes</td><td>broader → actor</td></tr>
+<tr><td>114</td><td><b>actor</b></td><td>organization or individual that fulfils a role</td><td>—</td></tr>
+<tr><td>115</td><td><b>notified actor</b></td><td>organization or individual entitled by an authorized accrediting body or authority, that fulfils a role in the DPP lifecycle</td><td>broader → actor</td></tr>
+<tr><td>116</td><td><b>consumer</b></td><td>individual member of the general public purchasing or using goods, property or services for private purposes</td><td>broader → actor</td></tr>
+<tr><td>117</td><td><b>customer</b></td><td>organization or person that receives a product</td><td>broader → actor</td></tr>
+<tr><td>118</td><td><b>expert</b></td><td>expert in charge of performing a study</td><td>broader → actor</td></tr>
+<tr><td>119</td><td><b>reviewer</b></td><td>expert in charge of reviewing a study</td><td>broader → actor</td></tr>
+<tr><td>120</td><td><b>exporter</b></td><td>name and address of the person who makes, or on whose behalf the \&quot;export declaration\&quot; is made, and who is the owner of the goods or has similar right of disposal over them at the time when the declaration is accepted</td><td>broader → actor</td></tr>
+<tr><td>121</td><td><b>seller</b></td><td>company or company function that sells a product</td><td>broader → actor</td></tr>
+<tr><td>122</td><td><b>subcontractor</b></td><td>company or company function that performs activities as a sub-contractor (for example cutting/sewing operations but also dyeing)</td><td>broader → actor</td></tr>
+<tr><td>123</td><td><b>buyer</b></td><td>individual or entity purchasing goods or services</td><td>broader → actor</td></tr>
+<tr><td>124</td><td><b>producer</b></td><td>company or company function that produces final or non-final fashion products (yarns, fabrics, garments, accessories, footwear, etc.); its industrial process has in input materials and in output components or final fashion goods for the business customers or final customers</td><td>broader → actor</td></tr>
+<tr><td>125</td><td><b>supplier</b></td><td>company or company function that produces non final products (accessories, fabrics, yarns…); its industrial process has in input materials and in output components for the business customers</td><td>broader → actor</td></tr>
+<tr class='dom'><td>126</td><td><b>yarn producer</b> ▲domain-scoped</td><td>company or company function that produces yarns from raw material; it has mainly Fabric and Knitwear producers as customers (Apparel Producers sometimes)</td><td>broader → actor; associative → textile product</td></tr>
+<tr><td>127</td><td><b>retailer</b></td><td>company or company function that sells garments to the Consumer. It is a client of Apparel Producer, Knitwear Producer, and Yarn Producer</td><td>broader → actor</td></tr>
+<tr class='dom'><td>128</td><td><b>apparel producer</b> ▲domain-scoped</td><td>company or company function that organizes manufacturing and material supplying to obtain finished garments from fabrics. It is a client of Fabric Producer and partially of Yarn Producer</td><td>broader → actor; associative → textile product</td></tr>
+<tr class='dom'><td>129</td><td><b>sorter</b> ▲domain-scoped</td><td>person or a system that categorizes discarded textile materials by their fibre composition, color, and condition to determine their potential for reuse, repair, or recycling</td><td>broader → actor</td></tr>
+<tr class='dom'><td>130</td><td><b>textile collector</b> ▲domain-scoped</td><td>actor involved in separate collection of textiles</td><td>broader → actor; associative → textile product</td></tr>
+<tr><td>131</td><td><b>recycler</b></td><td>company or company function that performs activities to obtain recovered resources for use in a process or a product, excluding energy recovery</td><td>broader → actor</td></tr>
+<tr><td>132</td><td><b>eService platform</b></td><td>platform for eBusiness centralized services</td><td>associative → actor</td></tr>
+<tr><td>133</td><td><b>traceability platform</b></td><td>platform dedicated to traceability services</td><td>associative → traceability</td></tr>
+<tr><td>134</td><td><b>sustainability management platform</b></td><td>platform dedicated to sustainability data collection, management and reporting</td><td>associative → circular economy</td></tr>
+</table>
+<h2>Life cycle</h2>
+<table><tr><th>id</th><th>term</th><th>definition</th><th>relations</th></tr>
+<tr><td>135</td><td><b>life cycle</b></td><td>consecutive and interlinked stages of a product system, from raw material acquisition or generation from natural resources to final disposal</td><td>—</td></tr>
+<tr><td>136</td><td><b>product</b></td><td>any physical good that is placed on the market ({{placed on the market}}) or put into service ({{put into service}})</td><td>—</td></tr>
+<tr class='dom'><td>137</td><td><b>placed on the market</b> ▲domain-scoped</td><td>first making available of a product</td><td>—</td></tr>
+<tr class='dom'><td>138</td><td><b>put into service</b> ▲domain-scoped</td><td>first use, for its intended purpose, of a product</td><td>—</td></tr>
+<tr><td>139</td><td><b>digital product passport lifetime</b></td><td>period during which the digital product passport ({{digital product passport}}) is required by regulation to be available to any operator or natural or legal person with a right to access its data</td><td>—</td></tr>
+<tr><td>140</td><td><b>end-of-use</b></td><td>point in time during the life cycle at which a product or resource is transferred by the holder to some other holder [example] -- When an organization (e.g., shop or retailer) in possession of the product considers it to be a waste since it hasn&#x27;t or can&#x27;t be sold. --</td><td>part_of → life cycle</td></tr>
+<tr><td>141</td><td><b>end-of-life</b></td><td>point in time during the life cycle at which a product or resource is taken out of use and is disposed</td><td>part_of → life cycle</td></tr>
+<tr><td>142</td><td><b>collection</b></td><td>process of gathering and transporting used textile products or waste materials to a sorting facility for further processing such as reuse, repair, remanufacturing, or recycling</td><td>associative → circular economy</td></tr>
+<tr><td>143</td><td><b>closed loop system</b></td><td>system by which products or resources are used and then recovered and turned into new products or recovered resources, without losing their inherent properties</td><td>—</td></tr>
+<tr><td>144</td><td><b>traceability</b></td><td>ability to trace the history, application or location of an object in a value chain</td><td>—</td></tr>
+<tr><td>145</td><td><b>traceability system</b></td><td>practical system of processes, procedures and information exchanges that implements traceability</td><td>has_part → traceable asset</td></tr>
+<tr><td>146</td><td><b>traceable asset</b></td><td>traceable asset is any product or material (individually, in batches, or in trade units) that needs to be tracked along a value chain</td><td>—</td></tr>
+<tr class='dom'><td>147</td><td><b>textile product</b> ▲domain-scoped</td><td>product made mainly of textile fibres, yarns and/or fabrics and intended to be used, as such or in conjunction with other textile or non-textile elements</td><td>narrower → product</td></tr>
+<tr class='dom'><td>148</td><td><b>circular economy</b> ▲domain-scoped</td><td>products and materials are designed in such a way that they can be reused, remanufactured, recycled or recovered and thus maintained in the economy for as long as possible, along with the resources of which they are made, and the generation of waste, especially hazardous waste, is avoided or minimized and greenhouse gas emissions are prevented or reduced, can contribute significantly to sustainabl</td><td>—</td></tr>
+<tr class='dom'><td>149</td><td><b>product circularity</b> ▲domain-scoped</td><td>refers to repairing, reusing and remanufacturing equipment, and harvesting and recycling metals indefinitely through product design and collection processes</td><td>narrower → circular economy</td></tr>
+<tr><td>150</td><td><b>value chain</b></td><td>all activities and stakeholders that provide or receive value from designing, developing, making, distributing, retailing, and consuming a product (or providing the service that a product renders), including the extraction and supply of raw materials, as well as activities involving the product after its useful service life has ended</td><td>associative → life cycle</td></tr>
+</table>
+<h2>Trust and verification</h2>
+<table><tr><th>id</th><th>term</th><th>definition</th><th>relations</th></tr>
+<tr><td>151</td><td><b>controlled DPP data</b></td><td>information on digital product passport whose access is controlled based on the user&#x27;s access rights</td><td>part_of → digital product passport</td></tr>
+<tr><td>152</td><td><b>authentication</b></td><td>verification that a claimed identity is correct</td><td>—</td></tr>
+<tr><td>153</td><td><b>data integrity</b></td><td>property that data has not been altered or destroyed in an unauthorised manner</td><td>—</td></tr>
+<tr><td>154</td><td><b>secure communication</b></td><td>mechanism of transmitting data between systems in a way that ensures its confidentiality, integrity and authenticity</td><td>—</td></tr>
+<tr><td>155</td><td><b>system resilience</b></td><td>ability to recover from security compromises or attacks</td><td>—</td></tr>
+<tr><td>156</td><td><b>system availability</b></td><td>property of being accessible and usable on demand by an authorized entity</td><td>—</td></tr>
+<tr><td>157</td><td><b>cyber resilience</b></td><td>ability to maintain business continuity despite adverse conditions, attacks, or compromises on critical data flow and related information systems</td><td>—</td></tr>
+<tr><td>158</td><td><b>recovery point objective</b></td><td>point in time to which data must be recovered after a disruption has occurred</td><td>—</td></tr>
+<tr><td>159</td><td><b>recovery time objective</b></td><td>period of time within which minimum levels of services and/or products and the supporting systems, applications, or functions must be recovered after a disruption has occurred</td><td>—</td></tr>
+<tr><td>160</td><td><b>object</b></td><td>entity to which specified requirements apply [example] -- Product, process, service, system, installation, project, data, design, material, claim, person, body or organization, or any combination thereof. --</td><td>—</td></tr>
+<tr><td>161</td><td><b>PIA</b></td><td>RFID Privacy Impact Assessment Process</td><td>—</td></tr>
+<tr><td>162</td><td><b>claim</b></td><td>high-level statement about a characteristic of a product, or about a process or an organization associated with that product (traceable asset). A sustainability claim is a claim that covers one or multiple sustainability dimensions (economic, environmental, social)</td><td>—</td></tr>
+<tr class='dom'><td>163</td><td><b>state-of-the-art</b> ▲domain-scoped</td><td>developed stage of technical capability at a given time as regards products, processes and services, based on the relevant consolidated findings of science, technology and experience</td><td>—</td></tr>
+<tr><td>164</td><td><b>access control</b></td><td>protection of system resources against unauthorized access; a process by which use of system resources is regulated according to a security policy and is permitted by only authorized entities (users, programs, processes, or other systems) according to that policy</td><td>—</td></tr>
+<tr><td>165</td><td><b>electronically signed data construct</b></td><td>structured data set containing the header, payload, signature and optional data fields</td><td>—</td></tr>
+<tr><td>166</td><td><b>validation</b></td><td>confirmation of the plausibility for a specific intended use or application through the provision of objective evidence that specified requirements have been met</td><td>—</td></tr>
+<tr><td>167</td><td><b>verification</b></td><td>confirmation of the truthfulness through the provision of objective evidence that specified requirements have been fulfilled</td><td>associative → validation</td></tr>
+</table>
+<h2>Semantics</h2>
+<table><tr><th>id</th><th>term</th><th>definition</th><th>relations</th></tr>
+<tr><td>168</td><td><b>interoperability</b></td><td>ability of two or more systems or applications to exchange information and to mutually use the information that has been exchanged</td><td>—</td></tr>
+<tr><td>169</td><td><b>semantic interoperability</b></td><td>ability for data shared by systems to be understood at the level of fully defined domain concepts</td><td>—</td></tr>
+<tr><td>170</td><td><b>technical interoperability</b></td><td>ability that covers the applications and infrastructures linking systems and services</td><td>—</td></tr>
+<tr><td>171</td><td><b>application programming interface</b></td><td>set of methods ({{method}}) provided by an application component for use by other application components</td><td>—</td></tr>
+<tr><td>172</td><td><b>representational state transfer application programming interface</b></td><td>service that allows for interaction with resources via a stateless, client-server architecture, typically using standard HTTP calls like GET, POST, PUT, and DELETE to perform methods ({{method}}) by an application component on these resources</td><td>—</td></tr>
+<tr><td>173</td><td><b>method</b></td><td>particular way used to perform a specific action on a resource [example] -- read a DPP --</td><td>—</td></tr>
+<tr><td>174</td><td><b>parameter</b></td><td>data provided by a client, that is needed to perform a method ({{method}}) [example] -- DPP ID for read DPP --</td><td>—</td></tr>
+<tr><td>175</td><td><b>result</b></td><td>return value after the execution of a method ({{method}}) [example] -- the DPP --</td><td>—</td></tr>
+<tr><td>176</td><td><b>data exchange</b></td><td>storing, accessing, transferring, and archiving of data</td><td>—</td></tr>
+<tr><td>177</td><td><b>application</b></td><td>software functional element specific to the solution of a problem in industrial-process measurement and control</td><td>—</td></tr>
+<tr><td>178</td><td><b>asset</b></td><td>entity owned by or under the custodial duties of an organization, which has either a perceived or actual value to the organization [example] -- Examples for physical entities are equipment, raw material, parts components and pieces, supplies, consumables, physical products, and waste. -- [example] -- Software is an example of a digital asset. -- [example] -- A software license is an example of an </td><td>—</td></tr>
+<tr><td>179</td><td><b>attribute</b></td><td>data element of a property, a relation, or a class in information technology</td><td>—</td></tr>
+<tr><td>180</td><td><b>Asset Administration Shell</b></td><td>standardized digital representation of an asset</td><td>has_part → Submodel</td></tr>
+<tr><td>181</td><td><b>class</b></td><td>description of a set of objects that share the same attributes, operations, methods, relationships, and semantics</td><td>—</td></tr>
+<tr><td>182</td><td><b>capability</b></td><td>implementation-independent potential of a component to achieve an effect within a domain</td><td>narrower_part → SubmodelElement</td></tr>
+<tr><td>183</td><td><b>coded value</b></td><td>value that can be looked up in a dictionary and can be translated</td><td>—</td></tr>
+<tr><td>184</td><td><b>component</b></td><td>product used as a constituent in an assembled product, system, or plant</td><td>—</td></tr>
+<tr><td>185</td><td><b>concept</b></td><td>unit of knowledge created by a unique combination of characteristics</td><td>—</td></tr>
+<tr><td>186</td><td><b>digital representation</b></td><td>information and services representing an entity from a given viewpoint [example] -- Examples of information are properties (e.g. maximum temperature), actual parameters (e.g. actual velocity), events (e.g. notification of status change), schematics (electrical), and visualization information (2D and 3D drawings). -- [example] -- Examples of services are asset services (for example providing the hi</td><td>—</td></tr>
+<tr><td>187</td><td><b>digital twin</b></td><td>digital representation, sufficient to meet the requirements of a set of use cases</td><td>broader → digital representation</td></tr>
+<tr><td>188</td><td><b>explicit value</b></td><td>commonly used concept, like numbers (e.g. 109, 25) which do not need lookup in dictionaries</td><td>—</td></tr>
+<tr><td>189</td><td><b>instance</b></td><td>concrete, clearly identifiable component of a certain type</td><td>—</td></tr>
+<tr><td>190</td><td><b>instance asset</b></td><td>specific asset that is uniquely identifiable [example] -- Examples of instance assets are material, a product, a part, a device, a machine, software, a control system, or a production system. --</td><td>broader → asset</td></tr>
+<tr><td>191</td><td><b>operation</b></td><td>executable realization of a function</td><td>narrower_part → SubmodelElement</td></tr>
+<tr><td>192</td><td><b>property</b></td><td>defined characteristic suitable for the description and differentiation of products or components</td><td>narrower_part → SubmodelElement</td></tr>
+<tr><td>193</td><td><b>qualifier</b></td><td>well-defined element associated with a property instance or SubmodelElement, restricting the value statement to a certain period of time or use case</td><td>—</td></tr>
+<tr><td>194</td><td><b>service</b></td><td>distinct part of the functionality that is provided by an entity through interfaces</td><td>—</td></tr>
+<tr><td>195</td><td><b>Submodel</b></td><td>representation of an aspect of an asset</td><td>has_part → SubmodelElement; narrower_part → Asset Administration Shell</td></tr>
+<tr><td>196</td><td><b>SubmodelElement</b></td><td>element of a Submodel</td><td>narrower_part → Submodel; has_part → property</td></tr>
+<tr><td>197</td><td><b>Submodel template</b></td><td>template for the representation of an aspect of an asset</td><td>broader → Submodel</td></tr>
+<tr><td>198</td><td><b>Submodel template element</b></td><td>element of a Submodel template</td><td>narrower_part → Submodel template</td></tr>
+<tr><td>199</td><td><b>system</b></td><td>interacting, interrelated, or interdependent elements forming a complex whole</td><td>—</td></tr>
+<tr><td>200</td><td><b>template</b></td><td>specification of the common features of an object in sufficient detail that such object can be instantiated using it</td><td>—</td></tr>
+<tr><td>201</td><td><b>type</b></td><td>hardware or software element which specifies the common attributes shared by all instances of the type</td><td>—</td></tr>
+<tr><td>202</td><td><b>type asset</b></td><td>(abstract) representation of a set of instance assets with common characteristics and features [example] -- Examples of type assets are type of material, a product type, a type of a part, a device type, a machine type, a type of software, a type of control system, a type of production system. --</td><td>broader → asset</td></tr>
+<tr><td>203</td><td><b>variable</b></td><td>software entity that may take different values, one at a time</td><td>—</td></tr>
+</table>
+<h2>Measurement</h2>
+<table><tr><th>id</th><th>term</th><th>definition</th><th>relations</th></tr>
+<tr><td>204</td><td><b>mass balance model</b></td><td>chain of custody model in which materials or products with a set of specified characteristics are mixed according to defined criteria with materials or products without that set of characteristics</td><td>associative → mass balance accounting</td></tr>
+</table>
+<h2>Framework: profiles</h2>
+<table><tr><th>id</th><th>term</th><th>definition</th><th>relations</th></tr>
+<tr><td>205</td><td><b>profile</b></td><td>registered, versioned object that binds a set of data points, transforms, cryptographic suites, trust requirements, access policies, presentation requirements and a trigger predicate to the neutral core passport, constraining and transforming, but never redefining, the single definition of each data point</td><td>equivalent → lens</td></tr>
+<tr><td>206</td><td><b>lens</b></td><td>profile conceived as a calibrated measuring instrument placed on the digital twin, which selects and transforms without altering the observed scene</td><td>equivalent → profile; associative → trust list</td></tr>
+<tr><td>207</td><td><b>lens mount</b></td><td>standardized interface of the neutral core through which any registered profile is attached to and operates on the record of the subject, such that profiles from any registering authority compose without proprietary binding</td><td>—</td></tr>
+<tr><td>208</td><td><b>jurisdiction profile</b></td><td>profile that binds the data points, transforms, cryptographic suites, trust requirements, access rules, presentation and carrier requirements enacted by the law of a given jurisdiction</td><td>narrower → profile</td></tr>
+<tr><td>209</td><td><b>sector overlay</b></td><td>profile that composes with other profiles to add the data points, transforms and rules applicable to an industry sector, such as electronics, textiles, batteries, construction, tyres or packaging</td><td>narrower → profile</td></tr>
+<tr><td>210</td><td><b>applicable law</b></td><td>totality of legal rules that apply to a subject placed on a market, represented in the passport system by the corresponding jurisdiction profile and its dated applicability bindings</td><td>—</td></tr>
+<tr><td>211</td><td><b>as-of query</b></td><td>query against the event-sourced record of a subject that reconstructs the state that was legally valid at a specified past time</td><td>associative → as-of state</td></tr>
+<tr><td>212</td><td><b>trust list</b></td><td>signed, registry-deposited list of the trust anchors accredited to act under a given profile or jurisdiction, served with status and revocation information</td><td>—</td></tr>
+</table>
+<h2>Framework: projection</h2>
+<table><tr><th>id</th><th>term</th><th>definition</th><th>relations</th></tr>
+<tr><td>213</td><td><b>projection</b></td><td>deterministic, registered and legally cited view of the testimonial record of a governed digital twin, computed under a profile from the event-sourced change log</td><td>—</td></tr>
+<tr><td>214</td><td><b>materialized view</b></td><td>rendered, citable result of a projection, materialized at a point in time for serving and verification</td><td>equivalent → projection</td></tr>
+<tr><td>215</td><td><b>child passport</b></td><td>passport of a component or sub-product that is independently placed on the market or independently regulated, referenced by identity from the passport of the composite product</td><td>associative → digital product passport</td></tr>
+<tr><td>216</td><td><b>containment event</b></td><td>typed event recording that one passport is physically or structurally contained in another, retained for genealogy and recall traversal and never transferring authority</td><td>associative → installation</td></tr>
+<tr><td>217</td><td><b>genealogy</b></td><td>complete directed ancestry of a passport, traced through transformation and containment events from raw-material and component passports to the present subject</td><td>associative → derived passport</td></tr>
+<tr><td>218</td><td><b>as-of state</b></td><td>state of a subject reconstructed from its event-sourced record at a specified past time, anchored by a notarized snapshot so that queries can answer what was legally true at that time</td><td>—</td></tr>
+<tr><td>219</td><td><b>offline minimum</b></td><td>subset of passport data and verification material specified as sufficient for offline verification of identity and status from the data carrier alone</td><td>narrower_part → Tier-A payload</td></tr>
+<tr><td>220</td><td><b>degradation ladder</b></td><td>ordered set of service tiers by which availability and verification degrade explicitly, from the served full passport through the carrier-embedded minimum to the archival record</td><td>has_part → Tier-A payload; has_part → Tier-B payload; has_part → Tier-C archive</td></tr>
+<tr><td>221</td><td><b>Tier-A payload</b></td><td>carrier-embedded minimum viable passport, comprising the product identifier, the resolver URI, the economic operator identifier, the status, the critical safety or recall flag, the validity and multi-suite compressed signatures, sized to the data carrier and verifiable offline against pre-cached trust anchors</td><td>—</td></tr>
+<tr><td>222</td><td><b>Tier-B payload</b></td><td>full passport content, served through resolution and hosting services in accordance with the applicable profile</td><td>—</td></tr>
+<tr><td>223</td><td><b>Tier-C archive</b></td><td>notarized archival form of the passport record, retained for persistence beyond the operational lifetime of any single provider</td><td>—</td></tr>
+</table></main></body></html>

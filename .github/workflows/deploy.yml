@@ -63,6 +63,14 @@ jobs:
           node-version: 22
           cache: npm
 
+      - name: Refresh the concept-model pages
+        run: |
+          git clone --depth 1 https://github.com/unidpp/unidpp-concept-model.git /tmp/concept-model
+          python3 /tmp/concept-model/scripts/build-site.py
+          rm -rf public/models
+          mkdir -p public/models
+          cp -R /tmp/concept-model/html/* public/models/
+
       - name: Install dependencies
         run: npm ci
 
