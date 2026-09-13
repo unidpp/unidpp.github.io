@@ -20,15 +20,22 @@ export const frameworkNav: NavItem[] = [
 export const specsNav: NavItem[] = [
   { label: 'Specification index', href: '/specs/' },
   { label: 'Part 1 · Framework', href: '/specs/part-1-framework/' },
-  { label: 'Part 2 · Profiles', href: '/specs/part-2-profiles/' },
-  { label: 'Part 3 · Events, identity, transforms', href: '/specs/part-3-events/' },
-  { label: 'Part 4 · Tiers and trust', href: '/specs/part-4-tiers/' },
-  { label: 'Part 5 · Conformance', href: '/specs/part-5-conformance/' },
+  { label: 'Part 2 · Core model', href: '/specs/part-2-core/' },
+  { label: 'Part 3 · Profiles, Primmel binding', href: '/specs/part-3-profiles/' },
+  { label: 'Part 4 · Projections, twin interface', href: '/specs/part-4-projections/' },
+  { label: 'Part 5 · Tiers and trust', href: '/specs/part-5-tiers-trust/' },
+  { label: 'Part 6 · Federation, discovery', href: '/specs/part-6-federation/' },
+  { label: 'Part 7 · Semantics', href: '/specs/part-7-semantics/' },
+  { label: 'Part 8 · Sovereignty', href: '/specs/part-8-sovereignty/' },
+  { label: 'Part 9 · Conformance, annexes', href: '/specs/part-9-conformance/' },
+  { label: 'Part 10 · Client retrieval', href: '/specs/part-10-retrieval/' },
 ];
 
 export const implementationNav: NavItem[] = [
   { label: 'Repositories and quickstart', href: '/implementation/' },
   { label: 'Demonstrations', href: '/implementation/demos/' },
+  { label: 'The cross-border case', href: '/implementation/demos/cross-border/' },
+  { label: 'Operations transparency', href: '/implementation/transparency/' },
   { label: 'Conformance register', href: '/implementation/conformance/' },
 ];
 

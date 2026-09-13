@@ -1,0 +1,247 @@
+[[cl-operations]]
+== Operations and durability
+
+The framework's guarantees survive contact with operations or they do
+not exist. This clause states the operational invariants as normative
+requirements; each is demonstrated by the reference operator tooling
+(`unidpp-ops` and the pilot deployment, see the bibliography's
+implementation references).
+
+[[cl-ops-data]]
+=== The deployment as data
+
+A deployment comprises its configuration (the operator manifest), its
+services' journals, and its seed assets. Services shall reconstruct
+their state by journal replay on start; no service shall hold
+authoritative state that is not journaled. Configuration shall be
+externalized data — a deployment's identity, services, and policies
+shall be expressible without code changes (the whitelabel and
+sovereign profiles are configuration, not forks).
+
+[[cl-ops-backup]]
+=== Backup integrity
+
+A backup of a deployment shall carry, for every member it contains,
+an integrity value (SHA-256) in an accompanying manifest, together
+with the UTC moment of the snapshot and a consistency point: the
+transparency log's signed tree head at snapshot time, delimiting what
+a restore replays up to.
+
+[[cl-ops-restore]]
+=== Restore safety
+
+A restore shall verify every member's integrity value before
+unpacking any file. A restore shall refuse to overwrite an existing
+deployment unless explicitly instructed; when instructed, it shall
+preserve the replaced state (set aside, never destroyed). Member
+paths belonging to the backed-up deployment's own tenant shall be
+rewritten into the restored deployment; members belonging to other
+tenants shall be restored as archive material under their original
+identities (a restore shall not collapse distinct tenants onto shared
+paths).
+
+Recovery to the deployment's original shape (disaster recovery)
+shall follow the same rules: verified before unpacking, the replaced
+state set aside and never destroyed, and every member restored at
+its original path — no rewriting of any kind.
+
+[[cl-ops-append-only]]
+=== Append-only continuity
+
+Service journals are append-only across the service lifecycle: a
+service upgrade or restart shall not rewrite, reorder, or truncate
+any journal. The journals captured by a pre-upgrade backup shall be
+byte-prefixes of the corresponding post-upgrade journals. An operator
+shall be able to demonstrate this property by rehearsal: record the
+domain state, rebuild and restart the services under the new
+binaries, and show the readings equal and the prefix property holds.
+
+[[cl-ops-drill]]
+=== Proven restore
+
+A backup that has never been restored is a claim, not a capability.
+An operator deployment shall demonstrate its restore path by
+rehearsal — backup, restore into an isolated rehearsal target owned
+by the rehearsal itself, verify checksums, confirm restored members
+byte-identical, and validate the restored configuration — and shall
+record the rehearsal's outcome as an artifact. The rehearsal shall
+NOT touch production state.
+
+[[cl-ops-bundle]]
+=== Transfer artifacts
+
+Where a deployment is transferred to another host (on-premise or
+sovereign operation), the transfer artifact shall carry per-member
+integrity metadata verifiable independently of its producer, and
+shall not embed secret material: secrets travel as environment
+references, resolved at the receiving deployment.
+
+[[cl-ops-grid]]
+=== The segment grid
+
+Where the preceding clauses govern the OPERATOR's deployment, the
+grid governs the SUBJECT's data: a device DPP is one layered stack
+crossed with parallel, policy-defined sovereignty segments.
+
+A **segment** is a custodian's partition of the record; its wire
+form carries a sealed state commitment and the governing policy
+reference — never plaintext (a segment type that cannot hold facts
+is the SG-7 log discipline at the subject level). A **policy
+object** is the segment's constitution — authority, roles, reveal
+class (open, pairing-gated, origin-sealed, escrowed), suites,
+window, version — signed by the segment authority; verification
+resolves the key through the trust graph node declared as the
+authority, and a valid signature from any other key does not
+constitute the policy. Superseded and drifted policy versions shall
+be detected at verification (graded, never silent).
+
+The **commitment spine** is one root over every segment's state
+commitment. It shall prove existence, currency and append-only
+growth of each segment without opening any: an inclusion proof for
+segment k contains only hashes pertaining to segment k, and verifying
+it requires nothing from any other segment. Rewinds and rewrites
+shall not be provable as growth. A spine shall anchor in the
+transparency log — one anchoring chain, not two: the spine's digest
+appears as a log commitment, servable as a receipt (inclusion proof
++ signed tree head) that verifies offline and rides the dossier; a
+spine never anchored yields no receipt, stated.
+
+An **edge segment** publishes commitments over its local log
+prefixes: commit first, reveal later, and never contradict. The
+commitment names the prefix length and the prefix state; a later
+reveal shall recompute it — a reveal inconsistent with a prior
+commitment shall be rejected, the commitment and the reveal named.
+The law holds unconditionally: the commitment proves the log's
+growth without opening the sealed classes, so a contradiction is a
+provable fault, not a discrepancy to weigh.
+
+[[cl-s13]]
+=== The cross-border seam (S13)
+
+Where the grid governs one subject's data, S13 governs the
+system-to-system request across a border: a verifier requests a
+segment view; the custodian's POLICY answers. The outcome shall be
+one of four machine-reproducible forms — permit, permit-paired,
+attestation offer, escalation — derived from the governing policy's
+reveal class; denial shall be stated with its reason, never silent.
+The response shall bind to the request digest and cite the governing
+policy identifier and version.
+
+A **sovereign attestation** substitutes for an origin-sealed class:
+a statement ABOUT the segment's commitment (never its contents),
+claiming conformity, commitment-hash or freshness as of a stated
+moment, signed by the sovereign attestation service. High-stakes
+claims shall carry an M-of-K quorum co-signature. A verifier shall
+accept such an attestation under its own anchors, and the resulting
+verdict shall grade the evidence attested-by-authority — beside
+verified-direct for opened evidence — naming the governing policy.
+
+A verification **route** is the plan by which a verifier reaches a
+verdict: resolution, transport, documents, mappings, loci and
+substitutions, computed from anchors and policy. Execution is
+deterministic, and the executed route is the coverage report's
+replayable trace: re-running the recorded steps over the recorded
+inputs reproduces the verdict byte-identically. A gap that the route
+cannot cover is recorded as a stated gap step in the trace, never
+left silent.
+
+The **composition law** governs what interop a pair effectively has:
+per pair, direction, data class and time, the effective level is the
+minimum over the layer caps and the policy or recognition cap; the
+bottleneck layer is reported; a policy cap cannot be lifted by any
+bridge. The technical state of a relationship is described per layer
+— transport, protocol, structure, semantics, identity, trust — as
+same, bridged by a registered mapping, or gap, and is carried in the
+discovery registry's service descriptors.
+
+Assurance flows travel by three transport modes, chosen per pair:
+connected protocol (the S13 exchange), document exchange (frozen
+views and dossiers), and hub relay. Willingness is a precondition —
+no transport mode may bypass a policy refusal. Each delivery shall
+consult the publisher's interop declaration; a refusal, and the
+absence of a declaration, surface as a stated coverage gap or an
+escalation, never as silent delivery. A hub is a stateless signed
+relay between willing pairs divided by protocols: it checks each
+side's declaration before relaying, attests what it forwarded
+(digest, endpoints, data class) under its own signature, and retains
+nothing.
+
+Every cross-border assurance flow shall work from exchanged signed
+objects alone: the custodian can hand the verifier a **dossier** —
+the signed policies, the signed spine with inclusion proofs, the
+sovereign attestations, the journaled S13 exchange, one document —
+and the verifier shall be able to derive the complete foreign
+verdict offline, under its own anchors and acceptance policy, with
+zero calls to the custodian's or any foreign synchronous system.
+
+**Provenance coverage** extends the grading from the subject's data
+classes to its ancestry: traversal of the relationship graph
+upstream renders each edge as verified-direct (open evidence seen),
+attested-by-authority (sealed upstream, substitution accepted) or a
+stated gap (missing or unresolvable) — a mixed chain produces the
+three-way report, and an unverified attestation is a stated gap,
+never a pass.
+
+The **coverage report** is a first-class object: per data class, the
+element set reference, the evidence kind (verified-direct /
+attested / explicitly-unavailable), the governing policy identifier
+and version, the reading, and the freshness. Direct and substituted
+verification runs shall render their reports through the same
+pipeline, and every report shall name the governing policies of the
+classes it covers. Unavailability shall be stated as an entry, never
+left silent.
+
+Offers and refusals shall be non-repudiable: the custodian executes
+the policy, but the policy AUTHORITY answers for it — the offer or
+refusal carries the authority's counter-signature over the answer
+and its place in the per-subject sequence, so a dispute is decided
+from the record alone. A forged offer shall fail the authority's
+signature; a replayed offer shall fail its sequence.
+
+Acceptance is the RECEIVING profile's decision, never automatic: the
+verifier's profile declares the attestation services it anchors, the
+claim classes it accepts, the quorum strength it demands, the
+freshness it requires, and the truth mode it tolerates per element
+(only-opened evidence; attested evidence admissible; explicit
+unavailability tolerable). The grade an attestation earns is the
+minimum of what it proves and what the receiving profile accepts:
+the same evidence under two profiles yields two different, both
+correct, verdicts.
+
+=== Erasure, trusted time and archival
+
+*Erasure under append-only* is key destruction: the segment's keys
+are destroyed and the plaintext becomes unrecoverable, while the
+commitment remains — hashes are not facts — so the spine continues
+to prove the history's shape. Erasure applies to consumer-held and
+owner-push segments; a shared segment carrying personal data is
+refused at intake (minimization), and erasure of a shared segment
+is refused. A subject's held segment exports under the subject's
+credential and round-trips.
+
+*Trusted time*: a notarization references verifiable time — log
+inclusion or an external time anchor. A verdict over unanchorable
+time degrades with the reason named. Freshness computations declare
+their clock assumption, and drift beyond the declared bound
+degrades the freshness verdict — never passes.
+
+*Archival (Tier C)*: a decommissioned subject exports to an
+archival package carrying its core state and an integrity manifest.
+Renders derive from identity and content only; the archival moment
+is package metadata. Media refresh changes the medium, never the
+identity or the content.
+
+=== Suite migration and binding pluralism
+
+Algorithm-suite migration is rehearsed like upgrades: the drill
+signs across the migration phases (classical, hybrid co-signed),
+flips the acceptance policy to the successor suite, and re-derives
+every verdict — hybrid-signed objects still verify, classical-only
+objects degrade, and the journals replay untouched (migration is a
+policy act, not a rewrite). A coverage gap is the drill's finding,
+named before cutover.
+
+Protocol bindings are plural: the EN 18222-compatible API and the
+UNTP render are two bindings of one retrieval capability, serving
+the same core state — an implementation serving one binding is
+interrogated through it, and neither is the definition.

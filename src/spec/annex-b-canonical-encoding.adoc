@@ -1,0 +1,138 @@
+[[annex-canonical]]
+[appendix,obligation=normative]
+== Canonical encoding and domain separation
+
+[[annex-canonical-intro]]
+=== Purpose
+
+Every signed or committed object in this framework — policy objects,
+segments and the commitment spine (<<cl-ops-grid>>), profiles
+(Clause 5), S13 messages and sovereign attestation statements
+(<<cl-s13>>) — is hashed or
+signed over CANONICAL BYTES. This annex states the encoding
+normatively so that an independent implementation can produce
+byte-identical forms and reproduce every digest exactly: the
+canonical encoding is the cross-implementation contract (the
+CN-requirements of the reference requirements set). It also states
+the domain-separation rule: every hash and signature domain carries
+a distinct domain tag, and a value derived in one domain shall not
+verify in another.
+
+[[cl-cn-encoding]]
+=== Canonical encoding
+
+An object's canonical bytes are the concatenation, in the field
+order declared for that object type, of each field's canonical
+encoding:
+
+* *Byte strings and text*: a 32-bit unsigned little-endian length
+  prefix followed by the bytes (UTF-8 for text). No separators, no
+  padding, no escapes — the length prefix IS the framing.
+* *Integers*: fixed-width little-endian (16/32/64-bit as declared
+  for the field).
+* *Digests*: the raw 32-byte SHA-256 output.
+* *Optional fields*: a presence byte (0x00 absent, 0x01 present)
+  followed by the value's encoding when present, unless the object
+  declares absence as omission.
+* *Collections*: maps are encoded in ascending key order (the
+  BTreeMap order); order-insensitive lists of text values are
+  deduplicated, sorted in ascending byte order, and joined with the
+  unit separator U+001F as ONE field, and two orderings of the same
+  members shall produce identical canonical bytes.
+* *Structs*: fields in the object's declared order — that order is
+  normative and shall not be changed without a version change.
+
+The digest of an object is SHA-256 over its canonical bytes. Serde
+(JSON) forms are transport conveniences only; the canonical bytes,
+not any particular serialization, are what is hashed and signed.
+
+[[cl-cn-domains]]
+=== Domain separation
+
+Every hash and every signature is computed over a domain-framed
+payload: `domain-tag || 0x00 || canonical payload`. The domain tag
+is an ASCII label; the 0x00 byte terminates it (labels contain no
+0x00). One framing rule for every domain-separated operation —
+signatures and hashes alike.
+
+.Conformance requirement (domain disjointness)
+====
+A value derived in one domain shall not verify in another. In
+particular: a segment state commitment (Table B.1, row 1) replayed
+as a spine input — a sibling node hash, or a leaf-hash value
+presented as a commitment — shall fail proof verification; a
+signature produced in one signing domain shall not verify in
+another over any payload. Conforming implementations shall test
+cross-domain substitution and fail it loudly.
+====
+
+[[tbl-cn-hash-domains]]
+.Table B.1 — Hash domains
+[cols="30,30,40",options="header"]
+|===
+| Domain tag | Hash kind | Payload (canonical parts, in order)
+
+| `UNIDPP-GRID/SEGMENT-COMMITMENT` | A segment's sealed-state commitment | the state bytes
+| `UNIDPP-GRID/SPINE-LEAF` | A spine leaf | segment id, state commitment
+| `UNIDPP-GRID/SPINE-NODE` | A spine pairing node | left child hash, right child hash (order as paired)
+| `UNIDPP-GRID/SPINE-DIGEST` | The spine's whole-object digest | spine version (u64 LE), root, then (length-prefixed id, commitment) per segment in ascending id order
+|===
+
+[[tbl-cn-sign-domains]]
+.Table B.2 — Signature domains
+[cols="45,55",options="header"]
+|===
+| Domain tag | Signed object
+
+| `UNIDPP-SIGNATIF/ARTIFACT-EVENT` | A core canonical event/payload body
+| `UNIDPP-SIGNATIF/DELEGATION` | A delegation credential in the trust graph
+| `UNIDPP-SIGNATIF/MASTER-LIST-WITNESS` | A witness attestation in a master list
+| `UNIDPP-SIGNATIF/TREE-HEAD` | A signed tree head of a transparency log
+| `UNIDPP-SIGNATIF/HISTORICAL-STAMP` | A notarized historical verification stamp
+| `UNIDPP-SIGNATIF/QUORUM` | A quorum (threshold) attestation, including the quorum co-signature of a sovereign attestation
+| `UNIDPP-SIGNATIF/ROLLUP-ATTESTATION` | A signed roll-up attestation over a committed traversal set
+| `UNIDPP-SIGNATIF/SEGMENT-POLICY` | A grid segment policy object (<<cl-ops-grid>>)
+| `UNIDPP-SIGNATIF/SPINE-ROOT` | A grid commitment spine root (<<cl-ops-grid>>)
+| `UNIDPP-SIGNATIF/PROFILE` | A signed profile manifest (Clause 5)
+| `UNIDPP-SIGNATIF/S13-MESSAGE` | An S13 cross-border message (<<cl-s13>>)
+| `UNIDPP-SIGNATIF/SOVEREIGN-ATTESTATION` | A sovereign attestation service's signature over an attestation statement (<<cl-s13>>)
+| `UNIDPP-SIGNATIF/INTEROP-DECLARATION` | A scheme's interop declaration (SI-8)
+|===
+
+[[cl-cn-vectors]]
+=== Golden test vectors
+
+The canonical bytes, digests, spine roots and inclusion proofs of a
+versioned fixture set (the reference implementation's
+`fixtures/canonical/`) are the conformance test material for this
+annex: an implementation that reproduces the fixtures' digests
+exactly is conformant with B.2; one that does not is not. Fixtures
+are versioned with the framework and replayed in continuous
+integration, so a rule change without a fixture change — or the
+reverse — is a visible break, not a silent drift.
+
+[[cl-cn-signed-payloads]]
+=== Signed-object payloads (B.5)
+
+Each signature domain of Table B.2 signs the domain-framed form of
+exactly the following payload (the canonical bytes of the object as
+defined by its clause; entries listed where the payload is a
+derivation rather than the object's canonical bytes):
+
+* SEGMENT-POLICY — the policy object's canonical bytes (Clause 12).
+* SPINE-ROOT — the spine's whole-object digest (Table B.1, row 4).
+* SOVEREIGN-ATTESTATION — the attestation statement's canonical
+  bytes (Clause 12).
+* QUORUM — the length-prefixed quorum node identifier, followed by
+  the threshold as u32 little-endian, followed by the statement
+  bytes the co-signature covers.
+* S13-MESSAGE — the request's or the response's canonical bytes
+  (Clause 12).
+* INTEROP-DECLARATION — the declaration's canonical bytes
+  (declarer, counterpart, version, postures, window).
+* HUB-RELAY — the hub identifier, the forwarded bytes' digest, the
+  endpoints and the data class, each length-prefixed.
+
+Key identifiers are derived from the public key as the first 16
+hexadecimal characters of sha256(suite-code byte ‖ public-key
+bytes), prefixed with `k-`.

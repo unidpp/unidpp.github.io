@@ -1,0 +1,107 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Sidebar from '../../../components/Sidebar.astro';
+import DocTerminal from '../../../components/DocTerminal.astro';
+import Continue from '../../../components/Continue.astro';
+import { implementationNav } from '../../../lib/sections';
+
+const runGrid = `git clone https://github.com/unidpp/unidpp-e2e
+cd unidpp-e2e && make demo
+
+# the G-GRID step: a sealed dynamic segment proven from the spine
+# alone — the transcript asserts the sealed contents never appear`;
+
+const runQuorum = `# the M-of-K machinery a sovereign attestation rides on:
+# one regulator alone is refused (422); two jurisdictions
+# combine partials into one group signature; the declaration
+# lands (201); the standing is visible with its window.
+make demo   # beat B-QUORUM, between B9 and B10`;
+---
+
+<BaseLayout
+  title="The cross-border case"
+  description="The acceptance case of the build programme: a sovereign-CN battery pack with a sealed dynamic segment, a structured policy response, attestation substitution under the verifier's own anchors, and a coverage-graded verdict naming the governing policies — delivered as frozen views through document exchange and the inter-scheme protocol."
+  eyebrow="Evidence — the cross-border case"
+  sectioned
+>
+  <Sidebar slot="rail" heading="Implementation" items={implementationNav} />
+  <h1>The cross-border battery case</h1>
+  <p class="lede">
+    This is the acceptance case of the UniDPP build programme. One battery pack is
+    subject to a sovereign-CN jurisdiction profile whose dynamic data class is sealed
+    by policy; a verifier under EU anchors requests assurance. The case exercises the
+    segment grid, the policy object, attestation substitution, the coverage-graded
+    verdict and the recorded verification route — the machinery that operates under
+    legal non-access, which no regional standard series specifies.
+  </p>
+
+  <section aria-labelledby="cast-h">
+    <h2 id="cast-h">The cast and the four acts</h2>
+    <table class="facts">
+      <tr><th>Subject</th><td>A battery pack under a sector profile of the battery industry, an EU jurisdiction profile and a CN jurisdiction profile.</td></tr>
+      <tr><th>Static data class</th><td>Signed by the device certificate at manufacture; readable, and verified directly.</td></tr>
+      <tr><th>Dynamic data class</th><td>Signed by the device operational slot key under CN certification; sealed by the segment policy to origin keys — commitments only.</td></tr>
+    </table>
+    <ol class="steps">
+      <li><span class="step-num">1</span> <strong>Request.</strong> The EU verifier resolves the pack and requests its data classes through the retrieval interface.</li>
+      <li><span class="step-num">2</span> <strong>Policy evaluation.</strong> The static class is permitted; the dynamic class is refused by policy — and the refusal is structured: the response carries a coverage entry and an attestation offer, never a bare refusal.</li>
+      <li><span class="step-num">3</span> <strong>Substitution.</strong> A sovereign attestation service issues a signed, as-of statement about the sealed class — conformity, commitment hash, freshness — which the verifier checks under its own anchors.</li>
+      <li><span class="step-num">4</span> <strong>Verdict.</strong> The coverage-graded verdict names both governing policies: static verified-direct, dynamic attested. The verification route is recorded; its replay reproduces the verdict.</li>
+    </ol>
+  </section>
+
+  <section aria-labelledby="live-h">
+    <h2 id="live-h">What runs today</h2>
+    <p>
+      The two load-bearing halves of the case run in the end-to-end story today; the
+      choreography that joins them end to end is the open work item of the current
+      phase (the build programme&rsquo;s phase 2), and this page will carry its live
+      trace when it lands.
+    </p>
+    <ul>
+      <li>
+        <strong>The sealed segment, proven without opening it.</strong> The G-GRID step
+        of the end-to-end story runs two segments — one open, one origin-sealed — with
+        authority-signed policies and a custodian-signed spine; the verifier proves the
+        sealed segment&rsquo;s existence, currency and growth from the spine alone, and
+        the transcript asserts that the sealed contents never appear.
+      </li>
+      <li>
+        <strong>The substitution primitive.</strong> The B-QUORUM step drives the M-of-K
+        machinery a sovereign attestation rides on: one regulator alone is refused;
+        two jurisdictions combine threshold partials into one group signature; the
+        retroactive declaration lands; the standing is visible with its window; the
+        evidentiary cutoff protects prior verifications.
+      </li>
+    </ul>
+    <DocTerminal title="run the sealed-segment proof" code={runGrid} />
+    <DocTerminal title="run the substitution primitive" code={runQuorum} />
+  </section>
+
+  <section aria-labelledby="acceptance-h">
+    <h2 id="acceptance-h">The acceptance checklist</h2>
+    <table class="facts">
+      <tr><th>Criterion</th><th>State</th></tr>
+      <tr><td>Sovereign pack with sealed dynamic segment</td><td>running (G-GRID)</td></tr>
+      <tr><td>Structured policy response with attestation offer</td><td>specification Part 10; beat in the current phase</td></tr>
+      <tr><td>Attestation substitution under the verifier&rsquo;s anchors</td><td>primitive running (B-QUORUM); choreography in the current phase</td></tr>
+      <tr><td>Coverage-graded verdict naming the governing policies</td><td>schema specified; rendering in the current phase</td></tr>
+      <tr><td>Recorded verification route, replay reproduces the verdict</td><td>specified; in the current phase</td></tr>
+      <tr><td>Delivery through document exchange and the protocol</td><td>specified; in the current phase</td></tr>
+    </table>
+  </section>
+
+  <Continue
+    href="/models/"
+    title="The models of the case"
+    desc="The segment grid, the party model and the scheme calculus, as formal models and diagrams."
+  />
+</BaseLayout>
+
+<style>
+  .facts { width: 100%; border-collapse: collapse; }
+  .facts th, .facts td { border: 1px solid var(--line); padding: .45rem .6rem; text-align: left; vertical-align: top; }
+  .facts th { background: var(--panel-2); font-weight: 600; width: 22%; }
+  .steps { display: grid; gap: .8rem; padding-left: 0; list-style: none; margin-top: 1rem; }
+  .step-num { font-family: var(--font-mono); color: var(--accent); margin-right: .5rem; }
+</style>

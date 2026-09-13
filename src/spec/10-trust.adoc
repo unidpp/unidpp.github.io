@@ -234,3 +234,65 @@ c) *Algorithm and profile succession.* Post-quantum migration follows
 
 d) *Regime succession.* Cross-recognition suspensions and
  reconnections are ceremonies recorded as trust events (11.5 d).
+
+=== Party model and the signing matrix
+
+Trust-graph nodes declare a party class — one of government,
+international body, accreditation authority, conformity-assessment
+body, manufacturer, verifier, bearer, operator, or update actor —
+orthogonal to the node's structural kind. The class states the
+node's role; the structural kind states its position.
+
+Which party class may sign which object class is fixed by the
+signing matrix, a first-class table consulted at intake: a
+segment policy is signed by a government; a profile by an
+international body, or by a manufacturer as a self-declaration; an
+accreditation by an accreditation authority or a government;
+conformity evidence by a conformity-assessment body; a spine root
+by the custodian (manufacturer or operator); an interop declaration
+by the scheme's operator. An out-of-class signature is refused at
+intake with both classes named: a valid signature from the wrong
+role is not the object it claims to be. Trust markers remain
+graded, never boolean; multi-suite co-signatures verify
+independently, and suite-selective verification under a declared
+acceptance policy passes.
+
+=== Accreditation liveness
+
+An accreditation is a first-class verifiable object: the
+accreditation authority's signed grant to a conformity-assessment
+body, carrying the accredited scope, the accepted suites, the
+effective window and a version. Its liveness is checked at use
+time: a conformity signature whose accreditation has expired
+degrades the verdict, naming the authority and the lapsed window; a
+missing or unverifiable accreditation is stated, never silent. The
+latest admissible version governs; supersession is detectable.
+
+=== Certified hierarchies
+
+Certification hierarchies in the style of CNML — root, issuing
+authority, test laboratory, manufacturer model, instance — are
+ingested as chains of scoped delegations, each link signed by its
+parent and carrying the four-layer scope (authority,
+profile-version, product-group, window) plus executable conditions.
+Calibration evidence in the style of a digital calibration
+certificate — device under test, measurand, result, GUM uncertainty,
+unit, interval — is signed by the issuing laboratory. The scope is
+checked at every link at use time: an act is admitted only when
+every link's scope admits it, and the refusing link is named. An
+out-of-scope delegation is thereby rejected when the evidence is
+verified, not when the chain is filed.
+
+=== Recognition modes
+
+Recognition of a counterpart's objects is declared per object class
+under one of four modes: unilateral pinning under a declared
+acceptance policy; bilateral anchor exchange; club lists; and the
+master-list mesh. Recognition is class-scoped — a mode recognized
+for one object class does not admit objects of another class, and
+out-of-class objects are refused with both the counterpart and the
+class named. Declared harmonization levels are machine-queryable
+per pair and per data class as the minimum of the two sides'
+declarations, and drive the per-class behaviour: structural mapping
+at L3 and above, document substitution at L1 and L2, and a stated
+gap below.

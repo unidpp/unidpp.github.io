@@ -209,6 +209,21 @@ f) The threat model shall be declared per class: silent products face
  instrumented products additionally face firmware, key-custody and
  channel-compromise threats.
 
+g) The device shall be a cryptographic principal. A certificate
+ issued at manufacture shall bind the device's identity key to the
+ static segment's state commitment, signed by the manufacturer;
+ per-segment operational slot keys shall sign the dynamic data, each
+ slot key certified for its segment by the segment authority; and a
+ segment attestation shall path-find to its authority through the
+ chain device key — slot credential — authority. A slot key
+ presented for a segment other than the one its credential covers
+ shall be refused, the credential and the claimed segment named.
+
+h) Revocation of one slot-key chain shall invalidate the
+ attestations of that segment only: the attestations of every other
+ segment of the same device, under other slot keys, shall be
+ unaffected. Revocation scope is the slot key, never the device.
+
 [[cl-profile-freshness]]
 === Freshness requirements
 
@@ -223,6 +238,14 @@ A profile shall declare one freshness requirement:
 Freshness shall be evaluated against the projection's as-of stamp
 (10.4). Staleness shall be reported explicitly as a freshness verdict
 and shall never silently pass (I13).
+
+A profile may in addition declare a per-element freshness demand
+(`fresh_within`, an ISO 8601 duration) on a data point: the
+element's evidence shall be at least as fresh as the demand at the
+projection moment. A breached element-level demand degrades that
+element's reading with the demand and the observed age named — the
+profile-level window and the element-level demand are independent
+requirements, and satisfying one never satisfies the other.
 
 [[cl-profile-lifecycle]]
 === Profile lifecycle and dated bindings

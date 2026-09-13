@@ -1,0 +1,91 @@
+[[cl-semantics]]
+== Semantic registry and mappings
+
+[[cl-semantics-mappings]]
+=== Mapping tiers
+
+Cross-register correspondences are registered under a three-tier
+discipline. A tier 1 mapping is deterministic: it names a
+registered, versioned transform, and applying that transform to a
+source value yields the target value, the same output for the same
+input. A tier 2 mapping is a correspondence: it declares its scope
+and states its residual — what the correspondence does not cover —
+and asserts similarity, never transformability. A tier 3 record
+asserts that NO mapping exists between the two items; the pair is
+recorded precisely so that no correspondence is ever inferred, and
+the two items remain distinct.
+
+Intake and query honour the tiers: a tier 3 record renders as two
+distinct items with no correspondence; a tier 2 correspondence
+carries its scope and residual verbatim and is refused outside its
+scope; a tier 1 mapping applies its registered transform
+deterministically.
+
+[[cl-semantics-composition]]
+=== Mapping composition
+
+Mapping chains compose per tier: tier 1 chains compose
+associatively, their transform references concatenated in order;
+tier 2 links propagate residuals, accumulating in order with scopes
+intersecting; a tier 3 edge in a path refuses the whole
+composition. Chains record every constituent mapping version, and
+chain length is capped by policy — an over-cap chain is refused at
+composition, stated.
+
+[[cl-semantics-units]]
+=== Units, uncertainty and decision rules
+
+Measured values are stored in canonical units only — the unit under
+which their quantity kind is registered. A value offered in a
+non-canonical unit is refused at intake with the registered
+conversion offered; the conversion, when applied, scales the value
+and its uncertainty alike. A derived value without GUM uncertainty
+is refused. Transforms propagate uncertainty by the linear rule:
+scaling multiplies the uncertainty by the factor's absolute value,
+and independent terms combine in quadrature.
+
+Classification thresholds declare their conformity decision rule:
+shared-risk, in which the measured value alone decides, or
+guard-banded per ILAC-G8, in which conformity requires the value
+plus the expanded margin inside the limit and nonconformity requires
+it outside by the margin, the interval between being inconclusive
+and stated. A boundary measurement classifies differently under the
+two rules, both correctly.
+
+[[cl-semantics-multilingual]]
+=== Multilingual values
+
+Element values are localized per BCP 47 with full tags, script
+subtags included. Tags are validated for well-formedness: the
+language subtag is two or three letters; the second subtag, when
+alphabetic, is a four-letter script or a two-letter region. The
+defect of EN 18223 — a language restricted to a two-letter code,
+incapable of expressing a script — is refused. Retrieval falls back
+by prefix (a request for `zh` resolves a held `zh-Hans`) and states
+the fallback taken.
+
+[[cl-semantics-exports]]
+=== Parseable exports and stable identifiers
+
+Every registry item and profile exports a parseable,
+JSON-LD-shaped document carrying its stable identifier: a registry
+URI of the form register/item, optionally pinned to a version. The
+identifier resolves back — its shape parses to register, item and
+version — so a consumer holding only the export can re-address the
+registry. A foreign parser round-trips the export; malformed
+identifiers are stated failures.
+
+[[cl-semantics-federation]]
+=== Register federation and resolution
+
+Registries federate by item exchange: an item version crosses in
+its canonical bytes, and mirrors serve the same immutable bytes —
+identity of origin and mirror is proven by digest equality against
+the anchored commitment, never assumed. An unlisted version is a
+stated absence.
+
+Resolution serves linksets keyed by profile context, role,
+language and request region, with explicit per-dimension fallback
+(stated, never silent) and as-of stamps for cacheability. Dark
+identities have no public entry: their absence is indistinguishable
+from an unknown identity, and no error leaks their existence.

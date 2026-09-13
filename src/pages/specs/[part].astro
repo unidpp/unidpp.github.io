@@ -24,39 +24,21 @@ const rendered = await Promise.all(
   }))
 );
 
-const nextBySlug: Record<string, { href: string; num: string; title: string; desc: string }> = {
-  'part-1-framework': {
-    href: '/specs/part-2-profiles/',
-    num: '2',
-    title: 'Part 2 — Profiles',
-    desc: 'The three-axial composition model, the profile manifest, trigger predicates, and capability gating of profile requirements.',
-  },
-  'part-2-profiles': {
-    href: '/specs/part-3-events/',
-    num: '3',
-    title: 'Part 3 — Identity, events and transforms',
-    desc: 'The identifier model and relationship algebra, the typed event taxonomy, and the transformation algebra.',
-  },
-  'part-3-events': {
-    href: '/specs/part-4-tiers/',
-    num: '4',
-    title: 'Part 4 — Tiers and trust',
-    desc: 'Payload tiers and offline operation, freshness verdicts, and the trust and verification model.',
-  },
-  'part-4-tiers': {
-    href: '/specs/part-5-conformance/',
-    num: '5',
-    title: 'Part 5 — Conformance',
-    desc: 'Conformance classes and requirements, with Annex A negative fixtures and the bibliography.',
-  },
-  'part-5-conformance': {
-    href: '/implementation/',
-    num: '→',
-    title: 'The implementation',
-    desc: 'The open reference stack that implements this specification, with the conformance suites applied to the EN 18223 corpus.',
-  },
-};
-const next = nextBySlug[part.slug];
+const idx = parts.findIndex((x) => x.slug === part.slug);
+const nextPart = parts[idx + 1];
+const next = nextPart
+  ? {
+      href: `/specs/${nextPart.slug}/`,
+      num: nextPart.label.replace('Part ', ''),
+      title: `${nextPart.label} — ${nextPart.title}`,
+      desc: nextPart.subtitle,
+    }
+  : {
+      href: '/implementation/',
+      num: '→',
+      title: 'The implementation',
+      desc: 'The open reference stack that implements this specification, with the conformance suites applied to the EN 18223 corpus.',
+    };
 ---
 
 <BaseLayout

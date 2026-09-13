@@ -1,0 +1,61 @@
+[[cl-retrieval]]
+== Client retrieval (DPP-R)
+
+[[cl-retrieval-request]]
+=== The retrieval request
+
+A client obtains a passport by a retrieval request addressing the
+passport identifier, with the following parameters: the profile
+context under which the client verifies (absent meaning the default
+public context); an as-of instant (absent meaning the live view);
+the requested data classes (absent meaning all servable classes);
+the negotiated representation, being one of frozen view, served
+view, Tier-A pack or presentation; the requested language per
+BCP 47; and the authorization credential (absent meaning the
+anonymous public role). Each parameter changes the served
+projection as specified, and implementations of a binding of this
+interface map these semantics onto their transport.
+
+[[cl-retrieval-response]]
+=== The response
+
+A response carries its five-axis projection descriptor
+(Clause 13), the served classes, and the as-of stamp of the served
+state. Point-in-time responses are immutable and cacheable; live
+responses are freshness-labelled.
+
+For any withheld class, the response carries the omission WITH its
+explanation: the governing policy identifier and version, and an
+offer pointer where the governing policy offers substitution — an
+attestation service for origin-sealed classes, an escrow reference
+for escrowed classes. A bare refusal without explanation does not
+conform.
+
+[[cl-retrieval-errors]]
+=== Error semantics
+
+The error taxonomy is: unknown identity (404); role insufficient
+(403, with the governing policy named); archived (410, with the
+Tier-C archival pointer); context unsupported (406); and legal
+refusal (451, with the refusing jurisdiction and the escalation
+reference).
+
+[[cl-retrieval-clients]]
+=== Client classes
+
+Four client classes are served from one deployment: the anonymous
+consumer (the public projection, presented per the profile); the
+authenticated role (scoped per the role model); the machine
+verifier (the structured document and the anchors, through the one
+verification pipeline); and the officer terminal (the Tier-A pack,
+verifiable fully offline).
+
+[[cl-retrieval-bindings]]
+=== Binding pluralism
+
+This interface is a capability, not an API: any registered protocol
+binding may serve it. An EN 18222-compatible serving API is one
+registered binding — that of the European profile — and a second
+binding serving the same core state demonstrates the capability.
+No binding of this interface is mandated for conforming
+implementations; each declares the representation tokens it serves.

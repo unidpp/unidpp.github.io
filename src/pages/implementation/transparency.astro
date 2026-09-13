@@ -1,0 +1,96 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Sidebar from '../../components/Sidebar.astro';
+import Continue from '../../components/Continue.astro';
+import { implementationNav } from '../../lib/sections';
+---
+
+<BaseLayout
+  title="Operations transparency"
+  description="The measured figures of the reference deployment and the build programme: performance bars, durability drills with their outcomes, family build status, and the self-certification record — each figure naming the record it comes from."
+  eyebrow="Implementation — transparency"
+  sectioned
+>
+  <Sidebar slot="rail" heading="Implementation" items={implementationNav} />
+  <h1>Operations transparency</h1>
+  <p class="lede">
+    The framework requires observable operations of its operators; the reference
+    deployment shows its own. Every figure on this page names the record it comes
+    from, and every measurement is reproducible from the repository that owns it.
+  </p>
+
+  <section aria-labelledby="perf-h">
+    <h2 id="perf-h">Performance (NF-1)</h2>
+    <table class="facts">
+      <tr><th>Measure</th><th>Bar</th><th>How it is measured</th></tr>
+      <tr>
+        <td>Tier-A offline verification latency</td>
+        <td>p95 &lt; 50 ms</td>
+        <td><code>unidpp-e2e/scripts/bench-nf1.sh</code> (the officer terminal&rsquo;s own pipeline; the bar keeps two orders of headroom over the requirement so it gates regressions without flaking)</td>
+      </tr>
+      <tr>
+        <td>Served profile views</td>
+        <td>p95 &lt; 300 ms at reference scale</td>
+        <td>the projector over a population of 512 passports, 400 requests; reported on the reference machine class</td>
+      </tr>
+      <tr>
+        <td>Roll-up verification, deep graph</td>
+        <td>structural</td>
+        <td>the inclusion proof is log2(N) hashes; timings reported for the record</td>
+      </tr>
+    </table>
+  </section>
+
+  <section aria-labelledby="dur-h">
+    <h2 id="dur-h">Durability drills</h2>
+    <table class="facts">
+      <tr><th>Drill</th><th>Outcome</th><th>Record</th></tr>
+      <tr><td>Backup and restore parity</td><td>1531 = 1531 items, byte-identical</td><td>build programme, durability item (2026-09-08)</td></tr>
+      <tr><td>Scheduled backup drill, live pilot</td><td>49 of 49 members byte-identical; a real restore defect found and fixed by the drill</td><td>backup-automation item (2026-09-08)</td></tr>
+      <tr><td>Upgrade rehearsal</td><td>56 s; domain readings equal; 10 of 10 journals byte-prefix-compatible after a full rebuild</td><td>upgrade-rehearsal item (2026-09-08)</td></tr>
+      <tr><td>Disaster recovery rehearsal</td><td>two latent defects found by the rehearsal and fixed</td><td>disaster-recovery item (2026-09-09)</td></tr>
+      <tr><td>On-premise bundle, clean host</td><td>clean unpack; validation, environment rendering and first boot from the bundle&rsquo;s own contents</td><td>bundle items (2026-09-08/09)</td></tr>
+    </table>
+    <p>
+      Nightly backups run on the reference deployment with report-only retention, and
+      the restore drill is a scheduled exercise, not an aspiration: a backup nobody has
+      ever restored is a hope, not a capability.
+    </p>
+  </section>
+
+  <section aria-labelledby="build-h">
+    <h2 id="build-h">Build status</h2>
+    <table class="facts">
+      <tr><th>Measure</th><th>State</th></tr>
+      <tr><td>Family continuous integration</td><td>all repositories of the organization green (audited twice; the drift check caught its own author mid-series, as designed)</td></tr>
+      <tr><td>Specification compilation</td><td>part of continuous integration; a clause that does not compile fails the build</td></tr>
+      <tr><td>Manifest coverage of the published documentation</td><td>complete, checked by script</td></tr>
+      <tr><td>End-to-end story</td><td>42 of 42 checks, including the sealed-segment and quorum steps</td></tr>
+      <tr><td>Concept set</td><td>251 concepts, 248 relations, validated and synchronized with the vocabulary draft in continuous integration</td></tr>
+    </table>
+  </section>
+
+  <section aria-labelledby="cert-h">
+    <h2 id="cert-h">Self-certification</h2>
+    <p>
+      The conformance classes F1 to F5 are being fitted with machine-checkable claim
+      tests that any third party can run against any deployment, including this one.
+      The self-certification record of the reference deployment will be published on
+      the <a href="/implementation/conformance/">conformance register</a> when the
+      claim tests land; until then the register states the classes and their tests.
+    </p>
+  </section>
+
+  <Continue
+    href="/implementation/conformance/"
+    title="The conformance register"
+    desc="Classes, claim tests, and the state of each capability."
+  />
+</BaseLayout>
+
+<style>
+  .facts { width: 100%; border-collapse: collapse; }
+  .facts th, .facts td { border: 1px solid var(--line); padding: .45rem .6rem; text-align: left; vertical-align: top; }
+  .facts th { background: var(--panel-2); font-weight: 600; }
+  code { font-family: var(--font-mono); font-size: .85em; }
+</style>

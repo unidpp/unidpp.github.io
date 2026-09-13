@@ -62,65 +62,99 @@ function sections(files: string[]): SpecSection[] {
   return files.map((file) => ({ file, title: titleOf(file) }));
 }
 
-/** The part decomposition of the UniDPP specification. */
+/** The part decomposition of the UniDPP specification (the ten-Part
+ * family of FRAMEWORK.md; each clause file renders in exactly one
+ * Part). */
 export const parts: SpecPart[] = [
   {
     slug: 'part-1-framework',
     label: 'Part 1',
-    title: 'Framework',
+    title: 'Framework and fundamental principles',
     subtitle:
-      'Scope, normative references, terms, and the framework core: the fourteen design invariants, the six layers, and the profile mount.',
+      'Scope, normative references, terms, and the framework core: the design invariants, the layers, and the profile mount.',
     stage: 'wd',
-    sections: sections([
-      '01-scope.adoc',
-      '02-normrefs.adoc',
-      '03-terms.adoc',
-      '04-framework.adoc',
-    ]),
+    sections: sections(['01-scope.adoc', '02-normrefs.adoc', '03-terms.adoc', '04-framework.adoc']),
   },
   {
-    slug: 'part-2-profiles',
+    slug: 'part-2-core',
     label: 'Part 2',
-    title: 'Profiles',
+    title: 'Core model: identity, events, product algebra',
     subtitle:
-      'The three-axial composition model, the profile manifest, trigger predicates, and capability gating of profile requirements.',
+      'The identifier model and the relationship algebra R1–R7, the typed event taxonomy and the append-only log, and the quantity-conserving transformation algebra.',
+    stage: 'wd',
+    sections: sections(['06-identity-and-links.adoc', '07-events.adoc', '08-transforms.adoc']),
+  },
+  {
+    slug: 'part-3-profiles',
+    label: 'Part 3',
+    title: 'Profiles and the Primmel binding',
+    subtitle:
+      'The three-axial composition model, the profile manifest with its issuer class, trigger predicates, capability gating, and the binding of executable transformation expressions.',
     stage: 'wd',
     sections: sections(['05-profiles.adoc']),
   },
   {
-    slug: 'part-3-events',
-    label: 'Part 3',
-    title: 'Identity, events and transforms',
+    slug: 'part-4-projections',
+    label: 'Part 4',
+    title: 'Projections and the twin interface',
     subtitle:
-      'The identifier model and relationship algebra, the typed event taxonomy and append-only log, and the quantity-conserving transformation algebra.',
+      'The projection calculus and its descriptor, the frozen view with pinned artifacts, and the conforming-twin interface.',
     stage: 'wd',
-    sections: sections([
-      '06-identity-and-links.adoc',
-      '07-events.adoc',
-      '08-transforms.adoc',
-    ]),
+    sections: sections(['13-projections.adoc']),
   },
   {
-    slug: 'part-4-tiers',
-    label: 'Part 4',
-    title: 'Tiers and trust',
+    slug: 'part-5-tiers-trust',
+    label: 'Part 5',
+    title: 'Payload tiers and trust',
     subtitle:
-      'Payload tiers and offline operation (Tier A/B/C), freshness verdicts, and the trust and verification model.',
+      'Payload tiers and offline operation (Tier A/B/C), freshness verdicts, and the trust and verification model with its readings and coverage.',
     stage: 'wd',
     sections: sections(['09-tiers.adoc', '10-trust.adoc']),
   },
   {
-    slug: 'part-5-conformance',
-    label: 'Part 5',
-    title: 'Conformance',
+    slug: 'part-6-federation',
+    label: 'Part 6',
+    title: 'Federation and discovery',
     subtitle:
-      'Conformance classes and requirements, Annex A negative fixtures, and the bibliography.',
+      'The discovery registry: service descriptors, protocol bindings, listing gates, onboarding ceremonies, and seed bundles.',
     stage: 'wd',
-    sections: sections([
-      '11-conformance.adoc',
-      'annex-a-negative-fixtures.adoc',
-      '99-bibliography.adoc',
-    ]),
+    sections: sections(['16-discovery.adoc']),
+  },
+  {
+    slug: 'part-7-semantics',
+    label: 'Part 7',
+    title: 'Semantic registry and mappings',
+    subtitle:
+      'The register discipline, data elements, and the three-tier mapping of correspondences between registers.',
+    stage: 'wd',
+    sections: sections(['15-semantics.adoc']),
+  },
+  {
+    slug: 'part-8-sovereignty',
+    label: 'Part 8',
+    title: 'Sovereignty: segments, policies, residence',
+    subtitle:
+      'The segment grid, policy objects and reveal rules, the commitment spine, and the law of edge commitments.',
+    stage: 'wd',
+    sections: sections(['12-operations.adoc']),
+  },
+  {
+    slug: 'part-9-conformance',
+    label: 'Part 9',
+    title: 'Conformance, annexes and bibliography',
+    subtitle:
+      'Conformance classes and requirements, the negative fixtures, the canonical encoding annex, and the bibliography.',
+    stage: 'wd',
+    sections: sections(['11-conformance.adoc', 'annex-a-negative-fixtures.adoc', 'annex-b-canonical-encoding.adoc', '99-bibliography.adoc']),
+  },
+  {
+    slug: 'part-10-retrieval',
+    label: 'Part 10',
+    title: 'Client retrieval interface',
+    subtitle:
+      'Context-keyed resolution, the retrieval request and response, partial and sealed responses with attestation offers, and the error semantics.',
+    stage: 'wd',
+    sections: sections(['14-retrieval.adoc']),
   },
 ];
 

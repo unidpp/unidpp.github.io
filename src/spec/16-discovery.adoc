@@ -1,0 +1,53 @@
+[[cl-discovery]]
+== Discovery and onboarding
+
+[[cl-discovery-roles]]
+=== The operator role model
+
+Operators act under a role model of thirty roles in four families —
+issuance, lifecycle, verification, and infrastructure — each
+specified by a fixed rule row: what it may issue, which events it
+may append, what it may read, and what it may operate. The catalog
+is first-class data; conforming implementations consult it rather
+than encode it.
+
+An operator credential binds role tokens and a federation tier.
+The tiers are: read federation (any consumer); service federation
+(operators register services); trust federation (trust authorities
+join the master list by threshold admission); and governance
+(registrars and control bodies, with the dispute panel as a
+threshold quorum).
+
+Authorization consults the catalog and the tier: an in-scope
+action is admitted with its role named; an out-of-scope action is
+refused with the action named; an action whose admitting role
+requires a higher tier is refused with both tiers named. A
+manufacturer issues passports and proposes recalls but does not
+enact them; only market-surveillance authorities enact. A consumer
+holds no operational action.
+
+[[cl-discovery-onboarding]]
+=== Onboarding, seed bundles and listing gates
+
+A new operator bootstraps from a seed bundle: the trust anchors to
+pin, the root service descriptors to seed, and the starting role
+credential — one verifiable unit. Onboarding is a ceremony: the
+credential is checked against the role model and the tier
+requirement; the service application passes the listing gates,
+being predicates over its descriptor — jurisdiction, residency
+class, and a continuity pointer, the succession plan every service
+operator registers at admission. A gate refusal states the failed
+predicate; the ceremony ends with the service listed and queryable.
+
+[[cl-discovery-peers]]
+=== Peer discipline
+
+No registry, resolver or scheme is privileged. Registries federate
+as peers: item exchange runs the same operation in both
+directions, each deployment serving the other's items, and no
+message of the protocol names a master. A registry-operator
+conformance contract governs admission: the 19135 item lifecycle,
+canonical item exchange, mirror serving of foreign items, and
+enumeration resistance on the public surface — each item failing,
+when violated, with the item named. A deployment that does not
+conform does not federate.

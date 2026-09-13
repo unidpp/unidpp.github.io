@@ -31,8 +31,10 @@ transparency-log inclusion proofs.
 
 [NOTE]
 ====
-Informative implementation reference:
-`crates/transform/src/provenance.rs` (`ProvenanceGraph`).
+Informative implementation references:
+`crates/transform/src/provenance.rs` (`ProvenanceGraph`) and
+`crates/transform/src/rollup.rs` (`TraversalSet`, `RollupAttestation`,
+`verify_rollup`).
 ====
 
 [[cl-transform-split]]
@@ -113,10 +115,26 @@ b) *Decompose* (E13) is the inverse transformation at end-of-life,
 
 c) The material state machine closes the loop: natural resource →
  extracted lot (batch passport plus extraction profile) →
- transformation chain → product → waste status → *end-of-waste event
- = new passport issuance* → secondary raw material → re-entry. Mass
- balance and taint propagate through the whole loop (cradle-to-
+ transformation chain → product → waste status → end-of-waste event
+ → secondary raw material → re-entry — where the end-of-waste event
+ either re-qualifies the SAME identity (see d) — no new passport) or,
+ for a decomposed lot, issues derived material passports per b).
+ Mass balance and taint propagate through the whole loop (cradle-to-
  cradle, not cradle-to-grave).
+
+d) *Productness is a dated, per-regime predicate*, not a property of
+ matter. Each regime ascribes productness on its own criteria, dated
+ and cited; the same object shall be a product under one regime and
+ waste under another at the same moment, and the standing under a
+ regime is the latest dated record, with the history preserved.
+
+e) The two re-entries into commerce shall be distinguished and shall
+ never be conflated. *Same-identity re-entry* — end-of-waste under a
+ regime whose criteria are satisfied — re-qualifies the same
+ identity: the predicate toggles, dated, and no new passport issues.
+ *Derived-identity re-entry* — scrap, split or decomposition, where
+ the material loses its identity — issues a new passport following
+ the derivation edge R2; the parent identity does not re-qualify.
 
 [[cl-transform-units]]
 === Units and quantities
@@ -208,6 +226,46 @@ j) *Executable form* — the normative transform-expression language for
 k) *Trust split* — attest inputs (measurement events); transforms
  verify deterministically for free; attest outputs only where the
  law certifies the classification itself.
+
+[[cl-transform-primmel]]
+=== The Primmel binding (executable decision rules)
+
+The normative transform-expression language of rule j) is bound to
+the Primmel programme's rule packages: a `.prml` package is a
+versioned set of deterministic decision rules, each rule carrying
+the clause URN of the legal paragraph it implements. The framework
+consumes the rule surface; the programme's subject models and
+processes are out of scope of this binding. The following
+requirements define the consumption slice.
+
+a) A package shall carry its identifier (the URN a lens binding
+ names) and an edition-pinned version; every output derived under
+ the package shall state the edition.
+
+b) A rule shall carry a non-empty clause URN, and the URN shall
+ travel to every view the rule produces: a derived verdict is
+ traceable to the paragraph that demands it (decision provenance,
+ the rule-side sibling of unit provenance).
+
+c) A rule's arms are an ordered decision table, first match wins;
+ the unconditional else arm, when present, shall be last. When no
+ arm matches and no else arm exists, the outcome shall be the
+ explicit label `unclassified` — never silent, never an error.
+
+d) Evaluation shall be a pure function of the rule and its resolved
+ inputs: exact-decimal arithmetic (floating-point is not
+ conforming), no wall clock, no environment. The same package and
+ inputs always produce the same label.
+
+e) Rounding shall exist only as an explicit expression node stating
+ its mode and digit count; implicit rounding is not conforming
+ (rule g) restated for the binding).
+
+f) Measurement uncertainty shall enter as a named input, not be
+ recomputed: guard-band rules apply the expanded uncertainty in the
+ comparison (the measurand narrowed by its stated uncertainty, the
+ guarded-acceptance pattern), so the decision rule is exact and
+ traceable (rule h) restated for the binding).
 
 [[cl-transform-taint]]
 === Taint propagation
