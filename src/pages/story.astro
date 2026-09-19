@@ -5,6 +5,7 @@ import DataTable from '../components/DataTable.astro';
 import DocTerminal from '../components/DocTerminal.astro';
 import Continue from '../components/Continue.astro';
 import { storyNav } from '../lib/sections';
+import facts from '../data/facts.json';
 
 // One figure = one diagram file in public/story/ (960×540 throughout).
 interface Figure {
@@ -631,7 +632,7 @@ unidpp demo cub               # V1–V5  the counterpoint thread`;
     <figure class="fig">
       <img
         src="/story/12-cli-verify.svg"
-        alt="Diagram: the unidpp CLI, with ten verbs covering the whole story; the customs officer, dealer, auction house and recycler all use the same binary."
+        alt={`Diagram: the unidpp CLI, with ${facts.cli.command_count} verbs covering the whole story; the customs officer, dealer, auction house and recycler all use the same binary.`}
         width="960"
         height="540"
         loading="lazy"

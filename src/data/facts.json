@@ -1,0 +1,46 @@
+{
+  "generated_at": "2026-09-19",
+  "cli": {
+    "commands": [
+      "create",
+      "event",
+      "pack",
+      "verify",
+      "resolve",
+      "grid",
+      "dossier",
+      "frozen",
+      "conform",
+      "demo"
+    ],
+    "command_count": 10
+  },
+  "services": {
+    "names": [
+      "registry",
+      "trust",
+      "log",
+      "issuer",
+      "projector",
+      "gateway",
+      "archive",
+      "resolver",
+      "hub",
+      "console"
+    ],
+    "count": 10,
+    "operations_total": 145,
+    "per_service": {
+      "registry": 37,
+      "trust": 21,
+      "log": 6,
+      "issuer": 14,
+      "projector": 4,
+      "gateway": 9,
+      "archive": 7,
+      "resolver": 13,
+      "hub": 5,
+      "console": 29
+    }
+  }
+}
