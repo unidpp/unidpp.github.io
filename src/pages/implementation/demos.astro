@@ -23,14 +23,14 @@ cargo test --workspace`;
 <BaseLayout
   title="Demonstrations"
   description="The UniDPP reference core, running: the narrated battery-loop demonstration with its verbatim CLI trace, the same record graded twice (car as-of readings, laptop two-lens verdicts), and how to run every scenario yourself."
-  eyebrow="Evidence — demonstrations"
+  eyebrow="Evidence: demonstrations"
   sectioned
 >
   <Sidebar slot="rail" heading="Implementation" items={implementationNav} />
   <h1>Demonstrations</h1>
   <p class="lede">
     The reference core ships with a demonstration binary. Each scenario replays a product
-    life through commitments, transformations, and verdicts — and prints what a verifier
+    life through commitments, transformations, and verdicts, and prints what a verifier
     sees at every step. The traces below are <strong>generated, not transcribed</strong>:
     every timestamp is fixed, every salt is derived from the run seed, and the test suite
     runs every scenario twice and asserts byte-identical output.
@@ -40,7 +40,7 @@ cargo test --workspace`;
     <h2 id="battery-h">The battery loop</h2>
     <p>
       Cells become a pack; the pack is harvested, installed, stolen from, recycled, packed
-      onto a carrier, and graded — the transformation algebra, the blind-edge discipline,
+      onto a carrier, and graded, exercising the transformation algebra, the blind-edge discipline,
       graph taint, end-of-waste, and the degradation ladder in one loop. The narration
       below is keyed to the step markers in the trace that follows it.
     </p>
@@ -51,8 +51,8 @@ cargo test --workspace`;
         <div>
           <h3>Issuance of the cells</h3>
           <p>
-            Two cell passports open at lot/serial granularity — the finest identifier
-            granularity available, with dormant identifiers allowed — each sealed by an
+            Two cell passports open at lot/serial granularity, which is the finest identifier
+            granularity available (with dormant identifiers allowed), each sealed by an
             unsalted commitment to the canonical body. Any later in-place edit is
             detectable.
           </p>
@@ -64,7 +64,7 @@ cargo test --workspace`;
           <h3>Combine, N&nbsp;&#8594;&nbsp;1</h3>
           <p>
             The pack-maker issues <code>pack-1</code> as a derived passport whose issuance
-            carries input references pinned by as-of state hashes — a Git-merge topology.
+            carries input references pinned by as-of state hashes, giving a Git-merge topology.
             Mass balance runs in the ISO&nbsp;80000 unit registry: 25&nbsp;kg in, 24.2&nbsp;kg
             out, 0.8&nbsp;kg loss; <code>in&nbsp;&#8722;&nbsp;out&nbsp;=&nbsp;loss</code> is auditable, and the
             output quantity is a new measured fact, never a copy.
@@ -87,7 +87,7 @@ cargo test --workspace`;
         <div>
           <h3>Blind installation into the car</h3>
           <p>
-            The child's log records the installation interval — but the parent identity
+            The child's log records the installation interval, while the parent identity
             appears only as <code>H(salt&nbsp;&#8214;&nbsp;car-id)</code>, and the salt is consumed by the
             commitment and dropped. The serialized log provably contains neither the car
             identity nor the salt (checked at runtime); a disclosure ceremony recomputes
@@ -103,8 +103,8 @@ cargo test --workspace`;
           <p>
             A fraud-class security flag on one cell is <strong>retroactive</strong>: it
             voids validity ab initio over an explicit window and propagates through the
-            provenance DAG. The pack and the harvested module both void — stolen material
-            cannot be laundered through transformation — while the clean sibling branch is
+            provenance DAG. The pack and the harvested module both void, so stolen material
+            cannot be laundered through transformation, while the clean sibling branch is
             unaffected. The recall set is derived by trace-down navigation.
           </p>
         </div>
@@ -125,14 +125,14 @@ cargo test --workspace`;
         <div>
           <h3>Tier-A packing against the QR budget</h3>
           <p>
-            The log is projected onto the carrier-embedded offline minimum — product
+            The log is projected onto the carrier-embedded offline minimum (product
             identifier, resolver URI, status, safety flag, log head, two
-            multi-suite signature slots (ECDSA&nbsp;P-256 + SM2) — and budgeted
+            multi-suite signature slots, ECDSA&nbsp;P-256 + SM2), and budgeted
             against the ISO/IEC 18004 byte-capacity tables. This scenario frames
             the slots as placeholders at canonical suite lengths, so the verdict
             degrades with the stated reason <em>signatures-framed-only</em>;
-            computed co-signatures over one body — the sovereign-suite packs the
-            issuer mints under <code>suite=ecdsa-p256,sm2</code> — fill both
+            computed co-signatures over one body; the sovereign-suite packs the
+            issuer mints under <code>suite=ecdsa-p256,sm2</code> fill both
             slots and verify under each suite:
           </p>
           <div class="tablewrap">
@@ -140,7 +140,7 @@ cargo test --workspace`;
               <caption>
                 Substituting ML-DSA-65 (a 3309-byte post-quantum signature) for the two
                 classical suites projects to 3570&nbsp;B against a 2331&nbsp;B ceiling at QR
-                v40-M — rejected with an over-budget error, never silently truncated.
+                v40-M, and it is rejected with an over-budget error rather than silently truncated.
               </caption>
               <thead>
                 <tr><th scope="col">Quantity</th><th scope="col">Value</th></tr>
@@ -161,7 +161,7 @@ cargo test --workspace`;
           <h3>Profile applicability by predicate</h3>
           <p>
             The EU battery profile triggers on a predicate over twin facts —
-            <code>battery.capacity-kwh&nbsp;&gt;=&nbsp;2</code> — and the twin's measured 2.5&nbsp;kWh
+            <code>battery.capacity-kwh&nbsp;&gt;=&nbsp;2</code>, and the twin's measured 2.5&nbsp;kWh
             satisfies it. The lens attaches by predicate, not by enumeration.
           </p>
         </div>
@@ -176,7 +176,7 @@ cargo test --workspace`;
             reported as <span class="neg">VOIDS AB INITIO</span>; the evidentiary reading
             goes stale on the ladder and says so; offline verification without a cached
             anchor degrades rather than fails; and a single edited character in the
-            serialized log is <span class="neg">FAIL (broken-chain)</span> — integrity
+            serialized log is <span class="neg">FAIL (broken-chain)</span>, so integrity
             failures are failures, not degradations.
           </p>
         </div>
@@ -204,7 +204,7 @@ cargo test --workspace`;
       Law needs more than one reading of the same record, and lenses disagree. Two
       excerpts: the car's battery log graded at two verification times, and the laptop's
       single passport graded under two jurisdiction lenses at the same time. In both,
-      both verdicts stand side by side — neither overrides the other, and the reason is
+      both verdicts stand side by side, neither overriding the other, and the reason is
       stated, not implied.
     </p>
 
@@ -228,7 +228,7 @@ cargo test --workspace`;
       caption="
         The same passport passes the EU lens and degrades under the JP lens, naming the
         missing data point. Inter-profile disagreement is resolved to canonical facts
-        plus each lens's rules — never merged into one true classification.
+        plus each lens's rules, never merged into one true classification.
       "
     />
   </section>
@@ -242,7 +242,7 @@ cargo test --workspace`;
       salt derivation; the exit code is 0 on a completed run and 2 on a usage error. The
       test suite executes every scenario twice and asserts byte-identical output, checks
       that a changed seed moves the salted commitments while the car identity still never
-      leaks, and exercises the usage-error codes — so a printed trace is also a passing
+      leaks, and exercises the usage-error codes, so a printed trace is also a passing
       conformance run.
     </p>
     <DocTerminal
@@ -256,7 +256,7 @@ cargo test --workspace`;
   <Continue
     href="/implementation/conformance/"
     title="Conformance evidence"
-    desc="Every example payload printed in EN 18223:2026, run through the validators — findings recorded as a factual register."
+    desc="Every example payload printed in EN 18223:2026, run through the validators, with findings recorded as a factual register."
   />
 </BaseLayout>
 

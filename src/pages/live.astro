@@ -5,7 +5,7 @@ import DocTerminal from '../components/DocTerminal.astro';
 
 // The five canonical queries, verbatim against the loopback pilot.
 const q1 = `curl -s https://registry.unidpp.org/services | jq '.services | length'
-# -> 8   (the C3 service descriptors the registry knows — who serves what)`;
+# -> 8   (the C3 service descriptors the registry knows, stating who serves what)`;
 
 const q2 = `curl -s 'https://registry.unidpp.org/applicability?product_type=momiji:e8&at=2027-06-01T00:00:00Z' \\
   | jq '[.applicability[].binding.profile_item]'
@@ -45,31 +45,31 @@ const q4 = `curl -s 'http://127.0.0.1:8395/en18222/v1/dppsByProductId/4006381333
 
 const q5 = `curl -s http://127.0.0.1:8391/keyring | jq '{mode, roles: (.roles | keys)}'
 # -> mode "seeded-dev", roles ["sign-ecdsa-p256", "sign-ed25519"]
-#    every GET body is co-signed in the tree-head domain — the anchors
+#    every GET body is co-signed in the tree-head domain, so the anchors
 #    a verifier pins, published, not assumed`;
 
 const runShell = `./stack.sh start     # build if needed, start 8390-8396, wait healthy
 ./seed-pilot.sh      # idempotent: seed the registry, produce demo/ artifacts
 ./stack.sh status    # per-service health, journal state, tunnel
-./stack.sh stop      # stop everything — journals replay on next start`;
+./stack.sh stop      # stop everything; journals replay on next start`;
 ---
 
 <BaseLayout
   title="Live pilot"
-  description="The UniDPP reference pilot: the full service stack running as one unit — registry, trust, transparency log, issuer, projector, gateway, archive — with the seeded jurisdiction profiles, the two-lens demo, and the five canonical queries."
-  eyebrow="Reference — pilot"
+  description="The UniDPP reference pilot: the full service stack running as one unit, comprising registry, trust, transparency log, issuer, projector, gateway and archive, with the seeded jurisdiction profiles, the two-lens demo, and the five canonical queries."
+  eyebrow="Reference: pilot"
 >
   <h1>The live pilot</h1>
   <p class="lede">
     The reference implementation runs as one stack on loopback ports 8390–8396:
     seven services, each an independent repository, connected exactly as the
-    architecture prescribes — the issuer forwards registrations to the
+    architecture prescribes, in that the issuer forwards registrations to the
     registry, the projector reads its lenses from the registry, the gateway
     renders the issuer's passports in foreign protocol shapes, and the archive
     anchors its notarized snapshots into the transparency log. The stack
     publishes at <code>registry.unidpp.org</code> (the item and discovery
     registry), <code>identity.unidpp.org</code> (the actor registry) and
-    <code>resolve.unidpp.org</code> (the linkset resolver) — every query below
+    <code>resolve.unidpp.org</code> (the linkset resolver), and every query below
     runs against the live public endpoints.
   </p>
 
@@ -78,7 +78,7 @@ const runShell = `./stack.sh start     # build if needed, start 8390-8396, wait 
     <p>
       One launcher builds and starts the whole unit, waits for each health
       endpoint, and adopts the existing tunnel. All state is append-only
-      journals — stopping and restarting replays them; nothing is edited in
+      journals, so stopping and restarting replays them and nothing is edited in
       place.
     </p>
     <DataTable
@@ -87,7 +87,7 @@ const runShell = `./stack.sh start     # build if needed, start 8390-8396, wait 
         [
           '<a href="https://github.com/unidpp/unidpp-registry">unidpp-registry</a>',
           '8390',
-          'ISO 19135 item and discovery registry — profiles, transforms, C3 services, C4 protocol bindings, C5 verification mechanisms, units; serves the profile-manifest JSON Schema (draft 2020-12, enforced at item intake); evaluates clock predicates on applicability queries (subject_facts); cross-register mappings; EXPRESS model deposits validated with expressir (POST /models); the UNTDED trade data-element register, 1 504 elements',
+          'ISO 19135 item and discovery registry, serving profiles, transforms, C3 services, C4 protocol bindings, C5 verification mechanisms and units; it serves the profile-manifest JSON Schema (draft 2020-12, enforced at item intake); evaluates clock predicates on applicability queries (subject_facts); cross-register mappings; EXPRESS model deposits validated with expressir (POST /models); the UNTDED trade data-element register, 1 504 elements',
           '<code>GET /healthz</code>',
         ],
         [
@@ -99,7 +99,7 @@ const runShell = `./stack.sh start     # build if needed, start 8390-8396, wait 
         [
           '<a href="https://github.com/unidpp/unidpp-log">unidpp-log</a>',
           '8392',
-          'Transparency-log anchor service — RFC 6962 Merkle sequencing, signed inclusion receipts; optional RFC 3161 anchoring of tree heads to an external timestamping authority, degrading explicitly when it is unreachable',
+          'Transparency-log anchor service, providing RFC 6962 Merkle sequencing and signed inclusion receipts; optional RFC 3161 anchoring of tree heads to an external timestamping authority, degrading explicitly when it is unreachable',
           '<code>GET /healthz</code>',
         ],
         [
@@ -145,7 +145,7 @@ const runShell = `./stack.sh start     # build if needed, start 8390-8396, wait 
     </p>
     <p>
       A deployment is data. The same binary, configured by a different manifest, is a
-      different organization's service — the whitelabel and sovereign tenants
+      different organization's service, which is the whitelabel and sovereign tenants
       (<code>tenants/acme</code>: EU residency, ECDSA-P-256; <code>tenants/acme-cn</code>:
       CN residency, SM2-only packs, no egress) differ from this reference deployment
       by manifest alone, and the sovereign profile refuses external calls unless the
@@ -159,7 +159,7 @@ const runShell = `./stack.sh start     # build if needed, start 8390-8396, wait 
       <code>unidpp-ops rehearse-upgrade</code> rebuilds the binaries, restarts
       the stack, and proves the journals append-only (byte-prefix compatible).
       A sovereign customer takes the whole deployment away as one verified
-      artifact: <code>unidpp-ops bundle</code> — manifest, journals, and
+      artifact: <code>unidpp-ops bundle</code>, carrying manifest, journals, and
       exactly the declared services' binaries, secrets as environment
       references. The operator's manual:
       <a href="https://docs.unidpp.org/operations/deploy/">docs.unidpp.org</a>.
@@ -175,7 +175,7 @@ const runShell = `./stack.sh start     # build if needed, start 8390-8396, wait 
       registries are peers rather than subordinates: the global registry keeps
       the elements that belong to governance (scheme namespaces and
       cross-register mappings), and jurisdictional data resides with the
-      jurisdiction — the ePassport precedent at the scale of product passports.
+      jurisdiction, following the ePassport precedent at the scale of product passports.
     </p>
     <DocTerminal
       label="the JP node answers with its own journal's record"
@@ -198,7 +198,7 @@ const runShell = `./stack.sh start     # build if needed, start 8390-8396, wait 
     </p>
 
     <DocTerminal
-      label="query 01 — discovery"
+      label="query 01: discovery"
       meta="GET /services · registry.unidpp.org"
       ariaLabel="Curl command listing the services the registry knows"
       text={q1}
@@ -206,7 +206,7 @@ const runShell = `./stack.sh start     # build if needed, start 8390-8396, wait 
     />
 
     <DocTerminal
-      label="query 02 — as-of applicability"
+      label="query 02: as-of applicability"
       meta="GET /applicability · registry.unidpp.org"
       ariaLabel="Curl command asking which profiles bind the product type at two instants"
       text={q2}
@@ -214,23 +214,23 @@ const runShell = `./stack.sh start     # build if needed, start 8390-8396, wait 
     />
 
     <DocTerminal
-      label="query 02b — the clock predicate"
+      label="query 02b: the clock predicate"
       meta="GET /applicability · subject_facts · registry.unidpp.org"
       ariaLabel="Curl command showing a clock-fired binding crossing its threshold"
       text={qClock}
-      caption="Some duties arrive with age, not with paperwork: a vehicle manufactured 1962-05-04 carries the historic-vehicle duty from exactly 2002-05-04 (P40Y). The registry evaluates the trigger against the subject's own facts — the day before, nothing binds; the day of, the profile attaches."
+      caption="Some duties arrive with age, not with paperwork: a vehicle manufactured 1962-05-04 carries the historic-vehicle duty from exactly 2002-05-04 (P40Y). The registry evaluates the trigger against the subject's own facts, so the day before nothing binds and on the day the profile attaches."
     />
 
     <DocTerminal
-      label="query 03 — two-lens view"
+      label="query 03: two-lens view"
       meta="GET /view · projector 8394"
       ariaLabel="Curl command projecting one passport under the JP lens"
       text={q3}
-      caption="The lens is a registered, versioned profile item; the projector executes its manifest and reports coverage explicitly — disagreement between lenses is auditable, never merged away."
+      caption="The lens is a registered, versioned profile item; the projector executes its manifest and reports coverage explicitly, so disagreement between lenses is auditable and never merged away."
     />
 
     <DocTerminal
-      label="query 04 — EN 18222 render"
+      label="query 04: EN 18222 render"
       meta="GET /en18222/v1/dppsByProductId · gateway 8395"
       ariaLabel="Curl command requesting the EN 18222 render of a passport"
       text={q4}
@@ -238,7 +238,7 @@ const runShell = `./stack.sh start     # build if needed, start 8390-8396, wait 
     />
 
     <DocTerminal
-      label="query 05 — trust keyring"
+      label="query 05: trust keyring"
       meta="GET /keyring · trust (loopback)"
       ariaLabel="Curl command fetching the trust anchors a verifier pins"
       text={q5}
@@ -265,7 +265,7 @@ const runShell = `./stack.sh start     # build if needed, start 8390-8396, wait 
         [
           '<code>2028-06-01</code>',
           '<code>urn:unidpp:profile:eu-machinery-battery</code>, <code>urn:unidpp:profile:jp-road-traffic</code>',
-          'The EU machinery/battery duty is additionally in force (effective 2028-02-01) — same identity, same journal, a second lens mounted by a dated binding.',
+          'The EU machinery/battery duty is additionally in force (effective 2028-02-01), on the same identity and the same journal, a second lens mounted by a dated binding.',
         ],
       ]}
       caption="Verified query output from the running pilot; the JSON responses are archived as demo artifacts (<code>10-applicability-2027-06-01.json</code>, <code>11-applicability-2028-06-01.json</code>)."
@@ -277,7 +277,7 @@ const runShell = `./stack.sh start     # build if needed, start 8390-8396, wait 
     <p>
       A single idempotent script seeds the registry (ten register items —
       seven material-loop profiles, the two jurisdiction profiles, one
-      equivalence transform — plus the dated bindings and the discovery
+      equivalence transform, plus the dated bindings and the discovery
       dataset), issues a demonstration passport through the live issuer,
       mints and verifies its Tier-A pack, notarizes a Tier-C snapshot into
       the transparency log, and projects the EU and JP views of the same
@@ -287,7 +287,7 @@ const runShell = `./stack.sh start     # build if needed, start 8390-8396, wait 
       columns={['Artifact', 'Contents']}
       rows={[
         ['<code>01–02</code>', 'The passport created over the issuer API and its document view after five typed events (issuance, corrections, a BMS milestone record).'],
-        ['<code>03–05</code>', "The server-minted Tier-A pack (QR v15-M, 363 bytes), the issuer keyring, and the CLI verifier's offline verdict — pass, three readings, full coverage."],
+        ['<code>03–05</code>', "The server-minted Tier-A pack (QR v15-M, 363 bytes), the issuer keyring, and the CLI verifier's offline verdict: pass, three readings, full coverage."],
         ['<code>06</code>', 'The Tier-C notarized snapshot, anchored in the transparency log (receipt id, tree size, root included).'],
         ['<code>07</code>', 'The two-lens views: EU complete at 3/3 with reparability class A; JP at 2/3, converting 0.72 kWh to 2.592 MJ and grading the same score class-2.'],
         ['<code>08–09</code>', 'The gateway renders: the UNTP verifiable-credential triad from the live issuer (five event signatures verified) and the EN 18222 REST render.'],
@@ -302,7 +302,7 @@ const runShell = `./stack.sh start     # build if needed, start 8390-8396, wait 
       The pilot launcher lives in the
       <a href="https://github.com/unidpp">github.com/unidpp</a> workspace; the
       service repositories build with <code>cargo build --release</code> and
-      run with environment wiring only — no database, no container required
+      run with environment wiring only, with no database and no container required
       (a compose sketch documents the containerized form). From the pilot
       directory:
     </p>

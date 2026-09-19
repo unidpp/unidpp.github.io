@@ -7,12 +7,12 @@ import CardGrid from '../components/CardGrid.astro';
 <BaseLayout
   title="What UniDPP does"
   description="The capabilities that define the UniDPP international framework: multi-jurisdiction profiles, offline verification, event-sourced lifecycle, graded trust, and open semantics."
-  eyebrow="Reference — capabilities"
+  eyebrow="Reference: capabilities"
 >
   <h1>What UniDPP is built to do</h1>
   <p class="lede">
     UniDPP is an international framework and open reference implementation. The
-    capabilities below are the ones the architecture is designed around — each
+    capabilities below are the ones the architecture is designed around, and each
     is implemented in the open repositories and exercised by the end-to-end demo.
   </p>
 
@@ -23,14 +23,14 @@ import CardGrid from '../components/CardGrid.astro';
         <p>
           A product carries one identity and one append-only record. Jurisdiction,
           sector, and characteristic <em>profiles</em> are registered lenses on that
-          record — each independently versioned, signed, and verified under its own
+          record, each independently versioned, signed, and verified under its own
           trust anchors. Adding a market is a dated binding, not a second passport.
         </p>
       </Card>
       <Card title="Offline minimum (Tier A)">
         <p>
-          A fixed carrier subset — identity, status, critical flags, multi-suite
-          signatures — verifies with cached anchors when origins are unreachable.
+          A fixed carrier subset, being identity, status, critical flags and multi-suite
+          signatures, verifies with cached anchors when origins are unreachable.
           Verdicts name three readings and state coverage explicitly; staleness
           never silently passes.
         </p>
@@ -60,7 +60,7 @@ import CardGrid from '../components/CardGrid.astro';
       <Card title="Semantic registry (FERIN / 19135)">
         <p>
           Data elements, profiles, protocol bindings, crypto suites, and units are
-          governed register items — discoverable, version-pinned, supersedable.
+          governed register items, discoverable, version-pinned and supersedable.
           The EN 18223 §4.3 vacancy is filled by a federated discovery layer, not a
           single dictionary host.
         </p>
@@ -76,7 +76,7 @@ import CardGrid from '../components/CardGrid.astro';
         <p>
           Libraries, services, conformance fixtures (including negative cases),
           terminology dataset, and the E8 end-to-end demo are public. The EU EN
-          series is one jurisdiction profile of the same core — not the envelope.
+          series is one jurisdiction profile of the same core rather than the envelope.
         </p>
       </Card>
     </CardGrid>
@@ -99,7 +99,7 @@ import CardGrid from '../components/CardGrid.astro';
       <li>
         <strong>OpenDPP and AAS-oriented platforms.</strong> Where a deployment
         already uses Asset Administration Shell tooling, UniDPP keeps AAS as an
-        informative mapping — the core model stays representation-neutral.
+          informative mapping, keeping the core model representation-neutral.
       </li>
       <li>
         <strong>National carrier and cert layers</strong> (for example GB/T 33993,
@@ -112,8 +112,8 @@ import CardGrid from '../components/CardGrid.astro';
   <section id="try" class="plate" aria-labelledby="try-h">
     <h2 id="try-h">See it run</h2>
     <p>
-      The public end-to-end walks one product — a Japanese e-bike with EU and CN
-      parts — through assembly, EU placement, offline border verification,
+      The public end-to-end walks one product, a Japanese e-bike with EU and CN
+      parts, through assembly, EU placement, offline border verification,
       firmware derestriction, repair, auction, recall, and end-of-life.
     </p>
     <p class="cta-row">

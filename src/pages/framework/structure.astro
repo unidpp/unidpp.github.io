@@ -7,8 +7,8 @@ import DataTable from '../../components/DataTable.astro';
 
 <BaseLayout
   title="Framework structure"
-  description="The definitive anatomy of the UniDPP framework: the fourteen invariants, twelve seams, six layers, service tiers, capability classes, relationship algebra, actor model, registry content classes, and the trust ladder — the named parts of the machine."
-  eyebrow="Framework — structure"
+  description="The definitive anatomy of the UniDPP framework: the fourteen invariants, twelve seams, six layers, service tiers, capability classes, relationship algebra, actor model, registry content classes, and the trust ladder, together naming the parts of the machine."
+  eyebrow="Framework: structure"
   sectioned
 >
   <Sidebar slot="rail" heading="Framework" items={frameworkNav} />
@@ -16,7 +16,7 @@ import DataTable from '../../components/DataTable.astro';
   <p class="lede">
     One identity and one append-only record per subject, observed through many
     sovereign lenses, served over a degradation ladder, and held together by a
-    registered discovery and trust substrate — with issuance, hosting, identity,
+    registered discovery and trust substrate, with issuance, hosting, identity,
     anchoring, archiving and trust as separable duties. It is a structure, not a
     server: every function is a registered, contestable service, and the framework
     specifies the contracts between them.
@@ -52,8 +52,8 @@ import DataTable from '../../components/DataTable.astro';
   <section id="omitted" aria-labelledby="omitted-h">
     <h2 id="omitted-h">What simplistic DPP models omit</h2>
     <p>
-      A common formulation — <em>scan a code, look it up in a discovery service, read
-      the passport</em> — works for a first-sale, online, single-owner,
+      A common formulation (<em>scan a code, look it up in a discovery service, read
+      the passport</em>) works for a first-sale, online, single-owner,
       single-market, intact product. The framework describes the same object across
       its whole life, all its owners, all its markets, and all its failures.
       Each row is an assumption the naive model makes, the reality that breaks it,
@@ -64,7 +64,7 @@ import DataTable from '../../components/DataTable.astro';
       rows={[
         ['First sale, one owner', 'Resale, gift, inheritance, bankruptcy, used-export', 'E1 custody ceremony; N-owner trail'],
         ['Owner identifiable', 'Auctions: judged condition, provenance gaps, tainted title', 'E14 stamps; gap markers; title taint as graph event; gates as predicate runners'],
-        ['Product unchanged', 'Repair, firmware, modification — legal class changes with a dongle', 'E4 → derived type + mandatory re-evaluation'],
+        ['Product unchanged', 'Repair, firmware, modification: legal class changes with a dongle', 'E4 → derived type + mandatory re-evaluation'],
         ['Product intact', 'Refurbish, remanufacture, decompose, recycle', 'R2 algebra; end-of-waste = new issuance; mass balance'],
         ['Recall reaches buyer', 'Second-hand markets, scattered custodians', 'Predicate recall; DAG traversal; no enumeration'],
         ['Finder is generic public', 'Roles: consumer, repairer, customs, insurer, machine', 'Visibility classes; 30-role model; access as profile content'],
@@ -85,8 +85,8 @@ import DataTable from '../../components/DataTable.astro';
   <section id="discovery" aria-labelledby="discovery-h">
     <h2 id="discovery-h">Discovery is a lattice, not a lookup</h2>
     <p>
-      The simplistic view — <em>a discovery service maps an identifier to a
-      location</em> — assumes the product is on first sale, online, single-hosted,
+      The simplistic view (<em>a discovery service maps an identifier to a
+      location</em>) assumes the product is on first sale, online, single-hosted,
       single-jurisdiction, intact and intended to be found. In the framework,
       discovery is distributed across six entry points, routing dimensions and a
       fallback spine.
@@ -94,28 +94,28 @@ import DataTable from '../../components/DataTable.astro';
 
     <h3>Entry points</h3>
     <ul>
-      <li><strong>The carrier</strong> — carries an identity that resolves reproducibly, not a URL</li>
-      <li><strong>Type-level lookup</strong> — find the model's passport without a specific unit</li>
-      <li><strong>Composition traversal</strong> — children discovered through the parent manifest</li>
-      <li><strong>Certificate and facility joins</strong> — recall routing, predicate-entitled</li>
-      <li><strong>The device itself</strong> — S2/S3 subjects serve their own segment</li>
-      <li><strong>Inverted discovery</strong> — predicates: the regulator publishes, custodians evaluate locally</li>
+      <li><strong>The carrier</strong>: carries an identity that resolves reproducibly, not a URL</li>
+      <li><strong>Type-level lookup</strong>: find the model's passport without a specific unit</li>
+      <li><strong>Composition traversal</strong>: children discovered through the parent manifest</li>
+      <li><strong>Certificate and facility joins</strong>: recall routing, predicate-entitled</li>
+      <li><strong>The device itself</strong>: S2/S3 subjects serve their own segment</li>
+      <li><strong>Inverted discovery</strong>: predicates: the regulator publishes, custodians evaluate locally</li>
     </ul>
 
     <h3>The fallback spine</h3>
     <ul>
       <li><strong>Multi-host linksets</strong> with as-of stamps; cached; inclusion proofs substitute for dead origins</li>
-      <li><strong>Succession</strong> — the manufacturer ceases to exist in 2035; the registry redirects, and the archive becomes the target</li>
-      <li><strong>Post-sale relocation</strong> — resale can re-host; the identifier never changes, the linkset does</li>
-      <li><strong>As-of discovery</strong> — what was discoverable at time T</li>
-      <li><strong>Blind edges</strong> — verify "validly installed in <em>some</em> parent" without learning <em>which</em></li>
+      <li><strong>Succession</strong>: the manufacturer ceases to exist in 2035; the registry redirects, and the archive becomes the target</li>
+      <li><strong>Post-sale relocation</strong>: resale can re-host; the identifier never changes, the linkset does</li>
+      <li><strong>As-of discovery</strong>: what was discoverable at time T</li>
+      <li><strong>Blind edges</strong>: verify "validly installed in <em>some</em> parent" without learning <em>which</em></li>
     </ul>
   </section>
 
   <section id="national-registries" aria-labelledby="natreg-h">
     <h2 id="natreg-h">National registries as peers</h2>
     <p>
-      Countries will build DPP registries — the EU's under a forthcoming
+      Countries will build DPP registries, the EU's under a forthcoming
       implementing act, China's several platforms already running. The word
       "registry" conflates six functions (identifier allocation, discovery,
       deposit, semantics, trust, surveillance), and the framework already
@@ -127,7 +127,7 @@ import DataTable from '../../components/DataTable.astro';
       <strong>The ePassport precedent, at full strength:</strong> every state
       issues its own passports and inspects everyone else's; ICAO Doc 9303
       supplies the interop and the PKD supplies a passive distribution of public
-      keys — a small governance table rather than a world database. The analogue
+      keys, being a small governance table rather than a world database. The analogue
       for the digital product passport is the combination of national registries,
       the ISO interop layer and the SIGNATIF master list. The demonstration
       artifacts are carried into the standards process as evidence that the

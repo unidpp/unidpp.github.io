@@ -12,14 +12,14 @@ python scripts/eu_profile_report.py
 # exit 0: suite ran to completion and both reports were written
 
 python scripts/competitor_report.py
-# writes conformance/competitors/REPORT.md and REPORT.json — the
+# writes conformance/competitors/REPORT.md and REPORT.json, and the
 # freeDPP and open-dpp artifacts through the same runner`;
 ---
 
 <BaseLayout
   title="Conformance"
-  description="Public, reproducible conformance evidence: every example payload printed in EN 18223:2026 run through the UniDPP EU-profile validators — 22 fixtures, 14 pass, 8 fail, 26 error-severity findings recorded as a factual register — and the same pipeline over the published freeDPP and open-dpp artifacts, with the command to run it yourself."
-  eyebrow="Evidence — conformance"
+  description="Public, reproducible conformance evidence: every example payload printed in EN 18223:2026 run through the UniDPP EU-profile validators, being 22 fixtures, 14 pass, 8 fail and 26 error-severity findings recorded as a factual register, and the same pipeline over the published freeDPP and open-dpp artifacts, with the command to run it yourself."
+  eyebrow="Evidence: conformance"
   sectioned
 >
   <Sidebar slot="rail" heading="Implementation" items={implementationNav} />
@@ -27,7 +27,7 @@ python scripts/competitor_report.py
   <p class="lede">
     Conformance evidence for the EU profile, published as a factual register. The
     validators were run against every example payload printed in
-    EN&nbsp;18223:2026 — 22 fixtures — and each finding below cites the standard's own
+    EN&nbsp;18223:2026, in 22 fixtures, and each finding below cites the standard's own
     normative text. The suite is reproducible: the runner command is at the foot of this
     page, and it regenerates and verifies every fixture on each run.
   </p>
@@ -54,11 +54,11 @@ python scripts/competitor_report.py
         EN's own normative text; neutral-core identifier mapping.
       </li>
       <li>
-        Check classes: the runner's registry names four — <code>positive-corpus</code>
+        Check classes: the runner's registry names four, being <code>positive-corpus</code>
         (wire schemas and commitment chains over the ported fixtures),
         <code>audit-negative</code> (defect-register cases fail with precise findings),
         <code>temporal-conformance</code> (every timestamp field against
-        ISO&nbsp;8601-1:2019 as impacted by Amd&nbsp;1:2022 — separator typography,
+        ISO&nbsp;8601-1:2019 as impacted by Amd&nbsp;1:2022 (separator typography,
         extended format, second precision, calendar ranges, the end-of-day form, zone
         designators, the decimal sign), and <code>carrier-budget</code> (each fixture's
         canonical serialized size against the ISO/IEC&nbsp;18004 QR capacity tables,
@@ -70,7 +70,7 @@ python scripts/competitor_report.py
         the QR capacity tables without affecting the outcome.
       </li>
       <li>
-        Outcome semantics: <em>pass</em> means no error-severity finding — the payload is
+        Outcome semantics: <em>pass</em> means no error-severity finding, so the payload is
         consistent with the standard's own normative text and sibling examples.
         Info-severity findings are registry-vacancy references and do not affect the
         outcome.
@@ -93,7 +93,7 @@ python scripts/competitor_report.py
     <p>
       Findings are cross-referenced to the DPP corpus defect register, which classes each
       entry by what it is: an inconsistency within one document (A), across documents (B),
-        an under-specification — a vacancy — (C), or a new fact discovered by this run (N).
+        an under-specification or vacancy (C), or a new fact discovered by this run (N).
     </p>
     <div class="tablewrap">
       <table class="register">
@@ -108,10 +108,10 @@ python scripts/competitor_report.py
         <tbody>
           <tr><td>A1</td><td>internal inconsistency</td><td>2</td><td>Granularity printed with an uppercase initial against the normative lowercase enumeration (§4.1.2.2).</td></tr>
           <tr><td>A2</td><td>internal inconsistency</td><td>2</td><td>Status printed with an uppercase initial against the lowercase enumeration (§4.1.2.1).</td></tr>
-          <tr><td>A3</td><td>internal inconsistency</td><td>9</td><td>The data-element class name is spelled two ways — the table and example spelling against the prose spelling — in one case within a single sentence (§5.2.6 vs §4.1.2.1).</td></tr>
+          <tr><td>A3</td><td>internal inconsistency</td><td>9</td><td>The data-element class name is spelled two ways, with the table and example spelling against the prose spelling, in one case within a single sentence (§5.2.6 vs §4.1.2.1).</td></tr>
           <tr><td>A4</td><td>internal inconsistency</td><td>1 <span class="meta">(probe)</span></td><td>A non-ISO&nbsp;8601 dash form in a last-updated timestamp, in the very example that teaches the format; attested for the source PDF and exercised by probe P-A4.</td></tr>
-          <tr><td>A5</td><td>internal inconsistency</td><td>2</td><td>Language tags violating the standard's own structure rule — a bare two-letter code, and an unassigned code where Greek is <code>el</code> (Tables 5–6).</td></tr>
-          <tr><td>A6</td><td>internal inconsistency</td><td>2</td><td>Schema-version placeholders — <code>ENXXX:v1.0</code> and a draft self-reference — where a version grammar is required.</td></tr>
+          <tr><td>A5</td><td>internal inconsistency</td><td>2</td><td>Language tags violating the standard's own structure rule, being a bare two-letter code and an unassigned code where Greek is <code>el</code> (Tables 5–6).</td></tr>
+          <tr><td>A6</td><td>internal inconsistency</td><td>2</td><td>Schema-version placeholders (<code>ENXXX:v1.0</code> and a draft self-reference) where a version grammar is required.</td></tr>
           <tr><td>B2</td><td>cross-document inconsistency</td><td>1 <span class="meta">(probe)</span></td><td>Attribute-name drift between the EN and its IDTA implementation (<code>lastUpdated</code> vs <code>lastUpdate</code>); exercised by probe P-B2.</td></tr>
           <tr><td>C1</td><td>under-specification <span class="meta">(info)</span></td><td>2</td><td>Dictionary-reference hosts are placeholders; the semantic repository required by clause 4.3 is unspecified.</td></tr>
           <tr><td>C4</td><td>under-specification <span class="meta">(info)</span></td><td>2</td><td>Content-specification identifiers are placeholders; identifier space, allocator, and validation undefined.</td></tr>
@@ -119,7 +119,7 @@ python scripts/competitor_report.py
           <tr><td>N2</td><td>new, this run</td><td>2</td><td>Dictionary-reference URIs omit the <code>//</code> authority separator after the scheme (Annex&nbsp;A Example&nbsp;3; the sibling Example&nbsp;1 prints the well-formed form).</td></tr>
           <tr><td>N3</td><td>new, this run</td><td>1</td><td>The same relative element identifier used by two siblings, violating the uniqueness rule of Table&nbsp;2 (§4.1.2.3).</td></tr>
           <tr><td>N4</td><td>new, this run</td><td>3</td><td><code>xsd:float</code> values serialized as JSON strings, contradicting Table&nbsp;7's type mapping and the compressed form of the same data (§5.2.5).</td></tr>
-          <tr><td>N5</td><td>new, this run</td><td>1</td><td>One class serialized under two different child keys across sibling examples — <code>value</code> vs <code>elements</code> (Annex&nbsp;A Examples 4 and 1; Table&nbsp;4 models the children differently).</td></tr>
+          <tr><td>N5</td><td>new, this run</td><td>1</td><td>One class serialized under two different child keys across sibling examples, <code>value</code> vs <code>elements</code> (Annex&nbsp;A Examples 4 and 1; Table&nbsp;4 models the children differently).</td></tr>
           <tr><td>N6</td><td>new, this run</td><td>1</td><td>A trailing comma after the final member makes Annex&nbsp;A Example&nbsp;5 invalid JSON.</td></tr>
         </tbody>
       </table>
@@ -185,7 +185,7 @@ python scripts/competitor_report.py
     <p>
       The same runner, with no semantic changes, was run over every machine-checkable
       artifact published by the two open-source DPP implementations outside this
-      project — freeDPP and open-dpp: seven artifacts in all. Findings cite the
+      project, freeDPP and open-dpp: seven artifacts in all. Findings cite the
       artifact verbatim; passes would be reported as passes.
     </p>
     <p class="ledger">
@@ -198,9 +198,9 @@ python scripts/competitor_report.py
       <strong>freeDPP</strong> publishes its server source and serves both EN&nbsp;18223
       serializations from two live test endpoints; the six captured wire payloads all
       fail, with 251 error-severity findings in the classes this register already
-      records — granularity casing (A1), class-name drift (A3), schema-version
+      records, covering granularity casing (A1), class-name drift (A3), schema-version
       placeholders (A6), duplicate element identifiers (N3), value-data-type mismatches
-      (N4), child-key divergence (N5) — plus the temporal finding T7: server-local
+      (N4) and child-key divergence (N5), plus the temporal finding T7: server-local
       timestamps with no timezone designator, against the UTC-based requirement of
       Table&nbsp;1. The findings are traceable to the published server model, whose own
       comments place the integrity surface after the pending EN&nbsp;18239/18246
@@ -209,8 +209,8 @@ python scripts/competitor_report.py
     <p>
       <strong>open-dpp</strong> publishes its application source; its one
       machine-checkable passport document is an AAS-based fixture without the
-      EN&nbsp;18223 header. It is recorded as a coverage observation — a different wire
-      format is out of this runner's checkable surface — and no findings are
+      EN&nbsp;18223 header. It is recorded as a coverage observation (a different wire
+      format is out of this runner's checkable surface), and no findings are
       manufactured for it.
     </p>
   </section>
@@ -220,7 +220,7 @@ python scripts/competitor_report.py
     <p>
       The runner lives in the <code>unidpp-py</code> repository
       (<a href="https://github.com/unidpp">github.com/unidpp</a>). It writes the full
-      report — per-fixture findings with verbatim citations and probe transcripts — to
+      report, being per-fixture findings with verbatim citations and probe transcripts, to
       <code>REPORT.md</code> and <code>REPORT.json</code>, and regenerates and verifies every fixture
       against its raw copy on each run. Findings about the standard under test are report
       content, not harness failures: the standard's own inconsistencies are the evidence

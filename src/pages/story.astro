@@ -54,7 +54,7 @@ const beats: Beat[] = [
       },
       {
         src: '03-core-model.svg',
-        alt: 'Diagram: the core model as a typed composition graph — the instance passport references its type and version, with parts as child nodes.',
+        alt: 'Diagram: the core model as a typed composition graph, in which the instance passport references its type and version, with parts as child nodes.',
         caption: `The composition graph at issuance: the E8 references its type and exact
           version; the cells are recorded at the leaves as dormant identifiers.`,
       },
@@ -85,7 +85,7 @@ const beats: Beat[] = [
     figures: [
       {
         src: '03-core-model.svg',
-        alt: 'Diagram: the core model — installation edges with method, slot, pairing, alteration, recoverability and visibility carried explicitly.',
+        alt: 'Diagram: the core model, with installation edges carrying method, slot, pairing, alteration, recoverability and visibility explicitly.',
         caption: `Installation edges carry method, recoverability and visibility explicitly,
           rather than a bare containment relation.`,
       },
@@ -121,7 +121,7 @@ const beats: Beat[] = [
         src: '11-registry-ferin.svg',
         alt: 'Diagram: an applicability event with an effective window binds the EU lens set onto the same product identity in the registry.',
         caption: `An applicability event with an effective window binds the EU lens set onto
-          the same identity — no re-minting, no second passport.`,
+          the same identity, with no re-minting and no second passport.`,
       },
     ],
   },
@@ -133,9 +133,9 @@ const beats: Beat[] = [
     body: `The border moment takes place at a customs terminal during an ordinary offline
       window: the host in Shenzhen is unreachable and the EU register is recovering from
       an outage. The officer scans the QR code on the frame. The <strong>Tier-A carrier
-      minimum</strong> — identity, status, critical flags, validity and compressed
+      minimum</strong>, which carries identity, status, critical flags, validity and compressed
       multi-suite signatures (the Japanese suite, an ECDSA signature acceptable under
-      eIDAS, and a post-quantum ML-DSA co-signature) — verifies against cached anchors;
+      eIDAS, and a post-quantum ML-DSA co-signature) verifies against cached anchors;
       the resolver's cached linkset directs the request to the national mirror; and a
       transparency-log <strong>inclusion proof</strong> obtained from the mirror's copy
       of the log substitutes for the unreachable origins. The verdict is
@@ -151,13 +151,13 @@ const beats: Beat[] = [
     figures: [
       {
         src: '06-core-tier-a.svg',
-        alt: 'Diagram: the Tier-A carrier minimum as the MRZ of products — a fixed framed subset with multi-suite signatures, offline-verifiable with cached anchors.',
+        alt: 'Diagram: the Tier-A carrier minimum as the MRZ of products: a fixed framed subset with multi-suite signatures, offline-verifiable with cached anchors.',
         caption: `The carrier minimum, analogous to the machine-readable zone of an ePassport:
           identity, status, flags, validity and compressed multi-suite signatures.`,
       },
       {
         src: '07-core-verdict.svg',
-        alt: 'Diagram: the customs terminal verdict as a report — PASS as-of stamped, coverage stated, three readings named.',
+        alt: 'Diagram: the customs terminal verdict as a report: PASS as-of stamped, coverage stated, three readings named.',
         caption: `What the customs terminal prints: PASS, as-of stamped, with the coverage
           report naming what was not reachable.`,
       },
@@ -177,7 +177,7 @@ const beats: Beat[] = [
       required to be inclusion-consistent with the earlier commitments. Class S3 adds
       the <code>fresh_within</code> contract, which makes staleness a reported verdict
       rather than an undetectable condition. State of health is a derived verdict whose
-      model is a registered transform — that of the BMS vendor or a standardized model —
+      model is a registered transform, whether that of the BMS vendor or a standardized model, and
       carrying GUM uncertainty and units registered in UnitsML. Charging telemetry is
       personal data; the corresponding edges are blind by default and carry a legal
       basis under the GDPR or the PIPL as declared by each profile. Under the
@@ -190,7 +190,7 @@ const beats: Beat[] = [
     figures: [
       {
         src: '04-core-event.svg',
-        alt: 'Diagram: the event model — typed lifecycle events E1 to E14 over an append-only log, with device commitments at the edge.',
+        alt: 'Diagram: the event model, with typed lifecycle events E1 to E14 over an append-only log and device commitments at the edge.',
         caption: `Typed events over an append-only log; device commitments are one testimony
           class among several.`,
       },
@@ -207,9 +207,9 @@ const beats: Beat[] = [
       installs a derestriction device, raising the assistance cutoff from 25 km/h to
       45 km/h. Under EN 15194 the vehicle thereby belongs to the legal class of an
       unregistered moped: the modification gives rise to a <strong>derived type</strong>
-      (E4b) and every mounted profile is re-evaluated — the Japanese lens reads
+      (E4b) and every mounted profile is re-evaluated: the Japanese lens reads
       non-conformant, the EU lens requires entry into a type-approval regime, and the
-      insurance lens reads the coverage as void — with notification of the regulator as
+      insurance lens reads the coverage as void, with notification of the regulator as
       required by each profile. Where the modification carries no attestation, its trust
       marker states this; trust is graded, never binary. A document model would edit a
       field silently, because it has no concept that software can change a legal class.
@@ -227,8 +227,8 @@ const beats: Beat[] = [
       },
       {
         src: '08-signatif-trust.svg',
-        alt: 'Diagram: SIGNATIF trust — trust markers, multi-suite signatures, stamps, and revocation readings.',
-        caption: `An unattested modification carries a trust marker that says so — graded,
+        alt: 'Diagram: SIGNATIF trust, with trust markers, multi-suite signatures, stamps and revocation readings.',
+        caption: `An unattested modification carries a trust marker that says so, and the marker is graded,
           never binary.`,
       },
     ],
@@ -244,9 +244,9 @@ const beats: Beat[] = [
       original pack <strong>closes while carrying its history</strong> ("40 cycles of
       H-2231 cells, removed for a casing dent"): the provenance of a harvested part
       constitutes commercial value in the secondary market. The installation of the new
-      pack is a cross-jurisdiction installation — an EU pack installed by a German dealer
+      pack is a cross-jurisdiction installation, an EU pack installed by a German dealer
       into a vehicle whose Japanese profile remains mounted, with both profiles
-      surviving — and the independent repairer acts under roles in the style of
+      surviving, and the independent repairer acts under roles in the style of
       EN 18239, corresponding to the right to repair. The market for used parts operates
       on precisely this provenance today, recorded in paper service books; a document
       pipeline loses it silently.`,
@@ -255,7 +255,7 @@ const beats: Beat[] = [
     figures: [
       {
         src: '05-core-transform.svg',
-        alt: 'Diagram: the transformation algebra — combine, split, derive and decompose with mass balance and taint propagation.',
+        alt: 'Diagram: the transformation algebra, with combine, split, derive and decompose carrying mass balance and taint propagation.',
         caption: `Uninstall and install as two events; intervals close carrying history, and
           the transformation algebra holds the accounting.`,
       },
@@ -284,7 +284,7 @@ const beats: Beat[] = [
       {
         src: '08-signatif-trust.svg',
         alt: 'Diagram: condition and appraisal stamps under different lenses, dated and signed.',
-        caption: `Condition stamps are lens-scoped, dated, signed — the auction lens is not
+        caption: `Condition stamps are lens-scoped, dated and signed, so the auction lens is not
           the insurance lens.`,
       },
     ],
@@ -295,11 +295,11 @@ const beats: Beat[] = [
     title: 'A recall crosses the graph',
     kicker: 'Predicate-based · dormant → live · 2030-05',
     body: `Haichuan recalls lot H-2231 following a thermal event. The recall is published as
-      a <strong>predicate</strong> — "packs containing lot H-2231" — and each custodian
+      a <strong>predicate</strong> ("packs containing lot H-2231"), and each custodian
       evaluates the predicate locally against its own holdings. The current pack of the
       Vienna vehicle is unaffected, as the trace through the B7 exchange shows; the
-      original pack — at the refurbisher, and subsequently installed in a stationary
-      storage system — is reached through its own log. No party enumerated the installed
+      original pack, at the refurbisher, and subsequently installed in a stationary
+      storage system, is reached through its own log. No party enumerated the installed
       base, and the manufacturer receives aggregates. Had a cell-passport regime been
       established in the interim, the dormant cell identifiers are adopted at that
       point: recorded granularity moves in one direction, from coarser to finer, never
@@ -311,7 +311,7 @@ const beats: Beat[] = [
     figures: [
       {
         src: '09-resolver-federation.svg',
-        alt: 'Diagram: resolver federation — RFC 9264 linksets, national mirrors, cached linksets and dark identities.',
+        alt: 'Diagram: resolver federation, with RFC 9264 linksets, national mirrors, cached linksets and dark identities.',
         caption: `Dark identities and mirrors: the recall predicate reaches custodians
           without enumerating the installed base.`,
       },
@@ -330,7 +330,7 @@ const beats: Beat[] = [
       material. Claims of recycled content are computed from the graph; had the
       certification of lot H-2231 been fraudulent, the derived claims would collapse
       through taint propagation in the graph. Notarized Tier-C snapshots cover the
-      statutory retention window, and identities outlive their issuers — Momiji need not
+      statutory retention window, and identities outlive their issuers, so Momiji need not
       exist in 2040 (I14). Circularity thereby becomes auditable arithmetic in place of
       unverifiable assertion.`,
     carried: `Carried by <code>unidpp-core</code> (transform crate), archival, the registry ·
@@ -350,7 +350,7 @@ const runShell = `git clone https://github.com/unidpp/unidpp-e2e
 cd unidpp-e2e
 make demo                     # the full E8 thread, B1–B10
 
-# one beat at a time — same fixtures, same seeds
+# one beat at a time, with the same fixtures and the same seeds
 unidpp demo bike build        # B1–B2  assembly, part duties
 unidpp demo border            # B4     offline border moment
 unidpp demo service           # B5     edge state, freshness
@@ -364,8 +364,8 @@ unidpp demo cub               # V1–V5  the counterpoint thread`;
 
 <BaseLayout
   title="The E8 story"
-  description="One e-bike — the Momiji Mobility E8, built in Kyoto from German and Chinese parts — walks the complete regulated lifecycle: assembly, part duties, EU placement, offline border verification, service, derestriction, repair, auction, recall, and end-of-life. A 1962 Super Cub is the counterpoint."
-  eyebrow="Reference — the exemplar thread"
+  description="One e-bike, the Momiji Mobility E8, built in Kyoto from German and Chinese parts, walks the complete regulated lifecycle: assembly, part duties, EU placement, offline border verification, service, derestriction, repair, auction, recall, and end-of-life. A 1962 Super Cub is the counterpoint."
+  eyebrow="Reference: the exemplar thread"
   sectioned
 >
   <Sidebar slot="rail" heading="The E8 story" items={storyNav} />
@@ -373,7 +373,7 @@ unidpp demo cub               # V1–V5  the counterpoint thread`;
   <p class="lede">
     The canonical UniDPP narrative threads every product through one primary example —
     the Momiji Mobility E8, a Kyoto-built e-bike with a German drive unit and a
-    Shenzhen battery pack — and one counterpoint, a 1962 motorcycle that adopts the
+    Shenzhen battery pack, and one counterpoint, a 1962 motorcycle that adopts the
     system with no manufacturer, no applicable regulation and no connectivity behind
     it. Each beat states what happens, what the framework does, how it differs from a
     passport implemented as a rewritable document, and which repository carries it.
@@ -404,7 +404,7 @@ unidpp demo cub               # V1–V5  the counterpoint thread`;
         ['<strong>E8 instance</strong>', '<code>momiji:e8/J-000842</code>', 'JP placement 2027-04; EU placement 2028-02'],
         ['<strong>E8 type + version</strong>', '<code>momiji:e8/type/2027.1</code>', 'a 2028.1 hardware revision exists (type-version visibility)'],
         ['<strong>Drive unit (EU)</strong>', '<code>rhine:du/M-771…</code>', 'Rhine Drives DE; type-level passport + EU DoC; installed R3'],
-        ['<strong>Battery pack (CN)</strong>', '<code>weilian:wp/P-9904…</code>', 'Weilian, Shenzhen; 40 cells of Haichuan lot <code>haichuan:cell/H-2231</code> — dormant identifiers'],
+        ['<strong>Battery pack (CN)</strong>', '<code>weilian:wp/P-9904…</code>', 'Weilian, Shenzhen; 40 cells of Haichuan lot <code>haichuan:cell/H-2231</code>, dormant identifiers'],
         ['<strong>Charger (CN)</strong>', 'cert <code>CQC-2026-1142…</code>', 'GB 4943.1-2022 ≈ IEC 62368-1 (registered equivalence)'],
         ['<strong>Controller / BMS (JP)</strong>', 'device key, class S2', 'firmware vector in instance facts'],
         ['<strong>Connect module (optional)</strong>', 'device key, class S3', '<code>fresh_within</code> bounded'],
@@ -426,14 +426,14 @@ unidpp demo cub               # V1–V5  the counterpoint thread`;
     <figure class="fig">
       <img
         src="/story/01-overview-system.svg"
-        alt="Diagram: the E8 across five planes — carrier, resolver, neutral core passport, event log, and the registry and trust rails."
+        alt="Diagram: the E8 across five planes: carrier, resolver, neutral core passport, event log, and the registry and trust rails."
         width="960"
         height="540"
         loading="lazy"
         decoding="async"
       />
       <figcaption>
-        The system in one picture: one e-bike across five planes and two rails — carrier,
+        The system in one picture: one e-bike across five planes and two rails, being carrier,
         resolver, neutral core, event log, with the FERIN registry and SIGNATIF trust
         rails alongside.
       </figcaption>
@@ -445,7 +445,7 @@ unidpp demo cub               # V1–V5  the counterpoint thread`;
     <p>
       Ten beats, 2027–2033: assembly, part duties, EU placement, the border moment,
       service, derestriction, repair, auction, recall, end of life. Every repository
-      product earns its place in this sequence — no product exists that the story does
+      product earns its place in this sequence, and no product exists that the story does
       not exercise.
     </p>
     <figure class="fig">
@@ -494,7 +494,7 @@ unidpp demo cub               # V1–V5  the counterpoint thread`;
   }
 
   <section id="counterpoint" class="plate" aria-labelledby="counterpoint-h">
-    <h2 id="counterpoint-h">Counterpoint — the 1962 Super Cub</h2>
+    <h2 id="counterpoint-h">Counterpoint: the 1962 Super Cub</h2>
     <p>
       The e-bike exercises the regulated case at its most demanding. The vintage
       motorcycle exercises the opposite boundary and thereby the universality of the
@@ -505,17 +505,17 @@ unidpp demo cub               # V1–V5  the counterpoint thread`;
     <DataTable
       columns={['Beat', 'What happens']}
       rows={[
-        ['<strong>V1</strong> — Commissioning', 'No living issuer: the auction house acts as qualified attestor and commissions identity <code>cub:1962/S-00317</code> (EPCIS commissioning semantics; nullable type reference).'],
-        ['<strong>V2</strong> — The clock predicate', 'The historic-vehicle class binds when the object crosses the age threshold — a time-fired applicability event no human declares; the dated-binding machinery does it alone.'],
-        ['<strong>V3</strong> — Attribution and restoration', 'Competing scholarly facts ("original paint" vs "respray, 1980s, documented") coexist with precedence rules, never merges; conservation events append exactly like repairs.'],
-        ['<strong>V4</strong> — The theft flag', 'Stolen 1987, recovered 2024: a title taint as a graph event, attached by authority; history is never rewritten.'],
-        ['<strong>V5</strong> — Value is a verdict', 'Condition and appraisal stamps under different lenses (auction vs insurance), dated and signed — the native form for anything whose worth is judged, not measured.'],
+        ['<strong>V1</strong>: Commissioning', 'No living issuer: the auction house acts as qualified attestor and commissions identity <code>cub:1962/S-00317</code> (EPCIS commissioning semantics; nullable type reference).'],
+        ['<strong>V2</strong>: The clock predicate', 'The historic-vehicle class binds when the object crosses the age threshold — a time-fired applicability event no human declares; the dated-binding machinery does it alone.'],
+        ['<strong>V3</strong>: Attribution and restoration', 'Competing scholarly facts ("original paint" vs "respray, 1980s, documented") coexist with precedence rules, never merges; conservation events append exactly like repairs.'],
+        ['<strong>V4</strong>: The theft flag', 'Stolen 1987, recovered 2024: a title taint as a graph event, attached by authority; history is never rewritten.'],
+        ['<strong>V5</strong>: Value is a verdict', 'Condition and appraisal stamps under different lenses (auction vs insurance), dated and signed — the native form for anything whose worth is judged, not measured.'],
       ]}
     />
     <figure class="fig">
       <img
         src="/story/16-vintage-thread.svg"
-        alt="Diagram: the 1962 Super Cub counterpoint thread — commissioning by qualified attestor, the clock predicate, the 1987 theft and 2024 recovery, and appraisal stamps."
+        alt="Diagram: the 1962 Super Cub counterpoint thread, from commissioning by qualified attestor through the clock predicate, the 1987 theft and 2024 recovery, to appraisal stamps."
         width="960"
         height="540"
         loading="lazy"
@@ -523,7 +523,7 @@ unidpp demo cub               # V1–V5  the counterpoint thread`;
       />
       <figcaption>
         V1–V5 on one thread: commissioning, the clock predicate, title taint and
-        appraisal stamps — the demonstration that the core is a general
+        appraisal stamps, and they demonstrate that the core is a general
         object-provenance layer and not an EU-compliance wrapper.
       </figcaption>
     </figure>
@@ -540,8 +540,8 @@ unidpp demo cub               # V1–V5  the counterpoint thread`;
       rows={[
         ['<strong>B1</strong>', 'issuer, core-model', '<a href="/framework/#architecture">Framework</a>, <a href="/specs/part-1-framework/">spec pt. 1</a>', 'spec P1 (I1–I3, I7)'],
         ['<strong>B2</strong>', 'core-model, registry, py', '<a href="/framework/#architecture">Framework</a>', 'spec P2 (mount S3)'],
-        ['<strong>B-CTO</strong> — the build-to-order variant between B2 and B3', 'issuer, core-model', '<a href="/implementation/demos/">Demos</a>', 'spec P3 §identity (configure-to-order: model + configuration vector)'],
-        ['<strong>B-INT</strong> — the S12 interop beat after B-CTO', 'gateway, e2e', '<a href="/implementation/demos/">Demos</a>', 'seam S12 (passport ↔ adjacent regimes); the mapping TR'],
+        ['<strong>B-CTO</strong>: the build-to-order variant between B2 and B3', 'issuer, core-model', '<a href="/implementation/demos/">Demos</a>', 'spec P3 §identity (configure-to-order: model + configuration vector)'],
+        ['<strong>B-INT</strong>: the S12 interop beat after B-CTO', 'gateway, e2e', '<a href="/implementation/demos/">Demos</a>', 'seam S12 (passport ↔ adjacent regimes); the mapping TR'],
         ['<strong>B3</strong>', 'registry', '<a href="/framework/#axes">Framework · profile axes</a>', 'paper 1'],
         ['<strong>B4</strong>', 'core tier-a/verdict, CLI, resolver', '<a href="/implementation/demos/">Demos</a>', 'paper 4, spec P4'],
         ['<strong>B5</strong>', 'core-event, units, edge SDK', '<a href="/framework/#capability">Framework · capability classes</a>', 'spec P3, paper 3'],
@@ -563,14 +563,14 @@ unidpp demo cub               # V1–V5  the counterpoint thread`;
       <figure class="fig">
         <img
           src="/story/13-py-conformance.svg"
-          alt="Diagram: the unidpp-py conformance runner — fixtures in, conformance checks, verdicts and finding IDs out."
+          alt="Diagram: the unidpp-py conformance runner, with fixtures in, conformance checks, verdicts and finding IDs out."
           width="960"
           height="540"
           loading="lazy"
           decoding="async"
         />
         <figcaption>
-          <strong>unidpp-py — the conformance runner.</strong> The runner provides
+          <strong>unidpp-py: the conformance runner.</strong> The runner provides
           public, reproducible evidence: the examples of Annex A of EN 18223 already
           fail machine validation (findings N1–N6).
           <a href="/implementation/conformance/">Conformance register</a>.
@@ -579,15 +579,15 @@ unidpp demo cub               # V1–V5  the counterpoint thread`;
       <figure class="fig">
         <img
           src="/story/14-glossarist-terms.svg"
-          alt="Diagram: the glossarist terminology dataset — 146 concepts with one definition each, including terms the story coins or sharpens."
+          alt="Diagram: the glossarist terminology dataset, with 146 concepts and one definition each, including terms the story coins or sharpens."
           width="960"
           height="540"
           loading="lazy"
           decoding="async"
         />
         <figcaption>
-          <strong>glossarist — the terminology dataset.</strong> Every concept this page
-          uses — dormant identifier, blind edge, derived type, applicability event — has
+          <strong>glossarist: the terminology dataset.</strong> Every concept this page
+          uses, including dormant identifier, blind edge, derived type and applicability event, has
           one definition. <a href="/terminology/">Terminology</a>.
         </figcaption>
       </figure>
@@ -631,7 +631,7 @@ unidpp demo cub               # V1–V5  the counterpoint thread`;
     <figure class="fig">
       <img
         src="/story/12-cli-verify.svg"
-        alt="Diagram: the unidpp CLI — eight verbs covering the whole story; the customs officer, dealer, auction house and recycler all use the same binary."
+        alt="Diagram: the unidpp CLI, with eight verbs covering the whole story; the customs officer, dealer, auction house and recycler all use the same binary."
         width="960"
         height="540"
         loading="lazy"
@@ -653,7 +653,7 @@ unidpp demo cub               # V1–V5  the counterpoint thread`;
   <Continue
     href="/implementation/demos/"
     title="Demonstrations"
-    desc="The reference core running: the battery-loop trace, as-of readings, and two-lens verdicts — generated, not transcribed."
+    desc="The reference core running: the battery-loop trace, as-of readings, and two-lens verdicts, generated rather than transcribed."
   />
 </BaseLayout>
 

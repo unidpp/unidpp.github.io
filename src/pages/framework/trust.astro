@@ -7,8 +7,8 @@ import { frameworkNav } from '../../lib/sections';
 
 <BaseLayout
   title="Trust model"
-  description="Trust in UniDPP follows the SIGNATIF model: jurisdictional threshold roots, trust lists, a multi-witnessed master list, transparency logs, algorithm agility, and coverage-report-based verification — with Confium quorum ceremonies."
-  eyebrow="Framework — trust"
+  description="Trust in UniDPP follows the SIGNATIF model: jurisdictional threshold roots, trust lists, a multi-witnessed master list, transparency logs, algorithm agility, and coverage-report-based verification, with Confium quorum ceremonies."
+  eyebrow="Framework: trust"
   sectioned
 >
   <Sidebar slot="rail" heading="Framework" items={frameworkNav} />
@@ -46,8 +46,8 @@ import { frameworkNav } from '../../lib/sections';
     <p>
       <a href="https://signatif.org">SIGNATIF</a> is published; the root and
       master-list ceremonies run in <code>unidpp-signatif</code> as M-of-K
-      threshold operations — Feldman-verifiable shares, group signatures that a
-      standard verifier accepts — with Confium contributing the ceremony
+      threshold operations (Feldman-verifiable shares, group signatures that a
+      standard verifier accepts), with Confium contributing the ceremony
       interface shapes.
     </p>
   </section>
@@ -56,7 +56,7 @@ import { frameworkNav } from '../../lib/sections';
     <h2 id="cosig-h">Co-signatures and profile-bound suites</h2>
     <p>
       Jurisdictional cryptographic suites are part of the profile, not the platform. The CN
-      profile binds SM2/SM3/SM4/SM9 and TLCP — all published as ISO/IEC mechanisms
+      profile binds SM2/SM3/SM4/SM9 and TLCP, all published as ISO/IEC mechanisms
       (14888-3, 10118-3, 18033-3); the US federal profile binds FIPS suites; the EU
       profile binds eIDAS-acceptable suites. The same payload carries multiple signatures
       side by side (for example ECDSA + SM2 + ML-DSA); each verifier checks only what its
@@ -64,10 +64,10 @@ import { frameworkNav } from '../../lib/sections';
       suites compute rather than frame: SM2 (GB/T&nbsp;32918 / GM/T&nbsp;0003.2) and
       ML-DSA-65 (FIPS&nbsp;204) sign in the issuer and the CLI, a P-256 and an SM2
       signature can co-sign one pack body, and a build without a suite's computation
-      declines it with a stated deferral — a framed-only slot degrades the verdict, never
+      declines it with a stated deferral: a framed-only slot degrades the verdict, never
       passes silently. Envelope encryption wraps payload keys per
       recipient under each jurisdiction’s permitted key-encapsulation mechanism, and
-      migration phases — composite, then post-quantum — proceed per jurisdiction under the
+      migration phases, first composite and then post-quantum, proceed per jurisdiction under the
       agility registry. CNML is the post-quantum ESDC realization.
     </p>
   </section>
@@ -78,23 +78,23 @@ import { frameworkNav } from '../../lib/sections';
       Revocation is not one operation: <strong>the reason determines
       retroactivity</strong>. Prospective reasons (key compromise after a point in time,
       cessation, supersession) leave earlier verifications valid, protected by
-      timestamping. Retroactive reasons — <span class="neg">misissuance, fraudulent
-      issuance, authority compromised during a window</span> — void validity ab initio or
+      timestamping. Retroactive reasons (<span class="neg">misissuance, fraudulent
+      issuance, authority compromised during a window</span>) void validity ab initio or
       from the window start, exactly as browser root-store distrust of a misissuing
       certificate authority invalidates its timestamped certificates.
     </p>
     <p>
       Because law needs more than one answer, verdicts state which of three readings they
       answer: <strong>evidentiary</strong> (what could a diligent verifier know at T, given
-      the then-current trust state — this protects good-faith actors, whose stamps are the
+      the then-current trust state, which protects good-faith actors whose stamps are the
       proof of diligence), <strong>current-state</strong> (fraud voids ab initio,
       preventing laundering of fraudulent goods), and <strong>cryptographic</strong>
       (signature and chain validity alone).
     </p>
     <p>
       Declaring a passport fraudulent is a graph event, not only a trust-list event: it
-      traverses the provenance DAG downstream — the same machinery as recalls, with a
-      different cause — tainting derived passports and recomputing affected claims (a
+      traverses the provenance DAG downstream, the same machinery as recalls with a
+      different cause, tainting derived passports and recomputing affected claims (a
       recycled-content claim built on stolen material collapses). Mass-balance accounting
       carries taint explicitly, and custodians are notified.
     </p>

@@ -9,7 +9,7 @@ const runGrid = `git clone https://github.com/unidpp/unidpp-e2e
 cd unidpp-e2e && make demo
 
 # the G-GRID step: a sealed dynamic segment proven from the spine
-# alone — the transcript asserts the sealed contents never appear`;
+# alone; the transcript asserts the sealed contents never appear`;
 
 const runQuorum = `# the M-of-K machinery a sovereign attestation rides on:
 # one regulator alone is refused (422); two jurisdictions
@@ -20,8 +20,8 @@ make demo   # beat B-QUORUM, between B9 and B10`;
 
 <BaseLayout
   title="The cross-border case"
-  description="The acceptance case of the build programme: a sovereign-CN battery pack with a sealed dynamic segment, a structured policy response, attestation substitution under the verifier's own anchors, and a coverage-graded verdict naming the governing policies — delivered as frozen views through document exchange and the inter-scheme protocol."
-  eyebrow="Evidence — the cross-border case"
+  description="The acceptance case of the build programme: a sovereign-CN battery pack with a sealed dynamic segment, a structured policy response, attestation substitution under the verifier's own anchors, and a coverage-graded verdict naming the governing policies, delivered as frozen views through document exchange and the inter-scheme protocol."
+  eyebrow="Evidence: the cross-border case"
   sectioned
 >
   <Sidebar slot="rail" heading="Implementation" items={implementationNav} />
@@ -31,7 +31,7 @@ make demo   # beat B-QUORUM, between B9 and B10`;
     subject to a sovereign-CN jurisdiction profile whose dynamic data class is sealed
     by policy; a verifier under EU anchors requests assurance. The case exercises the
     segment grid, the policy object, attestation substitution, the coverage-graded
-    verdict and the recorded verification route — the machinery that operates under
+    verdict and the recorded verification route, being the machinery that operates under
     legal non-access, which no regional standard series specifies.
   </p>
 
@@ -40,12 +40,12 @@ make demo   # beat B-QUORUM, between B9 and B10`;
     <table class="facts">
       <tr><th>Subject</th><td>A battery pack under a sector profile of the battery industry, an EU jurisdiction profile and a CN jurisdiction profile.</td></tr>
       <tr><th>Static data class</th><td>Signed by the device certificate at manufacture; readable, and verified directly.</td></tr>
-      <tr><th>Dynamic data class</th><td>Signed by the device operational slot key under CN certification; sealed by the segment policy to origin keys — commitments only.</td></tr>
+      <tr><th>Dynamic data class</th><td>Signed by the device operational slot key under CN certification; sealed by the segment policy to origin keys, with commitments only.</td></tr>
     </table>
     <ol class="steps">
       <li><span class="step-num">1</span> <strong>Request.</strong> The EU verifier resolves the pack and requests its data classes through the retrieval interface.</li>
-      <li><span class="step-num">2</span> <strong>Policy evaluation.</strong> The static class is permitted; the dynamic class is refused by policy — and the refusal is structured: the response carries a coverage entry and an attestation offer, never a bare refusal.</li>
-      <li><span class="step-num">3</span> <strong>Substitution.</strong> A sovereign attestation service issues a signed, as-of statement about the sealed class — conformity, commitment hash, freshness — which the verifier checks under its own anchors.</li>
+      <li><span class="step-num">2</span> <strong>Policy evaluation.</strong> The static class is permitted; the dynamic class is refused by policy, and the refusal is structured: the response carries a coverage entry and an attestation offer, never a bare refusal.</li>
+      <li><span class="step-num">3</span> <strong>Substitution.</strong> A sovereign attestation service issues a signed, as-of statement about the sealed class, covering conformity, commitment hash and freshness, which the verifier checks under its own anchors.</li>
       <li><span class="step-num">4</span> <strong>Verdict.</strong> The coverage-graded verdict names both governing policies: static verified-direct, dynamic attested. The verification route is recorded; its replay reproduces the verdict.</li>
     </ol>
   </section>
@@ -61,7 +61,7 @@ make demo   # beat B-QUORUM, between B9 and B10`;
     <ul>
       <li>
         <strong>The sealed segment, proven without opening it.</strong> The G-GRID step
-        of the end-to-end story runs two segments — one open, one origin-sealed — with
+        of the end-to-end story runs two segments, one open and one origin-sealed, with
         authority-signed policies and a custodian-signed spine; the verifier proves the
         sealed segment&rsquo;s existence, currency and growth from the spine alone, and
         the transcript asserts that the sealed contents never appear.
