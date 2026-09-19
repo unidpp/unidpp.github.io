@@ -9,7 +9,8 @@
     "build": "astro build && pagefind --site dist",
     "preview": "astro preview",
     "astro": "astro",
-    "gen:facts": "node scripts/gen-facts.mjs"
+    "gen:facts": "node scripts/gen-facts.mjs",
+    "check:citations": "node scripts/check-spec-citations.mjs"
   },
   "dependencies": {
     "@asciidoctor/core": "^4.0.11",

@@ -167,3 +167,12 @@ root); the v1 `index.html` is served again immediately.
 `public/CNAME` carries `www.unidpp.org` and is deployed with the Astro
 build. DNS: point `www.unidpp.org` at the GitHub Pages target per the
 repository's Pages settings.
+
+## Summary governance (spec_clauses)
+
+A page that summarizes specification clauses declares them in its
+frontmatter — `spec_clauses: ["6.3", "11"]` — and cites each declared
+clause in its source. A summary changes only in the change that moves
+the clause it summarizes. `npm run check:citations`
+(scripts/check-spec-citations.mjs) fails a declaration without a
+citation.
