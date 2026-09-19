@@ -85,7 +85,7 @@ import { frameworkNav } from '../../lib/sections';
         <rect x="60" y="296" width="640" height="82" rx="4" class="stratum lens-stratum" />
         <text x="80" y="328" class="lcode">L2</text>
         <text x="130" y="328" class="lname">Profiles</text>
-        <text x="130" y="344" class="ldesc">Jurisdiction, sector, and characteristic lenses — each<tspan x="130" dy="16">binding data points, transforms, suites, and trust.</tspan></text>
+        <text x="130" y="344" class="ldesc">Jurisdiction, sector and characteristic lenses, each<tspan x="130" dy="16">binding data points, transforms, suites, and trust.</tspan></text>
 
         <!-- L1 -->
         <rect x="60" y="388" width="640" height="82" rx="4" class="stratum" />
@@ -114,7 +114,7 @@ import { frameworkNav } from '../../lib/sections';
   <section id="invariants" class="plate" aria-labelledby="invariants-h">
     <h2 id="invariants-h">The fourteen invariants</h2>
     <p>
-      The framework is defined by fourteen invariants — statements that hold everywhere in
+The framework is defined by fourteen invariants, which are statements that hold everywhere in
       the system, regardless of which profiles are mounted. Each is stated with its
       consequences here; the full normative statements are Part&nbsp;1 of the
       <a href="/specs/part-1-framework/">specification</a>.
@@ -139,8 +139,8 @@ import { frameworkNav } from '../../lib/sections';
       ]}
     />
     <p>
-      The <a href="/framework/standards/#seams">seams</a> — the twelve joints between
-      layers — are tracked as first-class engineering surfaces, because every defect
+The <a href="/framework/standards/#seams">seams</a>, which are the twelve joints between
+layers, are tracked as first-class engineering surfaces, because every defect
       recorded in the audit of the EN series is a seam failure.
     </p>
   </section>
@@ -148,23 +148,23 @@ import { frameworkNav } from '../../lib/sections';
   <section id="lens" class="plate" aria-labelledby="lens-h">
     <h2 id="lens-h">The lens model</h2>
     <p>
-      A profile is a calibrated lens placed on the digital twin. The scene — the twin,
-      invariant and append-only — is never altered by observation. The lens selects and
+A profile is a calibrated lens placed on the digital twin. The scene, which is the twin,
+invariant and append-only, is never altered by observation. The lens selects and
       transforms; it is versioned and registered.
     </p>
     <DataTable
       columns={['Lens property', 'Framework counterpart']}
       rows={[
         ['Scene', 'The digital twin: invariant, append-only; never altered by observation.'],
-        ['Focal length', 'Granularity — zoom between model and instance.'],
-        ['Depth of field', 'Traversal depth — the top levels in focus, the rest out of scope, not deleted.'],
-        ['Colour filter', 'Classification transform — the same scene under jurisdictional tint; divergent classifications (“A” here, “B” there) are expected and published as decision rules and uncertainty, never hidden.'],
-        ['Filter factor', 'Unit conversion and derivation — deterministic arithmetic over registered factors.'],
-        ['Stacking filters', 'Profile composition — sector overlay × jurisdiction.'],
-        ['MTF curve', 'Published uncertainty — a mandatory lens property.'],
+      ['Focal length', 'Granularity: zoom between model and instance.'],
+        ['Depth of field', 'Traversal depth: the top levels in focus, the rest out of scope, not deleted.'],
+        ['Colour filter', 'Classification transform: the same scene under jurisdictional tint; divergent classifications (“A” here, “B” there) are expected and published as decision rules and uncertainty, never hidden.'],
+        ['Filter factor', 'Unit conversion and derivation: deterministic arithmetic over registered factors.'],
+      ['Stacking filters', 'Profile composition: sector overlay × jurisdiction.'],
+      ['MTF curve', 'Published uncertainty: a mandatory lens property.'],
         ['The mount', 'The profile interface on the neutral core: any registered lens by any maker attaches. Proprietary mounts are the lock-in vector, so the mount is what is standardized.'],
         ['Lens certification', 'Profiles, their version supersessions, and their trust bindings are signed, registry-deposited, log-anchored objects.'],
-        ['Raw vs JPEG', 'Canonical facts vs rendered views — keep the raw, because renders change (an energy-label rescale is a re-development of the raw, not new data).'],
+        ['Raw vs JPEG', 'Canonical facts vs rendered views: keep the raw, because renders change (an energy-label rescale is a re-development of the raw, not new data).'],
         ['Photograph', 'A notarized as-of snapshot.'],
         ['Aperture', 'Actor access rights.'],
         ['Optical bench', 'The conformance test suite.'],
@@ -172,7 +172,7 @@ import { frameworkNav } from '../../lib/sections';
     />
     <p>
       The decisive refinement is that a profile is not passive glass but a
-      <strong>legal measuring instrument</strong> — pattern approval at registration,
+  <strong>legal measuring instrument</strong>, subject to pattern approval at registration,
       published calibration (version and cited rules), uncertainty and decision rules (GUM;
       ILAC-G8/JCGM-106 guard-banding for boundary measurements), and periodic
       re-verification through conformance runs. A measurement near a class boundary is
@@ -188,8 +188,8 @@ import { frameworkNav } from '../../lib/sections';
       Jurisdiction profiles bind a legal regime (EU delegated acts, CN CCC/GB, JP METI, KR
       KC, US state law, UK UKCA); sector overlays bind an industry (electronics, textiles,
       batteries, construction, tyres, packaging; measuring instruments as the OIML pilot);
-      characteristic profiles attach by <em>predicate on twin facts</em> — age, material
-      content, heritage status, market status — rather than by law of place or industry.
+  characteristic profiles attach by <em>predicate on twin facts</em> such as age, material
+  content, heritage status or market status, rather than by law of place or industry.
       Characteristic profiles are regulatory-triggered (CITES species content,
       cultural-goods import under EU 2019/880, art-market AML due diligence, conflict
       minerals by origin) or voluntary value profiles (provenance and grading for antiques
@@ -203,7 +203,7 @@ import { frameworkNav } from '../../lib/sections';
       validation rules; languages; trust requirements; access policies; presentation
       requirements; and the trigger predicate. Where regions regulate the same thing
       differently (RoHS lists), they register distinct data elements harmonized to a common
-      concept — a recorded divergence, not a contradiction.
+  concept, and it is a recorded divergence rather than a contradiction.
     </p>
     <p>
       Profile-set growth is dated binding, not new identity: adding a jurisdiction to an
@@ -218,21 +218,21 @@ import { frameworkNav } from '../../lib/sections';
     <p>
       A silent power bank and a connected instrument ship under one standard. Products in
       passport scope differ enormously in what their own devices can attest, so the
-      framework fixes a capability taxonomy — and requires that a profile's freshness and
+  framework fixes a capability taxonomy and requires that a profile's freshness and
       verification requirements be satisfiable by the subject's class. Demanding live
       freshness from an S0 product is an unsatisfiable profile, not a conforming one.
     </p>
     <DataTable
       columns={['Class', 'Designation', 'Capabilities', 'Notes']}
       rows={[
-        ['<strong>S0</strong>', 'Silent', 'None — testimony only.', 'Fully servable without any device participation: type certificate (certifier-hosted), operator passport, custody testimonies, recycling events, Tier-A minimum.'],
-        ['<strong>S1</strong>', 'Passive-auth', 'NFC chip, PUF, or IEC 61406 identity link — identity attestation without logs.', 'The tier that EN 18246 explicitly excluded from scope: a named gap in the European series.'],
+        ['<strong>S0</strong>', 'Silent', 'None: testimony only.', 'Fully servable without any device participation: type certificate (certifier-hosted), operator passport, custody testimonies, recycling events, Tier-A minimum.'],
+        ['<strong>S1</strong>', 'Passive-auth', 'NFC chip, PUF, or IEC 61406 identity link, identity attestation without logs.', 'The tier that EN 18246 explicitly excluded from scope: a named gap in the European series.'],
         ['<strong>S2</strong>', 'Logged-contact', 'Dumps state on physical read; no communications.', 'Battery-management-system style; the service-visited vehicle is S2 in person.'],
         ['<strong>S3</strong>', 'Connected', 'Full edge segments; commit-now, reveal-later device commitments.', 'The device is a tier of the passport system, not a client; the S3 threat model (device keys, firmware chains) applies.'],
       ]}
     />
     <p>
-      Three consequences follow: the twin is testimonial by default and sensorial by exception — for
+  Three consequences follow: the twin is testimonial by default and sensorial by exception; f
       silent objects the twin is a ledger of testimonies <em>about</em> the thing, with
       device segments one testimony class; certification bodies can be state custodians (a
       versioned certificate is the type twin); and the threat model shifts by class, from
@@ -244,8 +244,8 @@ import { frameworkNav } from '../../lib/sections';
   <section id="twin" class="plate" aria-labelledby="twin-h">
     <h2 id="twin-h">Passive twin → active twin</h2>
     <p>
-      The deployed reality — national 2D-code identity platforms, certificate-body
-      verification portals — is the <strong>passive-twin</strong> era: the twin is missing
+  The deployed reality, comprising national 2D-code identity platforms and certificate-body
+  verification portals, is the <strong>passive-twin</strong> era: the twin is missing
       as an entity; what exists is a sequence of point-in-time attestations about the
       object, sampled when the object visits an attestor. Truth is episodic; staleness
       between attestations is unbounded and undetectable; trust rides entirely on attestor
@@ -258,21 +258,21 @@ import { frameworkNav } from '../../lib/sections';
     <p>
       The active twin makes the following elements load-bearing: measurement validity (sensor calibration in
       device registration, GUM uncertainty on self-reported values, registered units);
-      derived verdicts — state of health is computed by a model, and whose model is a
+  derived verdicts, in which state of health is computed by a model and whose model is a
       governed transform; privacy, because usage telemetry is personal data; the S3
       security model; and conformity regime, from incident-driven inspection to continuous
       conformity monitoring, with each delegated act choosing per profile whether
       point-in-time attestation or monitoring is authoritative.
     </p>
     <p>
-      The coexistence rule is that both paradigms remain in the framework permanently — the connected
+  The coexistence rule is that both paradigms remain in the framework permanently, and the connec
       vehicle and the silent power bank ship under one standard. Profiles declare, per data
       element, the required truth mode: attest-sampled, self-committed, or
       both-with-precedence, where precedence between a calibrated device measurement and an
       attestor observation is a metrological hierarchy question.
     </p>
     <p class="meta">
-      Lineage, named for committee purposes — evolution, not revolution; each era's
+  Lineage, named for committee purposes as evolution rather than revolution; each era's
       institutions survive as attestation classes: paper type-approvals and service books →
       GS1 barcodes → national 2D-code identity platforms → certificate-body digital
       verification → verifiable-credential triads (UNTP) → active twins.
@@ -282,14 +282,14 @@ import { frameworkNav } from '../../lib/sections';
   <section id="resilience" class="plate" aria-labelledby="resilience-h">
     <h2 id="resilience-h">Availability and resilience</h2>
     <p>
-      Three payload tiers fix the carrier/server split — “half in code, half on server” is
+  Three payload tiers fix the carrier/server split, and the "half in code, half on server" maxim is
       the normative design, not a workaround. <strong>Tier A</strong> is the
       carrier-embedded minimum passport: product ID, resolver URI, operator ID,
       status, critical safety/recall flag, validity, and multi-suite compressed signatures,
       sized to EN 18220 carriers via compressed serialization, offline-verifiable with
       pre-cached trust anchors. <strong>Tier B</strong> is the served full passport.
       <strong>Tier C</strong> is archival (EN 18221 / OAIS). Stale or offline data degrades
-      explicitly — freshness verdicts — and never silently passes.
+  explicitly through freshness verdicts and never silently passes.
     </p>
     <DataTable
       columns={['Failure', 'Response']}
@@ -314,24 +314,24 @@ import { frameworkNav } from '../../lib/sections';
     <p>
       <strong>Verification under the verifier's own anchors.</strong> Each profile's attestations chain to
       its own jurisdiction's trust framework. A verifier in one jurisdiction can verify a
-      passport from another through SIGNATIF cross-recognition — jurisdictional trust lists
+  passport from another through SIGNATIF cross-recognition, in which jurisdictional trust lists
       feeding a globally multi-witnessed master list, with transparency logs anchoring both
-      trust events and passport events — without adopting the other jurisdiction's rules.
+  trust events and passport events without adopting the other jurisdiction's rules.
     </p>
     <p>
       <strong>Multi-suite signatures.</strong> The same payload may carry several
-      signatures side by side — for example ECDSA, SM2, and ML-DSA — and each verifier
+  signatures side by side, for example ECDSA, SM2 and ML-DSA, and each verifier
       checks only what its profile-scoped acceptance policy requires. Jurisdictional
       cryptographic suites are part of the profile, not the platform.
     </p>
     <p>
       <strong>Graded verdicts.</strong> Verification returns a verdict with a coverage
       report, not a boolean; and when a passport is declared fraudulent, the reason
-      determines retroactivity — prospective reasons leave earlier good-faith
+  determines retroactivity, so that prospective reasons leave earlier good-faith
       verifications valid, retroactive reasons void validity from the start.
     </p>
     <p>
-      The full trust model — the registry, co-signatures, revocation readings, stamps — is
+  The full trust model, covering the registry, co-signatures, revocation readings and stamps, is
       on the <a href="/framework/trust/">trust page</a>.
     </p>
   </section>
@@ -339,8 +339,7 @@ import { frameworkNav } from '../../lib/sections';
   <Continue
     href="/specs/"
     num="04"
-    title="The specification"
-    desc="The framework in normative form — five parts covering scope, profiles, events, tiers, and conformance, rendered from the AsciiDoc sources."
+    desc="The framework in normative form, in five parts covering scope, profiles, events, tiers, and conformance, rendered from the AsciiDoc sources."
   />
 </BaseLayout>
 
