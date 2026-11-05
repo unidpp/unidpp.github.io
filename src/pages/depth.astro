@@ -1,0 +1,127 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Continue from '../components/Continue.astro';
+---
+
+<BaseLayout
+  title="Where UniDPP is deep"
+  description="The depth of the implementation: verdicts that state what they could not see, byte-identical proofs across languages, and the mechanisms no other passport system offers."
+  eyebrow="Reference: depth"
+>
+  <h1>Where UniDPP is deep</h1>
+  <p class="lede">
+    The capability map states what the framework does. This page states where the
+    implementation is deep in handling, and which mechanisms are, as far as the
+    passport landscape offers, particular to it. Every claim below names the machinery
+    that carries it, and the machinery is public and testable in the open repositories.
+  </p>
+
+  <section class="plate" aria-labelledby="honesty-h">
+    <h2 id="honesty-h">The honesty machinery</h2>
+    <p>
+      A verification in this framework answers three readings and, more importantly,
+      states what it could not assess. Every answer carries its as-of moment; every
+      data element declares a freshness window; an element past its window degrades the
+      verdict visibly instead of passing silently; and a claim that outruns its
+      evidence appears as reduced coverage rather than as a pass. The conformance
+      suite proves the refusals as well as the paths: negative fixtures are part of the
+      published test material, because a system that only demonstrates agreement has
+      demonstrated little.
+    </p>
+    <p>
+      The canonical bytes of the format are pinned by a shared vector corpus, and the
+      corpus reproduces byte-identically across independent implementations in Rust,
+      TypeScript, Ruby and Python. The strongest proof is the foreign harness: a
+      pure-Python, standard-library-only second implementation that verifies the same
+      vectors, signs with the same algorithm, and derives the same outcomes, which is
+      how the format demonstrates that it does not secretly depend on one codebase.
+    </p>
+  </section>
+
+  <section class="plate" aria-labelledby="unique-h">
+    <h2 id="unique-h">Mechanisms particular to the framework</h2>
+    <ul class="plain">
+      <li>
+        <strong>Sovereign suites on one carrier.</strong> A single offline pack carries
+        co-signatures from national cryptographic suites, among them the Chinese GM/T
+        suite, beside Ed25519 and ECDSA, with post-quantum suites framed and verifiable
+        where a deployment enables them. A verifier that cannot compute a suite says so
+        and degrades, rather than failing or pretending.
+      </li>
+      <li>
+        <strong>Correlate, never consolidate.</strong> One physical thing may carry
+        several codes; the record states that the codes belong to the same subject
+        without re-identifying it, because consolidation destroys the schemes the codes
+        belong to.
+      </li>
+      <li>
+        <strong>Willingness is law.</strong> A scheme that declines interoperability is
+        never brokered around; the refusal names both endpoints and the gap. Where
+        interop happens, the receiving profile's acceptance policy decides, and every
+        verdict names the policy that judged it.
+      </li>
+      <li>
+        <strong>Dark identities.</strong> A passport whose existence is not published
+        is not discoverable by guessing, and the refusal is indistinguishable from the
+        absence of any record, because enumeration is a privacy attack, not a query.
+      </li>
+      <li>
+        <strong>Mass balance and taint.</strong> Every split and combine carries its
+        quantities forward in balance, and a taint on an input reaches its derivatives
+        in proportion to what each took, so a recall crosses a supply graph without
+        anyone editing a record.
+      </li>
+      <li>
+        <strong>The stateless relay that names no master.</strong> The translation hub
+        retains nothing, signs what it forwards, and refuses pairs divided by
+        unwillingness; two schemes that speak directly have no need of it, and the
+        protocol never suggests otherwise.
+      </li>
+      <li>
+        <strong>The record outlives the issuer.</strong> The notarized archive tier
+        re-serves a passport state byte-identically decades later, with archival
+        packages drilled as an operational routine.
+      </li>
+      <li>
+        <strong>Machines as principals.</strong> Devices hold manufacture-bound keys
+        and commit to their state before they reveal it, so a product's own telemetry
+        enters the record under signatures that cannot be retroactively contradicted.
+      </li>
+      <li>
+        <strong>Measurement discipline.</strong> A measured quantity enters with its
+        method citation, its calibration chain and its uncertainty, and conformity
+        decisions near a limit apply stated decision rules with guard bands, because a
+        measurement without those four is a claim.
+      </li>
+      <li>
+        <strong>Federation as a starter kit.</strong> A national registry is packaged
+        as an adoptable deployment with its own jurisdiction, identifiers and keys,
+        joining the federation through identity-checked discovery rather than through
+        a permission.
+      </li>
+    </ul>
+  </section>
+
+  <section class="plate" aria-labelledby="extensible-h">
+    <h2 id="extensible-h">Extensible in scope</h2>
+    <p>
+      The framework is international by construction and extensible by data. A new
+      jurisdiction mounts as a dated profile binding on the one core; a new protocol is
+      a render profile, so presenting the same record in another scheme's shape is a
+      rendering and never a fork; units, vocabularies and code lists are register items
+      with supersession; and cross-scheme translation goes through a mapping discipline
+      that states its losses rather than hiding them.
+    </p>
+    <p>
+      The same openness extends to kinds of passport. A class of passport is a
+      registered, signed profile of data elements, units and views, and an instance
+      states which features it carries and how deep each goes. The honest boundary
+      rides with the honesty machinery: authoring a new class today is expert work
+      against the published schema, and the guided designer for it is declared work
+      ahead; the questions this raises are answered directly in the
+      <a href="https://docs.unidpp.org/get-started/faq/">frequently asked questions</a>.
+    </p>
+  </section>
+
+  <Continue href="/implementation/demos/" title="See it run" desc="The demonstration catalogue and the live pilot." />
+</BaseLayout>

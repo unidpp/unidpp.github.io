@@ -1,0 +1,110 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Continue from '../components/Continue.astro';
+---
+
+<BaseLayout
+  title="The road ahead"
+  description="Where digital product passports are going: machines as readers, materials as subjects, products that report themselves, verification that outlives companies, and borders that recognize one another."
+  eyebrow="03 · The road ahead"
+>
+  <h1>The road ahead</h1>
+  <p class="lede">
+    The passport of the next decade will be read by machines more often than by people,
+    will attach to raw materials as readily as to finished goods, and will be expected to
+    answer for a product long after its maker has ceased to exist. Each demand below is
+    stated together with the mechanism the framework already maintains for it, and the
+    section at the end names what genuinely remains ahead.
+  </p>
+
+  <section class="plate" aria-labelledby="machines-h">
+    <h2 id="machines-h">Machines become the primary readers</h2>
+    <p>
+      A passport that only a person can read scales to a household; a passport that a
+      customs system, an ERP deployment and an auditor's script can read scales to world
+      trade. The framework treats machine-readability as the primary obligation: every
+      exported record carries stable identifiers, the canonical form is specified to the
+      byte, and the same bytes verify identically in independent implementations. A
+      statement that exists only as prose in a PDF is not a passport datum, and the
+      framework declines to model it as one.
+    </p>
+  </section>
+
+  <section class="plate" aria-labelledby="materials-h">
+    <h2 id="materials-h">Materials carry passports of their own</h2>
+    <p>
+      The next questions regulators ask are questions of matter, not of gadgets: where a
+      tonne of steel came from, how much recycled content entered a batch, and which
+      derived goods carry which obligations. The transformation algebra answers by
+      letting a passported quantity split and combine with its quantities balancing at
+      every step, so one passported tonne of iron ore becomes passported trade units,
+      and a portion of a unit can leave for a screw run without the record losing an
+      gram. Obligations travel with the material, in proportion to what each derived
+      product actually took.
+    </p>
+  </section>
+
+  <section class="plate" aria-labelledby="reporting-h">
+    <h2 id="reporting-h">Products begin to report themselves</h2>
+    <p>
+      Batteries count their cycles; vehicles know their firmware. The framework gives
+      machines principals of their own, with keys bound at manufacture and a discipline
+      of commit now and reveal later, so a device can withhold what its operator chooses
+      but cannot retroactively contradict what it once committed. Products without
+      electronics are served too: the capability classes run from silent objects, which
+      need no device participation at all, to fully instrumented ones.
+    </p>
+  </section>
+
+  <section class="plate" aria-labelledby="outliving-h">
+    <h2 id="outliving-h">Verification must outlive the issuer</h2>
+    <p>
+      A compliance record that disappears with its operator fails the audit that matters
+      most. The framework's third tier is the notarized archive: a passport state,
+      signed and timestamped, re-served byte-identically decades later with metadata an
+      auditor can read. The durability of the record is treated as an operational
+      routine, drilled and verified, rather than as an aspiration.
+    </p>
+  </section>
+
+  <section class="plate" aria-labelledby="borders-h">
+    <h2 id="borders-h">Borders learn to recognize one another</h2>
+    <p>
+      The certificate a border accepts tomorrow may carry the signature of another
+      jurisdiction's authority, and the signature suite of another cryptography era.
+      The framework maintains a recognition ladder from document acceptance to full-core
+      interop, states willingness explicitly so that a scheme that declines
+      interoperability is never brokered around, and carries sovereign signature suites
+      beside classical and post-quantum ones on the same carrier. A relay exists for
+      pairs divided by protocols, and it is deliberately stateless and names no master,
+      because a pair that speaks directly has no need of it.
+    </p>
+  </section>
+
+  <section class="plate" aria-labelledby="consumer-h">
+    <h2 id="consumer-h">Consumers become routine readers</h2>
+    <p>
+      The scan at the point of sale is the passport's most public moment. The consumer
+      presentation renders the record as a readable page, provides a text form suitable
+      for screen readers, and releases only the data points a scan policy states, so
+      the most accessible surface is also the most disciplined one.
+    </p>
+  </section>
+
+  <section class="plate" aria-labelledby="remaining-h">
+    <h2 id="remaining-h">What genuinely remains ahead</h2>
+    <p>
+      Three things are named so that they are not implied. Guided tooling for defining
+      new classes of passport is designed-for as registered data, but the class designer
+      itself is work the ecosystem has yet to build; authoring a class today is expert
+      work against a published schema. Operation of the transparency anchor as a
+      genuine multi-party quorum, beyond the reference operator, awaits the federation's
+      growth. And the widest gap is not technical at all: the number of products that
+      carry passports at all remains small, which is why the framework ships as a
+      starter kit that a national registry can adopt rather than as a system that asks
+      the world to converge first.
+    </p>
+  </section>
+
+  <Continue href="/framework/" num="04" title="How it works" desc="The framework in full: identity, events, tiers, and trust." />
+</BaseLayout>
