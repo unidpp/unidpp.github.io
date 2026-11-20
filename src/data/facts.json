@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-13",
+  "generated_at": "2026-11-19",
   "cli": {
     "commands": [
       "create",
@@ -29,7 +29,7 @@
       "console"
     ],
     "count": 10,
-    "operations_total": 145,
+    "operations_total": 146,
     "per_service": {
       "registry": 37,
       "trust": 21,
@@ -40,7 +40,7 @@
       "archive": 7,
       "resolver": 13,
       "hub": 5,
-      "console": 29
+      "console": 30
     }
   }
 }
