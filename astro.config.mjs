@@ -1,4 +1,5 @@
 import { defineConfig } from 'astro/config';
+import vue from '@astrojs/vue';
 
 // The site builds into `dist/` — a subfolder — so the build never writes to
 // the repository root. The v1 single-page site at the root `index.html`
@@ -12,4 +13,5 @@ export default defineConfig({
   build: {
     format: 'directory',
   },
+  integrations: [vue()],
 });
